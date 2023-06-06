@@ -14,7 +14,7 @@ jobs:
         uses: tj-actions/changed-files@v36
         with:
           files: |
-            **/**.ipynb
+            **.ipynb
 
       - name: Run step if any .ipynb file(s) or any file in the static folder change
         if: steps.changed-files-excluded.outputs.any_changed == true
