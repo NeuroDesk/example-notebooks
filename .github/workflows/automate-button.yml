@@ -5,7 +5,7 @@ jobs:
     name: Example
     runs-on: ubuntu-latest
     container:
-      image: 'https://github.com/iishiishii/example-notebooks.git'  # replace <your-docker-image> with your Docker image
+      image: '../../Dockerfile'  # replace <your-docker-image> with your Docker image
     steps:
       - uses: actions/checkout@v3
         
