@@ -4,58 +4,11 @@ jobs:
   build:
     name: Example
     runs-on: ubuntu-latest
+    container:
+      image: Dockerfile # replace <your-docker-image> with your Docker image
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v2
-
-      - name: Get all changed .ipynb file(s)
-        id: changed-files-specific
-        uses: tj-actions/changed-files@v36
-        with:
-          since_last_remote_commit: true
-          files: |
-            **.ipynb
-
-      - name: Run step if any .ipynb file(s) or any file in the static folder change
-        if: steps.changed-files-specific.outputs.any_changed == 'true'
-        run: |
-          echo "One or more .ipynb file(s) or any file in the static folder but not in the doc folder has changed."
-          echo "changed_notebook=${{ steps.changed-files-specific.outputs.added_files }}" >> $GITHUB_ENV
-          echo "`jq '.cells[0] |= . + {
-                      "cell_type": "markdown",
-                      "metadata": {
-                        "id": "view-in-github",
-                        "colab_type": "text"
-                      },
-                      "source": [
-                        "<a href=\"https://play-sydney.neurodesk.org/v2/gh/Neurodesk/example-notebooks/main\" target=\"_parent\"><img ssrc="https://mybinder.org/badge_logo.svg" alt=\"Open In Binder\"/>  </a>",
-                        "<a href=\"https://colab.research.google.com/github/Neurodesk/example-notebooks/blob/main/fmriprep_example.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/>  </a>"
-                      ]
-                    }' ${{ steps.changed-files-specific.outputs.added_files }}`" > ${{ steps.changed-files-specific.outputs.added_files }}
         
-      - name: Create a PR if needed
-        shell: bash
-        env:
-          GITHUB_USER: ${{ secrets.GITHUB_USER }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -eux
-          # if resulted in any change:
-          export NOTEBOOK=${{ env.changed_notebook }}
-          if [[ ! -z "$(git status --porcelain *.ipynb)" ]]; then
-            # this will fail if the branch already exists which means we won't have duplicate PRs
-            git config user.name "Neurodesk Bot"
-            git config user.email 'neurodesk-bot@users.noreply.github.com'
-
-            git commit . -m "Add Colab and Binder buttons to ${NOTEBOOK}"
-
-            git push --set-upstream origin main            
-            hub pull-request -m "Add Colab and Binder buttons to ${NOTEBOOK}" \
-              -m "Added buttons. Please review the notebook carefully.".
-          fi
-
       - uses: "treebeardtech/nbmake-action@v0.2"
         with:
           path-output: .
