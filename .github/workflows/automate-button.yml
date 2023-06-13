@@ -5,7 +5,7 @@ jobs:
     name: Example
     runs-on: ubuntu-latest
     container:
-      image: syd.ocir.io/sd63xuke79z3/binderhub/jupyter-neurodesktop-proxy:20221215033354  # replace <your-docker-image> with your Docker image
+      image: 'Dockerfile'  # replace <your-docker-image> with your Docker image
     steps:
       - uses: actions/checkout@v3
         
