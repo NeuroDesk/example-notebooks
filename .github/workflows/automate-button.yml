@@ -2,7 +2,7 @@ on: [push, pull_request]
 name: Build
 jobs:
   build:
-    name: Example
+    name: Notebook Test
     runs-on: ubuntu-latest
     container:
       image: vnmd/neurodesktop:latest  # replace <your-docker-image> with your Docker image
@@ -12,6 +12,5 @@ jobs:
         uses: actions/checkout@v2
       - uses: "treebeardtech/nbmake-action@v0.2"
         with:
-          use-docker: true
-          path: ./functional_imaging
+          use-docker: false
           path-output: .
