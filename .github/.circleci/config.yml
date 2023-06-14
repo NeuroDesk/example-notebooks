@@ -1,0 +1,42 @@
+version: 2.1
+
+jobs:
+  grade:
+    docker:
+      - image: vnmd/neurodesktop:latest
+
+    working_directory: /home/jovyan/example-notebooks
+    steps:
+      - checkout
+      - run:
+          name: Install grading dependencies
+          command: |
+            source activate base
+            pip install --progress-bar off ipython ipywidgets
+            pip install --progress-bar off https://github.com/nteract/papermill/archive/master.zip
+      - run:
+          name: Install course specific dependencies
+          command: |
+            source activate base
+            [ -e environment.yml ] && conda env update --quiet -f environment.yml && conda clean -tipsy || echo nothing to do
+      - run:
+          name: "Prepare output directories"
+          command: |
+            mkdir -p outputs/functional_imaging
+            
+      - run:
+          name: Execute functional_imaging/nipype_fsl_all_levels_flanker.ipynb
+          command: |
+            source activate base
+            papermill --cwd functional_imaging functional_imaging/nipype_fsl_all_levels_flanker.ipynb nipype_fsl_all_levels_flanker_executed.ipynb 
+            jupyter nbconvert --to html --stdout functional_imaging/nipype_fsl_all_levels_flanker.ipynb > outputs/functional_imaging/nipype_fsl_all_levels_flanker.html
+
+      - store_artifacts:
+          path: /home/jovyan/example-notebooks/outputs
+          destination: outputs
+
+workflows:
+  version: 2
+  grade_me:
+    jobs:
+      - grade
