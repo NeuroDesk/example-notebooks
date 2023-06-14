@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: "treebeardtech/nbmake-action@v0.2"
         with:
-          path-output: .
+          path: "./functional_imaging"
+          path-output: "./functional_imaging"
           notebooks: |
             '*.ipynb'
