@@ -46,6 +46,7 @@ jobs:
       - uses: cvmfs-contrib/github-action-cvmfs@main
         with:
             cvmfs_repositories: 'neurodesk.ardc.edu.au'
+            cvmfs_config_package: 'https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb'
             run_local_checkout: 'true'
       - name: Test CernVM-FS
         run: |
