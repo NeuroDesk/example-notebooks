@@ -7,9 +7,10 @@ jobs:
     container:
       image: vnmd/neurodesktop:latest  # replace <your-docker-image> with your Docker image
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
       - uses: "treebeardtech/nbmake-action@v0.2"
         with:
-          path: "./functional_imaging"
-          path-output: "./functional_imaging"
-          notebooks: |
-            '*.ipynb'
+          use-docker: true
+          path: ./functional_imaging
+          path-output: ./functional_imaging
