@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: vnmd/neurodesktop:latest  # replace <your-docker-image> with your Docker image
+      options: --user root
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
