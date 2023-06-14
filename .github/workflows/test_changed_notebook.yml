@@ -20,11 +20,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  test_changed_notebooks:
-    if: github.event.pull_request.draft == false
+  test_notebooks:
 
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false  # Continue to run other builds despite a failure
       matrix:
         os: [ ubuntu-latest ]
         python-version: [ '3.7', '3.8', '3.9', '3.10' ]
@@ -37,20 +37,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Check for new or changed .ipynb files
-        id: changed-ipynb
-        uses: tj-actions/changed-files@v1.1.2
-        with:
-          files: |
-            **/*.ipynb
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
+
       - name: Install dependencies
         run: |
 
@@ -58,12 +50,12 @@ jobs:
             export APPTAINER_BINDPATH="/content"
             export MPLCONFIGDIR="/content/matplotlib-mpldir"
             export LMOD_CMD="/usr/share/lmod/lmod/libexec/lmod"
-            export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -mindepth 1 -maxdepth 1 -type d -printf "%p:" | sed 's/:$//')
             
             curl -J -O https://raw.githubusercontent.com/NeuroDesk/neurocommand/main/googlecolab_setup.sh
             chmod +x googlecolab_setup.sh
             ./googlecolab_setup.sh
         
+            export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -mindepth 1 -maxdepth 1 -type d -printf "%p:" | sed 's/:$//')
 
       - name: Run notebooks
         run: |
