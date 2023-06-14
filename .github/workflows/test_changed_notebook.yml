@@ -46,18 +46,17 @@ jobs:
       - uses: cvmfs-contrib/github-action-cvmfs@v3
       - name: Test CernVM-FS
         run: |
-            if [ "${{ inputs.run_local_checkout }}" == "true" ]; then
-                echo "WARNING running local checkout of the action !"
-                .  setup-cvmfs.sh local
-            else
-                ${{ github.action_path }}/setup-cvmfs.sh
-            fi
+
+            ${{ github.action_path }}/setup-cvmfs.sh
+
             export LD_PRELOAD=""
             export APPTAINER_BINDPATH="/content"
             export MPLCONFIGDIR="/content/matplotlib-mpldir"
             export LMOD_CMD="/usr/share/lmod/lmod/libexec/lmod"
             export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -mindepth 1 -maxdepth 1 -type d -printf "%p:" | sed 's/:$//')
             shell: bash
+            env:
+                THIS: ${{ github.action_path }}
 
       - name: Run notebooks
         run: |
