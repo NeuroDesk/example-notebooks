@@ -12,5 +12,4 @@ jobs:
         uses: actions/checkout@v2
       - uses: "treebeardtech/nbmake-action@v0.2"
         with:
-          use-docker: false
-          path-output: .
+          workdir: /home/jovyan/example-notebooks
