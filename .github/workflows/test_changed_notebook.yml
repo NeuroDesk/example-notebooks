@@ -43,19 +43,21 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Install dependencies
+      - uses: cvmfs-contrib/github-action-cvmfs@v3
+      - name: Test CernVM-FS
         run: |
-
+            if [ "${{ inputs.run_local_checkout }}" == "true" ]; then
+                echo "WARNING running local checkout of the action !"
+                .  setup-cvmfs.sh local
+            else
+                ${{ github.action_path }}/setup-cvmfs.sh
+            fi
             export LD_PRELOAD=""
             export APPTAINER_BINDPATH="/content"
             export MPLCONFIGDIR="/content/matplotlib-mpldir"
             export LMOD_CMD="/usr/share/lmod/lmod/libexec/lmod"
-            
-            curl -J -O https://raw.githubusercontent.com/NeuroDesk/neurocommand/main/googlecolab_setup.sh
-            chmod +x googlecolab_setup.sh
-            ./googlecolab_setup.sh
-        
             export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -mindepth 1 -maxdepth 1 -type d -printf "%p:" | sed 's/:$//')
+            shell: bash
 
       - name: Run notebooks
         run: |
