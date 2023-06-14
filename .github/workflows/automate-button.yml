@@ -14,4 +14,4 @@ jobs:
         with:
           use-docker: true
           path: ./functional_imaging
-          path-output: ./functional_imaging
+          path-output: .
