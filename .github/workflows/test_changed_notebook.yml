@@ -47,7 +47,7 @@ jobs:
             sudo apt-get install cvmfs tree --allow-unauthenticated >> /dev/null
                 
             #setup cvmfs
-            mkdir -p /etc/cvmfs/keys/ardc.edu.au/
+            sudo mkdir -p /etc/cvmfs/keys/ardc.edu.au/
             echo "-----BEGIN PUBLIC KEY-----" | sudo tee /etc/cvmfs/keys/ardc.edu.au/neurodesk.ardc.edu.au.pub
             echo "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwUPEmxDp217SAtZxaBep" | sudo tee -a /etc/cvmfs/keys/ardc.edu.au/neurodesk.ardc.edu.au.pub
             echo "Bi2TQcLoh5AJ//HSIz68ypjOGFjwExGlHb95Frhu1SpcH5OASbV+jJ60oEBLi3sD" | sudo tee -a /etc/cvmfs/keys/ardc.edu.au/neurodesk.ardc.edu.au.pub
@@ -62,7 +62,7 @@ jobs:
             echo 'CVMFS_KEYS_DIR="/etc/cvmfs/keys/ardc.edu.au/"' | sudo tee -a /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf
             echo "CVMFS_HTTP_PROXY=DIRECT" | sudo tee  /etc/cvmfs/default.local
             echo "CVMFS_QUOTA_LIMIT=5000" | sudo tee -a  /etc/cvmfs/default.local
-            cvmfs_config setup
+            sudo cvmfs_config setup
             
             sudo apt-get install -y software-properties-common
             sudo add-apt-repository -y ppa:apptainer/ppa
