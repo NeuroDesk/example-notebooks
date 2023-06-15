@@ -32,7 +32,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-
       - name: Test CernVM-FS
         run: |
             sudo apt-get install lsb-release
@@ -80,5 +79,6 @@ jobs:
       - name: Run notebooks
         shell: bash
         run: |
+            pip install pytest
             chmod +x test_notebook.sh
             ./test_notebook.sh
