@@ -25,10 +25,10 @@ errors=0
 
 # Run without error: don't compare output of cells
 pytest --nbval-lax \
-    functional_imaging/nipype_fsl_all_levels_flanker.ipynb \
-    structural_imaging/nipype_module_example.ipynb \
-    structural_imaging/qsmxt_example.ipynb \
-    structural_imaging/sct_toolbox_example.ipynb \
+    ./functional_imaging/nipype_fsl_all_levels_flanker.ipynb \
+    ./structural_imaging/nipype_module_example.ipynb \
+    ./structural_imaging/qsmxt_example.ipynb \
+    ./structural_imaging/sct_toolbox_example.ipynb \
 
 [ $? -eq 0 ] || {
     echo_red "FAILED! pytest --nbval-lax"
