@@ -11,13 +11,6 @@ echo_red() {
     echo -e "\033[0;31m$@\033[0m"
 }
 
-for var in IDR_HOST IDR_USER IDR_PASSWORD; do
-    [ -n "${!var}" ] || {
-        echo_red ERROR: $var is not defined
-        exit 2
-    }
-done
-
 errors=0
 
 # Full reproducibility: output of notebook cells should match the saved cells
