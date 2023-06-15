@@ -79,5 +79,5 @@ jobs:
 
       - name: Run notebooks
         run: |
-            chmod +x .github/workflows/test_notebook.sh
-            bash .github/workflows/test_notebook.sh
+            chmod +x test_notebook.sh
+            /bin/bash test_notebook.sh
