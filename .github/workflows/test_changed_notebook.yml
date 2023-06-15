@@ -78,6 +78,6 @@ jobs:
          
 
       - name: Run notebooks
+        shell: bash
         run: |
-            chmod +x test_notebook.sh
-            /bin/bash test_notebook.sh
+            ./test_notebook.sh
