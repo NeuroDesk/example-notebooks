@@ -43,7 +43,7 @@ jobs:
         export LMOD_CMD=/usr/share/lmod/lmod/libexec/lmod
         export MPLCONFIGDIR=/home/runner/work/example-notebooks/example-notebooks/matplotlib-mpldir
         export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
-        run: find . -name '*.ipynb' -type f -execdir jupyter nbconvert --template classic --to html {} \;
+        find . -name '*.ipynb' -type f -execdir jupyter nbconvert --template classic --to html {} \;
 
     - name: Push notebooks folder to the build branch
       uses: s0/git-publish-subdir-action@develop
