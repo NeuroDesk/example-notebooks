@@ -1,0 +1,50 @@
+# This workflows executes new or modified example notebooks.
+
+name: test_changed_notebooks
+
+defaults:
+  run:
+    shell: bash  # To override PowerShell on Windows
+
+on:
+  # Trigger the workflow on push or PR to any branch
+  push:
+    paths:
+      - '**/*.ipynb'
+  pull_request:
+    paths:
+      - '**/*.ipynb'
+    # don't trigger for draft PRs
+    types: [ opened, synchronize, reopened, ready_for_review ]
+  # Trigger the workflow on manual dispatch
+  workflow_dispatch:
+
+jobs:
+  test_notebooks:
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
+      matrix:
+        notebooks: ["functional_imaging/fmriprep_example.ipynb", "functional_imaging/nipype_fsl_all_levels_flanker.ipynb", "structural_imaging/qsmxt_example.ipynb", "structural_imaging/nipype_module_example.ipynb", "structural_imaging/sct_toolbox_example.ipynb"]
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Test singularity and cvmfs before pushing to neurocommand
+      run: 
+        /bin/bash .github/workflows/setup_cvmfs.sh
+
+    - name: Install dependencies
+      shell: bash
+      run: |
+        pip install nbmake pytest-xdist pytest-shell
+
+    - name: Run ${{ matrix.notebooks }}
+      shell: bash
+      run: |
+        export LD_PRELOAD=
+        export APPTAINER_BINDPATH=/home/runner/work/example-notebooks/example-notebooks,/tmp,/cvmfs
+        export LMOD_CMD=/usr/share/lmod/lmod/libexec/lmod
+        export MPLCONFIGDIR=/home/runner/work/example-notebooks/example-notebooks/matplotlib-mpldir
+        export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
+        jq -r 'walk(if type == "string" then gsub("!"; "%") else . end)' ${{ matrix.notebooks }} > temp.ipynb && mv temp.ipynb ${{ matrix.notebooks }}
+        cd $(dirname ${{ matrix.notebooks }}) && python -m pytest -srP -vv --nbmake-timeout=100000 --nbmake $(basename ${{ matrix.notebooks }})
