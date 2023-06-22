@@ -22,10 +22,7 @@ on:
 jobs:
   test_notebooks:
     runs-on: ubuntu-20.04
-    strategy:
-      fail-fast: false
-      matrix:
-        notebooks: ["functional_imaging/nipype_fsl_all_levels_flanker.ipynb"]
+
     steps:
     - uses: actions/checkout@v3
 
@@ -38,7 +35,7 @@ jobs:
       run: |
         pip install nbmake pytest-xdist pytest-shell jupyter-book nbconvert jupyter
 
-    - name: Run ${{ matrix.notebooks }}
+    - name: Run 
       shell: bash
       run: |
         export LD_PRELOAD=
@@ -46,15 +43,14 @@ jobs:
         export LMOD_CMD=/usr/share/lmod/lmod/libexec/lmod
         export MPLCONFIGDIR=/home/runner/work/example-notebooks/example-notebooks/matplotlib-mpldir
         export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
-        cd $(dirname ${{ matrix.notebooks }}) && jupyter nbconvert \
-        --ExecutePreprocessor.allow_errors=True \
-        --ExecutePreprocessor.timeout=-1 \
-        --FilesWriter.build_directory=../results \
-        --execute $(basename ${{ matrix.notebooks }})
-  
-      # Push the book's HTML to github-pages
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.6.1
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_build/html
+        run: find . -name '*.ipynb' -type f -execdir jupyter nbconvert --template classic --to html {} \;
+
+    - name: Push notebooks folder to the build branch
+      uses: s0/git-publish-subdir-action@develop
+      env:
+        REPO: self
+        FOLDER: notebooks # The directory where your assets are generated
+        BRANCH: build # The branch name where you want to push the assets
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
+        MESSAGE: "Build: ({sha}) {msg}" # The commit message
+        SQUASH_HISTORY: true # If set to true, all previous commits on the target branch will be discarded. For example, if you are deploying a static site with lots of binary artifacts, this can help the repository becoming overly bloated.
