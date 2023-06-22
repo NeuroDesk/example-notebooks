@@ -44,7 +44,7 @@ jobs:
         APPTAINER_BINDPATH: "/home/runner/work/example-notebooks/example-notebooks,/tmp,/cvmfs"
         LMOD_CMD: "/usr/share/lmod/lmod/libexec/lmod"
         MPLCONFIGDIR: "/home/runner/work/example-notebooks/example-notebooks/matplotlib-mpldir"
-        MODULEPATH: "$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')"
+        MODULEPATH: $(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
       with:
         notebook: "functional_imaging/nipype_fsl_all_levels_flanker.ipynb"
         isReport: True
