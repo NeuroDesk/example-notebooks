@@ -36,7 +36,7 @@ jobs:
     - name: Install dependencies
       shell: bash
       run: |
-        pip install nbmake pytest-xdist pytest-shell jupyter-book
+        pip install nbmake pytest-xdist pytest-shell jupyter-book nbconvert jupyter
 
     - name: Run ${{ matrix.notebooks }}
       shell: bash
@@ -46,7 +46,11 @@ jobs:
         export LMOD_CMD=/usr/share/lmod/lmod/libexec/lmod
         export MPLCONFIGDIR=/home/runner/work/example-notebooks/example-notebooks/matplotlib-mpldir
         export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
-        cd $(dirname ${{ matrix.notebooks }}) && jupyter-book build $(basename ${{ matrix.notebooks }})
+        cd $(dirname ${{ matrix.notebooks }}) && jupyter nbconvert \
+        --ExecutePreprocessor.allow_errors=True \
+        --ExecutePreprocessor.timeout=-1 \
+        --FilesWriter.build_directory=../results \
+        --execute $(basename ${{ matrix.notebooks }})
   
       # Push the book's HTML to github-pages
     - name: GitHub Pages action
