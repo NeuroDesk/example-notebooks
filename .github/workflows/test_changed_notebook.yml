@@ -46,4 +46,5 @@ jobs:
         export LMOD_CMD=/usr/share/lmod/lmod/libexec/lmod
         export MPLCONFIGDIR=/home/runner/work/example-notebooks/example-notebooks/matplotlib-mpldir
         export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
+        jq -r 'walk(if type == "string" then gsub("!"; "%") else . end)' ${{ matrix.notebooks }} > temp.ipynb && mv temp.ipynb ${{ matrix.notebooks }}
         cd $(dirname ${{ matrix.notebooks }}) && python -m pytest -srP -vv --nbmake-timeout=100000 --nbmake $(basename ${{ matrix.notebooks }})
