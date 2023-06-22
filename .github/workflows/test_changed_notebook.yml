@@ -33,24 +33,19 @@ jobs:
     - name: Install dependencies
       shell: bash
       run: |
-        pip install nbmake pytest-xdist pytest-shell jupyter-book nbconvert jupyter
+        pip install nbmake pytest-xdist pytest-shell
 
-    - name: Run 
-      shell: bash
-      run: |
-        export LD_PRELOAD=
-        export APPTAINER_BINDPATH=/home/runner/work/example-notebooks/example-notebooks,/tmp,/cvmfs
-        export LMOD_CMD=/usr/share/lmod/lmod/libexec/lmod
-        export MPLCONFIGDIR=/home/runner/work/example-notebooks/example-notebooks/matplotlib-mpldir
-        export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
-        find . -name '*.ipynb' -type f -execdir jupyter nbconvert --template classic --to html {} \;
-
-    - name: Push notebooks folder to the build branch
-      uses: s0/git-publish-subdir-action@develop
+    - uses: yaananth/run-notebook@v2
       env:
-        REPO: self
-        FOLDER: notebooks # The directory where your assets are generated
-        BRANCH: build # The branch name where you want to push the assets
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
-        MESSAGE: "Build: ({sha}) {msg}" # The commit message
-        SQUASH_HISTORY: true # If set to true, all previous commits on the target branch will be discarded. For example, if you are deploying a static site with lots of binary artifacts, this can help the repository becoming overly bloated.
+        RUNNER: ${{ toJson(runner) }}
+        SECRETS: ${{ toJson(secrets) }}
+        GITHUB: ${{ toJson(github) }}
+        LD_PRELOAD: ""
+        APPTAINER_BINDPATH: "/home/runner/work/example-notebooks/example-notebooks,/tmp,/cvmfs"
+        LMOD_CMD: "/usr/share/lmod/lmod/libexec/lmod"
+        MPLCONFIGDIR: "/home/runner/work/example-notebooks/example-notebooks/matplotlib-mpldir"
+        MODULEPATH: "$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')"
+      with:
+        notebook: "functional_imaging/nipype_fsl_all_levels_flanker.ipynb"
+        isReport: True
+        poll: True
