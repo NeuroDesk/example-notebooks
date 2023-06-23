@@ -35,13 +35,13 @@ jobs:
       run: |
         pip install nbmake pytest-xdist 
 
-        - name: Run nipype_fsl_all_levels_flanker
-        shell: bash
-        run: |
-          export LD_PRELOAD=
-          echo "LD_PRELOAD=$LD_PRELOAD"
-          export APPTAINER_BINDPATH=/home/runner/work/example-notebooks/example-notebooks
-          export LMOD_CMD=/usr/share/lmod/lmod/libexec/lmod
-          export MPLCONFIGDIR=/home/runner/work/example-notebooks/example-notebooks/matplotlib-mpldir
-          export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
-          cd functional_imaging && python -m pytest -srP -vv nipype_fsl_all_levels_flanker.ipynb
+    - name: Run nipype_fsl_all_levels_flanker
+      shell: bash
+      run: |
+        export LD_PRELOAD=
+        echo "LD_PRELOAD=$LD_PRELOAD"
+        export APPTAINER_BINDPATH=/home/runner/work/example-notebooks/example-notebooks
+        export LMOD_CMD=/usr/share/lmod/lmod/libexec/lmod
+        export MPLCONFIGDIR=/home/runner/work/example-notebooks/example-notebooks/matplotlib-mpldir
+        export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
+        cd functional_imaging && python -m pytest -srP -vv nipype_fsl_all_levels_flanker.ipynb
