@@ -22,7 +22,10 @@ on:
 jobs:
   test_notebooks:
     runs-on: ubuntu-20.04
-
+    strategy:
+      fail-fast: false
+      matrix:
+        notebooks: ["functional_imaging/nipype_fsl_all_levels_flanker.ipynb", "structural_imaging/qsmxt_example.ipynb", "structural_imaging/nipype_module_example.ipynb", "structural_imaging/sct_toolbox_example.ipynb"]
     steps:
     - uses: actions/checkout@v3
 
@@ -33,9 +36,9 @@ jobs:
     - name: Install dependencies
       shell: bash
       run: |
-        pip install nbmake pytest-xdist 
+        pip install nbmake pytest-xdist pytest nbval
 
-    - name: Run nipype_fsl_all_levels_flanker
+    - name: Run qsmxt_example
       shell: bash
       run: |
         export LD_PRELOAD=
@@ -44,4 +47,4 @@ jobs:
         export LMOD_CMD=/usr/share/lmod/lmod/libexec/lmod
         export MPLCONFIGDIR=/home/runner/work/example-notebooks/example-notebooks/matplotlib-mpldir
         export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
-        cd functional_imaging && python -m pytest -srP -vv nipype_fsl_all_levels_flanker.ipynb
+        cd $(dirname ${{ matrix.notebooks }}) && python -m python -m pytest -srP -vv --nbmake-timeout=100000 --nbval-lax $(basename ${{ matrix.notebooks }})
