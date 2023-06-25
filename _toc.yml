@@ -1,0 +1,27 @@
+# This file contains the order and numbering for all sections in the book.
+# Each entry has the following schema:
+#
+# - title: mytitle   # Title of chapter or section
+# - file: /myurl  # URL of section relative to the /content/ folder.
+#   sections:  # Contains a list of more entries that make up the chapter's sections
+#   expand_sections: true  # if you'd like the sections of this chapter to always
+#     be expanded in the sidebar.
+
+format: jb-book
+root: intro
+chapters:
+# A chapter w/ a collection of sections beneath it
+- file: structural_imaging
+  title: "Chapter 1: Binary Decision-Making"
+  sections:
+    - file: structural_imaging/nipype_module_example
+      title: "Binary Decision-Making and Error Rates"
+    - file: structural_imaging/qsmxt_example
+      title: "Hypothesis Testing and p-Values"
+
+- file: functional_imaging
+  title: "Chapter 2: Bayesian modeling"
+  sections:
+    - file: functional_imaging/nipype_fsl_all_levels_flanker
+      title: "Intro to Bayesian modeling"
+

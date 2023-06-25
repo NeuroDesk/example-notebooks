@@ -22,10 +22,10 @@ on:
 jobs:
   test_notebooks:
     runs-on: ubuntu-20.04
-    strategy:
-      fail-fast: false
-      matrix:
-        notebooks: ["functional_imaging/nipype_fsl_all_levels_flanker.ipynb", "structural_imaging/qsmxt_example.ipynb", "structural_imaging/nipype_module_example.ipynb", "structural_imaging/sct_toolbox_example.ipynb"]
+    # strategy:
+    #   fail-fast: false
+    #   matrix:
+    #     notebooks: ["functional_imaging/nipype_fsl_all_levels_flanker.ipynb", "structural_imaging/qsmxt_example.ipynb", "structural_imaging/nipype_module_example.ipynb", "structural_imaging/sct_toolbox_example.ipynb"]
     steps:
     - uses: actions/checkout@v3
 
@@ -36,7 +36,8 @@ jobs:
     - name: Install dependencies
       shell: bash
       run: |
-        pip install nbmake pytest-xdist pytest nbval
+        python -m pip install --upgrade pip
+        python -m pip install jupyter-book ghp-import
 
     - name: Run qsmxt_example
       shell: bash
@@ -47,4 +48,10 @@ jobs:
         export LMOD_CMD=/usr/share/lmod/lmod/libexec/lmod
         export MPLCONFIGDIR=/home/runner/work/example-notebooks/example-notebooks/matplotlib-mpldir
         export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
-        cd $(dirname ${{ matrix.notebooks }}) && python -m pytest -srP -vv --nbval-lax $(basename ${{ matrix.notebooks }})
+        jb build .
+
+    - name: Push to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3.6.1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: _build/html
