@@ -22,5 +22,6 @@ chapters:
   title: "Functional Imaging"
   sections:
     - file: functional_imaging/nipype_fsl_all_levels_flanker
+    - file: functional_imaging/fmriprep_example
 
 
