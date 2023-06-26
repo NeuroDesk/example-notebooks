@@ -11,17 +11,14 @@ format: jb-book
 root: intro
 chapters:
 # A chapter w/ a collection of sections beneath it
-- file: structural_imaging
-  title: "Chapter 1: Binary Decision-Making"
+- file: structural_imaging/intro
+  title: "Structural Imaging"
   sections:
-    - file: structural_imaging/nipype_module_example
-      title: "Binary Decision-Making and Error Rates"
     - file: structural_imaging/qsmxt_example
-      title: "Hypothesis Testing and p-Values"
 
-- file: functional_imaging
-  title: "Chapter 2: Bayesian modeling"
-  sections:
-    - file: functional_imaging/nipype_fsl_all_levels_flanker
-      title: "Intro to Bayesian modeling"
+# - file: functional_imaging/intro
+#   title: "Functional Imaging"
+#   sections:
+#     - file: functional_imaging/nipype_fsl_all_levels_flanker
+
 
