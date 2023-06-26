@@ -11,11 +11,12 @@ format: jb-book
 root: intro
 chapters:
 # A chapter w/ a collection of sections beneath it
-# - file: structural_imaging/intro
-#   title: "Structural Imaging"
-#   sections:
-#     - file: structural_imaging/nipype_module_example
-#     - file: structural_imaging/qsmxt_example
+- file: structural_imaging/intro
+  title: "Structural Imaging"
+  sections:
+    - file: structural_imaging/nipype_module_example
+    - file: structural_imaging/qsmxt_example
+    - file: structural_imaging/sct_toolbox_example
 
 - file: functional_imaging/intro
   title: "Functional Imaging"
