@@ -25,7 +25,7 @@ chapters:
   title: "Functional Imaging"
   sections:
     - file: functional_imaging/nipype_fsl_all_levels_flanker
-      title: "Nipype FSL All Levels Flanker"
+      title: "FSL's fMRI Data Analysis via Nipype"
     - file: functional_imaging/fmriprep_example
       title: "Fmriprep Example"
 
