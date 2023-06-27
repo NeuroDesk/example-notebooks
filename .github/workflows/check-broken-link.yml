@@ -26,30 +26,9 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v2
-      - name: Create config file
+      - name: Check broken links
+        env:
+          INPUT_URL: "${{ steps.pages.outputs.base_url }}" 
+          INPUT_CMD_PARAMS: '--verbose --buffer-size=8192 --max-connections=15 --ignore-fragments --color=always --skip-tls-verification --exclude="(linkedin.com)"'
         run: |
-          echo ${{ steps.pages.outputs.base_url }}
-          echo '{
-              "replacementPatterns": [
-                  {
-                      "pattern": "^/",
-                      "replacement": "${{ steps.pages.outputs.base_url }}/"
-                  }
-              ],
-              "ignorePatterns": [
-                  {
-                      "pattern": "^https://twitter.com"
-                  },
-                  {
-                      "pattern": "^http://localhost"
-                  }
-              ],
-              "aliveStatusCodes": [429, 403, 200]
-          }' > .github/workflows/config.json
-          cat .github/workflows/config.json
-      - uses: gaurav-nelson/github-action-markdown-link-check@v1
-        # checks all markdown files from content/en including all subfolders
-        with:
-          use-quiet-mode: 'yes'
-          use-verbose-mode: 'yes'
-          config-file: '.github/workflows/config.json'
+          wget -qO- https://raw.githubusercontent.com/ruzickap/action-my-broken-link-checker/v2/entrypoint.sh | bash
