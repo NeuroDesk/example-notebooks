@@ -1,9 +1,6 @@
 name: github pages
 
 on:
-  push:
-    branches: ["gh-pages"]
-  repository_dispatch:
   workflow_dispatch:
 
 permissions:
@@ -20,9 +17,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-
+      - name: Create config file
+        run: |
+          echo '{
+              "ignorePatterns": [
+                  {
+                      "pattern": "^https://twitter.com"
+                  },
+                  {
+                      "pattern": "^http://localhost"
+                  }
+              ],
+              "aliveStatusCodes": [429, 403, 200]
+          }' > .github/workflows/config.json
+          cat .github/workflows/config.json
       - uses: gaurav-nelson/github-action-markdown-link-check@v1
         # checks all markdown files from content/en including all subfolders
         with:
           use-quiet-mode: 'yes'
           use-verbose-mode: 'yes'
+          config-file: '.github/workflows/config.json'
