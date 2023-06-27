@@ -1,6 +1,13 @@
-name: github pages
+name: check_broken_links
 
 on:
+  push:
+    paths:
+      - '**/*.ipynb'
+  pull_request:
+    paths:
+      - '**/*.ipynb'
+  # Trigger the workflow on manual dispatch
   workflow_dispatch:
 
 permissions:
