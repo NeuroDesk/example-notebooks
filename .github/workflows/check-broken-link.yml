@@ -1,0 +1,34 @@
+name: check_broken_links
+
+on:
+  push:
+    branches: ["overwrite"]
+  pull_request:
+    paths:
+      - '**/*.ipynb'
+  # Trigger the workflow on manual dispatch
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v2
+      - name: Check broken links
+        env:
+          INPUT_URL: "${{ steps.pages.outputs.base_url }}" 
+          INPUT_CMD_PARAMS: '--verbose --buffer-size=8192 --max-connections=15 --ignore-fragments --color=always --skip-tls-verification --exclude="(linkedin.com)"'
+        run: |
+          wget -qO- https://raw.githubusercontent.com/ruzickap/action-my-broken-link-checker/v2/entrypoint.sh | bash
