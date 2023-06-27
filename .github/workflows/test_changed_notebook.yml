@@ -48,7 +48,7 @@ jobs:
         export LMOD_CMD=/usr/share/lmod/lmod/libexec/lmod
         export MPLCONFIGDIR=/home/runner/work/example-notebooks/example-notebooks/matplotlib-mpldir
         export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
-        jb build . --builder linkcheck
+        jb build .
 
     - name: Push to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.6.1
