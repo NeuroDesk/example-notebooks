@@ -42,11 +42,12 @@ jobs:
     - name: Run qsmxt_example
       shell: bash
       run: |
+        export PATH=$HOME/.local/bin:$PATH
         export LD_PRELOAD=
         echo "LD_PRELOAD=$LD_PRELOAD"
-        export APPTAINER_BINDPATH=/home/runner/work/example-notebooks/example-notebooks,/cvmfs
+        export APPTAINER_BINDPATH=$HOME/work/example-notebooks/example-notebooks,/cvmfs
         export LMOD_CMD=/usr/share/lmod/lmod/libexec/lmod
-        export MPLCONFIGDIR=/home/runner/work/example-notebooks/example-notebooks/matplotlib-mpldir
+        export MPLCONFIGDIR=$HOME/work/example-notebooks/example-notebooks/matplotlib-mpldir
         export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
         jb build .
 
