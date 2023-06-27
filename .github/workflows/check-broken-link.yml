@@ -3,8 +3,6 @@ name: check_broken_links
 on:
   push:
     branches: ["overwrite"]
-    paths:
-      - '**/*.ipynb'
   pull_request:
     paths:
       - '**/*.ipynb'
