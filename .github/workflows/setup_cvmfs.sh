@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
+export DEBIAN_FRONTEND=noninteractive
 echo "checking if CVMFS part works:"
 
 sudo apt-get install lsb-release
@@ -11,7 +12,7 @@ sudo dpkg -i cvmfs-release-latest_all.deb
 echo "[DEBUG]: apt-get update"
 sudo apt-get update --allow-unauthenticated
 echo "[DEBUG]: apt-get install cvmfs"
-sudo apt-get install cvmfs --allow-unauthenticated
+sudo apt-get install -y cvmfs --allow-unauthenticated
 
 sudo apt install -y software-properties-common
 sudo add-apt-repository -y ppa:apptainer/ppa
