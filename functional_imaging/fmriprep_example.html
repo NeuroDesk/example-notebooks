@@ -1,0 +1,956 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Fmriprep Example &#8212; Neurodesk</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'functional_imaging/fmriprep_example';</script>
+    <link rel="canonical" href="https://iishiishii.github.io/example-notebooks/functional_imaging/fmriprep_example.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="FSL’s fMRI Data Analysis via Nipype" href="nipype_fsl_all_levels_flanker.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Neurodesk</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../structural_imaging/intro.html">Structural Imaging</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../structural_imaging/nipype_module_example.html">Basic Nipype Example</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../structural_imaging/qsmxt_example.html">QSMxT Example</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../structural_imaging/sct_toolbox_example.html">SCT Toolbox Example</a></li>
+
+
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Functional Imaging</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="nipype_fsl_all_levels_flanker.html">FSL’s fMRI Data Analysis via Nipype</a></li>
+
+
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Fmriprep Example</a></li>
+
+
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://play-sydney.neurodesk.org/v2/gh/neurodesk/example-notebooks/v2/gh/iishiishii/example-notebooks/master?urlpath=tree/functional_imaging/fmriprep_example.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/iishiishii/example-notebooks/blob/master/functional_imaging/fmriprep_example.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/iishiishii/example-notebooks" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/iishiishii/example-notebooks/edit/main/functional_imaging/fmriprep_example.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/iishiishii/example-notebooks/issues/new?title=Issue%20on%20page%20%2Ffunctional_imaging/fmriprep_example.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/functional_imaging/fmriprep_example.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fmriprep Example</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fmriprep Example</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a href="https://play-sydney.neurodesk.org/v2/gh/neurodesk/example-notebooks/main?labpath=functional_imaging%2Ffmriprep_example.ipynb" target="_parent"><img src="https://img.shields.io/badge/launch-binder-579aca.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADUElEQVR4nCyTzUtkRxfGn6pTtz/FtvsVp32NKBgF6QiBCU505xBpBdsJiMkyi2SRxSSEZPI3JKuEbGYREgaCi0zMENBeSCSCqwzRCCIzSBtHuqEl9ihif9zbfe+tqnCaqdXh1q1znuec31EAkM/nEYlEcH5+jmw2K5VSwvM8rVT3GmEYIh6PUxiGtlKpmNHRUQRBgK2tLdDi4iLOzs4wMjKCaDRKxhijlLIRx0kmk8lhIkoHQeArpTpaa5vJZCgej9vj42NMT09DVSoVXF5ewm21SAihAbwJ4HM/CO42ms2slJIT/wvgD2vtN9baQ8/zqFqtaiKCYIlLS0uklNJBEHwspfyu2WpF+lIpTIyPo9Fs4sXZGYzWiMVinTAMPyWi7621VCwWtSgUCuxNSynfl1L+zDLvzs3pd+/do/8PDsJrt1EqlfDL+rp+9vw5xWIxobV+T2u97jgOScdxjLU2o5R66LquffvOHfPJ/fuqL5USFxcXgs9bt2+LLx88UIPZrAmCwBLRQwBpfistayFaBZCBELqvr4+01uAJOI6DiOPg5uYG2Vu3MDc3R51ORwsh+olopft2cnISxpgvhBBvdNptWyqVZOnkBP/LZPD6xARe1mqonp+jVqvh1ydPcHV1ZdiGtbZORL91m7i8vLzt+/47+Xxe53I5+vPpU9xcX+O14WEcHBygv78fuVwOPP/t7W19eHhI0Wj0942NjbxaXV1Fu91uEhFb6c52fn4ejUYD+/v73XhsbIxBQrlcxs7ODqSUFkBjZWUFMpPJwFq7z/Stra1ZrthqtdgWewZb9DyPi6BYLHIC+2oSf/f29kIODQ1Ba/2YIerp6RG+79tkMgm+dF23i3E6nWYGGF/L/xhjQmvt41QqBbm3t8cQ/QPgaykllUqlIAgCI4RAIpFgCsFxo1E35XI5UEoRgK+klC9OT09JLCwsCMdx5NHRkZmamnqktf5gYGAAMzMzmJ2dNaxid3dXsrV6vQ4ierS5uflhoVCQYRgawcsEQLDsRCJhr6+vP/J9/7NOp5Nj2dwL3rxYLPZMKfVtOp3+0XVdwX0CYBXL44ArWWsZrB9yudxP1Wp12vO88VfLdNLTk/yrVnvpu64rm82m4e98/gsAAP//Lbmu802E+U4AAAAASUVORK5CYII=" alt="Open In Binder"/>  </a>
+<a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/functional_imaging/fmriprep_example.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>  </a></p>
+<section id="fmriprep-example">
+<h1>Fmriprep Example<a class="headerlink" href="#fmriprep-example" title="Permalink to this heading">#</a></h1>
+<p>Author: Steffen Bollmann</p>
+</section>
+<section id="setup-neurodesk">
+<h1>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
+import os
+import sys
+IN_COLAB = &#39;google.colab&#39; in sys.modules
+
+if IN_COLAB:
+  os.environ[&quot;LD_PRELOAD&quot;] = &quot;&quot;;
+  os.environ[&quot;APPTAINER_BINDPATH&quot;] = &quot;/content,/tmp,/cvmfs&quot;
+  os.environ[&quot;MPLCONFIGDIR&quot;] = &quot;/content/matplotlib-mpldir&quot;
+  os.environ[&quot;LMOD_CMD&quot;] = &quot;/usr/share/lmod/lmod/libexec/lmod&quot;
+
+  !curl -J -O https://raw.githubusercontent.com/NeuroDesk/neurocommand/main/googlecolab_setup.sh
+  !chmod +x googlecolab_setup.sh
+  !./googlecolab_setup.sh
+
+  os.environ[&quot;MODULEPATH&quot;] = &#39;:&#39;.join(map(str, list(map(lambda x: os.path.join(os.path.abspath(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;), x),os.listdir(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;)))))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
+<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: GenuineIntel
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>model name	: Intel(R) Xeon(R) Platinum 8167M CPU @ 2.00GHz
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example">
+<h1>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load fmriprep</span>
+<span class="kn">import</span> <span class="nn">lmod</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;fmriprep/22.1.1&#39;</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Lmod&#39;,
+ &#39;Warning:&#39;,
+ &#39;The&#39;,
+ &#39;environment&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;has&#39;,
+ &#39;been&#39;,
+ &#39;changed&#39;,
+ &#39;in&#39;,
+ &#39;unexpected&#39;,
+ &#39;ways.&#39;,
+ &#39;Lmod&#39;,
+ &#39;is&#39;,
+ &#39;unable&#39;,
+ &#39;to&#39;,
+ &#39;use&#39;,
+ &#39;given&#39;,
+ &#39;MODULEPATH.&#39;,
+ &#39;It&#39;,
+ &#39;is&#39;,
+ &#39;using:&#39;,
+ &#39;&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps::&quot;.&#39;,
+ &#39;Please&#39;,
+ &#39;use&#39;,
+ &#39;&quot;module&#39;,
+ &#39;use&#39;,
+ &#39;to&#39;,
+ &#39;change&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;instead.&#39;,
+ &#39;fmriprep/22.1.1&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Request a freesurfer license and store it in your homedirectory. This is just an exampe - please replace with your license id:</span>
+<span class="o">!</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Steffen.Bollmann@cai.uq.edu.au&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>~/.license
+<span class="o">!</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;21029&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.license
+<span class="o">!</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*Cqyn12sqTCxo&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.license
+<span class="o">!</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;FSxgcvGkNR59Y&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.license
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># download data</span>
+<span class="o">!</span>datalad<span class="w"> </span>install<span class="w"> </span>https://github.com/OpenNeuroDatasets/ds000102.git
+<span class="o">!</span><span class="nb">cd</span><span class="w"> </span>ds000102<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>datalad<span class="w"> </span>get<span class="w"> </span>sub-08
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It is highly recommended to configure Git before using DataLad. Set both &#39;user.name&#39; and &#39;user.email&#39; configuration variables.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Clone attempt:   0%|              | 0.00/2.00 [00:00&lt;?, ? Candidate locations/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enumerating: 0.00 Objects [00:00, ? Objects/s]
+
+                                              
+
+Counting:   0%|                               | 0.00/27.0 [00:00&lt;?, ? Objects/s]
+
+                                                                                
+
+Compressing:   0%|                            | 0.00/23.0 [00:00&lt;?, ? Objects/s]
+
+                                                                                
+
+Receiving:   0%|                             | 0.00/2.15k [00:00&lt;?, ? Objects/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+
+Resolving:   0%|                                | 0.00/537 [00:00&lt;?, ? Deltas/s]
+
+                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO   ] Author identity unknown 
+[INFO   ] *** Please tell me who you are.
+| 
+| Run
+| 
+|   git config --global user.email &quot;you@example.com&quot;
+|   git config --global user.name &quot;Your Name&quot;
+| 
+| to set your account&#39;s default identity.
+| Omit --global to set the identity only in this repository. 
+[INFO   ] fatal: unable to auto-detect email address (got &#39;runnerx@cirun-neurodesk--example-notebooks-6bdf2c9.(none)&#39;) 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO   ] scanning for unlocked files (this may take some time) 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO   ] Remote origin not usable by git-annex; setting annex-ignore 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO   ] access to 1 dataset sibling s3-PRIVATE not auto-enabled, enable with:
+| 		datalad siblings -d &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/functional_imaging/ds000102&quot; enable -s s3-PRIVATE 
+<span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/functional_imaging/ds000102 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>)
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It is highly recommended to configure Git before using DataLad. Set both &#39;user.name&#39; and &#39;user.email&#39; configuration variables.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total:   0%|                                   | 0.00/67.8M [00:00&lt;?, ? Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:   0%|            | 0.00/10.6M [00:00&lt;?, ? Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:   1%|    | 87.5k/10.6M [00:00&lt;00:24, 436k Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:   1%|     | 157k/10.6M [00:00&lt;00:26, 391k Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:   3%|▏    | 314k/10.6M [00:00&lt;00:13, 742k Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:   6%|▏   | 593k/10.6M [00:00&lt;00:07, 1.35M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:   9%|▍   | 993k/10.6M [00:00&lt;00:04, 2.14M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  18%|▌  | 1.90M/10.6M [00:00&lt;00:02, 4.21M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  28%|▊  | 2.98M/10.6M [00:00&lt;00:01, 6.15M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  39%|█▏ | 4.07M/10.6M [00:00&lt;00:00, 7.59M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  48%|█▍ | 5.09M/10.6M [00:01&lt;00:00, 8.34M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  58%|█▊ | 6.17M/10.6M [00:01&lt;00:00, 9.07M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  69%|██ | 7.30M/10.6M [00:01&lt;00:00, 9.72M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  80%|██▍| 8.45M/10.6M [00:01&lt;00:00, 10.2M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  91%|██▋| 9.59M/10.6M [00:01&lt;00:00, 10.6M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total:  16%|████                      | 10.6M/67.8M [00:02&lt;00:13, 4.19M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:   0%|            | 0.00/28.6M [00:00&lt;?, ? Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:   7%|▏  | 2.00M/28.6M [00:00&lt;00:02, 10.6M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  14%|▍  | 4.07M/28.6M [00:00&lt;00:02, 10.3M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  18%|▌  | 5.15M/28.6M [00:00&lt;00:02, 10.4M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  25%|▊  | 7.23M/28.6M [00:00&lt;00:02, 10.4M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  32%|▉  | 9.26M/28.6M [00:00&lt;00:01, 10.2M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  36%|█  | 10.4M/28.6M [00:00&lt;00:01, 10.4M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  40%|█▏ | 11.5M/28.6M [00:01&lt;00:01, 10.5M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  44%|█▎ | 12.6M/28.6M [00:01&lt;00:01, 10.6M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  48%|█▍ | 13.7M/28.6M [00:01&lt;00:01, 10.7M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  51%|█▌ | 14.7M/28.6M [00:01&lt;00:01, 10.7M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  55%|█▋ | 15.8M/28.6M [00:01&lt;00:01, 10.8M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  59%|█▊ | 16.9M/28.6M [00:01&lt;00:01, 10.8M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  65%|█▉ | 18.7M/28.6M [00:01&lt;00:00, 10.6M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  70%|██ | 20.2M/28.6M [00:01&lt;00:00, 10.8M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  74%|██▏| 21.3M/28.6M [00:02&lt;00:00, 10.9M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  78%|██▎| 22.4M/28.6M [00:02&lt;00:00, 11.0M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  82%|██▍| 23.6M/28.6M [00:02&lt;00:00, 11.0M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  86%|██▌| 24.7M/28.6M [00:02&lt;00:00, 11.0M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  90%|██▋| 25.8M/28.6M [00:02&lt;00:00, 11.2M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  94%|██▊| 27.0M/28.6M [00:02&lt;00:00, 11.3M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  98%|██▉| 28.1M/28.6M [00:02&lt;00:00, 11.3M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:   0%|            | 0.00/28.6M [00:00&lt;?, ? Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+Total:  58%|███████████████           | 39.2M/67.8M [00:05&lt;00:04, 6.94M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:   0%|            | 0.00/28.6M [00:00&lt;?, ? Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:   6%|▏  | 1.82M/28.6M [00:00&lt;00:02, 9.24M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  10%|▎  | 2.80M/28.6M [00:00&lt;00:02, 8.99M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  16%|▍  | 4.71M/28.6M [00:00&lt;00:02, 9.55M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  20%|▌  | 5.77M/28.6M [00:00&lt;00:02, 9.86M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  24%|▋  | 6.85M/28.6M [00:00&lt;00:02, 10.1M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  28%|▊  | 7.94M/28.6M [00:00&lt;00:02, 10.0M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  34%|█  | 9.77M/28.6M [00:01&lt;00:01, 9.73M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  38%|█▏ | 10.9M/28.6M [00:01&lt;00:01, 10.1M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  42%|█▎ | 12.0M/28.6M [00:01&lt;00:01, 10.4M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  46%|█▍ | 13.1M/28.6M [00:01&lt;00:01, 10.5M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  50%|█▍ | 14.2M/28.6M [00:01&lt;00:01, 10.6M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  54%|█▌ | 15.3M/28.6M [00:01&lt;00:01, 10.7M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  61%|█▊ | 17.5M/28.6M [00:01&lt;00:01, 10.8M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  69%|██ | 19.6M/28.6M [00:01&lt;00:00, 10.7M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  72%|██▏| 20.7M/28.6M [00:02&lt;00:00, 10.8M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  80%|██▍| 23.0M/28.6M [00:02&lt;00:00, 10.9M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  88%|██▋| 25.1M/28.6M [00:02&lt;00:00, 10.9M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  96%|██▊| 27.4M/28.6M [00:02&lt;00:00, 10.9M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08/anat/sub-08_T1w.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08/func/sub-08_task-flanker_run-1_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08/func/sub-08_task-flanker_run-2_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">directory</span>)
+action summary:
+  get (ok: 4)
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">export</span><span class="w"> </span><span class="nv">ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">MPLCONFIGDIR</span><span class="o">=</span>~/matplotlib-mpldir<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>fmriprep<span class="w"> </span>ds000102/<span class="w"> </span>content/<span class="w"> </span>participant<span class="w"> </span>--fs-license-file<span class="w"> </span>~/.license<span class="w"> </span>--output-spaces<span class="w"> </span>T1w<span class="w"> </span>MNI152NLin2009cAsym<span class="w"> </span>fsaverage<span class="w"> </span>fsnative<span class="w"> </span>--participant-label<span class="w"> </span><span class="m">08</span><span class="w"> </span>--nprocs<span class="w"> </span><span class="nv">$ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS</span><span class="w"> </span>--mem<span class="w"> </span><span class="m">10000</span><span class="w"> </span>--skip_bids_validation<span class="w"> </span>-v
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">FATAL:  </span> container creation failed: mount hook function failure: mount /home/runnerx/work/example-notebooks/example-notebooks-&gt;/home/runnerx/work/example-notebooks/example-notebooks error: while mounting /home/runnerx/work/example-notebooks/example-notebooks: mount source /home/runnerx/work/example-notebooks/example-notebooks doesn&#39;t exist
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./functional_imaging"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="nipype_fsl_all_levels_flanker.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">FSL’s fMRI Data Analysis via Nipype</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fmriprep Example</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Neurodesk Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
