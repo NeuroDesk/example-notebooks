@@ -27,7 +27,7 @@ launch_buttons:
 # Information about where the book exists on the web
 repository:
   url: https://github.com/NeurodDesk/example-notebooks # Online location of your book
-  branch: overwrite  # Which branch of the repository should be used when creating links (optional)
+  branch: main  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
