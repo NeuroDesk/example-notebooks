@@ -62,7 +62,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'structural_imaging/qsmxt_example';</script>
-    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/structural_imaging/qsmxt_example.html" />
+    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/structural_imaging/qsmxt_example.html" />
     <link rel="shortcut icon" href="../_static/neurodesk.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -138,8 +138,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/neurodesk.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/neurodesk.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
-    <p class="title logo__title">Neurodesk</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -230,7 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://play-sydney.neurodesk.org/v2/gh/neurodesk/example-notebooks/v2/gh/neurodesk/example-notebooks/master?urlpath=tree/structural_imaging/qsmxt_example.ipynb" target="_blank"
+      <li><a href="https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/v2/gh/neurodesk/example-notebooks/master?urlpath=tree/structural_imaging/qsmxt_example.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -604,7 +610,16 @@ Requirement already satisfied: six in /usr/lib/python3/dist-packages (from osfcl
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed osfclient-0.0.5
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/bin/bash: line 1: tree: command not found
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">dicoms-unsorted</span>
+├── MR.1.1.dcm
+├── MR.1.10.dcm
+├── MR.1.100.dcm
+├── MR.1.101.dcm
+├── MR.1.102.dcm
+├── MR.1.103.dcm
+├── MR.1.104.dcm
+├── MR.1.105.dcm
+├── MR.1.106.dcm
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>...
@@ -663,9 +678,7 @@ INFO: Identified subject: 2
 INFO: Identified session: 2 #1 20170705
 INFO: Identified series: sub-2/ses-1/5_qsm_p2_1mmiso_te20
 INFO: Identified series: sub-2/ses-1/6_qsm_p2_1mmiso_te20
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Identified series: sub-2/ses-1/6_mp2rage_highres_0p5iso_slab
+INFO: Identified series: sub-2/ses-1/6_mp2rage_highres_0p5iso_slab
 INFO: Identified session: 1 #1 20170705
 INFO: Identified series: sub-1/ses-1/6_qsm_p2_1mmiso_te20
 INFO: Identified series: sub-1/ses-1/6_mp2rage_highres_0p5iso_slab
@@ -688,7 +701,21 @@ INFO: Finished
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/bin/bash: line 1: tree: command not found
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">dicoms-sorted</span>
+├── log_2023-06-28_11-33-50388212.txt
+├── references.txt
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-1</span>
+│   └── <span class=" -Color -Color-Bold -Color-Bold-Blue">ses-1</span>
+│       ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">5_qsm_p2_1mmiso_te20</span>
+│       ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">6_mp2rage_highres_0p5iso_slab</span>
+│       └── <span class=" -Color -Color-Bold -Color-Bold-Blue">6_qsm_p2_1mmiso_te20</span>
+└── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-2</span>
+    └── <span class=" -Color -Color-Bold -Color-Bold-Blue">ses-1</span>
+        ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">5_qsm_p2_1mmiso_te20</span>
+        ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">6_mp2rage_highres_0p5iso_slab</span>
+        └── <span class=" -Color -Color-Bold -Color-Bold-Blue">6_qsm_p2_1mmiso_te20</span>
+
+10 directories, 2 files
 </pre></div>
 </div>
 </div>
@@ -699,7 +726,7 @@ INFO: Finished
 <p>Now that the DICOMs are sorted, we can convert to BIDS using <code class="docutils literal notranslate"><span class="pre">run_1_dicomConvert.py</span></code>.</p>
 <p>The DICOM to BIDS conversion must identify which series should be used for QSM reconstruction (T2*-weighted), and which series should be used for segmentation (T1-weighted). Because this information is not stored in the DICOM header, the user must provide it, or QSMxT can make a guess based on the <code class="docutils literal notranslate"><span class="pre">ProtocolName</span></code> field. By default, QSMxT assumes series matching any of the patterns in <code class="docutils literal notranslate"><span class="pre">['*qsm*',</span> <span class="pre">'*t2starw*']</span></code> are to be used for QSM, and series matching the pattern <code class="docutils literal notranslate"><span class="pre">['*t1w*']</span></code> are to be used for segmentation. If series cannot be identified, the user must do so. At minimum, at least one QSM series must be identified.</p>
 <p>If QSMxT is run interactively, the user will be prompted to identify the relevant series’. However, because we are running QSMxT in a notebook, we disable the interactivity using <code class="docutils literal notranslate"><span class="pre">--auto_yes</span></code> and provide the missing information using command-line arguments (<code class="docutils literal notranslate"><span class="pre">--t1w_protocol_patterns</span></code> and <code class="docutils literal notranslate"><span class="pre">--t2starw_protocol_patterns</span></code>). In this case, the T1-weighted scan requires identification, so we pass <code class="docutils literal notranslate"><span class="pre">--t2starw_protocol_patterns</span> <span class="pre">&quot;*mp2rage*&quot;</span></code>:</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>!run_1_dicomConvert.py dicoms-sorted bids \
     --t1w_protocol_patterns &quot;*mp2rage*&quot; \
@@ -760,12 +787,12 @@ INFO: Renaming /home/runnerx/actions-runner/_work/example-notebooks/example-note
 INFO: Renaming /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/bids/sub-1/ses-1/extra_data/6_qsm_p2_1mmiso_te20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.json -&gt; /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/bids/sub-1/ses-1/anat/sub-1_ses-1_run-01_part-phase_T2starw.json
 INFO: Renaming /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/bids/sub-1/ses-1/extra_data/6_qsm_p2_1mmiso_te20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.nii -&gt; /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/bids/sub-1/ses-1/anat/sub-1_ses-1_run-01_part-phase_T2starw.nii
 INFO: Generating details for BIDS datset_description.json...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Writing BIDS dataset_description.json...
+INFO: Writing BIDS dataset_description.json...
 INFO: Writing BIDS .bidsignore file...
 INFO: Writing BIDS dataset README...
-INFO: Finished
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Finished
 </pre></div>
 </div>
 </div>
@@ -777,7 +804,35 @@ INFO: Finished
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/bin/bash: line 1: tree: command not found
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">bids</span>
+├── README
+├── dataset_description.json
+├── log_2023-06-28_11-34-00704466.txt
+├── references.txt
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-1</span>
+│   └── <span class=" -Color -Color-Bold -Color-Bold-Blue">ses-1</span>
+│       ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">anat</span>
+│       │   ├── sub-1_ses-1_run-01_T1w.json
+│       │   ├── sub-1_ses-1_run-01_T1w.nii
+│       │   ├── sub-1_ses-1_run-01_part-mag_T2starw.json
+│       │   ├── sub-1_ses-1_run-01_part-mag_T2starw.nii
+│       │   ├── sub-1_ses-1_run-01_part-phase_T2starw.json
+│       │   └── sub-1_ses-1_run-01_part-phase_T2starw.nii
+│       └── <span class=" -Color -Color-Bold -Color-Bold-Blue">extra_data</span>
+│           └── dcm2niix_output.txt
+└── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-2</span>
+    └── <span class=" -Color -Color-Bold -Color-Bold-Blue">ses-1</span>
+        ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">anat</span>
+        │   ├── sub-2_ses-1_run-01_T1w.json
+        │   ├── sub-2_ses-1_run-01_T1w.nii
+        │   ├── sub-2_ses-1_run-01_part-mag_T2starw.json
+        │   ├── sub-2_ses-1_run-01_part-mag_T2starw.nii
+        │   ├── sub-2_ses-1_run-01_part-phase_T2starw.json
+        │   └── sub-2_ses-1_run-01_part-phase_T2starw.nii
+        └── <span class=" -Color -Color-Bold -Color-Bold-Blue">extra_data</span>
+            └── dcm2niix_output.txt
+
+8 directories, 18 files
 </pre></div>
 </div>
 </div>
@@ -873,7 +928,7 @@ INFO: Finished
 </div>
 </div>
 <p>For this demonstration, we will go with the <code class="docutils literal notranslate"><span class="pre">fast</span></code> pipeline. We also include <code class="docutils literal notranslate"><span class="pre">--auto_yes</span></code> to avoid the interactive CLI interface.</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>run_2_qsm.py<span class="w"> </span>bids<span class="w"> </span>qsm<span class="w"> </span>--premade<span class="w"> </span>fast<span class="w"> </span>--auto_yes
 </pre></div>
@@ -882,10 +937,10 @@ INFO: Finished
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Running QSMxT v1.3.5 (commit date: Sat Feb 25 22:06:42 2023 +1000)
 INFO: Parsing arguments...
-INFO: Starting log file: /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/qsmxt_log.log
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Running QSMxT v1.3.5 (commit date: Sat Feb 25 22:06:42 2023 +1000)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Starting log file: /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/qsmxt_log.log
+INFO: Running QSMxT v1.3.5 (commit date: Sat Feb 25 22:06:42 2023 +1000)
 INFO: Python interpreter: /opt/miniconda-4.7.12.1/bin/python3
 INFO: Command: run_2_qsm.py /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/bids /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm --premade &#39;fast&#39; --auto_yes
 </pre></div>
@@ -896,485 +951,485 @@ INFO: Command: run_2_qsm.py /home/runnerx/actions-runner/_work/example-notebooks
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Creating nipype workflow for sub-1/ses-1/run-01...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:17,752 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:18,345 nipype.workflow INFO:
 	 Workflow workflow_qsm settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
-230628-05:40:17,780 nipype.workflow INFO:
+230628-11:34:18,373 nipype.workflow INFO:
 	 Running in parallel.
-230628-05:40:17,787 nipype.workflow INFO:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:18,383 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 8 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:17,870 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:18,474 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_qsm.sub-2.ses-1.run-01.func_read-json-se&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-2/ses-1/run-01/func_read-json-se&quot;.
-230628-05:40:17,876 nipype.workflow INFO:
+230628-11:34:18,479 nipype.workflow INFO:
 	 [Node] Executing &quot;func_read-json-se&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230628-05:40:17,880 nipype.workflow INFO:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:18,489 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_func_read-json-me0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-2/ses-1/run-01/func_read-json-me/mapflow/_func_read-json-me0&quot;.
-230628-05:40:17,883 nipype.workflow INFO:
+230628-11:34:18,492 nipype.workflow INFO:
 	 [Node] Executing &quot;_func_read-json-me0&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:18,25 nipype.workflow INFO:
-	 [Node] Finished &quot;_func_read-json-me0&quot;, elapsed time 0.001649s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:18,625 nipype.workflow INFO:
+	 [Node] Finished &quot;func_read-json-se&quot;, elapsed time 0.001483s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:18,25 nipype.workflow INFO:
-	 [Node] Finished &quot;func_read-json-se&quot;, elapsed time 0.001535s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:18,625 nipype.workflow INFO:
+	 [Node] Finished &quot;_func_read-json-me0&quot;, elapsed time 0.001707s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:19,789 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:20,383 nipype.workflow INFO:
 	 [Job 0] Completed (workflow_qsm.sub-2.ses-1.run-01.func_read-json-me).
-230628-05:40:19,791 nipype.workflow INFO:
+230628-11:34:20,386 nipype.workflow INFO:
 	 [Job 1] Completed (workflow_qsm.sub-2.ses-1.run-01.func_read-json-se).
-230628-05:40:19,793 nipype.workflow INFO:
+230628-11:34:20,387 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 6 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:19,889 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:20,496 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_qsm.sub-2.ses-1.run-01.nibabel_read-nii&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-2/ses-1/run-01/nibabel_read-nii&quot;.
-230628-05:40:19,897 nipype.workflow INFO:
+230628-11:34:20,499 nipype.workflow INFO:
 	 [Node] Executing &quot;nibabel_read-nii&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230628-05:40:19,899 nipype.workflow INFO:
+230628-11:34:20,506 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_nibabel_numpy_scale-phase0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-2/ses-1/run-01/nibabel_numpy_scale-phase/mapflow/_nibabel_numpy_scale-phase0&quot;.
-230628-05:40:19,901 nipype.workflow INFO:
+230628-11:34:20,506 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_read-nii&quot;, elapsed time 0.005175s.
+230628-11:34:20,509 nipype.workflow INFO:
 	 [Node] Executing &quot;_nibabel_numpy_scale-phase0&quot; &lt;interfaces.nipype_interface_scalephase.ScalePhaseInterface&gt;
-230628-05:40:19,904 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_read-nii&quot;, elapsed time 0.004972s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:20,408 nipype.workflow INFO:
-	 [Node] Finished &quot;_nibabel_numpy_scale-phase0&quot;, elapsed time 0.505145s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:21,37 nipype.workflow INFO:
+	 [Node] Finished &quot;_nibabel_numpy_scale-phase0&quot;, elapsed time 0.525619s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:21,790 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:22,384 nipype.workflow INFO:
 	 [Job 2] Completed (workflow_qsm.sub-2.ses-1.run-01.nibabel_read-nii).
-230628-05:40:21,791 nipype.workflow INFO:
+230628-11:34:22,386 nipype.workflow INFO:
 	 [Job 3] Completed (workflow_qsm.sub-2.ses-1.run-01.nibabel_numpy_scale-phase).
-230628-05:40:21,793 nipype.workflow INFO:
+230628-11:34:22,387 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 5 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:21,853 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:22,455 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_qsm.sub-1.ses-1.run-01.func_read-json-se&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/func_read-json-se&quot;.
-230628-05:40:21,855 nipype.workflow INFO:
-	 [Node] Executing &quot;func_read-json-se&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:21,858 nipype.workflow INFO:
-	 [Node] Finished &quot;func_read-json-se&quot;, elapsed time 0.000778s.
-230628-05:40:21,861 nipype.workflow INFO:
+230628-11:34:22,456 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_func_read-json-me0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/func_read-json-me/mapflow/_func_read-json-me0&quot;.
-230628-05:40:21,863 nipype.workflow INFO:
+230628-11:34:22,458 nipype.workflow INFO:
+	 [Node] Executing &quot;func_read-json-se&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+230628-11:34:22,459 nipype.workflow INFO:
 	 [Node] Executing &quot;_func_read-json-me0&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230628-05:40:21,865 nipype.workflow INFO:
-	 [Node] Finished &quot;_func_read-json-me0&quot;, elapsed time 0.000513s.
+230628-11:34:22,460 nipype.workflow INFO:
+	 [Node] Finished &quot;func_read-json-se&quot;, elapsed time 0.000819s.
+230628-11:34:22,462 nipype.workflow INFO:
+	 [Node] Finished &quot;_func_read-json-me0&quot;, elapsed time 0.000982s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:23,792 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:24,386 nipype.workflow INFO:
 	 [Job 4] Completed (workflow_qsm.sub-1.ses-1.run-01.func_read-json-me).
-230628-05:40:23,793 nipype.workflow INFO:
+230628-11:34:24,387 nipype.workflow INFO:
 	 [Job 5] Completed (workflow_qsm.sub-1.ses-1.run-01.func_read-json-se).
-230628-05:40:23,795 nipype.workflow INFO:
+230628-11:34:24,389 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 3 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:23,863 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:24,452 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_qsm.sub-1.ses-1.run-01.nibabel_read-nii&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/nibabel_read-nii&quot;.
-230628-05:40:23,866 nipype.workflow INFO:
+230628-11:34:24,455 nipype.workflow INFO:
 	 [Node] Executing &quot;nibabel_read-nii&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230628-05:40:23,869 nipype.workflow INFO:
+230628-11:34:24,460 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_read-nii&quot;, elapsed time 0.002413s.
+230628-11:34:24,460 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_nibabel_numpy_scale-phase0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/nibabel_numpy_scale-phase/mapflow/_nibabel_numpy_scale-phase0&quot;.
-230628-05:40:23,870 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_read-nii&quot;, elapsed time 0.002707s.
-230628-05:40:23,872 nipype.workflow INFO:
+230628-11:34:24,464 nipype.workflow INFO:
 	 [Node] Executing &quot;_nibabel_numpy_scale-phase0&quot; &lt;interfaces.nipype_interface_scalephase.ScalePhaseInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:24,453 nipype.workflow INFO:
-	 [Node] Finished &quot;_nibabel_numpy_scale-phase0&quot;, elapsed time 0.578718s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:24,982 nipype.workflow INFO:
+	 [Node] Finished &quot;_nibabel_numpy_scale-phase0&quot;, elapsed time 0.515359s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:25,794 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:26,388 nipype.workflow INFO:
 	 [Job 6] Completed (workflow_qsm.sub-1.ses-1.run-01.nibabel_read-nii).
-230628-05:40:25,796 nipype.workflow INFO:
+230628-11:34:26,390 nipype.workflow INFO:
 	 [Job 7] Completed (workflow_qsm.sub-1.ses-1.run-01.nibabel_numpy_scale-phase).
-230628-05:40:25,797 nipype.workflow INFO:
+230628-11:34:26,391 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:25,878 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:26,460 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_nibabel_as-canonical0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-2/ses-1/run-01/nibabel_as-canonical/mapflow/_nibabel_as-canonical0&quot;.
-230628-05:40:25,880 nipype.workflow INFO:
+230628-11:34:26,463 nipype.workflow INFO:
 	 [Node] Executing &quot;_nibabel_as-canonical0&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:25,880 nipype.workflow INFO:
+230628-11:34:26,464 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_nibabel_as-canonical0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/nibabel_as-canonical/mapflow/_nibabel_as-canonical0&quot;.
-230628-05:40:25,934 nipype.workflow INFO:
+230628-11:34:26,467 nipype.workflow INFO:
 	 [Node] Executing &quot;_nibabel_as-canonical0&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:25,965 nipype.workflow INFO:
-	 [Node] Finished &quot;_nibabel_as-canonical0&quot;, elapsed time 0.027935s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:26,533 nipype.workflow INFO:
+	 [Node] Finished &quot;_nibabel_as-canonical0&quot;, elapsed time 0.06793s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:25,965 nipype.workflow INFO:
-	 [Node] Finished &quot;_nibabel_as-canonical0&quot;, elapsed time 0.082214s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:26,533 nipype.workflow INFO:
+	 [Node] Finished &quot;_nibabel_as-canonical0&quot;, elapsed time 0.063129s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:27,796 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:28,390 nipype.workflow INFO:
 	 [Job 8] Completed (workflow_qsm.sub-2.ses-1.run-01.nibabel_as-canonical).
-230628-05:40:27,797 nipype.workflow INFO:
+230628-11:34:28,392 nipype.workflow INFO:
 	 [Job 9] Completed (workflow_qsm.sub-1.ses-1.run-01.nibabel_as-canonical).
-230628-05:40:27,799 nipype.workflow INFO:
+230628-11:34:28,394 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:27,868 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:28,460 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_nibabel_numpy_nilearn_axial-resampling0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-2/ses-1/run-01/nibabel_numpy_nilearn_axial-resampling/mapflow/_nibabel_numpy_nilearn_axial-resampling0&quot;.
-230628-05:40:27,871 nipype.workflow INFO:
+230628-11:34:28,463 nipype.workflow INFO:
 	 [Node] Executing &quot;_nibabel_numpy_nilearn_axial-resampling0&quot; &lt;interfaces.nipype_interface_axialsampling.AxialSamplingInterface&gt;
-Loading mag=sub-2_ses-1_run-01_part-mag_T2starw.nii...
-Loading pha=sub-2_ses-1_run-01_part-phase_T2starw_scaled.nii...
-Obliquity = [2.09768775 2.2770863  1.90738745]; norm = 3.6364189473319284 &lt; 10.0; no resampling needed.
-230628-05:40:27,876 nipype.workflow INFO:
-	 [Node] Finished &quot;_nibabel_numpy_nilearn_axial-resampling0&quot;, elapsed time 0.003536s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:27,871 nipype.workflow INFO:
+230628-11:34:28,463 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_nibabel_numpy_nilearn_axial-resampling0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/nibabel_numpy_nilearn_axial-resampling/mapflow/_nibabel_numpy_nilearn_axial-resampling0&quot;.
-230628-05:40:27,924 nipype.workflow INFO:
+Loading mag=sub-2_ses-1_run-01_part-mag_T2starw.nii...
+230628-11:34:28,466 nipype.workflow INFO:
 	 [Node] Executing &quot;_nibabel_numpy_nilearn_axial-resampling0&quot; &lt;interfaces.nipype_interface_axialsampling.AxialSamplingInterface&gt;
+Loading pha=sub-2_ses-1_run-01_part-phase_T2starw_scaled.nii...
 Loading mag=sub-1_ses-1_run-01_part-mag_T2starw.nii...
 Loading pha=sub-1_ses-1_run-01_part-phase_T2starw_scaled.nii...
 Obliquity = [2.09768775 2.2770863  1.90738745]; norm = 3.6364189473319284 &lt; 10.0; no resampling needed.
-230628-05:40:27,929 nipype.workflow INFO:
-	 [Node] Finished &quot;_nibabel_numpy_nilearn_axial-resampling0&quot;, elapsed time 0.003628s.
+Obliquity = [2.09768775 2.2770863  1.90738745]; norm = 3.6364189473319284 &lt; 10.0; no resampling needed.
+230628-11:34:28,471 nipype.workflow INFO:
+	 [Node] Finished &quot;_nibabel_numpy_nilearn_axial-resampling0&quot;, elapsed time 0.006398s.
+230628-11:34:28,473 nipype.workflow INFO:
+	 [Node] Finished &quot;_nibabel_numpy_nilearn_axial-resampling0&quot;, elapsed time 0.00479s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:29,798 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:30,392 nipype.workflow INFO:
 	 [Job 10] Completed (workflow_qsm.sub-2.ses-1.run-01.nibabel_numpy_nilearn_axial-resampling).
-230628-05:40:29,799 nipype.workflow INFO:
+230628-11:34:30,394 nipype.workflow INFO:
 	 [Job 11] Completed (workflow_qsm.sub-1.ses-1.run-01.nibabel_numpy_nilearn_axial-resampling).
-230628-05:40:29,801 nipype.workflow INFO:
+230628-11:34:30,395 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:29,861 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:30,452 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_qsm.sub-2.ses-1.run-01.mrt_romeo_combine&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-2/ses-1/run-01/mrt_romeo_combine&quot;.
-230628-05:40:29,864 nipype.workflow INFO:
+230628-11:34:30,454 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_qsm.sub-1.ses-1.run-01.mrt_romeo_combine&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/mrt_romeo_combine&quot;.
-230628-05:40:29,867 nipype.workflow INFO:
+230628-11:34:30,458 nipype.workflow INFO:
 	 [Node] Executing &quot;mrt_romeo_combine&quot; &lt;interfaces.nipype_interface_romeo.RomeoB0Interface&gt;
-230628-05:40:29,869 nipype.workflow INFO:
+230628-11:34:30,459 nipype.workflow INFO:
 	 [Node] Executing &quot;mrt_romeo_combine&quot; &lt;interfaces.nipype_interface_romeo.RomeoB0Interface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:40:31,802 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:34:32,398 nipype.workflow INFO:
 	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 12.77/13.17, Free processors: 0/2.
                      Currently running:
                        * workflow_qsm.sub-1.ses-1.run-01.mrt_romeo_combine
                        * workflow_qsm.sub-2.ses-1.run-01.mrt_romeo_combine
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:42:48,358 nipype.workflow INFO:
-	 [Node] Finished &quot;mrt_romeo_combine&quot;, elapsed time 138.488397s.
-230628-05:42:48,387 nipype.workflow INFO:
-	 [Node] Finished &quot;mrt_romeo_combine&quot;, elapsed time 138.515786s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:36:49,599 nipype.workflow INFO:
+	 [Node] Finished &quot;mrt_romeo_combine&quot;, elapsed time 139.1392s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:42:49,938 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:36:49,894 nipype.workflow INFO:
+	 [Node] Finished &quot;mrt_romeo_combine&quot;, elapsed time 139.432998s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:36:50,519 nipype.workflow INFO:
 	 [Job 12] Completed (workflow_qsm.sub-2.ses-1.run-01.mrt_romeo_combine).
-230628-05:42:49,939 nipype.workflow INFO:
+230628-11:36:50,520 nipype.workflow INFO:
 	 [Job 13] Completed (workflow_qsm.sub-1.ses-1.run-01.mrt_romeo_combine).
-230628-05:42:49,941 nipype.workflow INFO:
+230628-11:36:50,522 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:42:50,2 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:36:50,591 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_fsl-bet0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-2/ses-1/run-01/mask_workflow/fsl-bet/mapflow/_fsl-bet0&quot;.
-230628-05:42:50,5 nipype.workflow INFO:
+230628-11:36:50,595 nipype.workflow INFO:
 	 [Node] Executing &quot;_fsl-bet0&quot; &lt;interfaces.nipype_interface_bet2.Bet2Interface&gt;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:42:50,5 nipype.workflow INFO:
+230628-11:36:50,596 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_fsl-bet0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/mask_workflow/fsl-bet/mapflow/_fsl-bet0&quot;.
-230628-05:42:50,8 nipype.workflow INFO:
+230628-11:36:50,599 nipype.workflow INFO:
 	 [Node] Executing &quot;_fsl-bet0&quot; &lt;interfaces.nipype_interface_bet2.Bet2Interface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:42:51,941 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:36:52,522 nipype.workflow INFO:
 	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 12.77/13.17, Free processors: 0/2.
                      Currently running:
                        * workflow_qsm.sub-1.ses-1.run-01.mask_workflow.fsl-bet
                        * workflow_qsm.sub-2.ses-1.run-01.mask_workflow.fsl-bet
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:43:14,265 nipype.workflow INFO:
-	 [Node] Finished &quot;_fsl-bet0&quot;, elapsed time 24.254868s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:37:14,778 nipype.workflow INFO:
+	 [Node] Finished &quot;_fsl-bet0&quot;, elapsed time 24.176857s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:43:14,413 nipype.workflow INFO:
-	 [Node] Finished &quot;_fsl-bet0&quot;, elapsed time 24.406399s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:37:15,30 nipype.workflow INFO:
+	 [Node] Finished &quot;_fsl-bet0&quot;, elapsed time 24.432483s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:43:15,962 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:37:16,542 nipype.workflow INFO:
 	 [Job 14] Completed (workflow_qsm.sub-2.ses-1.run-01.mask_workflow.fsl-bet).
-230628-05:43:15,964 nipype.workflow INFO:
+230628-11:37:16,543 nipype.workflow INFO:
 	 [Job 15] Completed (workflow_qsm.sub-1.ses-1.run-01.mask_workflow.fsl-bet).
-230628-05:43:15,966 nipype.workflow INFO:
+230628-11:37:16,545 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:43:16,36 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:37:16,608 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_scipy_numpy_nibabel_bet_erode0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-2/ses-1/run-01/mask_workflow/scipy_numpy_nibabel_bet_erode/mapflow/_scipy_numpy_nibabel_bet_erode0&quot;.
-230628-05:43:16,38 nipype.workflow INFO:
-	 [Node] Executing &quot;_scipy_numpy_nibabel_bet_erode0&quot; &lt;interfaces.nipype_interface_erode.ErosionInterface&gt;
-230628-05:43:16,38 nipype.workflow INFO:
+230628-11:37:16,611 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_scipy_numpy_nibabel_bet_erode0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/mask_workflow/scipy_numpy_nibabel_bet_erode/mapflow/_scipy_numpy_nibabel_bet_erode0&quot;.
-230628-05:43:16,41 nipype.workflow INFO:
+230628-11:37:16,611 nipype.workflow INFO:
+	 [Node] Executing &quot;_scipy_numpy_nibabel_bet_erode0&quot; &lt;interfaces.nipype_interface_erode.ErosionInterface&gt;
+230628-11:37:16,614 nipype.workflow INFO:
 	 [Node] Executing &quot;_scipy_numpy_nibabel_bet_erode0&quot; &lt;interfaces.nipype_interface_erode.ErosionInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:43:17,290 nipype.workflow INFO:
-	 [Node] Finished &quot;_scipy_numpy_nibabel_bet_erode0&quot;, elapsed time 1.249551s.
-230628-05:43:17,327 nipype.workflow INFO:
-	 [Node] Finished &quot;_scipy_numpy_nibabel_bet_erode0&quot;, elapsed time 1.2832729999999999s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:37:18,176 nipype.workflow INFO:
+	 [Node] Finished &quot;_scipy_numpy_nibabel_bet_erode0&quot;, elapsed time 1.562528s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:43:17,965 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:37:18,224 nipype.workflow INFO:
+	 [Node] Finished &quot;_scipy_numpy_nibabel_bet_erode0&quot;, elapsed time 1.608126s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:37:18,544 nipype.workflow INFO:
 	 [Job 16] Completed (workflow_qsm.sub-2.ses-1.run-01.mask_workflow.scipy_numpy_nibabel_bet_erode).
-230628-05:43:17,966 nipype.workflow INFO:
+230628-11:37:18,545 nipype.workflow INFO:
 	 [Job 17] Completed (workflow_qsm.sub-1.ses-1.run-01.mask_workflow.scipy_numpy_nibabel_bet_erode).
-230628-05:43:17,968 nipype.workflow INFO:
+230628-11:37:18,547 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:43:18,34 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:37:18,614 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_qsmjl_laplacian-unwrapping0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-2/ses-1/run-01/qsm_workflow/qsmjl_laplacian-unwrapping/mapflow/_qsmjl_laplacian-unwrapping0&quot;.
-230628-05:43:18,36 nipype.workflow INFO:
+230628-11:37:18,616 nipype.workflow INFO:
 	 [Node] Executing &quot;_qsmjl_laplacian-unwrapping0&quot; &lt;interfaces.nipype_interface_qsmjl.LaplacianUnwrappingInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:43:19,968 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:37:20,547 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 10.17/13.17, Free processors: 0/2.
                      Currently running:
                        * workflow_qsm.sub-2.ses-1.run-01.qsm_workflow.qsmjl_laplacian-unwrapping
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:44:12,44 nipype.workflow INFO:
-	 [Node] Finished &quot;_qsmjl_laplacian-unwrapping0&quot;, elapsed time 54.004928s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:38:12,836 nipype.workflow INFO:
+	 [Node] Finished &quot;_qsmjl_laplacian-unwrapping0&quot;, elapsed time 54.218046s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:44:14,20 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:38:14,598 nipype.workflow INFO:
 	 [Job 18] Completed (workflow_qsm.sub-2.ses-1.run-01.qsm_workflow.qsmjl_laplacian-unwrapping).
-230628-05:44:14,22 nipype.workflow INFO:
+230628-11:38:14,600 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:44:14,86 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:38:14,667 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_qsmjl_laplacian-unwrapping0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/qsm_workflow/qsmjl_laplacian-unwrapping/mapflow/_qsmjl_laplacian-unwrapping0&quot;.
-230628-05:44:14,88 nipype.workflow INFO:
+230628-11:38:14,669 nipype.workflow INFO:
 	 [Node] Executing &quot;_qsmjl_laplacian-unwrapping0&quot; &lt;interfaces.nipype_interface_qsmjl.LaplacianUnwrappingInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:44:16,22 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:38:16,602 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 10.17/13.17, Free processors: 0/2.
                      Currently running:
                        * workflow_qsm.sub-1.ses-1.run-01.qsm_workflow.qsmjl_laplacian-unwrapping
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:45:07,2 nipype.workflow INFO:
-	 [Node] Finished &quot;_qsmjl_laplacian-unwrapping0&quot;, elapsed time 52.912495s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:39:08,407 nipype.workflow INFO:
+	 [Node] Finished &quot;_qsmjl_laplacian-unwrapping0&quot;, elapsed time 53.736265s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:45:08,73 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:39:08,654 nipype.workflow INFO:
 	 [Job 19] Completed (workflow_qsm.sub-1.ses-1.run-01.qsm_workflow.qsmjl_laplacian-unwrapping).
-230628-05:45:08,75 nipype.workflow INFO:
+230628-11:39:08,656 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:45:08,139 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:39:08,721 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_qsmjl_phase-to-freq0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-2/ses-1/run-01/qsm_workflow/qsmjl_phase-to-freq/mapflow/_qsmjl_phase-to-freq0&quot;.
-230628-05:45:08,141 nipype.workflow INFO:
+230628-11:39:08,723 nipype.workflow INFO:
 	 [Node] Executing &quot;_qsmjl_phase-to-freq0&quot; &lt;interfaces.nipype_interface_qsmjl.PhaseToFreqInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:45:10,77 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:39:10,657 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 10.17/13.17, Free processors: 0/2.
                      Currently running:
                        * workflow_qsm.sub-2.ses-1.run-01.qsm_workflow.qsmjl_phase-to-freq
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:45:23,757 nipype.workflow INFO:
-	 [Node] Finished &quot;_qsmjl_phase-to-freq0&quot;, elapsed time 15.614662s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:39:24,475 nipype.workflow INFO:
+	 [Node] Finished &quot;_qsmjl_phase-to-freq0&quot;, elapsed time 15.750168s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:45:24,90 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:39:24,672 nipype.workflow INFO:
 	 [Job 20] Completed (workflow_qsm.sub-2.ses-1.run-01.qsm_workflow.qsmjl_phase-to-freq).
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:45:24,92 nipype.workflow INFO:
+230628-11:39:24,674 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:45:24,153 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:39:24,735 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_qsmjl_phase-to-freq0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/qsm_workflow/qsmjl_phase-to-freq/mapflow/_qsmjl_phase-to-freq0&quot;.
-230628-05:45:24,156 nipype.workflow INFO:
+230628-11:39:24,738 nipype.workflow INFO:
 	 [Node] Executing &quot;_qsmjl_phase-to-freq0&quot; &lt;interfaces.nipype_interface_qsmjl.PhaseToFreqInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:45:26,93 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:39:26,675 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 10.17/13.17, Free processors: 0/2.
                      Currently running:
                        * workflow_qsm.sub-1.ses-1.run-01.qsm_workflow.qsmjl_phase-to-freq
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:45:39,703 nipype.workflow INFO:
-	 [Node] Finished &quot;_qsmjl_phase-to-freq0&quot;, elapsed time 15.545552s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:39:40,580 nipype.workflow INFO:
+	 [Node] Finished &quot;_qsmjl_phase-to-freq0&quot;, elapsed time 15.840344s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:45:40,106 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:39:40,686 nipype.workflow INFO:
 	 [Job 21] Completed (workflow_qsm.sub-1.ses-1.run-01.qsm_workflow.qsmjl_phase-to-freq).
-230628-05:45:40,108 nipype.workflow INFO:
+230628-11:39:40,688 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:45:40,175 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:39:40,752 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_qsmjl_vsharp0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-2/ses-1/run-01/qsm_workflow/qsmjl_vsharp/mapflow/_qsmjl_vsharp0&quot;.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:45:40,178 nipype.workflow INFO:
+230628-11:39:40,754 nipype.workflow INFO:
 	 [Node] Executing &quot;_qsmjl_vsharp0&quot; &lt;interfaces.nipype_interface_qsmjl.VsharpInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:45:42,109 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:39:42,690 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 10.17/13.17, Free processors: 0/2.
                      Currently running:
                        * workflow_qsm.sub-2.ses-1.run-01.qsm_workflow.qsmjl_vsharp
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:46:12,151 nipype.workflow INFO:
-	 [Node] Finished &quot;_qsmjl_vsharp0&quot;, elapsed time 31.971692s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:40:13,515 nipype.workflow INFO:
+	 [Node] Finished &quot;_qsmjl_vsharp0&quot;, elapsed time 32.75985s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:46:14,139 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:40:14,720 nipype.workflow INFO:
 	 [Job 22] Completed (workflow_qsm.sub-2.ses-1.run-01.qsm_workflow.qsmjl_vsharp).
-230628-05:46:14,141 nipype.workflow INFO:
+230628-11:40:14,722 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:46:14,203 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:40:14,788 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_qsmjl_vsharp0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/qsm_workflow/qsmjl_vsharp/mapflow/_qsmjl_vsharp0&quot;.
-230628-05:46:14,205 nipype.workflow INFO:
+230628-11:40:14,790 nipype.workflow INFO:
 	 [Node] Executing &quot;_qsmjl_vsharp0&quot; &lt;interfaces.nipype_interface_qsmjl.VsharpInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:46:16,141 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:40:16,723 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 10.17/13.17, Free processors: 0/2.
                      Currently running:
                        * workflow_qsm.sub-1.ses-1.run-01.qsm_workflow.qsmjl_vsharp
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:46:46,326 nipype.workflow INFO:
-	 [Node] Finished &quot;_qsmjl_vsharp0&quot;, elapsed time 32.119184s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:40:47,798 nipype.workflow INFO:
+	 [Node] Finished &quot;_qsmjl_vsharp0&quot;, elapsed time 33.006568s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:46:48,172 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:40:48,752 nipype.workflow INFO:
 	 [Job 23] Completed (workflow_qsm.sub-1.ses-1.run-01.qsm_workflow.qsmjl_vsharp).
-230628-05:46:48,174 nipype.workflow INFO:
+230628-11:40:48,755 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:46:48,236 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:40:48,817 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_qsmjl_rts0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-2/ses-1/run-01/qsm_workflow/qsmjl_rts/mapflow/_qsmjl_rts0&quot;.
-230628-05:46:48,239 nipype.workflow INFO:
+230628-11:40:48,820 nipype.workflow INFO:
 	 [Node] Executing &quot;_qsmjl_rts0&quot; &lt;interfaces.nipype_interface_qsmjl.RtsQsmInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:46:50,175 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:40:50,756 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 8.17/13.17, Free processors: 0/2.
                      Currently running:
                        * workflow_qsm.sub-2.ses-1.run-01.qsm_workflow.qsmjl_rts
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:47:29,200 nipype.workflow INFO:
-	 [Node] Finished &quot;_qsmjl_rts0&quot;, elapsed time 40.956739s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:41:30,968 nipype.workflow INFO:
+	 [Node] Finished &quot;_qsmjl_rts0&quot;, elapsed time 42.146547s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:47:30,212 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:41:32,796 nipype.workflow INFO:
 	 [Job 24] Completed (workflow_qsm.sub-2.ses-1.run-01.qsm_workflow.qsmjl_rts).
-230628-05:47:30,216 nipype.workflow INFO:
+230628-11:41:32,799 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:47:30,281 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:41:32,864 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_qsmjl_rts0&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/qsm_workflow/qsmjl_rts/mapflow/_qsmjl_rts0&quot;.
-230628-05:47:30,283 nipype.workflow INFO:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:41:32,867 nipype.workflow INFO:
 	 [Node] Executing &quot;_qsmjl_rts0&quot; &lt;interfaces.nipype_interface_qsmjl.RtsQsmInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:47:32,216 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:41:34,800 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 8.17/13.17, Free processors: 0/2.
                      Currently running:
                        * workflow_qsm.sub-1.ses-1.run-01.qsm_workflow.qsmjl_rts
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:48:11,366 nipype.workflow INFO:
-	 [Node] Finished &quot;_qsmjl_rts0&quot;, elapsed time 41.081247s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:42:14,516 nipype.workflow INFO:
+	 [Node] Finished &quot;_qsmjl_rts0&quot;, elapsed time 41.644991s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:48:12,256 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:42:14,838 nipype.workflow INFO:
 	 [Job 25] Completed (workflow_qsm.sub-1.ses-1.run-01.qsm_workflow.qsmjl_rts).
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:48:12,259 nipype.workflow INFO:
+230628-11:42:14,840 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:48:12,320 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:42:14,897 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_qsm.sub-2.ses-1.run-01.nibabel_numpy_qsm-average&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-2/ses-1/run-01/nibabel_numpy_qsm-average&quot;.
-230628-05:48:12,321 nipype.workflow INFO:
+230628-11:42:14,898 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_qsm.sub-1.ses-1.run-01.nibabel_numpy_qsm-average&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/nibabel_numpy_qsm-average&quot;.
-230628-05:48:12,325 nipype.workflow INFO:
+230628-11:42:14,903 nipype.workflow INFO:
 	 [Node] Executing &quot;nibabel_numpy_qsm-average&quot; &lt;interfaces.nipype_interface_nonzeroaverage.NonzeroAverageInterface&gt;
-230628-05:48:12,325 nipype.workflow INFO:
+230628-11:42:14,903 nipype.workflow INFO:
 	 [Node] Executing &quot;nibabel_numpy_qsm-average&quot; &lt;interfaces.nipype_interface_nonzeroaverage.NonzeroAverageInterface&gt;
-230628-05:48:12,327 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_numpy_qsm-average&quot;, elapsed time 0.000274s.
+230628-11:42:14,905 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_qsm-average&quot;, elapsed time 0.000268s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:48:12,327 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_numpy_qsm-average&quot;, elapsed time 0.00031s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:42:14,905 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_qsm-average&quot;, elapsed time 0.000327s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:48:14,258 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:42:16,841 nipype.workflow INFO:
 	 [Job 26] Completed (workflow_qsm.sub-2.ses-1.run-01.nibabel_numpy_qsm-average).
-230628-05:48:14,260 nipype.workflow INFO:
+230628-11:42:16,842 nipype.workflow INFO:
 	 [Job 27] Completed (workflow_qsm.sub-1.ses-1.run-01.nibabel_numpy_qsm-average).
-230628-05:48:14,262 nipype.workflow INFO:
+230628-11:42:16,844 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:48:14,325 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:42:16,904 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_qsm.sub-2.ses-1.run-01.nipype_datasink&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-2/ses-1/run-01/nipype_datasink&quot;.
-230628-05:48:14,327 nipype.workflow INFO:
+230628-11:42:16,908 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_qsm.sub-1.ses-1.run-01.nipype_datasink&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/nipype_datasink&quot;.
-230628-05:48:14,332 nipype.workflow INFO:
+230628-11:42:16,911 nipype.workflow INFO:
 	 [Node] Executing &quot;nipype_datasink&quot; &lt;nipype.interfaces.io.DataSink&gt;
-230628-05:48:14,333 nipype.workflow INFO:
+230628-11:42:16,914 nipype.workflow INFO:
+	 [Node] Finished &quot;nipype_datasink&quot;, elapsed time 0.001625s.
+230628-11:42:16,915 nipype.workflow INFO:
 	 [Node] Executing &quot;nipype_datasink&quot; &lt;nipype.interfaces.io.DataSink&gt;
-230628-05:48:14,335 nipype.workflow INFO:
-	 [Node] Finished &quot;nipype_datasink&quot;, elapsed time 0.001526s.
-230628-05:48:14,336 nipype.workflow INFO:
-	 [Node] Finished &quot;nipype_datasink&quot;, elapsed time 0.001257s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:48:16,261 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:42:16,920 nipype.workflow INFO:
+	 [Node] Finished &quot;nipype_datasink&quot;, elapsed time 0.003818s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:42:18,842 nipype.workflow INFO:
 	 [Job 28] Completed (workflow_qsm.sub-2.ses-1.run-01.nipype_datasink).
-230628-05:48:16,262 nipype.workflow INFO:
+230628-11:42:18,843 nipype.workflow INFO:
 	 [Job 29] Completed (workflow_qsm.sub-1.ses-1.run-01.nipype_datasink).
-230628-05:48:16,264 nipype.workflow INFO:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:42:18,845 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 0 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
@@ -1393,7 +1448,17 @@ Obliquity = [2.09768775 2.2770863  1.90738745]; norm = 3.6364189473319284 &lt; 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/bin/bash: line 1: tree: command not found
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">qsm/</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">mask</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">qsm_final</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">workflow_qsm</span>
+├── command.txt
+├── pypeline.log
+├── qsmxt_log.log
+├── references.txt
+└── settings.json
+
+3 directories, 5 files
 </pre></div>
 </div>
 </div>
@@ -1465,7 +1530,7 @@ Obliquity = [2.09768775 2.2770863  1.90738745]; norm = 3.6364189473319284 &lt; 1
 <h1>Segment T1-weighted images<a class="headerlink" href="#segment-t1-weighted-images" title="Permalink to this heading">#</a></h1>
 <p>QSMxT doesn’t just reconstruct QSM - it also assists with segmentation and quantitative analysis!</p>
 <p>QSMxT uses FastSurfer to segment our T1-weighted images and automatically registers them to the T2*-weighted/QSM space:</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>run_3_segment.py<span class="w"> </span>bids<span class="w"> </span>segmentations
 </pre></div>
@@ -1480,167 +1545,173 @@ INFO: Python interpreter: /opt/miniconda-4.7.12.1/bin/python3
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Running with 2 processors.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:48:22,249 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:42:24,982 nipype.workflow INFO:
 	 Workflow workflow_segmentation settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
-230628-05:48:22,258 nipype.workflow INFO:
+230628-11:42:24,992 nipype.workflow INFO:
 	 Running in parallel.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:48:22,318 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:42:25,45 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 4 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:48:22,366 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:42:25,89 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_segmentation.sub-2.ses-1.run-01.fastsurfer_segment-t1&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/segmentations/workflow_segmentation/sub-2/ses-1/run-01/fastsurfer_segment-t1&quot;.
-230628-05:48:22,371 nipype.workflow INFO:
+230628-11:42:25,94 nipype.workflow INFO:
 	 [Node] Executing &quot;fastsurfer_segment-t1&quot; &lt;interfaces.nipype_interface_fastsurfer.FastSurferInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-05:48:24,323 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-11:42:27,52 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 3 jobs ready. Free memory (GB): 2.17/13.17, Free processors: 0/2.
                      Currently running:
                        * workflow_segmentation.sub-2.ses-1.run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-06:18:41,330 nipype.workflow INFO:
-	 [Node] Finished &quot;fastsurfer_segment-t1&quot;, elapsed time 1818.956286s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:13:46,141 nipype.workflow INFO:
+	 [Node] Finished &quot;fastsurfer_segment-t1&quot;, elapsed time 1881.044427s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-06:18:42,166 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:13:46,990 nipype.workflow INFO:
 	 [Job 0] Completed (workflow_segmentation.sub-2.ses-1.run-01.fastsurfer_segment-t1).
-230628-06:18:42,169 nipype.workflow INFO:
+230628-12:13:46,992 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 4 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-06:18:42,237 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:13:47,56 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_segmentation.sub-2.ses-1.run-01.ants_register-t1-to-qsm&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/segmentations/workflow_segmentation/sub-2/ses-1/run-01/ants_register-t1-to-qsm&quot;.
-230628-06:18:42,241 nipype.workflow INFO:
+230628-12:13:47,61 nipype.workflow INFO:
 	 [Node] Executing &quot;ants_register-t1-to-qsm&quot; &lt;nipype.interfaces.ants.registration.RegistrationSynQuick&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-06:18:44,170 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:13:48,993 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 3 jobs ready. Free memory (GB): 9.17/13.17, Free processors: 0/2.
                      Currently running:
                        * workflow_segmentation.sub-2.ses-1.run-01.ants_register-t1-to-qsm
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-06:26:17,880 nipype.workflow INFO:
-	 [Node] Finished &quot;ants_register-t1-to-qsm&quot;, elapsed time 455.637239s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:21:32,685 nipype.workflow INFO:
+	 [Node] Finished &quot;ants_register-t1-to-qsm&quot;, elapsed time 465.622092s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-06:26:18,620 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:21:33,454 nipype.workflow INFO:
 	 [Job 1] Completed (workflow_segmentation.sub-2.ses-1.run-01.ants_register-t1-to-qsm).
-230628-06:26:18,622 nipype.workflow INFO:
+230628-12:21:33,456 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 3 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-06:26:18,654 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:21:33,504 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_segmentation.sub-1.ses-1.run-01.fastsurfer_segment-t1&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/segmentations/workflow_segmentation/sub-1/ses-1/run-01/fastsurfer_segment-t1&quot;.
-230628-06:26:18,657 nipype.workflow INFO:
+230628-12:21:33,507 nipype.workflow INFO:
 	 [Node] Executing &quot;fastsurfer_segment-t1&quot; &lt;interfaces.nipype_interface_fastsurfer.FastSurferInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-06:26:20,623 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:21:35,457 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 2 jobs ready. Free memory (GB): 2.17/13.17, Free processors: 0/2.
                      Currently running:
                        * workflow_segmentation.sub-1.ses-1.run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-06:56:53,957 nipype.workflow INFO:
-	 [Node] Finished &quot;fastsurfer_segment-t1&quot;, elapsed time 1835.299177s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:52:32,731 nipype.workflow INFO:
+	 [Node] Finished &quot;fastsurfer_segment-t1&quot;, elapsed time 1859.222184s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-06:56:54,456 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:52:33,353 nipype.workflow INFO:
 	 [Job 2] Completed (workflow_segmentation.sub-1.ses-1.run-01.fastsurfer_segment-t1).
-230628-06:56:54,458 nipype.workflow INFO:
+230628-12:52:33,355 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 3 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
-230628-06:56:54,488 nipype.workflow INFO:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:52:33,398 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_segmentation.sub-1.ses-1.run-01.ants_register-t1-to-qsm&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/segmentations/workflow_segmentation/sub-1/ses-1/run-01/ants_register-t1-to-qsm&quot;.
-230628-06:56:54,490 nipype.workflow INFO:
+230628-12:52:33,402 nipype.workflow INFO:
 	 [Node] Executing &quot;ants_register-t1-to-qsm&quot; &lt;nipype.interfaces.ants.registration.RegistrationSynQuick&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-06:56:56,460 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:52:35,357 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 2 jobs ready. Free memory (GB): 9.17/13.17, Free processors: 0/2.
                      Currently running:
                        * workflow_segmentation.sub-1.ses-1.run-01.ants_register-t1-to-qsm
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-07:03:37,721 nipype.workflow INFO:
-	 [Node] Finished &quot;ants_register-t1-to-qsm&quot;, elapsed time 403.228832s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:59:56,775 nipype.workflow INFO:
+	 [Node] Finished &quot;ants_register-t1-to-qsm&quot;, elapsed time 443.371808s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-07:03:38,864 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:59:57,808 nipype.workflow INFO:
 	 [Job 3] Completed (workflow_segmentation.sub-1.ses-1.run-01.ants_register-t1-to-qsm).
-230628-07:03:38,865 nipype.workflow INFO:
+230628-12:59:57,810 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
-230628-07:03:38,897 nipype.workflow INFO:
-	 [Node] Setting-up &quot;workflow_segmentation.sub-2.ses-1.run-01.numpy_numpy_nibabel_mgz2nii&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/segmentations/workflow_segmentation/sub-2/ses-1/run-01/numpy_numpy_nibabel_mgz2nii&quot;.
-230628-07:03:38,898 nipype.workflow INFO:
+230628-12:59:57,854 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_segmentation.sub-1.ses-1.run-01.numpy_numpy_nibabel_mgz2nii&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/segmentations/workflow_segmentation/sub-1/ses-1/run-01/numpy_numpy_nibabel_mgz2nii&quot;.
-230628-07:03:38,902 nipype.workflow INFO:
+230628-12:59:57,853 nipype.workflow INFO:
+	 [Node] Setting-up &quot;workflow_segmentation.sub-2.ses-1.run-01.numpy_numpy_nibabel_mgz2nii&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/segmentations/workflow_segmentation/sub-2/ses-1/run-01/numpy_numpy_nibabel_mgz2nii&quot;.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:59:57,859 nipype.workflow INFO:
 	 [Node] Executing &quot;numpy_numpy_nibabel_mgz2nii&quot; &lt;interfaces.nipype_interface_mgz2nii.Mgz2NiiInterface&gt;
-230628-07:03:38,902 nipype.workflow INFO:
+230628-12:59:57,861 nipype.workflow INFO:
 	 [Node] Executing &quot;numpy_numpy_nibabel_mgz2nii&quot; &lt;interfaces.nipype_interface_mgz2nii.Mgz2NiiInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-07:03:39,487 nipype.workflow INFO:
-	 [Node] Finished &quot;numpy_numpy_nibabel_mgz2nii&quot;, elapsed time 0.582814s.
-230628-07:03:39,505 nipype.workflow INFO:
-	 [Node] Finished &quot;numpy_numpy_nibabel_mgz2nii&quot;, elapsed time 0.601125s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:59:58,626 nipype.workflow INFO:
+	 [Node] Finished &quot;numpy_numpy_nibabel_mgz2nii&quot;, elapsed time 0.7625s.
+230628-12:59:58,638 nipype.workflow INFO:
+	 [Node] Finished &quot;numpy_numpy_nibabel_mgz2nii&quot;, elapsed time 0.777241s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-07:03:40,866 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:59:59,810 nipype.workflow INFO:
 	 [Job 4] Completed (workflow_segmentation.sub-2.ses-1.run-01.numpy_numpy_nibabel_mgz2nii).
-230628-07:03:40,867 nipype.workflow INFO:
+230628-12:59:59,813 nipype.workflow INFO:
 	 [Job 5] Completed (workflow_segmentation.sub-1.ses-1.run-01.numpy_numpy_nibabel_mgz2nii).
-230628-07:03:40,869 nipype.workflow INFO:
+230628-12:59:59,814 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-07:03:40,906 nipype.workflow INFO:
+230628-12:59:59,848 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_segmentation.sub-2.ses-1.run-01.ants_transform-segmentation-to-qsm&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/segmentations/workflow_segmentation/sub-2/ses-1/run-01/ants_transform-segmentation-to-qsm&quot;.
-230628-07:03:40,908 nipype.workflow INFO:
+230628-12:59:59,850 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_segmentation.sub-1.ses-1.run-01.ants_transform-segmentation-to-qsm&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/segmentations/workflow_segmentation/sub-1/ses-1/run-01/ants_transform-segmentation-to-qsm&quot;.
-230628-07:03:40,914 nipype.workflow INFO:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-12:59:59,857 nipype.workflow INFO:
 	 [Node] Executing &quot;ants_transform-segmentation-to-qsm&quot; &lt;nipype.interfaces.ants.resampling.ApplyTransforms&gt;
-230628-07:03:40,915 nipype.workflow INFO:
+230628-12:59:59,861 nipype.workflow INFO:
 	 [Node] Executing &quot;ants_transform-segmentation-to-qsm&quot; &lt;nipype.interfaces.ants.resampling.ApplyTransforms&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-07:03:42,468 nipype.workflow INFO:
-	 [Node] Finished &quot;ants_transform-segmentation-to-qsm&quot;, elapsed time 1.5506739999999999s.
-230628-07:03:42,475 nipype.workflow INFO:
-	 [Node] Finished &quot;ants_transform-segmentation-to-qsm&quot;, elapsed time 1.559297s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-13:00:01,736 nipype.workflow INFO:
+	 [Node] Finished &quot;ants_transform-segmentation-to-qsm&quot;, elapsed time 1.877048s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-07:03:42,868 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-13:00:01,758 nipype.workflow INFO:
+	 [Node] Finished &quot;ants_transform-segmentation-to-qsm&quot;, elapsed time 1.895848s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-13:00:01,812 nipype.workflow INFO:
 	 [Job 6] Completed (workflow_segmentation.sub-2.ses-1.run-01.ants_transform-segmentation-to-qsm).
-230628-07:03:42,869 nipype.workflow INFO:
+230628-13:00:01,814 nipype.workflow INFO:
 	 [Job 7] Completed (workflow_segmentation.sub-1.ses-1.run-01.ants_transform-segmentation-to-qsm).
-230628-07:03:42,871 nipype.workflow INFO:
+230628-13:00:01,815 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-07:03:42,908 nipype.workflow INFO:
+230628-13:00:01,849 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_segmentation.sub-2.ses-1.run-01.nipype_datasink&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/segmentations/workflow_segmentation/sub-2/ses-1/run-01/nipype_datasink&quot;.
-230628-07:03:42,908 nipype.workflow INFO:
+230628-13:00:01,851 nipype.workflow INFO:
 	 [Node] Setting-up &quot;workflow_segmentation.sub-1.ses-1.run-01.nipype_datasink&quot; in &quot;/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/structural_imaging/segmentations/workflow_segmentation/sub-1/ses-1/run-01/nipype_datasink&quot;.
-230628-07:03:42,915 nipype.workflow INFO:
-	 [Node] Executing &quot;nipype_datasink&quot; &lt;nipype.interfaces.io.DataSink&gt;
-230628-07:03:42,915 nipype.workflow INFO:
-	 [Node] Executing &quot;nipype_datasink&quot; &lt;nipype.interfaces.io.DataSink&gt;
-230628-07:03:42,918 nipype.workflow INFO:
-	 [Node] Finished &quot;nipype_datasink&quot;, elapsed time 0.001322s.
-230628-07:03:42,918 nipype.workflow INFO:
-	 [Node] Finished &quot;nipype_datasink&quot;, elapsed time 0.001418s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-07:03:44,870 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-13:00:01,858 nipype.workflow INFO:
+	 [Node] Executing &quot;nipype_datasink&quot; &lt;nipype.interfaces.io.DataSink&gt;
+230628-13:00:01,860 nipype.workflow INFO:
+	 [Node] Executing &quot;nipype_datasink&quot; &lt;nipype.interfaces.io.DataSink&gt;
+230628-13:00:01,861 nipype.workflow INFO:
+	 [Node] Finished &quot;nipype_datasink&quot;, elapsed time 0.001414s.
+230628-13:00:01,864 nipype.workflow INFO:
+	 [Node] Finished &quot;nipype_datasink&quot;, elapsed time 0.001136s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230628-13:00:03,815 nipype.workflow INFO:
 	 [Job 8] Completed (workflow_segmentation.sub-2.ses-1.run-01.nipype_datasink).
-230628-07:03:44,871 nipype.workflow INFO:
+230628-13:00:03,816 nipype.workflow INFO:
 	 [Job 9] Completed (workflow_segmentation.sub-1.ses-1.run-01.nipype_datasink).
-230628-07:03:44,873 nipype.workflow INFO:
+230628-13:00:03,817 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 0 jobs ready. Free memory (GB): 13.17/13.17, Free processors: 2/2.
 </pre></div>
 </div>
@@ -1659,7 +1730,14 @@ INFO: Python interpreter: /opt/miniconda-4.7.12.1/bin/python3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/bin/bash: line 1: tree: command not found
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">segmentations</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">qsm_segmentations</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">t1_segmentations</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">workflow_segmentation</span>
+├── log_2023-06-28_11-42-23349655.txt
+└── references.txt
+
+3 directories, 2 files
 </pre></div>
 </div>
 </div>
@@ -1672,7 +1750,16 @@ INFO: Python interpreter: /opt/miniconda-4.7.12.1/bin/python3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/bin/bash: line 1: tree: command not found
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">segmentations/qsm_segmentations</span>
+└── <span class=" -Color -Color-Bold -Color-Bold-Blue">_work</span>
+    ├── sub-1_ses-1_run-01_T1w_segmentation_nii_trans.nii
+    └── sub-2_ses-1_run-01_T1w_segmentation_nii_trans.nii
+<span class=" -Color -Color-Bold -Color-Bold-Blue">segmentations/t1_segmentations</span>
+└── <span class=" -Color -Color-Bold -Color-Bold-Blue">_work</span>
+    ├── sub-1_ses-1_run-01_T1w_segmentation_nii.nii
+    └── sub-2_ses-1_run-01_T1w_segmentation_nii.nii
+
+1 directory, 2 files
 </pre></div>
 </div>
 </div>
@@ -1709,7 +1796,9 @@ INFO: Python interpreter: /opt/miniconda-4.7.12.1/bin/python3
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
   File &quot;/opt/QSMxT/run_5_analysis.py&quot;, line 332, in &lt;module&gt;
-    run_analysis(args)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    run_analysis(args)
   File &quot;/opt/QSMxT/run_5_analysis.py&quot;, line 324, in run_analysis
     calculate_statistics(args, logger)
   File &quot;/opt/QSMxT/run_5_analysis.py&quot;, line 260, in calculate_statistics
@@ -1760,25 +1849,24 @@ nibabel.filebasedimages.ImageFileError: Cannot work out file type of &quot;segme
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading seaborn-0.12.2-py3-none-any.whl (293 kB)
-?25l
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/293.3 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/293.3 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">61.4/293.3 kB</span> <span class=" -Color -Color-Red">2.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">61.4/293.3 kB</span> <span class=" -Color -Color-Red">2.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">293.3/293.3 kB</span> <span class=" -Color -Color-Red">5.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">293.3/293.3 kB</span> <span class=" -Color -Color-Red">4.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hRequirement already satisfied: numpy!=1.24.0,&gt;=1.17 in /home/runnerx/.local/lib/python3.10/site-packages (from seaborn) (1.25.0)
 Requirement already satisfied: pandas&gt;=0.25 in /home/runnerx/.local/lib/python3.10/site-packages (from seaborn) (2.0.2)
 Requirement already satisfied: matplotlib!=3.6.1,&gt;=3.1 in /home/runnerx/.local/lib/python3.10/site-packages (from seaborn) (3.7.1)
 Requirement already satisfied: contourpy&gt;=1.0.1 in /home/runnerx/.local/lib/python3.10/site-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (1.1.0)
 Requirement already satisfied: cycler&gt;=0.10 in /home/runnerx/.local/lib/python3.10/site-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (0.11.0)
 Requirement already satisfied: fonttools&gt;=4.22.0 in /home/runnerx/.local/lib/python3.10/site-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (4.40.0)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /home/runnerx/.local/lib/python3.10/site-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (1.4.4)
-Requirement already satisfied: packaging&gt;=20.0 in /usr/lib/python3/dist-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (21.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pillow&gt;=6.2.0 in /usr/lib/python3/dist-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (9.0.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: kiwisolver&gt;=1.0.1 in /home/runnerx/.local/lib/python3.10/site-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (1.4.4)
+Requirement already satisfied: packaging&gt;=20.0 in /usr/lib/python3/dist-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (21.3)
+Requirement already satisfied: pillow&gt;=6.2.0 in /usr/lib/python3/dist-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (9.0.1)
 Requirement already satisfied: pyparsing&gt;=2.3.1 in /usr/lib/python3/dist-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (2.4.7)
 Requirement already satisfied: python-dateutil&gt;=2.7 in /home/runnerx/.local/lib/python3.10/site-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (2.8.2)
 </pre></div>
