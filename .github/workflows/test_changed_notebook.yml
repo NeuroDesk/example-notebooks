@@ -30,9 +30,9 @@ jobs:
         id: select_runner
         run: |
           if [ "${{ github.repository }}" = "NeuroDesk/example-notebooks" ]; then
-            echo "runner=[\"cirun-oracle--${{ github.run_id }}\"]" >> $GITHUB_OUTPUT
+            echo "runner=cirun-oracle--${{ github.run_id }}" >> $GITHUB_OUTPUT
           else
-            echo "runner=[\"ubuntu-22.04\"]" >> $GITHUB_OUTPUT
+            echo "runner=ubuntu-22.04" >> $GITHUB_OUTPUT
           fi
           
   test-notebooks:
