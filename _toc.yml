@@ -11,21 +11,21 @@ format: jb-book
 root: intro
 chapters:
 # A chapter w/ a collection of sections beneath it
-- file: structural_imaging/intro
-  title: "Structural Imaging"
-  sections:
-    - file: structural_imaging/nipype_module_example
-      title: "Basic Nipype Example"
-    - file: structural_imaging/qsmxt_example
-      title: "QSMXT Example"
-    - file: structural_imaging/sct_toolbox_example
-      title: "SCT Toolbox Example"
+# - file: structural_imaging/intro
+#   title: "Structural Imaging"
+#   sections:
+#     - file: structural_imaging/nipype_module_example
+#       title: "Basic Nipype Example"
+#     - file: structural_imaging/qsmxt_example
+#       title: "QSMXT Example"
+#     - file: structural_imaging/sct_toolbox_example
+#       title: "SCT Toolbox Example"
 
 - file: functional_imaging/intro
   title: "Functional Imaging"
   sections:
     - file: functional_imaging/nipype_fsl_all_levels_flanker
       title: "FSL's fMRI Data Analysis via Nipype"
-    - file: functional_imaging/fmriprep_example
-      title: "Fmriprep Example"
+    # - file: functional_imaging/fmriprep_example
+    #   title: "Fmriprep Example"
 
