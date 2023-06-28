@@ -17,7 +17,7 @@ execute:
 launch_buttons:
   colab_url: "https://colab.research.google.com"
   notebook_interface: "jupyterlab"
-  binderhub_url: "https://play-sydney.neurodesk.org/v2/gh/neurodesk/example-notebooks"
+  binderhub_url: "https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks"
 
 # Define the name of the latex output file for PDF builds
 # latex:
@@ -26,13 +26,14 @@ launch_buttons:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/iishiishii/example-notebooks # Online location of your book
+  url: https://github.com/NeurodDesk/example-notebooks # Online location of your book
   branch: overwrite  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
-  baseurl: https://iishiishii.github.io/example-notebooks/
+  favicon: "neurodesk.svg"
+  baseurl: https://neurodesk.github.io/example-notebooks/
   use_issues_button: true
   use_repository_button: true
 
@@ -41,7 +42,7 @@ sphinx:
     # html_extra_path: ["CNAME", "robots.txt"]
     html_theme_options:
       use_download_button: true
-      repository_url: https://github.com/iishiishii/example-notebooks
+      repository_url: https://github.com/neurodesk/example-notebooks
       use_issues_button: true
       use_repository_button: true
       use_edit_page_button: true
