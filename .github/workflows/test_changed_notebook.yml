@@ -56,7 +56,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install jupyter-book ghp-import graphviz ipyniivue
 
-    - name: Run qsmxt_example
+    - name: Run notebooks
       shell: bash
       working-directory: ${{ github.workspace }}
       run: |
