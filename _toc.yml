@@ -20,6 +20,8 @@ chapters:
       title: "QSMXT Example"
     - file: structural_imaging/sct_toolbox_example
       title: "SCT Toolbox Example"
+    - file: structural_imaging/freesurfer_example
+      title: "Freesurfer Example"
 
 - file: functional_imaging/intro
   title: "Functional Imaging"
