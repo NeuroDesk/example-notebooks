@@ -56,7 +56,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install jupyter-book ghp-import graphviz ipyniivue
 
-    - name: Run notebooks
+    - name: Run qsmxt
       shell: bash
       working-directory: ${{ github.workspace }}
       run: |
@@ -72,7 +72,25 @@ jobs:
         export MPLCONFIGDIR=${{ github.workspace }}/matplotlib-mpldir
         export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
         echo "MODULEPATH=$MODULEPATH"
-        jb build .
+        jb build structural_imaging/qsmxt_example.ipynb
+
+    # - name: Run notebooks
+    #   shell: bash
+    #   working-directory: ${{ github.workspace }}
+    #   run: |
+    #     echo ${{ github.workspace }}
+    #     echo $GITHUB_WORKSPACE
+    #     export PATH=$HOME/.local/bin:$PATH
+    #     echo "PATH=$PATH"
+    #     export LD_PRELOAD=
+    #     echo "LD_PRELOAD=$LD_PRELOAD"
+    #     export APPTAINER_BINDPATH=${{ github.workspace }},/cvmfs
+    #     echo "APPTAINER_BINDPATH=$APPTAINER_BINDPATH"
+    #     export LMOD_CMD=/usr/share/lmod/lmod/libexec/lmod
+    #     export MPLCONFIGDIR=${{ github.workspace }}/matplotlib-mpldir
+    #     export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
+    #     echo "MODULEPATH=$MODULEPATH"
+    #     jb build .
 
     - name: Push to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.6.1
