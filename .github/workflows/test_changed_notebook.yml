@@ -39,10 +39,10 @@ jobs:
     needs: select-runner
     runs-on: ${{ needs.select-runner.outputs.runner }}
     
-    # strategy:
-    #   fail-fast: false
-    #   matrix:
-    #     notebooks: ["functional_imaging/nipype_fsl_all_levels_flanker.ipynb", "structural_imaging/qsmxt_example.ipynb", "structural_imaging/nipype_module_example.ipynb", "structural_imaging/sct_toolbox_example.ipynb"]
+    strategy:
+      fail-fast: false
+      matrix:
+        notebooks: ["functional_imaging/fmriprep_example.ipynb", "functional_imaging/nipype_fsl_all_levels_flanker.ipynb", structural_imaging/freesurfer_example.ipynb, "structural_imaging/qsmxt_example.ipynb", "structural_imaging/nipype_module_example.ipynb", "structural_imaging/sct_toolbox_example.ipynb"]
     steps:
     - uses: actions/checkout@v3
 
@@ -56,9 +56,8 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install jupyter-book ghp-import graphviz ipyniivue
 
-    - name: Run qsmxt_example
+    - name: Run ${{ matrix.notebooks }}
       shell: bash
-      working-directory: ${{ github.workspace }}
       run: |
         echo ${{ github.workspace }}
         echo $GITHUB_WORKSPACE
@@ -72,7 +71,7 @@ jobs:
         export MPLCONFIGDIR=${{ github.workspace }}/matplotlib-mpldir
         export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
         echo "MODULEPATH=$MODULEPATH"
-        jb build .
+        jb build ${{ matrix.notebooks }}
 
     - name: Push to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.6.1
