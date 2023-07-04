@@ -78,7 +78,7 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3.7.3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./books/_build/_page/$(dirname ${{ matrix.notebooks }})-$(basename -s .ipynb ${{ matrix.notebooks }})/html
+        publish_dir: ./books/_build/**/**/html
         exclude_assets: '**.js,*index.html,search.html,objects.inv,.buildinfo,_sphinx_design_static/*,_static/*'
         keep_files: true
         cname: www.neurodesk.org
