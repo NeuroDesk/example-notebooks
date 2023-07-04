@@ -42,7 +42,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        notebooks: [ "functional_imaging/nipype_fsl_all_levels_flanker.ipynb", "structural_imaging/qsmxt_example.ipynb"]
+        notebooks: ["functional_imaging/fmriprep_example.ipynb", "functional_imaging/nipype_fsl_all_levels_flanker.ipynb", structural_imaging/freesurfer_example.ipynb, "structural_imaging/qsmxt_example.ipynb", "structural_imaging/nipype_module_example.ipynb", "structural_imaging/sct_toolbox_example.ipynb"]
     steps:
     - uses: actions/checkout@v3
 
