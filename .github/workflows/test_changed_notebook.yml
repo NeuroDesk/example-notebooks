@@ -39,10 +39,10 @@ jobs:
     needs: select-runner
     runs-on: ${{ needs.select-runner.outputs.runner }}
     
-    # strategy:
-    #   fail-fast: false
-    #   matrix:
-    #     notebooks: ["functional_imaging/fmriprep_example.ipynb", "functional_imaging/nipype_fsl_all_levels_flanker.ipynb", structural_imaging/freesurfer_example.ipynb, "structural_imaging/qsmxt_example.ipynb", "structural_imaging/nipype_module_example.ipynb", "structural_imaging/sct_toolbox_example.ipynb"]
+    strategy:
+      fail-fast: false
+      matrix:
+        notebooks: [ "functional_imaging/nipype_fsl_all_levels_flanker.ipynb", "structural_imaging/qsmxt_example.ipynb"]
     steps:
     - uses: actions/checkout@v3
 
@@ -56,7 +56,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install jupyter-book ghp-import graphviz ipyniivue
 
-    - name: Run notebooks
+    - name: Run ${{ matrix.notebooks }}
       shell: bash
       working-directory: ./books
       run: |
@@ -72,12 +72,14 @@ jobs:
         export MPLCONFIGDIR=${{ github.workspace }}/matplotlib-mpldir
         export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
         echo "MODULEPATH=$MODULEPATH"
-        jb build .
+        jb build ${{ matrix.notebooks }}
 
     - name: Push to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./books/_build/html
+        publish_dir: ./books/_build/_page/$(dirname ${{ matrix.notebooks }})-$(basename -s .ipynb ${{ matrix.notebooks }})/html
+        destination_dir: $(dirname ${{ matrix.notebooks }})
+        exclude_assets: '**.js,*index.html,search.html,objects.inv,.buildinfo,_sphinx_design_static/*,_static/*'
         keep_files: true
         cname: www.neurodesk.org
