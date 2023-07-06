@@ -35,6 +35,49 @@ jobs:
             echo "runner=ubuntu-22.04" >> $GITHUB_OUTPUT
           fi
           
+  build-structure:
+    needs: select-runner
+    runs-on: ${{ needs.select-runner.outputs.runner }}
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Test singularity and cvmfs before pushing to neurocommand
+      run: 
+        /bin/bash .github/workflows/setup_cvmfs.sh
+
+    - name: Install dependencies
+      shell: bash
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install jupyter-book ghp-import graphviz ipyniivue
+
+    - name: Run all
+      shell: bash
+      working-directory: ./books
+      run: |
+        echo ${{ github.workspace }}
+        echo $GITHUB_WORKSPACE
+        export PATH=$HOME/.local/bin:$PATH
+        echo "PATH=$PATH"
+        export LD_PRELOAD=
+        echo "LD_PRELOAD=$LD_PRELOAD"
+        export APPTAINER_BINDPATH=${{ github.workspace }},/cvmfs
+        echo "APPTAINER_BINDPATH=$APPTAINER_BINDPATH"
+        export LMOD_CMD=/usr/share/lmod/lmod/libexec/lmod
+        export MPLCONFIGDIR=${{ github.workspace }}/matplotlib-mpldir
+        export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
+        echo "MODULEPATH=$MODULEPATH"
+        sed -i 's/timeout:.*/timeout: 5/' _config.yml
+        jb build .
+
+    - name: Push to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3.7.3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./books/_build/html
+        cname: www.neurodesk.org
+
   test-notebooks:
     needs: select-runner
     runs-on: ${{ needs.select-runner.outputs.runner }}
@@ -42,7 +85,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        notebooks: [ "functional_imaging/nipype_fsl_all_levels_flanker.ipynb",  "structural_imaging/qsmxt_example.ipynb"]
+        notebooks: ["structural_imaging/qsmxt_example.ipynb"]
     steps:
     - uses: actions/checkout@v3
 
@@ -72,13 +115,22 @@ jobs:
         export MPLCONFIGDIR=${{ github.workspace }}/matplotlib-mpldir
         export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
         echo "MODULEPATH=$MODULEPATH"
+        sed -i 's/timeout:.*/timeout: 1000/' _config.yml
+        echo "NOTEBOOK=$(basename -s .ipynb ${{ matrix.notebooks }})" >> $GITHUB_ENV
+        echo "DIRNAME=$(dirname ${{ matrix.notebooks }})" >> $GITHUB_ENV
         jb build ${{ matrix.notebooks }}
+
+    - name: Restructure
+      shell: bash
+      run: |
+        mkdir -p ./books/_build/**/**/html/$DIRNAME
+        mv ./books/_build/**/**/html/$NOTEBOOK.html ./books/_build/**/**/html/$DIRNAME
+
 
     - name: Push to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.7.3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./books/_build/**/**/html
-        exclude_assets: '**.js,*index.html,search.html,objects.inv,.buildinfo,_sphinx_design_static/*,_static/*'
         keep_files: true
         cname: www.neurodesk.org
