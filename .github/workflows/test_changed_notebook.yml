@@ -83,6 +83,7 @@ jobs:
         tree ./books/_build/**/**/html
         mkdir -p ./books/_build/**/**/html/$DIRNAME
         mv ./books/_build/**/**/html/$NOTEBOOK.html ./books/_build/**/**/html/$DIRNAME
+        rm -rf ./books/_build/**/**/html/_source
 
     - name: Push to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.7.3
@@ -127,11 +128,17 @@ jobs:
         sed -i 's/timeout:.*/timeout: 5/' _config.yml
         jb build .
 
+    - name: Exclude files
+      shell: bash
+      run: |
+        tree ./books/_build/html
+        rm -rf ./books/_build/html/**/*example.html
+        rm -rf ./books/_build/html/_images
+
     - name: Push to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.7.3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./books/_build/html
-        exclude_assets: 'functional_imaging/*example.html,structural_imaging/*example.html'
         keep_files: true
         cname: www.neurodesk.org
