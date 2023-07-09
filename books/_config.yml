@@ -12,7 +12,7 @@ only_build_toc_files: true
 execute:
   execute_notebooks: force
   allow_errors: true
-  timeout: 8000
+  timeout: 6000
   stderr_output: show
 
 launch_buttons:
