@@ -42,7 +42,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        notebooks: ["structural_imaging/qsmxt_example.ipynb"]
+        notebooks: ["structural_imaging/nipype_module_example.ipynb"]
     steps:
     - uses: actions/checkout@v3
 
@@ -82,8 +82,9 @@ jobs:
       run: |
         tree ./books/_build/**/**/html
         mkdir -p ./books/_build/**/**/html/$DIRNAME
-        mv ./books/_build/**/**/html/$NOTEBOOK.html ./books/_build/**/**/html/$DIRNAME
-        rm -rf ./books/_build/**/**/html/_source
+        cp -R ./books/_build/**/**/html/_static ./books/_build/**/**/html/$DIRNAME
+        cp -R ./books/_build/**/**/html/_images ./books/_build/**/**/html/$DIRNAME
+        cp ./books/_build/**/**/html/$NOTEBOOK.html ./books/_build/**/**/html/$DIRNAME
 
     - name: Push to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.7.3
