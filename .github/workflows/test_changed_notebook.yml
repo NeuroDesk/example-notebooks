@@ -83,7 +83,9 @@ jobs:
         tree ./books/_build/**/**/html
         mkdir -p ./books/_build/**/**/html/$DIRNAME
         cp -R ./books/_build/**/**/html/_static ./books/_build/**/**/html/$DIRNAME
-        cp -R ./books/_build/**/**/html/_images ./books/_build/**/**/html/$DIRNAME
+        if [ -d ./books/_build/**/**/html/_images ]; then
+          cp -R ./books/_build/**/**/html/_images ./books/_build/**/**/html/$DIRNAME
+        fi
         cp ./books/_build/**/**/html/$NOTEBOOK.html ./books/_build/**/**/html/$DIRNAME
 
     - name: Push to GitHub Pages
