@@ -93,6 +93,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./books/_build/**/**/html
+        keep_files: true
         cname: www.neurodesk.org
 
   build-structure:
