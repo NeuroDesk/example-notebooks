@@ -30,10 +30,10 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-# Segment spinal cord
-!sct_deepseg_sc -i {t1w+file_ext} -c t1 -qc {qc_path}
+# Download example data
+!sct_download_data -d sct_example_data -o ./sct_example_data
 
-if not verbose:
-    clear_output()
+# Go to MT folder
+os.chdir('./sct_example_data/mt/')
 -------------------
 
