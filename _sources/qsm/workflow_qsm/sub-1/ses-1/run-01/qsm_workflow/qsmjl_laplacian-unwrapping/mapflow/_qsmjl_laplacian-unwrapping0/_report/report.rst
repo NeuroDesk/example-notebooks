@@ -44,8 +44,8 @@ Runtime info
 
 
 * cmdline : /opt/QSMxT/scripts/qsmjl_laplacian_unwrapping.jl --phase /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/mrt_romeo_combine/sub-1_ses-1_run-01_part-phase_T2starw_scaled_romeo-combined_to-phase-wrapped.nii --mask /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/mask_workflow/scipy_numpy_nibabel_bet_erode/mapflow/_scipy_numpy_nibabel_bet_erode0/sub-1_ses-1_run-01_part-mag_T2starw_bet-mask_ero.nii --unwrapped-phase-out sub-1_ses-1_run-01_part-phase_T2starw_scaled_romeo-combined_to-phase-wrapped_unwrapped-laplacian.nii
-* duration : 51.604506
-* hostname : cirun-neurodesk--example-notebooks-82f2e28
+* duration : 52.301775
+* hostname : cirun-neurodesk--example-notebooks-4b559af
 * prev_wd : /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging
 * working_dir : /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/qsm/workflow_qsm/sub-1/ses-1/run-01/qsm_workflow/qsmjl_laplacian-unwrapping/mapflow/_qsmjl_laplacian-unwrapping0
 
@@ -100,14 +100,14 @@ Environment
 * GITHUB_ACTOR_ID : 59903692
 * GITHUB_API_URL : https://api.github.com
 * GITHUB_BASE_REF : 
-* GITHUB_ENV : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/set_env_bf817277-5513-4096-90f7-cc65aea70260
-* GITHUB_EVENT_NAME : push
+* GITHUB_ENV : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/set_env_2ca64d07-9ab4-4366-985b-b2955824535a
+* GITHUB_EVENT_NAME : workflow_dispatch
 * GITHUB_EVENT_PATH : /home/runnerx/actions-runner/_work/_temp/_github_workflow/event.json
 * GITHUB_GRAPHQL_URL : https://api.github.com/graphql
 * GITHUB_HEAD_REF : 
 * GITHUB_JOB : test-notebooks
-* GITHUB_OUTPUT : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/set_output_bf817277-5513-4096-90f7-cc65aea70260
-* GITHUB_PATH : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/add_path_bf817277-5513-4096-90f7-cc65aea70260
+* GITHUB_OUTPUT : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/set_output_2ca64d07-9ab4-4366-985b-b2955824535a
+* GITHUB_PATH : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/add_path_2ca64d07-9ab4-4366-985b-b2955824535a
 * GITHUB_REF : refs/heads/main
 * GITHUB_REF_NAME : main
 * GITHUB_REF_PROTECTED : false
@@ -117,23 +117,23 @@ Environment
 * GITHUB_REPOSITORY_OWNER : NeuroDesk
 * GITHUB_REPOSITORY_OWNER_ID : 67053431
 * GITHUB_RETENTION_DAYS : 90
-* GITHUB_RUN_ATTEMPT : 3
-* GITHUB_RUN_ID : 5502556464
-* GITHUB_RUN_NUMBER : 61
+* GITHUB_RUN_ATTEMPT : 1
+* GITHUB_RUN_ID : 5503576252
+* GITHUB_RUN_NUMBER : 62
 * GITHUB_SERVER_URL : https://github.com
-* GITHUB_SHA : dee0adadab638be0a745a89555eef37456b38a23
-* GITHUB_STATE : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/save_state_bf817277-5513-4096-90f7-cc65aea70260
-* GITHUB_STEP_SUMMARY : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/step_summary_bf817277-5513-4096-90f7-cc65aea70260
+* GITHUB_SHA : 73f2318d62cf426c43e4a91ef34f04383b616626
+* GITHUB_STATE : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/save_state_2ca64d07-9ab4-4366-985b-b2955824535a
+* GITHUB_STEP_SUMMARY : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/step_summary_2ca64d07-9ab4-4366-985b-b2955824535a
 * GITHUB_TRIGGERING_ACTOR : iishiishii
 * GITHUB_WORKFLOW : test_changed_notebooks
 * GITHUB_WORKFLOW_REF : NeuroDesk/example-notebooks/.github/workflows/test_changed_notebook.yml@refs/heads/main
-* GITHUB_WORKFLOW_SHA : dee0adadab638be0a745a89555eef37456b38a23
+* GITHUB_WORKFLOW_SHA : 73f2318d62cf426c43e4a91ef34f04383b616626
 * GITHUB_WORKSPACE : /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks
 * GIT_PAGER : cat
 * HOME : /home/runnerx
-* INVOCATION_ID : 492f8436bba84cefb6112f09a7f2829b
-* JOURNAL_STREAM : 8:30171
-* JPY_PARENT_PID : 8493
+* INVOCATION_ID : 787be5206a9f45859a1b76b6932770c6
+* JOURNAL_STREAM : 8:28433
+* JPY_PARENT_PID : 8478
 * JULIA_CPU_THREADS : 2
 * JULIA_DEPOT_PATH : ~/.julia:/opt/julia_depot
 * JULIA_NUM_THREADS : 2
@@ -160,11 +160,11 @@ Environment
 * PYTHONPATH : /opt/TGVQSM/TGVQSM-master/TGV_QSM:/opt/QSMxT:/opt/QSMxT
 * RUNNER_ARCH : X64
 * RUNNER_ENVIRONMENT : self-hosted
-* RUNNER_NAME : cirun-neurodesk--example-notebooks-82f2e28
+* RUNNER_NAME : cirun-neurodesk--example-notebooks-4b559af
 * RUNNER_OS : Linux
 * RUNNER_TEMP : /home/runnerx/actions-runner/_work/_temp
 * RUNNER_TOOL_CACHE : /home/runnerx/actions-runner/_work/_tool
-* RUNNER_TRACKING_ID : github_1eaf1d81-bb6f-4c15-8a2f-5290d41188fe
+* RUNNER_TRACKING_ID : github_dead8e88-4dbc-4593-99f9-87976db902f7
 * RUNNER_WORKSPACE : /home/runnerx/actions-runner/_work/example-notebooks
 * SHELL : /bin/bash
 * SHLVL : 2
@@ -173,7 +173,7 @@ Environment
 * SINGULARITY_ENVIRONMENT : /.singularity.d/env/91-environment.sh
 * SINGULARITY_NAME : qsmxt_1.3.5_20230227.simg
 * SUBJECTS_DIR : /tmp
-* SYSTEMD_EXEC_PID : 3019
+* SYSTEMD_EXEC_PID : 3009
 * TERM : xterm-color
 * USER : runnerx
 * USER_PATH : /cvmfs/neurodesk.ardc.edu.au/containers/qsmxt_1.3.5_20230227:/home/runnerx/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin

@@ -38,8 +38,8 @@ Runtime info
 
 
 * cmdline : run_fastsurfer.sh --sd `pwd` --seg_only --sid output --py python3.8 --t1 /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/bids/sub-2/ses-1/anat/sub-2_ses-1_run-01_T1w.nii --parallel --threads 8
-* duration : 510.471094
-* hostname : cirun-neurodesk--example-notebooks-82f2e28
+* duration : 517.960912
+* hostname : cirun-neurodesk--example-notebooks-4b559af
 * prev_wd : /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging
 * working_dir : /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/segmentations/workflow_segmentation/sub-2/ses-1/run-01/fastsurfer_segment-t1
 
@@ -55,7 +55,7 @@ Terminal - standard output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
- Mon Jul 10 01:06:05 UTC 2023
+ Mon Jul 10 03:16:18 UTC 2023
 
 /opt/FastSurfer/FastSurferCNN ~/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/segmentations/workflow_segmentation/sub-2/ses-1/run-01/fastsurfer_segment-t1
 python3.8 eval.py --in_name /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/bids/sub-2/ses-1/anat/sub-2_ses-1_run-01_T1w.nii --out_name /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/segmentations/workflow_segmentation/sub-2/ses-1/run-01/fastsurfer_segment-t1/output/mri/aparc.DKTatlas+aseg.deep.mgz --conformed_name /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/segmentations/workflow_segmentation/sub-2/ses-1/run-01/fastsurfer_segment-t1/output/mri/orig.mgz --order 1 --network_sagittal_path /opt/FastSurfer/checkpoints/Sagittal_Weights_FastSurferCNN/ckpts/Epoch_30_training_state.pkl --network_axial_path /opt/FastSurfer/checkpoints/Axial_Weights_FastSurferCNN/ckpts/Epoch_30_training_state.pkl --network_coronal_path /opt/FastSurfer/checkpoints/Coronal_Weights_FastSurferCNN/ckpts/Epoch_30_training_state.pkl --batch_size 8 --simple_run --run_viewagg_on check
@@ -109,7 +109,7 @@ Axial model loaded.
 --->Batch 29 Axial Testing Done.
 --->Batch 30 Axial Testing Done.
 --->Batch 31 Axial Testing Done.
-Axial View Tested in 157.7203 seconds
+Axial View Tested in 163.6831 seconds
 Loading Coronal.
 Successfully loaded Image from /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/bids/sub-2/ses-1/anat/sub-2_ses-1_run-01_T1w.nii
 Loading Coronal Net from /opt/FastSurfer/checkpoints/Coronal_Weights_FastSurferCNN/ckpts/Epoch_30_training_state.pkl
@@ -146,7 +146,7 @@ Coronal model loaded.
 --->Batch 29 Coronal Testing Done.
 --->Batch 30 Coronal Testing Done.
 --->Batch 31 Coronal Testing Done.
-Coronal View Tested in 160.5553 seconds
+Coronal View Tested in 160.8599 seconds
 Loading Sagittal
 Successfully loaded Image from /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/bids/sub-2/ses-1/anat/sub-2_ses-1_run-01_T1w.nii
 Loading Sagittal Net from /opt/FastSurfer/checkpoints/Sagittal_Weights_FastSurferCNN/ckpts/Epoch_30_training_state.pkl
@@ -183,9 +183,9 @@ Sagittal model loaded.
 --->Batch 29 Sagittal Testing Done.
 --->Batch 30 Sagittal Testing Done.
 --->Batch 31 Sagittal Testing Done.
-Sagittal View Tested in 160.7703 seconds
+Sagittal View Tested in 161.3100 seconds
 Saving Segmentation to /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/segmentations/workflow_segmentation/sub-2/ses-1/run-01/fastsurfer_segment-t1/output/mri/aparc.DKTatlas+aseg.deep.mgz
-Total processing time: 498.0962 seconds.
+Total processing time: 505.3799 seconds.
 ~/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/segmentations/workflow_segmentation/sub-2/ses-1/run-01/fastsurfer_segment-t1
 
 
@@ -224,14 +224,14 @@ Environment
 * GITHUB_ACTOR_ID : 59903692
 * GITHUB_API_URL : https://api.github.com
 * GITHUB_BASE_REF : 
-* GITHUB_ENV : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/set_env_bf817277-5513-4096-90f7-cc65aea70260
-* GITHUB_EVENT_NAME : push
+* GITHUB_ENV : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/set_env_2ca64d07-9ab4-4366-985b-b2955824535a
+* GITHUB_EVENT_NAME : workflow_dispatch
 * GITHUB_EVENT_PATH : /home/runnerx/actions-runner/_work/_temp/_github_workflow/event.json
 * GITHUB_GRAPHQL_URL : https://api.github.com/graphql
 * GITHUB_HEAD_REF : 
 * GITHUB_JOB : test-notebooks
-* GITHUB_OUTPUT : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/set_output_bf817277-5513-4096-90f7-cc65aea70260
-* GITHUB_PATH : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/add_path_bf817277-5513-4096-90f7-cc65aea70260
+* GITHUB_OUTPUT : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/set_output_2ca64d07-9ab4-4366-985b-b2955824535a
+* GITHUB_PATH : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/add_path_2ca64d07-9ab4-4366-985b-b2955824535a
 * GITHUB_REF : refs/heads/main
 * GITHUB_REF_NAME : main
 * GITHUB_REF_PROTECTED : false
@@ -241,23 +241,23 @@ Environment
 * GITHUB_REPOSITORY_OWNER : NeuroDesk
 * GITHUB_REPOSITORY_OWNER_ID : 67053431
 * GITHUB_RETENTION_DAYS : 90
-* GITHUB_RUN_ATTEMPT : 3
-* GITHUB_RUN_ID : 5502556464
-* GITHUB_RUN_NUMBER : 61
+* GITHUB_RUN_ATTEMPT : 1
+* GITHUB_RUN_ID : 5503576252
+* GITHUB_RUN_NUMBER : 62
 * GITHUB_SERVER_URL : https://github.com
-* GITHUB_SHA : dee0adadab638be0a745a89555eef37456b38a23
-* GITHUB_STATE : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/save_state_bf817277-5513-4096-90f7-cc65aea70260
-* GITHUB_STEP_SUMMARY : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/step_summary_bf817277-5513-4096-90f7-cc65aea70260
+* GITHUB_SHA : 73f2318d62cf426c43e4a91ef34f04383b616626
+* GITHUB_STATE : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/save_state_2ca64d07-9ab4-4366-985b-b2955824535a
+* GITHUB_STEP_SUMMARY : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/step_summary_2ca64d07-9ab4-4366-985b-b2955824535a
 * GITHUB_TRIGGERING_ACTOR : iishiishii
 * GITHUB_WORKFLOW : test_changed_notebooks
 * GITHUB_WORKFLOW_REF : NeuroDesk/example-notebooks/.github/workflows/test_changed_notebook.yml@refs/heads/main
-* GITHUB_WORKFLOW_SHA : dee0adadab638be0a745a89555eef37456b38a23
+* GITHUB_WORKFLOW_SHA : 73f2318d62cf426c43e4a91ef34f04383b616626
 * GITHUB_WORKSPACE : /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks
 * GIT_PAGER : cat
 * HOME : /home/runnerx
-* INVOCATION_ID : 492f8436bba84cefb6112f09a7f2829b
-* JOURNAL_STREAM : 8:30171
-* JPY_PARENT_PID : 8493
+* INVOCATION_ID : 787be5206a9f45859a1b76b6932770c6
+* JOURNAL_STREAM : 8:28433
+* JPY_PARENT_PID : 8478
 * JULIA_DEPOT_PATH : ~/.julia:/opt/julia_depot
 * LANG : C.UTF-8
 * LC_ALL : C.UTF-8
@@ -281,11 +281,11 @@ Environment
 * PYTHONPATH : /opt/TGVQSM/TGVQSM-master/TGV_QSM:/opt/QSMxT:/opt/QSMxT
 * RUNNER_ARCH : X64
 * RUNNER_ENVIRONMENT : self-hosted
-* RUNNER_NAME : cirun-neurodesk--example-notebooks-82f2e28
+* RUNNER_NAME : cirun-neurodesk--example-notebooks-4b559af
 * RUNNER_OS : Linux
 * RUNNER_TEMP : /home/runnerx/actions-runner/_work/_temp
 * RUNNER_TOOL_CACHE : /home/runnerx/actions-runner/_work/_tool
-* RUNNER_TRACKING_ID : github_1eaf1d81-bb6f-4c15-8a2f-5290d41188fe
+* RUNNER_TRACKING_ID : github_dead8e88-4dbc-4593-99f9-87976db902f7
 * RUNNER_WORKSPACE : /home/runnerx/actions-runner/_work/example-notebooks
 * SHELL : /bin/bash
 * SHLVL : 2
@@ -294,7 +294,7 @@ Environment
 * SINGULARITY_ENVIRONMENT : /.singularity.d/env/91-environment.sh
 * SINGULARITY_NAME : qsmxt_1.3.5_20230227.simg
 * SUBJECTS_DIR : .
-* SYSTEMD_EXEC_PID : 3019
+* SYSTEMD_EXEC_PID : 3009
 * TERM : xterm-color
 * USER : runnerx
 * USER_PATH : /cvmfs/neurodesk.ardc.edu.au/containers/qsmxt_1.3.5_20230227:/home/runnerx/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin
