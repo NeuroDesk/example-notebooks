@@ -14,6 +14,7 @@ execute:
   allow_errors: true
   timeout: 6000
   stderr_output: show
+  run_in_temp: true
 
 launch_buttons:
   colab_url: "https://colab.research.google.com"
