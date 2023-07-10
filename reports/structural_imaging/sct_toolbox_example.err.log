@@ -30,8 +30,10 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-# download data
-!datalad install https://github.com/OpenNeuroDatasets/ds000102.git
-!cd ds000102 && datalad get sub-08
+# Segment spinal cord
+!sct_deepseg_sc -i {t1w+file_ext} -c t1 -qc {qc_path}
+
+if not verbose:
+    clear_output()
 -------------------
 

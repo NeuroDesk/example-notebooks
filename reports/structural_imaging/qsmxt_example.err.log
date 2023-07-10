@@ -30,8 +30,11 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-# download data
-!datalad install https://github.com/OpenNeuroDatasets/ds000102.git
-!cd ds000102 && datalad get sub-08
+!pip install osfclient
+!osf -p ru43c clone . > /dev/null 2>&1
+!tar xf osfstorage/dicoms-unsorted.tar
+!rm -rf osfstorage/
+!tree dicoms-unsorted | head
+!echo -e "...\nThere are `ls dicoms-unsorted | wc -l` unsorted DICOMs in ./dicoms-unsorted/"
 -------------------
 

@@ -30,8 +30,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-# download data
-!datalad install https://github.com/OpenNeuroDatasets/ds000102.git
-!cd ds000102 && datalad get sub-08
+['from nipype.interfaces import fsl', 'from nipype.interfaces import afni', '', 'btr = fsl.BET()', "btr.inputs.in_file = './sub-01_ses-01_7T_T1w_defaced.nii'"]
+...
+['edge3 = afni.Edge3()', "edge3.inputs.in_file = './sub-01_ses-01_7T_T1w_defaced.nii'", "edge3.inputs.out_file = './sub-01_ses-01_7T_T1w_defaced_edges.nii'", "edge3.inputs.datum = 'byte'", 'res = edge3.run()']
 -------------------
 
