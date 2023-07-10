@@ -136,8 +136,6 @@ jobs:
       shell: bash
       run: |
         tree ./books/_build/html
-        rm -rf ./books/_build/html/**/*example.html
-        rm -rf ./books/_build/html/_images
 
     - name: Push to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.7.3
