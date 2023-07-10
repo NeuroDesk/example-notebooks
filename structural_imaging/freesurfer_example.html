@@ -1,0 +1,2856 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Setup Neurodesk &#8212; Neurodesk</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'freesurfer_example';</script>
+    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/freesurfer_example.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Neurodesk</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/v2/gh/neurodesk/example-notebooks/master?urlpath=tree/freesurfer_example.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/neurodesk/example-notebooks/blob/master/freesurfer_example.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/neurodesk/example-notebooks" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/neurodesk/example-notebooks/edit/main/freesurfer_example.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/neurodesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Ffreesurfer_example.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/freesurfer_example.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Setup Neurodesk</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Setup Neurodesk</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#download-data">download data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#run">Run</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a href="https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/main?labpath=/home/jovyan/examples/example-notebooks/structural_imaging/freesurfer_example.ipynb" target="_parent"><img src="https://img.shields.io/badge/launch-binder-579aca.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADUElEQVR4nCyTzUtkRxfGn6pTtz/FtvsVp32NKBgF6QiBCU505xBpBdsJiMkyi2SRxSSEZPI3JKuEbGYREgaCi0zMENBeSCSCqwzRCCIzSBtHuqEl9ihif9zbfe+tqnCaqdXh1q1znuec31EAkM/nEYlEcH5+jmw2K5VSwvM8rVT3GmEYIh6PUxiGtlKpmNHRUQRBgK2tLdDi4iLOzs4wMjKCaDRKxhijlLIRx0kmk8lhIkoHQeArpTpaa5vJZCgej9vj42NMT09DVSoVXF5ewm21SAihAbwJ4HM/CO42ms2slJIT/wvgD2vtN9baQ8/zqFqtaiKCYIlLS0uklNJBEHwspfyu2WpF+lIpTIyPo9Fs4sXZGYzWiMVinTAMPyWi7621VCwWtSgUCuxNSynfl1L+zDLvzs3pd+/do/8PDsJrt1EqlfDL+rp+9vw5xWIxobV+T2u97jgOScdxjLU2o5R66LquffvOHfPJ/fuqL5USFxcXgs9bt2+LLx88UIPZrAmCwBLRQwBpfistayFaBZCBELqvr4+01uAJOI6DiOPg5uYG2Vu3MDc3R51ORwsh+olopft2cnISxpgvhBBvdNptWyqVZOnkBP/LZPD6xARe1mqonp+jVqvh1ydPcHV1ZdiGtbZORL91m7i8vLzt+/47+Xxe53I5+vPpU9xcX+O14WEcHBygv78fuVwOPP/t7W19eHhI0Wj0942NjbxaXV1Fu91uEhFb6c52fn4ejUYD+/v73XhsbIxBQrlcxs7ODqSUFkBjZWUFMpPJwFq7z/Stra1ZrthqtdgWewZb9DyPi6BYLHIC+2oSf/f29kIODQ1Ba/2YIerp6RG+79tkMgm+dF23i3E6nWYGGF/L/xhjQmvt41QqBbm3t8cQ/QPgaykllUqlIAgCI4RAIpFgCsFxo1E35XI5UEoRgK+klC9OT09JLCwsCMdx5NHRkZmamnqktf5gYGAAMzMzmJ2dNaxid3dXsrV6vQ4ierS5uflhoVCQYRgawcsEQLDsRCJhr6+vP/J9/7NOp5Nj2dwL3rxYLPZMKfVtOp3+0XVdwX0CYBXL44ArWWsZrB9yudxP1Wp12vO88VfLdNLTk/yrVnvpu64rm82m4e98/gsAAP//Lbmu802E+U4AAAAASUVORK5CYII=" alt="Open In Binder"/>  </a>
+<a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/structural_imaging/freesurfer_example.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>   </a></p>
+<p>Author: Steffen Bollmann</p>
+<section id="setup-neurodesk">
+<h1>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">IN_COLAB</span> <span class="o">=</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span>
+
+<span class="k">if</span> <span class="n">IN_COLAB</span><span class="p">:</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_PRELOAD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;APPTAINER_BINDPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content,/tmp,/cvmfs&quot;</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MPLCONFIGDIR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content/matplotlib-mpldir&quot;</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LMOD_CMD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/share/lmod/lmod/libexec/lmod&quot;</span>
+
+  <span class="o">!</span>curl<span class="w"> </span>-J<span class="w"> </span>-O<span class="w"> </span>https://raw.githubusercontent.com/NeuroDesk/neurocommand/main/googlecolab_setup.sh
+  <span class="o">!</span>chmod<span class="w"> </span>+x<span class="w"> </span>googlecolab_setup.sh
+  <span class="o">!</span>./googlecolab_setup.sh
+
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MODULEPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">)))))</span>
+
+  <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">output</span>
+  <span class="n">output</span><span class="o">.</span><span class="n">enable_custom_widget_manager</span><span class="p">()</span>
+  <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>ipyniivue
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
+<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: GenuineIntel
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>model name	: Intel(R) Xeon(R) Platinum 8167M CPU @ 2.00GHz
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we can use lmod to load fsl in a specific version</span>
+<span class="kn">import</span> <span class="nn">lmod</span>
+<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;freesurfer/7.3.2&#39;</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Lmod&#39;,
+ &#39;Warning:&#39;,
+ &#39;The&#39;,
+ &#39;environment&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;has&#39;,
+ &#39;been&#39;,
+ &#39;changed&#39;,
+ &#39;in&#39;,
+ &#39;unexpected&#39;,
+ &#39;ways.&#39;,
+ &#39;Lmod&#39;,
+ &#39;is&#39;,
+ &#39;unable&#39;,
+ &#39;to&#39;,
+ &#39;use&#39;,
+ &#39;given&#39;,
+ &#39;MODULEPATH.&#39;,
+ &#39;It&#39;,
+ &#39;is&#39;,
+ &#39;using:&#39;,
+ &#39;&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps::&quot;.&#39;,
+ &#39;Please&#39;,
+ &#39;use&#39;,
+ &#39;&quot;module&#39;,
+ &#39;use&#39;,
+ &#39;to&#39;,
+ &#39;change&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;instead.&#39;,
+ &#39;freesurfer/7.3.2&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>recon-all
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>USAGE: recon-all
+
+ Required Arguments:
+   -subjid &lt;subjid&gt;
+   -&lt;process directive&gt;
+
+ Fully-Automated Directive:
+  -all           : performs all stages of cortical reconstruction
+  -autorecon-all : same as -all
+
+ Manual-Intervention Workflow Directives:
+  -autorecon1    : process stages 1-5 (see below)
+  -autorecon2    : process stages 6-23
+                   after autorecon2, check white surfaces:
+                     a. if wm edit was required, then run -autorecon2-wm
+                     b. if control points added, then run -autorecon2-cp
+                     c. proceed to run -autorecon3
+  -autorecon2-cp : process stages 12-23 (uses -f w/ mri_normalize, -keep w/ mri_seg)
+  -autorecon2-wm : process stages 15-23
+  -autorecon2-inflate1 : 6-18
+  -autorecon2-perhemi : tess, sm1, inf1, q, fix, sm2, inf2, finalsurf, ribbon
+  -autorecon3    : process stages 24-34
+                     if edits made to correct pial, then run -autorecon-pial
+  -hemi ?h       : just do lh or rh (default is to do both)
+
+  Autorecon Processing Stages (see -autorecon# flags above):
+    1.  Motion Correction and Conform
+    2.  NU (Non-Uniform intensity normalization)
+    3.  Talairach transform computation
+    4.  Intensity Normalization 1
+    5.  Skull Strip
+
+    6.  EM Register (linear volumetric registration)
+    7.  CA Intensity Normalization
+    8.  CA Non-linear Volumetric Registration 
+    9.  Remove neck
+    10. EM Register, with skull
+    11. CA Label (Aseg: Volumetric Labeling) and Statistics
+
+    12. Intensity Normalization 2 (start here for control points)
+    13. White matter segmentation
+    14. Edit WM With ASeg
+    15. Fill (start here for wm edits)
+    16. Tessellation (begins per-hemisphere operations)
+    17. Smooth1
+    18. Inflate1
+    19. QSphere
+    20. Automatic Topology Fixer
+    21. White Surfs (start here for brain edits for pial surf)
+    22. Smooth2
+    23. Inflate2
+
+    24. Spherical Mapping
+    25. Spherical Registration 
+    26. Spherical Registration, Contralater hemisphere
+    27. Map average curvature to subject
+    28. Cortical Parcellation (Labeling)
+    29. Cortical Parcellation Statistics
+    30. Pial Surfs
+    31. WM/GM Contrast
+    32. Cortical Ribbon Mask
+    33. Cortical Parcellation mapped to ASeg
+    34  Brodmann and exvio EC labels
+
+ Step-wise Directives
+  See -help
+
+ Expert Preferences
+  -pons-crs C R S : col, row, slice of seed point for pons, used in fill
+  -cc-crs C R S : col, row, slice of seed point for corpus callosum, used in fill
+  -lh-crs C R S : col, row, slice of seed point for left hemisphere, used in fill
+  -rh-crs C R S : col, row, slice of seed point for right hemisphere, used in fill
+  -nofill        : do not use the automatic subcort seg to fill
+  -watershed cmd : control skull stripping/watershed program
+  -xmask file : custom external brain mask to replace automated skullstripping
+  -wsless : decrease watershed threshold (leaves less skull, but can strip more brain)
+  -wsmore : increase watershed threshold (leaves more skull, but can strip less brain)
+  -wsatlas : use atlas when skull stripping
+  -no-wsatlas : do not use atlas when skull stripping
+  -no-wsgcaatlas : do not use GCA atlas when skull stripping
+  -wsthresh pct : explicity set watershed threshold
+  -wsseed C R S : identify an index (C, R, S) point in the skull
+  -norm3diters niters : number of 3d iterations for mri_normalize
+  -normmaxgrad maxgrad : max grad (-g) for mri_normalize. Default is 1.
+  -norm1-b N : in the _first_ usage of mri_normalize, use control 
+               point with intensity N below target (default=10.0) 
+  -norm2-b N : in the _second_ usage of mri_normalize, use control 
+               point with intensity N below target (default=10.0) 
+  -norm1-n N : in the _first_ usage of mri_normalize, do N number 
+               of iterations
+  -norm2-n N : in the _second_ usage of mri_normalize, do N number 
+               of iterations
+  -cm           : conform volumes to the min voxel size 
+  -no-fix-with-ga : do not use genetic algorithm when fixing topology
+  -fix-diag-only  : topology fixer runs until ?h.defect_labels files
+                    are created, then stops
+  -seg-wlo wlo : set wlo value for mri_segment and mris_make_surfaces
+  -seg-ghi ghi : set ghi value for mri_segment and mris_make_surfaces
+  -nothicken   : pass &#39;-thicken 0&#39; to mri_segment
+  -no-ca-align-after : turn off -align-after with mri_ca_register
+  -no-ca-align : turn off -align with mri_ca_label
+  -deface      : deface subject, written to orig_defaced.mgz
+
+  -expert file     : read-in expert options file
+  -xopts-use       : use pre-existing expert options file
+  -xopts-clean     : delete pre-existing expert options file
+  -xopts-overwrite : overwrite pre-existing expert options file
+  -termscript script : run script before exiting (multiple -termscript flags possible)
+   This can be good for running custom post-processing after recon-all
+   The script must be in your path. The subjid is passed as the only argument
+   The current directory is changed to SUBJECTS_DIR before the script is run
+   The script should exit with 0 unless there is an error
+
+  -mprage : assume scan parameters are MGH MP-RAGE protocol
+  -washu_mprage : assume scan parameters are Wash.U. MP-RAGE protocol.
+                  both mprage flags affect mri_normalize and mri_segment,
+                  and assumes a darker gm.
+  -schwartzya3t-atlas : for tal reg, use special young adult 3T atlas
+
+  -threads num  : set number of threads to use
+
+ Notification Files (Optional)
+  -waitfor file : wait for file to appear before beginning
+  -notify  file : create this file after finishing
+
+ Status and Log files (Optional)
+  -log     file : default is scripts/recon-all.log
+  -status  file : default is scripts/recon-all-status.log
+  -noappend     : start new log and status files instead of appending
+  -no-isrunning : do not check whether this subject is currently being processed
+
+ Segmentation of substructures of hippocampus and brainstem 
+ (These deprecated; please see segmentHA_T1.sh, segmentHA_T1.sh, segmentHA_T1_long.sh, segmentBS.sh)
+  -hippocampal-subfields-T1 : segmentation of hippocampal subfields using input T1 scan
+  -hippocampal-subfields-T2 file ID : segmentation using an additional scan (given by file);
+                                      ID is a user-defined identifier for the analysis
+  -hippocampal-subfields-T1T2 file ID : segmentation using additional scan (given by file) and input T1
+                                        simultaneously; ID is a user-defined identifier for the analysis
+  -brainstem-structures : segmentation of brainstem structures
+
+ Other Arguments (Optional)
+  -sd subjectsdir : specify subjects dir (default env SUBJECTS_DIR)
+  -mail username  : mail user when done
+  -umask umask    : set unix file permission mask (default 002)
+  -grp groupid    : check that current group is alpha groupid 
+  -onlyversions   : print version of each binary and exit
+  -debug          : print out lots of info
+  -allowcoredump  : set coredump limit to unlimited
+  -dontrun        : do everything but execute each command
+  -version        : print version of this script and exit
+  -help           : voluminous bits of wisdom
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="download-data">
+<h1>download data<a class="headerlink" href="#download-data" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">![</span><span class="w"> </span>-f<span class="w"> </span>./mp2rage.nii<span class="w">  </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FILE</span><span class="s2"> exist.&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>wget<span class="w"> </span>https://imaging.org.au/uploads/Human7T/mp2rageModel_L13_work03-plus-hippocampus-7T-sym-norm-mincanon_v0.8.nii<span class="w"> </span>-O<span class="w"> </span>./mp2rage.nii<span class="w"> </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2023-07-10 00:11:55--  https://imaging.org.au/uploads/Human7T/mp2rageModel_L13_work03-plus-hippocampus-7T-sym-norm-mincanon_v0.8.nii
+Resolving imaging.org.au (imaging.org.au)... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>203.101.229.7
+Connecting to imaging.org.au (imaging.org.au)|203.101.229.7|:443... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
+Length: 1536000352 (1.4G) [application/octet-stream]
+Saving to: ‘./mp2rage.nii’
+
+
+./mp2rage.nii         0%[                    ]       0  --.-KB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         0%[                    ]  39.73K   126KB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         0%[                    ] 103.73K   165KB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         0%[                    ] 215.73K   228KB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         0%[                    ] 455.73K   362KB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         0%[                    ] 935.73K   594KB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         0%[                    ]   1.83M   995KB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         0%[                    ]   3.68M  1.67MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         0%[                    ]   6.66M  2.65MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         0%[                    ]   9.37M  3.30MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         0%[                    ]  12.35M  3.92MB/s    eta 6m 11s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         1%[                    ]  15.02M  4.33MB/s    eta 6m 11s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         1%[                    ]  17.94M  4.74MB/s    eta 6m 11s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         1%[                    ]  20.55M  5.01MB/s    eta 6m 11s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         1%[                    ]  23.51M  5.33MB/s    eta 4m 31s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         1%[                    ]  26.49M  5.60MB/s    eta 4m 31s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         2%[                    ]  29.46M  5.84MB/s    eta 4m 31s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         2%[                    ]  32.44M  6.06MB/s    eta 4m 31s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         2%[                    ]  35.41M  6.24MB/s    eta 3m 49s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         2%[                    ]  38.38M  6.41MB/s    eta 3m 49s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         2%[                    ]  41.38M  6.57MB/s    eta 3m 49s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         3%[                    ]  44.37M  7.04MB/s    eta 3m 49s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         3%[                    ]  47.33M  7.50MB/s    eta 3m 28s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         3%[                    ]  50.33M  7.95MB/s    eta 3m 28s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         3%[                    ]  53.30M  8.39MB/s    eta 3m 28s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         3%[                    ]  56.26M  8.79MB/s    eta 3m 28s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         4%[                    ]  59.23M  9.11MB/s    eta 3m 14s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         4%[                    ]  62.15M  9.28MB/s    eta 3m 14s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         4%[                    ]  65.12M  9.28MB/s    eta 3m 14s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         4%[                    ]  68.08M  9.33MB/s    eta 3m 14s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         4%[                    ]  71.07M  9.33MB/s    eta 3m 5s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         5%[&gt;                   ]  74.02M  9.37MB/s    eta 3m 5s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         5%[&gt;                   ]  76.83M  9.34MB/s    eta 3m 5s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         5%[&gt;                   ]  79.82M  9.40MB/s    eta 3m 5s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         5%[&gt;                   ]  82.60M  9.37MB/s    eta 2m 59s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         5%[&gt;                   ]  85.60M  9.37MB/s    eta 2m 59s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         6%[&gt;                   ]  88.19M  9.31MB/s    eta 2m 59s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         6%[&gt;                   ]  91.16M  9.31MB/s    eta 2m 59s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         6%[&gt;                   ]  94.16M  9.31MB/s    eta 2m 54s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         6%[&gt;                   ]  97.04M  9.29MB/s    eta 2m 54s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         6%[&gt;                   ] 100.02M  9.29MB/s    eta 2m 54s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         7%[&gt;                   ] 103.01M  9.29MB/s    eta 2m 54s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         7%[&gt;                   ] 105.99M  9.29MB/s    eta 2m 50s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         7%[&gt;                   ] 108.94M  9.28MB/s    eta 2m 50s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         7%[&gt;                   ] 111.93M  9.28MB/s    eta 2m 50s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         7%[&gt;                   ] 114.90M  9.28MB/s    eta 2m 50s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         8%[&gt;                   ] 117.54M  9.22MB/s    eta 2m 46s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         8%[&gt;                   ] 120.52M  9.24MB/s    eta 2m 46s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         8%[&gt;                   ] 123.12M  9.18MB/s    eta 2m 46s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         8%[&gt;                   ] 126.10M  9.18MB/s    eta 2m 46s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         8%[&gt;                   ] 128.79M  9.13MB/s    eta 2m 44s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         8%[&gt;                   ] 131.76M  9.13MB/s    eta 2m 44s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         9%[&gt;                   ] 134.73M  9.17MB/s    eta 2m 44s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         9%[&gt;                   ] 137.69M  9.17MB/s    eta 2m 44s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         9%[&gt;                   ] 140.66M  9.20MB/s    eta 2m 40s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii         9%[&gt;                   ] 143.63M  9.20MB/s    eta 2m 40s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        10%[=&gt;                  ] 146.62M  9.24MB/s    eta 2m 40s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        10%[=&gt;                  ] 149.58M  9.24MB/s    eta 2m 40s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        10%[=&gt;                  ] 152.57M  9.24MB/s    eta 2m 37s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        10%[=&gt;                  ] 155.49M  9.25MB/s    eta 2m 37s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        10%[=&gt;                  ] 158.48M  9.25MB/s    eta 2m 37s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        11%[=&gt;                  ] 161.46M  9.25MB/s    eta 2m 37s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        11%[=&gt;                  ] 164.44M  9.25MB/s    eta 2m 35s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        11%[=&gt;                  ] 167.43M  9.26MB/s    eta 2m 35s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        11%[=&gt;                  ] 170.23M  9.22MB/s    eta 2m 35s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        11%[=&gt;                  ] 173.21M  9.22MB/s    eta 2m 35s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        12%[=&gt;                  ] 175.80M  9.22MB/s    eta 2m 33s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        12%[=&gt;                  ] 178.79M  9.22MB/s    eta 2m 33s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        12%[=&gt;                  ] 181.76M  9.28MB/s    eta 2m 33s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        12%[=&gt;                  ] 184.68M  9.27MB/s    eta 2m 33s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        12%[=&gt;                  ] 187.63M  9.31MB/s    eta 2m 30s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        13%[=&gt;                  ] 190.58M  9.31MB/s    eta 2m 30s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        13%[=&gt;                  ] 193.16M  9.24MB/s    eta 2m 30s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        13%[=&gt;                  ] 196.13M  9.25MB/s    eta 2m 30s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        13%[=&gt;                  ] 199.10M  9.24MB/s    eta 2m 28s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        13%[=&gt;                  ] 201.74M  9.18MB/s    eta 2m 28s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        13%[=&gt;                  ] 204.73M  9.19MB/s    eta 2m 28s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        14%[=&gt;                  ] 207.51M  9.12MB/s    eta 2m 28s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        14%[=&gt;                  ] 210.48M  9.10MB/s    eta 2m 27s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        14%[=&gt;                  ] 213.38M  9.10MB/s    eta 2m 27s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        14%[=&gt;                  ] 216.37M  9.17MB/s    eta 2m 27s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        14%[=&gt;                  ] 219.15M  9.10MB/s    eta 2m 27s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        15%[==&gt;                 ] 222.13M  9.09MB/s    eta 2m 25s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        15%[==&gt;                 ] 224.94M  9.12MB/s    eta 2m 25s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        15%[==&gt;                 ] 227.91M  9.12MB/s    eta 2m 25s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        15%[==&gt;                 ] 230.85M  9.20MB/s    eta 2m 25s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        15%[==&gt;                 ] 233.83M  9.20MB/s    eta 2m 23s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        16%[==&gt;                 ] 236.60M  9.19MB/s    eta 2m 23s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        16%[==&gt;                 ] 239.57M  9.19MB/s    eta 2m 23s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        16%[==&gt;                 ] 242.55M  9.22MB/s    eta 2m 23s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        16%[==&gt;                 ] 245.24M  9.13MB/s    eta 2m 21s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        16%[==&gt;                 ] 248.19M  9.19MB/s    eta 2m 21s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        17%[==&gt;                 ] 251.16M  9.19MB/s    eta 2m 21s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        17%[==&gt;                 ] 254.15M  9.25MB/s    eta 2m 21s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        17%[==&gt;                 ] 257.12M  9.25MB/s    eta 2m 19s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        17%[==&gt;                 ] 260.04M  9.26MB/s    eta 2m 19s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        17%[==&gt;                 ] 262.79M  9.18MB/s    eta 2m 19s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        18%[==&gt;                 ] 265.74M  9.25MB/s    eta 2m 19s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        18%[==&gt;                 ] 268.73M  9.26MB/s    eta 2m 18s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        18%[==&gt;                 ] 271.68M  9.25MB/s    eta 2m 18s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        18%[==&gt;                 ] 274.66M  8.98MB/s    eta 2m 18s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        18%[==&gt;                 ] 277.66M  8.77MB/s    eta 2m 17s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        19%[==&gt;                 ] 280.63M  8.81MB/s    eta 2m 17s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        19%[==&gt;                 ] 283.60M  8.80MB/s    eta 2m 17s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        19%[==&gt;                 ] 286.33M  8.73MB/s    eta 2m 17s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        19%[==&gt;                 ] 289.32M  8.96MB/s    eta 2m 15s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        19%[==&gt;                 ] 292.29M  8.88MB/s    eta 2m 15s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        20%[===&gt;                ] 295.27M  9.02MB/s    eta 2m 15s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        20%[===&gt;                ] 298.26M  8.92MB/s    eta 2m 15s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        20%[===&gt;                ] 300.99M  9.04MB/s    eta 2m 13s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        20%[===&gt;                ] 303.94M  8.95MB/s    eta 2m 13s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        20%[===&gt;                ] 306.80M  9.04MB/s    eta 2m 13s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        21%[===&gt;                ] 309.79M  8.96MB/s    eta 2m 13s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        21%[===&gt;                ] 312.77M  9.07MB/s    eta 2m 12s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        21%[===&gt;                ] 315.76M  9.02MB/s    eta 2m 12s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        21%[===&gt;                ] 318.71M  9.09MB/s    eta 2m 12s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        21%[===&gt;                ] 321.62M  9.06MB/s    eta 2m 12s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        22%[===&gt;                ] 324.60M  9.31MB/s    eta 2m 10s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        22%[===&gt;                ] 327.58M  9.11MB/s    eta 2m 10s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        22%[===&gt;                ] 330.54M  9.21MB/s    eta 2m 10s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        22%[===&gt;                ] 333.54M  9.13MB/s    eta 2m 10s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        22%[===&gt;                ] 336.51M  9.22MB/s    eta 2m 8s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        23%[===&gt;                ] 339.46M  9.15MB/s    eta 2m 8s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        23%[===&gt;                ] 342.44M  9.24MB/s    eta 2m 8s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        23%[===&gt;                ] 345.43M  9.37MB/s    eta 2m 8s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        23%[===&gt;                ] 348.41M  9.38MB/s    eta 2m 7s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        23%[===&gt;                ] 351.37M  9.37MB/s    eta 2m 7s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        24%[===&gt;                ] 354.33M  9.37MB/s    eta 2m 7s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        24%[===&gt;                ] 357.32M  9.37MB/s    eta 2m 7s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        24%[===&gt;                ] 360.30M  9.42MB/s    eta 2m 5s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        24%[===&gt;                ] 363.29M  9.42MB/s    eta 2m 5s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        25%[====&gt;               ] 366.26M  9.45MB/s    eta 2m 5s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        25%[====&gt;               ] 369.24M  9.45MB/s    eta 2m 5s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        25%[====&gt;               ] 372.10M  9.27MB/s    eta 2m 4s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        25%[====&gt;               ] 375.07M  9.27MB/s    eta 2m 4s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        25%[====&gt;               ] 377.76M  9.22MB/s    eta 2m 4s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        25%[====&gt;               ] 380.73M  9.23MB/s    eta 2m 4s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        26%[====&gt;               ] 383.63M  9.22MB/s    eta 2m 2s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        26%[====&gt;               ] 386.63M  9.22MB/s    eta 2m 2s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        26%[====&gt;               ] 389.60M  9.23MB/s    eta 2m 2s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        26%[====&gt;               ] 392.58M  9.22MB/s    eta 2m 2s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        27%[====&gt;               ] 395.55M  9.22MB/s    eta 2m 1s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        27%[====&gt;               ] 398.54M  9.23MB/s    eta 2m 1s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        27%[====&gt;               ] 401.51M  9.23MB/s    eta 2m 1s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        27%[====&gt;               ] 404.48M  9.22MB/s    eta 2m 1s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        27%[====&gt;               ] 407.44M  9.22MB/s    eta 1m 59s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        28%[====&gt;               ] 410.41M  9.22MB/s    eta 1m 59s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        28%[====&gt;               ] 413.40M  9.23MB/s    eta 1m 59s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        28%[====&gt;               ] 416.08M  9.18MB/s    eta 1m 59s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        28%[====&gt;               ] 419.05M  9.17MB/s    eta 1m 58s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        28%[====&gt;               ] 421.76M  9.13MB/s    eta 1m 58s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        28%[====&gt;               ] 424.74M  9.13MB/s    eta 1m 58s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        29%[====&gt;               ] 427.71M  9.13MB/s    eta 1m 58s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        29%[====&gt;               ] 430.68M  9.30MB/s    eta 1m 56s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        29%[====&gt;               ] 433.65M  9.30MB/s    eta 1m 56s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        29%[====&gt;               ] 436.62M  9.34MB/s    eta 1m 56s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        30%[=====&gt;              ] 439.62M  9.35MB/s    eta 1m 56s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        30%[=====&gt;              ] 442.60M  9.36MB/s    eta 1m 55s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        30%[=====&gt;              ] 445.26M  9.30MB/s    eta 1m 55s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        30%[=====&gt;              ] 448.21M  9.30MB/s    eta 1m 55s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        30%[=====&gt;              ] 451.18M  9.30MB/s    eta 1m 55s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        31%[=====&gt;              ] 454.16M  9.30MB/s    eta 1m 54s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        31%[=====&gt;              ] 457.15M  9.29MB/s    eta 1m 54s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        31%[=====&gt;              ] 460.13M  9.29MB/s    eta 1m 54s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        31%[=====&gt;              ] 463.10M  9.29MB/s    eta 1m 54s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        31%[=====&gt;              ] 466.08M  9.29MB/s    eta 1m 52s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        32%[=====&gt;              ] 469.07M  9.29MB/s    eta 1m 52s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        32%[=====&gt;              ] 471.85M  9.29MB/s    eta 1m 52s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        32%[=====&gt;              ] 474.79M  9.33MB/s    eta 1m 52s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        32%[=====&gt;              ] 477.74M  9.32MB/s    eta 1m 51s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        32%[=====&gt;              ] 480.73M  9.32MB/s    eta 1m 51s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        33%[=====&gt;              ] 483.71M  9.30MB/s    eta 1m 51s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        33%[=====&gt;              ] 486.66M  9.37MB/s    eta 1m 51s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        33%[=====&gt;              ] 489.38M  9.29MB/s    eta 1m 49s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        33%[=====&gt;              ] 492.37M  9.30MB/s    eta 1m 49s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        33%[=====&gt;              ] 495.27M  9.26MB/s    eta 1m 49s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        34%[=====&gt;              ] 498.10M  9.20MB/s    eta 1m 49s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        34%[=====&gt;              ] 501.04M  9.26MB/s    eta 1m 48s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        34%[=====&gt;              ] 503.99M  9.27MB/s    eta 1m 48s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        34%[=====&gt;              ] 506.93M  9.26MB/s    eta 1m 48s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        34%[=====&gt;              ] 509.91M  9.22MB/s    eta 1m 48s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        35%[======&gt;             ] 512.88M  9.22MB/s    eta 1m 46s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        35%[======&gt;             ] 515.85M  9.52MB/s    eta 1m 46s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        35%[======&gt;             ] 518.82M  9.53MB/s    eta 1m 46s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        35%[======&gt;             ] 521.66M  9.47MB/s    eta 1m 46s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        35%[======&gt;             ] 524.63M  9.47MB/s    eta 1m 45s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        35%[======&gt;             ] 527.21M  9.44MB/s    eta 1m 45s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        36%[======&gt;             ] 530.19M  9.44MB/s    eta 1m 45s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        36%[======&gt;             ] 533.15M  9.44MB/s    eta 1m 45s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        36%[======&gt;             ] 536.10M  9.23MB/s    eta 1m 44s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        36%[======&gt;             ] 539.07M  9.43MB/s    eta 1m 44s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        36%[======&gt;             ] 541.54M  9.60MB/s    eta 1m 44s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        37%[======&gt;             ] 542.91M  9.17MB/s    eta 1m 44s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        37%[======&gt;             ] 545.83M  9.22MB/s    eta 1m 43s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        37%[======&gt;             ] 548.80M  9.22MB/s    eta 1m 43s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        37%[======&gt;             ] 551.49M  9.13MB/s    eta 1m 43s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        37%[======&gt;             ] 554.46M  9.13MB/s    eta 1m 43s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        38%[======&gt;             ] 557.44M  9.13MB/s    eta 1m 41s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        38%[======&gt;             ] 560.12M  9.05MB/s    eta 1m 41s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        38%[======&gt;             ] 563.02M  9.15MB/s    eta 1m 41s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        38%[======&gt;             ] 566.01M  9.13MB/s    eta 1m 41s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        38%[======&gt;             ] 568.98M  9.17MB/s    eta 1m 40s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        39%[======&gt;             ] 571.60M  9.06MB/s    eta 1m 40s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        39%[======&gt;             ] 574.58M  9.09MB/s    eta 1m 40s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        39%[======&gt;             ] 577.19M  8.98MB/s    eta 1m 40s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        39%[======&gt;             ] 580.18M  9.08MB/s    eta 99s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        39%[======&gt;             ] 582.96M  9.00MB/s    eta 99s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        39%[======&gt;             ] 585.91M  8.83MB/s    eta 99s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        40%[=======&gt;            ] 588.76M  8.98MB/s    eta 99s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        40%[=======&gt;            ] 591.73M  8.83MB/s    eta 97s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        40%[=======&gt;            ] 594.48M  9.04MB/s    eta 97s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        40%[=======&gt;            ] 597.46M  8.81MB/s    eta 97s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        40%[=======&gt;            ] 600.27M  9.05MB/s    eta 97s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        41%[=======&gt;            ] 603.26M  8.83MB/s    eta 96s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        41%[=======&gt;            ] 606.08M  9.04MB/s    eta 96s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        41%[=======&gt;            ] 608.69M  8.81MB/s    eta 96s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        41%[=======&gt;            ] 611.68M  8.99MB/s    eta 96s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        41%[=======&gt;            ] 614.43M  8.81MB/s    eta 95s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        42%[=======&gt;            ] 617.37M  9.04MB/s    eta 95s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        42%[=======&gt;            ] 620.35M  8.84MB/s    eta 95s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        42%[=======&gt;            ] 623.32M  9.06MB/s    eta 95s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        42%[=======&gt;            ] 626.26M  8.87MB/s    eta 94s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        42%[=======&gt;            ] 629.24M  9.14MB/s    eta 94s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        43%[=======&gt;            ] 632.21M  8.90MB/s    eta 94s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        43%[=======&gt;            ] 635.18M  9.16MB/s    eta 94s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        43%[=======&gt;            ] 638.16M  8.95MB/s    eta 92s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        43%[=======&gt;            ] 641.13M  9.21MB/s    eta 92s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        43%[=======&gt;            ] 644.12M  9.21MB/s    eta 92s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        44%[=======&gt;            ] 647.10M  9.25MB/s    eta 92s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        44%[=======&gt;            ] 650.10M  9.24MB/s    eta 91s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        44%[=======&gt;            ] 653.08M  9.29MB/s    eta 91s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        44%[=======&gt;            ] 656.05M  9.29MB/s    eta 91s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        44%[=======&gt;            ] 659.02M  9.32MB/s    eta 91s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        45%[========&gt;           ] 661.99M  9.32MB/s    eta 89s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        45%[========&gt;           ] 664.99M  9.34MB/s    eta 89s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        45%[========&gt;           ] 667.96M  9.41MB/s    eta 89s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        45%[========&gt;           ] 670.93M  9.41MB/s    eta 89s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        46%[========&gt;           ] 673.93M  9.29MB/s    eta 88s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        46%[========&gt;           ] 676.91M  9.30MB/s    eta 88s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        46%[========&gt;           ] 679.88M  9.46MB/s    eta 88s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        46%[========&gt;           ] 682.87M  9.46MB/s    eta 88s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        46%[========&gt;           ] 685.87M  9.31MB/s    eta 87s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        47%[========&gt;           ] 688.83M  9.47MB/s    eta 87s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        47%[========&gt;           ] 691.82M  9.47MB/s    eta 87s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        47%[========&gt;           ] 694.76M  9.47MB/s    eta 87s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        47%[========&gt;           ] 697.74M  9.47MB/s    eta 85s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        47%[========&gt;           ] 700.68M  9.47MB/s    eta 85s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        48%[========&gt;           ] 703.65M  9.45MB/s    eta 85s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        48%[========&gt;           ] 706.62M  9.45MB/s    eta 85s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        48%[========&gt;           ] 709.58M  9.45MB/s    eta 84s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        48%[========&gt;           ] 712.57M  9.70MB/s    eta 84s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        48%[========&gt;           ] 715.54M  9.44MB/s    eta 84s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        49%[========&gt;           ] 718.51M  9.73MB/s    eta 84s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        49%[========&gt;           ] 721.46M  9.41MB/s    eta 82s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        49%[========&gt;           ] 724.36M  9.45MB/s    eta 82s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        49%[========&gt;           ] 724.44M  9.12MB/s    eta 82s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        49%[========&gt;           ] 727.33M  9.40MB/s    eta 82s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        49%[========&gt;           ] 729.77M  9.71MB/s    eta 82s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        49%[========&gt;           ] 730.19M  8.93MB/s    eta 82s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        50%[=========&gt;          ] 733.18M  9.19MB/s    eta 82s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        50%[=========&gt;          ] 735.83M  8.87MB/s    eta 82s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        50%[=========&gt;          ] 738.79M  9.14MB/s    eta 82s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        50%[=========&gt;          ] 741.79M  8.92MB/s    eta 80s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        50%[=========&gt;          ] 744.74M  9.17MB/s    eta 80s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        51%[=========&gt;          ] 747.73M  8.96MB/s    eta 80s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        51%[=========&gt;          ] 750.71M  9.20MB/s    eta 80s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        51%[=========&gt;          ] 753.69M  8.99MB/s    eta 79s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        51%[=========&gt;          ] 756.65M  9.21MB/s    eta 79s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        51%[=========&gt;          ] 759.63M  9.02MB/s    eta 79s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        52%[=========&gt;          ] 762.62M  9.23MB/s    eta 79s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        52%[=========&gt;          ] 765.58M  9.05MB/s    eta 77s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        52%[=========&gt;          ] 768.29M  9.19MB/s    eta 77s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        52%[=========&gt;          ] 771.27M  9.03MB/s    eta 77s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        52%[=========&gt;          ] 774.21M  9.21MB/s    eta 77s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        53%[=========&gt;          ] 777.16M  9.05MB/s    eta 76s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        53%[=========&gt;          ] 780.16M  9.28MB/s    eta 76s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        53%[=========&gt;          ] 783.13M  9.07MB/s    eta 76s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        53%[=========&gt;          ] 786.10M  9.29MB/s    eta 76s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        53%[=========&gt;          ] 789.07M  9.33MB/s    eta 75s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        54%[=========&gt;          ] 792.05M  9.34MB/s    eta 75s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        54%[=========&gt;          ] 795.04M  9.40MB/s    eta 75s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        54%[=========&gt;          ] 798.02M  9.39MB/s    eta 75s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        54%[=========&gt;          ] 800.98M  9.40MB/s    eta 73s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        54%[=========&gt;          ] 803.94M  9.38MB/s    eta 73s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        55%[==========&gt;         ] 806.91M  9.38MB/s    eta 73s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        55%[==========&gt;         ] 809.90M  9.38MB/s    eta 73s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        55%[==========&gt;         ] 812.51M  9.31MB/s    eta 72s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        55%[==========&gt;         ] 815.46M  9.31MB/s    eta 72s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        55%[==========&gt;         ] 818.41M  9.30MB/s    eta 72s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        56%[==========&gt;         ] 820.98M  9.23MB/s    eta 72s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        56%[==========&gt;         ] 823.93M  9.23MB/s    eta 71s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        56%[==========&gt;         ] 826.91M  9.28MB/s    eta 71s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        56%[==========&gt;         ] 829.90M  9.28MB/s    eta 71s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        56%[==========&gt;         ] 832.88M  9.28MB/s    eta 71s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        57%[==========&gt;         ] 835.62M  9.24MB/s    eta 70s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        57%[==========&gt;         ] 838.60M  9.24MB/s    eta 70s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        57%[==========&gt;         ] 841.27M  9.19MB/s    eta 70s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        57%[==========&gt;         ] 844.24M  9.19MB/s    eta 70s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        57%[==========&gt;         ] 847.19M  9.18MB/s    eta 68s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        58%[==========&gt;         ] 850.18M  9.18MB/s    eta 68s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        58%[==========&gt;         ] 852.91M  9.14MB/s    eta 68s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        58%[==========&gt;         ] 855.88M  9.15MB/s    eta 68s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        58%[==========&gt;         ] 858.82M  9.13MB/s    eta 67s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        58%[==========&gt;         ] 861.80M  9.15MB/s    eta 67s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        59%[==========&gt;         ] 864.41M  9.08MB/s    eta 67s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        59%[==========&gt;         ] 867.40M  9.08MB/s    eta 67s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        59%[==========&gt;         ] 870.35M  9.15MB/s    eta 66s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        59%[==========&gt;         ] 873.33M  9.16MB/s    eta 66s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        59%[==========&gt;         ] 876.02M  9.11MB/s    eta 66s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        60%[===========&gt;        ] 878.98M  9.17MB/s    eta 66s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        60%[===========&gt;        ] 881.96M  9.18MB/s    eta 64s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        60%[===========&gt;        ] 884.94M  9.18MB/s    eta 64s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        60%[===========&gt;        ] 887.93M  9.18MB/s    eta 64s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        60%[===========&gt;        ] 890.91M  9.18MB/s    eta 64s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        61%[===========&gt;        ] 893.71M  9.19MB/s    eta 63s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        61%[===========&gt;        ] 896.65M  9.18MB/s    eta 63s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        61%[===========&gt;        ] 899.62M  9.23MB/s    eta 63s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        61%[===========&gt;        ] 902.52M  9.21MB/s    eta 63s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        61%[===========&gt;        ] 905.51M  9.22MB/s    eta 62s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        62%[===========&gt;        ] 908.49M  9.22MB/s    eta 62s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        62%[===========&gt;        ] 911.48M  9.27MB/s    eta 62s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        62%[===========&gt;        ] 914.46M  9.27MB/s    eta 62s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        62%[===========&gt;        ] 917.05M  9.21MB/s    eta 60s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        62%[===========&gt;        ] 920.04M  9.21MB/s    eta 60s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        63%[===========&gt;        ] 923.02M  9.28MB/s    eta 60s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        63%[===========&gt;        ] 925.98M  9.27MB/s    eta 60s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        63%[===========&gt;        ] 928.96M  9.28MB/s    eta 59s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        63%[===========&gt;        ] 931.94M  9.28MB/s    eta 59s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        63%[===========&gt;        ] 934.88M  9.33MB/s    eta 59s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        64%[===========&gt;        ] 937.54M  9.27MB/s    eta 59s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        64%[===========&gt;        ] 940.48M  9.26MB/s    eta 58s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        64%[===========&gt;        ] 943.46M  9.26MB/s    eta 58s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        64%[===========&gt;        ] 946.37M  9.24MB/s    eta 58s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        64%[===========&gt;        ] 949.30M  9.24MB/s    eta 58s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        65%[============&gt;       ] 952.26M  9.27MB/s    eta 57s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        65%[============&gt;       ] 955.26M  9.29MB/s    eta 57s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        65%[============&gt;       ] 958.23M  9.27MB/s    eta 57s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        65%[============&gt;       ] 960.82M  9.17MB/s    eta 57s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        65%[============&gt;       ] 963.80M  9.24MB/s    eta 55s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        65%[============&gt;       ] 966.79M  9.24MB/s    eta 55s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        66%[============&gt;       ] 969.77M  9.22MB/s    eta 55s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        66%[============&gt;       ] 972.76M  9.31MB/s    eta 55s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        66%[============&gt;       ] 975.69M  9.31MB/s    eta 54s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        66%[============&gt;       ] 978.62M  9.31MB/s    eta 54s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        66%[============&gt;       ] 981.32M  9.22MB/s    eta 54s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        67%[============&gt;       ] 984.27M  9.20MB/s    eta 54s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        67%[============&gt;       ] 987.23M  9.20MB/s    eta 53s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        67%[============&gt;       ] 990.19M  9.32MB/s    eta 53s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        67%[============&gt;       ] 993.18M  9.32MB/s    eta 53s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        68%[============&gt;       ] 996.16M  9.32MB/s    eta 53s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        68%[============&gt;       ] 999.16M  9.32MB/s    eta 51s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        68%[============&gt;       ]   1002M  9.32MB/s    eta 51s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        68%[============&gt;       ]   1005M  9.33MB/s    eta 51s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        68%[============&gt;       ]   1008M  9.35MB/s    eta 51s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        69%[============&gt;       ]   1011M  9.46MB/s    eta 50s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        69%[============&gt;       ]   1014M  9.46MB/s    eta 50s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        69%[============&gt;       ]   1017M  9.46MB/s    eta 50s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        69%[============&gt;       ]   1020M  9.47MB/s    eta 50s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        69%[============&gt;       ]   1023M  9.47MB/s    eta 49s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        70%[=============&gt;      ]   1.00G  9.47MB/s    eta 49s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        70%[=============&gt;      ]   1.00G  9.46MB/s    eta 49s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        70%[=============&gt;      ]   1.01G  9.45MB/s    eta 49s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        70%[=============&gt;      ]   1.01G  9.55MB/s    eta 47s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        70%[=============&gt;      ]   1.01G  9.44MB/s    eta 47s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        70%[=============&gt;      ]   1.01G  9.32MB/s    eta 47s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        71%[=============&gt;      ]   1.02G  9.31MB/s    eta 47s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        71%[=============&gt;      ]   1.02G  9.31MB/s    eta 46s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        71%[=============&gt;      ]   1.02G  9.31MB/s    eta 46s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        71%[=============&gt;      ]   1.02G  9.31MB/s    eta 46s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        71%[=============&gt;      ]   1.03G  9.29MB/s    eta 46s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        72%[=============&gt;      ]   1.03G  9.29MB/s    eta 45s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        72%[=============&gt;      ]   1.03G  9.29MB/s    eta 45s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        72%[=============&gt;      ]   1.04G  9.28MB/s    eta 45s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        72%[=============&gt;      ]   1.04G  9.29MB/s    eta 45s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        72%[=============&gt;      ]   1.04G  9.40MB/s    eta 44s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        73%[=============&gt;      ]   1.04G  9.39MB/s    eta 44s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        73%[=============&gt;      ]   1.05G  9.39MB/s    eta 44s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        73%[=============&gt;      ]   1.05G  9.39MB/s    eta 44s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        73%[=============&gt;      ]   1.05G  9.38MB/s    eta 42s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        73%[=============&gt;      ]   1.06G  9.39MB/s    eta 42s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        74%[=============&gt;      ]   1.06G  9.39MB/s    eta 42s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        74%[=============&gt;      ]   1.06G  9.54MB/s    eta 42s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        74%[=============&gt;      ]   1.06G  9.39MB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        74%[=============&gt;      ]   1.06G  9.40MB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        74%[=============&gt;      ]   1.07G  9.48MB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        74%[=============&gt;      ]   1.07G  9.40MB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        74%[=============&gt;      ]   1.07G  9.42MB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        75%[==============&gt;     ]   1.07G  9.49MB/s    eta 40s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        75%[==============&gt;     ]   1.07G  9.42MB/s    eta 40s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        75%[==============&gt;     ]   1.08G  9.44MB/s    eta 40s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        75%[==============&gt;     ]   1.08G  9.47MB/s    eta 40s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        75%[==============&gt;     ]   1.08G  9.43MB/s    eta 40s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        75%[==============&gt;     ]   1.08G  9.46MB/s    eta 39s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        75%[==============&gt;     ]   1.08G  9.47MB/s    eta 39s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        75%[==============&gt;     ]   1.09G  9.43MB/s    eta 39s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        76%[==============&gt;     ]   1.09G  9.48MB/s    eta 39s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        76%[==============&gt;     ]   1.09G  9.49MB/s    eta 39s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        76%[==============&gt;     ]   1.09G  9.44MB/s    eta 38s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        76%[==============&gt;     ]   1.09G  9.49MB/s    eta 38s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        76%[==============&gt;     ]   1.10G  9.48MB/s    eta 38s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        76%[==============&gt;     ]   1.10G  9.44MB/s    eta 38s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        76%[==============&gt;     ]   1.10G  9.24MB/s    eta 38s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        77%[==============&gt;     ]   1.10G  9.24MB/s    eta 37s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        77%[==============&gt;     ]   1.11G  9.24MB/s    eta 37s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        77%[==============&gt;     ]   1.11G  9.23MB/s    eta 37s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        77%[==============&gt;     ]   1.11G  9.22MB/s    eta 37s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        77%[==============&gt;     ]   1.11G  9.21MB/s    eta 36s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        78%[==============&gt;     ]   1.12G  9.19MB/s    eta 36s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        78%[==============&gt;     ]   1.12G  9.19MB/s    eta 36s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        78%[==============&gt;     ]   1.12G  9.18MB/s    eta 36s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        78%[==============&gt;     ]   1.13G  9.41MB/s    eta 34s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        78%[==============&gt;     ]   1.13G  9.41MB/s    eta 34s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        79%[==============&gt;     ]   1.13G  9.41MB/s    eta 34s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        79%[==============&gt;     ]   1.13G  9.41MB/s    eta 34s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        79%[==============&gt;     ]   1.14G  9.40MB/s    eta 33s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        79%[==============&gt;     ]   1.14G  9.29MB/s    eta 33s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        79%[==============&gt;     ]   1.14G  9.30MB/s    eta 33s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        80%[===============&gt;    ]   1.15G  9.30MB/s    eta 33s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        80%[===============&gt;    ]   1.15G  9.30MB/s    eta 32s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        80%[===============&gt;    ]   1.15G  9.29MB/s    eta 32s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        80%[===============&gt;    ]   1.15G  9.30MB/s    eta 32s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        80%[===============&gt;    ]   1.16G  9.29MB/s    eta 32s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        81%[===============&gt;    ]   1.16G  9.16MB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        81%[===============&gt;    ]   1.16G  9.16MB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        81%[===============&gt;    ]   1.17G  9.04MB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        81%[===============&gt;    ]   1.17G  9.05MB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        81%[===============&gt;    ]   1.17G  9.05MB/s    eta 29s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        82%[===============&gt;    ]   1.17G  9.04MB/s    eta 29s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        82%[===============&gt;    ]   1.18G  9.05MB/s    eta 29s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        82%[===============&gt;    ]   1.18G  9.05MB/s    eta 29s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        82%[===============&gt;    ]   1.18G  9.04MB/s    eta 28s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        82%[===============&gt;    ]   1.19G  9.07MB/s    eta 28s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        83%[===============&gt;    ]   1.19G  9.13MB/s    eta 28s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        83%[===============&gt;    ]   1.19G  9.14MB/s    eta 28s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        83%[===============&gt;    ]   1.19G  9.14MB/s    eta 26s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        83%[===============&gt;    ]   1.20G  9.13MB/s    eta 26s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        83%[===============&gt;    ]   1.20G  9.13MB/s    eta 26s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        84%[===============&gt;    ]   1.20G  9.13MB/s    eta 26s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        84%[===============&gt;    ]   1.21G  9.12MB/s    eta 25s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        84%[===============&gt;    ]   1.21G  9.12MB/s    eta 25s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        84%[===============&gt;    ]   1.21G  9.12MB/s    eta 25s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        84%[===============&gt;    ]   1.21G  9.13MB/s    eta 25s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        85%[================&gt;   ]   1.22G  9.13MB/s    eta 24s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        85%[================&gt;   ]   1.22G  9.16MB/s    eta 24s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        85%[================&gt;   ]   1.22G  9.08MB/s    eta 24s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        85%[================&gt;   ]   1.23G  9.09MB/s    eta 24s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        85%[================&gt;   ]   1.23G  9.10MB/s    eta 23s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        86%[================&gt;   ]   1.23G  9.41MB/s    eta 23s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        86%[================&gt;   ]   1.23G  9.46MB/s    eta 23s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        86%[================&gt;   ]   1.24G  9.11MB/s    eta 23s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        86%[================&gt;   ]   1.24G  9.24MB/s    eta 23s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        86%[================&gt;   ]   1.24G  9.46MB/s    eta 21s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        86%[================&gt;   ]   1.24G  9.11MB/s    eta 21s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        86%[================&gt;   ]   1.24G  9.31MB/s    eta 21s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        87%[================&gt;   ]   1.24G  9.46MB/s    eta 21s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        87%[================&gt;   ]   1.25G  9.28MB/s    eta 21s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        87%[================&gt;   ]   1.25G  9.39MB/s    eta 20s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        87%[================&gt;   ]   1.25G  9.48MB/s    eta 20s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        87%[================&gt;   ]   1.25G  9.47MB/s    eta 20s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        87%[================&gt;   ]   1.25G  9.32MB/s    eta 20s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        87%[================&gt;   ]   1.26G  9.43MB/s    eta 20s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        87%[================&gt;   ]   1.26G  9.08MB/s    eta 19s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        88%[================&gt;   ]   1.26G  9.33MB/s    eta 19s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        88%[================&gt;   ]   1.26G  9.43MB/s    eta 19s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        88%[================&gt;   ]   1.26G  9.08MB/s    eta 19s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        88%[================&gt;   ]   1.27G  9.32MB/s    eta 19s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        88%[================&gt;   ]   1.27G  9.43MB/s    eta 18s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        88%[================&gt;   ]   1.27G  9.08MB/s    eta 18s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        88%[================&gt;   ]   1.27G  9.33MB/s    eta 18s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        89%[================&gt;   ]   1.27G  9.41MB/s    eta 18s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        89%[================&gt;   ]   1.28G  9.26MB/s    eta 18s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        89%[================&gt;   ]   1.28G  9.28MB/s    eta 17s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        89%[================&gt;   ]   1.28G  9.42MB/s    eta 17s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        89%[================&gt;   ]   1.28G  9.23MB/s    eta 17s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        89%[================&gt;   ]   1.28G  9.31MB/s    eta 17s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        89%[================&gt;   ]   1.29G  9.56MB/s    eta 17s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        89%[================&gt;   ]   1.29G  9.39MB/s    eta 16s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        90%[=================&gt;  ]   1.29G  9.31MB/s    eta 16s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        90%[=================&gt;  ]   1.29G  9.58MB/s    eta 16s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        90%[=================&gt;  ]   1.29G  9.38MB/s    eta 16s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        90%[=================&gt;  ]   1.29G  9.31MB/s    eta 16s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        90%[=================&gt;  ]   1.30G  9.59MB/s    eta 15s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        90%[=================&gt;  ]   1.30G  9.37MB/s    eta 15s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        90%[=================&gt;  ]   1.30G  9.32MB/s    eta 15s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        91%[=================&gt;  ]   1.30G  9.56MB/s    eta 15s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        91%[=================&gt;  ]   1.30G  9.38MB/s    eta 15s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        91%[=================&gt;  ]   1.31G  9.30MB/s    eta 14s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        91%[=================&gt;  ]   1.31G  9.60MB/s    eta 14s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        91%[=================&gt;  ]   1.31G  9.40MB/s    eta 14s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        91%[=================&gt;  ]   1.31G  9.30MB/s    eta 14s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        91%[=================&gt;  ]   1.31G  9.61MB/s    eta 14s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        92%[=================&gt;  ]   1.32G  9.41MB/s    eta 13s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        92%[=================&gt;  ]   1.32G  9.15MB/s    eta 13s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        92%[=================&gt;  ]   1.32G  9.60MB/s    eta 13s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        92%[=================&gt;  ]   1.32G  9.33MB/s    eta 13s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        92%[=================&gt;  ]   1.32G  9.28MB/s    eta 13s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        92%[=================&gt;  ]   1.33G  9.43MB/s    eta 12s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        92%[=================&gt;  ]   1.33G  9.26MB/s    eta 12s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        92%[=================&gt;  ]   1.33G  9.32MB/s    eta 12s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        93%[=================&gt;  ]   1.33G  9.44MB/s    eta 12s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        93%[=================&gt;  ]   1.33G  9.06MB/s    eta 12s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        93%[=================&gt;  ]   1.33G  9.31MB/s    eta 11s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        93%[=================&gt;  ]   1.34G  9.43MB/s    eta 11s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        93%[=================&gt;  ]   1.34G  9.05MB/s    eta 11s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        93%[=================&gt;  ]   1.34G  9.30MB/s    eta 11s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        93%[=================&gt;  ]   1.34G  9.42MB/s    eta 11s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        94%[=================&gt;  ]   1.34G  9.04MB/s    eta 10s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        94%[=================&gt;  ]   1.35G  9.29MB/s    eta 10s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        94%[=================&gt;  ]   1.35G  9.41MB/s    eta 10s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        94%[=================&gt;  ]   1.35G  9.03MB/s    eta 10s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        94%[=================&gt;  ]   1.35G  9.31MB/s    eta 10s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        94%[=================&gt;  ]   1.35G  9.56MB/s    eta 8s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        94%[=================&gt;  ]   1.36G  9.03MB/s    eta 8s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        95%[==================&gt; ]   1.36G  9.28MB/s    eta 8s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        95%[==================&gt; ]   1.36G  9.58MB/s    eta 8s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        95%[==================&gt; ]   1.36G  9.04MB/s    eta 8s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        95%[==================&gt; ]   1.36G  9.35MB/s    eta 7s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        95%[==================&gt; ]   1.37G  9.55MB/s    eta 7s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        95%[==================&gt; ]   1.37G  9.04MB/s    eta 7s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        95%[==================&gt; ]   1.37G  9.03MB/s    eta 7s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        96%[==================&gt; ]   1.37G  9.05MB/s    eta 6s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        96%[==================&gt; ]   1.38G  9.06MB/s    eta 6s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        96%[==================&gt; ]   1.38G  8.95MB/s    eta 6s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        96%[==================&gt; ]   1.38G  8.96MB/s    eta 6s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        96%[==================&gt; ]   1.38G  8.96MB/s    eta 5s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        97%[==================&gt; ]   1.39G  8.96MB/s    eta 5s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        97%[==================&gt; ]   1.39G  8.96MB/s    eta 5s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        97%[==================&gt; ]   1.39G  8.96MB/s    eta 5s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        97%[==================&gt; ]   1.40G  9.04MB/s    eta 4s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        97%[==================&gt; ]   1.40G  9.36MB/s    eta 4s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        98%[==================&gt; ]   1.40G  9.36MB/s    eta 4s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        98%[==================&gt; ]   1.41G  9.34MB/s    eta 4s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        98%[==================&gt; ]   1.41G  9.45MB/s    eta 2s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        98%[==================&gt; ]   1.41G  9.45MB/s    eta 2s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        98%[==================&gt; ]   1.41G  8.96MB/s    eta 2s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        99%[==================&gt; ]   1.42G  9.30MB/s    eta 2s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        99%[==================&gt; ]   1.42G  8.98MB/s    eta 1s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        99%[==================&gt; ]   1.42G  9.31MB/s    eta 1s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        99%[==================&gt; ]   1.42G  9.01MB/s    eta 1s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii        99%[==================&gt; ]   1.43G  9.32MB/s    eta 1s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./mp2rage.nii       100%[===================&gt;]   1.43G  9.62MB/s    in 2m 40s  
+
+2023-07-10 00:14:38 (9.17 MB/s) - ‘./mp2rage.nii’ saved [1536000352/1536000352]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>freesurfer_example.ipynb  nipype_module_example.ipynb
+intro.md		  qsmxt_example.ipynb
+mp2rage.nii		  sct_toolbox_example.ipynb
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="run">
+<h1>Run<a class="headerlink" href="#run" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>mkdir<span class="w"> </span>./freesurfer_output
+<span class="o">!</span>recon-all<span class="w"> </span>-subject<span class="w"> </span>subjectname<span class="w"> </span>-i<span class="w"> </span>mp2rage.nii<span class="w"> </span>-all<span class="w"> </span>-sd<span class="w"> </span>./freesurfer_output
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fs-check-version --s subjectname --o /tmp/tmp.p5V59N
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mon Jul 10 00:14:40 UTC 2023
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>setenv SUBJECTS_DIR /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output
+cd /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging
+/opt/freesurfer-7.3.2/bin/fs-check-version --s subjectname --o /tmp/tmp.p5V59N
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rwxrwxr-x 1 116 122 18565 Aug  4  2022 /opt/freesurfer-7.3.2/bin/fs-check-version
+
+freesurfer-linux-centos8_x86_64-7.3.2-20220804-6354275
+$Id$
+Linux cirun-neurodesk--example-notebooks-416384d 5.15.0-1038-oracle #44-Ubuntu SMP Thu Jun 22 03:34:25 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+pid 8777
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current FS Version freesurfer-linux-centos8_x86_64-7.3.2-20220804-6354275
+Subject does not have a bstampfile, copying /opt/freesurfer-7.3.2/build-stamp.txt
+Subject FS Version: freesurfer-linux-centos8_x86_64-7.3.2-20220804-6354275
+No constraints on version because REQ=UnSet and FsVerFile=NotThere
+#@#% fs-check-version match = 1
+fs-check-version Done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: SUBJECTS_DIR is /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output
+Actual FREESURFER_HOME /usr/local/freesurfer/7.3.2-1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linux cirun-neurodesk--example-notebooks-416384d 5.15.0-1038-oracle #44-Ubuntu SMP Thu Jun 22 03:34:25 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname
+
+ mri_convert /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/mp2rage.nii /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/orig/001.mgz 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mri_convert /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/mp2rage.nii /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/orig/001.mgz 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reading from /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/mp2rage.nii...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (1, 0, 0)
+j_ras = (0, 1, 0)
+k_ras = (0, 0, 1)
+writing to /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/orig/001.mgz...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#--------------------------------------------
+#@# MotionCor Mon Jul 10 00:17:26 UTC 2023
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 1 runs
+/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/orig/001.mgz
+Checking for (invalid) multi-frame inputs...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Only one run found so motion
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>correction will not be performed. I&#39;ll
+copy the run to rawavg and continue.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> cp /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/orig/001.mgz /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/rawavg.mgz 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> mri_info /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/rawavg.mgz 
+
+rawavg.mgz ========================================
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Volume information for /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/rawavg.mgz
+          type: MGH
+    dimensions: 640 x 750 x 800
+   voxel sizes: 0.300000, 0.300000, 0.300000
+          type: FLOAT (3)
+           fov: 240.000
+           dof: 1
+        xstart: -96.0, xend: 96.0
+        ystart: -112.5, yend: 112.5
+        zstart: -120.0, zend: 120.0
+            TR: 0.00 msec, TE: 0.00 msec, TI: 0.00 msec, flip angle: 0.00 degrees
+       nframes: 1
+       PhEncDir: UNKNOWN
+       FieldStrength: 0.000000
+ras xform present
+    xform info: x_r =   1.0000, y_r =   0.0000, z_r =   0.0000, c_r =     0.3750
+              : x_a =   0.0000, y_a =   1.0000, z_a =   0.0000, c_a =     0.3750
+              : x_s =   0.0000, y_s =   0.0000, z_s =   1.0000, c_s =     0.3750
+
+talairach xfm : 
+Orientation   : RAS
+Primary Slice Direction: axial
+
+voxel to ras transform:
+                0.3000   0.0000   0.0000   -95.6250
+                0.0000   0.3000   0.0000  -112.1250
+                0.0000   0.0000   0.3000  -119.6250
+                0.0000   0.0000   0.0000     1.0000
+
+voxel-to-ras determinant 0.027
+
+ras to voxel transform:
+                3.3333   0.0000   0.0000   318.7500
+                0.0000   3.3333   0.0000   373.7500
+                0.0000   0.0000   3.3333   398.7500
+                0.0000   0.0000   0.0000     1.0000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname
+
+ mri_convert /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/rawavg.mgz /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/orig.mgz --conform 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mri_convert /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/rawavg.mgz /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/orig.mgz --conform 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reading from /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/rawavg.mgz...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (1, 0, 0)
+j_ras = (0, 1, 0)
+k_ras = (0, 0, 1)
+changing data type from float to uchar (noscale = 0)...
+MRIchangeType: Building histogram 0 255 1000, flo=0, fhi=0.999, dest_type=0
+Reslicing using trilinear interpolation 
+writing to /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/orig.mgz...
+
+ mri_add_xform_to_header -c /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/transforms/talairach.xfm /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/orig.mgz /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/orig.mgz 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: extension is mgz
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> mri_info /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/orig.mgz 
+
+orig.mgz ========================================
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Volume information for /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/orig.mgz
+          type: MGH
+    dimensions: 256 x 256 x 256
+   voxel sizes: 1.000000, 1.000000, 1.000000
+          type: UCHAR (0)
+           fov: 256.000
+           dof: 1
+        xstart: -128.0, xend: 128.0
+        ystart: -128.0, yend: 128.0
+        zstart: -128.0, zend: 128.0
+            TR: 0.00 msec, TE: 0.00 msec, TI: 0.00 msec, flip angle: 0.00 degrees
+       nframes: 1
+       PhEncDir: UNKNOWN
+       FieldStrength: 0.000000
+ras xform present
+    xform info: x_r =  -1.0000, y_r =   0.0000, z_r =   0.0000, c_r =     0.3750
+              : x_a =   0.0000, y_a =   0.0000, z_a =   1.0000, c_a =     0.3750
+              : x_s =   0.0000, y_s =  -1.0000, z_s =   0.0000, c_s =     0.3750
+
+talairach xfm : /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/transforms/talairach.xfm
+Orientation   : LIA
+Primary Slice Direction: coronal
+
+voxel to ras transform:
+               -1.0000   0.0000   0.0000   128.3750
+                0.0000   0.0000   1.0000  -127.6250
+                0.0000  -1.0000   0.0000   128.3750
+                0.0000   0.0000   0.0000     1.0000
+
+voxel-to-ras determinant -1
+
+ras to voxel transform:
+               -1.0000  -0.0000  -0.0000   128.3750
+               -0.0000  -0.0000  -1.0000   128.3750
+               -0.0000   1.0000  -0.0000   127.6250
+               -0.0000  -0.0000  -0.0000     1.0000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#--------------------------------------------
+#@# Talairach Mon Jul 10 00:21:35 UTC 2023
+/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> mri_nu_correct.mni --no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/bin/bc
+/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri
+/opt/freesurfer-7.3.2/bin/mri_nu_correct.mni
+--no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nIters 1
+mri_nu_correct.mni 7.3.2
+Linux cirun-neurodesk--example-notebooks-416384d 5.15.0-1038-oracle #44-Ubuntu SMP Thu Jun 22 03:34:25 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+Mon Jul 10 00:21:35 UTC 2023
+tmpdir is ./tmp.mri_nu_correct.mni.9233
+cd /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri
+AntsN4BiasFieldCorrectionFs -i orig.mgz -o ./tmp.mri_nu_correct.mni.9233/nu0.mgz --dtype uchar
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AntsN4BiasFieldCorrectionFs done
+mri_convert ./tmp.mri_nu_correct.mni.9233/nu0.mgz orig_nu.mgz --like orig.mgz --conform
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mri_convert ./tmp.mri_nu_correct.mni.9233/nu0.mgz orig_nu.mgz --like orig.mgz --conform 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reading from ./tmp.mri_nu_correct.mni.9233/nu0.mgz...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+INFO: transform src into the like-volume: orig.mgz
+writing to orig_nu.mgz...
+ 
+ 
+Mon Jul 10 00:26:16 UTC 2023
+mri_nu_correct.mni done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> talairach_avi --i orig_nu.mgz --xfm transforms/talairach.auto.xfm 
+
+talairach_avi log file is transforms/talairach_avi.log...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mv -f /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/talsrcimg_to_711-2C_as_mni_average_305_t4_vox2vox.txt /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/transforms/talsrcimg_to_711-2C_as_mni_average_305_t4_vox2vox.txt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Started at Mon Jul 10 00:26:16 UTC 2023
+Ended   at Mon Jul 10 00:26:48 UTC 2023
+talairach_avi done
+
+ cp transforms/talairach.auto.xfm transforms/talairach.xfm 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lta_convert --src orig.mgz --trg /opt/freesurfer-7.3.2/average/mni305.cor.mgz --inxfm transforms/talairach.xfm --outlta transforms/talairach.xfm.lta --subject fsaverage --ltavox2vox
+7.3.2
+
+--src: orig.mgz src image (geometry).
+--trg: /opt/freesurfer-7.3.2/average/mni305.cor.mgz trg image (geometry).
+--inmni: transforms/talairach.xfm input MNI/XFM transform.
+--outlta: transforms/talairach.xfm.lta output LTA.
+--s: fsaverage subject name
+--ltavox2vox: output LTA as VOX_TO_VOX transform.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> LTA read, type : 1
+ 1.07958   0.00270  -0.01574   0.58327;
+ 0.01399   0.99838   0.31440  -9.30106;
+ 0.00758  -0.40444   1.15055  -29.25244;
+ 0.00000   0.00000   0.00000   1.00000;
+setting subject to fsaverage
+Writing  LTA to file transforms/talairach.xfm.lta...
+lta_convert successful.
+~/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/transforms ~/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri 
+~/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri 
+#--------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#@# Talairach Failure Detection Mon Jul 10 00:26:51 UTC 2023
+/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri
+
+ talairach_afd -T 0.005 -xfm transforms/talairach.xfm 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>talairach_afd: Talairach Transform: transforms/talairach.xfm OK (p=0.7053, pval=0.4932 &gt;= threshold=0.0050)
+
+ awk -f /opt/freesurfer-7.3.2/bin/extract_talairach_avi_QA.awk /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/transforms/talairach_avi.log 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> tal_QC_AZS /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri/transforms/talairach_avi.log 
+
+TalAviQA: 0.97201
+z-score: -1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#--------------------------------------------
+#@# Nu Intensity Correction Mon Jul 10 00:26:51 UTC 2023
+
+ mri_nu_correct.mni --i orig.mgz --o nu.mgz --uchar transforms/talairach.xfm --n 2 --ants-n4 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/bin/bc
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri
+/opt/freesurfer-7.3.2/bin/mri_nu_correct.mni
+--i orig.mgz --o nu.mgz --uchar transforms/talairach.xfm --n 2 --ants-n4
+nIters 2
+mri_nu_correct.mni 7.3.2
+Linux cirun-neurodesk--example-notebooks-416384d 5.15.0-1038-oracle #44-Ubuntu SMP Thu Jun 22 03:34:25 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mon Jul 10 00:26:51 UTC 2023
+tmpdir is ./tmp.mri_nu_correct.mni.9508
+cd /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/structural_imaging/freesurfer_output/subjectname/mri
+AntsN4BiasFieldCorrectionFs -i orig.mgz -o ./tmp.mri_nu_correct.mni.9508/nu0.mgz --dtype uchar
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>./freesurfer_output/subjectname/mri
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T1.mgz					 mri_nu_correct.mni.log.bak
+antsdn.brain.mgz			 norm.mgz
+aparc+aseg.mgz				 nu.mgz
+aparc.DKTatlas+aseg.mgz			 orig
+aparc.a2009s+aseg.mgz			 orig.mgz
+aseg.auto.mgz				 orig_nu.mgz
+aseg.auto_noCCseg.label_intensities.txt  rawavg.mgz
+aseg.auto_noCCseg.mgz			 rh.ribbon.mgz
+aseg.mgz				 ribbon.mgz
+aseg.presurf.hypos.mgz			 segment.dat
+aseg.presurf.mgz			 surface.defects.mgz
+brain.finalsurfs.mgz			 talairach.label_intensities.txt
+brain.mgz				 talairach.log
+brainmask.auto.mgz			 talairach_with_skull.log
+brainmask.mgz				 transforms
+ctrl_pts.mgz				 wm.asegedit.mgz
+filled.auto.mgz				 wm.mgz
+filled.mgz				 wm.seg.mgz
+lh.ribbon.mgz				 wmparc.mgz
+mri_nu_correct.mni.log
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>./freesurfer_output/subjectname/surf
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>autodet.gw.stats.lh.dat  lh.smoothwm.K1.crv	  rh.inflated.nofix
+autodet.gw.stats.rh.dat  lh.smoothwm.K2.crv	  rh.jacobian_white
+lh.area			 lh.smoothwm.S.crv	  rh.orig
+lh.area.mid		 lh.smoothwm.nofix	  rh.orig.nofix
+lh.area.pial		 lh.sphere		  rh.orig.premesh
+lh.avg_curv		 lh.sphere.reg		  rh.pial
+lh.curv			 lh.sulc		  rh.pial.T1
+lh.curv.pial		 lh.thickness		  rh.qsphere.nofix
+lh.defect_borders	 lh.volume		  rh.smoothwm
+lh.defect_chull		 lh.w-g.pct.mgh		  rh.smoothwm.BE.crv
+lh.defect_labels	 lh.white		  rh.smoothwm.C.crv
+lh.defects.pointset	 lh.white.H		  rh.smoothwm.FI.crv
+lh.fsaverage.sphere.reg  lh.white.K		  rh.smoothwm.H.crv
+lh.inflated		 lh.white.preaparc	  rh.smoothwm.K.crv
+lh.inflated.H		 lh.white.preaparc.H	  rh.smoothwm.K1.crv
+lh.inflated.K		 lh.white.preaparc.K	  rh.smoothwm.K2.crv
+lh.inflated.nofix	 rh.area		  rh.smoothwm.S.crv
+lh.jacobian_white	 rh.area.mid		  rh.smoothwm.nofix
+lh.orig			 rh.area.pial		  rh.sphere
+lh.orig.nofix		 rh.avg_curv		  rh.sphere.reg
+lh.orig.premesh		 rh.curv		  rh.sulc
+lh.pial			 rh.curv.pial		  rh.thickness
+lh.pial.T1		 rh.defect_borders	  rh.volume
+lh.qsphere.nofix	 rh.defect_chull	  rh.w-g.pct.mgh
+lh.smoothwm		 rh.defect_labels	  rh.white
+lh.smoothwm.BE.crv	 rh.defects.pointset	  rh.white.H
+lh.smoothwm.C.crv	 rh.fsaverage.sphere.reg  rh.white.K
+lh.smoothwm.FI.crv	 rh.inflated		  rh.white.preaparc
+lh.smoothwm.H.crv	 rh.inflated.H		  rh.white.preaparc.H
+lh.smoothwm.K.crv	 rh.inflated.K		  rh.white.preaparc.K
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipyniivue</span>
+<span class="n">nv</span> <span class="o">=</span> <span class="n">ipyniivue</span><span class="o">.</span><span class="n">Niivue</span><span class="p">(</span><span class="n">crosshair_color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">nv</span><span class="o">.</span><span class="n">add_volume</span><span class="p">(</span><span class="s1">&#39;./freesurfer_output/subjectname/mri/orig.mgz&#39;</span><span class="p">)</span>
+<span class="n">nv</span><span class="o">.</span><span class="n">add_volume</span><span class="p">(</span><span class="s1">&#39;./freesurfer_output/subjectname/mri/aseg.mgz&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "a61b9294a6d446f4802d9d0f705f333c", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Setup Neurodesk</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#download-data">download data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#run">Run</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Neurodesk Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
