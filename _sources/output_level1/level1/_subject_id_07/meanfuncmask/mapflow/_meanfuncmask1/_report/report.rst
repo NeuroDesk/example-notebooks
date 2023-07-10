@@ -85,8 +85,8 @@ Runtime info
 
 
 * cmdline : bet sub-07_task-flanker_run-2_bold_dtype_mcf_mean.nii.gz sub-07_task-flanker_run-2_bold_dtype_mcf_mean_brain.nii.gz -f 0.30 -m -n
-* duration : 1.76393
-* hostname : cirun-neurodesk--example-notebooks-32affd0
+* duration : 1.847048
+* hostname : cirun-neurodesk--example-notebooks-4d4c3c7
 * prev_wd : /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/functional_imaging
 * working_dir : /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks/books/functional_imaging/output_level1/level1/_subject_id_07/meanfuncmask/mapflow/_meanfuncmask1
 
@@ -131,14 +131,14 @@ Environment
 * GITHUB_ACTOR_ID : 59903692
 * GITHUB_API_URL : https://api.github.com
 * GITHUB_BASE_REF : 
-* GITHUB_ENV : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/set_env_1cce6f4f-bb89-4f02-8ccc-ecc19565b2d5
-* GITHUB_EVENT_NAME : push
+* GITHUB_ENV : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/set_env_bc219c34-b66d-465e-8ee5-c21a6bebb426
+* GITHUB_EVENT_NAME : workflow_dispatch
 * GITHUB_EVENT_PATH : /home/runnerx/actions-runner/_work/_temp/_github_workflow/event.json
 * GITHUB_GRAPHQL_URL : https://api.github.com/graphql
 * GITHUB_HEAD_REF : 
 * GITHUB_JOB : test-notebooks
-* GITHUB_OUTPUT : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/set_output_1cce6f4f-bb89-4f02-8ccc-ecc19565b2d5
-* GITHUB_PATH : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/add_path_1cce6f4f-bb89-4f02-8ccc-ecc19565b2d5
+* GITHUB_OUTPUT : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/set_output_bc219c34-b66d-465e-8ee5-c21a6bebb426
+* GITHUB_PATH : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/add_path_bc219c34-b66d-465e-8ee5-c21a6bebb426
 * GITHUB_REF : refs/heads/main
 * GITHUB_REF_NAME : main
 * GITHUB_REF_PROTECTED : false
@@ -149,22 +149,22 @@ Environment
 * GITHUB_REPOSITORY_OWNER_ID : 67053431
 * GITHUB_RETENTION_DAYS : 90
 * GITHUB_RUN_ATTEMPT : 1
-* GITHUB_RUN_ID : 5502556464
-* GITHUB_RUN_NUMBER : 61
+* GITHUB_RUN_ID : 5503576252
+* GITHUB_RUN_NUMBER : 62
 * GITHUB_SERVER_URL : https://github.com
-* GITHUB_SHA : dee0adadab638be0a745a89555eef37456b38a23
-* GITHUB_STATE : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/save_state_1cce6f4f-bb89-4f02-8ccc-ecc19565b2d5
-* GITHUB_STEP_SUMMARY : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/step_summary_1cce6f4f-bb89-4f02-8ccc-ecc19565b2d5
+* GITHUB_SHA : 73f2318d62cf426c43e4a91ef34f04383b616626
+* GITHUB_STATE : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/save_state_bc219c34-b66d-465e-8ee5-c21a6bebb426
+* GITHUB_STEP_SUMMARY : /home/runnerx/actions-runner/_work/_temp/_runner_file_commands/step_summary_bc219c34-b66d-465e-8ee5-c21a6bebb426
 * GITHUB_TRIGGERING_ACTOR : iishiishii
 * GITHUB_WORKFLOW : test_changed_notebooks
 * GITHUB_WORKFLOW_REF : NeuroDesk/example-notebooks/.github/workflows/test_changed_notebook.yml@refs/heads/main
-* GITHUB_WORKFLOW_SHA : dee0adadab638be0a745a89555eef37456b38a23
+* GITHUB_WORKFLOW_SHA : 73f2318d62cf426c43e4a91ef34f04383b616626
 * GITHUB_WORKSPACE : /home/runnerx/actions-runner/_work/example-notebooks/example-notebooks
 * GIT_PAGER : cat
 * HOME : /home/runnerx
-* INVOCATION_ID : 044471e592e741228bda249a44cb431b
-* JOURNAL_STREAM : 8:33300
-* JPY_PARENT_PID : 8655
+* INVOCATION_ID : beacec4862c14d53a3609ac9dbb75ab3
+* JOURNAL_STREAM : 8:27486
+* JPY_PARENT_PID : 9144
 * KMP_DUPLICATE_LIB_OK : True
 * KMP_INIT_AT_FORK : FALSE
 * LANG : C.UTF-8
@@ -183,16 +183,16 @@ Environment
 * PYDEVD_USE_FRAME_EVAL : NO
 * RUNNER_ARCH : X64
 * RUNNER_ENVIRONMENT : self-hosted
-* RUNNER_NAME : cirun-neurodesk--example-notebooks-32affd0
+* RUNNER_NAME : cirun-neurodesk--example-notebooks-4d4c3c7
 * RUNNER_OS : Linux
 * RUNNER_TEMP : /home/runnerx/actions-runner/_work/_temp
 * RUNNER_TOOL_CACHE : /home/runnerx/actions-runner/_work/_tool
-* RUNNER_TRACKING_ID : github_c3c5ad48-bcb3-4b03-9a77-25e27bbb50e9
+* RUNNER_TRACKING_ID : github_d2c4cdf0-c2c3-4878-b1fd-d6a2a9970aa8
 * RUNNER_WORKSPACE : /home/runnerx/actions-runner/_work/example-notebooks
 * SHELL : /bin/bash
 * SHLVL : 1
 * SINGULARITY_BINDPATH : /data,/neurodesktop-storage,/tmp,/cvmfs
-* SYSTEMD_EXEC_PID : 3129
+* SYSTEMD_EXEC_PID : 2765
 * TERM : xterm-color
 * USER : runnerx
 * _ : /home/runnerx/.local/bin/jb
