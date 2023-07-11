@@ -2,8 +2,12 @@
 set -e
 
 export DEBIAN_FRONTEND=noninteractive
-echo "checking if CVMFS part works:"
+echo "checking lock files"
 
+sudo lsof /var/lib/dpkg/lock
+sudo lsof /var/lib/dpkg/lock-frontend
+
+echo "checking if CVMFS part works:"
 sudo apt-get install lsb-release
 wget https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
 
@@ -16,10 +20,10 @@ sudo apt-get install -y cvmfs --allow-unauthenticated
 sudo apt-get install -y graphviz
 sudo apt-get install -y tree
 
-sudo apt install -y software-properties-common
+sudo apt-get install -y software-properties-common
 sudo add-apt-repository -y ppa:apptainer/ppa
-sudo apt update
-sudo apt install -y apptainer datalad apptainer-suid lmod
+sudo apt-get update
+sudo apt-get install -y apptainer datalad apptainer-suid lmod
 sudo apptainer config fakeroot --add root
 pip install jupyterlmod pandas nilearn matplotlib nipype 
 
