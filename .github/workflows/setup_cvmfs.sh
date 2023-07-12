@@ -4,8 +4,8 @@ set -e
 export DEBIAN_FRONTEND=noninteractive
 echo "checking lock files"
 
-sudo lsof /var/lib/dpkg/lock
-sudo lsof /var/lib/dpkg/lock-frontend
+# make sure to kill potentially running apt or apt-get
+sudo killall apt apt-get
 
 echo "checking if CVMFS part works:"
 sudo apt-get install lsb-release
