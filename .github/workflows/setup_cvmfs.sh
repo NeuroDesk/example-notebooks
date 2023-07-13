@@ -5,7 +5,7 @@ export DEBIAN_FRONTEND=noninteractive
 echo "checking lock files"
 
 # make sure to kill potentially running processes that lock the next steps:
-sudo fuser -vik -TERM /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend /var/lib/apt/lists/lock
+# sudo fuser -vik -TERM /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend /var/lib/apt/lists/lock
 
 
 echo "checking if CVMFS part works:"
@@ -13,7 +13,7 @@ sudo apt-get install lsb-release
 wget https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
 
 echo "[DEBUG]: adding cfms repo"
-sudo dpkg -i cvmfs-release-latest_all.deb
+sudo apt-get install ./cvmfs-release-latest_all.deb
 echo "[DEBUG]: apt-get update"
 sudo apt-get update --allow-unauthenticated
 echo "[DEBUG]: apt-get install cvmfs"
