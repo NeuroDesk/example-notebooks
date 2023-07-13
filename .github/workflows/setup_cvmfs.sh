@@ -4,12 +4,13 @@ set -e
 export DEBIAN_FRONTEND=noninteractive
 
 # Stop and disable apt-daily upgrade services;
-systemctl stop apt-daily.timer
-systemctl disable apt-daily.timer
-systemctl disable apt-daily.service
-systemctl stop apt-daily-upgrade.timer
-systemctl disable apt-daily-upgrade.timer
-systemctl disable apt-daily-upgrade.service
+echo "Stop and disable apt-daily upgrade services"
+sudo systemctl stop apt-daily.timer
+sudo systemctl disable apt-daily.timer
+sudo systemctl disable apt-daily.service
+sudo systemctl stop apt-daily-upgrade.timer
+sudo systemctl disable apt-daily-upgrade.timer
+sudo systemctl disable apt-daily-upgrade.service
 
 # This step should completely disable any automatic updates except manual
 sudo sed -i 's/APT::Periodic::Update-Package-Lists "1"/APT::Periodic::Update-Package-Lists "0"/' /etc/apt/apt.conf.d/20auto-upgrades
