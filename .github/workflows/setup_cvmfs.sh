@@ -23,6 +23,9 @@ echo "APT::Get::Assume-Yes \"true\";" | sudo tee /etc/apt/apt.conf.d/90assumeyes
 # uninstall unattended-upgrades
 sudo apt remove -y unattended-upgrades
 
+sudo apt-get update --allow-unauthenticated
+sleep 5 # to allow update lock to disappear
+
 sleep 5 # to allow update lock to disappear
 echo "[DEBUG]: adding cfms repo"
 sudo apt-get install lsb-release
@@ -32,9 +35,6 @@ sudo apt-get install ./cvmfs-release-latest_all.deb
 sleep 5 # to allow update lock to disappear
 
 sudo add-apt-repository -y ppa:apptainer/ppa
-sleep 5 # to allow update lock to disappear
-
-sudo apt-get update --allow-unauthenticated
 sleep 5 # to allow update lock to disappear
 
 echo "[DEBUG]: install cvmfs and other dependencies "
