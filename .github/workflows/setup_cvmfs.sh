@@ -2,13 +2,10 @@
 set -e
 
 export DEBIAN_FRONTEND=noninteractive
-echo "checking lock files"
-
 # make sure to kill potentially running processes that lock the next steps:
 # sudo fuser -vik -TERM /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend /var/lib/apt/lists/lock
-
-
 echo "checking if CVMFS part works:"
+sleep 5 # to allow update lock to disappear
 sudo apt-get install lsb-release
 wget https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
 
@@ -24,6 +21,7 @@ sudo apt-get install -y tree
 sudo apt-get install -y software-properties-common
 sudo add-apt-repository -y ppa:apptainer/ppa
 sudo apt-get update
+sleep 5 # to allow update lock to disappear
 sudo apt-get install -y apptainer datalad apptainer-suid lmod
 sudo apptainer config fakeroot --add root
 pip install jupyterlmod pandas nilearn matplotlib nipype 
