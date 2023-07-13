@@ -129,7 +129,7 @@ jobs:
         export MPLCONFIGDIR=${{ github.workspace }}/matplotlib-mpldir
         export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
         echo "MODULEPATH=$MODULEPATH"
-        sed -i 's/timeout:.*/timeout: 5/' _config.yml
+        sed -i 's/timeout:.*/timeout: 3/' _config.yml
         jb build .
 
     - name: Exclude files

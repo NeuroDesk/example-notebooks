@@ -4,7 +4,7 @@ set -e
 export DEBIAN_FRONTEND=noninteractive
 
 # uninstall unattended-upgrades
-sudo apt remove unattended-upgrades
+sudo apt remove -y unattended-upgrades
 
 sleep 5 # to allow update lock to disappear
 echo "[DEBUG]: adding cfms repo"
