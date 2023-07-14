@@ -38,6 +38,7 @@ html:
   baseurl: https://neurodesk.github.io/example-notebooks/intro.html
   use_issues_button: true
   use_repository_button: true
+  google_analytics_id: G-4Z9774J59Y
 
 sphinx:
   config:
@@ -53,4 +54,3 @@ sphinx:
           colab_url: "https://colab.research.google.com",
           binderhub_url: "https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks"
         }
-    bibtex_reference_style: author_year
