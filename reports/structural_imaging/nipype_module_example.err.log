@@ -26,11 +26,12 @@ Traceback (most recent call last):
     error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
   File "/home/runnerx/.local/lib/python3.10/site-packages/nbclient/client.py", line 852, in _async_handle_timeout
     raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 3 seconds.
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 1 seconds.
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-![ -f ./sub-01_ses-01_7T_T1w_defaced.nii  ] && echo "$FILE exist." || wget https://objectstorage.us-ashburn-1.oraclecloud.com/n/idrvm4tkz2a8/b/TOMCAT/o/TOMCAT_DIB/sub-01/ses-01_7T/anat/sub-01_ses-01_7T_T1w_defaced.nii.gz -O ./sub-01_ses-01_7T_T1w_defaced.nii.gz 
-![ -f ./sub-01_ses-01_7T_T1w_defaced.nii  ] && echo "$FILE exist." || gunzip ./sub-01_ses-01_7T_T1w_defaced.nii.gz 
+from nipype.interfaces.fsl.base import Info
+print(Info.version())
+# if the FSL version is changed using lmod above, the kernel of the notebook needs to be restarted!
 -------------------
 
