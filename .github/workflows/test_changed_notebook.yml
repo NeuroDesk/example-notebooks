@@ -133,10 +133,23 @@ jobs:
         sed -i 's/execute_notebooks:.*/execute_notebooks: cache/' _config.yml
         jb build .
 
+
     - name: Exclude files
       shell: bash
       run: |
         tree ./books/_build/html
+
+    - name: Ignore changes
+      shell: bash
+      run: |
+        mkdir -p .gitconfig
+        echo "[alias]
+        unchanged = update-index --assume-unchanged
+        changed = update-index --no-assume-unchanged
+        show-unchanged = \"git ls-files -v | sed -i -e ':a' -e 'N' -e '\$!ba' -e 's/<div class=\"cell_output docutils container\">.*<\\/div>//g'\"" > .gitconfig
+        git diff >./my_config.patch
+        git update-index --assume-unchanged my_config
+        cat ./my_config.patch
 
     - name: Push to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.7.3
