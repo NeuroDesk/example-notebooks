@@ -72,7 +72,7 @@ jobs:
         export MPLCONFIGDIR=${{ github.workspace }}/matplotlib-mpldir
         export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
         echo "MODULEPATH=$MODULEPATH"
-        sed -i 's/timeout:.*/timeout: 300/' _config.yml
+        sed -i 's/timeout:.*/timeout: 200/' _config.yml
         echo "NOTEBOOK=$(basename -s .ipynb ${{ matrix.notebooks }})" >> $GITHUB_ENV
         echo "DIRNAME=$(dirname ${{ matrix.notebooks }})" >> $GITHUB_ENV
         jb build ${{ matrix.notebooks }}
@@ -113,7 +113,7 @@ jobs:
       shell: bash
       working-directory: ./books
       run: |
-        sed -i 's/timeout:.*/timeout: 1/' _config.yml
+        sed -i 's/timeout:.*/timeout: 1/' _config.ym
         jb build .
 
 
@@ -125,13 +125,12 @@ jobs:
     - name: Ignore changes
       shell: bash
       run: |
-        echo "[alias]
-        unchanged = update-index --assume-unchanged
-        changed = update-index --no-assume-unchanged
-        show-unchanged = \"git ls-files -v | sed -i -e ':a' -e 'N' -e '\$!ba' -e 's/<div class=\"cell_output docutils container\">.*<\\/div>//g'\"" > .gitconfig
-        git diff >./my_config.patch
-        git update-index --assume-unchanged my_config
+        echo "git diff any line that does not start with space and does not start with <div or contains action"
+        git diff -w -G'(^<([^d]|d($|[^i]|i($|[^v]|v[^>]))|[^>]).*)|(\baction\b)'>./my_config.patch
+        echo "check changes"
         cat ./my_config.patch
+        echo "git apply patch"
+        git apply --check --ignore-space-change --ignore-whitespace --reject ./my_config.patch
 
     - name: Push to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.7.3
