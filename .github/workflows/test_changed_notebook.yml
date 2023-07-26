@@ -125,6 +125,8 @@ jobs:
     - name: Ignore changes
       shell: bash
       run: |
+        git diff >./my_config.patch
+        cat ./my_config.patch
         echo "git diff any line that does not start with space and does not start with <div or contains action"
         git diff -w -G'(^<([^d]|d($|[^i]|i($|[^v]|v[^>]))|[^>]).*)|(\baction\b)'>./my_config.patch
         echo "check changes"
