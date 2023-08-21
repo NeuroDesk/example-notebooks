@@ -117,12 +117,6 @@ jobs:
         sed -i 's/timeout:.*/timeout: 1/' _config.yml
         jb build .
 
-
-    - name: Exclude files
-      shell: bash
-      run: |
-        tree ./books/_build/html
-
     - name: Ignore changes
       shell: bash
       run: |
