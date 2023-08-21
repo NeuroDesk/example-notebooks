@@ -127,7 +127,7 @@ jobs:
         echo "checkout main"
         git checkout main
         echo "git apply patch"
-        git apply ./my_config.patch
+        git apply --reject --whitespace=fix ./my_config.patch
 
     - name: Push to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.7.3
