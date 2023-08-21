@@ -120,6 +120,7 @@ jobs:
     - name: Ignore changes
       shell: bash
       run: |
+        git fetch
         git branch -a
         echo "git diff"
         git diff remotes/origin/gh-pages remotes/origin/main >./my_config.patch
