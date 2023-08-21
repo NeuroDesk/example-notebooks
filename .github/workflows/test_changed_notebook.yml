@@ -126,6 +126,8 @@ jobs:
         git diff remotes/origin/gh-pages remotes/origin/main >./my_config.patch
         echo "git diff any line that does not start with space and does not start with <div or contains action"
         git diff -w -G'(^<([^d]|d($|[^i]|i($|[^v]|v[^>]))|[^>]).*)|(\baction\b)'>./my_config.patch
+        echo "checkout main"
+        git checkout main
         echo "git apply patch"
         git apply --check --ignore-space-change --ignore-whitespace --reject ./my_config.patch
 
