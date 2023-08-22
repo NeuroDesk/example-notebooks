@@ -114,20 +114,12 @@ jobs:
       working-directory: ./books
       run: |
         export PATH=$HOME/.local/bin:$PATH
+        sed -i 's/allow_errors: .*/allow_errors: false/' _config.yml
+        sed -i 's/stderr_output: .*/stderr_output: remove/' _config.yml
+        sed -i 's/execute_notebooks: .*/execute_notebooks: auto/' _config.yml
         sed -i 's/timeout:.*/timeout: 1/' _config.yml
         jb build .
 
-    - name: Ignore changes
-      shell: bash
-      run: |
-        git fetch
-        git branch -a
-        echo "git diff any line that does not start with space and does not start with <div or contains action"
-        git diff remotes/origin/gh-pages remotes/origin/main --no-color -w -G'(^<([^d]|d($|[^i]|i($|[^v]|v[^>]))|[^>]).*)|(\baction\b)'>./my_config.patch
-        echo "checkout main"
-        git checkout main
-        echo "git apply patch"
-        git apply --reject --whitespace=fix ./my_config.patch
 
     - name: Push to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.7.3
