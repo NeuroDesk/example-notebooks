@@ -21,7 +21,7 @@ execute:
 launch_buttons:
   colab_url: "https://colab.research.google.com"
   notebook_interface: "jupyterlab"
-  binderhub_url: "https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks"
+  binderhub_url: "https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/main"
 
 # Define the name of the latex output file for PDF builds
 # latex:
@@ -54,5 +54,5 @@ sphinx:
       launch_buttons:
         {
           colab_url: "https://colab.research.google.com",
-          binderhub_url: "https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks"
+          binderhub_url: "https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/main"
         }
