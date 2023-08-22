@@ -114,6 +114,7 @@ jobs:
       working-directory: ./books
       run: |
         export PATH=$HOME/.local/bin:$PATH
+        sed -i 's/execute_notebooks: .*/execute_notebooks: off/' _config.yml
         sed -i 's/allow_errors: .*/allow_errors: false/' _config.yml
         sed -i 's/stderr_output: .*/stderr_output: remove/' _config.yml
         sed -i 's/execute_notebooks: .*/execute_notebooks: auto/' _config.yml
