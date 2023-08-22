@@ -518,37 +518,14 @@ if IN_COLAB:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Lmod&#39;,
- &#39;Warning:&#39;,
- &#39;The&#39;,
- &#39;environment&#39;,
- &#39;MODULEPATH&#39;,
- &#39;has&#39;,
- &#39;been&#39;,
- &#39;changed&#39;,
- &#39;in&#39;,
- &#39;unexpected&#39;,
- &#39;ways.&#39;,
- &#39;Lmod&#39;,
- &#39;is&#39;,
- &#39;unable&#39;,
- &#39;to&#39;,
- &#39;use&#39;,
- &#39;given&#39;,
- &#39;MODULEPATH.&#39;,
- &#39;It&#39;,
- &#39;is&#39;,
- &#39;using:&#39;,
- &#39;&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps::&quot;.&#39;,
- &#39;Please&#39;,
- &#39;use&#39;,
- &#39;&quot;module&#39;,
- &#39;use&#39;,
- &#39;to&#39;,
- &#39;change&#39;,
- &#39;MODULEPATH&#39;,
- &#39;instead.&#39;,
- &#39;spinalcordtoolbox/5.8&#39;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">lmod</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;spinalcordtoolbox/5.8&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;lmod&#39;
 </pre></div>
 </div>
 </div>
@@ -582,53 +559,22 @@ if IN_COLAB:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
-Traceback (most recent call last):
-  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/scripts/sct_download_data.py&quot;, line 16, in &lt;module&gt;
-    from spinalcordtoolbox.download import install_named_dataset, DATASET_DICT
-  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/download.py&quot;, line 9, in &lt;module&gt;
-    import requests
-  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/site-packages/requests/__init__.py&quot;, line 43, in &lt;module&gt;
-    import urllib3
-  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/site-packages/urllib3/__init__.py&quot;, line 13, in &lt;module&gt;
-    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
-  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/site-packages/urllib3/connectionpool.py&quot;, line 12, in &lt;module&gt;
-    from .connection import (
-  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/site-packages/urllib3/connection.py&quot;, line 46, in &lt;module&gt;
-    from ._collections import HTTPHeaderDict  # noqa (historical, removed in v2)
-  File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 991, in _find_and_load
-  File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 975, in _find_and_load_unlocked
-  File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 671, in _load_unlocked
-  File &quot;&lt;frozen importlib._bootstrap_external&gt;&quot;, line 839, in exec_module
-  File &quot;&lt;frozen importlib._bootstrap_external&gt;&quot;, line 934, in get_code
-  File &quot;&lt;frozen importlib._bootstrap_external&gt;&quot;, line 1032, in get_data
-KeyboardInterrupt
-Traceback (most recent call last):
-  File &quot;/opt/spinalcordtoolbox-5.8/bin/sct_download_data&quot;, line 33, in &lt;module&gt;
-    sys.exit(load_entry_point(&#39;spinalcordtoolbox&#39;, &#39;console_scripts&#39;, &#39;sct_download_data&#39;)())
-  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/compat/launcher.py&quot;, line 42, in main
-    return subprocess.run(cmd, env=env).returncode
-  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/subprocess.py&quot;, line 495, in run
-    stdout, stderr = process.communicate(input, timeout=timeout)
-  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/subprocess.py&quot;, line 1020, in communicate
-    self.wait()
-  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/subprocess.py&quot;, line 1083, in wait
-    return self._wait(timeout=timeout)
-  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/subprocess.py&quot;, line 1806, in _wait
-    (pid, sts) = self._try_wait(0)
-  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/subprocess.py&quot;, line 1764, in _try_wait
-    (pid, sts) = os.waitpid(self.pid, wait_flags)
-KeyboardInterrupt
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;sct_download_data -d sct_example_data -o ./sct_example_data&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Go to MT folder</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;./sct_example_data/mt/&#39;</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--
+Spinal Cord Toolbox (5.8)
 
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./sct_example_data/mt/&#39;
+sct_download_data -d sct_example_data -o ./sct_example_data
+--
+
+<span class=" -Color -Color-Yellow">Removing existing destination folder &#39;sct_example_data&#39;</span>
+Trying URL: https://github.com/spinalcordtoolbox/sct_example_data/releases/download/r20180525/20180525_sct_example_data.zip
+Downloading: 20180525_sct_example_data.zip
+Status: 100%|██████████████████████████████| 44.3M/44.3M [00:02&lt;00:00, 19.2MB/s]
+Creating temporary folder (/tmp/sct-20230615031915.792117-lazrhizb)
+Unzip data to: /tmp/sct-20230615031915.792117-lazrhizb
+Copying data to: sct_example_data
+Removing temporary folders...
+Done!
+
 </pre></div>
 </div>
 </div>

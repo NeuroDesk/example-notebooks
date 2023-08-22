@@ -519,37 +519,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Lmod&#39;,
- &#39;Warning:&#39;,
- &#39;The&#39;,
- &#39;environment&#39;,
- &#39;MODULEPATH&#39;,
- &#39;has&#39;,
- &#39;been&#39;,
- &#39;changed&#39;,
- &#39;in&#39;,
- &#39;unexpected&#39;,
- &#39;ways.&#39;,
- &#39;Lmod&#39;,
- &#39;is&#39;,
- &#39;unable&#39;,
- &#39;to&#39;,
- &#39;use&#39;,
- &#39;given&#39;,
- &#39;MODULEPATH.&#39;,
- &#39;It&#39;,
- &#39;is&#39;,
- &#39;using:&#39;,
- &#39;&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps::&quot;.&#39;,
- &#39;Please&#39;,
- &#39;use&#39;,
- &#39;&quot;module&#39;,
- &#39;use&#39;,
- &#39;to&#39;,
- &#39;change&#39;,
- &#39;MODULEPATH&#39;,
- &#39;instead.&#39;,
- &#39;freesurfer/7.3.2&#39;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># we can use lmod to load fsl in a specific version</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">lmod</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;freesurfer/7.3.2&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;lmod&#39;
 </pre></div>
 </div>
 </div>
@@ -726,11 +704,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2023-07-14 05:57:15--  https://imaging.org.au/uploads/Human7T/mp2rageModel_L13_work03-plus-hippocampus-7T-sym-norm-mincanon_v0.8.nii
-Resolving imaging.org.au (imaging.org.au)... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2023-06-29 01:43:20--  https://imaging.org.au/uploads/Human7T/mp2rageModel_L13_work03-plus-hippocampus-7T-sym-norm-mincanon_v0.8.nii
+Resolving imaging.org.au (imaging.org.au)... 203.101.229.7
+Connecting to imaging.org.au (imaging.org.au)|203.101.229.7|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1536000352 (1.4G) [application/octet-stream]
+Saving to: ‘./mp2rage.nii’
+
+./mp2rage.nii       100%[===================&gt;]   1.43G  20.4MB/s    in 74s     
+
+2023-06-29 01:44:35 (19.8 MB/s) - ‘./mp2rage.nii’ saved [1536000352/1536000352]
 </pre></div>
 </div>
 </div>

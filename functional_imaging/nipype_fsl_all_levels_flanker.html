@@ -586,36 +586,8 @@ if IN_COLAB:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in /home/runnerx/.local/lib/python3.10/site-packages (2.0.3)
-Requirement already satisfied: nilearn in /home/runnerx/.local/lib/python3.10/site-packages (0.10.1)
-Requirement already satisfied: matplotlib in /home/runnerx/.local/lib/python3.10/site-packages (3.7.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/runnerx/.local/lib/python3.10/site-packages (from pandas) (2.8.2)
-Requirement already satisfied: pytz&gt;=2020.1 in /usr/lib/python3/dist-packages (from pandas) (2022.1)
-Requirement already satisfied: tzdata&gt;=2022.1 in /home/runnerx/.local/lib/python3.10/site-packages (from pandas) (2023.3)
-Requirement already satisfied: numpy&gt;=1.21.0 in /home/runnerx/.local/lib/python3.10/site-packages (from pandas) (1.25.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: joblib&gt;=1.0.0 in /home/runnerx/.local/lib/python3.10/site-packages (from nilearn) (1.3.1)
-Requirement already satisfied: lxml in /home/runnerx/.local/lib/python3.10/site-packages (from nilearn) (4.9.3)
-Requirement already satisfied: nibabel&gt;=3.2.0 in /home/runnerx/.local/lib/python3.10/site-packages (from nilearn) (5.1.0)
-Requirement already satisfied: packaging in /usr/lib/python3/dist-packages (from nilearn) (21.3)
-Requirement already satisfied: requests&gt;=2.25.0 in /usr/lib/python3/dist-packages (from nilearn) (2.25.1)
-Requirement already satisfied: scikit-learn&gt;=1.0.0 in /home/runnerx/.local/lib/python3.10/site-packages (from nilearn) (1.3.0)
-Requirement already satisfied: scipy&gt;=1.6.0 in /home/runnerx/.local/lib/python3.10/site-packages (from nilearn) (1.11.1)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /home/runnerx/.local/lib/python3.10/site-packages (from matplotlib) (1.1.0)
-Requirement already satisfied: cycler&gt;=0.10 in /home/runnerx/.local/lib/python3.10/site-packages (from matplotlib) (0.11.0)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /home/runnerx/.local/lib/python3.10/site-packages (from matplotlib) (4.41.0)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /home/runnerx/.local/lib/python3.10/site-packages (from matplotlib) (1.4.4)
-Requirement already satisfied: pillow&gt;=6.2.0 in /usr/lib/python3/dist-packages (from matplotlib) (9.0.1)
-Requirement already satisfied: pyparsing&lt;3.1,&gt;=2.3.1 in /usr/lib/python3/dist-packages (from matplotlib) (2.4.7)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /usr/lib/python3/dist-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /home/runnerx/.local/lib/python3.10/site-packages (from scikit-learn&gt;=1.0.0-&gt;nilearn) (3.2.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pandas
+  Obtaining dependency information for pandas from https://files.pythonhosted.org/packages/e3/59/35a2892bf09ded9c1bf3804461efe772836a5261ef5dfb4e264ce813ff99/pandas-2.0.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
@@ -2730,15 +2702,7 @@ If we have an ANOVA-like design, using <a class="reference external" href="https
 <div class="cell_output docutils container">
 <img alt="../_images/fb44e1fce4b4aab248a9c23a766496b0ae3d3a104c9054a833deabfe36ca12fb.png" src="../_images/fb44e1fce4b4aab248a9c23a766496b0ae3d3a104c9054a833deabfe36ca12fb.png" />
 <img alt="../_images/8bf8c54cf56c7f18bb0a200f880e178dee70af1d7c477399c23b256b93613fe2.png" src="../_images/8bf8c54cf56c7f18bb0a200f880e178dee70af1d7c477399c23b256b93613fe2.png" />
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.10/site-packages/nilearn/plotting/surf_plotting.py:508: RuntimeWarning: invalid value encountered in divide
-  data_copy /= (vmax - vmin)
-</pre></div>
-</div>
 <img alt="../_images/4aadca3f2e660e46196def100e021dc4db585c30a8b4e71524abd670845dfda0.png" src="../_images/4aadca3f2e660e46196def100e021dc4db585c30a8b4e71524abd670845dfda0.png" />
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.10/site-packages/nilearn/plotting/surf_plotting.py:508: RuntimeWarning: invalid value encountered in divide
-  data_copy /= (vmax - vmin)
-</pre></div>
-</div>
 <img alt="../_images/9d70c80cfc750d580eb4474d3170e9b10a99cba2169c59df8bfa05f407a61f98.png" src="../_images/9d70c80cfc750d580eb4474d3170e9b10a99cba2169c59df8bfa05f407a61f98.png" />
 </div>
 </div>
