@@ -521,10 +521,8 @@ if IN_COLAB:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: GenuineIntel
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>model name	: Intel(R) Xeon(R) Platinum 8167M CPU @ 2.00GHz
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: AuthenticAMD
+model name	: AMD EPYC 7742 64-Core Processor
 </pre></div>
 </div>
 </div>
@@ -592,43 +590,26 @@ if IN_COLAB:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting osfclient
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading osfclient-0.0.5-py2.py3-none-any.whl (39 kB)
-Requirement already satisfied: requests in /usr/lib/python3/dist-packages (from osfclient) (2.25.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting tqdm (from osfclient)
-  Obtaining dependency information for tqdm from https://files.pythonhosted.org/packages/00/e5/f12a80907d0884e6dff9c16d0c0114d81b8cd07dc3ae54c5e962cc83037e/tqdm-4.66.1-py3-none-any.whl.metadata
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading tqdm-4.66.1-py3-none-any.whl.metadata (57 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/57.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">57.6/57.6 kB</span> <span class=" -Color -Color-Red">5.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: six in /usr/lib/python3/dist-packages (from osfclient) (1.16.0)
-Downloading tqdm-4.66.1-py3-none-any.whl (78 kB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/78.3 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
-<span class=" -Color -Color-Red">ERROR: Operation cancelled by user</span>
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tar: osfstorage/dicoms-unsorted.tar: Cannot open: No such file or directory
-tar: Error is not recoverable: exiting now
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/bin/bash: line 1: tree: command not found
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: cannot access &#39;dicoms-unsorted&#39;: No such file or directory
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: osfclient in /opt/conda/lib/python3.10/site-packages (0.0.5)
+Requirement already satisfied: tqdm in /opt/conda/lib/python3.10/site-packages (from osfclient) (4.64.1)
+Requirement already satisfied: requests in /opt/conda/lib/python3.10/site-packages (from osfclient) (2.28.1)
+Requirement already satisfied: six in /opt/conda/lib/python3.10/site-packages (from osfclient) (1.16.0)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/conda/lib/python3.10/site-packages (from requests-&gt;osfclient) (1.26.13)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/conda/lib/python3.10/site-packages (from requests-&gt;osfclient) (3.4)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/conda/lib/python3.10/site-packages (from requests-&gt;osfclient) (2022.12.7)
+Requirement already satisfied: charset-normalizer&lt;3,&gt;=2 in /opt/conda/lib/python3.10/site-packages (from requests-&gt;osfclient) (2.1.1)
+<span class=" -Color -Color-Bold -Color-Bold-Blue">dicoms-unsorted</span>
+├── MR.1.1.dcm
+├── MR.1.10.dcm
+├── MR.1.100.dcm
+├── MR.1.101.dcm
+├── MR.1.102.dcm
+├── MR.1.103.dcm
+├── MR.1.104.dcm
+├── MR.1.105.dcm
+├── MR.1.106.dcm
 ...
-There are 0 unsorted DICOMs in ./dicoms-unsorted/
+There are 1216 unsorted DICOMs in ./dicoms-unsorted/
 </pre></div>
 </div>
 </div>
