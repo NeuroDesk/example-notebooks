@@ -35,14 +35,26 @@ jobs:
             echo "runner=ubuntu-22.04" >> $GITHUB_OUTPUT
           fi
           
+  get-notebooks:
+    runs-on: ubuntu-22.04
+    outputs:
+      notebooks: ${{ steps.find_changed_notebooks.outputs.all_changed_and_modified_files }}
+    steps:
+    - uses: actions/checkout@v3
+    - name: Find all recipe directories with changes
+      id: find_changed_notebooks
+      uses: tj-actions/changed-files@v34
+      with:
+        files: "books/**"
+
   test-notebooks:
-    needs: select-runner
+    needs: [ select-runner, get-notebooks ]
     runs-on: ${{ needs.select-runner.outputs.runner }}
     
     strategy:
       fail-fast: false
       matrix:
-        notebooks: ["functional_imaging/fmriprep_example.ipynb", "functional_imaging/nipype_fsl_all_levels_flanker.ipynb", "structural_imaging/freesurfer_example.ipynb", "structural_imaging/qsmxt_example.ipynb", "structural_imaging/nipype_module_example.ipynb", "structural_imaging/sct_toolbox_example.ipynb"]
+        notebooks: ${{ needs.get-notebooks.outputs.notebooks }}
     steps:
     - uses: actions/checkout@v3
 
@@ -97,8 +109,8 @@ jobs:
         cname: www.neurodesk.org
 
   build-structure:
-    needs: [ select-runner, test-notebooks ]
-    runs-on: ${{ needs.select-runner.outputs.runner }}
+    needs: [ test-notebooks ]
+    runs-on: ubuntu-22.04
 
     steps:
     - uses: actions/checkout@v3
