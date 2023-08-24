@@ -53,6 +53,7 @@ jobs:
 
   test-notebooks:
     needs: [ select-runner, get-notebooks ]
+    if: ${{ needs.get-notebooks.outputs.notebooks != '[]' }}
     runs-on: ${{ needs.select-runner.outputs.runner }}
     
     strategy:
