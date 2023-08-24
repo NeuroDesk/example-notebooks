@@ -86,7 +86,6 @@ jobs:
 
     - name: Run ${{ matrix.notebooks }}
       shell: bash
-      working-directory: ./books
       run: |
         echo ${{ github.workspace }}
         echo $GITHUB_WORKSPACE
