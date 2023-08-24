@@ -70,7 +70,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        notebooks: ${{ needs.get-notebooks.outputs.notebook_list }}
+        notebooks: ${{ fromJson(needs.get-notebooks.outputs.notebook_list) }}
     steps:
     - uses: actions/checkout@v3
 
