@@ -45,7 +45,8 @@ jobs:
       id: find_changed_notebooks
       uses: tj-actions/changed-files@v38.1.0
       with:
-        files: "books/**"
+        path: "./books"
+        files: "**/*.ipynb"
         dir_names_exclude_current_dir: "true"
     - name: Filter down to changed notebooks
       id: list_changed_notebooks
@@ -86,6 +87,7 @@ jobs:
 
     - name: Run ${{ matrix.notebooks }}
       shell: bash
+      working-directory: ./books
       run: |
         echo ${{ github.workspace }}
         echo $GITHUB_WORKSPACE
