@@ -55,6 +55,13 @@
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-4Z9774J59Y"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-4Z9774J59Y');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -63,7 +70,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'structural_imaging/sct_toolbox_example';</script>
     <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/structural_imaging/sct_toolbox_example.html" />
-    <link rel="shortcut icon" href="../_static/neurodesk.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Freesurefer Example" href="freesurfer_example.html" />
@@ -102,8 +108,8 @@ const thebe_selector_output = ".output, .cell_output"
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search..."
-         aria-label="Search..."
+         placeholder="Search this book..."
+         aria-label="Search this book..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -138,18 +144,20 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/neurodesk.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/neurodesk.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
+    <p class="title logo__title">Neurodesk</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Neurodesk environment
+                </a>
+            </li>
+        </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Structural Imaging</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="nipype_module_example.html">Basic Nipype Example</a></li>
@@ -238,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/main/v2/gh/neurodesk/example-notebooks/master?urlpath=tree/structural_imaging/sct_toolbox_example.ipynb" target="_blank"
+      <li><a href="https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/main?labpath=/home/jovyan/examples/example-notebooks/books/v2/gh/NeurodDesk/example-notebooks/main?urlpath=lab/tree/books/structural_imaging/sct_toolbox_example.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -256,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/neurodesk/example-notebooks/blob/master/structural_imaging/sct_toolbox_example.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/NeurodDesk/example-notebooks/blob/main/books/structural_imaging/sct_toolbox_example.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +295,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/neurodesk/example-notebooks" target="_blank"
+      <li><a href="https://github.com/NeurodDesk/example-notebooks" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -304,7 +312,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/neurodesk/example-notebooks/edit/main/structural_imaging/sct_toolbox_example.ipynb" target="_blank"
+      <li><a href="https://github.com/NeurodDesk/example-notebooks/edit/main/books/structural_imaging/sct_toolbox_example.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +329,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/neurodesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Fstructural_imaging/sct_toolbox_example.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/NeurodDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Fstructural_imaging/sct_toolbox_example.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -491,8 +499,8 @@ if IN_COLAB:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;vendor&#39;</span> <span class="p">|</span> uniq
+<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;model name&#39;</span> <span class="p">|</span> uniq
 </pre></div>
 </div>
 </div>
@@ -542,7 +550,7 @@ model name	: AMD EPYC 7742 64-Core Processor
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download example data</span>
-<span class="o">!</span>sct_download_data<span class="w"> </span>-d<span class="w"> </span>sct_example_data<span class="w"> </span>-o<span class="w"> </span>./sct_example_data
+<span class="o">!</span>sct_download_data -d sct_example_data -o ./sct_example_data
 
 <span class="c1"># Go to MT folder</span>
 <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;./sct_example_data/mt/&#39;</span><span class="p">)</span>
@@ -601,7 +609,7 @@ Done!
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Segment spinal cord</span>
-<span class="o">!</span>sct_deepseg_sc<span class="w"> </span>-i<span class="w"> </span><span class="o">{</span>t1w+file_ext<span class="o">}</span><span class="w"> </span>-c<span class="w"> </span>t1<span class="w"> </span>-qc<span class="w"> </span><span class="o">{</span>qc_path<span class="o">}</span>
+<span class="o">!</span>sct_deepseg_sc -i <span class="o">{</span>t1w+file_ext<span class="o">}</span> -c t1 -qc <span class="o">{</span>qc_path<span class="o">}</span>
 
 <span class="k">if</span> <span class="ow">not</span> <span class="n">verbose</span><span class="p">:</span>
     <span class="n">clear_output</span><span class="p">()</span>
@@ -717,10 +725,10 @@ xdg-open /home/jovyan/example-notebooks/structural_imaging/qc/index.html
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create mask</span>
-<span class="o">!</span>sct_create_mask<span class="w"> </span>-i<span class="w"> </span><span class="o">{</span>t1w+file_ext<span class="o">}</span><span class="w"> </span>-p<span class="w"> </span>centerline,<span class="o">{</span>t1w+<span class="s1">&#39;_seg&#39;</span>+file_ext<span class="o">}</span><span class="w"> </span>-size<span class="w"> </span>35mm<span class="w"> </span>-o<span class="w"> </span><span class="o">{</span>t1w+<span class="s1">&#39;_mask&#39;</span>+file_ext<span class="o">}</span>
+<span class="o">!</span>sct_create_mask -i <span class="o">{</span>t1w+file_ext<span class="o">}</span> -p centerline,<span class="o">{</span>t1w+<span class="s1">&#39;_seg&#39;</span>+file_ext<span class="o">}</span> -size 35mm -o <span class="o">{</span>t1w+<span class="s1">&#39;_mask&#39;</span>+file_ext<span class="o">}</span>
 
 <span class="c1"># Crop data for faster processing</span>
-<span class="o">!</span>sct_crop_image<span class="w"> </span>-i<span class="w"> </span><span class="o">{</span>t1w+file_ext<span class="o">}</span><span class="w"> </span>-m<span class="w"> </span><span class="o">{</span>t1w+<span class="s1">&#39;_mask&#39;</span>+file_ext<span class="o">}</span><span class="w"> </span>-o<span class="w"> </span><span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span>
+<span class="o">!</span>sct_crop_image -i <span class="o">{</span>t1w+file_ext<span class="o">}</span> -m <span class="o">{</span>t1w+<span class="s1">&#39;_mask&#39;</span>+file_ext<span class="o">}</span> -o <span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span>
 
 <span class="k">if</span> <span class="ow">not</span> <span class="n">verbose</span><span class="p">:</span>
     <span class="n">clear_output</span><span class="p">()</span>
@@ -797,10 +805,10 @@ Cropping the image...
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Register PD-&gt;T1w</span>
 <span class="c1"># Tips: here we only use rigid transformation because both images have very similar sequence parameters. We don&#39;t want to use SyN/BSplineSyN to avoid introducing spurious deformations.</span>
-<span class="o">!</span>sct_register_multimodal<span class="w"> </span>-i<span class="w"> </span><span class="o">{</span>mt0+file_ext<span class="o">}</span><span class="w"> </span>-d<span class="w"> </span><span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span><span class="w"> </span>-param<span class="w"> </span><span class="nv">step</span><span class="o">=</span><span class="m">1</span>,type<span class="o">=</span>im,algo<span class="o">=</span>rigid,slicewise<span class="o">=</span><span class="m">1</span>,metric<span class="o">=</span>CC<span class="w"> </span>-x<span class="w"> </span>spline
+<span class="o">!</span>sct_register_multimodal -i <span class="o">{</span>mt0+file_ext<span class="o">}</span> -d <span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span> -param <span class="nv">step</span><span class="o">=</span><span class="m">1</span>,type<span class="o">=</span>im,algo<span class="o">=</span>rigid,slicewise<span class="o">=</span><span class="m">1</span>,metric<span class="o">=</span>CC -x spline
 
 <span class="c1"># Register MT-&gt;T1w</span>
-<span class="o">!</span>sct_register_multimodal<span class="w"> </span>-i<span class="w"> </span><span class="o">{</span>mt1+file_ext<span class="o">}</span><span class="w"> </span>-d<span class="w"> </span><span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span><span class="w"> </span>-param<span class="w"> </span><span class="nv">step</span><span class="o">=</span><span class="m">1</span>,type<span class="o">=</span>im,algo<span class="o">=</span>rigid,slicewise<span class="o">=</span><span class="m">1</span>,metric<span class="o">=</span>CC<span class="w"> </span>-x<span class="w"> </span>spline
+<span class="o">!</span>sct_register_multimodal -i <span class="o">{</span>mt1+file_ext<span class="o">}</span> -d <span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span> -param <span class="nv">step</span><span class="o">=</span><span class="m">1</span>,type<span class="o">=</span>im,algo<span class="o">=</span>rigid,slicewise<span class="o">=</span><span class="m">1</span>,metric<span class="o">=</span>CC -x spline
 
 <span class="k">if</span> <span class="ow">not</span> <span class="n">verbose</span><span class="p">:</span>
     <span class="n">clear_output</span><span class="p">()</span>
@@ -1210,10 +1218,10 @@ Finished! Elapsed time: 6s
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create label 4 at the mid-FOV, because we know the FOV is centered at C3-C4 disc.</span>
-<span class="o">!</span>sct_label_utils<span class="w"> </span>-i<span class="w"> </span><span class="o">{</span>t1w+<span class="s1">&#39;_seg&#39;</span>+file_ext<span class="o">}</span><span class="w"> </span>-create-seg-mid<span class="w"> </span><span class="m">4</span><span class="w"> </span>-o<span class="w"> </span><span class="o">{</span>label_c3c4+file_ext<span class="o">}</span>
+<span class="o">!</span>sct_label_utils -i <span class="o">{</span>t1w+<span class="s1">&#39;_seg&#39;</span>+file_ext<span class="o">}</span> -create-seg-mid <span class="m">4</span> -o <span class="o">{</span>label_c3c4+file_ext<span class="o">}</span>
 
 <span class="c1"># Register template-&gt;T1w_ax (using template-T1w as initial transformation)</span>
-<span class="o">!</span>sct_register_to_template<span class="w"> </span>-i<span class="w"> </span><span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span><span class="w"> </span>-s<span class="w"> </span><span class="o">{</span>t1w+<span class="s1">&#39;_seg&#39;</span>+file_ext<span class="o">}</span><span class="w"> </span>-ldisc<span class="w"> </span><span class="o">{</span>label_c3c4+file_ext<span class="o">}</span><span class="w"> </span>-ref<span class="w"> </span>subject<span class="w"> </span>-c<span class="w"> </span>t1<span class="w"> </span>-param<span class="w"> </span><span class="nv">step</span><span class="o">=</span><span class="m">1</span>,type<span class="o">=</span>seg,algo<span class="o">=</span>slicereg,metric<span class="o">=</span>MeanSquares,smooth<span class="o">=</span><span class="m">2</span>:step<span class="o">=</span><span class="m">2</span>,type<span class="o">=</span>im,algo<span class="o">=</span>bsplinesyn,metric<span class="o">=</span>MeanSquares,iter<span class="o">=</span><span class="m">5</span>,gradStep<span class="o">=</span><span class="m">0</span>.5<span class="w"> </span>-qc<span class="w"> </span><span class="o">{</span>qc_path<span class="o">}</span>
+<span class="o">!</span>sct_register_to_template -i <span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span> -s <span class="o">{</span>t1w+<span class="s1">&#39;_seg&#39;</span>+file_ext<span class="o">}</span> -ldisc <span class="o">{</span>label_c3c4+file_ext<span class="o">}</span> -ref subject -c t1 -param <span class="nv">step</span><span class="o">=</span><span class="m">1</span>,type<span class="o">=</span>seg,algo<span class="o">=</span>slicereg,metric<span class="o">=</span>MeanSquares,smooth<span class="o">=</span><span class="m">2</span>:step<span class="o">=</span><span class="m">2</span>,type<span class="o">=</span>im,algo<span class="o">=</span>bsplinesyn,metric<span class="o">=</span>MeanSquares,iter<span class="o">=</span><span class="m">5</span>,gradStep<span class="o">=</span><span class="m">0</span>.5 -qc <span class="o">{</span>qc_path<span class="o">}</span>
 
 <span class="k">if</span> <span class="ow">not</span> <span class="n">verbose</span><span class="p">:</span>
     <span class="n">clear_output</span><span class="p">()</span>
@@ -1419,7 +1427,7 @@ xdg-open /home/jovyan/example-notebooks/structural_imaging/qc/index.html
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Warp template</span>
-<span class="o">!</span>sct_warp_template<span class="w"> </span>-d<span class="w"> </span><span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span><span class="w"> </span>-w<span class="w"> </span><span class="o">{</span>warp_template2anat+file_ext<span class="o">}</span><span class="w"> </span>-qc<span class="w"> </span><span class="o">{</span>qc_path<span class="o">}</span>
+<span class="o">!</span>sct_warp_template -d <span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span> -w <span class="o">{</span>warp_template2anat+file_ext<span class="o">}</span> -qc <span class="o">{</span>qc_path<span class="o">}</span>
 
 <span class="k">if</span> <span class="ow">not</span> <span class="n">verbose</span><span class="p">:</span>
     <span class="n">clear_output</span><span class="p">()</span>
@@ -1548,10 +1556,10 @@ xdg-open /home/jovyan/example-notebooks/structural_imaging/qc/index.html
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute MTR</span>
-<span class="o">!</span>sct_compute_mtr<span class="w"> </span>-mt1<span class="w"> </span><span class="o">{</span>mt1+<span class="s1">&#39;_reg&#39;</span>+file_ext<span class="o">}</span><span class="w"> </span>-mt0<span class="w"> </span><span class="o">{</span>mt0+<span class="s1">&#39;_reg&#39;</span>+file_ext<span class="o">}</span>
+<span class="o">!</span>sct_compute_mtr -mt1 <span class="o">{</span>mt1+<span class="s1">&#39;_reg&#39;</span>+file_ext<span class="o">}</span> -mt0 <span class="o">{</span>mt0+<span class="s1">&#39;_reg&#39;</span>+file_ext<span class="o">}</span>
 
 <span class="c1"># Compute MTsat and T1</span>
-<span class="o">!</span>sct_compute_mtsat<span class="w"> </span>-mt<span class="w"> </span><span class="o">{</span>mt1+<span class="s1">&#39;_reg&#39;</span>+file_ext<span class="o">}</span><span class="w"> </span>-pd<span class="w"> </span><span class="o">{</span>mt0+<span class="s1">&#39;_reg&#39;</span>+file_ext<span class="o">}</span><span class="w"> </span>-t1<span class="w"> </span><span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span><span class="w"> </span>-trmt<span class="w"> </span><span class="m">57</span><span class="w"> </span>-trpd<span class="w"> </span><span class="m">57</span><span class="w"> </span>-trt1<span class="w"> </span><span class="m">15</span><span class="w"> </span>-famt<span class="w"> </span><span class="m">9</span><span class="w"> </span>-fapd<span class="w"> </span><span class="m">9</span><span class="w"> </span>-fat1<span class="w"> </span><span class="m">15</span>
+<span class="o">!</span>sct_compute_mtsat -mt <span class="o">{</span>mt1+<span class="s1">&#39;_reg&#39;</span>+file_ext<span class="o">}</span> -pd <span class="o">{</span>mt0+<span class="s1">&#39;_reg&#39;</span>+file_ext<span class="o">}</span> -t1 <span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span> -trmt <span class="m">57</span> -trpd <span class="m">57</span> -trt1 <span class="m">15</span> -famt <span class="m">9</span> -fapd <span class="m">9</span> -fat1 <span class="m">15</span>
 
 <span class="k">if</span> <span class="ow">not</span> <span class="n">verbose</span><span class="p">:</span>
     <span class="n">clear_output</span><span class="p">()</span>
@@ -1591,9 +1599,9 @@ Generate output files...
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract MTR, MTsat and T1 in WM between C2 and C4 vertebral levels</span>
-<span class="o">!</span>sct_extract_metric<span class="w"> </span>-i<span class="w"> </span>mtr.nii.gz<span class="w"> </span>-l<span class="w"> </span><span class="m">51</span><span class="w"> </span>-vert<span class="w"> </span><span class="m">2</span>:4<span class="w"> </span>-perlevel<span class="w"> </span><span class="m">1</span><span class="w"> </span>-o<span class="w"> </span>mtr_in_wm.csv
-<span class="o">!</span>sct_extract_metric<span class="w"> </span>-i<span class="w"> </span>mtsat.nii.gz<span class="w"> </span>-l<span class="w"> </span><span class="m">51</span><span class="w"> </span>-vert<span class="w"> </span><span class="m">2</span>:4<span class="w"> </span>-perlevel<span class="w"> </span><span class="m">1</span><span class="w"> </span>-o<span class="w"> </span>mtsat_in_wm.csv
-<span class="o">!</span>sct_extract_metric<span class="w"> </span>-i<span class="w"> </span>t1map.nii.gz<span class="w"> </span>-l<span class="w"> </span><span class="m">51</span><span class="w"> </span>-vert<span class="w"> </span><span class="m">2</span>:4<span class="w"> </span>-perlevel<span class="w"> </span><span class="m">1</span><span class="w"> </span>-o<span class="w"> </span>t1_in_wm.csv
+<span class="o">!</span>sct_extract_metric -i mtr.nii.gz -l <span class="m">51</span> -vert <span class="m">2</span>:4 -perlevel <span class="m">1</span> -o mtr_in_wm.csv
+<span class="o">!</span>sct_extract_metric -i mtsat.nii.gz -l <span class="m">51</span> -vert <span class="m">2</span>:4 -perlevel <span class="m">1</span> -o mtsat_in_wm.csv
+<span class="o">!</span>sct_extract_metric -i t1map.nii.gz -l <span class="m">51</span> -vert <span class="m">2</span>:4 -perlevel <span class="m">1</span> -o t1_in_wm.csv
 
 <span class="k">if</span> <span class="ow">not</span> <span class="n">verbose</span><span class="p">:</span>
     <span class="n">clear_output</span><span class="p">()</span>
@@ -1649,7 +1657,7 @@ xdg-open t1_in_wm.csv
 <p>Results are output as csv files, which we can then open and display as bar graphs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pandas
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install pandas
 </pre></div>
 </div>
 </div>

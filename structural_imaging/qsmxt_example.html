@@ -55,6 +55,13 @@
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-4Z9774J59Y"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-4Z9774J59Y');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -63,7 +70,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'structural_imaging/qsmxt_example';</script>
     <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/structural_imaging/qsmxt_example.html" />
-    <link rel="shortcut icon" href="../_static/neurodesk.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="SCT Toolbox Example" href="sct_toolbox_example.html" />
@@ -102,8 +108,8 @@ const thebe_selector_output = ".output, .cell_output"
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search..."
-         aria-label="Search..."
+         placeholder="Search this book..."
+         aria-label="Search this book..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -138,18 +144,20 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/neurodesk.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/neurodesk.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
+    <p class="title logo__title">Neurodesk</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Neurodesk environment
+                </a>
+            </li>
+        </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Structural Imaging</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="nipype_module_example.html">Basic Nipype Example</a></li>
@@ -238,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/main/v2/gh/neurodesk/example-notebooks/master?urlpath=tree/structural_imaging/qsmxt_example.ipynb" target="_blank"
+      <li><a href="https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/main?labpath=/home/jovyan/examples/example-notebooks/books/v2/gh/NeurodDesk/example-notebooks/main?urlpath=lab/tree/books/structural_imaging/qsmxt_example.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -256,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/neurodesk/example-notebooks/blob/master/structural_imaging/qsmxt_example.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/NeurodDesk/example-notebooks/blob/main/books/structural_imaging/qsmxt_example.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +295,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/neurodesk/example-notebooks" target="_blank"
+      <li><a href="https://github.com/NeurodDesk/example-notebooks" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -304,7 +312,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/neurodesk/example-notebooks/edit/main/structural_imaging/qsmxt_example.ipynb" target="_blank"
+      <li><a href="https://github.com/NeurodDesk/example-notebooks/edit/main/books/structural_imaging/qsmxt_example.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +329,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/neurodesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Fstructural_imaging/qsmxt_example.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/NeurodDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Fstructural_imaging/qsmxt_example.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -515,8 +523,8 @@ if IN_COLAB:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;vendor&#39;</span> <span class="p">|</span> uniq
+<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;model name&#39;</span> <span class="p">|</span> uniq
 </pre></div>
 </div>
 </div>
@@ -580,12 +588,12 @@ model name	: AMD EPYC 7742 64-Core Processor
 <p>These data include GRE and T1-weighted acquisitions for one subject (duplicated to act as two subjects).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>osfclient
-<span class="o">!</span>osf<span class="w"> </span>-p<span class="w"> </span>ru43c<span class="w"> </span>clone<span class="w"> </span>.<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
-<span class="o">!</span>tar<span class="w"> </span>xf<span class="w"> </span>osfstorage/dicoms-unsorted.tar
-<span class="o">!</span>rm<span class="w"> </span>-rf<span class="w"> </span>osfstorage/
-<span class="o">!</span>tree<span class="w"> </span>dicoms-unsorted<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
-<span class="o">!</span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;...\nThere are `ls dicoms-unsorted | wc -l` unsorted DICOMs in ./dicoms-unsorted/&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install osfclient
+<span class="o">!</span>osf -p ru43c clone . &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<span class="o">!</span>tar xf osfstorage/dicoms-unsorted.tar
+<span class="o">!</span>rm -rf osfstorage/
+<span class="o">!</span>tree dicoms-unsorted <span class="p">|</span> head
+<span class="o">!</span><span class="nb">echo</span> -e <span class="s2">&quot;...\nThere are `ls dicoms-unsorted | wc -l` unsorted DICOMs in ./dicoms-unsorted/&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -644,7 +652,7 @@ There are 1216 unsorted DICOMs in ./dicoms-unsorted/
 <p>Note that this script relies on accurate DICOM header information. If your data is sorted incorrectly, you may need to manually correct the sorting, or sort the files yourself. Be sure to follow the folder structure shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>run_0_dicomSort.py<span class="w"> </span>dicoms-unsorted<span class="w"> </span>dicoms-sorted
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>run_0_dicomSort.py dicoms-unsorted dicoms-sorted
 </pre></div>
 </div>
 </div>
@@ -674,7 +682,7 @@ INFO: Finished
 <p>Now we can see clearly that there are two subjects, each with one session, each with three DICOM series:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree<span class="w"> </span>dicoms-sorted<span class="w"> </span>-L<span class="w"> </span><span class="m">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree dicoms-sorted -L <span class="m">3</span>
 </pre></div>
 </div>
 </div>
@@ -761,7 +769,7 @@ INFO: Finished
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree<span class="w"> </span>bids
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree bids
 </pre></div>
 </div>
 </div>
@@ -869,7 +877,7 @@ INFO: Finished
 <p>However, QSMxT also provides a range of sensible defaults fit for different purposes. We can list the premade pipelines using <code class="docutils literal notranslate"><span class="pre">--list_premades</span></code>. For the full pipeline details used for each premade pipeline, see <a class="reference external" href="https://github.com/QSMxT/QSMxT/blob/master/qsm_pipelines.json">qsm_pipelines.json</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>run_2_qsm.py<span class="w"> </span>--list_premades
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>run_2_qsm.py --list_premades
 </pre></div>
 </div>
 </div>
@@ -892,7 +900,7 @@ INFO: Finished
 <p>For this demonstration, we will go with the <code class="docutils literal notranslate"><span class="pre">fast</span></code> pipeline. We also include <code class="docutils literal notranslate"><span class="pre">--auto_yes</span></code> to avoid the interactive CLI interface.</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>run_2_qsm.py<span class="w"> </span>bids<span class="w"> </span>qsm<span class="w"> </span>--premade<span class="w"> </span>fast<span class="w"> </span>--auto_yes
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>run_2_qsm.py bids qsm --premade fast --auto_yes
 </pre></div>
 </div>
 </div>
@@ -1294,7 +1302,7 @@ INFO: Finished
 <p>Let’s have a look at the generated <code class="docutils literal notranslate"><span class="pre">qsm</span></code> folder:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree<span class="w"> </span>qsm/<span class="w"> </span>-L<span class="w"> </span><span class="m">1</span><span class="w"> </span>--dirsfirst
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree qsm/ -L <span class="m">1</span> --dirsfirst
 </pre></div>
 </div>
 </div>
@@ -1317,7 +1325,7 @@ INFO: Finished
 <p>The <code class="docutils literal notranslate"><span class="pre">references.txt</span></code> file contains a list of all the algorithms used and relevant citations:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>qsm/references.txt
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat qsm/references.txt
 </pre></div>
 </div>
 </div>
@@ -1376,7 +1384,7 @@ INFO: Finished
 <p>QSMxT uses FastSurfer to segment our T1-weighted images and automatically registers them to the T2*-weighted/QSM space:</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>run_3_segment.py<span class="w"> </span>bids<span class="w"> </span>segmentations
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>run_3_segment.py bids segmentations
 </pre></div>
 </div>
 </div>
@@ -1528,7 +1536,7 @@ INFO: Finished
 <p>Let’s have a look at the generated <code class="docutils literal notranslate"><span class="pre">segmentations</span></code> folder:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree<span class="w"> </span>segmentations<span class="w"> </span>-L<span class="w"> </span><span class="m">1</span><span class="w"> </span>--dirsfirst
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree segmentations -L <span class="m">1</span> --dirsfirst
 </pre></div>
 </div>
 </div>
@@ -1548,7 +1556,7 @@ INFO: Finished
 <p>We can see that we have segmentation files in both the QSM space and the T1-weighted space:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree<span class="w"> </span>segmentations/*segmentations
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree segmentations/*segmentations
 </pre></div>
 </div>
 </div>
@@ -1568,7 +1576,7 @@ INFO: Finished
 <p>Once again, we can view any relevant citations:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>segmentations/details_and_citations.txt
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat segmentations/details_and_citations.txt
 </pre></div>
 </div>
 </div>
@@ -1585,7 +1593,7 @@ INFO: Finished
 <p>The final pipeline we will run is the analysis pipeline. This simply looks at each of our QSM images and associated segmentations to produce a CSV spreadsheet containing susceptibility statistics for each ROI grouped by subject:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>run_5_analysis.py<span class="w"> </span>--segmentations<span class="w"> </span>segmentations/qsm_segmentations/*<span class="w"> </span>--qsm_files<span class="w"> </span>qsm/qsm_final/*/*.nii*<span class="w"> </span>--output_dir<span class="w"> </span>analysis<span class="w"> </span>--labels_file<span class="w"> </span>/opt/QSMxT/aseg_labels.csv
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>run_5_analysis.py --segmentations segmentations/qsm_segmentations/* --qsm_files qsm/qsm_final/*/*.nii* --output_dir analysis --labels_file /opt/QSMxT/aseg_labels.csv
 </pre></div>
 </div>
 </div>
@@ -1603,8 +1611,8 @@ INFO: Finished
 <p>Here, we view some susceptibility statistics for the left Putamen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head<span class="w"> </span>analysis/sub-1*csv<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
-<span class="o">!</span>cat<span class="w"> </span>analysis/*.csv<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Left-Putamen
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head analysis/sub-1*csv -n <span class="m">1</span>
+<span class="o">!</span>cat analysis/*.csv <span class="p">|</span> grep Left-Putamen
 </pre></div>
 </div>
 </div>
@@ -1622,7 +1630,7 @@ Left-Putamen,4599,-0.04625692917219062,0.14612385129488253,0.05483601350701524,0
 <p>While QSMxT produces numerical outputs, we can also use some straightforward Python to visualise some of the results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>seaborn
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install seaborn
 </pre></div>
 </div>
 </div>

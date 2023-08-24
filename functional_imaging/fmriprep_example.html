@@ -55,6 +55,13 @@
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-4Z9774J59Y"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-4Z9774J59Y');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -63,7 +70,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'functional_imaging/fmriprep_example';</script>
     <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/functional_imaging/fmriprep_example.html" />
-    <link rel="shortcut icon" href="../_static/neurodesk.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="FSL’s fMRI Data Analysis via Nipype" href="nipype_fsl_all_levels_flanker.html" />
@@ -101,8 +107,8 @@ const thebe_selector_output = ".output, .cell_output"
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search..."
-         aria-label="Search..."
+         placeholder="Search this book..."
+         aria-label="Search this book..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -137,18 +143,20 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/neurodesk.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/neurodesk.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
+    <p class="title logo__title">Neurodesk</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Neurodesk environment
+                </a>
+            </li>
+        </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Structural Imaging</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../structural_imaging/nipype_module_example.html">Basic Nipype Example</a></li>
@@ -237,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/main/v2/gh/neurodesk/example-notebooks/master?urlpath=tree/functional_imaging/fmriprep_example.ipynb" target="_blank"
+      <li><a href="https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/main?labpath=/home/jovyan/examples/example-notebooks/books/v2/gh/NeurodDesk/example-notebooks/main?urlpath=lab/tree/books/functional_imaging/fmriprep_example.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -255,7 +263,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/neurodesk/example-notebooks/blob/master/functional_imaging/fmriprep_example.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/NeurodDesk/example-notebooks/blob/main/books/functional_imaging/fmriprep_example.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/neurodesk/example-notebooks" target="_blank"
+      <li><a href="https://github.com/NeurodDesk/example-notebooks" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -303,7 +311,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/neurodesk/example-notebooks/edit/main/functional_imaging/fmriprep_example.ipynb" target="_blank"
+      <li><a href="https://github.com/NeurodDesk/example-notebooks/edit/main/books/functional_imaging/fmriprep_example.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -320,7 +328,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/neurodesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Ffunctional_imaging/fmriprep_example.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/NeurodDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Ffunctional_imaging/fmriprep_example.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -490,8 +498,8 @@ if IN_COLAB:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;vendor&#39;</span> <span class="p">|</span> uniq
+<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;model name&#39;</span> <span class="p">|</span> uniq
 </pre></div>
 </div>
 </div>
@@ -524,10 +532,10 @@ model name	: AMD EPYC 7742 64-Core Processor
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Request a freesurfer license and store it in your homedirectory. This is just an exampe - please replace with your license id:</span>
-<span class="o">!</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Steffen.Bollmann@cai.uq.edu.au&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>~/.license
-<span class="o">!</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;21029&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.license
-<span class="o">!</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*Cqyn12sqTCxo&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.license
-<span class="o">!</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;FSxgcvGkNR59Y&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.license
+<span class="o">!</span><span class="nb">echo</span> <span class="s2">&quot;Steffen.Bollmann@cai.uq.edu.au&quot;</span> &gt; ~/.license
+<span class="o">!</span><span class="nb">echo</span> <span class="s2">&quot;21029&quot;</span> &gt;&gt; ~/.license
+<span class="o">!</span><span class="nb">echo</span> <span class="s2">&quot;*Cqyn12sqTCxo&quot;</span> &gt;&gt; ~/.license
+<span class="o">!</span><span class="nb">echo</span> <span class="s2">&quot;FSxgcvGkNR59Y&quot;</span> &gt;&gt; ~/.license
 </pre></div>
 </div>
 </div>
@@ -535,8 +543,8 @@ model name	: AMD EPYC 7742 64-Core Processor
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># download data</span>
-<span class="o">!</span>datalad<span class="w"> </span>install<span class="w"> </span>https://github.com/OpenNeuroDatasets/ds000102.git
-<span class="o">!</span><span class="nb">cd</span><span class="w"> </span>ds000102<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>datalad<span class="w"> </span>get<span class="w"> </span>sub-08
+<span class="o">!</span>datalad install https://github.com/OpenNeuroDatasets/ds000102.git
+<span class="o">!</span><span class="nb">cd</span> ds000102 <span class="o">&amp;&amp;</span> datalad get sub-08
 </pre></div>
 </div>
 </div>
@@ -616,7 +624,7 @@ action summary:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">export</span><span class="w"> </span><span class="nv">ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">MPLCONFIGDIR</span><span class="o">=</span>~/matplotlib-mpldir<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>fmriprep<span class="w"> </span>ds000102/<span class="w"> </span>content/<span class="w"> </span>participant<span class="w"> </span>--fs-license-file<span class="w"> </span>~/.license<span class="w"> </span>--output-spaces<span class="w"> </span>T1w<span class="w"> </span>MNI152NLin2009cAsym<span class="w"> </span>fsaverage<span class="w"> </span>fsnative<span class="w"> </span>--participant-label<span class="w"> </span><span class="m">08</span><span class="w"> </span>--nprocs<span class="w"> </span><span class="nv">$ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS</span><span class="w"> </span>--mem<span class="w"> </span><span class="m">10000</span><span class="w"> </span>--skip_bids_validation<span class="w"> </span>-v
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">export</span> <span class="nv">ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS</span><span class="o">=</span><span class="m">2</span> <span class="o">&amp;&amp;</span> <span class="nb">export</span> <span class="nv">MPLCONFIGDIR</span><span class="o">=</span>~/matplotlib-mpldir <span class="o">&amp;&amp;</span> fmriprep ds000102/ content/ participant --fs-license-file ~/.license --output-spaces T1w MNI152NLin2009cAsym fsaverage fsnative --participant-label <span class="m">08</span> --nprocs <span class="nv">$ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS</span> --mem <span class="m">10000</span> --skip_bids_validation -v
 </pre></div>
 </div>
 </div>
