@@ -46,6 +46,10 @@ jobs:
       uses: tj-actions/changed-files@v34
       with:
         files: "books/**"
+        separator: ","
+    - name: Run a step if my-file.txt was modified
+      run: |
+        echo ${{ steps.find_changed_notebooks.outputs.all_changed_and_modified_files }}
 
   test-notebooks:
     needs: [ select-runner, get-notebooks ]
