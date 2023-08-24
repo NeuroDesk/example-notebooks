@@ -38,7 +38,7 @@ jobs:
   get-notebooks:
     runs-on: ubuntu-22.04
     outputs:
-      notebooks: ${{ steps.find_changed_notebooks.outputs.notebook_list }}
+      notebook_list: ${{ steps.list_changed_notebooks.outputs.notebook_list }}
     steps:
     - uses: actions/checkout@v3
     - name: Find all notebooks with changes
@@ -46,14 +46,11 @@ jobs:
       uses: tj-actions/changed-files@v38.1.0
       with:
         files: "books/**"
-        dir_names_exclude_current_dir: true
-    - name: Run a step if my-file.txt was modified
-      run: |
-        echo ${{ steps.find_changed_notebooks.outputs.all_changed_and_modified_files }}
+        dir_names_exclude_current_dir: "true"
     - name: Filter down to changed notebooks
       id: list_changed_notebooks
-      if: steps.find_changed_notebooks.outputs.any_changed == 'true'
       run: |
+        echo ${{ steps.find_changed_notebooks.outputs.all_changed_and_modified_files }}
         changed_notebooks=$(echo "${{ steps.find_changed_notebooks.outputs.all_changed_and_modified_files }}")
         
         notebook_list='['
@@ -67,13 +64,13 @@ jobs:
 
   test-notebooks:
     needs: [ select-runner, get-notebooks ]
-    if: ${{ needs.get-notebooks.outputs.notebooks != '[]' }}
-    runs-on: ${{ needs.select-runner.outputs.runner }}
+    if: ${{ needs.get-notebooks.outputs.notebook_list != '[]' }}
+    runs-on: ubuntu-22.04
     
     strategy:
       fail-fast: false
       matrix:
-        notebooks: ${{ needs.get-notebooks.outputs.notebooks }}
+        notebooks: ${{ needs.get-notebooks.outputs.notebook_list }}
     steps:
     - uses: actions/checkout@v3
 
