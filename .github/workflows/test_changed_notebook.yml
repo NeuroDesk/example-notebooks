@@ -66,7 +66,7 @@ jobs:
   test-notebooks:
     needs: [ select-runner, get-notebooks ]
     if: ${{ needs.get-notebooks.outputs.notebook_list != '[]' }}
-    runs-on: ubuntu-22.04
+    runs-on: ${{ needs.select-runner.outputs.runner }}
     
     strategy:
       fail-fast: false
