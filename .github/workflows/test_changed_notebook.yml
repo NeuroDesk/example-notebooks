@@ -38,18 +38,31 @@ jobs:
   get-notebooks:
     runs-on: ubuntu-22.04
     outputs:
-      notebooks: ${{ steps.find_changed_notebooks.outputs.all_changed_and_modified_files }}
+      notebooks: ${{ steps.find_changed_notebooks.outputs.notebook_list }}
     steps:
     - uses: actions/checkout@v3
-    - name: Find all recipe directories with changes
+    - name: Find all notebooks with changes
       id: find_changed_notebooks
       uses: tj-actions/changed-files@v34
       with:
         files: "books/**"
-        separator: ","
     - name: Run a step if my-file.txt was modified
       run: |
         echo ${{ steps.find_changed_notebooks.outputs.all_changed_and_modified_files }}
+    - name: Filter down to changed notebooks
+      id: list_changed_notebooks
+      if: steps.find_changed_notebooks.outputs.any_changed == 'true'
+      run: |
+        changed_notebooks=$(echo "${{ steps.find_changed_notebooks.outputs.all_changed_and_modified_files }}")
+        
+        notebook_list='['
+        for NOTEBOOK in $(echo "${changed_notebooks}" | jq -r '.[]'); do
+          notebook_list+="\"${NOTEBOOK}\","
+        done
+        notebook_list=$(sed '$s/,$//' <<< $notebook_list)
+        notebook_list+=']'
+        echo "notebook_list=${notebook_list}"
+        echo "notebook_list=${notebook_list}" >> $GITHUB_OUTPUT
 
   test-notebooks:
     needs: [ select-runner, get-notebooks ]
