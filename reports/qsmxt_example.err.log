@@ -30,6 +30,11 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-!run_2_qsm.py bids qsm --premade fast --auto_yes
+!qsmxt bids qsm \
+    --premade fast \
+    --do_qsm \
+    --do_segmentation \
+    --do_analysis \
+    --auto_yes
 -------------------
 
