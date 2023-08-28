@@ -573,7 +573,9 @@ if IN_COLAB:
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading osfclient-0.0.5-py2.py3-none-any.whl (39 kB)
-Requirement already satisfied: requests in /usr/lib/python3/dist-packages (from osfclient) (2.25.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests in /usr/lib/python3/dist-packages (from osfclient) (2.25.1)
 Requirement already satisfied: tqdm in /usr/lib/python3/dist-packages (from osfclient) (4.57.0)
 Requirement already satisfied: six in /usr/lib/python3/dist-packages (from osfclient) (1.16.0)
 </pre></div>
@@ -646,7 +648,7 @@ There are 1216 unsorted DICOMs in ./dicoms-unsorted/
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Reading file list...
 [INFO]: 1216 DICOM files found.
-[INFO]: Sorting DICOMs in /tmp/tmponk17nf6/dicoms-sorted...
+[INFO]: Sorting DICOMs in /tmp/tmpokn9t6v1/dicoms-sorted...
 [INFO]: Identified subject: 2
 [INFO]: Identified session: 2 #1 20170705
 [INFO]: Identified series: 2/20170705/5_QSM_p2_1mmIso_TE20
@@ -686,7 +688,7 @@ There are 1216 unsorted DICOMs in ./dicoms-unsorted/
 │       ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">5_QSM_p2_1mmIso_TE20</span>
 │       ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">6_QSM_p2_1mmIso_TE20</span>
 │       └── <span class=" -Color -Color-Bold -Color-Bold-Blue">6_mp2rage_highRes_0p5iso_slab</span>
-├── log_2023-08-27_22-45-21209019.txt
+├── log_2023-08-28_05-42-29154551.txt
 └── references.txt
 
 10 directories, 2 files
@@ -713,27 +715,27 @@ There are 1216 unsorted DICOMs in ./dicoms-unsorted/
 [INFO]: Command: /opt/miniconda-4.7.12.1/bin/dicom-convert dicoms-sorted bids --t1w_protocol_patterns *mp2rage* --auto_yes
 [INFO]: Python interpreter: /opt/miniconda-4.7.12.1/bin/python3.8
 [INFO]: Converting all DICOMs to NIfTI...
-[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/tmp/tmponk17nf6/bids/sub-2/ses-20170705/extra_data&quot; &quot;/tmp/tmponk17nf6/dicoms-sorted/2/20170705/6_mp2rage_highRes_0p5iso_slab&quot; &gt;&gt; &quot;/tmp/tmponk17nf6/bids/sub-2/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/extra_data&quot; &quot;/tmp/tmpokn9t6v1/dicoms-sorted/2/20170705/6_mp2rage_highRes_0p5iso_slab&quot; &gt;&gt; &quot;/tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/tmp/tmponk17nf6/bids/sub-2/ses-20170705/extra_data&quot; &quot;/tmp/tmponk17nf6/dicoms-sorted/2/20170705/5_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/tmp/tmponk17nf6/bids/sub-2/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/extra_data&quot; &quot;/tmp/tmpokn9t6v1/dicoms-sorted/2/20170705/5_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/tmp/tmponk17nf6/bids/sub-2/ses-20170705/extra_data&quot; &quot;/tmp/tmponk17nf6/dicoms-sorted/2/20170705/6_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/tmp/tmponk17nf6/bids/sub-2/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/extra_data&quot; &quot;/tmp/tmpokn9t6v1/dicoms-sorted/2/20170705/6_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/tmp/tmponk17nf6/bids/sub-1/ses-20170705/extra_data&quot; &quot;/tmp/tmponk17nf6/dicoms-sorted/1/20170705/6_mp2rage_highRes_0p5iso_slab&quot; &gt;&gt; &quot;/tmp/tmponk17nf6/bids/sub-1/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/extra_data&quot; &quot;/tmp/tmpokn9t6v1/dicoms-sorted/1/20170705/6_mp2rage_highRes_0p5iso_slab&quot; &gt;&gt; &quot;/tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/tmp/tmponk17nf6/bids/sub-1/ses-20170705/extra_data&quot; &quot;/tmp/tmponk17nf6/dicoms-sorted/1/20170705/5_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/tmp/tmponk17nf6/bids/sub-1/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/extra_data&quot; &quot;/tmp/tmpokn9t6v1/dicoms-sorted/1/20170705/5_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/tmp/tmponk17nf6/bids/sub-1/ses-20170705/extra_data&quot; &quot;/tmp/tmponk17nf6/dicoms-sorted/1/20170705/6_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/tmp/tmponk17nf6/bids/sub-1/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/extra_data&quot; &quot;/tmp/tmpokn9t6v1/dicoms-sorted/1/20170705/6_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Loading JSON headers from &#39;/tmp/tmponk17nf6/bids/.../extra_data&#39; folders...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Loading JSON headers from &#39;/tmp/tmpokn9t6v1/bids/.../extra_data&#39; folders...
 [INFO]: Checking for GE data requiring correction...
-[INFO]: Loading updated JSON headers from &#39;/tmp/tmponk17nf6/bids/.../extra_data&#39; folders...
+[INFO]: Loading updated JSON headers from &#39;/tmp/tmpokn9t6v1/bids/.../extra_data&#39; folders...
 [INFO]: Enumerating protocol names from JSON headers...
 [INFO]: All protocol names identified: [&#39;mp2rage_highres_0p5iso_slab&#39;, &#39;qsm_p2_1mmiso_te20&#39;]
 [INFO]: Enumerating t2starw protocol names using match patterns [&#39;*t2starw*&#39;, &#39;*qsm*&#39;]...
@@ -746,18 +748,18 @@ There are 1216 unsorted DICOMs in ./dicoms-unsorted/
 [INFO]: Parsing relevant JSON data from sub-1/ses-20170705...
 [INFO]: Parsing relevant JSON data from sub-1/ses-20170705...
 [INFO]: Renaming files...
-[INFO]: Renaming /tmp/tmponk17nf6/bids/sub-2/ses-20170705/extra_data/6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.json -&gt; /tmp/tmponk17nf6/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.json
-[INFO]: Renaming /tmp/tmponk17nf6/bids/sub-2/ses-20170705/extra_data/6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.nii -&gt; /tmp/tmponk17nf6/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii
-[INFO]: Renaming /tmp/tmponk17nf6/bids/sub-2/ses-20170705/extra_data/5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.json -&gt; /tmp/tmponk17nf6/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.json
-[INFO]: Renaming /tmp/tmponk17nf6/bids/sub-2/ses-20170705/extra_data/5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.nii -&gt; /tmp/tmponk17nf6/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.nii
-[INFO]: Renaming /tmp/tmponk17nf6/bids/sub-2/ses-20170705/extra_data/6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.json -&gt; /tmp/tmponk17nf6/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.json
-[INFO]: Renaming /tmp/tmponk17nf6/bids/sub-2/ses-20170705/extra_data/6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.nii -&gt; /tmp/tmponk17nf6/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii
-[INFO]: Renaming /tmp/tmponk17nf6/bids/sub-1/ses-20170705/extra_data/6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.json -&gt; /tmp/tmponk17nf6/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.json
-[INFO]: Renaming /tmp/tmponk17nf6/bids/sub-1/ses-20170705/extra_data/6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.nii -&gt; /tmp/tmponk17nf6/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii
-[INFO]: Renaming /tmp/tmponk17nf6/bids/sub-1/ses-20170705/extra_data/5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.json -&gt; /tmp/tmponk17nf6/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.json
-[INFO]: Renaming /tmp/tmponk17nf6/bids/sub-1/ses-20170705/extra_data/5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.nii -&gt; /tmp/tmponk17nf6/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.nii
-[INFO]: Renaming /tmp/tmponk17nf6/bids/sub-1/ses-20170705/extra_data/6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.json -&gt; /tmp/tmponk17nf6/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.json
-[INFO]: Renaming /tmp/tmponk17nf6/bids/sub-1/ses-20170705/extra_data/6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.nii -&gt; /tmp/tmponk17nf6/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii
+[INFO]: Renaming /tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/extra_data/6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.json -&gt; /tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.json
+[INFO]: Renaming /tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/extra_data/6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.nii -&gt; /tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii
+[INFO]: Renaming /tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/extra_data/5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.json -&gt; /tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.json
+[INFO]: Renaming /tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/extra_data/5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.nii -&gt; /tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.nii
+[INFO]: Renaming /tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/extra_data/6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.json -&gt; /tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.json
+[INFO]: Renaming /tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/extra_data/6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.nii -&gt; /tmp/tmpokn9t6v1/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii
+[INFO]: Renaming /tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/extra_data/6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.json -&gt; /tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.json
+[INFO]: Renaming /tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/extra_data/6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.nii -&gt; /tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii
+[INFO]: Renaming /tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/extra_data/5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.json -&gt; /tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.json
+[INFO]: Renaming /tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/extra_data/5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.nii -&gt; /tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.nii
+[INFO]: Renaming /tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/extra_data/6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.json -&gt; /tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.json
+[INFO]: Renaming /tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/extra_data/6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.nii -&gt; /tmp/tmpokn9t6v1/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii
 [INFO]: Generating details for BIDS datset_description.json...
 </pre></div>
 </div>
@@ -779,7 +781,7 @@ There are 1216 unsorted DICOMs in ./dicoms-unsorted/
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">bids</span>
 ├── README
 ├── dataset_description.json
-├── log_2023-08-27_22-45-28831317.txt
+├── log_2023-08-28_05-42-36762121.txt
 ├── references.txt
 ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-1</span>
 │   └── <span class=" -Color -Color-Bold -Color-Bold-Blue">ses-20170705</span>
@@ -913,9 +915,9 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: QSMxT v4.0.1
 [INFO]: Parsing arguments...
-[INFO]: Starting log file: /tmp/tmponk17nf6/qsm/qsmxt.log
+[INFO]: Starting log file: /tmp/tmpokn9t6v1/qsm/qsmxt.log
 [INFO]: Python interpreter: /opt/miniconda-4.7.12.1/bin/python3.8
-[INFO]: Command: qsmxt /tmp/tmponk17nf6/bids /tmp/tmponk17nf6/qsm --premade &#39;fast&#39; --do_qsm --do_segmentation --do_analysis --auto_yes
+[INFO]: Command: qsmxt /tmp/tmpokn9t6v1/bids /tmp/tmpokn9t6v1/qsm --premade &#39;fast&#39; --do_qsm --do_segmentation --do_analysis --auto_yes
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Creating QSMxT workflow for sub-2.ses-20170705.acq-qsmp21mmisote20.run-01...
@@ -925,152 +927,147 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
 [INFO]: Running using MultiProc plugin with n_procs=8
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230827-22:45:40,218 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230828-05:42:48,802 nipype.workflow INFO:
 	 Workflow workflow settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
-230827-22:45:40,249 nipype.workflow INFO:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230828-05:42:48,832 nipype.workflow INFO:
 	 Running in parallel.
-230827-22:45:40,256 nipype.workflow INFO:
+230828-05:42:48,839 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 12 jobs ready. Free memory (GB): 52.97/52.97, Free processors: 8/8.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230827-22:45:40,374 nipype.workflow INFO:
-	 [Node] Setting-up &quot;workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-me&quot; in &quot;/tmp/tmponk17nf6/qsm/workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-me&quot;.
-230827-22:45:40,376 nipype.workflow INFO:
-	 [Node] Setting-up &quot;workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_read-nii&quot; in &quot;/tmp/tmponk17nf6/qsm/workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_read-nii&quot;.
-230827-22:45:40,376 nipype.workflow INFO:
-	 [Node] Setting-up &quot;workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_scale-phase&quot; in &quot;/tmp/tmponk17nf6/qsm/workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_scale-phase&quot;.
-230827-22:45:40,381 nipype.workflow INFO:
-	 [Node] Executing &quot;nibabel_read-nii&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230827-22:45:40,382 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230828-05:42:48,931 nipype.workflow INFO:
+	 [Node] Setting-up &quot;workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-me&quot; in &quot;/tmp/tmpokn9t6v1/qsm/workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-me&quot;.
+230828-05:42:48,932 nipype.workflow INFO:
+	 [Node] Setting-up &quot;workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-se&quot; in &quot;/tmp/tmpokn9t6v1/qsm/workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-se&quot;.
+230828-05:42:48,933 nipype.workflow INFO:
+	 [Node] Setting-up &quot;workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_scale-phase&quot; in &quot;/tmp/tmpokn9t6v1/qsm/workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_scale-phase&quot;.
+230828-05:42:48,937 nipype.workflow INFO:
 	 [Node] Executing &quot;func_read-json-me&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230827-22:45:40,383 nipype.workflow INFO:
+230828-05:42:48,938 nipype.workflow INFO:
+	 [Node] Executing &quot;func_read-json-se&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+230828-05:42:48,938 nipype.workflow INFO:
 	 [Node] Executing &quot;nibabel_numpy_scale-phase&quot; &lt;qsmxt.interfaces.nipype_interface_processphase.ScalePhaseInterface&gt;
-230827-22:45:40,387 nipype.workflow INFO:
-	 [Node] Finished &quot;func_read-json-me&quot;, elapsed time 0.001794s.
-230827-22:45:40,388 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_read-nii&quot;, elapsed time 0.004458s.
+230828-05:42:48,941 nipype.workflow INFO:
+	 [Node] Finished &quot;func_read-json-me&quot;, elapsed time 0.001272s.
+230828-05:42:48,942 nipype.workflow INFO:
+	 [Node] Finished &quot;func_read-json-se&quot;, elapsed time 0.001241s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230827-22:45:40,375 nipype.workflow INFO:
-	 [Node] Setting-up &quot;workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-se&quot; in &quot;/tmp/tmponk17nf6/qsm/workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-se&quot;.
-230827-22:45:40,376 nipype.workflow INFO:
-	 [Node] Setting-up &quot;workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-me&quot; in &quot;/tmp/tmponk17nf6/qsm/workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-me&quot;.
-230827-22:45:40,432 nipype.workflow INFO:
-	 [Node] Executing &quot;func_read-json-se&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230827-22:45:40,435 nipype.workflow INFO:
-	 [Node] Executing &quot;func_read-json-me&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230827-22:45:40,436 nipype.workflow INFO:
-	 [Node] Finished &quot;func_read-json-se&quot;, elapsed time 0.001334s.
-230827-22:45:40,439 nipype.workflow INFO:
-	 [Node] Finished &quot;func_read-json-me&quot;, elapsed time 0.001276s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230827-22:45:40,377 nipype.workflow INFO:
-	 [Node] Setting-up &quot;workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-se&quot; in &quot;/tmp/tmponk17nf6/qsm/workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-se&quot;.
-230827-22:45:40,483 nipype.workflow INFO:
-	 [Node] Executing &quot;func_read-json-se&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230827-22:45:40,487 nipype.workflow INFO:
-	 [Node] Finished &quot;func_read-json-se&quot;, elapsed time 0.001323s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230827-22:45:40,377 nipype.workflow INFO:
-	 [Node] Setting-up &quot;workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_read-nii&quot; in &quot;/tmp/tmponk17nf6/qsm/workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_read-nii&quot;.
-230827-22:45:40,533 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230828-05:42:48,932 nipype.workflow INFO:
+	 [Node] Setting-up &quot;workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_read-nii&quot; in &quot;/tmp/tmpokn9t6v1/qsm/workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_read-nii&quot;.
+230828-05:42:48,933 nipype.workflow INFO:
+	 [Node] Setting-up &quot;workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_read-nii&quot; in &quot;/tmp/tmpokn9t6v1/qsm/workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_read-nii&quot;.
+230828-05:42:48,988 nipype.workflow INFO:
 	 [Node] Executing &quot;nibabel_read-nii&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230827-22:45:40,540 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_read-nii&quot;, elapsed time 0.004552s.
+230828-05:42:48,989 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_read-nii&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+230828-05:42:48,996 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_read-nii&quot;, elapsed time 0.00463s.
+230828-05:42:48,996 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_read-nii&quot;, elapsed time 0.004454s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230827-22:45:40,377 nipype.workflow INFO:
-	 [Node] Setting-up &quot;workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_scale-phase&quot; in &quot;/tmp/tmponk17nf6/qsm/workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_scale-phase&quot;.
-230827-22:45:40,582 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230828-05:42:48,933 nipype.workflow INFO:
+	 [Node] Setting-up &quot;workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-me&quot; in &quot;/tmp/tmpokn9t6v1/qsm/workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-me&quot;.
+230828-05:42:49,39 nipype.workflow INFO:
+	 [Node] Executing &quot;func_read-json-me&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+230828-05:42:49,43 nipype.workflow INFO:
+	 [Node] Finished &quot;func_read-json-me&quot;, elapsed time 0.001257s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230828-05:42:48,933 nipype.workflow INFO:
+	 [Node] Setting-up &quot;workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-se&quot; in &quot;/tmp/tmpokn9t6v1/qsm/workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-se&quot;.
+230828-05:42:48,934 nipype.workflow INFO:
+	 [Node] Setting-up &quot;workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_scale-phase&quot; in &quot;/tmp/tmpokn9t6v1/qsm/workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_scale-phase&quot;.
+230828-05:42:49,89 nipype.workflow INFO:
+	 [Node] Executing &quot;func_read-json-se&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+230828-05:42:49,91 nipype.workflow INFO:
 	 [Node] Executing &quot;nibabel_numpy_scale-phase&quot; &lt;qsmxt.interfaces.nipype_interface_processphase.ScalePhaseInterface&gt;
+230828-05:42:49,93 nipype.workflow INFO:
+	 [Node] Finished &quot;func_read-json-se&quot;, elapsed time 0.001373s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230827-22:45:40,928 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_numpy_scale-phase&quot;, elapsed time 0.542364s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230828-05:42:49,451 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_scale-phase&quot;, elapsed time 0.510167s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230827-22:45:41,112 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_numpy_scale-phase&quot;, elapsed time 0.526787s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230828-05:42:49,617 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_scale-phase&quot;, elapsed time 0.521904s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230827-22:45:42,258 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230828-05:42:50,840 nipype.workflow INFO:
 	 [Job 0] Completed (workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-me).
-230827-22:45:42,260 nipype.workflow INFO:
+230828-05:42:50,842 nipype.workflow INFO:
 	 [Job 1] Completed (workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-se).
-230827-22:45:42,261 nipype.workflow INFO:
+230828-05:42:50,843 nipype.workflow INFO:
 	 [Job 2] Completed (workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_read-nii).
-230827-22:45:42,262 nipype.workflow INFO:
+230828-05:42:50,844 nipype.workflow INFO:
 	 [Job 3] Completed (workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_scale-phase).
-230827-22:45:42,262 nipype.workflow INFO:
+230828-05:42:50,845 nipype.workflow INFO:
 	 [Job 6] Completed (workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-me).
-230827-22:45:42,263 nipype.workflow INFO:
+230828-05:42:50,846 nipype.workflow INFO:
 	 [Job 7] Completed (workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-se).
-230827-22:45:42,264 nipype.workflow INFO:
+230828-05:42:50,847 nipype.workflow INFO:
 	 [Job 8] Completed (workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_read-nii).
-230827-22:45:42,265 nipype.workflow INFO:
+230828-05:42:50,848 nipype.workflow INFO:
 	 [Job 9] Completed (workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_scale-phase).
-230827-22:45:42,267 nipype.workflow INFO:
+230828-05:42:50,849 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 6 jobs ready. Free memory (GB): 52.97/52.97, Free processors: 8/8.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230827-22:45:42,363 nipype.workflow INFO:
-	 [Node] Setting-up &quot;workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1&quot; in &quot;/tmp/tmponk17nf6/qsm/workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/fastsurfer_segment-t1&quot;.
-230827-22:45:42,365 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230828-05:42:50,950 nipype.workflow INFO:
+	 [Node] Setting-up &quot;workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1&quot; in &quot;/tmp/tmpokn9t6v1/qsm/workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/fastsurfer_segment-t1&quot;.
+230828-05:42:50,952 nipype.workflow INFO:
 	 [Node] Executing &quot;fastsurfer_segment-t1&quot; &lt;qsmxt.interfaces.nipype_interface_fastsurfer.FastSurferInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230827-22:45:44,259 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230828-05:42:52,841 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 5 jobs ready. Free memory (GB): 40.97/52.97, Free processors: 0/8.
                      Currently running:
                        * workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
-Process ForkProcess-4:
-Process ForkProcess-6:
+Process ForkProcess-3:
 Process ForkProcess-8:
+Process ForkProcess-2:
+Process ForkProcess-5:
+Process ForkProcess-6:
 Traceback (most recent call last):
   File &quot;/opt/miniconda-4.7.12.1/bin/qsmxt&quot;, line 8, in &lt;module&gt;
+Process ForkProcess-4:
 Process ForkProcess-7:
-Process ForkProcess-1:
-Process ForkProcess-5:
-Process ForkProcess-2:
     sys.exit(main())
   File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/site-packages/qsmxt/cli/main.py&quot;, line 1463, in main
-Traceback (most recent call last):
-Traceback (most recent call last):
-Traceback (most recent call last):
-  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/process.py&quot;, line 315, in _bootstrap
-    self.run()
-  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/process.py&quot;, line 315, in _bootstrap
-    self.run()
-  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/process.py&quot;, line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/concurrent/futures/process.py&quot;, line 233, in _process_worker
-    call_item = call_queue.get(block=True)
-  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/queues.py&quot;, line 96, in get
-    with self._rlock:
-  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/process.py&quot;, line 315, in _bootstrap
-    self.run()
-  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/synchronize.py&quot;, line 95, in __enter__
-    return self._semlock.__enter__()
-  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/process.py&quot;, line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/process.py&quot;, line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/concurrent/futures/process.py&quot;, line 233, in _process_worker
-    call_item = call_queue.get(block=True)
-  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/concurrent/futures/process.py&quot;, line 233, in _process_worker
-    call_item = call_queue.get(block=True)
-  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/queues.py&quot;, line 96, in get
-    with self._rlock:
+    wf.run(
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/site-packages/nipype/pipeline/engine/workflows.py&quot;, line 638, in run
+    runner.run(execgraph, updatehash=updatehash, config=self.config)
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/site-packages/nipype/pipeline/plugins/base.py&quot;, line 204, in run
+    sleep(max(0, sleep_til - time()))
 KeyboardInterrupt
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/process.py&quot;, line 315, in _bootstrap
+    self.run()
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/process.py&quot;, line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/process.py&quot;, line 315, in _bootstrap
+    self.run()
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/concurrent/futures/process.py&quot;, line 233, in _process_worker
+    call_item = call_queue.get(block=True)
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/process.py&quot;, line 108, in run
+    self._target(*self._args, **self._kwargs)
   File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/queues.py&quot;, line 96, in get
     with self._rlock:
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/concurrent/futures/process.py&quot;, line 233, in _process_worker
+    call_item = call_queue.get(block=True)
   File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/synchronize.py&quot;, line 95, in __enter__
     return self._semlock.__enter__()
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/queues.py&quot;, line 96, in get
+    with self._rlock:
   File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/synchronize.py&quot;, line 95, in __enter__
     return self._semlock.__enter__()
 KeyboardInterrupt
@@ -1104,6 +1101,16 @@ Traceback (most recent call last):
     self.run()
   File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/process.py&quot;, line 108, in run
     self._target(*self._args, **self._kwargs)
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/process.py&quot;, line 315, in _bootstrap
+    self.run()
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/concurrent/futures/process.py&quot;, line 233, in _process_worker
+    call_item = call_queue.get(block=True)
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/queues.py&quot;, line 96, in get
+    with self._rlock:
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/process.py&quot;, line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/synchronize.py&quot;, line 95, in __enter__
+    return self._semlock.__enter__()
   File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/concurrent/futures/process.py&quot;, line 233, in _process_worker
     call_item = call_queue.get(block=True)
   File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/queues.py&quot;, line 96, in get
@@ -1111,7 +1118,24 @@ Traceback (most recent call last):
   File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/synchronize.py&quot;, line 95, in __enter__
     return self._semlock.__enter__()
 KeyboardInterrupt
-exception calling callback for &lt;Future at 0x7fd039c551f0 state=finished raised BrokenProcessPool&gt;
+KeyboardInterrupt
+Traceback (most recent call last):
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/process.py&quot;, line 315, in _bootstrap
+    self.run()
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/process.py&quot;, line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/concurrent/futures/process.py&quot;, line 233, in _process_worker
+    call_item = call_queue.get(block=True)
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/queues.py&quot;, line 97, in get
+    res = self._recv_bytes()
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/connection.py&quot;, line 216, in recv_bytes
+    buf = self._recv_bytes(maxlength)
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/connection.py&quot;, line 414, in _recv_bytes
+    buf = self._recv(4)
+  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/multiprocessing/connection.py&quot;, line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
+exception calling callback for &lt;Future at 0x7f87505f5160 state=finished raised BrokenProcessPool&gt;
 Traceback (most recent call last):
   File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/concurrent/futures/_base.py&quot;, line 328, in _invoke_callbacks
     callback(self)
@@ -1122,12 +1146,6 @@ Traceback (most recent call last):
   File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/concurrent/futures/_base.py&quot;, line 389, in __get_result
     raise self._exception
 concurrent.futures.process.BrokenProcessPool: A process in the process pool was terminated abruptly while the future was running or pending.
-    wf.run(
-  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/site-packages/nipype/pipeline/engine/workflows.py&quot;, line 638, in run
-    runner.run(execgraph, updatehash=updatehash, config=self.config)
-  File &quot;/opt/miniconda-4.7.12.1/lib/python3.8/site-packages/nipype/pipeline/plugins/base.py&quot;, line 204, in run
-    sleep(max(0, sleep_til - time()))
-KeyboardInterrupt
 </pre></div>
 </div>
 </div>
@@ -1265,7 +1283,7 @@ KeyboardInterrupt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4812d5f3abf546ee80af60c6e149409c22ed484b0ab4047093f7abfbb529c240.png" src="_images/4812d5f3abf546ee80af60c6e149409c22ed484b0ab4047093f7abfbb529c240.png" />
+<img alt="_images/23cf8a9b34a025f40eddaca23c3d9d769998d95eb2b1bc4bfc3ca83db4942aa6.png" src="_images/23cf8a9b34a025f40eddaca23c3d9d769998d95eb2b1bc4bfc3ca83db4942aa6.png" />
 </div>
 </div>
 </section>
@@ -1304,14 +1322,14 @@ Requirement already satisfied: matplotlib in /opt/conda/lib/python3.10/site-pack
 Requirement already satisfied: setuptools in /opt/conda/lib/python3.10/site-packages (from nibabel) (65.6.3)
 Requirement already satisfied: packaging&gt;=17.0 in /opt/conda/lib/python3.10/site-packages (from nibabel) (22.0)
 Requirement already satisfied: python-dateutil&gt;=2.8.2 in /opt/conda/lib/python3.10/site-packages (from pandas) (2.8.2)
-Requirement already satisfied: pytz&gt;=2020.1 in /opt/conda/lib/python3.10/site-packages (from pandas) (2022.7)
 Requirement already satisfied: tzdata&gt;=2022.1 in /opt/conda/lib/python3.10/site-packages (from pandas) (2023.3)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/conda/lib/python3.10/site-packages (from matplotlib) (4.38.0)
+Requirement already satisfied: pytz&gt;=2020.1 in /opt/conda/lib/python3.10/site-packages (from pandas) (2022.7)
 Requirement already satisfied: pillow&gt;=6.2.0 in /opt/conda/lib/python3.10/site-packages (from matplotlib) (9.2.0)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/conda/lib/python3.10/site-packages (from matplotlib) (1.4.4)
 Requirement already satisfied: cycler&gt;=0.10 in /opt/conda/lib/python3.10/site-packages (from matplotlib) (0.11.0)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/conda/lib/python3.10/site-packages (from matplotlib) (1.4.4)
 Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/conda/lib/python3.10/site-packages (from matplotlib) (3.0.9)
 Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/conda/lib/python3.10/site-packages (from matplotlib) (1.0.6)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/conda/lib/python3.10/site-packages (from matplotlib) (4.38.0)
 Requirement already satisfied: six&gt;=1.5 in /opt/conda/lib/python3.10/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
 </pre></div>
 </div>
@@ -1369,52 +1387,52 @@ Requirement already satisfied: six&gt;=1.5 in /opt/conda/lib/python3.10/site-pac
     <tr>
       <th>0</th>
       <td>3rd-Ventricle</td>
-      <td>589</td>
+      <td>586</td>
       <td>-0.237164</td>
       <td>0.125742</td>
-      <td>-0.020376</td>
-      <td>-0.023423</td>
-      <td>0.034476</td>
+      <td>-0.019675</td>
+      <td>-0.023015</td>
+      <td>0.034695</td>
     </tr>
     <tr>
       <th>1</th>
       <td>4th-Ventricle</td>
-      <td>1549</td>
+      <td>1559</td>
       <td>-0.126198</td>
-      <td>0.052608</td>
-      <td>-0.046954</td>
-      <td>-0.047266</td>
-      <td>0.029682</td>
+      <td>0.031669</td>
+      <td>-0.049291</td>
+      <td>-0.051198</td>
+      <td>0.027234</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Brain-Stem</td>
-      <td>18480</td>
+      <td>18858</td>
       <td>-0.281279</td>
       <td>0.103408</td>
-      <td>-0.044927</td>
-      <td>-0.041013</td>
-      <td>0.028531</td>
+      <td>-0.044077</td>
+      <td>-0.039981</td>
+      <td>0.028722</td>
     </tr>
     <tr>
       <th>3</th>
       <td>CSF</td>
-      <td>776</td>
+      <td>770</td>
       <td>-1.398996</td>
       <td>0.946292</td>
-      <td>0.026453</td>
-      <td>0.028099</td>
-      <td>0.147356</td>
+      <td>0.026568</td>
+      <td>0.027402</td>
+      <td>0.147044</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Left-Accumbens-area</td>
-      <td>518</td>
+      <td>521</td>
       <td>-0.143444</td>
       <td>0.129420</td>
-      <td>0.026265</td>
-      <td>0.022939</td>
-      <td>0.031021</td>
+      <td>0.028555</td>
+      <td>0.023690</td>
+      <td>0.032063</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1429,52 +1447,52 @@ Requirement already satisfied: six&gt;=1.5 in /opt/conda/lib/python3.10/site-pac
     <tr>
       <th>91</th>
       <td>ctx-rh-superiorfrontal</td>
-      <td>29812</td>
-      <td>-0.103915</td>
-      <td>0.198186</td>
-      <td>-0.003775</td>
-      <td>-0.009025</td>
-      <td>0.023541</td>
+      <td>29625</td>
+      <td>-0.133545</td>
+      <td>0.252691</td>
+      <td>-0.004135</td>
+      <td>-0.009295</td>
+      <td>0.025207</td>
     </tr>
     <tr>
       <th>92</th>
       <td>ctx-rh-superiorparietal</td>
-      <td>11999</td>
+      <td>12193</td>
       <td>-0.084040</td>
-      <td>0.238176</td>
-      <td>-0.015061</td>
-      <td>-0.014373</td>
-      <td>0.020950</td>
+      <td>0.196441</td>
+      <td>-0.014620</td>
+      <td>-0.014232</td>
+      <td>0.020587</td>
     </tr>
     <tr>
       <th>93</th>
       <td>ctx-rh-superiortemporal</td>
-      <td>16410</td>
-      <td>-0.091140</td>
+      <td>16220</td>
+      <td>-0.111554</td>
       <td>0.249189</td>
-      <td>0.004132</td>
-      <td>0.012282</td>
-      <td>0.023626</td>
+      <td>0.006599</td>
+      <td>0.012811</td>
+      <td>0.024041</td>
     </tr>
     <tr>
       <th>94</th>
       <td>ctx-rh-supramarginal</td>
-      <td>11922</td>
-      <td>-0.056562</td>
+      <td>12193</td>
+      <td>-0.082319</td>
       <td>0.240526</td>
-      <td>0.018584</td>
-      <td>0.019964</td>
-      <td>0.022895</td>
+      <td>0.019189</td>
+      <td>0.020113</td>
+      <td>0.022540</td>
     </tr>
     <tr>
       <th>95</th>
       <td>ctx-rh-transversetemporal</td>
-      <td>1240</td>
-      <td>-0.004959</td>
+      <td>1245</td>
+      <td>0.000628</td>
       <td>0.171856</td>
-      <td>0.034413</td>
-      <td>0.035219</td>
-      <td>0.016327</td>
+      <td>0.034773</td>
+      <td>0.035769</td>
+      <td>0.015936</td>
     </tr>
   </tbody>
 </table>
@@ -1566,7 +1584,7 @@ Requirement already satisfied: six&gt;=1.5 in /opt/conda/lib/python3.10/site-pac
   <tbody>
     <tr>
       <th>Brain stem</th>
-      <td>-0.041</td>
+      <td>-0.040</td>
       <td>0.029</td>
     </tr>
     <tr>
@@ -1576,7 +1594,7 @@ Requirement already satisfied: six&gt;=1.5 in /opt/conda/lib/python3.10/site-pac
     </tr>
     <tr>
       <th>CSF</th>
-      <td>0.028</td>
+      <td>0.027</td>
       <td>0.147</td>
     </tr>
     <tr>
@@ -1586,18 +1604,18 @@ Requirement already satisfied: six&gt;=1.5 in /opt/conda/lib/python3.10/site-pac
     </tr>
     <tr>
       <th>Pallidum</th>
-      <td>0.034</td>
+      <td>0.033</td>
       <td>0.060</td>
     </tr>
     <tr>
       <th>Putamen</th>
-      <td>0.045</td>
+      <td>0.047</td>
       <td>0.033</td>
     </tr>
     <tr>
       <th>Caudate</th>
       <td>0.048</td>
-      <td>0.024</td>
+      <td>0.023</td>
     </tr>
   </tbody>
 </table>
@@ -1627,7 +1645,7 @@ Requirement already satisfied: six&gt;=1.5 in /opt/conda/lib/python3.10/site-pac
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7d39feebd92fdc2de2338f8b100988b0baac5da1f8a5ebe4cbc4ce44ce6318b2.png" src="_images/7d39feebd92fdc2de2338f8b100988b0baac5da1f8a5ebe4cbc4ce44ce6318b2.png" />
+<img alt="_images/1ceaaf189439c23c6314f6a82f24481bc0c268b31a916a329a5f6be8673bb005.png" src="_images/1ceaaf189439c23c6314f6a82f24481bc0c268b31a916a329a5f6be8673bb005.png" />
 </div>
 </div>
 </section>
