@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -55,6 +56,13 @@
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-4Z9774J59Y"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-4Z9774J59Y');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -82,6 +90,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
   
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
   <input type="checkbox"
           class="sidebar-toggle"
           name="__primary"
@@ -105,8 +122,8 @@ const thebe_selector_output = ".output, .cell_output"
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search..."
-         aria-label="Search..."
+         placeholder="Search this book..."
+         aria-label="Search this book..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -134,9 +151,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="#">
+  
   
   
   
@@ -147,6 +166,14 @@ const thebe_selector_output = ".output, .cell_output"
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Fmriprep Example
+                </a>
+            </li>
+        </ul>
         
     </div>
 </nav></div>
@@ -200,7 +227,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/main/v2/gh/neurodesk/example-notebooks/master?urlpath=tree/fmriprep_example.ipynb" target="_blank"
+      <li><a href="https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/main?labpath=/home/jovyan/examples/example-notebooks/books/v2/gh/NeurodDesk/example-notebooks/main?urlpath=lab/tree/books/fmriprep_example.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -218,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/neurodesk/example-notebooks/blob/master/fmriprep_example.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/NeurodDesk/example-notebooks/blob/main/books/fmriprep_example.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -249,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/neurodesk/example-notebooks" target="_blank"
+      <li><a href="https://github.com/NeurodDesk/example-notebooks" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -266,7 +293,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/neurodesk/example-notebooks/edit/main/fmriprep_example.ipynb" target="_blank"
+      <li><a href="https://github.com/NeurodDesk/example-notebooks/edit/main/books/fmriprep_example.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -283,7 +310,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/neurodesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Ffmriprep_example.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/NeurodDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Ffmriprep_example.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -365,20 +392,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -559,10 +588,11 @@ Receiving:   0%|                             | 0.00/2.15k [00:00&lt;?, ? Objects
                                                                                 
 
 Resolving:   0%|                                | 0.00/537 [00:00&lt;?, ? Deltas/s]
+
+                                                                                
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
-                                                                                
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO   ] Author identity unknown
@@ -576,7 +606,7 @@ Resolving:   0%|                                | 0.00/537 [00:00&lt;?, ? Deltas
 | 
 | to set your account&#39;s default identity.
 | Omit --global to set the identity only in this repository. 
-[INFO   ] fatal: unable to auto-detect email address (got &#39;runnerx@cirun-neurodesk--example-notebooks-f262bc5.(none)&#39;) 
+[INFO   ] fatal: unable to auto-detect email address (got &#39;runnerx@cirun-neurodesk--example-notebooks-b62c5d0.(none)&#39;) 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO   ] scanning for unlocked files (this may take some time) 
@@ -586,8 +616,8 @@ Resolving:   0%|                                | 0.00/537 [00:00&lt;?, ? Deltas
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO   ] access to 1 dataset sibling s3-PRIVATE not auto-enabled, enable with:
-| 		datalad siblings -d &quot;/tmp/tmphgfd5gu8/ds000102&quot; enable -s s3-PRIVATE 
-<span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): /tmp/tmphgfd5gu8/ds000102 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>)
+| 		datalad siblings -d &quot;/tmp/tmprd69z93z/ds000102&quot; enable -s s3-PRIVATE 
+<span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): /tmp/tmprd69z93z/ds000102 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>)
 
 </pre></div>
 </div>
@@ -603,117 +633,114 @@ Resolving:   0%|                                | 0.00/537 [00:00&lt;?, ? Deltas
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:   1%|    | 68.2k/10.6M [00:00&lt;00:30, 348k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:   1%|     | 120k/10.6M [00:00&lt;00:31, 332k Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:   1%|     | 120k/10.6M [00:00&lt;00:28, 366k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:   3%|▏    | 277k/10.6M [00:00&lt;00:15, 672k Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:   3%|▏    | 277k/10.6M [00:00&lt;00:13, 771k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:   5%|▏   | 573k/10.6M [00:00&lt;00:07, 1.35M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:   5%|▏   | 573k/10.6M [00:00&lt;00:06, 1.49M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  11%|▎  | 1.13M/10.6M [00:00&lt;00:03, 2.61M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  11%|▎  | 1.13M/10.6M [00:00&lt;00:03, 2.78M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  21%|▌  | 2.19M/10.6M [00:00&lt;00:01, 4.99M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  21%|▋  | 2.21M/10.6M [00:00&lt;00:01, 5.28M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  40%|█▏ | 4.19M/10.6M [00:00&lt;00:00, 9.45M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  56%|█▋ | 5.87M/10.6M [00:00&lt;00:00, 11.4M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  59%|█▊ | 6.19M/10.6M [00:00&lt;00:00, 12.6M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  74%|██▏| 7.87M/10.6M [00:01&lt;00:00, 13.5M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  78%|██▎| 8.19M/10.6M [00:01&lt;00:00, 14.8M Bytes/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  96%|██▉| 10.2M/10.6M [00:01&lt;00:00, 16.3M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/a .. 8_T1w.nii.gz:  93%|██▊| 9.86M/10.6M [00:01&lt;00:00, 15.2M Bytes/s]
 
                                                                                 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total:  16%|████                      | 10.6M/67.8M [00:01&lt;00:10, 5.36M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total:  16%|████                      | 10.6M/67.8M [00:01&lt;00:10, 5.38M Bytes/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:   0%|            | 0.00/28.6M [00:00&lt;?, ? Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  12%|▎  | 3.42M/28.6M [00:00&lt;00:01, 17.1M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  14%|▍  | 3.94M/28.6M [00:00&lt;00:01, 19.7M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  19%|▌  | 5.41M/28.6M [00:00&lt;00:01, 18.2M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  21%|▋  | 5.99M/28.6M [00:00&lt;00:01, 19.7M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  26%|▊  | 7.40M/28.6M [00:00&lt;00:01, 18.8M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  34%|█  | 9.86M/28.6M [00:00&lt;00:00, 19.7M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  39%|█▏ | 11.2M/28.6M [00:00&lt;00:00, 19.0M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  41%|█▏ | 11.8M/28.6M [00:00&lt;00:00, 19.7M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  46%|█▍ | 13.2M/28.6M [00:00&lt;00:00, 19.2M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  48%|█▍ | 13.8M/28.6M [00:00&lt;00:00, 19.7M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  53%|█▌ | 15.2M/28.6M [00:00&lt;00:00, 19.4M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  55%|█▋ | 15.8M/28.6M [00:00&lt;00:00, 19.7M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  67%|██ | 19.2M/28.6M [00:01&lt;00:00, 19.6M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  62%|█▊ | 17.7M/28.6M [00:00&lt;00:00, 19.6M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  74%|██▏| 21.1M/28.6M [00:01&lt;00:00, 19.6M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  69%|██ | 19.7M/28.6M [00:01&lt;00:00, 19.6M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  81%|██▍| 23.1M/28.6M [00:01&lt;00:00, 19.7M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  76%|██▎| 21.7M/28.6M [00:01&lt;00:00, 19.6M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  88%|██▋| 25.1M/28.6M [00:01&lt;00:00, 19.7M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  83%|██▍| 23.6M/28.6M [00:01&lt;00:00, 19.7M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  89%|██▋| 25.6M/28.6M [00:01&lt;00:00, 19.7M Bytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  96%|██▉| 27.6M/28.6M [00:01&lt;00:00, 19.6M Bytes/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total:  58%|███████████████           | 39.2M/67.8M [00:03&lt;00:02, 10.3M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total:  58%|███████████████           | 39.2M/67.8M [00:03&lt;00:02, 10.5M Bytes/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:   0%|            | 0.00/28.6M [00:00&lt;?, ? Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:   6%|▏  | 1.75M/28.6M [00:00&lt;00:01, 17.4M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:   7%|▏  | 1.96M/28.6M [00:00&lt;00:01, 19.6M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  13%|▍  | 3.75M/28.6M [00:00&lt;00:01, 18.9M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  17%|▌  | 4.86M/28.6M [00:00&lt;00:01, 18.7M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  20%|▌  | 5.73M/28.6M [00:00&lt;00:01, 19.3M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  27%|▊  | 7.70M/28.6M [00:00&lt;00:01, 19.2M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  34%|█  | 9.62M/28.6M [00:00&lt;00:00, 19.3M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  34%|█  | 9.68M/28.6M [00:00&lt;00:00, 19.4M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  41%|█▏ | 11.6M/28.6M [00:00&lt;00:00, 19.5M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  47%|█▍ | 13.5M/28.6M [00:00&lt;00:00, 19.3M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  47%|█▍ | 13.6M/28.6M [00:00&lt;00:00, 19.6M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  54%|█▋ | 15.5M/28.6M [00:00&lt;00:00, 19.4M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  54%|█▋ | 15.6M/28.6M [00:00&lt;00:00, 19.7M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  61%|█▊ | 17.5M/28.6M [00:00&lt;00:00, 19.5M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  61%|█▊ | 17.6M/28.6M [00:00&lt;00:00, 19.7M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  68%|██ | 19.5M/28.6M [00:01&lt;00:00, 19.5M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  68%|██ | 19.6M/28.6M [00:01&lt;00:00, 19.7M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  75%|██▏| 21.4M/28.6M [00:01&lt;00:00, 19.6M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  75%|██▎| 21.6M/28.6M [00:01&lt;00:00, 19.8M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  82%|██▍| 23.4M/28.6M [00:01&lt;00:00, 19.6M Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  82%|██▍| 23.6M/28.6M [00:01&lt;00:00, 19.8M Bytes/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  89%|██▋| 25.5M/28.6M [00:01&lt;00:00, 19.8M Bytes/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  96%|██▉| 27.5M/28.6M [00:01&lt;00:00, 19.8M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-08/f .. _bold.nii.gz:  96%|██▊| 27.4M/28.6M [00:01&lt;00:00, 19.6M Bytes/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
@@ -746,7 +773,9 @@ https://fmriprep.readthedocs.io/en/latest/faq.html#upgrading
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--topup-max-vols input is no longer used and the flag will be removed in a future release.
-230822-05:16:33,968 cli INFO:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:29:42,184 cli INFO:
 	 Telemetry system to collect crashes and errors is enabled - thanks for your feedback!. Use option ``--notrack`` to opt out.
 </pre></div>
 </div>
@@ -759,8 +788,7 @@ Fontconfig error: No writable cache directories
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fontconfig error: No writable cache directories
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fontconfig error: No writable cache directories
-Matplotlib is building the font cache; this may take a moment.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib is building the font cache; this may take a moment.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fontconfig error: No writable cache directories
@@ -772,7 +800,10 @@ Matplotlib is building the font cache; this may take a moment.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fontconfig error: No writable cache directories
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:17:06,439 nipype.workflow IMPORTANT:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fontconfig error: No writable cache directories
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:30:15,79 nipype.workflow IMPORTANT:
 	 Running fMRIPrep version 22.1.1
 
          License NOTICE ##################################################
@@ -797,725 +828,741 @@ Matplotlib is building the font cache; this may take a moment.
          #################################################################
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:17:06,655 nipype.workflow IMPORTANT:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:30:15,292 nipype.workflow IMPORTANT:
 	 Building fMRIPrep&#39;s workflow:
-           * BIDS dataset path: /tmp/tmphgfd5gu8/ds000102.
+           * BIDS dataset path: /tmp/tmprd69z93z/ds000102.
            * Participant list: [&#39;08&#39;].
-           * Run identifier: 20230822-051628_5a5eb6a9-4187-48f9-82a9-ceb36911d99a.
+           * Run identifier: 20231218-232936_89580bef-3673-40e0-979c-37bb9a0aa905.
            * Output spaces: T1w MNI152NLin2009cAsym:res-native fsaverage:den-164k fsnative.
-           * Pre-run FreeSurfer&#39;s SUBJECTS_DIR: /tmp/tmphgfd5gu8/content/sourcedata/freesurfer.
+           * Pre-run FreeSurfer&#39;s SUBJECTS_DIR: /tmp/tmprd69z93z/content/sourcedata/freesurfer.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:17:17,129 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:30:25,847 nipype.workflow INFO:
 	 No single-band-reference found for sub-08_task-flanker_run-1_bold.nii.gz.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:17:17,826 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:30:26,562 nipype.workflow INFO:
 	 No single-band-reference found for sub-08_task-flanker_run-2_bold.nii.gz.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:17:23,353 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:30:31,969 nipype.workflow INFO:
 	 fMRIPrep workflow graph with 619 nodes built successfully.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:17:46,181 nipype.workflow IMPORTANT:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:30:54,479 nipype.workflow IMPORTANT:
 	 fMRIPrep started!
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:17:46,733 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:30:55,46 nipype.workflow INFO:
 	 Workflow fmriprep_22_1_wf settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:17:47,227 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:30:55,547 nipype.workflow INFO:
 	 Running in parallel.
-230822-05:17:47,230 nipype.workflow WARNING:
+231218-23:30:55,550 nipype.workflow WARNING:
 	 Some nodes exceed the total amount of memory available (10.00GB).
-230822-05:17:47,242 nipype.workflow INFO:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:30:55,564 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 23 jobs ready. Free memory (GB): 10.00/10.00, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:17:47,379 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.fsdir_run_20230822_051628_5a5eb6a9_4187_48f9_82a9_ceb36911d99a&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/fsdir_run_20230822_051628_5a5eb6a9_4187_48f9_82a9_ceb36911d99a&quot;.
-230822-05:17:47,381 nipype.workflow INFO:
-	 [Node] Executing &quot;fsdir_run_20230822_051628_5a5eb6a9_4187_48f9_82a9_ceb36911d99a&quot; &lt;niworkflows.interfaces.bids.BIDSFreeSurferDir&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:30:55,702 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.fsdir_run_20231218_232936_89580bef_3673_40e0_979c_37bb9a0aa905&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/fsdir_run_20231218_232936_89580bef_3673_40e0_979c_37bb9a0aa905&quot;.
+231218-23:30:55,705 nipype.workflow INFO:
+	 [Node] Executing &quot;fsdir_run_20231218_232936_89580bef_3673_40e0_979c_37bb9a0aa905&quot; &lt;niworkflows.interfaces.bids.BIDSFreeSurferDir&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:17:54,708 nipype.workflow INFO:
-	 [Node] Finished &quot;fsdir_run_20230822_051628_5a5eb6a9_4187_48f9_82a9_ceb36911d99a&quot;, elapsed time 7.309863s.
-230822-05:17:54,712 nipype.workflow INFO:
-	 [Job 0] Completed (fmriprep_22_1_wf.fsdir_run_20230822_051628_5a5eb6a9_4187_48f9_82a9_ceb36911d99a).
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:03,531 nipype.workflow INFO:
+	 [Node] Finished &quot;fsdir_run_20231218_232936_89580bef_3673_40e0_979c_37bb9a0aa905&quot;, elapsed time 7.809806s.
+231218-23:31:03,535 nipype.workflow INFO:
+	 [Job 0] Completed (fmriprep_22_1_wf.fsdir_run_20231218_232936_89580bef_3673_40e0_979c_37bb9a0aa905).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:17:54,865 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.about&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/about&quot;.
-230822-05:17:54,868 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:03,689 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.about&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/about&quot;.
+231218-23:31:03,692 nipype.workflow INFO:
 	 [Node] Executing &quot;about&quot; &lt;fmriprep.interfaces.reports.AboutSummary&gt;
-230822-05:17:54,869 nipype.workflow INFO:
-	 [Node] Finished &quot;about&quot;, elapsed time 0.000339s.
-230822-05:17:54,871 nipype.workflow INFO:
+231218-23:31:03,693 nipype.workflow INFO:
+	 [Node] Finished &quot;about&quot;, elapsed time 0.000337s.
+231218-23:31:03,695 nipype.workflow INFO:
 	 [Job 2] Completed (fmriprep_22_1_wf.single_subject_08_wf.about).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:17:54,992 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:03,818 nipype.workflow INFO:
 	 [MultiProc] Running 2 tasks, and 19 jobs ready. Free memory (GB): 9.60/10.00, Free processors: 0/2.
                      Currently running:
                        * fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.res_tmpl
                        * fmriprep_22_1_wf.single_subject_08_wf.bidssrc
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:17:59,688 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.res_tmpl&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/brain_extraction_wf/res_tmpl&quot;.
-230822-05:17:59,690 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:08,301 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.res_tmpl&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/brain_extraction_wf/res_tmpl&quot;.
+231218-23:31:08,303 nipype.workflow INFO:
 	 [Node] Executing &quot;res_tmpl&quot; &lt;niworkflows.interfaces.nibabel.RegridToZooms&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:01,484 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.bidssrc&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/bidssrc&quot;.
-230822-05:18:01,487 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:10,59 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.bidssrc&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/bidssrc&quot;.
+231218-23:31:10,61 nipype.workflow INFO:
 	 [Node] Executing &quot;bidssrc&quot; &lt;niworkflows.interfaces.bids.BIDSDataGrabber&gt;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:01,498 nipype.interface INFO:
+231218-23:31:10,71 nipype.interface INFO:
 	 No &quot;t2w&quot; images found for sub-08
-230822-05:18:01,498 nipype.interface INFO:
+231218-23:31:10,72 nipype.interface INFO:
 	 No &quot;flair&quot; images found for sub-08
-230822-05:18:01,498 nipype.interface INFO:
+231218-23:31:10,72 nipype.interface INFO:
 	 No &quot;fmap&quot; images found for sub-08
-230822-05:18:01,498 nipype.interface INFO:
+231218-23:31:10,72 nipype.interface INFO:
 	 No &quot;sbref&quot; images found for sub-08
-230822-05:18:01,498 nipype.interface INFO:
+231218-23:31:10,72 nipype.interface INFO:
 	 No &quot;roi&quot; images found for sub-08
-230822-05:18:01,500 nipype.workflow INFO:
-	 [Node] Finished &quot;bidssrc&quot;, elapsed time 0.001626s.
+231218-23:31:10,73 nipype.workflow INFO:
+	 [Node] Finished &quot;bidssrc&quot;, elapsed time 0.001518s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:01,980 nipype.workflow INFO:
-	 [Node] Finished &quot;res_tmpl&quot;, elapsed time 2.280811s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:10,630 nipype.workflow INFO:
+	 [Node] Finished &quot;res_tmpl&quot;, elapsed time 2.316636s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:02,998 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:11,825 nipype.workflow INFO:
 	 [Job 1] Completed (fmriprep_22_1_wf.single_subject_08_wf.bidssrc).
-230822-05:18:03,0 nipype.workflow INFO:
+231218-23:31:11,826 nipype.workflow INFO:
 	 [Job 3] Completed (fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.res_tmpl).
-230822-05:18:03,2 nipype.workflow INFO:
+231218-23:31:11,829 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 22 jobs ready. Free memory (GB): 10.00/10.00, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:03,136 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.full_wm&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/brain_extraction_wf/full_wm&quot;.
-230822-05:18:03,138 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:11,948 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.full_wm&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/brain_extraction_wf/full_wm&quot;.
+231218-23:31:11,950 nipype.workflow INFO:
 	 [Node] Executing &quot;full_wm&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:03,174 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.lap_tmpl&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/brain_extraction_wf/lap_tmpl&quot;.
-230822-05:18:03,177 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:11,981 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.lap_tmpl&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/brain_extraction_wf/lap_tmpl&quot;.
+231218-23:31:11,983 nipype.workflow INFO:
 	 [Node] Executing &quot;lap_tmpl&quot; &lt;nipype.interfaces.ants.utils.ImageMath&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:04,45 nipype.workflow INFO:
-	 [Node] Finished &quot;full_wm&quot;, elapsed time 0.905437s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:12,843 nipype.workflow INFO:
+	 [Node] Finished &quot;full_wm&quot;, elapsed time 0.891381s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:05,0 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:13,827 nipype.workflow INFO:
 	 [Job 4] Completed (fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.full_wm).
-230822-05:18:05,3 nipype.workflow INFO:
+231218-23:31:13,830 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 20 jobs ready. Free memory (GB): 9.80/10.00, Free processors: 1/2.
                      Currently running:
                        * fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.lap_tmpl
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:05,135 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.bold_source&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/bold_source&quot;.
-230822-05:18:05,137 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:13,952 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.bold_source&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/bold_source&quot;.
+231218-23:31:13,954 nipype.workflow INFO:
 	 [Node] Executing &quot;bold_source&quot; &lt;nipype.interfaces.utility.base.Select&gt;
-230822-05:18:05,139 nipype.workflow INFO:
-	 [Node] Finished &quot;bold_source&quot;, elapsed time 0.000536s.
+231218-23:31:13,956 nipype.workflow INFO:
+	 [Node] Finished &quot;bold_source&quot;, elapsed time 0.000548s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:07,2 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:15,829 nipype.workflow INFO:
 	 [Job 6] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.bold_source).
-230822-05:18:07,5 nipype.workflow INFO:
+231218-23:31:15,832 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 19 jobs ready. Free memory (GB): 9.80/10.00, Free processors: 1/2.
                      Currently running:
                        * fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.lap_tmpl
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:07,119 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.func_derivatives_wf.raw_sources&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/func_derivatives_wf/raw_sources&quot;.
-230822-05:18:07,121 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:15,948 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.func_derivatives_wf.raw_sources&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/func_derivatives_wf/raw_sources&quot;.
+231218-23:31:15,950 nipype.workflow INFO:
 	 [Node] Executing &quot;raw_sources&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+231218-23:31:15,952 nipype.workflow INFO:
+	 [Node] Finished &quot;raw_sources&quot;, elapsed time 0.00061s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:07,122 nipype.workflow INFO:
-	 [Node] Finished &quot;raw_sources&quot;, elapsed time 0.000592s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:09,4 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:17,831 nipype.workflow INFO:
 	 [Job 7] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.func_derivatives_wf.raw_sources).
-230822-05:18:09,7 nipype.workflow INFO:
+231218-23:31:17,834 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 18 jobs ready. Free memory (GB): 9.80/10.00, Free processors: 1/2.
                      Currently running:
                        * fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.lap_tmpl
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:09,143 nipype.workflow INFO:
-	 [Node] Setting-up &quot;_val_bold0&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/initial_boldref_wf/val_bold/mapflow/_val_bold0&quot;.
-230822-05:18:09,145 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:17,963 nipype.workflow INFO:
+	 [Node] Setting-up &quot;_val_bold0&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/initial_boldref_wf/val_bold/mapflow/_val_bold0&quot;.
+231218-23:31:17,965 nipype.workflow INFO:
 	 [Node] Executing &quot;_val_bold0&quot; &lt;niworkflows.interfaces.header.ValidateImage&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:09,219 nipype.workflow INFO:
-	 [Node] Finished &quot;_val_bold0&quot;, elapsed time 0.073746s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:18,40 nipype.workflow INFO:
+	 [Node] Finished &quot;_val_bold0&quot;, elapsed time 0.073807s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:11,6 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:19,833 nipype.workflow INFO:
 	 [Job 8] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.val_bold).
-230822-05:18:11,9 nipype.workflow INFO:
+231218-23:31:19,836 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 19 jobs ready. Free memory (GB): 9.80/10.00, Free processors: 1/2.
                      Currently running:
                        * fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.lap_tmpl
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:11,129 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.get_dummy&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/initial_boldref_wf/get_dummy&quot;.
-230822-05:18:11,131 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:19,955 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.get_dummy&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/initial_boldref_wf/get_dummy&quot;.
+231218-23:31:19,957 nipype.workflow INFO:
 	 [Node] Executing &quot;get_dummy&quot; &lt;niworkflows.interfaces.bold.NonsteadyStatesDetector&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:11,842 nipype.workflow INFO:
-	 [Node] Finished &quot;get_dummy&quot;, elapsed time 0.709814s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:20,665 nipype.workflow INFO:
+	 [Node] Finished &quot;get_dummy&quot;, elapsed time 0.706353s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:13,8 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:21,835 nipype.workflow INFO:
 	 [Job 9] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.get_dummy).
-230822-05:18:13,11 nipype.workflow INFO:
+231218-23:31:21,838 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 20 jobs ready. Free memory (GB): 9.80/10.00, Free processors: 1/2.
                      Currently running:
                        * fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.lap_tmpl
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:13,137 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.bold_source&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/bold_source&quot;.
-230822-05:18:13,140 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:21,955 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.bold_source&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/bold_source&quot;.
+231218-23:31:21,956 nipype.workflow INFO:
 	 [Node] Executing &quot;bold_source&quot; &lt;nipype.interfaces.utility.base.Select&gt;
-230822-05:18:13,141 nipype.workflow INFO:
-	 [Node] Finished &quot;bold_source&quot;, elapsed time 0.000421s.
+231218-23:31:21,958 nipype.workflow INFO:
+	 [Node] Finished &quot;bold_source&quot;, elapsed time 0.000402s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:13,892 nipype.workflow INFO:
-	 [Node] Finished &quot;lap_tmpl&quot;, elapsed time 10.518862s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:22,748 nipype.workflow INFO:
+	 [Node] Finished &quot;lap_tmpl&quot;, elapsed time 10.502333s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:15,10 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:23,837 nipype.workflow INFO:
 	 [Job 5] Completed (fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.lap_tmpl).
-230822-05:18:15,12 nipype.workflow INFO:
+231218-23:31:23,838 nipype.workflow INFO:
 	 [Job 10] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.bold_source).
-230822-05:18:15,15 nipype.workflow INFO:
+231218-23:31:23,841 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 20 jobs ready. Free memory (GB): 10.00/10.00, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:15,136 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.func_derivatives_wf.raw_sources&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/func_derivatives_wf/raw_sources&quot;.
-230822-05:18:15,138 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:23,956 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.func_derivatives_wf.raw_sources&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/func_derivatives_wf/raw_sources&quot;.
+231218-23:31:23,957 nipype.workflow INFO:
 	 [Node] Executing &quot;raw_sources&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230822-05:18:15,140 nipype.workflow INFO:
-	 [Node] Finished &quot;raw_sources&quot;, elapsed time 0.000547s.
-230822-05:18:15,150 nipype.workflow INFO:
-	 [Node] Setting-up &quot;_val_bold0&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/initial_boldref_wf/val_bold/mapflow/_val_bold0&quot;.
-230822-05:18:15,151 nipype.workflow INFO:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:23,959 nipype.workflow INFO:
+	 [Node] Finished &quot;raw_sources&quot;, elapsed time 0.000526s.
+231218-23:31:23,969 nipype.workflow INFO:
+	 [Node] Setting-up &quot;_val_bold0&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/initial_boldref_wf/val_bold/mapflow/_val_bold0&quot;.
+231218-23:31:23,971 nipype.workflow INFO:
 	 [Node] Executing &quot;_val_bold0&quot; &lt;niworkflows.interfaces.header.ValidateImage&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:15,226 nipype.workflow INFO:
-	 [Node] Finished &quot;_val_bold0&quot;, elapsed time 0.073635s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:24,47 nipype.workflow INFO:
+	 [Node] Finished &quot;_val_bold0&quot;, elapsed time 0.075428s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:17,12 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:25,839 nipype.workflow INFO:
 	 [Job 11] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.func_derivatives_wf.raw_sources).
-230822-05:18:17,14 nipype.workflow INFO:
+231218-23:31:25,840 nipype.workflow INFO:
 	 [Job 12] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.initial_boldref_wf.val_bold).
-230822-05:18:17,16 nipype.workflow INFO:
+231218-23:31:25,843 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 20 jobs ready. Free memory (GB): 10.00/10.00, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:17,136 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_norm_wf.split_desc&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_norm_wf/_template_MNI152NLin2009cAsym/split_desc&quot;.
-230822-05:18:17,138 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.initial_boldref_wf.get_dummy&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/initial_boldref_wf/get_dummy&quot;.
-230822-05:18:17,139 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:25,964 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_norm_wf.split_desc&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_norm_wf/_template_MNI152NLin2009cAsym/split_desc&quot;.
+231218-23:31:25,965 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.initial_boldref_wf.get_dummy&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/initial_boldref_wf/get_dummy&quot;.
+231218-23:31:25,966 nipype.workflow INFO:
 	 [Node] Executing &quot;split_desc&quot; &lt;smriprep.interfaces.templateflow.TemplateDesc&gt;
-230822-05:18:17,139 nipype.workflow INFO:
+231218-23:31:25,967 nipype.workflow INFO:
 	 [Node] Executing &quot;get_dummy&quot; &lt;niworkflows.interfaces.bold.NonsteadyStatesDetector&gt;
-230822-05:18:17,140 nipype.workflow INFO:
-	 [Node] Finished &quot;split_desc&quot;, elapsed time 0.000152s.
-230822-05:18:17,142 nipype.workflow INFO:
+231218-23:31:25,967 nipype.workflow INFO:
+	 [Node] Finished &quot;split_desc&quot;, elapsed time 0.000157s.
+231218-23:31:25,969 nipype.workflow INFO:
 	 [Job 14] Completed (fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_norm_wf.split_desc).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:17,264 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_reports_wf.tf_select&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_reports_wf/_template_MNI152NLin2009cAsym/tf_select&quot;.
-230822-05:18:17,266 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:26,83 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_reports_wf.tf_select&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_reports_wf/_template_MNI152NLin2009cAsym/tf_select&quot;.
+231218-23:31:26,85 nipype.workflow INFO:
 	 [Node] Executing &quot;tf_select&quot; &lt;smriprep.interfaces.templateflow.TemplateFlowSelect&gt;
-230822-05:18:17,301 nipype.workflow INFO:
-	 [Node] Finished &quot;tf_select&quot;, elapsed time 0.033726s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:17,303 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:26,119 nipype.workflow INFO:
+	 [Node] Finished &quot;tf_select&quot;, elapsed time 0.033214s.
+231218-23:31:26,122 nipype.workflow INFO:
 	 [Job 15] Completed (fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_reports_wf.tf_select).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:17,429 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.bold_std_trans_wf.split_target&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/bold_std_trans_wf/_std_target_MNI152NLin2009cAsym.resnative/split_target&quot;.
-230822-05:18:17,431 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:26,237 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.bold_std_trans_wf.split_target&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/bold_std_trans_wf/_std_target_MNI152NLin2009cAsym.resnative/split_target&quot;.
+231218-23:31:26,239 nipype.workflow INFO:
 	 [Node] Executing &quot;split_target&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230822-05:18:17,432 nipype.workflow INFO:
-	 [Node] Finished &quot;split_target&quot;, elapsed time 0.00063s.
-230822-05:18:17,434 nipype.workflow INFO:
+231218-23:31:26,241 nipype.workflow INFO:
+	 [Node] Finished &quot;split_target&quot;, elapsed time 0.000527s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:26,243 nipype.workflow INFO:
 	 [Job 16] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.bold_std_trans_wf.split_target).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:17,563 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.bold_std_trans_wf.select_tpl&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/bold_std_trans_wf/_std_target_MNI152NLin2009cAsym.resnative/select_tpl&quot;.
-230822-05:18:17,565 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:26,346 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.bold_std_trans_wf.select_tpl&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/bold_std_trans_wf/_std_target_MNI152NLin2009cAsym.resnative/select_tpl&quot;.
+231218-23:31:26,348 nipype.workflow INFO:
 	 [Node] Executing &quot;select_tpl&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230822-05:18:17,580 nipype.workflow INFO:
-	 [Node] Finished &quot;select_tpl&quot;, elapsed time 0.014383s.
-230822-05:18:17,583 nipype.workflow INFO:
+231218-23:31:26,363 nipype.workflow INFO:
+	 [Node] Finished &quot;select_tpl&quot;, elapsed time 0.014315s.
+231218-23:31:26,365 nipype.workflow INFO:
 	 [Job 17] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.bold_std_trans_wf.select_tpl).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:17,715 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.func_derivatives_wf.spacesource&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/func_derivatives_wf/_in_tuple_MNI152NLin2009cAsym.resnative/spacesource&quot;.
-230822-05:18:17,717 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:26,473 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.func_derivatives_wf.spacesource&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/func_derivatives_wf/_in_tuple_MNI152NLin2009cAsym.resnative/spacesource&quot;.
+231218-23:31:26,474 nipype.workflow INFO:
 	 [Node] Executing &quot;spacesource&quot; &lt;niworkflows.interfaces.space.SpaceDataSource&gt;
-230822-05:18:17,719 nipype.workflow INFO:
-	 [Node] Finished &quot;spacesource&quot;, elapsed time 0.000178s.
-230822-05:18:17,721 nipype.workflow INFO:
+231218-23:31:26,476 nipype.workflow INFO:
+	 [Node] Finished &quot;spacesource&quot;, elapsed time 0.000204s.
+231218-23:31:26,478 nipype.workflow INFO:
 	 [Job 18] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.func_derivatives_wf.spacesource).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:17,844 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.bold_std_trans_wf.split_target&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/bold_std_trans_wf/_std_target_MNI152NLin2009cAsym.resnative/split_target&quot;.
-230822-05:18:17,846 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:26,605 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.bold_std_trans_wf.split_target&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/bold_std_trans_wf/_std_target_MNI152NLin2009cAsym.resnative/split_target&quot;.
+231218-23:31:26,607 nipype.workflow INFO:
 	 [Node] Executing &quot;split_target&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230822-05:18:17,847 nipype.workflow INFO:
-	 [Node] Finished &quot;split_target&quot;, elapsed time 0.000531s.
-230822-05:18:17,849 nipype.workflow INFO:
+231218-23:31:26,608 nipype.workflow INFO:
+	 [Node] Finished &quot;split_target&quot;, elapsed time 0.000514s.
+231218-23:31:26,611 nipype.workflow INFO:
 	 [Job 19] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.bold_std_trans_wf.split_target).
-230822-05:18:17,850 nipype.workflow INFO:
-	 [Node] Finished &quot;get_dummy&quot;, elapsed time 0.709523s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:17,962 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.bold_std_trans_wf.select_tpl&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/bold_std_trans_wf/_std_target_MNI152NLin2009cAsym.resnative/select_tpl&quot;.
-230822-05:18:17,964 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:26,673 nipype.workflow INFO:
+	 [Node] Finished &quot;get_dummy&quot;, elapsed time 0.705393s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:26,724 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.bold_std_trans_wf.select_tpl&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/bold_std_trans_wf/_std_target_MNI152NLin2009cAsym.resnative/select_tpl&quot;.
+231218-23:31:26,726 nipype.workflow INFO:
 	 [Node] Executing &quot;select_tpl&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:17,979 nipype.workflow INFO:
-	 [Node] Finished &quot;select_tpl&quot;, elapsed time 0.013479s.
-230822-05:18:17,981 nipype.workflow INFO:
+231218-23:31:26,741 nipype.workflow INFO:
+	 [Node] Finished &quot;select_tpl&quot;, elapsed time 0.013678s.
+231218-23:31:26,743 nipype.workflow INFO:
 	 [Job 20] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.bold_std_trans_wf.select_tpl).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:18,95 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.func_derivatives_wf.spacesource&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/func_derivatives_wf/_in_tuple_MNI152NLin2009cAsym.resnative/spacesource&quot;.
-230822-05:18:18,96 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:26,846 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.func_derivatives_wf.spacesource&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/func_derivatives_wf/_in_tuple_MNI152NLin2009cAsym.resnative/spacesource&quot;.
+231218-23:31:26,848 nipype.workflow INFO:
 	 [Node] Executing &quot;spacesource&quot; &lt;niworkflows.interfaces.space.SpaceDataSource&gt;
-230822-05:18:18,98 nipype.workflow INFO:
-	 [Node] Finished &quot;spacesource&quot;, elapsed time 0.000162s.
-230822-05:18:18,100 nipype.workflow INFO:
+231218-23:31:26,849 nipype.workflow INFO:
+	 [Node] Finished &quot;spacesource&quot;, elapsed time 0.000164s.
+231218-23:31:26,851 nipype.workflow INFO:
 	 [Job 21] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.func_derivatives_wf.spacesource).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:18,215 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_derivatives_wf.spacesource&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_derivatives_wf/_in_tuple_MNI152NLin2009cAsym.resnative/spacesource&quot;.
-230822-05:18:18,219 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:26,950 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_derivatives_wf.spacesource&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_derivatives_wf/_in_tuple_MNI152NLin2009cAsym.resnative/spacesource&quot;.
+231218-23:31:26,954 nipype.workflow INFO:
 	 [Node] Executing &quot;spacesource&quot; &lt;niworkflows.interfaces.space.SpaceDataSource&gt;
+231218-23:31:26,955 nipype.workflow INFO:
+	 [Node] Finished &quot;spacesource&quot;, elapsed time 0.000159s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:18,220 nipype.workflow INFO:
-	 [Node] Finished &quot;spacesource&quot;, elapsed time 0.000215s.
-230822-05:18:18,222 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:26,957 nipype.workflow INFO:
 	 [Job 22] Completed (fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_derivatives_wf.spacesource).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:19,13 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:27,840 nipype.workflow INFO:
 	 [Job 13] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.initial_boldref_wf.get_dummy).
-230822-05:18:19,16 nipype.workflow INFO:
+231218-23:31:27,843 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 14 jobs ready. Free memory (GB): 9.80/10.00, Free processors: 1/2.
                      Currently running:
                        * fmriprep_22_1_wf.single_subject_08_wf.bids_info
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:19,146 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_template_wf.t1w_ref_dimensions&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_template_wf/t1w_ref_dimensions&quot;.
-230822-05:18:19,149 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:27,963 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_template_wf.t1w_ref_dimensions&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_template_wf/t1w_ref_dimensions&quot;.
+231218-23:31:27,965 nipype.workflow INFO:
 	 [Node] Executing &quot;t1w_ref_dimensions&quot; &lt;niworkflows.interfaces.images.TemplateDimensions&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:19,566 nipype.workflow INFO:
-	 [Node] Finished &quot;t1w_ref_dimensions&quot;, elapsed time 0.415827s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:28,388 nipype.workflow INFO:
+	 [Node] Finished &quot;t1w_ref_dimensions&quot;, elapsed time 0.421034s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:20,119 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.bids_info&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/bids_info&quot;.
-230822-05:18:20,122 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:28,837 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.bids_info&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/bids_info&quot;.
+231218-23:31:28,840 nipype.workflow INFO:
 	 [Node] Executing &quot;bids_info&quot; &lt;niworkflows.interfaces.bids.BIDSInfo&gt;
-230822-05:18:20,131 nipype.workflow INFO:
-	 [Node] Finished &quot;bids_info&quot;, elapsed time 0.007534s.
+231218-23:31:28,848 nipype.workflow INFO:
+	 [Node] Finished &quot;bids_info&quot;, elapsed time 0.007167s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:21,15 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:29,842 nipype.workflow INFO:
 	 [Job 23] Completed (fmriprep_22_1_wf.single_subject_08_wf.bids_info).
-230822-05:18:21,17 nipype.workflow INFO:
+231218-23:31:29,843 nipype.workflow INFO:
 	 [Job 24] Completed (fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_template_wf.t1w_ref_dimensions).
-230822-05:18:21,19 nipype.workflow INFO:
+231218-23:31:29,846 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 18 jobs ready. Free memory (GB): 10.00/10.00, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:21,141 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.ds_report_about&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/ds_report_about&quot;.
-230822-05:18:21,147 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:29,962 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.ds_report_about&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/ds_report_about&quot;.
+231218-23:31:29,967 nipype.workflow INFO:
 	 [Node] Executing &quot;ds_report_about&quot; &lt;fmriprep.interfaces.DerivativesDataSink&gt;
-230822-05:18:21,156 nipype.workflow INFO:
-	 [Node] Finished &quot;ds_report_about&quot;, elapsed time 0.007544s.
-230822-05:18:21,158 nipype.workflow INFO:
+231218-23:31:29,976 nipype.workflow INFO:
+	 [Node] Finished &quot;ds_report_about&quot;, elapsed time 0.007528s.
+231218-23:31:29,978 nipype.workflow INFO:
 	 [Job 25] Completed (fmriprep_22_1_wf.single_subject_08_wf.ds_report_about).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:21,271 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.mrg_tmpl&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/brain_extraction_wf/mrg_tmpl&quot;.
-230822-05:18:21,272 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.select_bold&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/select_bold&quot;.
-230822-05:18:21,274 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:30,84 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.mrg_tmpl&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/brain_extraction_wf/mrg_tmpl&quot;.
+231218-23:31:30,85 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.select_bold&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/select_bold&quot;.
+231218-23:31:30,87 nipype.workflow INFO:
 	 [Node] Executing &quot;select_bold&quot; &lt;nipype.interfaces.utility.base.Select&gt;
-230822-05:18:21,275 nipype.workflow INFO:
-	 [Node] Finished &quot;select_bold&quot;, elapsed time 0.00033s.
-230822-05:18:21,306 nipype.workflow INFO:
-	 [Node] Executing &quot;mrg_tmpl&quot; &lt;nipype.interfaces.utility.base.Merge&gt;
-230822-05:18:21,308 nipype.workflow INFO:
-	 [Node] Finished &quot;mrg_tmpl&quot;, elapsed time 0.000223s.
+231218-23:31:30,88 nipype.workflow INFO:
+	 [Node] Finished &quot;select_bold&quot;, elapsed time 0.000343s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:23,17 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:30,120 nipype.workflow INFO:
+	 [Node] Executing &quot;mrg_tmpl&quot; &lt;nipype.interfaces.utility.base.Merge&gt;
+231218-23:31:30,121 nipype.workflow INFO:
+	 [Node] Finished &quot;mrg_tmpl&quot;, elapsed time 0.000217s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:31,844 nipype.workflow INFO:
 	 [Job 26] Completed (fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.brain_extraction_wf.mrg_tmpl).
-230822-05:18:23,18 nipype.workflow INFO:
+231218-23:31:31,845 nipype.workflow INFO:
 	 [Job 27] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.select_bold).
-230822-05:18:23,21 nipype.workflow INFO:
+231218-23:31:31,848 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 16 jobs ready. Free memory (GB): 10.00/10.00, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:23,136 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.ds_report_validation&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/ds_report_validation&quot;.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:31,963 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.ds_report_validation&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/ds_report_validation&quot;.
+231218-23:31:31,971 nipype.workflow INFO:
+	 [Node] Executing &quot;ds_report_validation&quot; &lt;fmriprep.interfaces.DerivativesDataSink&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:23,141 nipype.workflow INFO:
-	 [Node] Executing &quot;ds_report_validation&quot; &lt;fmriprep.interfaces.DerivativesDataSink&gt;
-230822-05:18:23,148 nipype.workflow INFO:
-	 [Node] Finished &quot;ds_report_validation&quot;, elapsed time 0.006231s.
-230822-05:18:23,151 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:31,979 nipype.workflow INFO:
+	 [Node] Finished &quot;ds_report_validation&quot;, elapsed time 0.00702s.
+231218-23:31:31,981 nipype.workflow INFO:
 	 [Job 28] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.ds_report_validation).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:23,271 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.calc_dummy_scans&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/initial_boldref_wf/calc_dummy_scans&quot;.
-230822-05:18:23,276 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:32,87 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.calc_dummy_scans&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/initial_boldref_wf/calc_dummy_scans&quot;.
+231218-23:31:32,91 nipype.workflow INFO:
 	 [Node] Executing &quot;calc_dummy_scans&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230822-05:18:23,278 nipype.workflow INFO:
-	 [Node] Finished &quot;calc_dummy_scans&quot;, elapsed time 0.000411s.
-230822-05:18:23,279 nipype.workflow INFO:
+231218-23:31:32,92 nipype.workflow INFO:
+	 [Node] Finished &quot;calc_dummy_scans&quot;, elapsed time 0.000407s.
+231218-23:31:32,94 nipype.workflow INFO:
 	 [Job 29] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.calc_dummy_scans).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:23,395 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.select_bold&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/select_bold&quot;.
-230822-05:18:23,397 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:32,197 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.select_bold&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/select_bold&quot;.
+231218-23:31:32,199 nipype.workflow INFO:
 	 [Node] Executing &quot;select_bold&quot; &lt;nipype.interfaces.utility.base.Select&gt;
-230822-05:18:23,398 nipype.workflow INFO:
-	 [Node] Finished &quot;select_bold&quot;, elapsed time 0.000254s.
-230822-05:18:23,399 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.gen_avg&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/initial_boldref_wf/gen_avg&quot;.
-230822-05:18:23,406 nipype.workflow INFO:
+231218-23:31:32,200 nipype.workflow INFO:
+	 [Node] Finished &quot;select_bold&quot;, elapsed time 0.000268s.
+231218-23:31:32,201 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.gen_avg&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/initial_boldref_wf/gen_avg&quot;.
+231218-23:31:32,208 nipype.workflow INFO:
 	 [Node] Executing &quot;gen_avg&quot; &lt;niworkflows.interfaces.images.RobustAverage&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:24,713 nipype.interface INFO:
-	 stderr 2023-08-22T05:18:24.713335:++ 3dvolreg: AFNI version=AFNI_22.3.06 (Nov 15 2022) [64-bit]
-230822-05:18:24,714 nipype.interface INFO:
-	 stderr 2023-08-22T05:18:24.713335:++ Authored by: RW Cox
-230822-05:18:24,715 nipype.interface INFO:
-	 stderr 2023-08-22T05:18:24.715362:** AFNI converts NIFTI_datatype=4 (INT16) in file /tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/initial_boldref_wf/gen_avg/sub-08_task-flanker_run-1_bold_sliced.nii.gz to FLOAT32
-230822-05:18:24,715 nipype.interface INFO:
-	 stderr 2023-08-22T05:18:24.715362:     Warnings of this type will be muted for this session.
-230822-05:18:24,715 nipype.interface INFO:
-	 stderr 2023-08-22T05:18:24.715362:     Set AFNI_NIFTI_TYPE_WARN to YES to see them all, NO to see none.
-230822-05:18:24,717 nipype.interface INFO:
-	 stderr 2023-08-22T05:18:24.717500:++ Coarse del was 10, replaced with 4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:33,519 nipype.interface INFO:
+	 stderr 2023-12-18T23:31:33.519337:++ 3dvolreg: AFNI version=AFNI_22.3.06 (Nov 15 2022) [64-bit]
+231218-23:31:33,520 nipype.interface INFO:
+	 stderr 2023-12-18T23:31:33.519337:++ Authored by: RW Cox
+231218-23:31:33,521 nipype.interface INFO:
+	 stderr 2023-12-18T23:31:33.520970:** AFNI converts NIFTI_datatype=4 (INT16) in file /tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/initial_boldref_wf/gen_avg/sub-08_task-flanker_run-1_bold_sliced.nii.gz to FLOAT32
+231218-23:31:33,521 nipype.interface INFO:
+	 stderr 2023-12-18T23:31:33.520970:     Warnings of this type will be muted for this session.
+231218-23:31:33,521 nipype.interface INFO:
+	 stderr 2023-12-18T23:31:33.520970:     Set AFNI_NIFTI_TYPE_WARN to YES to see them all, NO to see none.
+231218-23:31:33,522 nipype.interface INFO:
+	 stderr 2023-12-18T23:31:33.522414:++ Coarse del was 10, replaced with 4
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:25,18 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:33,845 nipype.workflow INFO:
 	 [Job 31] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.select_bold).
-230822-05:18:25,21 nipype.workflow INFO:
+231218-23:31:33,848 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 13 jobs ready. Free memory (GB): 9.00/10.00, Free processors: 1/2.
                      Currently running:
                        * fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.gen_avg
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:25,133 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.ds_report_validation&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/ds_report_validation&quot;.
-230822-05:18:25,137 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:33,967 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.ds_report_validation&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/ds_report_validation&quot;.
+231218-23:31:33,972 nipype.workflow INFO:
 	 [Node] Executing &quot;ds_report_validation&quot; &lt;fmriprep.interfaces.DerivativesDataSink&gt;
-230822-05:18:25,145 nipype.workflow INFO:
-	 [Node] Finished &quot;ds_report_validation&quot;, elapsed time 0.006077s.
-230822-05:18:25,147 nipype.workflow INFO:
+231218-23:31:33,979 nipype.workflow INFO:
+	 [Node] Finished &quot;ds_report_validation&quot;, elapsed time 0.006114s.
+231218-23:31:33,982 nipype.workflow INFO:
 	 [Job 32] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.ds_report_validation).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:25,250 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.initial_boldref_wf.calc_dummy_scans&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/initial_boldref_wf/calc_dummy_scans&quot;.
-230822-05:18:25,254 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:34,101 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.initial_boldref_wf.calc_dummy_scans&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/initial_boldref_wf/calc_dummy_scans&quot;.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:34,104 nipype.workflow INFO:
 	 [Node] Executing &quot;calc_dummy_scans&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230822-05:18:25,255 nipype.workflow INFO:
-	 [Node] Finished &quot;calc_dummy_scans&quot;, elapsed time 0.000397s.
-230822-05:18:25,257 nipype.workflow INFO:
+231218-23:31:34,106 nipype.workflow INFO:
+	 [Node] Finished &quot;calc_dummy_scans&quot;, elapsed time 0.000402s.
+231218-23:31:34,108 nipype.workflow INFO:
 	 [Job 33] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.initial_boldref_wf.calc_dummy_scans).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:25,358 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.initial_boldref_wf.gen_avg&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/initial_boldref_wf/gen_avg&quot;.
-230822-05:18:25,368 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:34,228 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.initial_boldref_wf.gen_avg&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/initial_boldref_wf/gen_avg&quot;.
+231218-23:31:34,234 nipype.workflow INFO:
 	 [Node] Executing &quot;gen_avg&quot; &lt;niworkflows.interfaces.images.RobustAverage&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:26,369 nipype.interface INFO:
-	 stderr 2023-08-22T05:18:26.369077:++ 3dvolreg: AFNI version=AFNI_22.3.06 (Nov 15 2022) [64-bit]
-230822-05:18:26,369 nipype.interface INFO:
-	 stderr 2023-08-22T05:18:26.369077:++ Authored by: RW Cox
-230822-05:18:26,369 nipype.interface INFO:
-	 stderr 2023-08-22T05:18:26.369709:** AFNI converts NIFTI_datatype=4 (INT16) in file /tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/initial_boldref_wf/gen_avg/sub-08_task-flanker_run-2_bold_sliced.nii.gz to FLOAT32
-230822-05:18:26,369 nipype.interface INFO:
-	 stderr 2023-08-22T05:18:26.369709:     Warnings of this type will be muted for this session.
-230822-05:18:26,369 nipype.interface INFO:
-	 stderr 2023-08-22T05:18:26.369709:     Set AFNI_NIFTI_TYPE_WARN to YES to see them all, NO to see none.
-230822-05:18:26,369 nipype.interface INFO:
-	 stderr 2023-08-22T05:18:26.369932:++ Coarse del was 10, replaced with 4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:35,228 nipype.interface INFO:
+	 stderr 2023-12-18T23:31:35.228603:++ 3dvolreg: AFNI version=AFNI_22.3.06 (Nov 15 2022) [64-bit]
+231218-23:31:35,229 nipype.interface INFO:
+	 stderr 2023-12-18T23:31:35.228603:++ Authored by: RW Cox
+231218-23:31:35,229 nipype.interface INFO:
+	 stderr 2023-12-18T23:31:35.229221:** AFNI converts NIFTI_datatype=4 (INT16) in file /tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_2_wf/initial_boldref_wf/gen_avg/sub-08_task-flanker_run-2_bold_sliced.nii.gz to FLOAT32
+231218-23:31:35,229 nipype.interface INFO:
+	 stderr 2023-12-18T23:31:35.229221:     Warnings of this type will be muted for this session.
+231218-23:31:35,229 nipype.interface INFO:
+	 stderr 2023-12-18T23:31:35.229221:     Set AFNI_NIFTI_TYPE_WARN to YES to see them all, NO to see none.
+231218-23:31:35,229 nipype.interface INFO:
+	 stderr 2023-12-18T23:31:35.229703:++ Coarse del was 10, replaced with 4
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:27,21 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:35,849 nipype.workflow INFO:
 	 [MultiProc] Running 2 tasks, and 10 jobs ready. Free memory (GB): 8.00/10.00, Free processors: 0/2.
                      Currently running:
                        * fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.initial_boldref_wf.gen_avg
                        * fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.gen_avg
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:47,112 nipype.interface INFO:
-	 stderr 2023-08-22T05:18:47.112611:++ Max displacement in automask = 0.12 (mm) at sub-brick 18
-230822-05:18:47,112 nipype.interface INFO:
-	 stderr 2023-08-22T05:18:47.112611:++ Max delta displ  in automask = 0.10 (mm) at sub-brick 5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:55,926 nipype.interface INFO:
+	 stderr 2023-12-18T23:31:55.926819:++ Max displacement in automask = 0.12 (mm) at sub-brick 18
+231218-23:31:55,927 nipype.interface INFO:
+	 stderr 2023-12-18T23:31:55.926819:++ Max delta displ  in automask = 0.10 (mm) at sub-brick 5
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:48,560 nipype.workflow INFO:
-	 [Node] Finished &quot;gen_avg&quot;, elapsed time 25.153046s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:57,84 nipype.interface INFO:
+	 stderr 2023-12-18T23:31:57.084551:++ Max displacement in automask = 1.01 (mm) at sub-brick 17
+231218-23:31:57,84 nipype.interface INFO:
+	 stderr 2023-12-18T23:31:57.084551:++ Max delta displ  in automask = 0.39 (mm) at sub-brick 17
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:48,784 nipype.interface INFO:
-	 stderr 2023-08-22T05:18:48.784072:++ Max displacement in automask = 1.01 (mm) at sub-brick 17
-230822-05:18:48,784 nipype.interface INFO:
-	 stderr 2023-08-22T05:18:48.784072:++ Max delta displ  in automask = 0.39 (mm) at sub-brick 17
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:57,376 nipype.workflow INFO:
+	 [Node] Finished &quot;gen_avg&quot;, elapsed time 25.167281s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:49,42 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:57,868 nipype.workflow INFO:
 	 [Job 30] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.gen_avg).
-230822-05:18:49,46 nipype.workflow INFO:
+231218-23:31:57,871 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 12 jobs ready. Free memory (GB): 9.00/10.00, Free processors: 1/2.
                      Currently running:
                        * fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.initial_boldref_wf.gen_avg
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:49,190 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_norm_wf.tf_select&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_norm_wf/_template_MNI152NLin2009cAsym/tf_select&quot;.
-230822-05:18:49,193 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:57,989 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_norm_wf.tf_select&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_norm_wf/_template_MNI152NLin2009cAsym/tf_select&quot;.
+231218-23:31:57,992 nipype.workflow INFO:
 	 [Node] Executing &quot;tf_select&quot; &lt;smriprep.interfaces.templateflow.TemplateFlowSelect&gt;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:49,218 nipype.workflow INFO:
-	 [Node] Finished &quot;tf_select&quot;, elapsed time 0.024495s.
-230822-05:18:49,220 nipype.workflow INFO:
+231218-23:31:58,17 nipype.workflow INFO:
+	 [Node] Finished &quot;tf_select&quot;, elapsed time 0.023865s.
+231218-23:31:58,19 nipype.workflow INFO:
 	 [Job 35] Completed (fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_norm_wf.tf_select).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:49,324 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_derivatives_wf.gen_tplid&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_derivatives_wf/_in_tuple_MNI152NLin2009cAsym.resnative/gen_tplid&quot;.
-230822-05:18:49,326 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:58,140 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_derivatives_wf.gen_tplid&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_derivatives_wf/_in_tuple_MNI152NLin2009cAsym.resnative/gen_tplid&quot;.
+231218-23:31:58,143 nipype.workflow INFO:
 	 [Node] Executing &quot;gen_tplid&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230822-05:18:49,328 nipype.workflow INFO:
-	 [Node] Finished &quot;gen_tplid&quot;, elapsed time 0.000446s.
-230822-05:18:49,330 nipype.workflow INFO:
+231218-23:31:58,144 nipype.workflow INFO:
+	 [Node] Finished &quot;gen_tplid&quot;, elapsed time 0.000457s.
+231218-23:31:58,146 nipype.workflow INFO:
 	 [Job 36] Completed (fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_derivatives_wf.gen_tplid).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:49,426 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_derivatives_wf.select_tpl&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_derivatives_wf/_in_tuple_MNI152NLin2009cAsym.resnative/select_tpl&quot;.
-230822-05:18:49,429 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:58,260 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_derivatives_wf.select_tpl&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_derivatives_wf/_in_tuple_MNI152NLin2009cAsym.resnative/select_tpl&quot;.
+231218-23:31:58,263 nipype.workflow INFO:
 	 [Node] Executing &quot;select_tpl&quot; &lt;smriprep.interfaces.templateflow.TemplateFlowSelect&gt;
-230822-05:18:49,458 nipype.workflow INFO:
-	 [Node] Finished &quot;select_tpl&quot;, elapsed time 0.028359s.
-230822-05:18:49,461 nipype.workflow INFO:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:58,292 nipype.workflow INFO:
+	 [Node] Finished &quot;select_tpl&quot;, elapsed time 0.028202s.
+231218-23:31:58,294 nipype.workflow INFO:
 	 [Job 37] Completed (fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_derivatives_wf.select_tpl).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:49,573 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.summary&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/summary&quot;.
-230822-05:18:49,578 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:58,421 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.summary&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/summary&quot;.
+231218-23:31:58,426 nipype.workflow INFO:
 	 [Node] Executing &quot;summary&quot; &lt;fmriprep.interfaces.reports.SubjectSummary&gt;
-230822-05:18:49,582 nipype.workflow INFO:
-	 [Node] Finished &quot;summary&quot;, elapsed time 0.002821s.
-230822-05:18:49,584 nipype.workflow INFO:
+231218-23:31:58,430 nipype.workflow INFO:
+	 [Node] Finished &quot;summary&quot;, elapsed time 0.002801s.
+231218-23:31:58,432 nipype.workflow INFO:
 	 [Job 38] Completed (fmriprep_22_1_wf.single_subject_08_wf.summary).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:49,705 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.fs_isrunning&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/fs_isrunning&quot;.
-230822-05:18:49,709 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:58,511 nipype.workflow INFO:
+	 [Node] Finished &quot;gen_avg&quot;, elapsed time 24.276054s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:58,563 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.fs_isrunning&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/fs_isrunning&quot;.
+231218-23:31:58,567 nipype.workflow INFO:
 	 [Node] Executing &quot;fs_isrunning&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230822-05:18:49,711 nipype.workflow INFO:
-	 [Node] Finished &quot;fs_isrunning&quot;, elapsed time 0.000747s.
+231218-23:31:58,569 nipype.workflow INFO:
+	 [Node] Finished &quot;fs_isrunning&quot;, elapsed time 0.000716s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:50,206 nipype.workflow INFO:
-	 [Node] Finished &quot;gen_avg&quot;, elapsed time 24.836028s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:51,43 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:59,869 nipype.workflow INFO:
 	 [Job 34] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_2_wf.initial_boldref_wf.gen_avg).
-230822-05:18:51,45 nipype.workflow INFO:
+231218-23:31:59,871 nipype.workflow INFO:
 	 [Job 39] Completed (fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.fs_isrunning).
-230822-05:18:51,48 nipype.workflow INFO:
+231218-23:31:59,873 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 10 jobs ready. Free memory (GB): 10.00/10.00, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:51,171 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_reports_wf.t1w_conform_check&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_reports_wf/t1w_conform_check&quot;.
-230822-05:18:51,176 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:31:59,990 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_reports_wf.t1w_conform_check&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_reports_wf/t1w_conform_check&quot;.
+231218-23:31:59,994 nipype.workflow INFO:
 	 [Node] Executing &quot;t1w_conform_check&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230822-05:18:51,178 nipype.workflow INFO:
-	 [Node] Setting-up &quot;_t1w_conform0&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_template_wf/t1w_conform/mapflow/_t1w_conform0&quot;.
-230822-05:18:51,178 nipype.workflow INFO:
-	 [Node] Finished &quot;t1w_conform_check&quot;, elapsed time 0.000649s.
-230822-05:18:51,180 nipype.workflow INFO:
+231218-23:31:59,995 nipype.workflow INFO:
+	 [Node] Setting-up &quot;_t1w_conform0&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_template_wf/t1w_conform/mapflow/_t1w_conform0&quot;.
+231218-23:31:59,995 nipype.workflow INFO:
+	 [Node] Finished &quot;t1w_conform_check&quot;, elapsed time 0.00043s.
+231218-23:31:59,997 nipype.workflow INFO:
 	 [Node] Executing &quot;_t1w_conform0&quot; &lt;niworkflows.interfaces.images.Conform&gt;
-230822-05:18:51,181 nipype.workflow INFO:
+231218-23:31:59,997 nipype.workflow INFO:
 	 [Job 41] Completed (fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_reports_wf.t1w_conform_check).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:51,304 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_derivatives_wf.raw_sources&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_derivatives_wf/raw_sources&quot;.
-230822-05:18:51,307 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:32:00,112 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_derivatives_wf.raw_sources&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/anat_preproc_wf/anat_derivatives_wf/raw_sources&quot;.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:32:00,115 nipype.workflow INFO:
 	 [Node] Executing &quot;raw_sources&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230822-05:18:51,308 nipype.workflow INFO:
-	 [Node] Finished &quot;raw_sources&quot;, elapsed time 0.00064s.
+231218-23:32:00,116 nipype.workflow INFO:
+	 [Node] Finished &quot;raw_sources&quot;, elapsed time 0.000546s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:51,967 nipype.workflow INFO:
-	 [Node] Finished &quot;_t1w_conform0&quot;, elapsed time 0.785101s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:32:00,782 nipype.workflow INFO:
+	 [Node] Finished &quot;_t1w_conform0&quot;, elapsed time 0.783994s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:53,45 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:32:01,871 nipype.workflow INFO:
 	 [Job 40] Completed (fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_template_wf.t1w_conform).
-230822-05:18:53,47 nipype.workflow INFO:
+231218-23:32:01,873 nipype.workflow INFO:
 	 [Job 42] Completed (fmriprep_22_1_wf.single_subject_08_wf.anat_preproc_wf.anat_derivatives_wf.raw_sources).
-230822-05:18:53,49 nipype.workflow INFO:
+231218-23:32:01,875 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 9 jobs ready. Free memory (GB): 10.00/10.00, Free processors: 2/2.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:53,168 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.enhance_and_skullstrip_bold_wf.init_aff&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/initial_boldref_wf/enhance_and_skullstrip_bold_wf/init_aff&quot;.
-230822-05:18:53,172 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:32:02,4 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.enhance_and_skullstrip_bold_wf.init_aff&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/initial_boldref_wf/enhance_and_skullstrip_bold_wf/init_aff&quot;.
+231218-23:32:02,7 nipype.workflow INFO:
 	 [Node] Executing &quot;init_aff&quot; &lt;nipype.interfaces.ants.utils.AI&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:53,250 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.bold_split&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/bold_split&quot;.
-230822-05:18:53,253 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:32:02,86 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.bold_split&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/bold_split&quot;.
+231218-23:32:02,89 nipype.workflow INFO:
 	 [Node] Executing &quot;bold_split&quot; &lt;nipype.interfaces.fsl.utils.Split&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:55,50 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:32:03,876 nipype.workflow INFO:
 	 [MultiProc] Running 2 tasks, and 7 jobs ready. Free memory (GB): 9.27/10.00, Free processors: 0/2.
                      Currently running:
                        * fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.enhance_and_skullstrip_bold_wf.init_aff
                        * fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.bold_split
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:57,250 nipype.workflow INFO:
-	 [Node] Finished &quot;bold_split&quot;, elapsed time 3.9958169999999997s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:32:06,112 nipype.workflow INFO:
+	 [Node] Finished &quot;bold_split&quot;, elapsed time 4.022752s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:59,50 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:32:07,876 nipype.workflow INFO:
 	 [Job 43] Completed (fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.bold_split).
-230822-05:18:59,53 nipype.workflow INFO:
+231218-23:32:07,879 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 8 jobs ready. Free memory (GB): 9.80/10.00, Free processors: 1/2.
                      Currently running:
                        * fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.enhance_and_skullstrip_bold_wf.init_aff
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:18:59,176 nipype.workflow INFO:
-	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.bold_hmc_wf.mcflirt&quot; in &quot;/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/bold_hmc_wf/mcflirt&quot;.
-230822-05:18:59,181 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:32:08,2 nipype.workflow INFO:
+	 [Node] Setting-up &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.bold_hmc_wf.mcflirt&quot; in &quot;/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/bold_hmc_wf/mcflirt&quot;.
+231218-23:32:08,6 nipype.workflow INFO:
 	 [Node] Executing &quot;mcflirt&quot; &lt;nipype.interfaces.fsl.preprocess.MCFLIRT&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:19:01,54 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231218-23:32:09,881 nipype.workflow INFO:
 	 [MultiProc] Running 2 tasks, and 7 jobs ready. Free memory (GB): 9.27/10.00, Free processors: 0/2.
                      Currently running:
                        * fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.bold_hmc_wf.mcflirt
                        * fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.enhance_and_skullstrip_bold_wf.init_aff
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230822-05:19:34,346 nipype.workflow INFO:
-	 [Node] Finished &quot;mcflirt&quot;, elapsed time 35.163997s.
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
-Process ForkServerProcess-5:
-Traceback (most recent call last):
-  File &quot;/opt/conda/lib/python3.9/multiprocessing/process.py&quot;, line 315, in _bootstrap
-    self.run()
-  File &quot;/opt/conda/lib/python3.9/multiprocessing/process.py&quot;, line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File &quot;/opt/conda/lib/python3.9/concurrent/futures/process.py&quot;, line 237, in _process_worker
-    call_item = call_queue.get(block=True)
-  File &quot;/opt/conda/lib/python3.9/multiprocessing/queues.py&quot;, line 103, in get
-    res = self._recv_bytes()
-  File &quot;/opt/conda/lib/python3.9/multiprocessing/connection.py&quot;, line 221, in recv_bytes
-    buf = self._recv_bytes(maxlength)
-  File &quot;/opt/conda/lib/python3.9/multiprocessing/connection.py&quot;, line 419, in _recv_bytes
-    buf = self._recv(4)
-  File &quot;/opt/conda/lib/python3.9/multiprocessing/connection.py&quot;, line 384, in _recv
-    chunk = read(handle, remaining)
-KeyboardInterrupt
-230822-05:19:34,563 nipype.workflow INFO:
-	 [Node] Finished &quot;init_aff&quot;, elapsed time 41.335786s.
-230822-05:19:34,563 nipype.workflow WARNING:
+231218-23:32:42,634 nipype.workflow INFO:
+	 [Node] Finished &quot;mcflirt&quot;, elapsed time 34.612755s.
+231218-23:32:42,634 nipype.workflow INFO:
+	 [Node] Finished &quot;init_aff&quot;, elapsed time 40.460308s.
+231218-23:32:42,635 nipype.workflow WARNING:
 	 Storing result file without outputs
-230822-05:19:34,565 nipype.workflow WARNING:
-	 [Node] Error on &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.enhance_and_skullstrip_bold_wf.init_aff&quot; (/tmp/tmphgfd5gu8/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/initial_boldref_wf/enhance_and_skullstrip_bold_wf/init_aff)
-exception calling callback for &lt;Future at 0x7f9163f97dc0 state=finished raised BrokenProcessPool&gt;
-Traceback (most recent call last):
-  File &quot;/opt/conda/lib/python3.9/concurrent/futures/_base.py&quot;, line 330, in _invoke_callbacks
-    callback(self)
-  File &quot;/opt/conda/lib/python3.9/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 159, in _async_callback
-    result = args.result()
-  File &quot;/opt/conda/lib/python3.9/concurrent/futures/_base.py&quot;, line 439, in result
-    return self.__get_result()
-  File &quot;/opt/conda/lib/python3.9/concurrent/futures/_base.py&quot;, line 391, in __get_result
-    raise self._exception
-concurrent.futures.process.BrokenProcessPool: A process in the process pool was terminated abruptly while the future was running or pending.
+231218-23:32:42,635 nipype.workflow WARNING:
+	 Storing result file without outputs
+231218-23:32:42,637 nipype.workflow WARNING:
+	 [Node] Error on &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.bold_hmc_wf.mcflirt&quot; (/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/bold_hmc_wf/mcflirt)
+231218-23:32:42,637 nipype.workflow WARNING:
+	 [Node] Error on &quot;fmriprep_22_1_wf.single_subject_08_wf.func_preproc_task_flanker_run_1_wf.initial_boldref_wf.enhance_and_skullstrip_bold_wf.init_aff&quot; (/tmp/tmprd69z93z/work/fmriprep_22_1_wf/single_subject_08_wf/func_preproc_task_flanker_run_1_wf/initial_boldref_wf/enhance_and_skullstrip_bold_wf/init_aff)
 </pre></div>
 </div>
 </div>
+</div>
+<p>The full report is in content/sub-08.html but here a few items from the report:</p>
+<p>Template T1-weighted image (if several T1w images were found), with contours delineating the detected brain mask and brain tissue segmentations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">SVG</span>
+<span class="n">SVG</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;content/sub-08/figures/sub-08_dseg.svg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c5882d45c52b75bc2739c6d27d5e4650399be415a68ab6ca8e879a892c083fdd.svg" src="_images/c5882d45c52b75bc2739c6d27d5e4650399be415a68ab6ca8e879a892c083fdd.svg" /></div>
+</div>
+<p>Surfaces (white and pial) reconstructed with FreeSurfer (recon-all) overlaid on the participant’s T1w template.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">SVG</span>
+<span class="n">SVG</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;content/sub-08/figures/sub-08_desc-reconall_T1w.svg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/58579fdd638efea6793419b1a073559d3d16a0dfd371f6a50fda73f5e517896f.svg" src="_images/58579fdd638efea6793419b1a073559d3d16a0dfd371f6a50fda73f5e517896f.svg" /></div>
+</div>
+<p>bbregister was used to generate transformations from EPI-space to T1w-space. Note that Nearest Neighbor interpolation is used in the reportlets in order to highlight potential spin-history and other artifacts, whereas final images are resampled using Lanczos interpolation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">SVG</span>
+<span class="n">SVG</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;content/sub-08/figures/sub-08_task-flanker_run-1_desc-bbregister_bold.svg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/118c9f4d11cbcbd5d81e5c96b564fec57a520537b3586fe56346321caf2535fd.svg" src="_images/118c9f4d11cbcbd5d81e5c96b564fec57a520537b3586fe56346321caf2535fd.svg" /></div>
 </div>
 </section>
 
@@ -1544,16 +1591,12 @@ concurrent.futures.process.BrokenProcessPool: A process in the process pool was 
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1593,6 +1636,7 @@ By Neurodesk Team
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1619,8 +1663,8 @@ By Neurodesk Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
