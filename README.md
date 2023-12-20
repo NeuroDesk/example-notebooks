@@ -14,3 +14,5 @@ If you're planning to create a new example notebook, please follow these steps:
 3. Add an entry to table of content: Once your pull request is merged, you can add an entry to the `books/_toc.yml` file. This will add your notebook to the table of contents on the main page.
 
 4. Save and Submit: Once you're done, save your notebook and submit it for review. You can do this by creating a pull request on our GitHub repository. 
+
+5. Note: The notebook runtime is limited to 1 hour. If the notebook doens't finish within this time the results from the cells uploaded will be used to generate the website.
