@@ -30,8 +30,8 @@ jobs:
         id: select_runner
         run: |
           if [ "${{ github.repository }}" = "NeuroDesk/example-notebooks" ]; then
-            # echo "runner=self-hosted" >> $GITHUB_OUTPUT
-            echo "runner=cirun-oracle--${{ github.run_id }}" >> $GITHUB_OUTPUT
+            echo "runner=self-hosted" >> $GITHUB_OUTPUT
+            # echo "runner=cirun-oracle--${{ github.run_id }}" >> $GITHUB_OUTPUT
           else
             echo "runner=ubuntu-22.04" >> $GITHUB_OUTPUT
           fi
@@ -68,7 +68,7 @@ jobs:
     needs: [ select-runner, get-notebooks ]
     if: ${{ needs.get-notebooks.outputs.notebook_list != '[]' }}
     runs-on: ${{ needs.select-runner.outputs.runner }}
-    
+    timeout-minutes: 1400
     strategy:
       fail-fast: false
       matrix:
@@ -88,6 +88,7 @@ jobs:
 
     - name: Run ${{ matrix.notebooks }}
       shell: bash
+      timeout-minutes: 1400
       working-directory: ./books
       run: |
         echo ${{ github.workspace }}
@@ -102,7 +103,7 @@ jobs:
         export MPLCONFIGDIR=${{ github.workspace }}/matplotlib-mpldir
         export MODULEPATH=$(find /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/ -maxdepth 1 -mindepth 1 -type d -exec realpath {} \; | tr '\n' ':')
         echo "MODULEPATH=$MODULEPATH"
-        sed -i 's/timeout:.*/timeout: 3600/' _config.yml
+        sed -i 's/timeout:.*/timeout: 86400/' _config.yml
         echo "NOTEBOOK=$(basename -s .ipynb ${{ matrix.notebooks }})" >> $GITHUB_ENV
         echo "DIRNAME=$(dirname ${{ matrix.notebooks }})" >> $GITHUB_ENV
         jb build ${{ matrix.notebooks }}
