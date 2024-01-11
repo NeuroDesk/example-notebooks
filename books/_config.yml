@@ -25,7 +25,7 @@ launch_buttons:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/NeurodDesk/example-notebooks # Online location of your book
+  url: https://github.com/NeuroDesk/example-notebooks # Online location of your book
   path_to_book: books
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
