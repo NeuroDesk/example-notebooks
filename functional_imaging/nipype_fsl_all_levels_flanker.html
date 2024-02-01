@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>FSL’s fMRI Data Analysis via Nipype &#8212; Neurodesk</title>
   
@@ -19,43 +18,41 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-4Z9774J59Y"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -68,10 +65,22 @@ const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-4Z9774J59Y');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'functional_imaging/nipype_fsl_all_levels_flanker';</script>
     <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/functional_imaging/nipype_fsl_all_levels_flanker.html" />
-    <link rel="shortcut icon" href="../_static/neurodesk_logo.svg"/>
+    <link rel="icon" href="../_static/neurodesk_logo.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Fmriprep Example" href="fmriprep_example.html" />
@@ -85,10 +94,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -129,11 +137,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -167,7 +178,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -261,7 +283,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/main?labpath=/home/jovyan/examples/example-notebooks/books/v2/gh/NeurodDesk/example-notebooks/main?urlpath=lab/tree/books/functional_imaging/nipype_fsl_all_levels_flanker.ipynb" target="_blank"
+      <li><a href="https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/main?labpath=/home/jovyan/examples/example-notebooks/books/v2/gh/NeuroDesk/example-notebooks/main?urlpath=lab/tree/books/functional_imaging/nipype_fsl_all_levels_flanker.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -279,7 +301,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/NeurodDesk/example-notebooks/blob/main/books/functional_imaging/nipype_fsl_all_levels_flanker.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/functional_imaging/nipype_fsl_all_levels_flanker.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -310,7 +332,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/NeurodDesk/example-notebooks" target="_blank"
+      <li><a href="https://github.com/NeuroDesk/example-notebooks" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -327,7 +349,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/NeurodDesk/example-notebooks/edit/main/books/functional_imaging/nipype_fsl_all_levels_flanker.ipynb" target="_blank"
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/edit/main/books/functional_imaging/nipype_fsl_all_levels_flanker.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -344,7 +366,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/NeurodDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Ffunctional_imaging/nipype_fsl_all_levels_flanker.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Ffunctional_imaging/nipype_fsl_all_levels_flanker.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -550,36 +572,36 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <p><a href="https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/main?labpath=/home/jovyan/examples/example-notebooks/books/functional_imaging/nipype_fsl_all_levels_flanker.ipynb" target="_parent"><img src="https://img.shields.io/badge/launch-binder-579aca.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADUElEQVR4nCyTzUtkRxfGn6pTtz/FtvsVp32NKBgF6QiBCU505xBpBdsJiMkyi2SRxSSEZPI3JKuEbGYREgaCi0zMENBeSCSCqwzRCCIzSBtHuqEl9ihif9zbfe+tqnCaqdXh1q1znuec31EAkM/nEYlEcH5+jmw2K5VSwvM8rVT3GmEYIh6PUxiGtlKpmNHRUQRBgK2tLdDi4iLOzs4wMjKCaDRKxhijlLIRx0kmk8lhIkoHQeArpTpaa5vJZCgej9vj42NMT09DVSoVXF5ewm21SAihAbwJ4HM/CO42ms2slJIT/wvgD2vtN9baQ8/zqFqtaiKCYIlLS0uklNJBEHwspfyu2WpF+lIpTIyPo9Fs4sXZGYzWiMVinTAMPyWi7621VCwWtSgUCuxNSynfl1L+zDLvzs3pd+/do/8PDsJrt1EqlfDL+rp+9vw5xWIxobV+T2u97jgOScdxjLU2o5R66LquffvOHfPJ/fuqL5USFxcXgs9bt2+LLx88UIPZrAmCwBLRQwBpfistayFaBZCBELqvr4+01uAJOI6DiOPg5uYG2Vu3MDc3R51ORwsh+olopft2cnISxpgvhBBvdNptWyqVZOnkBP/LZPD6xARe1mqonp+jVqvh1ydPcHV1ZdiGtbZORL91m7i8vLzt+/47+Xxe53I5+vPpU9xcX+O14WEcHBygv78fuVwOPP/t7W19eHhI0Wj0942NjbxaXV1Fu91uEhFb6c52fn4ejUYD+/v73XhsbIxBQrlcxs7ODqSUFkBjZWUFMpPJwFq7z/Stra1ZrthqtdgWewZb9DyPi6BYLHIC+2oSf/f29kIODQ1Ba/2YIerp6RG+79tkMgm+dF23i3E6nWYGGF/L/xhjQmvt41QqBbm3t8cQ/QPgaykllUqlIAgCI4RAIpFgCsFxo1E35XI5UEoRgK+klC9OT09JLCwsCMdx5NHRkZmamnqktf5gYGAAMzMzmJ2dNaxid3dXsrV6vQ4ierS5uflhoVCQYRgawcsEQLDsRCJhr6+vP/J9/7NOp5Nj2dwL3rxYLPZMKfVtOp3+0XVdwX0CYBXL44ArWWsZrB9yudxP1Wp12vO88VfLdNLTk/yrVnvpu64rm82m4e98/gsAAP//Lbmu802E+U4AAAAASUVORK5CYII=" alt="Open In Binder"/>  </a>
 <a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/functional_imaging/nipype_fsl_all_levels_flanker.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>   </a></p>
 <section id="fsl-s-fmri-data-analysis-via-nipype">
-<h1>FSL’s fMRI Data Analysis via Nipype<a class="headerlink" href="#fsl-s-fmri-data-analysis-via-nipype" title="Permalink to this heading">#</a></h1>
+<h1>FSL’s fMRI Data Analysis via Nipype<a class="headerlink" href="#fsl-s-fmri-data-analysis-via-nipype" title="Link to this heading">#</a></h1>
 <p>Author: Monika Doerig</p>
 <p>Original peper: <a class="reference external" href="https://www.frontiersin.org/articles/10.3389/fnimg.2022.953215/full">https://www.frontiersin.org/articles/10.3389/fnimg.2022.953215/full</a></p>
 <p>Original code: <a class="reference external" href="https://osf.io/prg53/?view_only=9d7974834a484cdb972bcc3989589b78">https://osf.io/prg53/?view_only=9d7974834a484cdb972bcc3989589b78</a></p>
 </section>
 <section id="setup-neurodesk">
-<h1>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Permalink to this heading">#</a></h1>
+<h1>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
-import os
-import sys
-IN_COLAB = &#39;google.colab&#39; in sys.modules
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">IN_COLAB</span> <span class="o">=</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span>
 
-if IN_COLAB:
-  os.environ[&quot;LD_PRELOAD&quot;] = &quot;&quot;;
-  os.environ[&quot;APPTAINER_BINDPATH&quot;] = &quot;/content,/tmp,/cvmfs&quot;
-  os.environ[&quot;MPLCONFIGDIR&quot;] = &quot;/content/matplotlib-mpldir&quot;
-  os.environ[&quot;LMOD_CMD&quot;] = &quot;/usr/share/lmod/lmod/libexec/lmod&quot;
+<span class="k">if</span> <span class="n">IN_COLAB</span><span class="p">:</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_PRELOAD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;APPTAINER_BINDPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content,/tmp,/cvmfs&quot;</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MPLCONFIGDIR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content/matplotlib-mpldir&quot;</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LMOD_CMD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/share/lmod/lmod/libexec/lmod&quot;</span>
 
-  !curl -J -O https://raw.githubusercontent.com/NeuroDesk/neurocommand/main/googlecolab_setup.sh
-  !chmod +x googlecolab_setup.sh
-  !./googlecolab_setup.sh
+  <span class="err">!</span><span class="n">curl</span> <span class="o">-</span><span class="n">J</span> <span class="o">-</span><span class="n">O</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NeuroDesk</span><span class="o">/</span><span class="n">neurocommand</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
+  <span class="err">!</span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
+  <span class="err">!</span><span class="o">./</span><span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
 
-  os.environ[&quot;MODULEPATH&quot;] = &#39;:&#39;.join(map(str, list(map(lambda x: os.path.join(os.path.abspath(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;), x),os.listdir(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;)))))
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MODULEPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">)))))</span>
 </pre></div>
 </div>
 </div>
@@ -587,8 +609,8 @@ if IN_COLAB:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
-<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;vendor&#39;</span> <span class="p">|</span> uniq
-<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;model name&#39;</span> <span class="p">|</span> uniq
+<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
 </pre></div>
 </div>
 </div>
@@ -601,14 +623,14 @@ model name	: AMD EPYC 7742 64-Core Processor
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install pandas nilearn matplotlib
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>nilearn<span class="w"> </span>matplotlib
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="first-level-glm-using-nipype-fsl">
-<h1>First-level GLM using Nipype FSL<a class="headerlink" href="#first-level-glm-using-nipype-fsl" title="Permalink to this heading">#</a></h1>
+<h1>First-level GLM using Nipype FSL<a class="headerlink" href="#first-level-glm-using-nipype-fsl" title="Link to this heading">#</a></h1>
 <p>In this notebook, we recreate the first-level GLM and the first level GLM of FSL GUI using nipype code. For each nipype node, we list the corresponding fsl command from the log file. The dataset we use is a Flanker task, which can be downloaded <a class="reference external" href="https://openneuro.org/datasets/ds000102/versions/00001">here</a>.</p>
 <p>We also borrow some helps from this <a class="reference external" href="https://nipype.readthedocs.io/en/latest/users/examples/fmri_fsl.html">document</a>.</p>
 <div class="cell docutils container">
@@ -638,7 +660,7 @@ model name	: AMD EPYC 7742 64-Core Processor
 </div>
 </div>
 <section id="preparation">
-<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this heading">#</a></h2>
+<h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
 <p>Import all the relevant libraries needed for the preprocessing stage.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -679,7 +701,7 @@ model name	: AMD EPYC 7742 64-Core Processor
 </div>
 </div>
 <section id="set-up-data-path">
-<h3>Set up data path<a class="headerlink" href="#set-up-data-path" title="Permalink to this heading">#</a></h3>
+<h3>Set up data path<a class="headerlink" href="#set-up-data-path" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Input: Set the BIDS path</span>
@@ -704,8 +726,8 @@ model name	: AMD EPYC 7742 64-Core Processor
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>datalad install https://github.com/OpenNeuroDatasets/ds000102.git
-<span class="o">!</span><span class="nb">cd</span> ds000102 <span class="o">&amp;&amp;</span> datalad get <span class="nv">$PATTERN</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>datalad<span class="w"> </span>install<span class="w"> </span>https://github.com/OpenNeuroDatasets/ds000102.git
+<span class="o">!</span><span class="nb">cd</span><span class="w"> </span>ds000102<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>datalad<span class="w"> </span>get<span class="w"> </span><span class="nv">$PATTERN</span>
 </pre></div>
 </div>
 </div>
@@ -1166,7 +1188,7 @@ action summary:
 </div>
 </section>
 <section id="start-the-workflow">
-<h3>Start the workflow<a class="headerlink" href="#start-the-workflow" title="Permalink to this heading">#</a></h3>
+<h3>Start the workflow<a class="headerlink" href="#start-the-workflow" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wf_first</span> <span class="o">=</span> <span class="n">pe</span><span class="o">.</span><span class="n">Workflow</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;level1&#39;</span><span class="p">,</span> <span class="n">base_dir</span><span class="o">=</span><span class="n">exp_dir_first</span><span class="p">)</span>
@@ -1238,7 +1260,7 @@ action summary:
 </section>
 </section>
 <section id="initialisation">
-<h2>Initialisation<a class="headerlink" href="#initialisation" title="Permalink to this heading">#</a></h2>
+<h2>Initialisation<a class="headerlink" href="#initialisation" title="Link to this heading">#</a></h2>
 <p>Convert functional images to float representation. Since there can be more than one functional run we use a MapNode to convert each run.</p>
 <p><strong>Corresponding FSL command:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">fslmaths</span> <span class="o">../</span><span class="n">sub</span><span class="o">-</span><span class="mi">11</span><span class="o">/</span><span class="n">func</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">11</span><span class="n">_task</span><span class="o">-</span><span class="n">flanker_run</span><span class="o">-</span><span class="mi">1</span><span class="n">_bold</span> <span class="n">prefiltered_func_data</span> <span class="o">-</span><span class="n">odt</span> <span class="nb">float</span>
@@ -1285,9 +1307,9 @@ action summary:
 </div>
 </section>
 <section id="preprocessing">
-<h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h2>
+<h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Link to this heading">#</a></h2>
 <section id="motion-correction">
-<h3>Motion Correction<a class="headerlink" href="#motion-correction" title="Permalink to this heading">#</a></h3>
+<h3>Motion Correction<a class="headerlink" href="#motion-correction" title="Link to this heading">#</a></h3>
 <p>Realign the functional runs to the middle volume of each run</p>
 <p><strong>Corresponding FSL command:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">mcflirt</span> <span class="o">-</span><span class="ow">in</span> <span class="n">prefiltered_func_data</span> <span class="o">-</span><span class="n">out</span> <span class="n">prefiltered_func_data_mcf</span> <span class="o">-</span><span class="n">mats</span> <span class="o">-</span><span class="n">plots</span> <span class="o">-</span><span class="n">reffile</span> <span class="n">example_func</span> <span class="o">-</span><span class="n">rmsrel</span> <span class="o">-</span><span class="n">rmsabs</span> <span class="o">-</span><span class="n">spline_final</span>
@@ -1334,7 +1356,7 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </div>
 </section>
 <section id="functionally-masking">
-<h3>Functionally Masking<a class="headerlink" href="#functionally-masking" title="Permalink to this heading">#</a></h3>
+<h3>Functionally Masking<a class="headerlink" href="#functionally-masking" title="Link to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Passing</span> <span class="n">the</span> <span class="n">reference</span> <span class="n">volume</span> <span class="n">to</span> <span class="n">the</span> <span class="n">FSL</span> <span class="n">command</span><span class="o">-</span><span class="n">line</span> <span class="n">tool</span> <span class="n">bet</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">a</span> <span class="n">binary</span> <span class="n">brain</span> <span class="n">mask</span> <span class="ow">and</span> <span class="n">afterward</span> <span class="n">multiplying</span> <span class="n">the</span> <span class="n">processed</span> <span class="n">functional</span> <span class="n">time</span> <span class="n">series</span> <span class="n">by</span> <span class="n">the</span> <span class="n">brain</span> <span class="n">mask</span> <span class="n">using</span> <span class="n">the</span> <span class="n">fslmaths</span> <span class="n">command</span> <span class="n">to</span> <span class="n">produce</span> <span class="n">a</span> <span class="n">skull</span><span class="o">-</span><span class="n">stripped</span> <span class="n">time</span> <span class="n">series</span><span class="o">.</span>
 </pre></div>
 </div>
@@ -1390,7 +1412,7 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </div>
 </section>
 <section id="grand-mean-scaling">
-<h3>Grand Mean Scaling<a class="headerlink" href="#grand-mean-scaling" title="Permalink to this heading">#</a></h3>
+<h3>Grand Mean Scaling<a class="headerlink" href="#grand-mean-scaling" title="Link to this heading">#</a></h3>
 <p>Determine the 2nd and 98th percentile intensities</p>
 <p><strong>Corresponding FSL command:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">fslstats</span> <span class="n">prefiltered_func_data_bet</span> <span class="o">-</span><span class="n">p</span> <span class="mi">2</span> <span class="o">-</span><span class="n">p</span> <span class="mi">98</span>
@@ -1486,7 +1508,7 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </div>
 </section>
 <section id="susan-noise-reduction">
-<h3>SUSAN Noise Reduction<a class="headerlink" href="#susan-noise-reduction" title="Permalink to this heading">#</a></h3>
+<h3>SUSAN Noise Reduction<a class="headerlink" href="#susan-noise-reduction" title="Link to this heading">#</a></h3>
 <p>Determine the mean image from each TR</p>
 <p><strong>Corresponding FSL command:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">fslmaths</span> <span class="n">prefiltered_func_data_thresh</span> <span class="o">-</span><span class="n">Tmean</span> <span class="n">mean_func</span>
@@ -1598,7 +1620,7 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </div>
 </section>
 <section id="temporal-filtering">
-<h3>Temporal Filtering<a class="headerlink" href="#temporal-filtering" title="Permalink to this heading">#</a></h3>
+<h3>Temporal Filtering<a class="headerlink" href="#temporal-filtering" title="Link to this heading">#</a></h3>
 <p>Perform temporal highpass filtering on the data</p>
 <p><strong>Corresponding FSL command:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">fslmaths</span> <span class="n">prefiltered_func_data_intnorm</span> <span class="o">-</span><span class="n">Tmean</span> <span class="n">tempMean</span>
@@ -1659,9 +1681,9 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </section>
 </section>
 <section id="first-level-glm">
-<h2>First-Level GLM<a class="headerlink" href="#first-level-glm" title="Permalink to this heading">#</a></h2>
+<h2>First-Level GLM<a class="headerlink" href="#first-level-glm" title="Link to this heading">#</a></h2>
 <section id="get-events">
-<h3>Get events<a class="headerlink" href="#get-events" title="Permalink to this heading">#</a></h3>
+<h3>Get events<a class="headerlink" href="#get-events" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">subjinfo</span><span class="p">(</span><span class="n">events</span><span class="p">):</span>
@@ -1702,7 +1724,7 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </div>
 </section>
 <section id="set-up-contrasts">
-<h3>Set-up contrasts<a class="headerlink" href="#set-up-contrasts" title="Permalink to this heading">#</a></h3>
+<h3>Set-up contrasts<a class="headerlink" href="#set-up-contrasts" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">condition_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;congruent&quot;</span><span class="p">,</span> <span class="s2">&quot;incongruent&quot;</span><span class="p">]</span>
@@ -1799,14 +1821,14 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </section>
 </section>
 <section id="registration">
-<h2>Registration<a class="headerlink" href="#registration" title="Permalink to this heading">#</a></h2>
+<h2>Registration<a class="headerlink" href="#registration" title="Link to this heading">#</a></h2>
 <p>According to <a class="reference external" href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FEAT/UserGuide#Higher-Level_FEAT_Output">FSL UserGuide</a>, the different sessions need to be <strong>registered</strong> to each other before any multi-session or multi-subject analyses can be carried out. Registration inside FEAT uses <code class="docutils literal notranslate"><span class="pre">FLIRT</span></code> and is a two-statge process:</p>
 <ol class="arabic simple">
 <li><p>An example FMRI low resolution image is registered to an example high resolution image (normally the same subject’s T1-weighted structural). The transformation for this is saved into the FEAT directory. Then the high res image is registered to a standard image (normally a T1-weighted image in standard space, such as the MNI 152 average image).</p></li>
 <li><p>The two transformations are combined into a third, which will take the low resolution FMRI images (and the statistic images derived from the first-level analyses) straight into standard space, when applied later, during group analysis.</p></li>
 </ol>
 <section id="step-1">
-<h3>Step 1<a class="headerlink" href="#step-1" title="Permalink to this heading">#</a></h3>
+<h3>Step 1<a class="headerlink" href="#step-1" title="Link to this heading">#</a></h3>
 <p><strong>Corresponding FSL command:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">flirt</span> <span class="o">-</span><span class="ow">in</span> <span class="n">example_func</span> <span class="o">-</span><span class="n">ref</span> <span class="n">standard</span> <span class="o">-</span><span class="n">out</span> <span class="n">example_func2standard</span> <span class="o">-</span><span class="n">omat</span> <span class="n">example_func2standard</span><span class="o">.</span><span class="n">mat</span> <span class="o">-</span><span class="n">cost</span> <span class="n">corratio</span> <span class="o">-</span><span class="n">dof</span> <span class="mi">12</span> <span class="o">-</span><span class="n">searchrx</span> <span class="o">-</span><span class="mi">90</span> <span class="mi">90</span> <span class="o">-</span><span class="n">searchry</span> <span class="o">-</span><span class="mi">90</span> <span class="mi">90</span> <span class="o">-</span><span class="n">searchrz</span> <span class="o">-</span><span class="mi">90</span> <span class="mi">90</span> <span class="o">-</span><span class="n">interp</span> <span class="n">trilinear</span> 
 
@@ -1836,7 +1858,7 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </div>
 </section>
 <section id="step-2">
-<h3>Step 2<a class="headerlink" href="#step-2" title="Permalink to this heading">#</a></h3>
+<h3>Step 2<a class="headerlink" href="#step-2" title="Link to this heading">#</a></h3>
 <p><strong>Corresponding fsl command:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">flirt</span> <span class="o">-</span><span class="n">ref</span> <span class="n">reg</span><span class="o">/</span><span class="n">standard</span> <span class="o">-</span><span class="ow">in</span> <span class="n">stats</span><span class="o">/</span><span class="n">cope1</span> <span class="o">-</span><span class="n">out</span> <span class="o">/</span><span class="n">srv</span><span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">yc</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="n">nipype_fsl_comp</span><span class="o">/</span><span class="n">gui</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="o">/</span><span class="n">run1</span><span class="o">.</span><span class="n">feat</span><span class="o">/</span><span class="n">frgrot_chksugax</span> <span class="o">-</span><span class="n">applyxfm</span> <span class="o">-</span><span class="n">init</span> <span class="n">reg</span><span class="o">/</span><span class="n">example_func2standard</span><span class="o">.</span><span class="n">mat</span> <span class="o">-</span><span class="n">interp</span> <span class="n">trilinear</span> <span class="o">-</span><span class="n">datatype</span> <span class="nb">float</span>
 </pre></div>
@@ -1953,7 +1975,7 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </section>
 </section>
 <section id="the-first-level-glm">
-<h2>The first-level GLM<a class="headerlink" href="#the-first-level-glm" title="Permalink to this heading">#</a></h2>
+<h2>The first-level GLM<a class="headerlink" href="#the-first-level-glm" title="Link to this heading">#</a></h2>
 <p>Here we randomly choose the four copes from subject-09 run-1</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1996,7 +2018,7 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="second-level-glm-using-nipype-fsl">
-<h1>Second level GLM using Nipype FSL<a class="headerlink" href="#second-level-glm-using-nipype-fsl" title="Permalink to this heading">#</a></h1>
+<h1>Second level GLM using Nipype FSL<a class="headerlink" href="#second-level-glm-using-nipype-fsl" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wf_second</span> <span class="o">=</span> <span class="n">pe</span><span class="o">.</span><span class="n">Workflow</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;level2&#39;</span><span class="p">,</span> <span class="n">base_dir</span><span class="o">=</span><span class="n">exp_dir_second</span><span class="p">)</span>
@@ -2037,12 +2059,12 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </div>
 </div>
 <section id="second-level-glm">
-<h2>Second-level GLM<a class="headerlink" href="#second-level-glm" title="Permalink to this heading">#</a></h2>
+<h2>Second-level GLM<a class="headerlink" href="#second-level-glm" title="Link to this heading">#</a></h2>
 <p>Combining results from multiple runs of one subject into one</p>
 <section id="higher-level-input-files-preparation">
-<h3>Higher-level input files preparation<a class="headerlink" href="#higher-level-input-files-preparation" title="Permalink to this heading">#</a></h3>
+<h3>Higher-level input files preparation<a class="headerlink" href="#higher-level-input-files-preparation" title="Link to this heading">#</a></h3>
 <section id="step-1-merge-registered-copes-varcopes-masks">
-<h4>Step 1: Merge registered copes &amp; varcopes &amp; masks<a class="headerlink" href="#step-1-merge-registered-copes-varcopes-masks" title="Permalink to this heading">#</a></h4>
+<h4>Step 1: Merge registered copes &amp; varcopes &amp; masks<a class="headerlink" href="#step-1-merge-registered-copes-varcopes-masks" title="Link to this heading">#</a></h4>
 <p><strong>Corresponding FSL command:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">fslmerge</span> <span class="o">-</span><span class="n">t</span> <span class="n">mask</span> <span class="p">(</span><span class="n">masks</span> <span class="kn">from</span> <span class="nn">all</span> <span class="mi">52</span> <span class="n">inputs</span><span class="p">)</span>
 <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">fslmerge</span> <span class="o">-</span><span class="n">t</span> <span class="n">cope</span> <span class="p">(</span><span class="n">copes</span> <span class="kn">from</span> <span class="nn">all</span> <span class="mi">52</span> <span class="n">inputs</span><span class="p">)</span>
@@ -2085,7 +2107,7 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </div>
 </section>
 <section id="step-2-making-mask">
-<h4>Step 2: Making mask<a class="headerlink" href="#step-2-making-mask" title="Permalink to this heading">#</a></h4>
+<h4>Step 2: Making mask<a class="headerlink" href="#step-2-making-mask" title="Link to this heading">#</a></h4>
 <p>In FSL, there are many commands about <code class="docutils literal notranslate"><span class="pre">maskunique</span></code>, which is unless for the second level. We can ignore it.</p>
 <p><strong>Corresponding FSL command:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">fslmaths</span> <span class="n">mask</span> <span class="o">-</span><span class="n">Tmin</span> <span class="n">mask</span>
@@ -2105,7 +2127,7 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </div>
 </section>
 <section id="step-3-masking-copes-varcopes">
-<h4>Step 3: Masking copes &amp; varcopes<a class="headerlink" href="#step-3-masking-copes-varcopes" title="Permalink to this heading">#</a></h4>
+<h4>Step 3: Masking copes &amp; varcopes<a class="headerlink" href="#step-3-masking-copes-varcopes" title="Link to this heading">#</a></h4>
 <p><strong>Corresponding FSL command:</strong></p>
 <p>we have four contrasts so the following commands repeat four times</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">fslmaths</span> <span class="n">cope1</span> <span class="o">-</span><span class="n">mas</span> <span class="n">mask</span> <span class="n">cope1</span>
@@ -2135,7 +2157,7 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </section>
 </section>
 <section id="set-up-second-level-contrasts-and-fixed-effects">
-<h3>Set up second-level contrasts and fixed-effects<a class="headerlink" href="#set-up-second-level-contrasts-and-fixed-effects" title="Permalink to this heading">#</a></h3>
+<h3>Set up second-level contrasts and fixed-effects<a class="headerlink" href="#set-up-second-level-contrasts-and-fixed-effects" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_contrasts_l2</span><span class="p">(</span><span class="n">in_files</span><span class="p">):</span>
@@ -2241,10 +2263,10 @@ Instead, we use <a class="reference external" href="https://nipype.readthedocs.i
 </section>
 </section>
 <section id="the-second-level-glm">
-<h2>The second-level GLM<a class="headerlink" href="#the-second-level-glm" title="Permalink to this heading">#</a></h2>
+<h2>The second-level GLM<a class="headerlink" href="#the-second-level-glm" title="Link to this heading">#</a></h2>
 <p>Here we choose the four copes from subject-01</p>
 <section id="regapply">
-<h3>Regapply<a class="headerlink" href="#regapply" title="Permalink to this heading">#</a></h3>
+<h3>Regapply<a class="headerlink" href="#regapply" title="Link to this heading">#</a></h3>
 <p>This happens before the second-level GLM, all results from the first level are needed to be registered into the standard space</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2275,7 +2297,7 @@ Instead, we use <a class="reference external" href="https://nipype.readthedocs.i
 </div>
 </section>
 <section id="copes-from-the-second-level-glm">
-<h3>Copes from the second-level GLM<a class="headerlink" href="#copes-from-the-second-level-glm" title="Permalink to this heading">#</a></h3>
+<h3>Copes from the second-level GLM<a class="headerlink" href="#copes-from-the-second-level-glm" title="Link to this heading">#</a></h3>
 <p>copes from subject-01</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2308,7 +2330,7 @@ Instead, we use <a class="reference external" href="https://nipype.readthedocs.i
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="third-level-glm-using-nipype-fsl">
-<h1>Third-level GLM using Nipype FSL<a class="headerlink" href="#third-level-glm-using-nipype-fsl" title="Permalink to this heading">#</a></h1>
+<h1>Third-level GLM using Nipype FSL<a class="headerlink" href="#third-level-glm-using-nipype-fsl" title="Link to this heading">#</a></h1>
 <p>Start the workflow</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2356,12 +2378,12 @@ Instead, we use <a class="reference external" href="https://nipype.readthedocs.i
 </div>
 </div>
 <section id="third-level-glm">
-<h2>Third-level GLM<a class="headerlink" href="#third-level-glm" title="Permalink to this heading">#</a></h2>
+<h2>Third-level GLM<a class="headerlink" href="#third-level-glm" title="Link to this heading">#</a></h2>
 <p>Combining results from multiple runs of one subject into one</p>
 <section id="id1">
-<h3>Higher-level input files preparation<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Higher-level input files preparation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <section id="id2">
-<h4>Step 1: Merge registered copes &amp; varcopes &amp; masks<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<h4>Step 1: Merge registered copes &amp; varcopes &amp; masks<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <p><strong>Corresponding FSL command:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">fslmerge</span> <span class="o">-</span><span class="n">t</span> <span class="n">mask</span> <span class="p">(</span><span class="n">masks</span> <span class="kn">from</span> <span class="nn">all</span> <span class="mi">26</span> <span class="n">inputs</span><span class="p">)</span>
 <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">fslmerge</span> <span class="o">-</span><span class="n">t</span> <span class="n">cope</span> <span class="p">(</span><span class="n">copes</span> <span class="kn">from</span> <span class="nn">all</span> <span class="mi">26</span> <span class="n">inputs</span><span class="p">)</span>
@@ -2403,7 +2425,7 @@ Instead, we use <a class="reference external" href="https://nipype.readthedocs.i
 </div>
 </section>
 <section id="id3">
-<h4>Step 2: Making mask<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<h4>Step 2: Making mask<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <p>In FSL, there are many commands about <code class="docutils literal notranslate"><span class="pre">maskunique</span></code>, which is unless for the second level. We can ignore it.</p>
 <p><strong>Corresponding FSL command:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">fslmaths</span> <span class="n">mask</span> <span class="o">-</span><span class="n">Tmin</span> <span class="n">mask</span>
@@ -2424,7 +2446,7 @@ Instead, we use <a class="reference external" href="https://nipype.readthedocs.i
 </div>
 </section>
 <section id="id4">
-<h4>Step 3: Masking copes &amp; varcopes<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<h4>Step 3: Masking copes &amp; varcopes<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
 <p><strong>Corresponding FSL command:</strong></p>
 <p>we have four contrasts so the following commands repeat four times</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">fslmaths</span> <span class="n">cope1</span> <span class="o">-</span><span class="n">mas</span> <span class="n">mask</span> <span class="n">cope1</span>
@@ -2454,7 +2476,7 @@ Instead, we use <a class="reference external" href="https://nipype.readthedocs.i
 </section>
 </section>
 <section id="set-up-third-level-contrasts">
-<h3>Set up third-level contrasts<a class="headerlink" href="#set-up-third-level-contrasts" title="Permalink to this heading">#</a></h3>
+<h3>Set up third-level contrasts<a class="headerlink" href="#set-up-third-level-contrasts" title="Link to this heading">#</a></h3>
 <p>Since we only have a single-group set-up, we can actually use <a class="reference external" href="https://nipype.readthedocs.io/en/latest/api/generated/nipype.interfaces.fsl.model.html#l2model">L2Model</a>.
 If we have an ANOVA-like design, using <a class="reference external" href="https://nipype.readthedocs.io/en/latest/api/generated/nipype.interfaces.fsl.model.html#multipleregressdesign">MultipleRegressDesign</a> would be a better option.</p>
 <div class="cell docutils container">
@@ -2489,9 +2511,9 @@ If we have an ANOVA-like design, using <a class="reference external" href="https
 </div>
 </section>
 <section id="post-stats">
-<h3>Post-Stats<a class="headerlink" href="#post-stats" title="Permalink to this heading">#</a></h3>
+<h3>Post-Stats<a class="headerlink" href="#post-stats" title="Link to this heading">#</a></h3>
 <section id="smoothness-estimation">
-<h4>Smoothness estimation<a class="headerlink" href="#smoothness-estimation" title="Permalink to this heading">#</a></h4>
+<h4>Smoothness estimation<a class="headerlink" href="#smoothness-estimation" title="Link to this heading">#</a></h4>
 <p>to get <code class="docutils literal notranslate"><span class="pre">dlh</span></code> and <code class="docutils literal notranslate"><span class="pre">volume</span></code> for thresholding
 <strong>Corresponding FSL command:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">smoothest</span> <span class="o">-</span><span class="n">d</span> <span class="mi">25</span> <span class="o">-</span><span class="n">m</span> <span class="n">mask</span> <span class="o">-</span><span class="n">r</span> <span class="n">stats</span><span class="o">/</span><span class="n">res4d</span> <span class="o">&gt;</span> <span class="n">stats</span><span class="o">/</span><span class="n">smoothness</span>
@@ -2512,7 +2534,7 @@ If we have an ANOVA-like design, using <a class="reference external" href="https
 </div>
 </section>
 <section id="mask-zstats-file">
-<h4>Mask zstats file<a class="headerlink" href="#mask-zstats-file" title="Permalink to this heading">#</a></h4>
+<h4>Mask zstats file<a class="headerlink" href="#mask-zstats-file" title="Link to this heading">#</a></h4>
 <p>preparation for thresholding</p>
 <p><strong>Corresponding FSL command:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">fslmaths</span> <span class="n">stats</span><span class="o">/</span><span class="n">zstat1</span> <span class="o">-</span><span class="n">mas</span> <span class="n">mask</span> <span class="n">thresh_zstat1</span>
@@ -2535,7 +2557,7 @@ If we have an ANOVA-like design, using <a class="reference external" href="https
 </div>
 </section>
 <section id="cluster-wise-thresholding">
-<h4>Cluster-wise thresholding<a class="headerlink" href="#cluster-wise-thresholding" title="Permalink to this heading">#</a></h4>
+<h4>Cluster-wise thresholding<a class="headerlink" href="#cluster-wise-thresholding" title="Link to this heading">#</a></h4>
 <p><strong>Corresponding FSL command:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">fsl</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">cluster</span> <span class="o">-</span><span class="n">i</span> <span class="n">thresh_zstat1</span> <span class="o">-</span><span class="n">t</span> <span class="mf">3.1</span> <span class="o">--</span><span class="n">othresh</span><span class="o">=</span><span class="n">thresh_zstat1</span> <span class="o">-</span><span class="n">o</span> <span class="n">cluster_mask_zstat1</span> <span class="o">--</span><span class="n">connectivity</span><span class="o">=</span><span class="mi">26</span> <span class="o">--</span><span class="n">mm</span> <span class="o">--</span><span class="n">olmax</span><span class="o">=</span><span class="n">lmax_zstat1_std</span><span class="o">.</span><span class="n">txt</span> <span class="o">--</span><span class="n">scalarname</span><span class="o">=</span><span class="n">Z</span> <span class="o">-</span><span class="n">p</span> <span class="mf">0.05</span> <span class="o">-</span><span class="n">d</span> <span class="mf">0.0595781</span> <span class="o">--</span><span class="n">volume</span><span class="o">=</span><span class="mi">254734</span> <span class="o">-</span><span class="n">c</span> <span class="n">stats</span><span class="o">/</span><span class="n">cope1</span> <span class="o">&gt;</span> <span class="n">cluster_zstat1_std</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
@@ -2566,7 +2588,7 @@ If we have an ANOVA-like design, using <a class="reference external" href="https
 </section>
 </section>
 <section id="save-the-output">
-<h2>Save the output<a class="headerlink" href="#save-the-output" title="Permalink to this heading">#</a></h2>
+<h2>Save the output<a class="headerlink" href="#save-the-output" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datasink_third</span> <span class="o">=</span> <span class="n">pe</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span><span class="n">nio</span><span class="o">.</span><span class="n">DataSink</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;sinker&#39;</span><span class="p">)</span>
@@ -2611,7 +2633,7 @@ If we have an ANOVA-like design, using <a class="reference external" href="https
 </div>
 </section>
 <section id="unthresholded-copes">
-<h2>Unthresholded COPEs<a class="headerlink" href="#unthresholded-copes" title="Permalink to this heading">#</a></h2>
+<h2>Unthresholded COPEs<a class="headerlink" href="#unthresholded-copes" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nipype_cope1</span> <span class="o">=</span> <span class="s1">&#39;./output_level3/level3_results/contrast_1/stats_dir/_contr_id_1/stats/cope1.nii.gz&#39;</span>
@@ -2665,7 +2687,7 @@ If we have an ANOVA-like design, using <a class="reference external" href="https
 </div>
 </div>
 <section id="thresholded-p-0-05-zstats">
-<h3>Thresholded (p &lt; 0.05) zstats<a class="headerlink" href="#thresholded-p-0-05-zstats" title="Permalink to this heading">#</a></h3>
+<h3>Thresholded (p &lt; 0.05) zstats<a class="headerlink" href="#thresholded-p-0-05-zstats" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nipype_cope1</span> <span class="o">=</span> <span class="s1">&#39;./output_level3/level3_results/contrast_1/thresholded/_contr_id_1/zstat1_maths_threshold.nii.gz&#39;</span>
@@ -2784,6 +2806,7 @@ If we have an ANOVA-like design, using <a class="reference external" href="https
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -2887,7 +2910,7 @@ By Neurodesk Team
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -2911,8 +2934,8 @@ By Neurodesk Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
