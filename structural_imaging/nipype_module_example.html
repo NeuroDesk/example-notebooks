@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Basic Nipype Example &#8212; Neurodesk</title>
   
@@ -18,41 +19,43 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-4Z9774J59Y"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -60,23 +63,22 @@
                 gtag('js', new Date());
                 gtag('config', 'G-4Z9774J59Y');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){ dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-4Z9774J59Y');
-            </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'structural_imaging/nipype_module_example';</script>
-    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/structural_imaging/nipype_module_example.html" />
-    <link rel="icon" href="../_static/neurodesk_logo.svg"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="QSMxT Example" href="qsmxt_example.html" />
-    <link rel="prev" title="Neurodesk environment" href="../intro.html" />
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nipype_module_example';</script>
+    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/nipype_module_example.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -86,9 +88,10 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -112,7 +115,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="../search.html"
+      action="search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -129,14 +132,11 @@
 </form></div>
   </div>
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -154,75 +154,27 @@
 
   
 
-<a class="navbar-brand logo" href="../intro.html">
+<a class="navbar-brand logo" href="#">
   
   
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/neurodesk_logo.svg" class="logo__image only-light" alt="Neurodesk - Home"/>
-    <script>document.write(`<img src="../_static/neurodesk_logo.svg" class="logo__image only-dark" alt="Neurodesk - Home"/>`);</script>
   
+    <p class="title logo__title">Neurodesk</p>
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Neurodesk environment
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Basic Nipype Example
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Structural Imaging</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Basic Nipype Example</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="qsmxt_example.html">QSMxT Example</a></li>
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="sct_toolbox_example.html">SCT Toolbox Example</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="freesurfer_example.html">Freesurefer Example</a></li>
-
-
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Imaging</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/nipype_fsl_all_levels_flanker.html">FSL’s fMRI Data Analysis via Nipype</a></li>
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/fmriprep_example.html">Fmriprep Example</a></li>
-</ul>
-
+        
     </div>
 </nav></div>
     </div>
@@ -275,7 +227,7 @@
       
       
       
-      <li><a href="https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/main?labpath=/home/jovyan/examples/example-notebooks/books/v2/gh/NeuroDesk/example-notebooks/main?urlpath=lab/tree/books/structural_imaging/nipype_module_example.ipynb" target="_blank"
+      <li><a href="https://play-iowa.neurodesk.org/hub/user-redirect/lab/tree/example-notebooks/books/v2/gh/NeuroDesk/example-notebooks/main?urlpath=lab/tree/books/nipype_module_example.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -284,7 +236,7 @@
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img src="_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -293,7 +245,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/structural_imaging/nipype_module_example.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/nipype_module_example.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +254,7 @@
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -341,7 +293,7 @@
       
       
       
-      <li><a href="https://github.com/NeuroDesk/example-notebooks/edit/main/books/structural_imaging/nipype_module_example.ipynb" target="_blank"
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/edit/main/books/nipype_module_example.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -358,7 +310,7 @@
       
       
       
-      <li><a href="https://github.com/NeuroDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Fstructural_imaging/nipype_module_example.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Fnipype_module_example.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -388,7 +340,7 @@
       
       
       
-      <li><a href="../_sources/structural_imaging/nipype_module_example.ipynb" target="_blank"
+      <li><a href="_sources/nipype_module_example.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -500,16 +452,16 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
-  <p><a href="https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/main?labpath=/home/jovyan/examples/example-notebooks/books/structural_imaging/nipype_module_example.ipynb" target="_parent"><img src="https://img.shields.io/badge/launch-binder-579aca.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADUElEQVR4nCyTzUtkRxfGn6pTtz/FtvsVp32NKBgF6QiBCU505xBpBdsJiMkyi2SRxSSEZPI3JKuEbGYREgaCi0zMENBeSCSCqwzRCCIzSBtHuqEl9ihif9zbfe+tqnCaqdXh1q1znuec31EAkM/nEYlEcH5+jmw2K5VSwvM8rVT3GmEYIh6PUxiGtlKpmNHRUQRBgK2tLdDi4iLOzs4wMjKCaDRKxhijlLIRx0kmk8lhIkoHQeArpTpaa5vJZCgej9vj42NMT09DVSoVXF5ewm21SAihAbwJ4HM/CO42ms2slJIT/wvgD2vtN9baQ8/zqFqtaiKCYIlLS0uklNJBEHwspfyu2WpF+lIpTIyPo9Fs4sXZGYzWiMVinTAMPyWi7621VCwWtSgUCuxNSynfl1L+zDLvzs3pd+/do/8PDsJrt1EqlfDL+rp+9vw5xWIxobV+T2u97jgOScdxjLU2o5R66LquffvOHfPJ/fuqL5USFxcXgs9bt2+LLx88UIPZrAmCwBLRQwBpfistayFaBZCBELqvr4+01uAJOI6DiOPg5uYG2Vu3MDc3R51ORwsh+olopft2cnISxpgvhBBvdNptWyqVZOnkBP/LZPD6xARe1mqonp+jVqvh1ydPcHV1ZdiGtbZORL91m7i8vLzt+/47+Xxe53I5+vPpU9xcX+O14WEcHBygv78fuVwOPP/t7W19eHhI0Wj0942NjbxaXV1Fu91uEhFb6c52fn4ejUYD+/v73XhsbIxBQrlcxs7ODqSUFkBjZWUFMpPJwFq7z/Stra1ZrthqtdgWewZb9DyPi6BYLHIC+2oSf/f29kIODQ1Ba/2YIerp6RG+79tkMgm+dF23i3E6nWYGGF/L/xhjQmvt41QqBbm3t8cQ/QPgaykllUqlIAgCI4RAIpFgCsFxo1E35XI5UEoRgK+klC9OT09JLCwsCMdx5NHRkZmamnqktf5gYGAAMzMzmJ2dNaxid3dXsrV6vQ4ierS5uflhoVCQYRgawcsEQLDsRCJhr6+vP/J9/7NOp5Nj2dwL3rxYLPZMKfVtOp3+0XVdwX0CYBXL44ArWWsZrB9yudxP1Wp12vO88VfLdNLTk/yrVnvpu64rm82m4e98/gsAAP//Lbmu802E+U4AAAAASUVORK5CYII=" alt="Open In Binder"/>  </a>
+  <p><a href="https://play-iowa.neurodesk.org/hub/user-redirect/lab/tree/example-notebooks/books/structural_imaging/nipype_module_example.ipynb" target="_parent"><img src="https://img.shields.io/badge/launch-binder-579aca.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADUElEQVR4nCyTzUtkRxfGn6pTtz/FtvsVp32NKBgF6QiBCU505xBpBdsJiMkyi2SRxSSEZPI3JKuEbGYREgaCi0zMENBeSCSCqwzRCCIzSBtHuqEl9ihif9zbfe+tqnCaqdXh1q1znuec31EAkM/nEYlEcH5+jmw2K5VSwvM8rVT3GmEYIh6PUxiGtlKpmNHRUQRBgK2tLdDi4iLOzs4wMjKCaDRKxhijlLIRx0kmk8lhIkoHQeArpTpaa5vJZCgej9vj42NMT09DVSoVXF5ewm21SAihAbwJ4HM/CO42ms2slJIT/wvgD2vtN9baQ8/zqFqtaiKCYIlLS0uklNJBEHwspfyu2WpF+lIpTIyPo9Fs4sXZGYzWiMVinTAMPyWi7621VCwWtSgUCuxNSynfl1L+zDLvzs3pd+/do/8PDsJrt1EqlfDL+rp+9vw5xWIxobV+T2u97jgOScdxjLU2o5R66LquffvOHfPJ/fuqL5USFxcXgs9bt2+LLx88UIPZrAmCwBLRQwBpfistayFaBZCBELqvr4+01uAJOI6DiOPg5uYG2Vu3MDc3R51ORwsh+olopft2cnISxpgvhBBvdNptWyqVZOnkBP/LZPD6xARe1mqonp+jVqvh1ydPcHV1ZdiGtbZORL91m7i8vLzt+/47+Xxe53I5+vPpU9xcX+O14WEcHBygv78fuVwOPP/t7W19eHhI0Wj0942NjbxaXV1Fu91uEhFb6c52fn4ejUYD+/v73XhsbIxBQrlcxs7ODqSUFkBjZWUFMpPJwFq7z/Stra1ZrthqtdgWewZb9DyPi6BYLHIC+2oSf/f29kIODQ1Ba/2YIerp6RG+79tkMgm+dF23i3E6nWYGGF/L/xhjQmvt41QqBbm3t8cQ/QPgaykllUqlIAgCI4RAIpFgCsFxo1E35XI5UEoRgK+klC9OT09JLCwsCMdx5NHRkZmamnqktf5gYGAAMzMzmJ2dNaxid3dXsrV6vQ4ierS5uflhoVCQYRgawcsEQLDsRCJhr6+vP/J9/7NOp5Nj2dwL3rxYLPZMKfVtOp3+0XVdwX0CYBXL44ArWWsZrB9yudxP1Wp12vO88VfLdNLTk/yrVnvpu64rm82m4e98/gsAAP//Lbmu802E+U4AAAAASUVORK5CYII=" alt="Open In Binder"/>  </a>
 <a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/structural_imaging/nipype_module_example.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>   </a></p>
 <section id="basic-nipype-example">
-<h1>Basic Nipype Example<a class="headerlink" href="#basic-nipype-example" title="Link to this heading">#</a></h1>
+<h1>Basic Nipype Example<a class="headerlink" href="#basic-nipype-example" title="Permalink to this heading">#</a></h1>
 <p>Author: Steffen Bollmann</p>
 </section>
 <section id="setup-neurodesk">
-<h1>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Link to this heading">#</a></h1>
+<h1>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -522,15 +474,15 @@ document.write(`
   <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MPLCONFIGDIR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content/matplotlib-mpldir&quot;</span>
   <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LMOD_CMD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/share/lmod/lmod/libexec/lmod&quot;</span>
 
-  <span class="o">!</span>curl<span class="w"> </span>-J<span class="w"> </span>-O<span class="w"> </span>https://raw.githubusercontent.com/NeuroDesk/neurocommand/main/googlecolab_setup.sh
-  <span class="o">!</span>chmod<span class="w"> </span>+x<span class="w"> </span>googlecolab_setup.sh
+  <span class="o">!</span>curl -J -O https://raw.githubusercontent.com/NeuroDesk/neurocommand/main/googlecolab_setup.sh
+  <span class="o">!</span>chmod +x googlecolab_setup.sh
   <span class="o">!</span>./googlecolab_setup.sh
 
   <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MODULEPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">)))))</span>
 
   <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">output</span>
   <span class="n">output</span><span class="o">.</span><span class="n">enable_custom_widget_manager</span><span class="p">()</span>
-  <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>ipyniivue
+  <span class="o">!</span>pip install ipyniivue
 </pre></div>
 </div>
 </div>
@@ -544,10 +496,18 @@ cat /proc/cpuinfo | grep &#39;model name&#39; | uniq
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: AuthenticAMD
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>model name	: AMD EPYC-Rome Processor
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="demonstrating-the-module-system-in-python-and-nipype">
-<h1>Demonstrating the module system in Python and Nipype<a class="headerlink" href="#demonstrating-the-module-system-in-python-and-nipype" title="Link to this heading">#</a></h1>
+<h1>Demonstrating the module system in Python and Nipype<a class="headerlink" href="#demonstrating-the-module-system-in-python-and-nipype" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we can use lmod to load fsl in a specific version</span>
@@ -558,7 +518,37 @@ cat /proc/cpuinfo | grep &#39;model name&#39; | uniq
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;fsl/6.0.4&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Lmod&#39;,
+ &#39;Warning:&#39;,
+ &#39;The&#39;,
+ &#39;environment&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;has&#39;,
+ &#39;been&#39;,
+ &#39;changed&#39;,
+ &#39;in&#39;,
+ &#39;unexpected&#39;,
+ &#39;ways.&#39;,
+ &#39;Lmod&#39;,
+ &#39;is&#39;,
+ &#39;unable&#39;,
+ &#39;to&#39;,
+ &#39;use&#39;,
+ &#39;given&#39;,
+ &#39;MODULEPATH.&#39;,
+ &#39;It&#39;,
+ &#39;is&#39;,
+ &#39;using:&#39;,
+ &#39;&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM::&quot;.&#39;,
+ &#39;Please&#39;,
+ &#39;use&#39;,
+ &#39;&quot;module&#39;,
+ &#39;use&#39;,
+ &#39;to&#39;,
+ &#39;change&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;instead.&#39;,
+ &#39;fsl/6.0.4&#39;]
 </pre></div>
 </div>
 </div>
@@ -571,6 +561,11 @@ cat /proc/cpuinfo | grep &#39;model name&#39; | uniq
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.0.4:ddd0a010
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -578,9 +573,41 @@ cat /proc/cpuinfo | grep &#39;model name&#39; | uniq
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Usage:    bet &lt;input&gt; &lt;output&gt; [options]
+
+Main bet2 options:
+  -o          generate brain surface outline overlaid onto original image
+  -m          generate binary brain mask
+  -s          generate approximate skull image
+  -n          don&#39;t generate segmented brain image output
+  -f &lt;f&gt;      fractional intensity threshold (0-&gt;1); default=0.5; smaller values give larger brain outline estimates
+  -g &lt;g&gt;      vertical gradient in fractional intensity threshold (-1-&gt;1); default=0; positive values give larger brain outline at bottom, smaller at top
+  -r &lt;r&gt;      head radius (mm not voxels); initial surface sphere is set to half of this
+  -c &lt;x y z&gt;  centre-of-gravity (voxels not mm) of initial mesh surface.
+  -t          apply thresholding to segmented brain image and mask
+  -e          generates brain surface as mesh in .vtk format
+
+Variations on default bet2 functionality (mutually exclusive options):
+  (default)   just run bet2
+  -R          robust brain centre estimation (iterates BET several times)
+  -S          eye &amp; optic nerve cleanup (can be useful in SIENA - disables -o option)
+  -B          bias field &amp; neck cleanup (can be useful in SIENA)
+  -Z          improve BET if FOV is very small in Z (by temporarily padding end slices)
+  -F          apply to 4D FMRI data (uses -f 0.3 and dilates brain mask slightly)
+  -A          run bet2 and then betsurf to get additional skull and scalp surfaces (includes registrations)
+  -A2 &lt;T2&gt;    as with -A, when also feeding in non-brain-extracted T2 (includes registrations)
+
+Miscellaneous options:
+  -v          verbose (switch on diagnostic messages)
+  -h          display this help, then exits
+  -d          debug (don&#39;t delete temporary intermediate images)
+</pre></div>
+</div>
+</div>
 </div>
 <section id="load-afni-and-spm-as-well">
-<h2>Load afni and SPM as well<a class="headerlink" href="#load-afni-and-spm-as-well" title="Link to this heading">#</a></h2>
+<h2>Load afni and SPM as well<a class="headerlink" href="#load-afni-and-spm-as-well" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;afni/22.3.06&#39;</span><span class="p">)</span>
@@ -589,10 +616,63 @@ cat /proc/cpuinfo | grep &#39;model name&#39; | uniq
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lmod Warning: The environment MODULEPATH has been changed in unexpected ways.
+Lmod is unable to use given MODULEPATH. It is using:
+
+&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM::&quot;.
+
+Please use &quot;module use ...&quot; to change MODULEPATH instead. 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lmod Warning: The environment MODULEPATH has been changed in unexpected ways.
+Lmod is unable to use given MODULEPATH. It is using:
+
+&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM::&quot;.
+
+Please use &quot;module use ...&quot; to change MODULEPATH instead. 
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Lmod&#39;,
+ &#39;Warning:&#39;,
+ &#39;The&#39;,
+ &#39;environment&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;has&#39;,
+ &#39;been&#39;,
+ &#39;changed&#39;,
+ &#39;in&#39;,
+ &#39;unexpected&#39;,
+ &#39;ways.&#39;,
+ &#39;Lmod&#39;,
+ &#39;is&#39;,
+ &#39;unable&#39;,
+ &#39;to&#39;,
+ &#39;use&#39;,
+ &#39;given&#39;,
+ &#39;MODULEPATH.&#39;,
+ &#39;It&#39;,
+ &#39;is&#39;,
+ &#39;using:&#39;,
+ &#39;&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM::&quot;.&#39;,
+ &#39;Please&#39;,
+ &#39;use&#39;,
+ &#39;&quot;module&#39;,
+ &#39;use&#39;,
+ &#39;to&#39;,
+ &#39;change&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;instead.&#39;,
+ &#39;fsl/6.0.4&#39;,
+ &#39;afni/22.3.06&#39;,
+ &#39;spm12/r7771&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="download-test-data">
-<h2>download test data<a class="headerlink" href="#download-test-data" title="Link to this heading">#</a></h2>
+<h2>download test data<a class="headerlink" href="#download-test-data" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
@@ -615,6 +695,31 @@ fi
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nii.gz does not exist. So, it needs to be downloaded.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloading now ...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0.00/72.7M [00:00&lt;?, ?bytes/s]
+  2%|▏         | 1.43M/72.7M [00:00&lt;00:05, 14.2Mbytes/s]
+ 13%|█▎        | 9.45M/72.7M [00:00&lt;00:01, 51.7Mbytes/s]
+ 27%|██▋       | 19.4M/72.7M [00:00&lt;00:00, 73.3Mbytes/s]
+ 40%|███▉      | 28.8M/72.7M [00:00&lt;00:00, 78.1Mbytes/s]
+ 52%|█████▏    | 38.1M/72.7M [00:00&lt;00:00, 83.2Mbytes/s]
+ 69%|██████▉   | 50.3M/72.7M [00:00&lt;00:00, 90.3Mbytes/s]
+ 82%|████████▏ | 59.3M/72.7M [00:00&lt;00:00, 86.7Mbytes/s]
+100%|██████████| 72.7M/72.7M [00:00&lt;00:00, 85.8Mbytes/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nii.gz exists. So, it needs to be unpacked and deleted
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>unpacking now ...
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -622,14 +727,19 @@ fi
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sub-01_ses-01_7T_T1w_defaced.nii
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="run-nipype-pipeline">
-<h2>run nipype pipeline<a class="headerlink" href="#run-nipype-pipeline" title="Link to this heading">#</a></h2>
+<h2>run nipype pipeline<a class="headerlink" href="#run-nipype-pipeline" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">nipype</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
+!pip install nipype
 </pre></div>
 </div>
 </div>
@@ -653,10 +763,70 @@ fi
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240604-20:53:16,456 nipype.interface WARNING:
+	 FSLOUTPUTTYPE environment variable is not set. Setting FSLOUTPUTTYPE=NIFTI
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240604-20:53:31,436 nipype.interface INFO:
+	 stderr 2024-06-04T20:53:31.436356:++ 3dedge3: AFNI version=AFNI_22.3.06 (Nov 15 2022) [64-bit]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240604-20:53:31,444 nipype.interface INFO:
+	 stderr 2024-06-04T20:53:31.444305:** AFNI converts NIFTI_datatype=4 (INT16) in file /storage/tmp/tmp1pua9_w4/sub-01_ses-01_7T_T1w_defaced.nii to FLOAT32
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240604-20:53:31,445 nipype.interface INFO:
+	 stderr 2024-06-04T20:53:31.444305:     Warnings of this type will be muted for this session.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240604-20:53:31,446 nipype.interface INFO:
+	 stderr 2024-06-04T20:53:31.444305:     Set AFNI_NIFTI_TYPE_WARN to YES to see them all, NO to see none.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240604-20:53:31,457 nipype.interface INFO:
+	 stderr 2024-06-04T20:53:31.457874:*+ WARNING:   If you are performing spatial transformations on an oblique dset,
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240604-20:53:31,459 nipype.interface INFO:
+	 stderr 2024-06-04T20:53:31.457874:  such as /storage/tmp/tmp1pua9_w4/sub-01_ses-01_7T_T1w_defaced.nii,
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240604-20:53:31,460 nipype.interface INFO:
+	 stderr 2024-06-04T20:53:31.457874:  or viewing/combining it with volumes of differing obliquity,
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240604-20:53:31,461 nipype.interface INFO:
+	 stderr 2024-06-04T20:53:31.457874:  you should consider running: 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240604-20:53:31,462 nipype.interface INFO:
+	 stderr 2024-06-04T20:53:31.457874:     3dWarp -deoblique 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240604-20:53:31,463 nipype.interface INFO:
+	 stderr 2024-06-04T20:53:31.457874:  on this and  other oblique datasets in the same session.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240604-20:53:31,464 nipype.interface INFO:
+	 stderr 2024-06-04T20:53:31.457874: See 3dWarp -help for details.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240604-20:53:31,466 nipype.interface INFO:
+	 stderr 2024-06-04T20:53:31.466024:++ Oblique dataset:/storage/tmp/tmp1pua9_w4/sub-01_ses-01_7T_T1w_defaced.nii is 1.253358 degrees from plumb.
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">ls</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sub-01_ses-01_7T_T1w_defaced_brain.nii.gz  sub-01_ses-01_7T_T1w_defaced.nii
+sub-01_ses-01_7T_T1w_defaced_edges.nii
 </pre></div>
 </div>
 </div>
@@ -687,7 +857,7 @@ fi
   <span class="n">cbar</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">get_figure</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns figure and axis objects to plot on. </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -722,6 +892,11 @@ fi
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/c681137d628faf6f935292b9ff427e131db1fe334b697f018fb31e0092330b80.png" src="_images/c681137d628faf6f935292b9ff427e131db1fe334b697f018fb31e0092330b80.png" />
+<img alt="_images/40ce48df6f5c3a319fffea470297536df992a720efba8b5ae0a4adc06fdf8885.png" src="_images/40ce48df6f5c3a319fffea470297536df992a720efba8b5ae0a4adc06fdf8885.png" />
+<img alt="_images/4b14e013d2318e4cac1b0166737eb3377a0ab83bafd52bff680c4d05455981bc.png" src="_images/4b14e013d2318e4cac1b0166737eb3377a0ab83bafd52bff680c4d05455981bc.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -730,6 +905,18 @@ fi
 <span class="n">nv</span> <span class="o">=</span> <span class="n">AnyNiivue</span><span class="p">()</span>
 <span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./sub-01_ses-01_7T_T1w_defaced_brain.nii.gz&quot;</span><span class="p">}])</span>
 <span class="n">nv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">ipyniivue</span> <span class="kn">import</span> <span class="n">AnyNiivue</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">nv</span> <span class="o">=</span> <span class="n">AnyNiivue</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./sub-01_ses-01_7T_T1w_defaced_brain.nii.gz&quot;</span><span class="p">}])</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;AnyNiivue&#39; from &#39;ipyniivue&#39; (/home/ubuntu/.local/lib/python3.10/site-packages/ipyniivue/__init__.py)
 </pre></div>
 </div>
 </div>
@@ -745,6 +932,17 @@ fi
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nipype.interfaces.base.support.InterfaceResult at 0x7fdd428c60e0&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -753,11 +951,25 @@ fi
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/382e4fa294f2a6744cfea52f973f2b8c7f0fc3574ad15e72431e9e9c0a3adc1a.png" src="_images/382e4fa294f2a6744cfea52f973f2b8c7f0fc3574ad15e72431e9e9c0a3adc1a.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./wsub-01_ses-01_7T_T1w_defaced.nii&quot;</span><span class="p">}])</span>
 <span class="n">nv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./wsub-01_ses-01_7T_T1w_defaced.nii&quot;</span><span class="p">}])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">nv</span>
+
+<span class="ne">NameError</span>: name &#39;nv&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -778,7 +990,7 @@ fi
         },
         kernelOptions: {
             name: "python3",
-            path: "./structural_imaging"
+            path: "./."
         },
         predefinedOutput: true
     }
@@ -795,24 +1007,6 @@ fi
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../intro.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Neurodesk environment</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="qsmxt_example.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">QSMxT Example</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -821,7 +1015,6 @@ fi
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -862,7 +1055,7 @@ By Neurodesk Team
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
     
   </p>
@@ -886,8 +1079,8 @@ By Neurodesk Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
