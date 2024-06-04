@@ -21,7 +21,7 @@ execute:
 launch_buttons:
   colab_url: "https://colab.research.google.com"
   notebook_interface: "jupyterlab"
-  binderhub_url: "https://play-ashburn.neurodesk.org/v2/gh/neurodesk/example-notebooks/main?labpath=/home/jovyan/examples/example-notebooks/books"
+  binderhub_url: "https://play-iowa.neurodesk.org/hub/user-redirect/lab/tree/example-notebooks/books"
 
 # Information about where the book exists on the web
 repository:
