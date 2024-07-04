@@ -11,7 +11,7 @@ If you're planning to create a new example notebook, please follow these steps:
 
 2. Create a New Notebook: Make sure your notebook runs as expected. This includes sections for the introduction, data preparation, analysis, results.
 
-3. Add an entry to table of content: Once your pull request is merged, you can add an entry to the `books/_toc.yml` file. This will add your notebook to the table of contents on the main page.
+3. Add an entry to table of content: To have your notebook rendered, you need to add an entry to the `books/_toc.yml` file. This will add your notebook to the table of contents on the main page.
 
 4. Save and Submit: Once you're done, save your notebook and submit it for review. You can do this by creating a pull request on our GitHub repository. 
 
