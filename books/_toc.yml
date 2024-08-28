@@ -28,3 +28,4 @@ parts:
   - caption: "Workflow"
     chapters:
       - file: workflows/Nipype_on_NeuroDesk_RISE
+      - file: workflows/RISE_slideshow
