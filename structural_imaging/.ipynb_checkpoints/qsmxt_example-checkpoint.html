@@ -1,0 +1,2492 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>QSMxT Example &#8212; Neurodesk</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-4Z9774J59Y"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-4Z9774J59Y');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'qsmxt_example-checkpoint';</script>
+    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/qsmxt_example-checkpoint.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Neurodesk</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    QSMxT Example
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://play-iowa.neurodesk.org/hub/user-redirect/lab/tree/example-notebooks/books/v2/gh/NeuroDesk/example-notebooks/main?urlpath=lab/tree/books/qsmxt_example-checkpoint.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/qsmxt_example-checkpoint.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/NeuroDesk/example-notebooks" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/edit/main/books/qsmxt_example-checkpoint.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Fqsmxt_example-checkpoint.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/qsmxt_example-checkpoint.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>QSMxT Example</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">QSMxT Example</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#qsmxt-interactive-notebook">QSMxT Interactive Notebook</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-qsm">What is QSM?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-qsmxt">What is QSMxT?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-access-qsmxt">How do I access QSMxT?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#download-example-dicoms">Download example DICOMs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-qsmxt">Load QSMxT</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-standardisation">Data standardisation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-dicoms">Sort DICOMs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-to-bids">Convert to BIDS</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-input-data">Inspect input data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#run-qsmxt">Run QSMxT</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#view-results">View results</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qsm-results">QSM results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentations">Segmentations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-csvs">Analysis CSVs</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a href="https://play-iowa.neurodesk.org/hub/user-redirect/lab/tree/example-notebooks/books/structural_imaging/qsmxt_example.ipynb" target="_parent"><img src="https://img.shields.io/badge/launch-binder-579aca.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADUElEQVR4nCyTzUtkRxfGn6pTtz/FtvsVp32NKBgF6QiBCU505xBpBdsJiMkyi2SRxSSEZPI3JKuEbGYREgaCi0zMENBeSCSCqwzRCCIzSBtHuqEl9ihif9zbfe+tqnCaqdXh1q1znuec31EAkM/nEYlEcH5+jmw2K5VSwvM8rVT3GmEYIh6PUxiGtlKpmNHRUQRBgK2tLdDi4iLOzs4wMjKCaDRKxhijlLIRx0kmk8lhIkoHQeArpTpaa5vJZCgej9vj42NMT09DVSoVXF5ewm21SAihAbwJ4HM/CO42ms2slJIT/wvgD2vtN9baQ8/zqFqtaiKCYIlLS0uklNJBEHwspfyu2WpF+lIpTIyPo9Fs4sXZGYzWiMVinTAMPyWi7621VCwWtSgUCuxNSynfl1L+zDLvzs3pd+/do/8PDsJrt1EqlfDL+rp+9vw5xWIxobV+T2u97jgOScdxjLU2o5R66LquffvOHfPJ/fuqL5USFxcXgs9bt2+LLx88UIPZrAmCwBLRQwBpfistayFaBZCBELqvr4+01uAJOI6DiOPg5uYG2Vu3MDc3R51ORwsh+olopft2cnISxpgvhBBvdNptWyqVZOnkBP/LZPD6xARe1mqonp+jVqvh1ydPcHV1ZdiGtbZORL91m7i8vLzt+/47+Xxe53I5+vPpU9xcX+O14WEcHBygv78fuVwOPP/t7W19eHhI0Wj0942NjbxaXV1Fu91uEhFb6c52fn4ejUYD+/v73XhsbIxBQrlcxs7ODqSUFkBjZWUFMpPJwFq7z/Stra1ZrthqtdgWewZb9DyPi6BYLHIC+2oSf/f29kIODQ1Ba/2YIerp6RG+79tkMgm+dF23i3E6nWYGGF/L/xhjQmvt41QqBbm3t8cQ/QPgaykllUqlIAgCI4RAIpFgCsFxo1E35XI5UEoRgK+klC9OT09JLCwsCMdx5NHRkZmamnqktf5gYGAAMzMzmJ2dNaxid3dXsrV6vQ4ierS5uflhoVCQYRgawcsEQLDsRCJhr6+vP/J9/7NOp5Nj2dwL3rxYLPZMKfVtOp3+0XVdwX0CYBXL44ArWWsZrB9yudxP1Wp12vO88VfLdNLTk/yrVnvpu64rm82m4e98/gsAAP//Lbmu802E+U4AAAAASUVORK5CYII=" alt="Open In Binder"/>  </a>
+<a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/structural_imaging/qsmxt_example.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>   </a></p>
+<section id="qsmxt-example">
+<h1>QSMxT Example<a class="headerlink" href="#qsmxt-example" title="Permalink to this heading">#</a></h1>
+<p>Author: Ashley Stewart</p>
+<p>Original paper: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1002/mrm.29048">https://onlinelibrary.wiley.com/doi/10.1002/mrm.29048</a></p>
+</section>
+<section id="setup-neurodesk">
+<h1>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
+import os
+import sys
+IN_COLAB = &#39;google.colab&#39; in sys.modules
+
+if IN_COLAB:
+  os.environ[&quot;LD_PRELOAD&quot;] = &quot;&quot;;
+  os.environ[&quot;APPTAINER_BINDPATH&quot;] = &quot;/content,/tmp,/cvmfs&quot;
+  os.environ[&quot;MPLCONFIGDIR&quot;] = &quot;/content/matplotlib-mpldir&quot;
+  os.environ[&quot;LMOD_CMD&quot;] = &quot;/usr/share/lmod/lmod/libexec/lmod&quot;
+
+  !curl -J -O https://raw.githubusercontent.com/NeuroDesk/neurocommand/main/googlecolab_setup.sh
+  !chmod +x googlecolab_setup.sh
+  !./googlecolab_setup.sh
+
+  os.environ[&quot;MODULEPATH&quot;] = &#39;:&#39;.join(map(str, list(map(lambda x: os.path.join(os.path.abspath(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;), x),os.listdir(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;)))))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
+<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;vendor&#39;</span> <span class="p">|</span> uniq
+<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;model name&#39;</span> <span class="p">|</span> uniq
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: AuthenticAMD
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>model name	: AMD EPYC-Rome Processor
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="qsmxt-interactive-notebook">
+<h1>QSMxT Interactive Notebook<a class="headerlink" href="#qsmxt-interactive-notebook" title="Permalink to this heading">#</a></h1>
+<p>This interactive notebook estimates Quantitative Susceptibility Maps (QSMs) for two gradient-echo (GRE) MRI acquisitions using <a class="reference external" href="https://github.com/QSMxT/QSMxT">QSMxT</a> provided by the <a class="reference external" href="https://neurodesk.org">Neurodesk</a> project.</p>
+<section id="what-is-qsm">
+<h2>What is QSM?<a class="headerlink" href="#what-is-qsm" title="Permalink to this heading">#</a></h2>
+<p>QSM is a form of quantitative MRI (qMRI) that estimates the magnetic susceptibility distribution across an imaged object. Magnetic susceptibility is the degree to which a material becomes magnetised by an external magnetic field. Major contributors to susceptibility include iron, calcium, and myelin, with the susceptibility of water typically approximating a zero-reference, though it is slightly diamagnetic. Read more about QSM <a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1002/mrm.25358">here</a>.</p>
+</section>
+<section id="what-is-qsmxt">
+<h2>What is QSMxT?<a class="headerlink" href="#what-is-qsmxt" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://qsmxt.github.io">QSMxT</a> is a suite of tools for building and running automated pipelines for QSM that:</p>
+<ul class="simple">
+<li><p>is available open-source without any licensing required;</p></li>
+<li><p>is distributed as a software container making it straightforward to access and install (Neurodesk!)</p></li>
+<li><p>scales its processing to execute across many acquisitions through jobs parallelisation (using multiple processors or HPCs) provided by <a class="reference external" href="https://nipype.readthedocs.io">Nipype</a>;</p></li>
+<li><p>automates steps that usually require manual intervention and scripting, including:</p>
+<ul>
+<li><p>DICOM to <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/index.html">BIDS</a> conversion;</p></li>
+<li><p>QSM reconstruction using a range of algorithms;</p></li>
+<li><p>segmentation using <a class="reference external" href="https://github.com/Deep-MI/FastSurfer">FastSurfer</a>;</p></li>
+<li><p>group space generation using <a class="reference external" href="https://github.com/ANTsX/ANTs">ANTs</a>;</p></li>
+<li><p>export of susceptibility statistics by subject and region of interest (ROI) to CSV.</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="image.png" src="../images/image.png" /></p>
+</section>
+<section id="how-do-i-access-qsmxt">
+<h2>How do I access QSMxT?<a class="headerlink" href="#how-do-i-access-qsmxt" title="Permalink to this heading">#</a></h2>
+<p>There are a few ways you can access QSMxT:</p>
+<ul class="simple">
+<li><p><strong>This notebook</strong>: You can access QSMxT in this notebook right now!</p>
+<ul>
+<li><p>If you are running this on a Neurodesk Play instance, you can upload your own data into the sidebar via drag-and-drop.</p></li>
+</ul>
+</li>
+<li><p><strong>Neurodesktop</strong>: QSMxT is in the applications menu of Neurodesktop.</p>
+<ul>
+<li><p>On Neurodesk Play, upload your own data into the desktop via drag-and-drop.</p></li>
+<li><p>On a local install of Neurodesk, bring any necessary files into the shared <code class="docutils literal notranslate"><span class="pre">~/neurodesktop-storage</span></code> directory</p></li>
+</ul>
+</li>
+<li><p><strong>Local install</strong>: QSMxT can also be installed via the <a class="reference external" href="https://qsmxt.github.io/QSMxT/installation">Docker container</a></p></li>
+<li><p><strong>HPC install</strong>: QSMxT can also be installed via the <a class="reference external" href="https://qsmxt.github.io/QSMxT/installation">Singularity container</a> for use on HPCs</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="download-example-dicoms">
+<h1>Download example DICOMs<a class="headerlink" href="#download-example-dicoms" title="Permalink to this heading">#</a></h1>
+<p>Here, we download some example DICOMs from our OSF repository for QSMxT.</p>
+<p>These data include GRE and T1-weighted acquisitions for one subject (duplicated to act as two subjects).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install osfclient
+<span class="o">!</span>osf -p ru43c clone . &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<span class="o">!</span>tar xf osfstorage/dicoms-unsorted.tar
+<span class="o">!</span>rm -rf osfstorage/
+<span class="o">!</span>tree dicoms-unsorted <span class="p">|</span> head
+<span class="o">!</span><span class="nb">echo</span> -e <span class="s2">&quot;...\nThere are `ls dicoms-unsorted | wc -l` unsorted DICOMs in ./dicoms-unsorted/&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: osfclient in /home/ubuntu/.local/lib/python3.10/site-packages (0.0.5)
+Requirement already satisfied: requests in /usr/lib/python3/dist-packages (from osfclient) (2.25.1)
+Requirement already satisfied: tqdm in /usr/lib/python3/dist-packages (from osfclient) (4.57.0)
+Requirement already satisfied: six in /usr/lib/python3/dist-packages (from osfclient) (1.16.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Error parsing dependencies of distro-info: Invalid version: &#39;1.1build1&#39;</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Error parsing dependencies of python-debian: Invalid version: &#39;0.1.43ubuntu1&#39;</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">dicoms-unsorted</span>
+├── MR.1.100.dcm
+├── MR.1.101.dcm
+├── MR.1.102.dcm
+├── MR.1.103.dcm
+├── MR.1.104.dcm
+├── MR.1.105.dcm
+├── MR.1.106.dcm
+├── MR.1.107.dcm
+├── MR.1.108.dcm
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>...
+There are 1216 unsorted DICOMs in ./dicoms-unsorted/
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="load-qsmxt">
+<h1>Load QSMxT<a class="headerlink" href="#load-qsmxt" title="Permalink to this heading">#</a></h1>
+<p>To load QSMxT inside a notebook, we can use the available module system:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lmod</span>
+<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;qsmxt/7.2.0&#39;</span><span class="p">)</span>
+<span class="o">!</span>qsmxt --version
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: QSMxT v7.2.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-standardisation">
+<h1>Data standardisation<a class="headerlink" href="#data-standardisation" title="Permalink to this heading">#</a></h1>
+<p>QSMxT requires input data to conform to the <a class="reference external" href="https://bids.neuroimaging.io/">Brain Imaging Data Structure (BIDS)</a>.</p>
+<p>Luckily, QSMxT also provides scripts that can convert unorganised NIfTI or DICOM images to BIDS. If you are using NIfTI images and do not have DICOMs, see <a class="reference external" href="https://qsmxt.github.io/QSMxT/using-qsmxt/data-preparation#nifti-to-bids">nifti-convert</a>.</p>
+<section id="sort-dicoms">
+<h2>Sort DICOMs<a class="headerlink" href="#sort-dicoms" title="Permalink to this heading">#</a></h2>
+<p>Before we can convert DICOMs to BIDS cleanly, we need to sort the DICOMs by subject, session and series.</p>
+<p>We can sort the DICOMs using <code class="docutils literal notranslate"><span class="pre">dicom-sort</span></code>.</p>
+<p>Note that this script relies on accurate DICOM header information. If your data is sorted incorrectly, you may need to manually correct the sorting, or sort the files yourself. Be sure to follow the folder structure shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>dicom-sort dicoms-unsorted dicoms-sorted
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running QSMxT 7.2.0
+[INFO]: Command: /opt/miniconda-4.7.12.1/bin/dicom-sort dicoms-unsorted dicoms-sorted
+[INFO]: Python interpreter: /opt/miniconda-4.7.12.1/bin/python3.8
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Reading file list...
+[INFO]: 1216 DICOM files found.
+[INFO]: Sorting DICOMs in /storage/tmp/tmptkepv92h/dicoms-sorted...
+[INFO]: Identified subject: 1
+[INFO]: Identified session: 1 #1 20170705
+[INFO]: Identified series: sub-1/ses-20170705/series-6_mp2rage_highRes_0p5iso_slab
+[INFO]: Identified series: sub-1/ses-20170705/series-6_QSM_p2_1mmIso_TE20
+[INFO]: Identified session: 2 #1 20170705
+[INFO]: Identified series: sub-2/ses-20170705/series-6_QSM_p2_1mmIso_TE20
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Identified series: sub-2/ses-20170705/series-6_mp2rage_highRes_0p5iso_slab
+[INFO]: Identified series: sub-2/ses-20170705/series-5_QSM_p2_1mmIso_TE20
+[INFO]: Identified series: sub-1/ses-20170705/series-5_QSM_p2_1mmIso_TE20
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Finished
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can see clearly that there are two subjects, each with one session, each with three DICOM series:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree dicoms-sorted -L <span class="m">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">dicoms-sorted</span>
+├── log_2024-09-04_07-09-29425855.txt
+├── references.txt
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-1</span>
+│   └── <span class=" -Color -Color-Bold -Color-Bold-Blue">ses-20170705</span>
+│       ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">series-5_QSM_p2_1mmIso_TE20</span>
+│       ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">series-6_mp2rage_highRes_0p5iso_slab</span>
+│       └── <span class=" -Color -Color-Bold -Color-Bold-Blue">series-6_QSM_p2_1mmIso_TE20</span>
+└── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-2</span>
+    └── <span class=" -Color -Color-Bold -Color-Bold-Blue">ses-20170705</span>
+        ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">series-5_QSM_p2_1mmIso_TE20</span>
+        ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">series-6_mp2rage_highRes_0p5iso_slab</span>
+        └── <span class=" -Color -Color-Bold -Color-Bold-Blue">series-6_QSM_p2_1mmIso_TE20</span>
+
+10 directories, 2 files
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="convert-to-bids">
+<h2>Convert to BIDS<a class="headerlink" href="#convert-to-bids" title="Permalink to this heading">#</a></h2>
+<p>Now that the DICOMs are sorted, we can convert to BIDS using <code class="docutils literal notranslate"><span class="pre">dicom-convert</span></code>.</p>
+<p>The DICOM to BIDS conversion must identify which series should be used for QSM reconstruction (T2*-weighted), and which series should be used for segmentation (T1-weighted). Because this information is not stored in the DICOM header, the user must provide it, or QSMxT can make a guess based on the <code class="docutils literal notranslate"><span class="pre">ProtocolName</span></code> field. By default, QSMxT assumes series matching any of the patterns in <code class="docutils literal notranslate"><span class="pre">['*qsm*',</span> <span class="pre">'*t2starw*']</span></code> are to be used for QSM, and series matching the pattern <code class="docutils literal notranslate"><span class="pre">['*t1w*']</span></code> are to be used for segmentation. If series cannot be identified, the user must do so. At minimum, at least one QSM series must be identified.</p>
+<p>If QSMxT is run interactively, the user will be prompted to identify the relevant series’. However, because we are running QSMxT in a notebook, we disable the interactivity using <code class="docutils literal notranslate"><span class="pre">--auto_yes</span></code> and provide the missing information using command-line arguments (<code class="docutils literal notranslate"><span class="pre">--t1w_protocol_patterns</span></code> and <code class="docutils literal notranslate"><span class="pre">--qsm_protocol_patterns</span></code>). In this case, the T1-weighted scan requires identification, so we pass <code class="docutils literal notranslate"><span class="pre">--t1w_protocol_patterns</span> <span class="pre">&quot;*mp2rage*&quot;</span></code>:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>!dicom-convert dicoms-sorted bids \
+    --t1w_protocol_patterns &quot;*mp2rage*&quot; \
+    --auto_yes
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running QSMxT 7.2.0
+[INFO]: Command: /opt/miniconda-4.7.12.1/bin/dicom-convert dicoms-sorted bids --t1w_protocol_patterns *mp2rage* --auto_yes
+[INFO]: Python interpreter: /opt/miniconda-4.7.12.1/bin/python3.8
+[INFO]: Converting all DICOMs to NIfTI...
+[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmptkepv92h/dicoms-sorted/sub-2/ses-20170705/series-6_mp2rage_highRes_0p5iso_slab&quot; &gt;&gt; &quot;/storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmptkepv92h/dicoms-sorted/sub-2/ses-20170705/series-6_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmptkepv92h/dicoms-sorted/sub-2/ses-20170705/series-5_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmptkepv92h/dicoms-sorted/sub-1/ses-20170705/series-6_mp2rage_highRes_0p5iso_slab&quot; &gt;&gt; &quot;/storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmptkepv92h/dicoms-sorted/sub-1/ses-20170705/series-6_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmptkepv92h/dicoms-sorted/sub-1/ses-20170705/series-5_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Loading JSON headers from &#39;/storage/tmp/tmptkepv92h/bids/.../extra_data&#39; folders...
+[INFO]: Checking for GE data requiring correction...
+[INFO]: Loading updated JSON headers from &#39;/storage/tmp/tmptkepv92h/bids/.../extra_data&#39; folders...
+[INFO]: Enumerating protocol names from JSON headers...
+[INFO]: All protocol names identified: [&#39;mp2rage_highres_0p5iso_slab&#39;, &#39;qsm_p2_1mmiso_te20&#39;]
+[INFO]: Enumerating protocol names with QSM intention using match patterns [&#39;*t2starw*&#39;, &#39;*qsm*&#39;]...
+[INFO]: Identified the following protocols intended for QSM: [&#39;qsm_p2_1mmiso_te20&#39;]
+[INFO]: Enumerating T1w protocol names using match patterns [&#39;*mp2rage*&#39;]...
+[INFO]: Identified the following protocols as T1w: [&#39;mp2rage_highres_0p5iso_slab&#39;]
+[INFO]: Parsing relevant details from JSON headers...
+[INFO]: Parsing relevant JSON data from sub-2/ses-20170705...
+[INFO]: Parsing relevant JSON data from sub-1/ses-20170705...
+Summary of identified files and proposed renames (following BIDS standard):
+series-5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5 
+	 -&gt; sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw
+series-6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph 
+	 -&gt; sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw
+series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6 
+	 -&gt; sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w
+series-5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5 
+	 -&gt; sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw
+series-6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph 
+	 -&gt; sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw
+series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6 
+	 -&gt; sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w
+[INFO]: Renaming files...
+[INFO]: Renaming /storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/extra_data/series-5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.json -&gt; /storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.json
+[INFO]: Renaming /storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/extra_data/series-5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.nii -&gt; /storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.nii
+[INFO]: Renaming /storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/extra_data/series-6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.json -&gt; /storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.json
+[INFO]: Renaming /storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/extra_data/series-6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.nii -&gt; /storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii
+[INFO]: Renaming /storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/extra_data/series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.json -&gt; /storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.json
+[INFO]: Renaming /storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/extra_data/series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.nii -&gt; /storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii
+[INFO]: Renaming /storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/extra_data/series-5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.json -&gt; /storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.json
+[INFO]: Renaming /storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/extra_data/series-5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.nii -&gt; /storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.nii
+[INFO]: Renaming /storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/extra_data/series-6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.json -&gt; /storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.json
+[INFO]: Renaming /storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/extra_data/series-6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.nii -&gt; /storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii
+[INFO]: Renaming /storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/extra_data/series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.json -&gt; /storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.json
+[INFO]: Renaming /storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/extra_data/series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.nii -&gt; /storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii
+[INFO]: Generating details for BIDS datset_description.json...
+[INFO]: Writing BIDS dataset_description.json...
+[INFO]: Writing BIDS .bidsignore file...
+[INFO]: Writing BIDS dataset README...
+[INFO]: Finished
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree bids
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">bids</span>
+├── dataset_description.json
+├── log_2024-09-04_07-09-34614074.txt
+├── README
+├── references.txt
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-1</span>
+│   └── <span class=" -Color -Color-Bold -Color-Bold-Blue">ses-20170705</span>
+│       ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">anat</span>
+│       │   ├── sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.json
+│       │   ├── sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii
+│       │   ├── sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.json
+│       │   ├── sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.nii
+│       │   ├── sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.json
+│       │   └── sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii
+│       └── <span class=" -Color -Color-Bold -Color-Bold-Blue">extra_data</span>
+│           └── dcm2niix_output.txt
+└── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-2</span>
+    └── <span class=" -Color -Color-Bold -Color-Bold-Blue">ses-20170705</span>
+        ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">anat</span>
+        │   ├── sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.json
+        │   ├── sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii
+        │   ├── sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.json
+        │   ├── sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.nii
+        │   ├── sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.json
+        │   └── sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii
+        └── <span class=" -Color -Color-Bold -Color-Bold-Blue">extra_data</span>
+            └── dcm2niix_output.txt
+
+8 directories, 18 files
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="inspect-input-data">
+<h1>Inspect input data<a class="headerlink" href="#inspect-input-data" title="Permalink to this heading">#</a></h1>
+<p>Here we define a function we will use to visualise NIfTI images so we can view some of the input data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+<span class="k">def</span> <span class="nf">show_nii</span><span class="p">(</span><span class="n">nii_path</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">imshow_args</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+    <span class="kn">import</span> <span class="nn">glob</span>
+
+    <span class="c1"># load data\n&quot;,</span>
+    <span class="n">data_1</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">nii_path</span><span class="p">)</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
+
+    <span class="c1"># get middle slices\n&quot;,</span>
+    <span class="n">slc_data1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">data_1</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="p">,:,:])</span>
+    <span class="n">slc_data2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">data_1</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data_1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="p">,:])</span>
+    <span class="n">slc_data3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">data_1</span><span class="p">[:,:,</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data_1</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="p">])</span>
+
+    <span class="c1"># show slices\n&quot;,</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">title</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">slc_data1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="o">**</span><span class="n">imshow_args</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">slc_data2</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="o">**</span><span class="n">imshow_args</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">slc_data3</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="o">**</span><span class="n">imshow_args</span><span class="p">)</span>
+
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="mf">1.55</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_nii</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;bids/sub-*/ses-*/anat/*mag*nii*&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Magnitude&quot;</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">show_nii</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;bids/sub-*/ses-*/anat/*phase*nii*&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Phase&quot;</span><span class="p">)</span>
+<span class="n">show_nii</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;bids/sub-*/ses-*/anat/*T1w*nii*&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;T1-weighted&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4a134d9225a29e7c46208d882110ea62a425a73595cb4cfafd8c4930630e4b81.png" src="_images/4a134d9225a29e7c46208d882110ea62a425a73595cb4cfafd8c4930630e4b81.png" />
+<img alt="_images/7a07160d4cf6ea59ccf22183e997766846eb213963f7bb52846f45178f4e00a4.png" src="_images/7a07160d4cf6ea59ccf22183e997766846eb213963f7bb52846f45178f4e00a4.png" />
+<img alt="_images/3780304cea7e5a0a2c19c39782bab65dc0ae47bc53c8f34a48afd146dcd0a632.png" src="_images/3780304cea7e5a0a2c19c39782bab65dc0ae47bc53c8f34a48afd146dcd0a632.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="run-qsmxt">
+<h1>Run QSMxT<a class="headerlink" href="#run-qsmxt" title="Permalink to this heading">#</a></h1>
+<p>We are now ready to run QSMxT! We will generate susceptibility maps and segmentations, and export analysis CSVs to file.</p>
+<p>The usual way of running QSMxT is to use <code class="docutils literal notranslate"><span class="pre">qsmxt</span> <span class="pre">bids_dir</span></code>. This will launch an interactive command-line interface (CLI) to setup your desired pipelines. However, since we are running this in a notebook, we need to use command-line arguments to by-pass the interface and execute a pipeline.</p>
+<p>But first, let’s consider our pipeline settings. For QSM reconstruction, QSMxT provides a range of sensible defaults fit for different purposes. We can list the premade QSM pipelines using <code class="docutils literal notranslate"><span class="pre">--list_premades</span></code>. For the full pipeline details used for each premade pipeline, see <a class="reference external" href="https://github.com/QSMxT/QSMxT/blob/master/qsm_pipelines.json">qsm_pipelines.json</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>qsmxt --list_premades
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== Premade pipelines ===
+default: Default QSMxT settings (GRE; assumes human brain)
+gre: Applies suggested settings for 3D-GRE images
+epi: Applies suggested settings for 3D-EPI images (assumes human brain)
+bet: Applies a traditional BET-masking approach (artefact reduction unavailable; assumes human brain)
+fast: Applies a set of fast algorithms
+body: Applies suggested settings for non-brain applications
+nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes human brain)
+[INFO]: Finished
+</pre></div>
+</div>
+</div>
+</div>
+<p>For this demonstration, we will go with the <code class="docutils literal notranslate"><span class="pre">fast</span></code> pipeline. To export segmentations and analysis results, we will use <code class="docutils literal notranslate"><span class="pre">--do_segmentation</span></code> and <code class="docutils literal notranslate"><span class="pre">--do_analysis</span></code>. The <code class="docutils literal notranslate"><span class="pre">--auto_yes</span></code> option avoid the interactive CLI interface that cannot be used in a notebook:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>!qsmxt bids \
+    --premade fast \
+    --do_qsm \
+    --do_segmentation \
+    --do_analysis \
+    --auto_yes
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: QSMxT v7.2.0
+[INFO]: Python interpreter: /opt/miniconda-4.7.12.1/bin/python3.8
+[INFO]: Command: qsmxt /storage/tmp/tmptkepv92h/bids --premade &#39;fast&#39; --do_qsm --do_segmentation --do_analysis --auto_yes
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[WARNING]: Pipeline is NOT guidelines compliant (see https://doi.org/10.1002/mrm.30006):; Phase-quality-based masking recommended
+[INFO]: Available memory: 106.878 GB
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Creating QSMxT workflow for sub-1.ses-20170705.acq-qsmp21mmisote20.run-01...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Creating QSMxT workflow for sub-2.ses-20170705.acq-qsmp21mmisote20.run-01...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running using MultiProc plugin with n_procs=32
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:50,398 nipype.workflow INFO:
+	 Workflow qsmxt-workflow settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:50,445 nipype.workflow INFO:
+	 Running in parallel.
+240904-07:09:50,450 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 12 jobs ready. Free memory (GB): 113.22/113.22, Free processors: 32/32.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:50,864 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_read-nii&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_read-nii&quot;.
+240904-07:09:50,864 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_as-canonical&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_as-canonical&quot;.
+240904-07:09:50,868 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/fastsurfer_segment-t1&quot;.
+240904-07:09:50,872 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_read-nii&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+240904-07:09:50,872 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-se&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-se&quot;.
+240904-07:09:50,873 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_read-nii&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_read-nii&quot;.
+240904-07:09:50,875 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_as-canonical&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+240904-07:09:50,876 nipype.workflow INFO:
+	 [Node] Executing &quot;fastsurfer_segment-t1&quot; &lt;qsmxt.interfaces.nipype_interface_fastsurfer.FastSurferInterface&gt;
+240904-07:09:50,876 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/fastsurfer_segment-t1&quot;.
+240904-07:09:50,880 nipype.workflow INFO:
+	 [Node] Executing &quot;func_read-json-se&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+240904-07:09:50,881 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_read-nii&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+240904-07:09:50,882 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_read-nii&quot;, elapsed time 0.006113s.
+240904-07:09:50,884 nipype.workflow INFO:
+	 [Node] Executing &quot;fastsurfer_segment-t1&quot; &lt;qsmxt.interfaces.nipype_interface_fastsurfer.FastSurferInterface&gt;
+240904-07:09:50,885 nipype.workflow INFO:
+	 [Node] Finished &quot;func_read-json-se&quot;, elapsed time 0.001589s.
+240904-07:09:50,887 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_read-nii&quot;, elapsed time 0.003752s.
+240904-07:09:50,888 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_as-canonical&quot;, elapsed time 0.00961s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:50,864 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-me&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-me&quot;.
+240904-07:09:50,868 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/ants_register-t1-to-qsm&quot;.
+240904-07:09:50,923 nipype.workflow INFO:
+	 [Node] Executing &quot;func_read-json-me&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+240904-07:09:50,872 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-me&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-me&quot;.
+240904-07:09:50,928 nipype.workflow INFO:
+	 [Node] Finished &quot;func_read-json-me&quot;, elapsed time 0.002031s.
+240904-07:09:50,931 nipype.workflow INFO:
+	 [Node] Executing &quot;func_read-json-me&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+240904-07:09:50,936 nipype.workflow INFO:
+	 [Node] Finished &quot;func_read-json-me&quot;, elapsed time 0.001665s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:50,863 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-se&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-se&quot;.
+240904-07:09:50,974 nipype.workflow INFO:
+	 [Node] Executing &quot;func_read-json-se&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+240904-07:09:50,873 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_as-canonical&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_as-canonical&quot;.
+240904-07:09:50,928 nipype.workflow INFO:
+	 [Node] Executing &quot;ants_register-t1-to-qsm&quot; &lt;nipype.interfaces.ants.registration.RegistrationSynQuick&gt;
+240904-07:09:50,984 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_as-canonical&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+240904-07:09:51,0 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_as-canonical&quot;, elapsed time 0.013404s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:50,979 nipype.workflow INFO:
+	 [Node] Finished &quot;func_read-json-se&quot;, elapsed time 0.001672s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:52,453 nipype.workflow INFO:
+	 [Job 0] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-me).
+240904-07:09:52,457 nipype.workflow INFO:
+	 [Job 1] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-se).
+240904-07:09:52,459 nipype.workflow INFO:
+	 [Job 2] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_read-nii).
+240904-07:09:52,460 nipype.workflow INFO:
+	 [Job 3] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_as-canonical).
+240904-07:09:52,462 nipype.workflow INFO:
+	 [Job 6] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-me).
+240904-07:09:52,463 nipype.workflow INFO:
+	 [Job 7] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-se).
+240904-07:09:52,464 nipype.workflow INFO:
+	 [Job 8] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_read-nii).
+240904-07:09:52,466 nipype.workflow INFO:
+	 [Job 9] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_as-canonical).
+240904-07:09:52,468 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 5 jobs ready. Free memory (GB): 81.22/113.22, Free processors: 10/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:52,602 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_scale-phase&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_scale-phase&quot;.
+240904-07:09:52,603 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/ants_register-t1-to-qsm&quot;.
+240904-07:09:52,611 nipype.workflow INFO:
+	 [Node] Executing &quot;ants_register-t1-to-qsm&quot; &lt;nipype.interfaces.ants.registration.RegistrationSynQuick&gt;
+240904-07:09:52,612 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_scale-phase&quot; &lt;qsmxt.interfaces.nipype_interface_processphase.ScalePhaseInterface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:52,602 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_getfirst-canonical-magnitude&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_getfirst-canonical-magnitude&quot;.
+240904-07:09:52,603 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_scale-phase&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_scale-phase&quot;.
+240904-07:09:52,663 nipype.workflow INFO:
+	 [Node] Executing &quot;func_getfirst-canonical-magnitude&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+240904-07:09:52,667 nipype.workflow INFO:
+	 [Node] Finished &quot;func_getfirst-canonical-magnitude&quot;, elapsed time 0.001444s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:52,603 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_getfirst-canonical-magnitude&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_getfirst-canonical-magnitude&quot;.
+240904-07:09:52,663 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_scale-phase&quot; &lt;qsmxt.interfaces.nipype_interface_processphase.ScalePhaseInterface&gt;
+240904-07:09:52,716 nipype.workflow INFO:
+	 [Node] Executing &quot;func_getfirst-canonical-magnitude&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+240904-07:09:52,720 nipype.workflow INFO:
+	 [Node] Finished &quot;func_getfirst-canonical-magnitude&quot;, elapsed time 0.001603s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:53,254 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_scale-phase&quot;, elapsed time 0.639402s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:53,327 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_scale-phase&quot;, elapsed time 0.610745s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:54,454 nipype.workflow INFO:
+	 [Job 12] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_scale-phase).
+240904-07:09:54,456 nipype.workflow INFO:
+	 [Job 13] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_getfirst-canonical-magnitude).
+240904-07:09:54,458 nipype.workflow INFO:
+	 [Job 15] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_scale-phase).
+240904-07:09:54,459 nipype.workflow INFO:
+	 [Job 16] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_getfirst-canonical-magnitude).
+240904-07:09:54,462 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 2 jobs ready. Free memory (GB): 73.22/113.22, Free processors: 4/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:54,558 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_axial-resampling&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_axial-resampling&quot;.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:54,569 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_nilearn_axial-resampling&quot; &lt;qsmxt.interfaces.nipype_interface_axialsampling.AxialSamplingInterface&gt;
+240904-07:09:54,577 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_nilearn_axial-resampling&quot;, elapsed time 0.006196s.
+240904-07:09:54,559 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_axial-resampling&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_axial-resampling&quot;.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:54,620 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_nilearn_axial-resampling&quot; &lt;qsmxt.interfaces.nipype_interface_axialsampling.AxialSamplingInterface&gt;
+240904-07:09:54,629 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_nilearn_axial-resampling&quot;, elapsed time 0.005675s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:56,455 nipype.workflow INFO:
+	 [Job 18] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_axial-resampling).
+240904-07:09:56,457 nipype.workflow INFO:
+	 [Job 21] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_axial-resampling).
+240904-07:09:56,460 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 4 jobs ready. Free memory (GB): 73.22/113.22, Free processors: 4/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:56,563 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.mrt_romeo&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/mrt_romeo&quot;.
+240904-07:09:56,565 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.mrt_romeo&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/mrt_romeo&quot;.
+240904-07:09:56,577 nipype.workflow INFO:
+	 [Node] Executing &quot;mrt_romeo&quot; &lt;qsmxt.interfaces.nipype_interface_romeo.RomeoB0Interface&gt;
+240904-07:09:56,578 nipype.workflow INFO:
+	 [Node] Executing &quot;mrt_romeo&quot; &lt;qsmxt.interfaces.nipype_interface_romeo.RomeoB0Interface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:09:58,459 nipype.workflow INFO:
+	 [MultiProc] Running 6 tasks, and 2 jobs ready. Free memory (GB): 68.55/113.22, Free processors: 2/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.mrt_romeo
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.mrt_romeo
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:10:40,391 nipype.workflow INFO:
+	 [Node] Finished &quot;mrt_romeo&quot;, elapsed time 43.811328s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:10:40,501 nipype.workflow INFO:
+	 [Job 25] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.mrt_romeo).
+240904-07:10:40,504 nipype.workflow INFO:
+	 [MultiProc] Running 5 tasks, and 3 jobs ready. Free memory (GB): 70.88/113.22, Free processors: 3/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.mrt_romeo
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:10:40,617 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.nibabel-numpy_normalize-phase&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/nibabel-numpy_normalize-phase&quot;.
+240904-07:10:40,633 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel-numpy_normalize-phase&quot; &lt;qsmxt.interfaces.nipype_interface_processphase.PhaseToNormalizedInterface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:10:40,807 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel-numpy_normalize-phase&quot;, elapsed time 0.170685s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:10:42,392 nipype.workflow INFO:
+	 [Node] Finished &quot;mrt_romeo&quot;, elapsed time 45.81092s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:10:42,503 nipype.workflow INFO:
+	 [Job 28] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.mrt_romeo).
+240904-07:10:42,505 nipype.workflow INFO:
+	 [Job 31] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.nibabel-numpy_normalize-phase).
+240904-07:10:42,508 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 3 jobs ready. Free memory (GB): 73.22/113.22, Free processors: 4/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:10:42,609 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.nibabel-numpy_normalize-phase&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/nibabel-numpy_normalize-phase&quot;.
+240904-07:10:42,620 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel-numpy_normalize-phase&quot; &lt;qsmxt.interfaces.nipype_interface_processphase.PhaseToNormalizedInterface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:10:42,748 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel-numpy_normalize-phase&quot;, elapsed time 0.125585s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:10:44,506 nipype.workflow INFO:
+	 [Job 33] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.nibabel-numpy_normalize-phase).
+240904-07:10:44,510 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 2 jobs ready. Free memory (GB): 73.22/113.22, Free processors: 4/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:12:42,711 nipype.workflow INFO:
+	 [Node] Finished &quot;ants_register-t1-to-qsm&quot;, elapsed time 171.728663s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:12:44,629 nipype.workflow INFO:
+	 [Job 5] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm).
+240904-07:12:44,633 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 2 jobs ready. Free memory (GB): 81.22/113.22, Free processors: 10/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:12:44,731 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/mask_workflow/fsl-bet&quot;.
+240904-07:12:44,742 nipype.workflow INFO:
+	 [Node] Executing &quot;fsl-bet&quot; &lt;qsmxt.interfaces.nipype_interface_bet2.Bet2Interface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:12:46,632 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 1 jobs ready. Free memory (GB): 79.22/113.22, Free processors: 2/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:12:46,888 nipype.workflow INFO:
+	 [Node] Finished &quot;ants_register-t1-to-qsm&quot;, elapsed time 174.274737s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:12:48,634 nipype.workflow INFO:
+	 [Job 11] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm).
+240904-07:12:48,637 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 87.22/113.22, Free processors: 8/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:12:48,778 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/mask_workflow/fsl-bet&quot;.
+240904-07:12:48,789 nipype.workflow INFO:
+	 [Node] Executing &quot;fsl-bet&quot; &lt;qsmxt.interfaces.nipype_interface_bet2.Bet2Interface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:12:50,637 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 0 jobs ready. Free memory (GB): 85.22/113.22, Free processors: 0/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:05,697 nipype.workflow INFO:
+	 [Node] Finished &quot;fsl-bet&quot;, elapsed time 16.905436s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:06,655 nipype.workflow INFO:
+	 [Job 27] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet).
+240904-07:13:06,659 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 87.22/113.22, Free processors: 8/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:06,804 nipype.workflow INFO:
+	 [Node] Finished &quot;fsl-bet&quot;, elapsed time 22.059402s.
+240904-07:13:06,803 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.scipy_numpy_nibabel_bet_erode&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/mask_workflow/scipy_numpy_nibabel_bet_erode&quot;.
+240904-07:13:06,821 nipype.workflow INFO:
+	 [Node] Executing &quot;scipy_numpy_nibabel_bet_erode&quot; &lt;qsmxt.interfaces.nipype_interface_erode.ErosionInterface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:07,836 nipype.workflow INFO:
+	 [Node] Finished &quot;scipy_numpy_nibabel_bet_erode&quot;, elapsed time 1.010762s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:08,657 nipype.workflow INFO:
+	 [Job 24] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet).
+240904-07:13:08,660 nipype.workflow INFO:
+	 [Job 32] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.scipy_numpy_nibabel_bet_erode).
+240904-07:13:08,662 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 2 jobs ready. Free memory (GB): 89.22/113.22, Free processors: 16/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:08,784 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.scipy_numpy_nibabel_bet_erode&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/mask_workflow/scipy_numpy_nibabel_bet_erode&quot;.
+240904-07:13:08,787 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_vsharp&quot;.
+240904-07:13:08,792 nipype.workflow INFO:
+	 [Node] Executing &quot;scipy_numpy_nibabel_bet_erode&quot; &lt;qsmxt.interfaces.nipype_interface_erode.ErosionInterface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:08,804 nipype.workflow INFO:
+	 [Node] Executing &quot;qsmjl_vsharp&quot; &lt;qsmxt.interfaces.nipype_interface_qsmjl.VsharpInterface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:09,406 nipype.workflow INFO:
+	 [Node] Finished &quot;scipy_numpy_nibabel_bet_erode&quot;, elapsed time 0.612303s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:10,660 nipype.workflow INFO:
+	 [Job 30] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.scipy_numpy_nibabel_bet_erode).
+240904-07:13:10,664 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 87.22/113.22, Free processors: 14/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:10,786 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_vsharp&quot;.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:10,801 nipype.workflow INFO:
+	 [Node] Executing &quot;qsmjl_vsharp&quot; &lt;qsmxt.interfaces.nipype_interface_qsmjl.VsharpInterface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:12,663 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 0 jobs ready. Free memory (GB): 85.22/113.22, Free processors: 12/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:35,623 nipype.workflow INFO:
+	 [Node] Finished &quot;qsmjl_vsharp&quot;, elapsed time 26.815707s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:36,689 nipype.workflow INFO:
+	 [Job 35] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp).
+240904-07:13:36,692 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 87.22/113.22, Free processors: 14/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:36,817 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_rts&quot;.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:36,829 nipype.workflow INFO:
+	 [Node] Executing &quot;qsmjl_rts&quot; &lt;qsmxt.interfaces.nipype_interface_qsmjl.RtsQsmInterface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:38,692 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 0 jobs ready. Free memory (GB): 84.81/113.22, Free processors: 12/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:39,145 nipype.workflow INFO:
+	 [Node] Finished &quot;qsmjl_vsharp&quot;, elapsed time 28.34165s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:40,693 nipype.workflow INFO:
+	 [Job 34] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp).
+240904-07:13:40,697 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 86.81/113.22, Free processors: 14/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:40,800 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_rts&quot;.
+240904-07:13:40,818 nipype.workflow INFO:
+	 [Node] Executing &quot;qsmjl_rts&quot; &lt;qsmxt.interfaces.nipype_interface_qsmjl.RtsQsmInterface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:13:42,697 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 0 jobs ready. Free memory (GB): 84.40/113.22, Free processors: 12/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:14,839 nipype.workflow INFO:
+	 [Node] Finished &quot;qsmjl_rts&quot;, elapsed time 38.00711s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:16,736 nipype.workflow INFO:
+	 [Job 37] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts).
+240904-07:14:16,740 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 86.81/113.22, Free processors: 14/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:16,870 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-average&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_qsm-average&quot;.
+240904-07:14:16,882 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_qsm-average&quot; &lt;qsmxt.interfaces.nipype_interface_nonzeroaverage.NonzeroAverageInterface&gt;
+240904-07:14:16,885 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_qsm-average&quot;, elapsed time 0.000458s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:17,215 nipype.workflow INFO:
+	 [Node] Finished &quot;qsmjl_rts&quot;, elapsed time 36.393892s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:18,738 nipype.workflow INFO:
+	 [Job 36] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts).
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:18,741 nipype.workflow INFO:
+	 [Job 39] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-average).
+240904-07:14:18,744 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 2 jobs ready. Free memory (GB): 89.22/113.22, Free processors: 16/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:18,843 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_qsm-resampled&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_qsm-resampled&quot;.
+240904-07:14:18,849 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_nilearn_qsm-resampled&quot; &lt;qsmxt.interfaces.nipype_interface_resample_like.ResampleLikeInterface&gt;
+Resampling /storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_rts/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw_scaled_romeo-unwrapped_normalized_vsharp_rts.nii to /storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii with interpolation continuous
+Loaded input and reference files
+Input image is already aligned with the reference image
+240904-07:14:18,854 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_nilearn_qsm-resampled&quot;, elapsed time 0.003689s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:18,842 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-average&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_qsm-average&quot;.
+240904-07:14:18,902 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_qsm-average&quot; &lt;qsmxt.interfaces.nipype_interface_nonzeroaverage.NonzeroAverageInterface&gt;
+240904-07:14:18,905 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_qsm-average&quot;, elapsed time 0.000567s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:20,739 nipype.workflow INFO:
+	 [Job 38] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-average).
+240904-07:14:20,741 nipype.workflow INFO:
+	 [Job 41] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_qsm-resampled).
+240904-07:14:20,743 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 3 jobs ready. Free memory (GB): 89.22/113.22, Free processors: 16/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:20,844 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_qsm-resampled&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_qsm-resampled&quot;.
+240904-07:14:20,845 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists1&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/combine_lists1&quot;.
+240904-07:14:20,852 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_nilearn_qsm-resampled&quot; &lt;qsmxt.interfaces.nipype_interface_resample_like.ResampleLikeInterface&gt;
+240904-07:14:20,853 nipype.workflow INFO:
+	 [Node] Executing &quot;combine_lists1&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+Resampling /storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_rts/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw_scaled_romeo-unwrapped_normalized_vsharp_rts.nii to /storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii with interpolation continuous
+240904-07:14:20,855 nipype.workflow INFO:
+	 [Node] Finished &quot;combine_lists1&quot;, elapsed time 0.000877s.
+Loaded input and reference files
+Input image is already aligned with the reference image
+240904-07:14:20,859 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_nilearn_qsm-resampled&quot;, elapsed time 0.004851s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:20,845 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-referenced&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_qsm-referenced&quot;.
+240904-07:14:20,903 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_qsm-referenced&quot; &lt;qsmxt.interfaces.nipype_interface_qsm_referencing.ReferenceQSMInterface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:21,686 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_qsm-referenced&quot;, elapsed time 0.781931s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:22,741 nipype.workflow INFO:
+	 [Job 40] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_qsm-resampled).
+240904-07:14:22,743 nipype.workflow INFO:
+	 [Job 44] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-referenced).
+240904-07:14:22,745 nipype.workflow INFO:
+	 [Job 45] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists1).
+240904-07:14:22,747 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 2 jobs ready. Free memory (GB): 89.22/113.22, Free processors: 16/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:22,849 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-referenced&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_qsm-referenced&quot;.
+240904-07:14:22,855 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_qsm-referenced&quot; &lt;qsmxt.interfaces.nipype_interface_qsm_referencing.ReferenceQSMInterface&gt;
+240904-07:14:22,859 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists1&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/combine_lists1&quot;.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:22,865 nipype.workflow INFO:
+	 [Node] Executing &quot;combine_lists1&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+240904-07:14:22,868 nipype.workflow INFO:
+	 [Node] Finished &quot;combine_lists1&quot;, elapsed time 0.00086s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:23,594 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_qsm-referenced&quot;, elapsed time 0.736703s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:24,744 nipype.workflow INFO:
+	 [Job 42] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-referenced).
+240904-07:14:24,746 nipype.workflow INFO:
+	 [Job 43] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists1).
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:14:24,748 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 89.22/113.22, Free processors: 16/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:34,687 nipype.workflow INFO:
+	 [Node] Finished &quot;fastsurfer_segment-t1&quot;, elapsed time 463.799434s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:34,962 nipype.workflow INFO:
+	 [Job 10] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1).
+240904-07:17:34,965 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 101.22/113.22, Free processors: 24/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:35,65 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.numpy_numpy_nibabel_mgz2nii&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/numpy_numpy_nibabel_mgz2nii&quot;.
+240904-07:17:35,72 nipype.workflow INFO:
+	 [Node] Executing &quot;numpy_numpy_nibabel_mgz2nii&quot; &lt;qsmxt.interfaces.nipype_interface_mgz2nii.Mgz2NiiInterface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:35,390 nipype.workflow INFO:
+	 [Node] Finished &quot;numpy_numpy_nibabel_mgz2nii&quot;, elapsed time 0.316227s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:36,964 nipype.workflow INFO:
+	 [Job 17] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.numpy_numpy_nibabel_mgz2nii).
+240904-07:17:36,967 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 2 jobs ready. Free memory (GB): 101.22/113.22, Free processors: 24/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:37,69 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_t1w-seg-resampled&quot;.
+240904-07:17:37,70 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_transform-segmentation-to-qsm&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/ants_transform-segmentation-to-qsm&quot;.
+240904-07:17:37,75 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_nilearn_t1w-seg-resampled&quot; &lt;qsmxt.interfaces.nipype_interface_resample_like.ResampleLikeInterface&gt;
+Resampling /storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/fastsurfer_segment-t1/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w_dseg_nii.nii to /storage/tmp/tmptkepv92h/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii with interpolation nearest
+Loaded input and reference files
+240904-07:17:37,86 nipype.workflow INFO:
+	 [Node] Executing &quot;ants_transform-segmentation-to-qsm&quot; &lt;nipype.interfaces.ants.resampling.ApplyTransforms&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:38,186 nipype.workflow INFO:
+	 [Node] Finished &quot;ants_transform-segmentation-to-qsm&quot;, elapsed time 1.097231s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:38,966 nipype.workflow INFO:
+	 [Job 23] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_transform-segmentation-to-qsm).
+240904-07:17:38,970 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 99.22/113.22, Free processors: 23/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:39,83 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists2&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/combine_lists2&quot;.
+240904-07:17:39,93 nipype.workflow INFO:
+	 [Node] Executing &quot;combine_lists2&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+240904-07:17:39,96 nipype.workflow INFO:
+	 [Node] Finished &quot;combine_lists2&quot;, elapsed time 0.001107s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:40,969 nipype.workflow INFO:
+	 [Job 29] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists2).
+240904-07:17:40,972 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 99.22/113.22, Free processors: 23/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:41,76 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.create_permutations&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/create_permutations&quot;.
+240904-07:17:41,87 nipype.workflow INFO:
+	 [Node] Executing &quot;create_permutations&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+240904-07:17:41,92 nipype.workflow INFO:
+	 [Node] Finished &quot;create_permutations&quot;, elapsed time 0.001653s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:42,971 nipype.workflow INFO:
+	 [Job 47] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.create_permutations).
+240904-07:17:42,974 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 99.22/113.22, Free processors: 23/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:43,149 nipype.workflow INFO:
+	 [Node] Setting-up &quot;_nibabel_numpy_analyse-qsm0&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_analyse-qsm/mapflow/_nibabel_numpy_analyse-qsm0&quot;.
+240904-07:17:43,154 nipype.workflow INFO:
+	 [Node] Executing &quot;_nibabel_numpy_analyse-qsm0&quot; &lt;qsmxt.interfaces.nipype_interface_analyse.AnalyseInterface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:44,974 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 0 jobs ready. Free memory (GB): 97.22/113.22, Free processors: 22/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Resampled the image
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved resampled image to /storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_t1w-seg-resampled/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w_dseg_nii_resampled.nii
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:47,77 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_nilearn_t1w-seg-resampled&quot;, elapsed time 9.999773s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:48,977 nipype.workflow INFO:
+	 [Job 22] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled).
+240904-07:17:48,980 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 99.22/113.22, Free processors: 23/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:50,882 nipype.workflow INFO:
+	 [Node] Finished &quot;fastsurfer_segment-t1&quot;, elapsed time 480.003632s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:50,980 nipype.workflow INFO:
+	 [Job 4] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1).
+240904-07:17:50,983 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 111.22/113.22, Free processors: 31/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:51,82 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.numpy_numpy_nibabel_mgz2nii&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/numpy_numpy_nibabel_mgz2nii&quot;.
+240904-07:17:51,89 nipype.workflow INFO:
+	 [Node] Executing &quot;numpy_numpy_nibabel_mgz2nii&quot; &lt;qsmxt.interfaces.nipype_interface_mgz2nii.Mgz2NiiInterface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:51,426 nipype.workflow INFO:
+	 [Node] Finished &quot;numpy_numpy_nibabel_mgz2nii&quot;, elapsed time 0.335165s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:52,982 nipype.workflow INFO:
+	 [Job 14] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.numpy_numpy_nibabel_mgz2nii).
+240904-07:17:52,986 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 2 jobs ready. Free memory (GB): 111.22/113.22, Free processors: 31/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:53,91 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_t1w-seg-resampled&quot;.
+240904-07:17:53,92 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_transform-segmentation-to-qsm&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/ants_transform-segmentation-to-qsm&quot;.
+240904-07:17:53,100 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_nilearn_t1w-seg-resampled&quot; &lt;qsmxt.interfaces.nipype_interface_resample_like.ResampleLikeInterface&gt;
+Resampling /storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/fastsurfer_segment-t1/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w_dseg_nii.nii to /storage/tmp/tmptkepv92h/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii with interpolation nearest
+Loaded input and reference files
+240904-07:17:53,107 nipype.workflow INFO:
+	 [Node] Executing &quot;ants_transform-segmentation-to-qsm&quot; &lt;nipype.interfaces.ants.resampling.ApplyTransforms&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:54,110 nipype.workflow INFO:
+	 [Node] Finished &quot;ants_transform-segmentation-to-qsm&quot;, elapsed time 1.000212s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:54,985 nipype.workflow INFO:
+	 [Job 20] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_transform-segmentation-to-qsm).
+240904-07:17:54,988 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 109.22/113.22, Free processors: 30/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:55,90 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists2&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/combine_lists2&quot;.
+240904-07:17:55,98 nipype.workflow INFO:
+	 [Node] Executing &quot;combine_lists2&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+240904-07:17:55,101 nipype.workflow INFO:
+	 [Node] Finished &quot;combine_lists2&quot;, elapsed time 0.001238s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:56,987 nipype.workflow INFO:
+	 [Job 26] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists2).
+240904-07:17:56,990 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 109.22/113.22, Free processors: 30/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:57,93 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.create_permutations&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/create_permutations&quot;.
+240904-07:17:57,102 nipype.workflow INFO:
+	 [Node] Executing &quot;create_permutations&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+240904-07:17:57,105 nipype.workflow INFO:
+	 [Node] Finished &quot;create_permutations&quot;, elapsed time 0.001094s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:58,989 nipype.workflow INFO:
+	 [Job 46] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.create_permutations).
+240904-07:17:58,993 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 109.22/113.22, Free processors: 30/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:17:59,105 nipype.workflow INFO:
+	 [Node] Setting-up &quot;_nibabel_numpy_analyse-qsm0&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_analyse-qsm/mapflow/_nibabel_numpy_analyse-qsm0&quot;.
+240904-07:17:59,108 nipype.workflow INFO:
+	 [Node] Executing &quot;_nibabel_numpy_analyse-qsm0&quot; &lt;qsmxt.interfaces.nipype_interface_analyse.AnalyseInterface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:18:00,992 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 0 jobs ready. Free memory (GB): 107.22/113.22, Free processors: 29/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Resampled the image
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved resampled image to /storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_t1w-seg-resampled/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w_dseg_nii_resampled.nii
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:18:04,198 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_nilearn_t1w-seg-resampled&quot;, elapsed time 11.096044s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:18:04,996 nipype.workflow INFO:
+	 [Job 19] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled).
+240904-07:18:04,999 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 109.22/113.22, Free processors: 30/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:18:48,953 nipype.workflow INFO:
+	 [Node] Finished &quot;_nibabel_numpy_analyse-qsm0&quot;, elapsed time 65.797067s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:18:49,44 nipype.workflow INFO:
+	 [Job 49] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm).
+240904-07:18:49,49 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 111.22/113.22, Free processors: 31/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:18:49,157 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.copyfile&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/copyfile&quot;.
+240904-07:18:49,169 nipype.workflow INFO:
+	 [Node] Executing &quot;copyfile&quot; &lt;qsmxt.interfaces.nipype_interface_copyfile.DynamicCopyFiles&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:18:49,458 nipype.workflow INFO:
+	 [Node] Finished &quot;copyfile&quot;, elapsed time 0.286906s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:18:51,47 nipype.workflow INFO:
+	 [Job 51] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.copyfile).
+240904-07:18:51,51 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 0 jobs ready. Free memory (GB): 111.22/113.22, Free processors: 31/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:19:02,973 nipype.workflow INFO:
+	 [Node] Finished &quot;_nibabel_numpy_analyse-qsm0&quot;, elapsed time 63.864172s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:19:03,60 nipype.workflow INFO:
+	 [Job 48] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm).
+240904-07:19:03,65 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 113.22/113.22, Free processors: 32/32.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:19:03,221 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.copyfile&quot; in &quot;/storage/tmp/tmptkepv92h/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/copyfile&quot;.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:19:03,237 nipype.workflow INFO:
+	 [Node] Executing &quot;copyfile&quot; &lt;qsmxt.interfaces.nipype_interface_copyfile.DynamicCopyFiles&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:19:03,581 nipype.workflow INFO:
+	 [Node] Finished &quot;copyfile&quot;, elapsed time 0.341673s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:19:05,63 nipype.workflow INFO:
+	 [Job 50] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.copyfile).
+240904-07:19:05,67 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 0 jobs ready. Free memory (GB): 113.22/113.22, Free processors: 32/32.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Warnings occurred!
+[INFO]: Finished
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="view-results">
+<h1>View results<a class="headerlink" href="#view-results" title="Permalink to this heading">#</a></h1>
+<p>Let’s have a look at the generated <code class="docutils literal notranslate"><span class="pre">qsm</span></code> folder:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree bids/derivatives/qsmxt-*-* --dirsfirst
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">bids/derivatives/qsmxt-2024-09-04-070948</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-1</span>
+│   └── <span class=" -Color -Color-Bold -Color-Bold-Blue">ses-20170705</span>
+│       ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">anat</span>
+│       │   ├── sub-1_ses-20170705_run-01_acq-qsmp21mmisote20_Chimap.nii
+│       │   ├── sub-1_ses-20170705_run-01_acq-qsmp21mmisote20_space-orig_dseg.nii
+│       │   └── sub-1_ses-20170705_run-01_acq-qsmp21mmisote20_space-qsm_dseg.nii
+│       └── <span class=" -Color -Color-Bold -Color-Bold-Blue">extra_data</span>
+│           ├── sub-1_ses-20170705_run-01_acq-qsmp21mmisote20_desc-t1w-to-qsm_transform.mat
+│           └── sub-1_ses-20170705_run-01_acq-qsmp21mmisote20_qsm-analysis.csv
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-2</span>
+│   └── <span class=" -Color -Color-Bold -Color-Bold-Blue">ses-20170705</span>
+│       ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">anat</span>
+│       │   ├── sub-2_ses-20170705_run-01_acq-qsmp21mmisote20_Chimap.nii
+│       │   ├── sub-2_ses-20170705_run-01_acq-qsmp21mmisote20_space-orig_dseg.nii
+│       │   └── sub-2_ses-20170705_run-01_acq-qsmp21mmisote20_space-qsm_dseg.nii
+│       └── <span class=" -Color -Color-Bold -Color-Bold-Blue">extra_data</span>
+│           ├── sub-2_ses-20170705_run-01_acq-qsmp21mmisote20_desc-t1w-to-qsm_transform.mat
+│           └── sub-2_ses-20170705_run-01_acq-qsmp21mmisote20_qsm-analysis.csv
+├── command.txt
+├── pypeline.log
+├── qsmxt.log
+├── references.txt
+└── settings.json
+
+8 directories, 15 files
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">references.txt</span></code> file contains a list of all the algorithms used and relevant citations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat bids/derivatives/qsmxt-*-*/references.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>== References ==
+
+ - QSMxT: Stewart AW, Robinson SD, O&#39;Brien K, et al. QSMxT: Robust masking and artifact reduction for quantitative susceptibility mapping. Magnetic Resonance in Medicine. 2022;87(3):1289-1300. doi:10.1002/mrm.29048
+
+ - QSMxT: Stewart AW, Bollman S, et al. QSMxT/QSMxT. GitHub; 2022. https://github.com/QSMxT/QSMxT
+
+ - Python package - Nipype: Gorgolewski K, Burns C, Madison C, et al. Nipype: A Flexible, Lightweight and Extensible Neuroimaging Data Processing Framework in Python. Frontiers in Neuroinformatics. 2011;5. Accessed April 20, 2022. doi:10.3389/fninf.2011.00013
+
+ - Brain extraction: Smith SM. Fast robust automated brain extraction. Human Brain Mapping. 2002;17(3):143-155. doi:10.1002/hbm.10062
+
+ - Brain extraction: Liangfu Chen. liangfu/bet2 - Standalone Brain Extraction Tool. GitHub; 2015. https://github.com/liangfu/bet2
+
+ - Unwrapping algorithm - ROMEO: Dymerska B, Eckstein K, Bachrata B, et al. Phase unwrapping with a rapid opensource minimum spanning tree algorithm (ROMEO). Magnetic Resonance in Medicine. 2021;85(4):2294-2308. doi:10.1002/mrm.28563
+
+ - Background field removal - V-SHARP: Wu B, Li W, Guidon A et al. Whole brain susceptibility mapping using compressed sensing. Magnetic resonance in medicine. 2012 Jan;67(1):137-47. doi:10.1002/mrm.23000
+
+ - QSM algorithm - RTS: Kames C, Wiggermann V, Rauscher A. Rapid two-step dipole inversion for susceptibility mapping with sparsity priors. Neuroimage. 2018 Feb 15;167:276-83. doi:10.1016/j.neuroimage.2017.11.018
+
+ - Julia package - QSM.jl: kamesy. GitHub; 2022. https://github.com/kamesy/QSM.jl
+
+ - Julia package - MriResearchTools: Eckstein K. korbinian90/MriResearchTools.jl. GitHub; 2022. https://github.com/korbinian90/MriResearchTools.jl
+
+ - Python package - nibabel: Brett M, Markiewicz CJ, Hanke M, et al. nipy/nibabel. GitHub; 2019. https://github.com/nipy/nibabel
+
+ - Python package - scipy: Virtanen P, Gommers R, Oliphant TE, et al. SciPy 1.0: fundamental algorithms for scientific computing in Python. Nat Methods. 2020;17(3):261-272. doi:10.1038/s41592-019-0686-2
+
+ - Python package - numpy: Harris CR, Millman KJ, van der Walt SJ, et al. Array programming with NumPy. Nature. 2020;585(7825):357-362. doi:10.1038/s41586-020-2649-2
+
+ - FastSurfer: Henschel L, Conjeti S, Estrada S, Diers K, Fischl B, Reuter M. FastSurfer - A fast and accurate deep learning based neuroimaging pipeline. NeuroImage. 2020;219:117012. doi:10.1016/j.neuroimage.2020.117012
+
+ - ANTs: Avants BB, Tustison NJ, Johnson HJ. Advanced Normalization Tools. GitHub; 2022. https://github.com/ANTsX/ANTs
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s view one of the QSM results:</p>
+<section id="qsm-results">
+<h2>QSM results<a class="headerlink" href="#qsm-results" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_nii</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;bids/derivatives/qsmxt-*-*/sub*/ses*/anat*/*Chimap.nii*&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=+</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4da5071c21e503039e8d792d743ef4f787d6bf14cd4db99ad3fd2b2917ce31cc.png" src="_images/4da5071c21e503039e8d792d743ef4f787d6bf14cd4db99ad3fd2b2917ce31cc.png" />
+</div>
+</div>
+</section>
+<section id="segmentations">
+<h2>Segmentations<a class="headerlink" href="#segmentations" title="Permalink to this heading">#</a></h2>
+<p>Segmentations are generated in both the QSM space and the T1-weighted space. Transformations are also made available.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_nii</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;bids/derivatives/qsmxt-2*/sub*/ses*/anat*/*dseg.nii*&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;terrain&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">96</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/13be6cbc7427cab933aa4efab30086dbebc939d0bcbdf740062bcf5ba4024e6e.png" src="_images/13be6cbc7427cab933aa4efab30086dbebc939d0bcbdf740062bcf5ba4024e6e.png" />
+</div>
+</div>
+</section>
+<section id="analysis-csvs">
+<h2>Analysis CSVs<a class="headerlink" href="#analysis-csvs" title="Permalink to this heading">#</a></h2>
+<p>CSV files have been exported containing susceptibility values in regions of interest for each subject.</p>
+<p>Here we will load the CSVs, inspect the data and generate figures:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install seaborn numpy nibabel pandas matplotlib
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: seaborn in /home/ubuntu/.local/lib/python3.10/site-packages (0.13.2)
+Requirement already satisfied: numpy in /home/ubuntu/.local/lib/python3.10/site-packages (1.26.2)
+Requirement already satisfied: nibabel in /home/ubuntu/.local/lib/python3.10/site-packages (5.2.0)
+Requirement already satisfied: pandas in /home/ubuntu/.local/lib/python3.10/site-packages (2.1.4)
+Requirement already satisfied: matplotlib in /home/ubuntu/.local/lib/python3.10/site-packages (3.8.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: packaging&gt;=17 in /usr/lib/python3/dist-packages (from nibabel) (21.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/ubuntu/.local/lib/python3.10/site-packages (from pandas) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/lib/python3/dist-packages (from pandas) (2022.1)
+Requirement already satisfied: tzdata&gt;=2022.1 in /home/ubuntu/.local/lib/python3.10/site-packages (from pandas) (2023.3)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /home/ubuntu/.local/lib/python3.10/site-packages (from matplotlib) (1.2.0)
+Requirement already satisfied: cycler&gt;=0.10 in /home/ubuntu/.local/lib/python3.10/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /home/ubuntu/.local/lib/python3.10/site-packages (from matplotlib) (4.47.0)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /home/ubuntu/.local/lib/python3.10/site-packages (from matplotlib) (1.4.5)
+Requirement already satisfied: pillow&gt;=8 in /usr/lib/python3/dist-packages (from matplotlib) (9.0.1)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /usr/lib/python3/dist-packages (from matplotlib) (2.4.7)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /usr/lib/python3/dist-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Error parsing dependencies of distro-info: Invalid version: &#39;1.1build1&#39;</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Error parsing dependencies of python-debian: Invalid version: &#39;0.1.43ubuntu1&#39;</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import modules</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The raw CSV files use names from FreeSurfer as exported by FastSurfer. The full list of regions is available <a class="reference external" href="https://github.com/QSMxT/QSMxT/blob/master/aseg_labels.csv">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;bids/derivatives/qsmxt-*-*/sub*/ses*/extra*/*.csv&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>roi</th>
+      <th>num_voxels</th>
+      <th>min</th>
+      <th>max</th>
+      <th>median</th>
+      <th>mean</th>
+      <th>std</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3rd-Ventricle</td>
+      <td>595</td>
+      <td>-0.234913</td>
+      <td>0.125160</td>
+      <td>-0.019559</td>
+      <td>-0.022663</td>
+      <td>0.034530</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4th-Ventricle</td>
+      <td>1546</td>
+      <td>-0.126038</td>
+      <td>0.052167</td>
+      <td>-0.045822</td>
+      <td>-0.046151</td>
+      <td>0.030458</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Brain-Stem</td>
+      <td>18802</td>
+      <td>-0.279218</td>
+      <td>0.103292</td>
+      <td>-0.045258</td>
+      <td>-0.041317</td>
+      <td>0.028708</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>CSF</td>
+      <td>875</td>
+      <td>-1.393660</td>
+      <td>0.945973</td>
+      <td>0.026851</td>
+      <td>0.030612</td>
+      <td>0.141507</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Left-Accumbens-area</td>
+      <td>511</td>
+      <td>-0.142032</td>
+      <td>0.128779</td>
+      <td>0.021214</td>
+      <td>0.020016</td>
+      <td>0.030764</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>ctx-rh-superiorfrontal</td>
+      <td>29598</td>
+      <td>-0.133657</td>
+      <td>0.252094</td>
+      <td>-0.003818</td>
+      <td>-0.009259</td>
+      <td>0.024345</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>ctx-rh-superiorparietal</td>
+      <td>12018</td>
+      <td>-0.084345</td>
+      <td>0.306848</td>
+      <td>-0.016018</td>
+      <td>-0.014961</td>
+      <td>0.022015</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>ctx-rh-superiortemporal</td>
+      <td>16285</td>
+      <td>-0.090617</td>
+      <td>0.248823</td>
+      <td>0.006540</td>
+      <td>0.012775</td>
+      <td>0.024280</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>ctx-rh-supramarginal</td>
+      <td>12087</td>
+      <td>-0.082152</td>
+      <td>0.240121</td>
+      <td>0.018819</td>
+      <td>0.019518</td>
+      <td>0.023248</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>ctx-rh-transversetemporal</td>
+      <td>1225</td>
+      <td>-0.004625</td>
+      <td>0.132523</td>
+      <td>0.034713</td>
+      <td>0.035948</td>
+      <td>0.014372</td>
+    </tr>
+  </tbody>
+</table>
+<p>96 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>We will select a subset of these ROIs and give them more readable names:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define regions of interest</span>
+<span class="c1"># see https://github.com/QSMxT/QSMxT/blob/master/aseg_labels.csv for a full list</span>
+<span class="n">rois</span> <span class="o">=</span> <span class="p">{</span> 
+    <span class="s2">&quot;Thalamus&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">49</span><span class="p">],</span>
+    <span class="s2">&quot;Pallidum&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">53</span><span class="p">],</span>
+    <span class="s2">&quot;Caudate&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span>
+    <span class="s2">&quot;Putamen&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">51</span><span class="p">],</span>
+    <span class="s2">&quot;Brain stem&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">16</span><span class="p">],</span>
+    <span class="s2">&quot;CSF&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">122</span><span class="p">,</span> <span class="mi">257</span><span class="p">,</span> <span class="mi">701</span><span class="p">],</span>
+    <span class="s2">&quot;White matter&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">177</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">roi_names</span> <span class="o">=</span> <span class="p">{</span> <span class="n">value</span><span class="p">:</span> <span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">rois</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">rois</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="p">}</span>
+<span class="n">roi_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span> <span class="k">for</span> <span class="n">roi</span> <span class="ow">in</span> <span class="n">rois</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">roi</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load a reconstruction</span>
+<span class="n">qsm</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;bids/derivatives/qsmxt-*-*/sub*/ses*/anat*/*Chimap.nii*&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">seg</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;bids/derivatives/qsmxt-*-*/sub*/ses*/anat*/*dseg.nii*&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># retain only the rois</span>
+<span class="n">qsm</span> <span class="o">=</span> <span class="n">qsm</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">seg</span><span class="p">,</span> <span class="n">roi_ids</span><span class="p">)]</span>
+<span class="n">seg</span> <span class="o">=</span> <span class="n">seg</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">seg</span><span class="p">,</span> <span class="n">roi_ids</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># retain only the rois</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">qsm</span> <span class="o">=</span> <span class="n">qsm</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">seg</span><span class="p">,</span> <span class="n">roi_ids</span><span class="p">)]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">seg</span> <span class="o">=</span> <span class="n">seg</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">seg</span><span class="p">,</span> <span class="n">roi_ids</span><span class="p">)]</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/numpy/core/memmap.py:335,</span> in <span class="ni">memmap.__getitem__</span><span class="nt">(self, index)</span>
+<span class="g g-Whitespace">    </span><span class="mi">334</span> <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">335</span>     <span class="n">res</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">336</span>     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="ow">is</span> <span class="n">memmap</span> <span class="ow">and</span> <span class="n">res</span><span class="o">.</span><span class="n">_mmap</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span>         <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">ndarray</span><span class="p">)</span>
+
+<span class="ne">IndexError</span>: boolean index did not match indexed array along dimension 0; dimension is 8028160 but corresponding boolean dimension is 45722880
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert to a dataframe for plotting purposes</span>
+<span class="n">seg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">seg</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">roi_names</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span> <span class="s1">&#39;qsm&#39;</span> <span class="p">:</span> <span class="n">qsm</span><span class="p">,</span> <span class="s1">&#39;seg&#39;</span> <span class="p">:</span> <span class="n">seg</span> <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># convert to a dataframe for plotting purposes</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">seg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">seg</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">roi_names</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span> <span class="s1">&#39;qsm&#39;</span> <span class="p">:</span> <span class="n">qsm</span><span class="p">,</span> <span class="s1">&#39;seg&#39;</span> <span class="p">:</span> <span class="n">seg</span> <span class="p">})</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/core/frame.py:733,</span> in <span class="ni">DataFrame.__init__</span><span class="nt">(self, data, index, columns, dtype, copy)</span>
+<span class="g g-Whitespace">    </span><span class="mi">727</span>     <span class="n">mgr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_mgr</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">728</span>         <span class="n">data</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="n">index</span><span class="p">,</span> <span class="s2">&quot;columns&quot;</span><span class="p">:</span> <span class="n">columns</span><span class="p">},</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span>
+<span class="g g-Whitespace">    </span><span class="mi">729</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">731</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">732</span>     <span class="c1"># GH#38939 de facto copy defaults to False only in non-dict cases</span>
+<span class="ne">--&gt; </span><span class="mi">733</span>     <span class="n">mgr</span> <span class="o">=</span> <span class="n">dict_to_mgr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">typ</span><span class="o">=</span><span class="n">manager</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">734</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">735</span>     <span class="kn">from</span> <span class="nn">numpy.ma</span> <span class="kn">import</span> <span class="n">mrecords</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/core/internals/construction.py:503,</span> in <span class="ni">dict_to_mgr</span><span class="nt">(data, index, columns, dtype, typ, copy)</span>
+<span class="g g-Whitespace">    </span><span class="mi">499</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">500</span>         <span class="c1"># dtype check to exclude e.g. range objects, scalars</span>
+<span class="g g-Whitespace">    </span><span class="mi">501</span>         <span class="n">arrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;dtype&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">503</span> <span class="k">return</span> <span class="n">arrays_to_mgr</span><span class="p">(</span><span class="n">arrays</span><span class="p">,</span> <span class="n">columns</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">typ</span><span class="o">=</span><span class="n">typ</span><span class="p">,</span> <span class="n">consolidate</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/core/internals/construction.py:114,</span> in <span class="ni">arrays_to_mgr</span><span class="nt">(arrays, columns, index, dtype, verify_integrity, typ, consolidate)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">if</span> <span class="n">verify_integrity</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="c1"># figure out the index, if necessary</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span>     <span class="k">if</span> <span class="n">index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">114</span>         <span class="n">index</span> <span class="o">=</span> <span class="n">_extract_index</span><span class="p">(</span><span class="n">arrays</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">116</span>         <span class="n">index</span> <span class="o">=</span> <span class="n">ensure_index</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/core/internals/construction.py:690,</span> in <span class="ni">_extract_index</span><span class="nt">(data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">685</span>     <span class="k">if</span> <span class="n">lengths</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">686</span>         <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">687</span>             <span class="sa">f</span><span class="s2">&quot;array length </span><span class="si">{</span><span class="n">lengths</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> does not match index &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">688</span>             <span class="sa">f</span><span class="s2">&quot;length </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">689</span>         <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">690</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">691</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">692</span>     <span class="n">index</span> <span class="o">=</span> <span class="n">default_index</span><span class="p">(</span><span class="n">lengths</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="ne">ValueError</span>: array length 8028160 does not match index length 45722880
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># summarise data by region including the average and standard deviation</span>
+<span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;seg&#39;</span><span class="p">)[</span><span class="s1">&#39;qsm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">decimals</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># summarise data by region including the average and standard deviation</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;seg&#39;</span><span class="p">)[</span><span class="s1">&#39;qsm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">decimals</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;data&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medians</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;seg&#39;</span><span class="p">)[</span><span class="s1">&#39;qsm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+<span class="n">order</span> <span class="o">=</span> <span class="n">medians</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">medians</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;seg&#39;</span><span class="p">)[</span><span class="s1">&#39;qsm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">order</span> <span class="o">=</span> <span class="n">medians</span><span class="o">.</span><span class="n">index</span>
+
+<span class="ne">NameError</span>: name &#39;data&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;qsm&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;seg&#39;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticks</span><span class="p">())))</span>  <span class="c1"># Set tick positions explicitly</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;pink&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Region of interest&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Susceptibility (ppm)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;QSM&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># plot</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;qsm&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;seg&#39;</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticks</span><span class="p">())))</span>  <span class="c1"># Set tick positions explicitly</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;data&#39; is not defined
+</pre></div>
+</div>
+<img alt="_images/0e55f04f3a11297b3d321ceabb0d3a600a2789a4914902578a1590cc0e0de83f.png" src="_images/0e55f04f3a11297b3d321ceabb0d3a600a2789a4914902578a1590cc0e0de83f.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">QSMxT Example</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#qsmxt-interactive-notebook">QSMxT Interactive Notebook</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-qsm">What is QSM?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-qsmxt">What is QSMxT?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-access-qsmxt">How do I access QSMxT?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#download-example-dicoms">Download example DICOMs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-qsmxt">Load QSMxT</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-standardisation">Data standardisation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-dicoms">Sort DICOMs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-to-bids">Convert to BIDS</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-input-data">Inspect input data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#run-qsmxt">Run QSMxT</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#view-results">View results</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qsm-results">QSM results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentations">Segmentations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-csvs">Analysis CSVs</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Neurodesk Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
