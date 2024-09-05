@@ -125,6 +125,10 @@ jobs:
         keep_files: true
         cname: www.neurodesk.org
 
+    - name: Clean build dir
+      run: |
+        rm -rf /home/ubuntu/actions_github_pages_*
+
   build-structure:
     needs: [ test-notebooks ]
     runs-on: ubuntu-22.04
