@@ -1,0 +1,2095 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>SCT Toolbox Example &#8212; Neurodesk</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-4Z9774J59Y"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-4Z9774J59Y');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sct_toolbox';</script>
+    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/sct_toolbox.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Neurodesk</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    SCT Toolbox Example
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://play-iowa.neurodesk.org/hub/user-redirect/lab/tree/example-notebooks/books/v2/gh/NeuroDesk/example-notebooks/main?urlpath=lab/tree/books/sct_toolbox.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/sct_toolbox.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/NeuroDesk/example-notebooks" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/edit/main/books/sct_toolbox.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Fsct_toolbox.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/sct_toolbox.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>SCT Toolbox Example</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">SCT Toolbox Example</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#demonstrating-the-spinal-cord-toolbox-sct-use-via-neurodesk">Demonstrating the Spinal Cord Toolbox (SCT) use via Neurodesk</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/structural_imaging/sct_toolbox.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>   </a></p>
+<section id="sct-toolbox-example">
+<h1>SCT Toolbox Example<a class="headerlink" href="#sct-toolbox-example" title="Permalink to this heading">#</a></h1>
+<p>Author: Steffen Bollmann</p>
+</section>
+<section id="setup-neurodesk">
+<h1>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
+import os
+import sys
+IN_COLAB = &#39;google.colab&#39; in sys.modules
+
+if IN_COLAB:
+  os.environ[&quot;LD_PRELOAD&quot;] = &quot;&quot;;
+  os.environ[&quot;APPTAINER_BINDPATH&quot;] = &quot;/content,/tmp,/cvmfs&quot;
+  os.environ[&quot;MPLCONFIGDIR&quot;] = &quot;/content/matplotlib-mpldir&quot;
+  os.environ[&quot;LMOD_CMD&quot;] = &quot;/usr/share/lmod/lmod/libexec/lmod&quot;
+
+  !curl -J -O https://raw.githubusercontent.com/NeuroDesk/neurocommand/main/googlecolab_setup.sh
+  !chmod +x googlecolab_setup.sh
+  !./googlecolab_setup.sh
+
+  os.environ[&quot;MODULEPATH&quot;] = &#39;:&#39;.join(map(str, list(map(lambda x: os.path.join(os.path.abspath(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;), x),os.listdir(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;)))))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
+<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;vendor&#39;</span> <span class="p">|</span> uniq
+<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;model name&#39;</span> <span class="p">|</span> uniq
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: AuthenticAMD
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>model name	: AMD EPYC-Rome Processor
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="demonstrating-the-spinal-cord-toolbox-sct-use-via-neurodesk">
+<h1>Demonstrating the Spinal Cord Toolbox (SCT) use via Neurodesk<a class="headerlink" href="#demonstrating-the-spinal-cord-toolbox-sct-use-via-neurodesk" title="Permalink to this heading">#</a></h1>
+<p>In Neurodesk we can use lmod to load specific versions of tools. Here we load the spinalcordtoolbox in a specific version:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lmod</span>
+<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;spinalcordtoolbox/5.8&#39;</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Lmod&#39;,
+ &#39;Warning:&#39;,
+ &#39;The&#39;,
+ &#39;environment&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;has&#39;,
+ &#39;been&#39;,
+ &#39;changed&#39;,
+ &#39;in&#39;,
+ &#39;unexpected&#39;,
+ &#39;ways.&#39;,
+ &#39;Lmod&#39;,
+ &#39;is&#39;,
+ &#39;unable&#39;,
+ &#39;to&#39;,
+ &#39;use&#39;,
+ &#39;given&#39;,
+ &#39;MODULEPATH.&#39;,
+ &#39;It&#39;,
+ &#39;is&#39;,
+ &#39;using:&#39;,
+ &#39;&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/_diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/_functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/_workflows::&quot;.&#39;,
+ &#39;Please&#39;,
+ &#39;use&#39;,
+ &#39;&quot;module&#39;,
+ &#39;use&#39;,
+ &#39;to&#39;,
+ &#39;change&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;instead.&#39;,
+ &#39;spinalcordtoolbox/5.8&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this interactive notebook we will go through a series of processing steps specific to spinal cord MRI analysis. We first need to import the necessary tools and setup the filenames and folders in the notebook environment.</p>
+<p>The rest of this notebook is copied from the neurolibre project with minor path modifications and code adjustments to work with the current version of SCT: <a class="reference external" href="https://mathieuboudreau.github.io/pipelines-jupyter-book/01/sct_mtsat">https://mathieuboudreau.github.io/pipelines-jupyter-book/01/sct_mtsat</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>
+
+<span class="n">base_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download example data</span>
+<span class="o">!</span>sct_download_data -d sct_example_data -o ./sct_example_data
+
+<span class="c1"># Go to MT folder</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;./sct_example_data/mt/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--
+Spinal Cord Toolbox (5.8)
+
+sct_download_data -d sct_example_data -o ./sct_example_data
+--
+
+<span class=" -Color -Color-Yellow">Removing existing destination folder &#39;sct_example_data&#39;</span>
+Trying URL: https://github.com/spinalcordtoolbox/sct_example_data/releases/download/r20180525/20180525_sct_example_data.zip
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading: 20180525_sct_example_data.zip
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status:   0%|                                       | 0.00/44.3M [00:00&lt;?, ?B/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status:  21%|██████▎                       | 9.30M/44.3M [00:00&lt;00:00, 92.9MB/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status:  54%|████████████████▊              | 24.0M/44.3M [00:00&lt;00:00, 125MB/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status:  82%|█████████████████████████▌     | 36.5M/44.3M [00:00&lt;00:00, 122MB/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status: 100%|███████████████████████████████| 44.3M/44.3M [00:00&lt;00:00, 121MB/s]
+Creating temporary folder (/tmp/sct-20241017005027.449442-upud6xo2)
+Unzip data to: /tmp/sct-20241017005027.449442-upud6xo2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Copying data to: sct_example_data
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Removing temporary folders...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Done!
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Jupyter Notebook config</span>
+<span class="n">verbose</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># False clears cells</span>
+
+<span class="c1"># Folder/filename config</span>
+<span class="n">parent_dirs</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">base_path</span><span class="p">)</span>
+<span class="n">mt_folder_relative</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;sct_example_data/mt&#39;</span><span class="p">)</span>
+<span class="n">qc_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="s1">&#39;qc&#39;</span><span class="p">)</span>
+
+<span class="n">t1w</span> <span class="o">=</span> <span class="s1">&#39;t1w&#39;</span>
+<span class="n">mt0</span> <span class="o">=</span> <span class="s1">&#39;mt0&#39;</span>
+<span class="n">mt1</span> <span class="o">=</span> <span class="s1">&#39;mt1&#39;</span>
+<span class="n">label_c3c4</span> <span class="o">=</span> <span class="s1">&#39;label_c3c4&#39;</span>
+<span class="n">warp_template2anat</span> <span class="o">=</span> <span class="s1">&#39;warp_template2anat&#39;</span>
+<span class="n">mtr</span> <span class="o">=</span> <span class="s1">&#39;mtr&#39;</span>
+<span class="n">mtsat</span> <span class="o">=</span> <span class="s1">&#39;mtsat&#39;</span>
+<span class="n">t1map</span> <span class="o">=</span> <span class="s1">&#39;t1map&#39;</span>
+
+<span class="n">file_ext</span> <span class="o">=</span> <span class="s1">&#39;.nii.gz&#39;</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">verbose</span><span class="p">:</span>
+    <span class="n">clear_output</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first processing step consists in segmenting the spinal cord. This is done automatically using an algorithm called Optic that finds the spinal cord centerline, followed by a second algorithm called DeepSeg-SC that relies on deep learning for segmenting the cord.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Segment spinal cord</span>
+<span class="o">!</span>sct_deepseg_sc -i <span class="o">{</span>t1w+file_ext<span class="o">}</span> -c t1 -qc <span class="o">{</span>qc_path<span class="o">}</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">verbose</span><span class="p">:</span>
+    <span class="n">clear_output</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--
+Spinal Cord Toolbox (5.8)
+
+sct_deepseg_sc -i t1w.nii.gz -c t1 -qc /storage/tmp/tmpnhgyrqup/qc
+--
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Config deepseg_sc:
+  Centerline algorithm: svm
+  Brain in image: True
+  Kernel dimension: 2d
+  Contrast: t1
+  Threshold: 0.15
+Creating temporary folder (/tmp/sct-20241017005036.109654-rsbjre52)
+Reorient the image to RPI, if necessary...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finding the spinal cord centerline...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Creating temporary folder (/tmp/sct-20241017005037.723751-07mknx7y)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Remove temporary files...
+rm -rf /tmp/sct-20241017005037.723751-07mknx7y
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cropping the image around the spinal cord...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Normalizing the intensity...
+Segmenting the spinal cord using deep learning on 2D patches...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reassembling the image...
+Resampling the segmentation to the native image resolution using linear interpolation...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Binarizing the resampled segmentation...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">Image header specifies datatype &#39;float32&#39;, but array is of type &#39;uint8&#39;. Header metadata will be overwritten to use &#39;uint8&#39;.</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Compute shape analysis:   0%|                          | 0/17 [00:00&lt;?, ?iter/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Compute shape analysis:   6%|#                 | 1/17 [00:00&lt;00:02,  5.47iter/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Compute shape analysis: 100%|#################| 17/17 [00:00&lt;00:00, 68.56iter/s]
+Remove temporary files...
+rm -rf /tmp/sct-20241017005036.109654-rsbjre52
+
+*** Generate Quality Control (QC) html report ***
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Resample images to 0.6x0.6 mm
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+Traceback (most recent call last):
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/scripts/sct_deepseg_sc.py&quot;, line 214, in &lt;module&gt;
+    main(sys.argv[1:])
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/scripts/sct_deepseg_sc.py&quot;, line 207, in main
+    generate_qc(fname_image, fname_seg=fname_seg, args=argv, path_qc=os.path.abspath(path_qc),
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/reports/qc.py&quot;, line 851, in generate_qc
+    add_entry(
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/reports/qc.py&quot;, line 718, in add_entry
+    layout(qcslice)
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/reports/qc.py&quot;, line 290, in wrapped_f
+    self.qc_report.make_content_path()
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/reports/qc.py&quot;, line 604, in make_content_path
+    raise err
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/reports/qc.py&quot;, line 601, in make_content_path
+    os.makedirs(target_img_folder, exist_ok=True)
+  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/os.py&quot;, line 213, in makedirs
+    makedirs(head, exist_ok=exist_ok)
+  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/os.py&quot;, line 213, in makedirs
+    makedirs(head, exist_ok=exist_ok)
+  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/os.py&quot;, line 213, in makedirs
+    makedirs(head, exist_ok=exist_ok)
+  [Previous line repeated 2 more times]
+  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/os.py&quot;, line 223, in makedirs
+    mkdir(name, mode)
+OSError: [Errno 30] Read-only file system: &#39;/storage/tmp/tmpnhgyrqup/qc&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Results of the segmentation appear in Figure 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot QC figures</span>
+
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s1">&#39;darwin&#39;</span><span class="p">:</span>
+    <span class="c1"># For local testing on OSX    </span>
+    <span class="n">sct_deepseg_sc_qc</span> <span class="o">=</span> <span class="s1">&#39;qc/sct_example_data/mt/sct_deepseg_sc&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># For linux and on-line Binder execution</span>
+    <span class="n">sct_deepseg_sc_qc</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">qc_path</span><span class="p">,</span> <span class="n">parent_dirs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">mt_folder_relative</span><span class="p">,</span> <span class="s1">&#39;sct_deepseg_sc&#39;</span><span class="p">)</span>
+
+<span class="n">folders</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sct_deepseg_sc_qc</span><span class="p">,</span> <span class="n">x</span><span class="p">)),</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">sct_deepseg_sc_qc</span><span class="p">)))</span>
+
+<span class="n">qc_date</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">folders</span><span class="p">)</span>
+
+<span class="n">sct_deepseg_sc_qc_dir</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">sct_deepseg_sc_qc</span><span class="p">,</span> <span class="n">qc_date</span><span class="p">)</span>
+
+<span class="n">bkg</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">sct_deepseg_sc_qc_dir</span><span class="p">,</span> <span class="s1">&#39;bkg_img.png&#39;</span><span class="p">))</span>
+<span class="n">overlay</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">sct_deepseg_sc_qc_dir</span><span class="p">,</span> <span class="s1">&#39;overlay_img.png&#39;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">imgplot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">bkg</span><span class="p">)</span>
+<span class="n">imgplot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">overlay</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="c1"># For linux and on-line Binder execution</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">sct_deepseg_sc_qc</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">qc_path</span><span class="p">,</span> <span class="n">parent_dirs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">mt_folder_relative</span><span class="p">,</span> <span class="s1">&#39;sct_deepseg_sc&#39;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">folders</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sct_deepseg_sc_qc</span><span class="p">,</span> <span class="n">x</span><span class="p">)),</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">sct_deepseg_sc_qc</span><span class="p">)))</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">qc_date</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">folders</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">sct_deepseg_sc_qc_dir</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">sct_deepseg_sc_qc</span><span class="p">,</span> <span class="n">qc_date</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/storage/tmp/tmpnhgyrqup/qc/tmpnhgyrqup/sct_example_data/mt/sct_deepseg_sc&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Figure 1. Quality control (QC) SCT module segmentation results. The segmentation (in red) is overlaid on the T1-weighted anatomical scan (in grayscale). Orientation is axial.</p>
+<p>Using the generated segmentation, we create a mask around the spinal cord which will be used to crop the image for faster processing and more accurate registration results: the registration algorithm will concentrate on the spinal cord and not on the surrounding tissue (e.g., muscles, neck fat, etc.) which could move independently from the spinal cord and hence produce spurious motion correction results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create mask</span>
+<span class="o">!</span>sct_create_mask -i <span class="o">{</span>t1w+file_ext<span class="o">}</span> -p centerline,<span class="o">{</span>t1w+<span class="s1">&#39;_seg&#39;</span>+file_ext<span class="o">}</span> -size 35mm -o <span class="o">{</span>t1w+<span class="s1">&#39;_mask&#39;</span>+file_ext<span class="o">}</span>
+
+<span class="c1"># Crop data for faster processing</span>
+<span class="o">!</span>sct_crop_image -i <span class="o">{</span>t1w+file_ext<span class="o">}</span> -m <span class="o">{</span>t1w+<span class="s1">&#39;_mask&#39;</span>+file_ext<span class="o">}</span> -o <span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">verbose</span><span class="p">:</span>
+    <span class="n">clear_output</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--
+Spinal Cord Toolbox (5.8)
+
+sct_create_mask -i t1w.nii.gz -p centerline,t1w_seg.nii.gz -size 35mm -o t1w_mask.nii.gz
+--
+
+  OK: t1w_seg.nii.gz
+Creating temporary folder (/tmp/sct-20241017005050.435433-create_mask-izuszn2u)
+
+Orientation:
+  LPI
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+Dimensions:
+(192, 192, 22, 1, 0.8958333, 0.8958333, 5.000001, 1)
+
+Create mask...
+/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/scripts/sct_create_mask.py:230: DeprecationWarning: get_header method is deprecated.
+Please use the ``img.header`` property instead.
+
+* deprecated from version: 2.1
+* Will raise &lt;class &#39;nibabel.deprecator.ExpiredDeprecationError&#39;&gt; as of version: 4.0
+  hdr = centerline.get_header()  # get header
+/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/scripts/sct_create_mask.py:233: DeprecationWarning: get_data() is deprecated in favor of get_fdata(), which has a more predictable return type. To obtain get_data() behavior going forward, use numpy.asanyarray(img.dataobj).
+
+* deprecated from version: 3.0
+* Will raise &lt;class &#39;nibabel.deprecator.ExpiredDeprecationError&#39;&gt; as of version: 5.0
+  data_centerline = centerline.get_data()  # get centerline
+/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/scripts/sct_create_mask.py:245: DeprecationWarning: Please use `center_of_mass` from the `scipy.ndimage` namespace, the `scipy.ndimage.measurements` namespace is deprecated.
+  cx[iz], cy[iz] = ndimage.measurements.center_of_mass(np.array(data_centerline[:, :, iz]))
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+<span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+<span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+<span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+<span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+<span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+<span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+<span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+<span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+<span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+<span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+<span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+<span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+<span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+<span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+<span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+<span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+<span class=" -Color -Color-Yellow">Image header specifies datatype &#39;uint8&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">Image header specifies datatype &#39;int16&#39;, but array is of type &#39;int64&#39;. Header metadata will be overwritten to use &#39;int64&#39;.</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+Remove temporary files...
+rm -rf /tmp/sct-20241017005050.435433-create_mask-izuszn2u
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--
+Spinal Cord Toolbox (5.8)
+
+sct_crop_image -i t1w.nii.gz -m t1w_mask.nii.gz -o t1w_crop.nii.gz
+--
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bounding box: x=[73, 118], y=[69, 112], z=[4, 21]
+Cropping the image...
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, we register the proton density weighted (PD) image to the T1w image, and the MT-weighted image to the T1w image, so we end up with the T1w, MTw and PDw images all aligned together, which is a necessary condition for then computing quantitative MR metrics (here: MTsat).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Register PD-&gt;T1w</span>
+<span class="c1"># Tips: here we only use rigid transformation because both images have very similar sequence parameters. We don&#39;t want to use SyN/BSplineSyN to avoid introducing spurious deformations.</span>
+<span class="o">!</span>sct_register_multimodal -i <span class="o">{</span>mt0+file_ext<span class="o">}</span> -d <span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span> -param <span class="nv">step</span><span class="o">=</span><span class="m">1</span>,type<span class="o">=</span>im,algo<span class="o">=</span>rigid,slicewise<span class="o">=</span><span class="m">1</span>,metric<span class="o">=</span>CC -x spline
+
+<span class="c1"># Register MT-&gt;T1w</span>
+<span class="o">!</span>sct_register_multimodal -i <span class="o">{</span>mt1+file_ext<span class="o">}</span> -d <span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span> -param <span class="nv">step</span><span class="o">=</span><span class="m">1</span>,type<span class="o">=</span>im,algo<span class="o">=</span>rigid,slicewise<span class="o">=</span><span class="m">1</span>,metric<span class="o">=</span>CC -x spline
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">verbose</span><span class="p">:</span>
+    <span class="n">clear_output</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--
+Spinal Cord Toolbox (5.8)
+
+sct_register_multimodal -i mt0.nii.gz -d t1w_crop.nii.gz -param step=1,type=im,algo=rigid,slicewise=1,metric=CC -x spline
+--
+
+
+Input parameters:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Source .............. mt0.nii.gz (192, 192, 22)
+  Destination ......... t1w_crop.nii.gz (45, 43, 17)
+  Init transfo ........ 
+  Mask ................ 
+  Output name ......... 
+  Remove temp files ... 1
+  Verbose ............. 1
+
+Check if input data are 3D...
+Creating temporary folder (/tmp/sct-20241017005100.639353-register-x5wdnejo)
+
+Copying input data to tmp folder and convert to nii...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+--
+ESTIMATE TRANSFORMATION FOR STEP #0
+Registration parameters:
+  type ........... im
+  algo ........... syn
+  slicewise ...... 0
+  metric ......... MI
+  samplStrategy .. None
+  samplPercent ... 0.2
+  iter ........... 0
+  smooth ......... 0
+  laplacian ...... 0
+  shrink ......... 1
+  gradStep ....... 0.5
+  deformation .... 1x1x0
+  init ........... 
+  poly ........... 5
+  filter_size .... 5
+  dof ............ Tx_Ty_Tz_Rx_Ry_Rz
+  smoothWarpXY ... 2
+  rot_method ..... pca
+
+Estimate transformation
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 3 --transform &#39;syn[0.5,3,0]&#39; --metric &#39;MI[dest_RPI.nii,src.nii,1,32]&#39; --convergence 0 --shrink-factors 1 --smoothing-sigmas 0mm --restrict-deformation 1x1x0 --output &#39;[step0,src_regStep0.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005100.639353-register-x5wdnejo
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+--
+ESTIMATE TRANSFORMATION FOR STEP #1
+
+Apply transformation from previous step
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsApplyTransforms -d 3 -i src.nii -o src_reg.nii -t warp_forward_0.nii.gz -r dest_RPI.nii -n &#39;BSpline[3]&#39; # in /tmp/sct-20241017005100.639353-register-x5wdnejo
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registration parameters:
+  type ........... im
+  algo ........... rigid
+  slicewise ...... 1
+  metric ......... CC
+  samplStrategy .. None
+  samplPercent ... 0.2
+  iter ........... 10
+  smooth ......... 0
+  laplacian ...... 0
+  shrink ......... 1
+  gradStep ....... 0.5
+  deformation .... 1x1x0
+  init ........... 
+  poly ........... 5
+  filter_size .... 5
+  dof ............ Tx_Ty_Tz_Rx_Ry_Rz
+  smoothWarpXY ... 2
+  rot_method ..... pca
+Creating temporary folder (/tmp/sct-20241017005101.291005-register-03lgs9vi)
+
+Copy input data to temp folder...
+
+Get image dimensions of destination image...
+  matrix size: 45 x 43 x 17
+  voxel size: 0.8958333mm x 0.8958333mm x 17mm
+
+Split input volume...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Split destination volume...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 0/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0000.nii,src_Z0000.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0000,src_Z0000_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0000.nii,src_Z0000.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00000Warp.nii.gz -R dest_Z0000.nii warp2d_null0Warp.nii.gz warp2d_00000GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00000InverseWarp.nii.gz -R src_Z0000.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00000GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 1/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0001.nii,src_Z0001.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0001,src_Z0001_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0001.nii,src_Z0001.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00010Warp.nii.gz -R dest_Z0001.nii warp2d_null0Warp.nii.gz warp2d_00010GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00010InverseWarp.nii.gz -R src_Z0001.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00010GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 2/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0002.nii,src_Z0002.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0002,src_Z0002_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0002.nii,src_Z0002.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00020Warp.nii.gz -R dest_Z0002.nii warp2d_null0Warp.nii.gz warp2d_00020GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00020InverseWarp.nii.gz -R src_Z0002.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00020GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 3/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0003.nii,src_Z0003.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0003,src_Z0003_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0003.nii,src_Z0003.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00030Warp.nii.gz -R dest_Z0003.nii warp2d_null0Warp.nii.gz warp2d_00030GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00030InverseWarp.nii.gz -R src_Z0003.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00030GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 4/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0004.nii,src_Z0004.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0004,src_Z0004_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0004.nii,src_Z0004.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00040Warp.nii.gz -R dest_Z0004.nii warp2d_null0Warp.nii.gz warp2d_00040GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00040InverseWarp.nii.gz -R src_Z0004.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00040GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 5/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0005.nii,src_Z0005.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0005,src_Z0005_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0005.nii,src_Z0005.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00050Warp.nii.gz -R dest_Z0005.nii warp2d_null0Warp.nii.gz warp2d_00050GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00050InverseWarp.nii.gz -R src_Z0005.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00050GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 6/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0006.nii,src_Z0006.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0006,src_Z0006_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0006.nii,src_Z0006.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00060Warp.nii.gz -R dest_Z0006.nii warp2d_null0Warp.nii.gz warp2d_00060GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00060InverseWarp.nii.gz -R src_Z0006.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00060GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 7/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0007.nii,src_Z0007.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0007,src_Z0007_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0007.nii,src_Z0007.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00070Warp.nii.gz -R dest_Z0007.nii warp2d_null0Warp.nii.gz warp2d_00070GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00070InverseWarp.nii.gz -R src_Z0007.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00070GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 8/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0008.nii,src_Z0008.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0008,src_Z0008_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0008.nii,src_Z0008.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00080Warp.nii.gz -R dest_Z0008.nii warp2d_null0Warp.nii.gz warp2d_00080GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00080InverseWarp.nii.gz -R src_Z0008.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00080GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 9/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0009.nii,src_Z0009.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0009,src_Z0009_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0009.nii,src_Z0009.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00090Warp.nii.gz -R dest_Z0009.nii warp2d_null0Warp.nii.gz warp2d_00090GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00090InverseWarp.nii.gz -R src_Z0009.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00090GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 10/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0010.nii,src_Z0010.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0010,src_Z0010_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0010.nii,src_Z0010.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00100Warp.nii.gz -R dest_Z0010.nii warp2d_null0Warp.nii.gz warp2d_00100GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00100InverseWarp.nii.gz -R src_Z0010.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00100GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 11/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0011.nii,src_Z0011.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0011,src_Z0011_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0011.nii,src_Z0011.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00110Warp.nii.gz -R dest_Z0011.nii warp2d_null0Warp.nii.gz warp2d_00110GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00110InverseWarp.nii.gz -R src_Z0011.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00110GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 12/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0012.nii,src_Z0012.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0012,src_Z0012_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0012.nii,src_Z0012.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00120Warp.nii.gz -R dest_Z0012.nii warp2d_null0Warp.nii.gz warp2d_00120GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00120InverseWarp.nii.gz -R src_Z0012.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00120GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 13/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0013.nii,src_Z0013.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0013,src_Z0013_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0013.nii,src_Z0013.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00130Warp.nii.gz -R dest_Z0013.nii warp2d_null0Warp.nii.gz warp2d_00130GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00130InverseWarp.nii.gz -R src_Z0013.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00130GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 14/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0014.nii,src_Z0014.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0014,src_Z0014_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0014.nii,src_Z0014.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00140Warp.nii.gz -R dest_Z0014.nii warp2d_null0Warp.nii.gz warp2d_00140GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00140InverseWarp.nii.gz -R src_Z0014.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00140GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 15/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0015.nii,src_Z0015.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0015,src_Z0015_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0015.nii,src_Z0015.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00150Warp.nii.gz -R dest_Z0015.nii warp2d_null0Warp.nii.gz warp2d_00150GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00150InverseWarp.nii.gz -R src_Z0015.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00150GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 16/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0016.nii,src_Z0016.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0016,src_Z0016_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0016.nii,src_Z0016.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00160Warp.nii.gz -R dest_Z0016.nii warp2d_null0Warp.nii.gz warp2d_00160GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00160InverseWarp.nii.gz -R src_Z0016.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00160GenericAffine.mat # in /tmp/sct-20241017005101.291005-register-03lgs9vi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Merge warping fields along z...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Move warping fields...
+cp step1Warp.nii.gz /tmp/sct-20241017005100.639353-register-x5wdnejo
+cp step1InverseWarp.nii.gz /tmp/sct-20241017005100.639353-register-x5wdnejo
+rm -rf /tmp/sct-20241017005101.291005-register-03lgs9vi
+
+Concatenate transformations...
+/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 3 warp_src2dest.nii.gz -R dest.nii warp_forward_1.nii.gz warp_forward_0.nii.gz # in /tmp/sct-20241017005100.639353-register-x5wdnejo
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 3 warp_dest2src.nii.gz -R src.nii warp_inverse_0.nii.gz warp_inverse_1.nii.gz # in /tmp/sct-20241017005100.639353-register-x5wdnejo
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+Apply transfo source --&gt; dest...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsApplyTransforms -d 3 -i src.nii -o src_reg.nii -t warp_src2dest.nii.gz -r dest.nii -n &#39;BSpline[3]&#39; # in /tmp/sct-20241017005100.639353-register-x5wdnejo
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+Apply transfo dest --&gt; source...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsApplyTransforms -d 3 -i dest.nii -o dest_reg.nii -t warp_dest2src.nii.gz -r src.nii -n &#39;BSpline[3]&#39; # in /tmp/sct-20241017005100.639353-register-x5wdnejo
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+Generate output files...
+File created: mt0_reg.nii.gz
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mv /tmp/sct-20241017005100.639353-register-x5wdnejo/warp_src2dest.nii.gz warp_mt02t1w_crop.nii.gz
+File created: warp_mt02t1w_crop.nii.gz
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File created: t1w_crop_reg.nii.gz
+mv /tmp/sct-20241017005100.639353-register-x5wdnejo/warp_dest2src.nii.gz warp_t1w_crop2mt0.nii.gz
+File created: warp_t1w_crop2mt0.nii.gz
+
+Remove temporary files...
+rm -rf /tmp/sct-20241017005100.639353-register-x5wdnejo
+
+Finished! Elapsed time: 11s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--
+Spinal Cord Toolbox (5.8)
+
+sct_register_multimodal -i mt1.nii.gz -d t1w_crop.nii.gz -param step=1,type=im,algo=rigid,slicewise=1,metric=CC -x spline
+--
+
+
+Input parameters:
+  Source .............. mt1.nii.gz (192, 192, 22)
+  Destination ......... t1w_crop.nii.gz (45, 43, 17)
+  Init transfo ........ 
+  Mask ................ 
+  Output name ......... 
+  Remove temp files ... 1
+  Verbose ............. 1
+
+Check if input data are 3D...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Creating temporary folder (/tmp/sct-20241017005118.646955-register-e_racygw)
+
+Copying input data to tmp folder and convert to nii...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+--
+ESTIMATE TRANSFORMATION FOR STEP #0
+Registration parameters:
+  type ........... im
+  algo ........... syn
+  slicewise ...... 0
+  metric ......... MI
+  samplStrategy .. None
+  samplPercent ... 0.2
+  iter ........... 0
+  smooth ......... 0
+  laplacian ...... 0
+  shrink ......... 1
+  gradStep ....... 0.5
+  deformation .... 1x1x0
+  init ........... 
+  poly ........... 5
+  filter_size .... 5
+  dof ............ Tx_Ty_Tz_Rx_Ry_Rz
+  smoothWarpXY ... 2
+  rot_method ..... pca
+
+Estimate transformation
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 3 --transform &#39;syn[0.5,3,0]&#39; --metric &#39;MI[dest_RPI.nii,src.nii,1,32]&#39; --convergence 0 --shrink-factors 1 --smoothing-sigmas 0mm --restrict-deformation 1x1x0 --output &#39;[step0,src_regStep0.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005118.646955-register-e_racygw
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+--
+ESTIMATE TRANSFORMATION FOR STEP #1
+
+Apply transformation from previous step
+/opt/spinalcordtoolbox-5.8/bin/isct_antsApplyTransforms -d 3 -i src.nii -o src_reg.nii -t warp_forward_0.nii.gz -r dest_RPI.nii -n &#39;BSpline[3]&#39; # in /tmp/sct-20241017005118.646955-register-e_racygw
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registration parameters:
+  type ........... im
+  algo ........... rigid
+  slicewise ...... 1
+  metric ......... CC
+  samplStrategy .. None
+  samplPercent ... 0.2
+  iter ........... 10
+  smooth ......... 0
+  laplacian ...... 0
+  shrink ......... 1
+  gradStep ....... 0.5
+  deformation .... 1x1x0
+  init ........... 
+  poly ........... 5
+  filter_size .... 5
+  dof ............ Tx_Ty_Tz_Rx_Ry_Rz
+  smoothWarpXY ... 2
+  rot_method ..... pca
+Creating temporary folder (/tmp/sct-20241017005119.199548-register-zuxf9378)
+
+Copy input data to temp folder...
+
+Get image dimensions of destination image...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  matrix size: 45 x 43 x 17
+  voxel size: 0.8958333mm x 0.8958333mm x 17mm
+
+Split input volume...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Split destination volume...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 0/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0000.nii,src_Z0000.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0000,src_Z0000_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0000.nii,src_Z0000.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00000Warp.nii.gz -R dest_Z0000.nii warp2d_null0Warp.nii.gz warp2d_00000GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00000InverseWarp.nii.gz -R src_Z0000.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00000GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 1/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0001.nii,src_Z0001.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0001,src_Z0001_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0001.nii,src_Z0001.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00010Warp.nii.gz -R dest_Z0001.nii warp2d_null0Warp.nii.gz warp2d_00010GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00010InverseWarp.nii.gz -R src_Z0001.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00010GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 2/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0002.nii,src_Z0002.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0002,src_Z0002_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0002.nii,src_Z0002.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00020Warp.nii.gz -R dest_Z0002.nii warp2d_null0Warp.nii.gz warp2d_00020GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00020InverseWarp.nii.gz -R src_Z0002.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00020GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 3/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0003.nii,src_Z0003.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0003,src_Z0003_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0003.nii,src_Z0003.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00030Warp.nii.gz -R dest_Z0003.nii warp2d_null0Warp.nii.gz warp2d_00030GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00030InverseWarp.nii.gz -R src_Z0003.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00030GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 4/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0004.nii,src_Z0004.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0004,src_Z0004_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0004.nii,src_Z0004.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00040Warp.nii.gz -R dest_Z0004.nii warp2d_null0Warp.nii.gz warp2d_00040GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00040InverseWarp.nii.gz -R src_Z0004.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00040GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 5/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0005.nii,src_Z0005.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0005,src_Z0005_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0005.nii,src_Z0005.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00050Warp.nii.gz -R dest_Z0005.nii warp2d_null0Warp.nii.gz warp2d_00050GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00050InverseWarp.nii.gz -R src_Z0005.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00050GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 6/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0006.nii,src_Z0006.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0006,src_Z0006_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0006.nii,src_Z0006.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00060Warp.nii.gz -R dest_Z0006.nii warp2d_null0Warp.nii.gz warp2d_00060GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00060InverseWarp.nii.gz -R src_Z0006.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00060GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 7/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0007.nii,src_Z0007.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0007,src_Z0007_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0007.nii,src_Z0007.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00070Warp.nii.gz -R dest_Z0007.nii warp2d_null0Warp.nii.gz warp2d_00070GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00070InverseWarp.nii.gz -R src_Z0007.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00070GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 8/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0008.nii,src_Z0008.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0008,src_Z0008_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0008.nii,src_Z0008.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00080Warp.nii.gz -R dest_Z0008.nii warp2d_null0Warp.nii.gz warp2d_00080GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00080InverseWarp.nii.gz -R src_Z0008.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00080GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 9/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0009.nii,src_Z0009.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0009,src_Z0009_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0009.nii,src_Z0009.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00090Warp.nii.gz -R dest_Z0009.nii warp2d_null0Warp.nii.gz warp2d_00090GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00090InverseWarp.nii.gz -R src_Z0009.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00090GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 10/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0010.nii,src_Z0010.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0010,src_Z0010_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0010.nii,src_Z0010.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00100Warp.nii.gz -R dest_Z0010.nii warp2d_null0Warp.nii.gz warp2d_00100GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00100InverseWarp.nii.gz -R src_Z0010.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00100GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 11/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0011.nii,src_Z0011.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0011,src_Z0011_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0011.nii,src_Z0011.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00110Warp.nii.gz -R dest_Z0011.nii warp2d_null0Warp.nii.gz warp2d_00110GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00110InverseWarp.nii.gz -R src_Z0011.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00110GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 12/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0012.nii,src_Z0012.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0012,src_Z0012_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0012.nii,src_Z0012.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00120Warp.nii.gz -R dest_Z0012.nii warp2d_null0Warp.nii.gz warp2d_00120GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00120InverseWarp.nii.gz -R src_Z0012.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00120GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 13/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0013.nii,src_Z0013.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0013,src_Z0013_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0013.nii,src_Z0013.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00130Warp.nii.gz -R dest_Z0013.nii warp2d_null0Warp.nii.gz warp2d_00130GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00130InverseWarp.nii.gz -R src_Z0013.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00130GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 14/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0014.nii,src_Z0014.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0014,src_Z0014_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0014.nii,src_Z0014.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00140Warp.nii.gz -R dest_Z0014.nii warp2d_null0Warp.nii.gz warp2d_00140GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00140InverseWarp.nii.gz -R src_Z0014.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00140GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 15/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0015.nii,src_Z0015.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0015,src_Z0015_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0015.nii,src_Z0015.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00150Warp.nii.gz -R dest_Z0015.nii warp2d_null0Warp.nii.gz warp2d_00150GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00150InverseWarp.nii.gz -R src_Z0015.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00150GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registering slice 16/16...
+/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration --dimensionality 2 --transform &#39;Rigid[0.5]&#39; --metric &#39;CC[dest_Z0016.nii,src_Z0016.nii,1,4]&#39; --convergence 10 --shrink-factors 1 --smoothing-sigmas 0mm --output &#39;[warp2d_0016,src_Z0016_reg.nii]&#39; --interpolation &#39;BSpline[3]&#39; --verbose 1 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsRegistration -d 2 -t &#39;SyN[1,1,1]&#39; -c 0 -m &#39;MI[dest_Z0016.nii,src_Z0016.nii,1,32]&#39; -o warp2d_null -f 1 -s 0 # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00160Warp.nii.gz -R dest_Z0016.nii warp2d_null0Warp.nii.gz warp2d_00160GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 2 warp2d_00160InverseWarp.nii.gz -R src_Z0016.nii warp2d_null0InverseWarp.nii.gz -i warp2d_00160GenericAffine.mat # in /tmp/sct-20241017005119.199548-register-zuxf9378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Merge warping fields along z...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Move warping fields...
+cp step1Warp.nii.gz /tmp/sct-20241017005118.646955-register-e_racygw
+cp step1InverseWarp.nii.gz /tmp/sct-20241017005118.646955-register-e_racygw
+rm -rf /tmp/sct-20241017005119.199548-register-zuxf9378
+
+Concatenate transformations...
+/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 3 warp_src2dest.nii.gz -R dest.nii warp_forward_1.nii.gz warp_forward_0.nii.gz # in /tmp/sct-20241017005118.646955-register-e_racygw
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_ComposeMultiTransform 3 warp_dest2src.nii.gz -R src.nii warp_inverse_0.nii.gz warp_inverse_1.nii.gz # in /tmp/sct-20241017005118.646955-register-e_racygw
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+Apply transfo source --&gt; dest...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsApplyTransforms -d 3 -i src.nii -o src_reg.nii -t warp_src2dest.nii.gz -r dest.nii -n &#39;BSpline[3]&#39; # in /tmp/sct-20241017005118.646955-register-e_racygw
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+Apply transfo dest --&gt; source...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/spinalcordtoolbox-5.8/bin/isct_antsApplyTransforms -d 3 -i dest.nii -o dest_reg.nii -t warp_dest2src.nii.gz -r src.nii -n &#39;BSpline[3]&#39; # in /tmp/sct-20241017005118.646955-register-e_racygw
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+Generate output files...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File created: mt1_reg.nii.gz
+mv /tmp/sct-20241017005118.646955-register-e_racygw/warp_src2dest.nii.gz warp_mt12t1w_crop.nii.gz
+File created: warp_mt12t1w_crop.nii.gz
+<span class=" -Color -Color-Yellow">File t1w_crop_reg.nii.gz already exists. Deleting it..</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File created: t1w_crop_reg.nii.gz
+mv /tmp/sct-20241017005118.646955-register-e_racygw/warp_dest2src.nii.gz warp_t1w_crop2mt1.nii.gz
+File created: warp_t1w_crop2mt1.nii.gz
+
+Remove temporary files...
+rm -rf /tmp/sct-20241017005118.646955-register-e_racygw
+
+Finished! Elapsed time: 11s
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next step consists in registering the PAM50 template to the T1w image. We first create a label, centered in the spinal cord at level C3-C4 intervertebral disc, then we apply a multi-step non-linear registration algorithm.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create label 4 at the mid-FOV, because we know the FOV is centered at C3-C4 disc.</span>
+<span class="o">!</span>sct_label_utils -i <span class="o">{</span>t1w+<span class="s1">&#39;_seg&#39;</span>+file_ext<span class="o">}</span> -create-seg-mid <span class="m">4</span> -o <span class="o">{</span>label_c3c4+file_ext<span class="o">}</span>
+
+<span class="c1"># Register template-&gt;T1w_ax (using template-T1w as initial transformation)</span>
+<span class="o">!</span>sct_register_to_template -i <span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span> -s <span class="o">{</span>t1w+<span class="s1">&#39;_seg&#39;</span>+file_ext<span class="o">}</span> -ldisc <span class="o">{</span>label_c3c4+file_ext<span class="o">}</span> -ref subject -c t1 -param <span class="nv">step</span><span class="o">=</span><span class="m">1</span>,type<span class="o">=</span>seg,algo<span class="o">=</span>slicereg,metric<span class="o">=</span>MeanSquares,smooth<span class="o">=</span><span class="m">2</span>:step<span class="o">=</span><span class="m">2</span>,type<span class="o">=</span>im,algo<span class="o">=</span>bsplinesyn,metric<span class="o">=</span>MeanSquares,iter<span class="o">=</span><span class="m">5</span>,gradStep<span class="o">=</span><span class="m">0</span>.5 -qc <span class="o">{</span>qc_path<span class="o">}</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">verbose</span><span class="p">:</span>
+    <span class="n">clear_output</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--
+Spinal Cord Toolbox (5.8)
+
+sct_label_utils -i t1w_seg.nii.gz -create-seg-mid 4 -o label_c3c4.nii.gz
+--
+
+Generating output files...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--
+Spinal Cord Toolbox (5.8)
+
+sct_register_to_template -i t1w_crop.nii.gz -s t1w_seg.nii.gz -ldisc label_c3c4.nii.gz -ref subject -c t1 -param step=1,type=seg,algo=slicereg,metric=MeanSquares,smooth=2:step=2,type=im,algo=bsplinesyn,metric=MeanSquares,iter=5,gradStep=0.5 -qc /storage/tmp/tmpnhgyrqup/qc
+--
+
+Traceback (most recent call last):
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/scripts/sct_register_to_template.py&quot;, line 817, in &lt;module&gt;
+    main(sys.argv[1:])
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/scripts/sct_register_to_template.py&quot;, line 304, in main
+    arguments = parser.parse_args(argv)
+  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/argparse.py&quot;, line 1768, in parse_args
+    args, argv = self.parse_known_args(args, namespace)
+  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/argparse.py&quot;, line 1800, in parse_known_args
+    namespace, args = self._parse_known_args(args, namespace)
+  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/argparse.py&quot;, line 2006, in _parse_known_args
+    start_index = consume_optional(start_index)
+  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/argparse.py&quot;, line 1946, in consume_optional
+    take_action(action, args, option_string)
+  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/argparse.py&quot;, line 1874, in take_action
+    action(self, namespace, argument_values, option_string)
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/utils/shell.py&quot;, line 230, in __call__
+    folders = self.create_folder(values)
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/utils/shell.py&quot;, line 223, in create_folder
+    os.makedirs(folder_name, exist_ok=True)
+  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/os.py&quot;, line 223, in makedirs
+    mkdir(name, mode)
+OSError: [Errno 30] Read-only file system: &#39;/storage/tmp/tmpnhgyrqup/qc&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once the PAM50 is registered with the T1w image, we can warp all objects pertaining to the PAM50 into the T1w native space. These objects notably include a white matter atlas, which will be subsequently used to extract qMR metrics within specific white matter tracts.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Warp template</span>
+<span class="o">!</span>sct_warp_template -d <span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span> -w <span class="o">{</span>warp_template2anat+file_ext<span class="o">}</span> -qc <span class="o">{</span>qc_path<span class="o">}</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">verbose</span><span class="p">:</span>
+    <span class="n">clear_output</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--
+Spinal Cord Toolbox (5.8)
+
+sct_warp_template -d t1w_crop.nii.gz -w warp_template2anat.nii.gz -qc /storage/tmp/tmpnhgyrqup/qc
+--
+
+Traceback (most recent call last):
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/scripts/sct_warp_template.py&quot;, line 292, in &lt;module&gt;
+    main(sys.argv[1:])
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/scripts/sct_warp_template.py&quot;, line 235, in main
+    arguments = parser.parse_args(argv)
+  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/argparse.py&quot;, line 1768, in parse_args
+    args, argv = self.parse_known_args(args, namespace)
+  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/argparse.py&quot;, line 1800, in parse_known_args
+    namespace, args = self._parse_known_args(args, namespace)
+  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/argparse.py&quot;, line 2006, in _parse_known_args
+    start_index = consume_optional(start_index)
+  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/argparse.py&quot;, line 1946, in consume_optional
+    take_action(action, args, option_string)
+  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/argparse.py&quot;, line 1874, in take_action
+    action(self, namespace, argument_values, option_string)
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/utils/shell.py&quot;, line 230, in __call__
+    folders = self.create_folder(values)
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/utils/shell.py&quot;, line 223, in create_folder
+    os.makedirs(folder_name, exist_ok=True)
+  File &quot;/opt/spinalcordtoolbox-5.8/python/envs/venv_sct/lib/python3.8/os.py&quot;, line 223, in makedirs
+    mkdir(name, mode)
+OSError: [Errno 30] Read-only file system: &#39;/storage/tmp/tmpnhgyrqup/qc&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Results of the registration/warming appear in Figure 2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot QC figures</span>
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s1">&#39;darwin&#39;</span><span class="p">:</span>
+    <span class="c1"># For local testing on OSX    </span>
+    <span class="n">sct_warp_template_qc</span> <span class="o">=</span> <span class="s1">&#39;qc/sct_example_data/mt/sct_warp_template&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># For linux and on-line Binder execution</span>
+    <span class="n">sct_warp_template_qc</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">qc_path</span><span class="p">,</span> <span class="n">parent_dirs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>  <span class="n">mt_folder_relative</span><span class="p">,</span> <span class="s1">&#39;sct_warp_template&#39;</span><span class="p">)</span>
+
+<span class="n">folders</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sct_warp_template_qc</span><span class="p">,</span> <span class="n">x</span><span class="p">)),</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">sct_warp_template_qc</span><span class="p">)))</span>
+<span class="n">qc_date</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">folders</span><span class="p">)</span>
+
+<span class="n">sct_warp_template_qc_dir</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">sct_warp_template_qc</span><span class="p">,</span> <span class="n">qc_date</span><span class="p">)</span>
+
+<span class="n">bkg</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">sct_warp_template_qc_dir</span><span class="p">,</span> <span class="s1">&#39;bkg_img.png&#39;</span><span class="p">))</span>
+<span class="n">overlay</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">sct_warp_template_qc_dir</span><span class="p">,</span> <span class="s1">&#39;overlay_img.png&#39;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">imgplot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">bkg</span><span class="p">)</span>
+<span class="n">imgplot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">overlay</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="c1"># For linux and on-line Binder execution</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">sct_warp_template_qc</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">qc_path</span><span class="p">,</span> <span class="n">parent_dirs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>  <span class="n">mt_folder_relative</span><span class="p">,</span> <span class="s1">&#39;sct_warp_template&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">folders</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sct_warp_template_qc</span><span class="p">,</span> <span class="n">x</span><span class="p">)),</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">sct_warp_template_qc</span><span class="p">)))</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">qc_date</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">folders</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">sct_warp_template_qc_dir</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">sct_warp_template_qc</span><span class="p">,</span> <span class="n">qc_date</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/storage/tmp/tmpnhgyrqup/qc/tmpnhgyrqup/sct_example_data/mt/sct_warp_template&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Figure 2. Quality control (QC) SCT module registration/warping results of the PAM50 template and atlas to the T1w native space. The white matter (in blue) is overlaid on the T1-weighted anatomical scan (in grayscale). Orientation is axial.Once co-registration between images and registration to the template is complete, we can venture into computing our favorite qMR metrics. Here, we compute the magnetization transfer ratio (MTR) and the magnetization transfer saturation (MTsat).</p>
+<p>Once co-registration between images and registration to the template is complete, we can venture into computing our favorite qMR metrics. Here, we compute the magnetization transfer ratio (MTR) and the magnetization transfer saturation (MTsat).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute MTR</span>
+<span class="o">!</span>sct_compute_mtr -mt1 <span class="o">{</span>mt1+<span class="s1">&#39;_reg&#39;</span>+file_ext<span class="o">}</span> -mt0 <span class="o">{</span>mt0+<span class="s1">&#39;_reg&#39;</span>+file_ext<span class="o">}</span>
+
+<span class="c1"># Compute MTsat and T1</span>
+<span class="o">!</span>sct_compute_mtsat -mt <span class="o">{</span>mt1+<span class="s1">&#39;_reg&#39;</span>+file_ext<span class="o">}</span> -pd <span class="o">{</span>mt0+<span class="s1">&#39;_reg&#39;</span>+file_ext<span class="o">}</span> -t1 <span class="o">{</span>t1w+<span class="s1">&#39;_crop&#39;</span>+file_ext<span class="o">}</span> -trmt <span class="m">57</span> -trpd <span class="m">57</span> -trt1 <span class="m">15</span> -famt <span class="m">9</span> -fapd <span class="m">9</span> -fat1 <span class="m">15</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">verbose</span><span class="p">:</span>
+    <span class="n">clear_output</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--
+Spinal Cord Toolbox (5.8)
+
+sct_compute_mtr -mt1 mt1_reg.nii.gz -mt0 mt0_reg.nii.gz
+--
+
+
+Compute MTR...
+Found 0 voxels with value=0. These will be replaced by nan.
+Threshold to clip values: +/- 100
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--
+Spinal Cord Toolbox (5.8)
+
+sct_compute_mtsat -mt mt1_reg.nii.gz -pd mt0_reg.nii.gz -t1 t1w_crop.nii.gz -trmt 57 -trpd 57 -trt1 15 -famt 9 -fapd 9 -fat1 15
+--
+
+Load data...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Compute T1 map...
+<span class=" -Color -Color-Yellow">R1 values were found to be lower than 0.01. They will be set to inf, producing T1=0 for these voxels.</span>
+Compute A...
+Compute MTsat...
+<span class=" -Color -Color-Yellow">MTsat values were found to be larger than 1. They will be set to zero for these voxels.</span>
+Generate output files...
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that our metrics are computed, we want to extract their values within specific tracts of the spinal cord. This is done with the function sct_extract_metric.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract MTR, MTsat and T1 in WM between C2 and C4 vertebral levels</span>
+<span class="o">!</span>sct_extract_metric -i mtr.nii.gz -l <span class="m">51</span> -vert <span class="m">2</span>:4 -perlevel <span class="m">1</span> -o mtr_in_wm.csv
+<span class="o">!</span>sct_extract_metric -i mtsat.nii.gz -l <span class="m">51</span> -vert <span class="m">2</span>:4 -perlevel <span class="m">1</span> -o mtsat_in_wm.csv
+<span class="o">!</span>sct_extract_metric -i t1map.nii.gz -l <span class="m">51</span> -vert <span class="m">2</span>:4 -perlevel <span class="m">1</span> -o t1_in_wm.csv
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">verbose</span><span class="p">:</span>
+    <span class="n">clear_output</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--
+Spinal Cord Toolbox (5.8)
+
+sct_extract_metric -i mtr.nii.gz -l 51 -vert 2:4 -perlevel 1 -o mtr_in_wm.csv
+--
+
+Traceback (most recent call last):
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/scripts/sct_extract_metric.py&quot;, line 397, in &lt;module&gt;
+    main(sys.argv[1:])
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/scripts/sct_extract_metric.py&quot;, line 348, in main
+    raise RuntimeError(path_label + &#39; does not exist&#39;)
+RuntimeError: label/atlas does not exist
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--
+Spinal Cord Toolbox (5.8)
+
+sct_extract_metric -i mtsat.nii.gz -l 51 -vert 2:4 -perlevel 1 -o mtsat_in_wm.csv
+--
+
+Traceback (most recent call last):
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/scripts/sct_extract_metric.py&quot;, line 397, in &lt;module&gt;
+    main(sys.argv[1:])
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/scripts/sct_extract_metric.py&quot;, line 348, in main
+    raise RuntimeError(path_label + &#39; does not exist&#39;)
+RuntimeError: label/atlas does not exist
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--
+Spinal Cord Toolbox (5.8)
+
+sct_extract_metric -i t1map.nii.gz -l 51 -vert 2:4 -perlevel 1 -o t1_in_wm.csv
+--
+
+Traceback (most recent call last):
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/scripts/sct_extract_metric.py&quot;, line 397, in &lt;module&gt;
+    main(sys.argv[1:])
+  File &quot;/opt/spinalcordtoolbox-5.8/spinalcordtoolbox/scripts/sct_extract_metric.py&quot;, line 348, in main
+    raise RuntimeError(path_label + &#39; does not exist&#39;)
+RuntimeError: label/atlas does not exist
+</pre></div>
+</div>
+</div>
+</div>
+<p>Results are output as csv files, which we can then open and display as bar graphs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install pandas
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in /home/ubuntu/.local/lib/python3.10/site-packages (2.1.4)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&lt;2,&gt;=1.22.4 in /home/ubuntu/.local/lib/python3.10/site-packages (from pandas) (1.26.2)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/ubuntu/.local/lib/python3.10/site-packages (from pandas) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/lib/python3/dist-packages (from pandas) (2022.1)
+Requirement already satisfied: tzdata&gt;=2022.1 in /home/ubuntu/.local/lib/python3.10/site-packages (from pandas) (2023.3)
+Requirement already satisfied: six&gt;=1.5 in /usr/lib/python3/dist-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Error parsing dependencies of distro-info: Invalid version: &#39;1.1build1&#39;</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Error parsing dependencies of python-debian: Invalid version: &#39;0.1.43ubuntu1&#39;</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display plots of results</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Build dic for plot</span>
+<span class="n">plot_dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;file&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mtr_in_wm.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;mtsat_in_wm.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;t1_in_wm.csv&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;ylabel&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;MTR [%]&#39;</span><span class="p">,</span> <span class="s1">&#39;MTsat [a.u.]&#39;</span><span class="p">,</span> <span class="s1">&#39;T1 [s]&#39;</span><span class="p">]}</span>
+
+<span class="c1"># Loop across dic entries</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">plot_dic</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">plot_dic</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;VertLevel&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;WA()&#39;</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">plot_dic</span><span class="p">[</span><span class="s1">&#39;ylabel&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Loop across dic entries</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">plot_dic</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">11</span>     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">plot_dic</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;VertLevel&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;WA()&#39;</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">plot_dic</span><span class="p">[</span><span class="s1">&#39;ylabel&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py:948,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">    </span><span class="mi">935</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">936</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">937</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">944</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">945</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">946</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">948</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py:611,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">608</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">610</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">611</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">613</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">614</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1448,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1445</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1447</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1448</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1705,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1703</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1704</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1705</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1706</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1707</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1708</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1709</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1710</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1711</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1712</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1713</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1714</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1715</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1716</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/io/common.py:863,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">859</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">860</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">861</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">862</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">863</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">864</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">865</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">866</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">867</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;mtr_in_wm.csv&#39;
+</pre></div>
+</div>
+<img alt="_images/bc215981e109743989603d8d1c8ae9359f60763287ca50d32a1b16995c782e08.png" src="_images/bc215981e109743989603d8d1c8ae9359f60763287ca50d32a1b16995c782e08.png" />
+</div>
+</div>
+<p>Figure 3. Quantitative MRI metrics in WM between C2 and C4 vertebral levels. The three calculated metrics from this dataset using SCT are the magnetization transfer ratio (MTR – [%]), magnetization transfer saturation (MTsat – [a.u.]), and longitudinal relaxation time (T1 – [s]).</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">SCT Toolbox Example</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#demonstrating-the-spinal-cord-toolbox-sct-use-via-neurodesk">Demonstrating the Spinal Cord Toolbox (SCT) use via Neurodesk</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Neurodesk Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
