@@ -469,8 +469,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p><a href="https://play-iowa.neurodesk.org/hub/user-redirect/lab/tree/example-notebooks/books/structural_imaging/qsmxt_example.ipynb" target="_parent"><img src="https://img.shields.io/badge/launch-binder-579aca.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADUElEQVR4nCyTzUtkRxfGn6pTtz/FtvsVp32NKBgF6QiBCU505xBpBdsJiMkyi2SRxSSEZPI3JKuEbGYREgaCi0zMENBeSCSCqwzRCCIzSBtHuqEl9ihif9zbfe+tqnCaqdXh1q1znuec31EAkM/nEYlEcH5+jmw2K5VSwvM8rVT3GmEYIh6PUxiGtlKpmNHRUQRBgK2tLdDi4iLOzs4wMjKCaDRKxhijlLIRx0kmk8lhIkoHQeArpTpaa5vJZCgej9vj42NMT09DVSoVXF5ewm21SAihAbwJ4HM/CO42ms2slJIT/wvgD2vtN9baQ8/zqFqtaiKCYIlLS0uklNJBEHwspfyu2WpF+lIpTIyPo9Fs4sXZGYzWiMVinTAMPyWi7621VCwWtSgUCuxNSynfl1L+zDLvzs3pd+/do/8PDsJrt1EqlfDL+rp+9vw5xWIxobV+T2u97jgOScdxjLU2o5R66LquffvOHfPJ/fuqL5USFxcXgs9bt2+LLx88UIPZrAmCwBLRQwBpfistayFaBZCBELqvr4+01uAJOI6DiOPg5uYG2Vu3MDc3R51ORwsh+olopft2cnISxpgvhBBvdNptWyqVZOnkBP/LZPD6xARe1mqonp+jVqvh1ydPcHV1ZdiGtbZORL91m7i8vLzt+/47+Xxe53I5+vPpU9xcX+O14WEcHBygv78fuVwOPP/t7W19eHhI0Wj0942NjbxaXV1Fu91uEhFb6c52fn4ejUYD+/v73XhsbIxBQrlcxs7ODqSUFkBjZWUFMpPJwFq7z/Stra1ZrthqtdgWewZb9DyPi6BYLHIC+2oSf/f29kIODQ1Ba/2YIerp6RG+79tkMgm+dF23i3E6nWYGGF/L/xhjQmvt41QqBbm3t8cQ/QPgaykllUqlIAgCI4RAIpFgCsFxo1E35XI5UEoRgK+klC9OT09JLCwsCMdx5NHRkZmamnqktf5gYGAAMzMzmJ2dNaxid3dXsrV6vQ4ierS5uflhoVCQYRgawcsEQLDsRCJhr6+vP/J9/7NOp5Nj2dwL3rxYLPZMKfVtOp3+0XVdwX0CYBXL44ArWWsZrB9yudxP1Wp12vO88VfLdNLTk/yrVnvpu64rm82m4e98/gsAAP//Lbmu802E+U4AAAAASUVORK5CYII=" alt="Open In Binder"/>  </a>
-<a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/structural_imaging/qsmxt_example.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>   </a></p>
+  <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/structural_imaging/qsmxt_example.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>   </a></p>
 <section id="qsmxt-example">
 <h1>QSMxT Example<a class="headerlink" href="#qsmxt-example" title="Permalink to this heading">#</a></h1>
 <p>Author: Ashley Stewart</p>
@@ -584,9 +583,13 @@ if IN_COLAB:
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: osfclient in /home/ubuntu/.local/lib/python3.10/site-packages (0.0.5)
-Requirement already satisfied: requests in /usr/lib/python3/dist-packages (from osfclient) (2.25.1)
+Requirement already satisfied: requests in /home/ubuntu/.local/lib/python3.10/site-packages (from osfclient) (2.32.3)
 Requirement already satisfied: tqdm in /usr/lib/python3/dist-packages (from osfclient) (4.57.0)
 Requirement already satisfied: six in /usr/lib/python3/dist-packages (from osfclient) (1.16.0)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/ubuntu/.local/lib/python3.10/site-packages (from requests-&gt;osfclient) (3.3.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packages (from requests-&gt;osfclient) (3.3)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/lib/python3/dist-packages (from requests-&gt;osfclient) (1.26.5)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/lib/python3/dist-packages (from requests-&gt;osfclient) (2020.6.20)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Error parsing dependencies of distro-info: Invalid version: &#39;1.1build1&#39;</span>
@@ -657,7 +660,7 @@ There are 1216 unsorted DICOMs in ./dicoms-unsorted/
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Reading file list...
 [INFO]: 1216 DICOM files found.
-[INFO]: Sorting DICOMs in /storage/tmp/tmpa9h1uez3/dicoms-sorted...
+[INFO]: Sorting DICOMs in /storage/tmp/tmpv43xnkj4/dicoms-sorted...
 [INFO]: Identified subject: 1
 [INFO]: Identified session: 1 #1 20170705
 [INFO]: Identified series: sub-1/ses-20170705/series-6_mp2rage_highRes_0p5iso_slab
@@ -668,7 +671,9 @@ There are 1216 unsorted DICOMs in ./dicoms-unsorted/
 [INFO]: Identified series: sub-2/ses-20170705/series-6_QSM_p2_1mmIso_TE20
 [INFO]: Identified series: sub-2/ses-20170705/series-6_mp2rage_highRes_0p5iso_slab
 [INFO]: Identified series: sub-2/ses-20170705/series-5_QSM_p2_1mmIso_TE20
-[INFO]: Identified series: sub-1/ses-20170705/series-5_QSM_p2_1mmIso_TE20
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Identified series: sub-1/ses-20170705/series-5_QSM_p2_1mmIso_TE20
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Finished
@@ -685,7 +690,7 @@ There are 1216 unsorted DICOMs in ./dicoms-unsorted/
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">dicoms-sorted</span>
-├── log_2024-09-04_06-54-34709918.txt
+├── log_2024-10-17_00-26-37029043.txt
 ├── references.txt
 ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-1</span>
 │   └── <span class=" -Color -Color-Bold -Color-Bold-Blue">ses-20170705</span>
@@ -724,27 +729,29 @@ There are 1216 unsorted DICOMs in ./dicoms-unsorted/
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Converting all DICOMs to NIfTI...
-[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmpa9h1uez3/dicoms-sorted/sub-2/ses-20170705/series-6_mp2rage_highRes_0p5iso_slab&quot; &gt;&gt; &quot;/storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmpv43xnkj4/dicoms-sorted/sub-2/ses-20170705/series-6_mp2rage_highRes_0p5iso_slab&quot; &gt;&gt; &quot;/storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmpa9h1uez3/dicoms-sorted/sub-2/ses-20170705/series-6_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmpv43xnkj4/dicoms-sorted/sub-2/ses-20170705/series-6_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmpa9h1uez3/dicoms-sorted/sub-2/ses-20170705/series-5_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmpv43xnkj4/dicoms-sorted/sub-2/ses-20170705/series-5_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmpa9h1uez3/dicoms-sorted/sub-1/ses-20170705/series-6_mp2rage_highRes_0p5iso_slab&quot; &gt;&gt; &quot;/storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmpv43xnkj4/dicoms-sorted/sub-1/ses-20170705/series-6_mp2rage_highRes_0p5iso_slab&quot; &gt;&gt; &quot;/storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmpa9h1uez3/dicoms-sorted/sub-1/ses-20170705/series-6_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmpv43xnkj4/dicoms-sorted/sub-1/ses-20170705/series-6_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmpa9h1uez3/dicoms-sorted/sub-1/ses-20170705/series-5_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running command: &#39;dcm2niix -z n -o &quot;/storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/extra_data&quot; &quot;/storage/tmp/tmpv43xnkj4/dicoms-sorted/sub-1/ses-20170705/series-5_QSM_p2_1mmIso_TE20&quot; &gt;&gt; &quot;/storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/extra_data/dcm2niix_output.txt&quot;&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Loading JSON headers from &#39;/storage/tmp/tmpa9h1uez3/bids/.../extra_data&#39; folders...
-[INFO]: Checking for GE data requiring correction...
-[INFO]: Loading updated JSON headers from &#39;/storage/tmp/tmpa9h1uez3/bids/.../extra_data&#39; folders...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Loading JSON headers from &#39;/storage/tmp/tmpv43xnkj4/bids/.../extra_data&#39; folders...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Checking for GE data requiring correction...
+[INFO]: Loading updated JSON headers from &#39;/storage/tmp/tmpv43xnkj4/bids/.../extra_data&#39; folders...
 [INFO]: Enumerating protocol names from JSON headers...
 [INFO]: All protocol names identified: [&#39;mp2rage_highres_0p5iso_slab&#39;, &#39;qsm_p2_1mmiso_te20&#39;]
 [INFO]: Enumerating protocol names with QSM intention using match patterns [&#39;*t2starw*&#39;, &#39;*qsm*&#39;]...
@@ -768,18 +775,18 @@ series-6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph
 series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6 
 	 -&gt; sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w
 [INFO]: Renaming files...
-[INFO]: Renaming /storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/extra_data/series-5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.json -&gt; /storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.json
-[INFO]: Renaming /storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/extra_data/series-5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.nii -&gt; /storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.nii
-[INFO]: Renaming /storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/extra_data/series-6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.json -&gt; /storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.json
-[INFO]: Renaming /storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/extra_data/series-6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.nii -&gt; /storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii
-[INFO]: Renaming /storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/extra_data/series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.json -&gt; /storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.json
-[INFO]: Renaming /storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/extra_data/series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.nii -&gt; /storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii
-[INFO]: Renaming /storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/extra_data/series-5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.json -&gt; /storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.json
-[INFO]: Renaming /storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/extra_data/series-5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.nii -&gt; /storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.nii
-[INFO]: Renaming /storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/extra_data/series-6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.json -&gt; /storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.json
-[INFO]: Renaming /storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/extra_data/series-6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.nii -&gt; /storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii
-[INFO]: Renaming /storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/extra_data/series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.json -&gt; /storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.json
-[INFO]: Renaming /storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/extra_data/series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.nii -&gt; /storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii
+[INFO]: Renaming /storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/extra_data/series-5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.json -&gt; /storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.json
+[INFO]: Renaming /storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/extra_data/series-5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.nii -&gt; /storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.nii
+[INFO]: Renaming /storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/extra_data/series-6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.json -&gt; /storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.json
+[INFO]: Renaming /storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/extra_data/series-6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.nii -&gt; /storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii
+[INFO]: Renaming /storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/extra_data/series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.json -&gt; /storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.json
+[INFO]: Renaming /storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/extra_data/series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.nii -&gt; /storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii
+[INFO]: Renaming /storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/extra_data/series-5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.json -&gt; /storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.json
+[INFO]: Renaming /storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/extra_data/series-5_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_5.nii -&gt; /storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-mag_T2starw.nii
+[INFO]: Renaming /storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/extra_data/series-6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.json -&gt; /storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.json
+[INFO]: Renaming /storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/extra_data/series-6_QSM_p2_1mmIso_TE20_QSM_p2_1mmIso_TE20_20170705134507_6_ph.nii -&gt; /storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii
+[INFO]: Renaming /storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/extra_data/series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.json -&gt; /storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.json
+[INFO]: Renaming /storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/extra_data/series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_6.nii -&gt; /storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii
 [INFO]: Generating details for BIDS datset_description.json...
 [INFO]: Writing BIDS dataset_description.json...
 [INFO]: Writing BIDS .bidsignore file...
@@ -798,7 +805,7 @@ series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">bids</span>
 ├── dataset_description.json
-├── log_2024-09-04_06-54-40726372.txt
+├── log_2024-10-17_00-26-43456049.txt
 ├── README
 ├── references.txt
 ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-1</span>
@@ -925,115 +932,119 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: QSMxT v7.2.0
 [INFO]: Python interpreter: /opt/miniconda-4.7.12.1/bin/python3.8
-[INFO]: Command: qsmxt /storage/tmp/tmpa9h1uez3/bids --premade &#39;fast&#39; --do_qsm --do_segmentation --do_analysis --auto_yes
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[WARNING]: Pipeline is NOT guidelines compliant (see https://doi.org/10.1002/mrm.30006):; Phase-quality-based masking recommended
-[INFO]: Available memory: 106.57 GB
+[INFO]: Command: qsmxt /storage/tmp/tmpv43xnkj4/bids --premade &#39;fast&#39; --do_qsm --do_segmentation --do_analysis --auto_yes
+[WARNING]: Pipeline is NOT guidelines compliant (see https://doi.org/10.1002/mrm.30006):; Phase-quality-based masking recommended
+[INFO]: Available memory: 100.81 GB
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Creating QSMxT workflow for sub-1.ses-20170705.acq-qsmp21mmisote20.run-01...
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Creating QSMxT workflow for sub-2.ses-20170705.acq-qsmp21mmisote20.run-01...
-[INFO]: Running using MultiProc plugin with n_procs=32
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:54:57,304 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO]: Running using MultiProc plugin with n_procs=32
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:05,745 nipype.workflow INFO:
 	 Workflow qsmxt-workflow settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:54:57,353 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:05,807 nipype.workflow INFO:
 	 Running in parallel.
-240904-06:54:57,359 nipype.workflow INFO:
+241017-00:27:05,823 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 12 jobs ready. Free memory (GB): 113.22/113.22, Free processors: 32/32.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:54:57,846 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-me&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-me&quot;.
-240904-06:54:57,847 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_read-nii&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_read-nii&quot;.
-240904-06:54:57,850 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/fastsurfer_segment-t1&quot;.
-240904-06:54:57,850 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-se&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-se&quot;.
-240904-06:54:57,853 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/fastsurfer_segment-t1&quot;.
-240904-06:54:57,855 nipype.workflow INFO:
-	 [Node] Executing &quot;nibabel_read-nii&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-240904-06:54:57,857 nipype.workflow INFO:
-	 [Node] Executing &quot;fastsurfer_segment-t1&quot; &lt;qsmxt.interfaces.nipype_interface_fastsurfer.FastSurferInterface&gt;
-240904-06:54:57,859 nipype.workflow INFO:
-	 [Node] Executing &quot;func_read-json-se&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-240904-06:54:57,859 nipype.workflow INFO:
-	 [Node] Executing &quot;fastsurfer_segment-t1&quot; &lt;qsmxt.interfaces.nipype_interface_fastsurfer.FastSurferInterface&gt;
-240904-06:54:57,862 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_read-nii&quot;, elapsed time 0.004687s.
-240904-06:54:57,864 nipype.workflow INFO:
-	 [Node] Finished &quot;func_read-json-se&quot;, elapsed time 0.00185s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:06,189 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-me&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-me&quot;.
+241017-00:27:06,210 nipype.workflow INFO:
+	 [Node] Executing &quot;func_read-json-me&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+241017-00:27:06,214 nipype.workflow INFO:
+	 [Node] Finished &quot;func_read-json-me&quot;, elapsed time 0.001432s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:54:57,847 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-se&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-se&quot;.
-240904-06:54:57,849 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-me&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-me&quot;.
-240904-06:54:57,851 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/ants_register-t1-to-qsm&quot;.
-240904-06:54:57,854 nipype.workflow INFO:
-	 [Node] Executing &quot;func_read-json-me&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-240904-06:54:57,906 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:06,189 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-se&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-se&quot;.
+241017-00:27:06,190 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_as-canonical&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_as-canonical&quot;.
+241017-00:27:06,192 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/fastsurfer_segment-t1&quot;.
+241017-00:27:06,195 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/fastsurfer_segment-t1&quot;.
+241017-00:27:06,247 nipype.workflow INFO:
 	 [Node] Executing &quot;func_read-json-se&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-240904-06:54:57,908 nipype.workflow INFO:
+241017-00:27:06,249 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_as-canonical&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+241017-00:27:06,251 nipype.workflow INFO:
+	 [Node] Executing &quot;fastsurfer_segment-t1&quot; &lt;qsmxt.interfaces.nipype_interface_fastsurfer.FastSurferInterface&gt;
+241017-00:27:06,251 nipype.workflow INFO:
+	 [Node] Finished &quot;func_read-json-se&quot;, elapsed time 0.001587s.
+241017-00:27:06,253 nipype.workflow INFO:
+	 [Node] Executing &quot;fastsurfer_segment-t1&quot; &lt;qsmxt.interfaces.nipype_interface_fastsurfer.FastSurferInterface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:06,189 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_read-nii&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_read-nii&quot;.
+241017-00:27:06,192 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-me&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-me&quot;.
+241017-00:27:06,299 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_read-nii&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+241017-00:27:06,301 nipype.workflow INFO:
 	 [Node] Executing &quot;func_read-json-me&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-240904-06:54:57,909 nipype.workflow INFO:
-	 [Node] Finished &quot;func_read-json-me&quot;, elapsed time 0.001771s.
-240904-06:54:57,911 nipype.workflow INFO:
+241017-00:27:06,306 nipype.workflow INFO:
+	 [Node] Finished &quot;func_read-json-me&quot;, elapsed time 0.001652s.
+241017-00:27:06,307 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_read-nii&quot;, elapsed time 0.004763s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:06,193 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_read-nii&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_read-nii&quot;.
+241017-00:27:06,193 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_as-canonical&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_as-canonical&quot;.
+241017-00:27:06,352 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_read-nii&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+241017-00:27:06,353 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_as-canonical&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+241017-00:27:06,357 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_as-canonical&quot;, elapsed time 0.105571s.
+241017-00:27:06,360 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_read-nii&quot;, elapsed time 0.004552s.
+241017-00:27:06,365 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_as-canonical&quot;, elapsed time 0.008729s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:06,193 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/ants_register-t1-to-qsm&quot;.
+241017-00:27:06,193 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-se&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_read-json-se&quot;.
+241017-00:27:06,408 nipype.workflow INFO:
+	 [Node] Executing &quot;func_read-json-se&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+241017-00:27:06,413 nipype.workflow INFO:
 	 [Node] Executing &quot;ants_register-t1-to-qsm&quot; &lt;nipype.interfaces.ants.registration.RegistrationSynQuick&gt;
-240904-06:54:57,911 nipype.workflow INFO:
-	 [Node] Finished &quot;func_read-json-se&quot;, elapsed time 0.001712s.
-240904-06:54:57,913 nipype.workflow INFO:
-	 [Node] Finished &quot;func_read-json-me&quot;, elapsed time 0.001752s.
+241017-00:27:06,416 nipype.workflow INFO:
+	 [Node] Finished &quot;func_read-json-se&quot;, elapsed time 0.005639s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:54:57,847 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_as-canonical&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_as-canonical&quot;.
-240904-06:54:57,851 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_read-nii&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_read-nii&quot;.
-240904-06:54:57,959 nipype.workflow INFO:
-	 [Node] Executing &quot;nibabel_as-canonical&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-240904-06:54:57,960 nipype.workflow INFO:
-	 [Node] Executing &quot;nibabel_read-nii&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-240904-06:54:57,968 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_read-nii&quot;, elapsed time 0.004961s.
-240904-06:54:57,976 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_as-canonical&quot;, elapsed time 0.01333s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:54:57,851 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_as-canonical&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_as-canonical&quot;.
-240904-06:54:58,12 nipype.workflow INFO:
-	 [Node] Executing &quot;nibabel_as-canonical&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-240904-06:54:58,28 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_as-canonical&quot;, elapsed time 0.012037s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:54:59,362 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:07,828 nipype.workflow INFO:
 	 [Job 0] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-me).
-240904-06:54:59,367 nipype.workflow INFO:
+241017-00:27:07,834 nipype.workflow INFO:
 	 [Job 1] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-se).
-240904-06:54:59,369 nipype.workflow INFO:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:07,835 nipype.workflow INFO:
 	 [Job 2] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_read-nii).
-240904-06:54:59,371 nipype.workflow INFO:
+241017-00:27:07,837 nipype.workflow INFO:
 	 [Job 3] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_as-canonical).
-240904-06:54:59,372 nipype.workflow INFO:
+241017-00:27:07,838 nipype.workflow INFO:
 	 [Job 6] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-me).
-240904-06:54:59,374 nipype.workflow INFO:
+241017-00:27:07,840 nipype.workflow INFO:
 	 [Job 7] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_read-json-se).
-240904-06:54:59,375 nipype.workflow INFO:
+241017-00:27:07,841 nipype.workflow INFO:
 	 [Job 8] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_read-nii).
-240904-06:54:59,377 nipype.workflow INFO:
+241017-00:27:07,843 nipype.workflow INFO:
 	 [Job 9] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_as-canonical).
-240904-06:54:59,380 nipype.workflow INFO:
+241017-00:27:07,846 nipype.workflow INFO:
 	 [MultiProc] Running 3 tasks, and 5 jobs ready. Free memory (GB): 81.22/113.22, Free processors: 10/32.
                      Currently running:
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
@@ -1041,55 +1052,53 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:54:59,613 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_scale-phase&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_scale-phase&quot;.
-240904-06:54:59,615 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_getfirst-canonical-magnitude&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_getfirst-canonical-magnitude&quot;.
-240904-06:54:59,622 nipype.workflow INFO:
-	 [Node] Executing &quot;nibabel_numpy_scale-phase&quot; &lt;qsmxt.interfaces.nipype_interface_processphase.ScalePhaseInterface&gt;
-240904-06:54:59,636 nipype.workflow INFO:
-	 [Node] Executing &quot;func_getfirst-canonical-magnitude&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:08,97 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/ants_register-t1-to-qsm&quot;.
+241017-00:27:08,99 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_scale-phase&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_scale-phase&quot;.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:54:59,640 nipype.workflow INFO:
-	 [Node] Finished &quot;func_getfirst-canonical-magnitude&quot;, elapsed time 0.001359s.
-240904-06:54:59,613 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_getfirst-canonical-magnitude&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_getfirst-canonical-magnitude&quot;.
-240904-06:54:59,674 nipype.workflow INFO:
-	 [Node] Executing &quot;func_getfirst-canonical-magnitude&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-240904-06:54:59,678 nipype.workflow INFO:
-	 [Node] Finished &quot;func_getfirst-canonical-magnitude&quot;, elapsed time 0.000979s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:54:59,613 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_scale-phase&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_scale-phase&quot;.
-240904-06:54:59,725 nipype.workflow INFO:
-	 [Node] Executing &quot;nibabel_numpy_scale-phase&quot; &lt;qsmxt.interfaces.nipype_interface_processphase.ScalePhaseInterface&gt;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:54:59,614 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/ants_register-t1-to-qsm&quot;.
-240904-06:54:59,774 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:08,102 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_getfirst-canonical-magnitude&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_getfirst-canonical-magnitude&quot;.
+241017-00:27:08,111 nipype.workflow INFO:
 	 [Node] Executing &quot;ants_register-t1-to-qsm&quot; &lt;nipype.interfaces.ants.registration.RegistrationSynQuick&gt;
+241017-00:27:08,114 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_scale-phase&quot; &lt;qsmxt.interfaces.nipype_interface_processphase.ScalePhaseInterface&gt;
+241017-00:27:08,116 nipype.workflow INFO:
+	 [Node] Executing &quot;func_getfirst-canonical-magnitude&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+241017-00:27:08,121 nipype.workflow INFO:
+	 [Node] Finished &quot;func_getfirst-canonical-magnitude&quot;, elapsed time 0.001783s.
+241017-00:27:08,98 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_getfirst-canonical-magnitude&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/func_getfirst-canonical-magnitude&quot;.
+241017-00:27:08,102 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_scale-phase&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_scale-phase&quot;.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:55:00,263 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_numpy_scale-phase&quot;, elapsed time 0.638598s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:08,170 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_scale-phase&quot; &lt;qsmxt.interfaces.nipype_interface_processphase.ScalePhaseInterface&gt;
+241017-00:27:08,171 nipype.workflow INFO:
+	 [Node] Executing &quot;func_getfirst-canonical-magnitude&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+241017-00:27:08,177 nipype.workflow INFO:
+	 [Node] Finished &quot;func_getfirst-canonical-magnitude&quot;, elapsed time 0.001708s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:55:00,366 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_numpy_scale-phase&quot;, elapsed time 0.638468s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:08,801 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_scale-phase&quot;, elapsed time 0.684252s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:55:01,363 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:08,841 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_scale-phase&quot;, elapsed time 0.66767s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:09,824 nipype.workflow INFO:
 	 [Job 12] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_scale-phase).
-240904-06:55:01,366 nipype.workflow INFO:
+241017-00:27:09,826 nipype.workflow INFO:
 	 [Job 13] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_getfirst-canonical-magnitude).
-240904-06:55:01,367 nipype.workflow INFO:
+241017-00:27:09,828 nipype.workflow INFO:
 	 [Job 15] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_scale-phase).
-240904-06:55:01,368 nipype.workflow INFO:
+241017-00:27:09,829 nipype.workflow INFO:
 	 [Job 16] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.func_getfirst-canonical-magnitude).
-240904-06:55:01,371 nipype.workflow INFO:
+241017-00:27:09,832 nipype.workflow INFO:
 	 [MultiProc] Running 4 tasks, and 2 jobs ready. Free memory (GB): 73.22/113.22, Free processors: 4/32.
                      Currently running:
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
@@ -1098,27 +1107,27 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:55:01,494 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_axial-resampling&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_axial-resampling&quot;.
-240904-06:55:01,496 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_axial-resampling&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_axial-resampling&quot;.
-240904-06:55:01,511 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:09,928 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_axial-resampling&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_axial-resampling&quot;.
+241017-00:27:09,929 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_axial-resampling&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_axial-resampling&quot;.
+241017-00:27:09,938 nipype.workflow INFO:
 	 [Node] Executing &quot;nibabel_numpy_nilearn_axial-resampling&quot; &lt;qsmxt.interfaces.nipype_interface_axialsampling.AxialSamplingInterface&gt;
-240904-06:55:01,517 nipype.workflow INFO:
-	 [Node] Executing &quot;nibabel_numpy_nilearn_axial-resampling&quot; &lt;qsmxt.interfaces.nipype_interface_axialsampling.AxialSamplingInterface&gt;
-240904-06:55:01,522 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_numpy_nilearn_axial-resampling&quot;, elapsed time 0.008209s.
+241017-00:27:09,946 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_nilearn_axial-resampling&quot;, elapsed time 0.005251s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:55:01,531 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_numpy_nilearn_axial-resampling&quot;, elapsed time 0.009405s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:09,957 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_nilearn_axial-resampling&quot; &lt;qsmxt.interfaces.nipype_interface_axialsampling.AxialSamplingInterface&gt;
+241017-00:27:09,966 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_nilearn_axial-resampling&quot;, elapsed time 0.006205s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:55:03,365 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:11,827 nipype.workflow INFO:
 	 [Job 18] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_axial-resampling).
-240904-06:55:03,367 nipype.workflow INFO:
+241017-00:27:11,830 nipype.workflow INFO:
 	 [Job 21] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_axial-resampling).
-240904-06:55:03,371 nipype.workflow INFO:
+241017-00:27:11,833 nipype.workflow INFO:
 	 [MultiProc] Running 4 tasks, and 4 jobs ready. Free memory (GB): 73.22/113.22, Free processors: 4/32.
                      Currently running:
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
@@ -1127,17 +1136,17 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:55:03,492 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.mrt_romeo&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/mrt_romeo&quot;.
-240904-06:55:03,493 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.mrt_romeo&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/mrt_romeo&quot;.
-240904-06:55:03,503 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:11,980 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.mrt_romeo&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/mrt_romeo&quot;.
+241017-00:27:11,982 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.mrt_romeo&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/mrt_romeo&quot;.
+241017-00:27:11,994 nipype.workflow INFO:
 	 [Node] Executing &quot;mrt_romeo&quot; &lt;qsmxt.interfaces.nipype_interface_romeo.RomeoB0Interface&gt;
-240904-06:55:03,504 nipype.workflow INFO:
+241017-00:27:11,996 nipype.workflow INFO:
 	 [Node] Executing &quot;mrt_romeo&quot; &lt;qsmxt.interfaces.nipype_interface_romeo.RomeoB0Interface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:55:05,368 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:27:13,829 nipype.workflow INFO:
 	 [MultiProc] Running 6 tasks, and 2 jobs ready. Free memory (GB): 68.55/113.22, Free processors: 2/32.
                      Currently running:
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.mrt_romeo
@@ -1148,52 +1157,20 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:55:57,587 nipype.workflow INFO:
-	 [Node] Finished &quot;mrt_romeo&quot;, elapsed time 54.081331s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:28:04,910 nipype.workflow INFO:
+	 [Node] Finished &quot;mrt_romeo&quot;, elapsed time 52.914279s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:55:59,467 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:28:05,30 nipype.workflow INFO:
+	 [Node] Finished &quot;mrt_romeo&quot;, elapsed time 53.031005s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:28:05,891 nipype.workflow INFO:
 	 [Job 25] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.mrt_romeo).
-240904-06:55:59,471 nipype.workflow INFO:
-	 [MultiProc] Running 5 tasks, and 3 jobs ready. Free memory (GB): 70.88/113.22, Free processors: 3/32.
-                     Currently running:
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.mrt_romeo
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:55:59,720 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.nibabel-numpy_normalize-phase&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/nibabel-numpy_normalize-phase&quot;.
-240904-06:55:59,742 nipype.workflow INFO:
-	 [Node] Executing &quot;nibabel-numpy_normalize-phase&quot; &lt;qsmxt.interfaces.nipype_interface_processphase.PhaseToNormalizedInterface&gt;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:56:00,5 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel-numpy_normalize-phase&quot;, elapsed time 0.252192s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:56:01,471 nipype.workflow INFO:
-	 [Job 31] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.nibabel-numpy_normalize-phase).
-240904-06:56:01,481 nipype.workflow INFO:
-	 [MultiProc] Running 5 tasks, and 2 jobs ready. Free memory (GB): 70.88/113.22, Free processors: 3/32.
-                     Currently running:
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.mrt_romeo
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:56:07,822 nipype.workflow INFO:
-	 [Node] Finished &quot;mrt_romeo&quot;, elapsed time 64.314703s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:56:09,491 nipype.workflow INFO:
+241017-00:28:05,892 nipype.workflow INFO:
 	 [Job 28] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.mrt_romeo).
-240904-06:56:09,493 nipype.workflow INFO:
-	 [MultiProc] Running 4 tasks, and 3 jobs ready. Free memory (GB): 73.22/113.22, Free processors: 4/32.
+241017-00:28:05,894 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 4 jobs ready. Free memory (GB): 73.22/113.22, Free processors: 4/32.
                      Currently running:
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
@@ -1201,19 +1178,29 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:56:09,695 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.nibabel-numpy_normalize-phase&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/nibabel-numpy_normalize-phase&quot;.
-240904-06:56:09,703 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:28:06,12 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.nibabel-numpy_normalize-phase&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/nibabel-numpy_normalize-phase&quot;.
+241017-00:28:06,12 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.nibabel-numpy_normalize-phase&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/nibabel-numpy_normalize-phase&quot;.
+241017-00:28:06,22 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel-numpy_normalize-phase&quot; &lt;qsmxt.interfaces.nipype_interface_processphase.PhaseToNormalizedInterface&gt;
+241017-00:28:06,25 nipype.workflow INFO:
 	 [Node] Executing &quot;nibabel-numpy_normalize-phase&quot; &lt;qsmxt.interfaces.nipype_interface_processphase.PhaseToNormalizedInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:56:09,899 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel-numpy_normalize-phase&quot;, elapsed time 0.194681s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:28:06,972 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel-numpy_normalize-phase&quot;, elapsed time 0.944248s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:56:11,495 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:28:07,22 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel-numpy_normalize-phase&quot;, elapsed time 0.99345s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:28:07,892 nipype.workflow INFO:
+	 [Job 31] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.nibabel-numpy_normalize-phase).
+241017-00:28:07,894 nipype.workflow INFO:
 	 [Job 33] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.nibabel-numpy_normalize-phase).
-240904-06:56:11,500 nipype.workflow INFO:
+241017-00:28:07,896 nipype.workflow INFO:
 	 [MultiProc] Running 4 tasks, and 2 jobs ready. Free memory (GB): 73.22/113.22, Free processors: 4/32.
                      Currently running:
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
@@ -1222,36 +1209,56 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:58:51,918 nipype.workflow INFO:
-	 [Node] Finished &quot;ants_register-t1-to-qsm&quot;, elapsed time 234.004798s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:20,45 nipype.workflow INFO:
+	 [Node] Finished &quot;ants_register-t1-to-qsm&quot;, elapsed time 191.929331s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:58:53,330 nipype.workflow INFO:
-	 [Node] Finished &quot;ants_register-t1-to-qsm&quot;, elapsed time 233.553723s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:58:53,759 nipype.workflow INFO:
-	 [Job 5] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm).
-240904-06:58:53,762 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:22,60 nipype.workflow INFO:
 	 [Job 11] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm).
-240904-06:58:53,764 nipype.workflow INFO:
-	 [MultiProc] Running 2 tasks, and 2 jobs ready. Free memory (GB): 89.22/113.22, Free processors: 16/32.
+241017-00:30:22,66 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 2 jobs ready. Free memory (GB): 81.22/113.22, Free processors: 10/32.
                      Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:22,176 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/mask_workflow/fsl-bet&quot;.
+241017-00:30:22,187 nipype.workflow INFO:
+	 [Node] Executing &quot;fsl-bet&quot; &lt;qsmxt.interfaces.nipype_interface_bet2.Bet2Interface&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:24,63 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 1 jobs ready. Free memory (GB): 79.22/113.22, Free processors: 2/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:27,501 nipype.workflow INFO:
+	 [Node] Finished &quot;ants_register-t1-to-qsm&quot;, elapsed time 201.081074s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:28,69 nipype.workflow INFO:
+	 [Job 5] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_register-t1-to-qsm).
+241017-00:30:28,72 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 87.22/113.22, Free processors: 8/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:58:53,902 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/mask_workflow/fsl-bet&quot;.
-240904-06:58:53,903 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/mask_workflow/fsl-bet&quot;.
-240904-06:58:53,916 nipype.workflow INFO:
-	 [Node] Executing &quot;fsl-bet&quot; &lt;qsmxt.interfaces.nipype_interface_bet2.Bet2Interface&gt;
-240904-06:58:53,928 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:28,170 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/mask_workflow/fsl-bet&quot;.
+241017-00:30:28,181 nipype.workflow INFO:
 	 [Node] Executing &quot;fsl-bet&quot; &lt;qsmxt.interfaces.nipype_interface_bet2.Bet2Interface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:58:55,765 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:30,73 nipype.workflow INFO:
 	 [MultiProc] Running 4 tasks, and 0 jobs ready. Free memory (GB): 85.22/113.22, Free processors: 0/32.
                      Currently running:
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet
@@ -1260,13 +1267,13 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:15,703 nipype.workflow INFO:
-	 [Node] Finished &quot;fsl-bet&quot;, elapsed time 21.78565s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:40,538 nipype.workflow INFO:
+	 [Node] Finished &quot;fsl-bet&quot;, elapsed time 18.348243s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:15,787 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:42,84 nipype.workflow INFO:
 	 [Job 24] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet).
-240904-06:59:15,791 nipype.workflow INFO:
+241017-00:30:42,88 nipype.workflow INFO:
 	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 87.22/113.22, Free processors: 8/32.
                      Currently running:
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet
@@ -1274,19 +1281,19 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:16,51 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.scipy_numpy_nibabel_bet_erode&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/mask_workflow/scipy_numpy_nibabel_bet_erode&quot;.
-240904-06:59:16,57 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:42,174 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.scipy_numpy_nibabel_bet_erode&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/mask_workflow/scipy_numpy_nibabel_bet_erode&quot;.
+241017-00:30:42,182 nipype.workflow INFO:
 	 [Node] Executing &quot;scipy_numpy_nibabel_bet_erode&quot; &lt;qsmxt.interfaces.nipype_interface_erode.ErosionInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:16,864 nipype.workflow INFO:
-	 [Node] Finished &quot;scipy_numpy_nibabel_bet_erode&quot;, elapsed time 0.801518s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:43,179 nipype.workflow INFO:
+	 [Node] Finished &quot;scipy_numpy_nibabel_bet_erode&quot;, elapsed time 0.993967s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:17,791 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:44,86 nipype.workflow INFO:
 	 [Job 30] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.scipy_numpy_nibabel_bet_erode).
-240904-06:59:17,794 nipype.workflow INFO:
+241017-00:30:44,89 nipype.workflow INFO:
 	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 87.22/113.22, Free processors: 8/32.
                      Currently running:
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet
@@ -1294,28 +1301,21 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:18,17 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_vsharp&quot;.
-240904-06:59:18,29 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:44,178 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_vsharp&quot;.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:44,190 nipype.workflow INFO:
 	 [Node] Executing &quot;qsmjl_vsharp&quot; &lt;qsmxt.interfaces.nipype_interface_qsmjl.VsharpInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:19,794 nipype.workflow INFO:
-	 [MultiProc] Running 4 tasks, and 0 jobs ready. Free memory (GB): 85.22/113.22, Free processors: 6/32.
-                     Currently running:
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:44,729 nipype.workflow INFO:
+	 [Node] Finished &quot;fsl-bet&quot;, elapsed time 16.545696s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:20,679 nipype.workflow INFO:
-	 [Node] Finished &quot;fsl-bet&quot;, elapsed time 26.739668s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:21,799 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:46,89 nipype.workflow INFO:
 	 [Job 27] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.fsl-bet).
-240904-06:59:21,802 nipype.workflow INFO:
+241017-00:30:46,92 nipype.workflow INFO:
 	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 87.22/113.22, Free processors: 14/32.
                      Currently running:
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp
@@ -1323,21 +1323,19 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:22,16 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.scipy_numpy_nibabel_bet_erode&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/mask_workflow/scipy_numpy_nibabel_bet_erode&quot;.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:22,38 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:46,212 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.scipy_numpy_nibabel_bet_erode&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/mask_workflow/scipy_numpy_nibabel_bet_erode&quot;.
+241017-00:30:46,221 nipype.workflow INFO:
 	 [Node] Executing &quot;scipy_numpy_nibabel_bet_erode&quot; &lt;qsmxt.interfaces.nipype_interface_erode.ErosionInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:23,221 nipype.workflow INFO:
-	 [Node] Finished &quot;scipy_numpy_nibabel_bet_erode&quot;, elapsed time 1.1804890000000001s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:47,7 nipype.workflow INFO:
+	 [Node] Finished &quot;scipy_numpy_nibabel_bet_erode&quot;, elapsed time 0.783491s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:23,803 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:48,90 nipype.workflow INFO:
 	 [Job 32] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.mask_workflow.scipy_numpy_nibabel_bet_erode).
-240904-06:59:23,810 nipype.workflow INFO:
+241017-00:30:48,94 nipype.workflow INFO:
 	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 87.22/113.22, Free processors: 14/32.
                      Currently running:
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp
@@ -1345,15 +1343,13 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:24,20 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_vsharp&quot;.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:24,46 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:48,179 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_vsharp&quot;.
+241017-00:30:48,192 nipype.workflow INFO:
 	 [Node] Executing &quot;qsmjl_vsharp&quot; &lt;qsmxt.interfaces.nipype_interface_qsmjl.VsharpInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:25,807 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:30:50,94 nipype.workflow INFO:
 	 [MultiProc] Running 4 tasks, and 0 jobs ready. Free memory (GB): 85.22/113.22, Free processors: 12/32.
                      Currently running:
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp
@@ -1362,13 +1358,13 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:45,716 nipype.workflow INFO:
-	 [Node] Finished &quot;qsmjl_vsharp&quot;, elapsed time 27.685409s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:10,606 nipype.workflow INFO:
+	 [Node] Finished &quot;qsmjl_vsharp&quot;, elapsed time 26.413691s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:45,827 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:12,115 nipype.workflow INFO:
 	 [Job 34] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp).
-240904-06:59:45,830 nipype.workflow INFO:
+241017-00:31:12,119 nipype.workflow INFO:
 	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 87.22/113.22, Free processors: 14/32.
                      Currently running:
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp
@@ -1376,13 +1372,13 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:45,929 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_rts&quot;.
-240904-06:59:45,949 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:12,243 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_rts&quot;.
+241017-00:31:12,253 nipype.workflow INFO:
 	 [Node] Executing &quot;qsmjl_rts&quot; &lt;qsmxt.interfaces.nipype_interface_qsmjl.RtsQsmInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:47,830 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:14,119 nipype.workflow INFO:
 	 [MultiProc] Running 4 tasks, and 0 jobs ready. Free memory (GB): 84.81/113.22, Free processors: 12/32.
                      Currently running:
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts
@@ -1391,13 +1387,13 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:50,357 nipype.workflow INFO:
-	 [Node] Finished &quot;qsmjl_vsharp&quot;, elapsed time 26.308331s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:14,344 nipype.workflow INFO:
+	 [Node] Finished &quot;qsmjl_vsharp&quot;, elapsed time 26.150419s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:51,835 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:16,120 nipype.workflow INFO:
 	 [Job 35] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_vsharp).
-240904-06:59:51,847 nipype.workflow INFO:
+241017-00:31:16,124 nipype.workflow INFO:
 	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 86.81/113.22, Free processors: 14/32.
                      Currently running:
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts
@@ -1405,13 +1401,15 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:52,109 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_rts&quot;.
-240904-06:59:52,123 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:16,256 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_rts&quot;.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:16,267 nipype.workflow INFO:
 	 [Node] Executing &quot;qsmjl_rts&quot; &lt;qsmxt.interfaces.nipype_interface_qsmjl.RtsQsmInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-06:59:53,838 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:18,122 nipype.workflow INFO:
 	 [MultiProc] Running 4 tasks, and 0 jobs ready. Free memory (GB): 84.40/113.22, Free processors: 12/32.
                      Currently running:
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts
@@ -1420,458 +1418,393 @@ nextqsm: Applies suggested settings for running the NeXtQSM algorithm (assumes h
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:20,378 nipype.workflow INFO:
-	 [Node] Finished &quot;qsmjl_rts&quot;, elapsed time 34.427168s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:48,303 nipype.workflow INFO:
+	 [Node] Finished &quot;qsmjl_rts&quot;, elapsed time 36.048245s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:21,877 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:48,404 nipype.workflow INFO:
+	 [Node] Finished &quot;qsmjl_rts&quot;, elapsed time 32.134239s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:50,155 nipype.workflow INFO:
 	 [Job 36] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts).
-240904-07:00:21,880 nipype.workflow INFO:
-	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 86.81/113.22, Free processors: 14/32.
-                     Currently running:
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:22,108 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-average&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_qsm-average&quot;.
-240904-07:00:22,117 nipype.workflow INFO:
-	 [Node] Executing &quot;nibabel_numpy_qsm-average&quot; &lt;qsmxt.interfaces.nipype_interface_nonzeroaverage.NonzeroAverageInterface&gt;
-240904-07:00:22,119 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_numpy_qsm-average&quot;, elapsed time 0.000339s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:23,880 nipype.workflow INFO:
-	 [Job 38] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-average).
-240904-07:00:23,883 nipype.workflow INFO:
-	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 86.81/113.22, Free processors: 14/32.
-                     Currently running:
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:24,20 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_qsm-resampled&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_qsm-resampled&quot;.
-240904-07:00:24,30 nipype.workflow INFO:
-	 [Node] Executing &quot;nibabel_numpy_nilearn_qsm-resampled&quot; &lt;qsmxt.interfaces.nipype_interface_resample_like.ResampleLikeInterface&gt;
-Resampling /storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_rts/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw_scaled_romeo-unwrapped_normalized_vsharp_rts.nii to /storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii with interpolation continuous
-Loaded input and reference files
-Input image is already aligned with the reference image
-240904-07:00:24,55 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_numpy_nilearn_qsm-resampled&quot;, elapsed time 0.022797s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:25,883 nipype.workflow INFO:
-	 [Job 40] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_qsm-resampled).
-240904-07:00:25,892 nipype.workflow INFO:
-	 [MultiProc] Running 3 tasks, and 2 jobs ready. Free memory (GB): 86.81/113.22, Free processors: 14/32.
-                     Currently running:
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:26,12 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-referenced&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_qsm-referenced&quot;.
-240904-07:00:26,15 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists1&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/combine_lists1&quot;.
-240904-07:00:26,24 nipype.workflow INFO:
-	 [Node] Executing &quot;combine_lists1&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-240904-07:00:26,26 nipype.workflow INFO:
-	 [Node] Finished &quot;combine_lists1&quot;, elapsed time 0.000909s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:26,24 nipype.workflow INFO:
-	 [Node] Executing &quot;nibabel_numpy_qsm-referenced&quot; &lt;qsmxt.interfaces.nipype_interface_qsm_referencing.ReferenceQSMInterface&gt;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:27,121 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_numpy_qsm-referenced&quot;, elapsed time 1.043874s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:27,885 nipype.workflow INFO:
-	 [Job 42] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-referenced).
-240904-07:00:27,886 nipype.workflow INFO:
-	 [Job 43] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists1).
-240904-07:00:27,888 nipype.workflow INFO:
-	 [MultiProc] Running 3 tasks, and 0 jobs ready. Free memory (GB): 86.81/113.22, Free processors: 14/32.
-                     Currently running:
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:31,300 nipype.workflow INFO:
-	 [Node] Finished &quot;qsmjl_rts&quot;, elapsed time 39.17512s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:31,893 nipype.workflow INFO:
+241017-00:31:50,157 nipype.workflow INFO:
 	 [Job 37] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.qsm_workflow.qsmjl_rts).
-240904-07:00:31,895 nipype.workflow INFO:
-	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 89.22/113.22, Free processors: 16/32.
-                     Currently running:
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:32,136 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-average&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_qsm-average&quot;.
-240904-07:00:32,146 nipype.workflow INFO:
-	 [Node] Executing &quot;nibabel_numpy_qsm-average&quot; &lt;qsmxt.interfaces.nipype_interface_nonzeroaverage.NonzeroAverageInterface&gt;
-240904-07:00:32,149 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_numpy_qsm-average&quot;, elapsed time 0.000534s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:33,896 nipype.workflow INFO:
-	 [Job 39] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-average).
-240904-07:00:33,900 nipype.workflow INFO:
-	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 89.22/113.22, Free processors: 16/32.
-                     Currently running:
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:34,87 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_qsm-resampled&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_qsm-resampled&quot;.
-240904-07:00:34,92 nipype.workflow INFO:
-	 [Node] Executing &quot;nibabel_numpy_nilearn_qsm-resampled&quot; &lt;qsmxt.interfaces.nipype_interface_resample_like.ResampleLikeInterface&gt;
-Resampling /storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_rts/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw_scaled_romeo-unwrapped_normalized_vsharp_rts.nii to /storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii with interpolation continuous
-Loaded input and reference files
-Input image is already aligned with the reference image
-240904-07:00:34,97 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_numpy_nilearn_qsm-resampled&quot;, elapsed time 0.003792s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:35,899 nipype.workflow INFO:
-	 [Job 41] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_qsm-resampled).
-240904-07:00:35,905 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:50,160 nipype.workflow INFO:
 	 [MultiProc] Running 2 tasks, and 2 jobs ready. Free memory (GB): 89.22/113.22, Free processors: 16/32.
                      Currently running:
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:36,98 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-referenced&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_qsm-referenced&quot;.
-240904-07:00:36,104 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:50,319 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-average&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_qsm-average&quot;.
+241017-00:31:50,331 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_qsm-average&quot; &lt;qsmxt.interfaces.nipype_interface_nonzeroaverage.NonzeroAverageInterface&gt;
+241017-00:31:50,334 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_qsm-average&quot;, elapsed time 0.000441s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:50,319 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-average&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_qsm-average&quot;.
+241017-00:31:50,379 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_qsm-average&quot; &lt;qsmxt.interfaces.nipype_interface_nonzeroaverage.NonzeroAverageInterface&gt;
+241017-00:31:50,382 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_qsm-average&quot;, elapsed time 0.000484s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:52,157 nipype.workflow INFO:
+	 [Job 38] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-average).
+241017-00:31:52,160 nipype.workflow INFO:
+	 [Job 39] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-average).
+241017-00:31:52,162 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 2 jobs ready. Free memory (GB): 89.22/113.22, Free processors: 16/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:52,284 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_qsm-resampled&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_qsm-resampled&quot;.
+241017-00:31:52,286 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_qsm-resampled&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_qsm-resampled&quot;.
+241017-00:31:52,292 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_nilearn_qsm-resampled&quot; &lt;qsmxt.interfaces.nipype_interface_resample_like.ResampleLikeInterface&gt;
+Resampling /storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_rts/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw_scaled_romeo-unwrapped_normalized_vsharp_rts.nii to /storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii with interpolation continuous
+241017-00:31:52,295 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_nilearn_qsm-resampled&quot; &lt;qsmxt.interfaces.nipype_interface_resample_like.ResampleLikeInterface&gt;
+Resampling /storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/qsm_workflow/qsmjl_rts/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw_scaled_romeo-unwrapped_normalized_vsharp_rts.nii to /storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-qsmp21mmisote20_run-01_part-phase_T2starw.nii with interpolation continuous
+Loaded input and reference files
+Input image is already aligned with the reference image
+Loaded input and reference files
+Input image is already aligned with the reference image
+241017-00:31:52,302 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_nilearn_qsm-resampled&quot;, elapsed time 0.004866s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:52,303 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_nilearn_qsm-resampled&quot;, elapsed time 0.006215s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:54,158 nipype.workflow INFO:
+	 [Job 40] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_qsm-resampled).
+241017-00:31:54,160 nipype.workflow INFO:
+	 [Job 41] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_qsm-resampled).
+241017-00:31:54,163 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 4 jobs ready. Free memory (GB): 89.22/113.22, Free processors: 16/32.
+                     Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:54,284 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-referenced&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_qsm-referenced&quot;.
+241017-00:31:54,285 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists1&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/combine_lists1&quot;.
+241017-00:31:54,289 nipype.workflow INFO:
 	 [Node] Executing &quot;nibabel_numpy_qsm-referenced&quot; &lt;qsmxt.interfaces.nipype_interface_qsm_referencing.ReferenceQSMInterface&gt;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:36,98 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists1&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/combine_lists1&quot;.
-240904-07:00:36,155 nipype.workflow INFO:
+241017-00:31:54,292 nipype.workflow INFO:
 	 [Node] Executing &quot;combine_lists1&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-240904-07:00:36,157 nipype.workflow INFO:
-	 [Node] Finished &quot;combine_lists1&quot;, elapsed time 0.000761s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:36,994 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_numpy_qsm-referenced&quot;, elapsed time 0.888087s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:54,296 nipype.workflow INFO:
+	 [Node] Finished &quot;combine_lists1&quot;, elapsed time 0.001592s.
+241017-00:31:54,301 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-referenced&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_qsm-referenced&quot;.
+241017-00:31:54,302 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists1&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/combine_lists1&quot;.
+241017-00:31:54,309 nipype.workflow INFO:
+	 [Node] Executing &quot;nibabel_numpy_qsm-referenced&quot; &lt;qsmxt.interfaces.nipype_interface_qsm_referencing.ReferenceQSMInterface&gt;
+241017-00:31:54,309 nipype.workflow INFO:
+	 [Node] Executing &quot;combine_lists1&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+241017-00:31:54,312 nipype.workflow INFO:
+	 [Node] Finished &quot;combine_lists1&quot;, elapsed time 0.001131s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:00:37,903 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:54,952 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_qsm-referenced&quot;, elapsed time 0.661182s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:55,58 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_qsm-referenced&quot;, elapsed time 0.747986s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:31:56,160 nipype.workflow INFO:
+	 [Job 42] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-referenced).
+241017-00:31:56,162 nipype.workflow INFO:
+	 [Job 43] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists1).
+241017-00:31:56,164 nipype.workflow INFO:
 	 [Job 44] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_qsm-referenced).
-240904-07:00:37,905 nipype.workflow INFO:
+241017-00:31:56,165 nipype.workflow INFO:
 	 [Job 45] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists1).
-240904-07:00:37,907 nipype.workflow INFO:
+241017-00:31:56,167 nipype.workflow INFO:
 	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 89.22/113.22, Free processors: 16/32.
                      Currently running:
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:10,392 nipype.workflow INFO:
-	 [Node] Finished &quot;fastsurfer_segment-t1&quot;, elapsed time 672.529656s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:06,620 nipype.workflow INFO:
+	 [Node] Finished &quot;fastsurfer_segment-t1&quot;, elapsed time 540.365623s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:12,395 nipype.workflow INFO:
-	 [Job 10] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1).
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:12,399 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:08,435 nipype.workflow INFO:
+	 [Job 4] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1).
+241017-00:36:08,438 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 101.22/113.22, Free processors: 24/32.
                      Currently running:
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:12,490 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.numpy_numpy_nibabel_mgz2nii&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/numpy_numpy_nibabel_mgz2nii&quot;.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:08,573 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.numpy_numpy_nibabel_mgz2nii&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/numpy_numpy_nibabel_mgz2nii&quot;.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:12,499 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:08,581 nipype.workflow INFO:
 	 [Node] Executing &quot;numpy_numpy_nibabel_mgz2nii&quot; &lt;qsmxt.interfaces.nipype_interface_mgz2nii.Mgz2NiiInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:12,829 nipype.workflow INFO:
-	 [Node] Finished &quot;numpy_numpy_nibabel_mgz2nii&quot;, elapsed time 0.32768s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:08,968 nipype.workflow INFO:
+	 [Node] Finished &quot;numpy_numpy_nibabel_mgz2nii&quot;, elapsed time 0.385342s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:14,400 nipype.workflow INFO:
-	 [Job 17] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.numpy_numpy_nibabel_mgz2nii).
-240904-07:06:14,403 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:10,436 nipype.workflow INFO:
+	 [Job 14] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.numpy_numpy_nibabel_mgz2nii).
+241017-00:36:10,440 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 2 jobs ready. Free memory (GB): 101.22/113.22, Free processors: 24/32.
                      Currently running:
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:14,515 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_t1w-seg-resampled&quot;.
-240904-07:06:14,523 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:10,588 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_t1w-seg-resampled&quot;.
+241017-00:36:10,589 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_transform-segmentation-to-qsm&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/ants_transform-segmentation-to-qsm&quot;.
+241017-00:36:10,597 nipype.workflow INFO:
 	 [Node] Executing &quot;nibabel_numpy_nilearn_t1w-seg-resampled&quot; &lt;qsmxt.interfaces.nipype_interface_resample_like.ResampleLikeInterface&gt;
-Resampling /storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/fastsurfer_segment-t1/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w_dseg_nii.nii to /storage/tmp/tmpa9h1uez3/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii with interpolation nearest
+Resampling /storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/fastsurfer_segment-t1/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w_dseg_nii.nii to /storage/tmp/tmpv43xnkj4/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii with interpolation nearest
+241017-00:36:10,601 nipype.workflow INFO:
+	 [Node] Executing &quot;ants_transform-segmentation-to-qsm&quot; &lt;nipype.interfaces.ants.resampling.ApplyTransforms&gt;
 Loaded input and reference files
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:14,515 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_transform-segmentation-to-qsm&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/ants_transform-segmentation-to-qsm&quot;.
-240904-07:06:14,577 nipype.workflow INFO:
-	 [Node] Executing &quot;ants_transform-segmentation-to-qsm&quot; &lt;nipype.interfaces.ants.resampling.ApplyTransforms&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:12,21 nipype.workflow INFO:
+	 [Node] Finished &quot;ants_transform-segmentation-to-qsm&quot;, elapsed time 1.41705s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:15,674 nipype.workflow INFO:
-	 [Node] Finished &quot;ants_transform-segmentation-to-qsm&quot;, elapsed time 1.094468s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:16,400 nipype.workflow INFO:
-	 [Job 23] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_transform-segmentation-to-qsm).
-240904-07:06:16,404 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:12,439 nipype.workflow INFO:
+	 [Job 20] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_transform-segmentation-to-qsm).
+241017-00:36:12,443 nipype.workflow INFO:
 	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 99.22/113.22, Free processors: 23/32.
                      Currently running:
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:16,525 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists2&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/combine_lists2&quot;.
-240904-07:06:16,533 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:12,596 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists2&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/combine_lists2&quot;.
+241017-00:36:12,603 nipype.workflow INFO:
 	 [Node] Executing &quot;combine_lists2&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-240904-07:06:16,535 nipype.workflow INFO:
-	 [Node] Finished &quot;combine_lists2&quot;, elapsed time 0.001081s.
+241017-00:36:12,606 nipype.workflow INFO:
+	 [Node] Finished &quot;combine_lists2&quot;, elapsed time 0.000959s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:18,402 nipype.workflow INFO:
-	 [Job 29] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists2).
-240904-07:06:18,406 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:14,441 nipype.workflow INFO:
+	 [Job 26] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists2).
+241017-00:36:14,445 nipype.workflow INFO:
 	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 99.22/113.22, Free processors: 23/32.
                      Currently running:
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:18,511 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.create_permutations&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/create_permutations&quot;.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:18,520 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:14,591 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.create_permutations&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/create_permutations&quot;.
+241017-00:36:14,598 nipype.workflow INFO:
 	 [Node] Executing &quot;create_permutations&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-240904-07:06:18,524 nipype.workflow INFO:
-	 [Node] Finished &quot;create_permutations&quot;, elapsed time 0.001323s.
+241017-00:36:14,600 nipype.workflow INFO:
+	 [Node] Finished &quot;create_permutations&quot;, elapsed time 0.000971s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:18,674 nipype.workflow INFO:
-	 [Node] Finished &quot;fastsurfer_segment-t1&quot;, elapsed time 680.814193s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:15,382 nipype.workflow INFO:
+	 [Node] Finished &quot;fastsurfer_segment-t1&quot;, elapsed time 549.125831s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:20,405 nipype.workflow INFO:
-	 [Job 4] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1).
-240904-07:06:20,407 nipype.workflow INFO:
-	 [Job 47] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.create_permutations).
-240904-07:06:20,410 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:16,443 nipype.workflow INFO:
+	 [Job 10] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.fastsurfer_segment-t1).
+241017-00:36:16,446 nipype.workflow INFO:
+	 [Job 46] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.create_permutations).
+241017-00:36:16,448 nipype.workflow INFO:
 	 [MultiProc] Running 1 tasks, and 2 jobs ready. Free memory (GB): 111.22/113.22, Free processors: 31/32.
                      Currently running:
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:20,519 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.numpy_numpy_nibabel_mgz2nii&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/numpy_numpy_nibabel_mgz2nii&quot;.
-240904-07:06:20,527 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:16,551 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.numpy_numpy_nibabel_mgz2nii&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/numpy_numpy_nibabel_mgz2nii&quot;.
+241017-00:36:16,560 nipype.workflow INFO:
 	 [Node] Executing &quot;numpy_numpy_nibabel_mgz2nii&quot; &lt;qsmxt.interfaces.nipype_interface_mgz2nii.Mgz2NiiInterface&gt;
-240904-07:06:20,533 nipype.workflow INFO:
-	 [Node] Setting-up &quot;_nibabel_numpy_analyse-qsm0&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_analyse-qsm/mapflow/_nibabel_numpy_analyse-qsm0&quot;.
-240904-07:06:20,536 nipype.workflow INFO:
+241017-00:36:16,564 nipype.workflow INFO:
+	 [Node] Setting-up &quot;_nibabel_numpy_analyse-qsm0&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_analyse-qsm/mapflow/_nibabel_numpy_analyse-qsm0&quot;.
+241017-00:36:16,568 nipype.workflow INFO:
 	 [Node] Executing &quot;_nibabel_numpy_analyse-qsm0&quot; &lt;qsmxt.interfaces.nipype_interface_analyse.AnalyseInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:20,867 nipype.workflow INFO:
-	 [Node] Finished &quot;numpy_numpy_nibabel_mgz2nii&quot;, elapsed time 0.337974s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:16,925 nipype.workflow INFO:
+	 [Node] Finished &quot;numpy_numpy_nibabel_mgz2nii&quot;, elapsed time 0.362886s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:22,407 nipype.workflow INFO:
-	 [Job 14] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.numpy_numpy_nibabel_mgz2nii).
-240904-07:06:22,411 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:18,445 nipype.workflow INFO:
+	 [Job 17] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.numpy_numpy_nibabel_mgz2nii).
+241017-00:36:18,448 nipype.workflow INFO:
 	 [MultiProc] Running 2 tasks, and 2 jobs ready. Free memory (GB): 109.22/113.22, Free processors: 30/32.
                      Currently running:
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:22,516 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_t1w-seg-resampled&quot;.
-240904-07:06:22,523 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:18,532 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_t1w-seg-resampled&quot;.
+241017-00:36:18,534 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_transform-segmentation-to-qsm&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/ants_transform-segmentation-to-qsm&quot;.
+241017-00:36:18,538 nipype.workflow INFO:
 	 [Node] Executing &quot;nibabel_numpy_nilearn_t1w-seg-resampled&quot; &lt;qsmxt.interfaces.nipype_interface_resample_like.ResampleLikeInterface&gt;
-Resampling /storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/fastsurfer_segment-t1/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w_dseg_nii.nii to /storage/tmp/tmpa9h1uez3/bids/sub-1/ses-20170705/anat/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii with interpolation nearest
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded input and reference files
-240904-07:06:22,516 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_transform-segmentation-to-qsm&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/ants_transform-segmentation-to-qsm&quot;.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:22,658 nipype.workflow INFO:
+Resampling /storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/fastsurfer_segment-t1/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w_dseg_nii.nii to /storage/tmp/tmpv43xnkj4/bids/sub-2/ses-20170705/anat/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w.nii with interpolation nearest
+Loaded input and reference files
+241017-00:36:18,544 nipype.workflow INFO:
 	 [Node] Executing &quot;ants_transform-segmentation-to-qsm&quot; &lt;nipype.interfaces.ants.resampling.ApplyTransforms&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:23,719 nipype.workflow INFO:
-	 [Node] Finished &quot;ants_transform-segmentation-to-qsm&quot;, elapsed time 1.058909s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:19,558 nipype.workflow INFO:
+	 [Node] Finished &quot;ants_transform-segmentation-to-qsm&quot;, elapsed time 1.01193s.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Resampled the image
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved resampled image to /storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_t1w-seg-resampled/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w_dseg_nii_resampled.nii
-240904-07:06:24,93 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_numpy_nilearn_t1w-seg-resampled&quot;, elapsed time 9.567634s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:24,409 nipype.workflow INFO:
-	 [Job 22] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled).
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:24,415 nipype.workflow INFO:
-	 [Job 20] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_transform-segmentation-to-qsm).
-240904-07:06:24,418 nipype.workflow INFO:
-	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 109.22/113.22, Free processors: 30/32.
+241017-00:36:20,448 nipype.workflow INFO:
+	 [Job 23] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.ants_transform-segmentation-to-qsm).
+241017-00:36:20,451 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 1 jobs ready. Free memory (GB): 107.22/113.22, Free processors: 29/32.
                      Currently running:
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:24,517 nipype.workflow INFO:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists2&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/combine_lists2&quot;.
-240904-07:06:24,525 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:20,534 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists2&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/combine_lists2&quot;.
+241017-00:36:20,541 nipype.workflow INFO:
 	 [Node] Executing &quot;combine_lists2&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-240904-07:06:24,528 nipype.workflow INFO:
-	 [Node] Finished &quot;combine_lists2&quot;, elapsed time 0.001179s.
+241017-00:36:20,545 nipype.workflow INFO:
+	 [Node] Finished &quot;combine_lists2&quot;, elapsed time 0.001485s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:26,412 nipype.workflow INFO:
-	 [Job 26] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists2).
-240904-07:06:26,415 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved resampled image to /storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_t1w-seg-resampled/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w_dseg_nii_resampled.nii
+241017-00:36:20,606 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_nilearn_t1w-seg-resampled&quot;, elapsed time 10.007299s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:22,450 nipype.workflow INFO:
+	 [Job 19] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled).
+241017-00:36:22,453 nipype.workflow INFO:
+	 [Job 29] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.combine_lists2).
+241017-00:36:22,455 nipype.workflow INFO:
 	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 109.22/113.22, Free processors: 30/32.
                      Currently running:
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:26,536 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.create_permutations&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/create_permutations&quot;.
-240904-07:06:26,545 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:22,557 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.create_permutations&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/create_permutations&quot;.
+241017-00:36:22,565 nipype.workflow INFO:
 	 [Node] Executing &quot;create_permutations&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-240904-07:06:26,548 nipype.workflow INFO:
-	 [Node] Finished &quot;create_permutations&quot;, elapsed time 0.001052s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:28,414 nipype.workflow INFO:
-	 [Job 46] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.create_permutations).
-240904-07:06:28,417 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:22,568 nipype.workflow INFO:
+	 [Node] Finished &quot;create_permutations&quot;, elapsed time 0.001131s.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:24,452 nipype.workflow INFO:
+	 [Job 47] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.create_permutations).
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:24,456 nipype.workflow INFO:
 	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 109.22/113.22, Free processors: 30/32.
                      Currently running:
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
-                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:28,534 nipype.workflow INFO:
-	 [Node] Setting-up &quot;_nibabel_numpy_analyse-qsm0&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_analyse-qsm/mapflow/_nibabel_numpy_analyse-qsm0&quot;.
-240904-07:06:28,538 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:24,554 nipype.workflow INFO:
+	 [Node] Setting-up &quot;_nibabel_numpy_analyse-qsm0&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_analyse-qsm/mapflow/_nibabel_numpy_analyse-qsm0&quot;.
+241017-00:36:24,557 nipype.workflow INFO:
 	 [Node] Executing &quot;_nibabel_numpy_analyse-qsm0&quot; &lt;qsmxt.interfaces.nipype_interface_analyse.AnalyseInterface&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:30,417 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:26,455 nipype.workflow INFO:
 	 [MultiProc] Running 3 tasks, and 0 jobs ready. Free memory (GB): 107.22/113.22, Free processors: 29/32.
                      Currently running:
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
+                       * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled
+                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Resampled the image
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved resampled image to /storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_t1w-seg-resampled/sub-1_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w_dseg_nii_resampled.nii
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved resampled image to /storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/nibabel_numpy_nilearn_t1w-seg-resampled/sub-2_ses-20170705_acq-mp2ragehighres0p5isoslab_run-01_T1w_dseg_nii_resampled.nii
+241017-00:36:27,606 nipype.workflow INFO:
+	 [Node] Finished &quot;nibabel_numpy_nilearn_t1w-seg-resampled&quot;, elapsed time 9.066469s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:33,687 nipype.workflow INFO:
-	 [Node] Finished &quot;nibabel_numpy_nilearn_t1w-seg-resampled&quot;, elapsed time 11.161387s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:06:34,420 nipype.workflow INFO:
-	 [Job 19] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled).
-240904-07:06:34,424 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:36:28,457 nipype.workflow INFO:
+	 [Job 22] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_nilearn_t1w-seg-resampled).
+241017-00:36:28,460 nipype.workflow INFO:
 	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 109.22/113.22, Free processors: 30/32.
                      Currently running:
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
                        * qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:07:28,771 nipype.workflow INFO:
-	 [Node] Finished &quot;_nibabel_numpy_analyse-qsm0&quot;, elapsed time 68.232729s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:07:30,485 nipype.workflow INFO:
-	 [Job 49] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm).
-240904-07:07:30,492 nipype.workflow INFO:
-	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 111.22/113.22, Free processors: 31/32.
-                     Currently running:
                        * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:07:30,630 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.copyfile&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/copyfile&quot;.
-240904-07:07:30,644 nipype.workflow INFO:
-	 [Node] Executing &quot;copyfile&quot; &lt;qsmxt.interfaces.nipype_interface_copyfile.DynamicCopyFiles&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:37:23,103 nipype.workflow INFO:
+	 [Node] Finished &quot;_nibabel_numpy_analyse-qsm0&quot;, elapsed time 66.532605s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:07:30,986 nipype.workflow INFO:
-	 [Node] Finished &quot;copyfile&quot;, elapsed time 0.339571s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:37:23,465 nipype.workflow INFO:
+	 [Node] Finished &quot;_nibabel_numpy_analyse-qsm0&quot;, elapsed time 58.906181s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:07:32,486 nipype.workflow INFO:
-	 [Job 51] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.copyfile).
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:07:32,492 nipype.workflow INFO:
-	 [MultiProc] Running 1 tasks, and 0 jobs ready. Free memory (GB): 111.22/113.22, Free processors: 31/32.
-                     Currently running:
-                       * qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:07:38,331 nipype.workflow INFO:
-	 [Node] Finished &quot;_nibabel_numpy_analyse-qsm0&quot;, elapsed time 69.791676s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:07:38,493 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:37:24,518 nipype.workflow INFO:
 	 [Job 48] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm).
-240904-07:07:38,497 nipype.workflow INFO:
-	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 113.22/113.22, Free processors: 32/32.
+241017-00:37:24,521 nipype.workflow INFO:
+	 [Job 49] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.nibabel_numpy_analyse-qsm).
+241017-00:37:24,524 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 113.22/113.22, Free processors: 32/32.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:07:38,599 nipype.workflow INFO:
-	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.copyfile&quot; in &quot;/storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/copyfile&quot;.
-240904-07:07:38,613 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:37:24,632 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.copyfile&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-1/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/copyfile&quot;.
+241017-00:37:24,633 nipype.workflow INFO:
+	 [Node] Setting-up &quot;qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.copyfile&quot; in &quot;/storage/tmp/tmpv43xnkj4/bids/derivatives/qsmxt-workflow/sub-2/ses-20170705/qsmxt_acq-qsmp21mmisote20_run-01/copyfile&quot;.
+241017-00:37:24,645 nipype.workflow INFO:
+	 [Node] Executing &quot;copyfile&quot; &lt;qsmxt.interfaces.nipype_interface_copyfile.DynamicCopyFiles&gt;
+241017-00:37:24,645 nipype.workflow INFO:
 	 [Node] Executing &quot;copyfile&quot; &lt;qsmxt.interfaces.nipype_interface_copyfile.DynamicCopyFiles&gt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:07:39,0 nipype.workflow INFO:
-	 [Node] Finished &quot;copyfile&quot;, elapsed time 0.38457s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:37:25,35 nipype.workflow INFO:
+	 [Node] Finished &quot;copyfile&quot;, elapsed time 0.387037s.
+241017-00:37:25,48 nipype.workflow INFO:
+	 [Node] Finished &quot;copyfile&quot;, elapsed time 0.401004s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240904-07:07:40,496 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>241017-00:37:26,521 nipype.workflow INFO:
 	 [Job 50] Completed (qsmxt-workflow.sub-1.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.copyfile).
-240904-07:07:40,499 nipype.workflow INFO:
+241017-00:37:26,524 nipype.workflow INFO:
+	 [Job 51] Completed (qsmxt-workflow.sub-2.ses-20170705.qsmxt_acq-qsmp21mmisote20_run-01.copyfile).
+241017-00:37:26,526 nipype.workflow INFO:
 	 [MultiProc] Running 0 tasks, and 0 jobs ready. Free memory (GB): 113.22/113.22, Free processors: 32/32.
 </pre></div>
 </div>
@@ -1892,7 +1825,7 @@ Resampling /storage/tmp/tmpa9h1uez3/bids/derivatives/qsmxt-workflow/sub-1/ses-20
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">bids/derivatives/qsmxt-2024-09-04-065454</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">bids/derivatives/qsmxt-2024-10-17-002701</span>
 ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-1</span>
 │   └── <span class=" -Color -Color-Bold -Color-Bold-Blue">ses-20170705</span>
 │       ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">anat</span>
@@ -2012,21 +1945,17 @@ Requirement already satisfied: numpy in /home/ubuntu/.local/lib/python3.10/site-
 Requirement already satisfied: nibabel in /home/ubuntu/.local/lib/python3.10/site-packages (5.2.0)
 Requirement already satisfied: pandas in /home/ubuntu/.local/lib/python3.10/site-packages (2.1.4)
 Requirement already satisfied: matplotlib in /home/ubuntu/.local/lib/python3.10/site-packages (3.8.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: packaging&gt;=17 in /usr/lib/python3/dist-packages (from nibabel) (21.3)
+Requirement already satisfied: packaging&gt;=17 in /usr/lib/python3/dist-packages (from nibabel) (21.3)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/ubuntu/.local/lib/python3.10/site-packages (from pandas) (2.8.2)
 Requirement already satisfied: pytz&gt;=2020.1 in /usr/lib/python3/dist-packages (from pandas) (2022.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tzdata&gt;=2022.1 in /home/ubuntu/.local/lib/python3.10/site-packages (from pandas) (2023.3)
+Requirement already satisfied: tzdata&gt;=2022.1 in /home/ubuntu/.local/lib/python3.10/site-packages (from pandas) (2023.3)
 Requirement already satisfied: contourpy&gt;=1.0.1 in /home/ubuntu/.local/lib/python3.10/site-packages (from matplotlib) (1.2.0)
 Requirement already satisfied: cycler&gt;=0.10 in /home/ubuntu/.local/lib/python3.10/site-packages (from matplotlib) (0.12.1)
 Requirement already satisfied: fonttools&gt;=4.22.0 in /home/ubuntu/.local/lib/python3.10/site-packages (from matplotlib) (4.47.0)
 Requirement already satisfied: kiwisolver&gt;=1.3.1 in /home/ubuntu/.local/lib/python3.10/site-packages (from matplotlib) (1.4.5)
-Requirement already satisfied: pillow&gt;=8 in /usr/lib/python3/dist-packages (from matplotlib) (9.0.1)
+Requirement already satisfied: pillow&gt;=8 in /usr/local/lib/python3.10/dist-packages (from matplotlib) (10.4.0)
 Requirement already satisfied: pyparsing&gt;=2.3.1 in /usr/lib/python3/dist-packages (from matplotlib) (2.4.7)
 </pre></div>
 </div>
@@ -2092,51 +2021,51 @@ Requirement already satisfied: pyparsing&gt;=2.3.1 in /usr/lib/python3/dist-pack
     <tr>
       <th>0</th>
       <td>3rd-Ventricle</td>
-      <td>591</td>
+      <td>588</td>
       <td>-0.234913</td>
       <td>0.125160</td>
-      <td>-0.019413</td>
-      <td>-0.022534</td>
-      <td>0.034515</td>
+      <td>-0.019423</td>
+      <td>-0.022966</td>
+      <td>0.034550</td>
     </tr>
     <tr>
       <th>1</th>
       <td>4th-Ventricle</td>
-      <td>1563</td>
+      <td>1575</td>
       <td>-0.126959</td>
       <td>0.052167</td>
-      <td>-0.046117</td>
-      <td>-0.046840</td>
-      <td>0.029896</td>
+      <td>-0.048024</td>
+      <td>-0.048387</td>
+      <td>0.029387</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Brain-Stem</td>
-      <td>18897</td>
+      <td>18926</td>
       <td>-0.279218</td>
       <td>0.103292</td>
-      <td>-0.045322</td>
-      <td>-0.041398</td>
-      <td>0.028674</td>
+      <td>-0.044952</td>
+      <td>-0.040974</td>
+      <td>0.028750</td>
     </tr>
     <tr>
       <th>3</th>
       <td>CSF</td>
-      <td>848</td>
+      <td>845</td>
       <td>-1.393660</td>
       <td>0.945973</td>
-      <td>0.024908</td>
-      <td>0.028132</td>
-      <td>0.141767</td>
+      <td>0.024735</td>
+      <td>0.026914</td>
+      <td>0.140478</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Left-Accumbens-area</td>
-      <td>512</td>
+      <td>511</td>
       <td>-0.142032</td>
       <td>0.128779</td>
-      <td>0.021837</td>
-      <td>0.020141</td>
+      <td>0.021214</td>
+      <td>0.020016</td>
       <td>0.030764</td>
     </tr>
     <tr>
@@ -2152,52 +2081,52 @@ Requirement already satisfied: pyparsing&gt;=2.3.1 in /usr/lib/python3/dist-pack
     <tr>
       <th>91</th>
       <td>ctx-rh-superiorfrontal</td>
-      <td>29826</td>
+      <td>29619</td>
       <td>-0.133657</td>
       <td>0.252094</td>
-      <td>-0.003902</td>
-      <td>-0.009370</td>
-      <td>0.024465</td>
+      <td>-0.003920</td>
+      <td>-0.009276</td>
+      <td>0.024496</td>
     </tr>
     <tr>
       <th>92</th>
       <td>ctx-rh-superiorparietal</td>
-      <td>12038</td>
+      <td>12042</td>
       <td>-0.084345</td>
       <td>0.306848</td>
-      <td>-0.015742</td>
-      <td>-0.014786</td>
-      <td>0.022049</td>
+      <td>-0.016232</td>
+      <td>-0.015008</td>
+      <td>0.022154</td>
     </tr>
     <tr>
       <th>93</th>
       <td>ctx-rh-superiortemporal</td>
-      <td>16345</td>
+      <td>16403</td>
       <td>-0.090617</td>
       <td>0.248823</td>
-      <td>0.006292</td>
-      <td>0.012796</td>
-      <td>0.024215</td>
+      <td>0.005659</td>
+      <td>0.012770</td>
+      <td>0.024235</td>
     </tr>
     <tr>
       <th>94</th>
       <td>ctx-rh-supramarginal</td>
-      <td>12205</td>
+      <td>12046</td>
       <td>-0.082152</td>
       <td>0.240121</td>
-      <td>0.018048</td>
-      <td>0.019061</td>
-      <td>0.023107</td>
+      <td>0.018802</td>
+      <td>0.019429</td>
+      <td>0.023173</td>
     </tr>
     <tr>
       <th>95</th>
       <td>ctx-rh-transversetemporal</td>
-      <td>1250</td>
-      <td>-0.004710</td>
+      <td>1256</td>
+      <td>-0.003080</td>
       <td>0.130236</td>
-      <td>0.034502</td>
-      <td>0.035218</td>
-      <td>0.014088</td>
+      <td>0.035160</td>
+      <td>0.035982</td>
+      <td>0.013613</td>
     </tr>
   </tbody>
 </table>
