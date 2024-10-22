@@ -147,6 +147,7 @@ jobs:
       working-directory: ./books
       run: |
         export PATH=$HOME/.local/bin:$PATH
+        /bin/bash ../.github/workflows/write-toc-entry.sh
         sed -i 's/execute_notebooks: .*/execute_notebooks: off/' _config.yml
         cat _config.yml
         jb build .
