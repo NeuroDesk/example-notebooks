@@ -113,15 +113,15 @@ jobs:
       run: |
         tree ./books/_build/**/**/html
         mkdir -p ./books/_build/**/**/html/$DIRNAME
-        if diff -r ./books/_build/**/**/html/_static ./books/_build/**/**/html/$DIRNAME > /dev/null; then
+        if diff -r "./books/_build/**/**/html/_static" "./books/_build/**/**/html/$DIRNAME" > /dev/null; then
           echo "The directories are the same. Skipping the next step."
         else
           cp -R ./books/_build/**/**/html/_static ./books/_build/**/**/html/$DIRNAME
         fi
-        if [ -d ./books/_build/**/**/html/_images && ! diff -r ./books/_build/**/**/html/_images ./books/_build/**/**/html/$DIRNAME]; then
+        if [ -d ./books/_build/**/**/html/_images && ! diff -r "./books/_build/**/**/html/_images" "./books/_build/**/**/html/$DIRNAME"]; then
           cp -R ./books/_build/**/**/html/_images ./books/_build/**/**/html/$DIRNAME
         fi
-        if diff ./books/_build/**/**/html/$NOTEBOOK.html ./books/_build/**/**/html/$DIRNAME > /dev/null; then
+        if diff "./books/_build/**/**/html/$NOTEBOOK.html" "./books/_build/**/**/html/$DIRNAME" > /dev/null; then
           echo "The files are the same. Skipping the next step."
         else
           cp ./books/_build/**/**/html/$NOTEBOOK.html ./books/_build/**/**/html/$DIRNAME
