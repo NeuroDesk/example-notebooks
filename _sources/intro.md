@@ -9,5 +9,5 @@ For more information about how to develop these notebooks or explore the tools i
 ## Acknowledgements
 This example repository is funded by the Wellcome Trust with a Wellcome Discretionary Award as part of the Chan Zuckerberg Initiative (CZI), The Kavli Foundation and Wellcome’s Essential Open Source Software for Science (Cycle 6) Program [313306/Z/24/Z]
 
-<img src="images/Wellcome_Trust_logo.png" width="150">
-<img src="images/czi_logo.png" width="250">
+<img src="./images/Wellcome_Trust_logo.png" width="150">
+<img src="./images/czi_logo.png" width="250">
