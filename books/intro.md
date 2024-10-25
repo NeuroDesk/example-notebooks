@@ -5,3 +5,9 @@ Each Jupyter notebook in the repository is equipped with a Google Colab button a
 ## Neurodesk
 
 For more information about how to develop these notebooks or explore the tools in Neurodesk, please visit [our website neurodesk.org](https://www.neurodesk.org/).
+
+## Acknowledgements
+This example repository is funded by the Wellcome Trust with a Wellcome Discretionary Award as part of the Chan Zuckerberg Initiative (CZI), The Kavli Foundation and Wellcome’s Essential Open Source Software for Science (Cycle 6) Program [313306/Z/24/Z]
+
+<img src="books/images/Wellcome_Trust_logo.png" width="150">
+<img src="books/images/czi_logo.png" width="250">
