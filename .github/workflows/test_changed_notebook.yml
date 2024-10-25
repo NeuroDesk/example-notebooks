@@ -46,7 +46,9 @@ jobs:
       uses: tj-actions/changed-files@v45.0.3
       with:
         path: "./books"
-        files: "**/*.{ipynb,md}"
+        files: |
+          **/*.ipynb
+          **/*.md
         dir_names_exclude_current_dir: "true"
     - name: Filter down to changed notebooks
       id: list_changed_notebooks
