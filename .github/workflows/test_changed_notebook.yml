@@ -120,7 +120,7 @@ jobs:
         else
           cp -R ./books/_build/**/**/html/_static ./books/_build/**/**/html/$DIRNAME
         fi
-        if [ -d ./books/_build/**/**/html/_images ]; then
+        if [ -d ./books/_build/**/**/html/_images && "$NOTEBOOK" != "intro.md" ]; then
           cp -R ./books/_build/**/**/html/_images ./books/_build/**/**/html/$DIRNAME
         fi
         if [ "$NOTEBOOK" == "intro.md" ]; then
