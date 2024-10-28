@@ -58,7 +58,7 @@ jobs:
       - name: Check broken links
         working-directory: ./books
         run: |
-          notebook_list= ${{ fromJson(needs.get-notebooks.outputs.notebook_list) }}
+          notebook_list='${{ needs.get-notebooks.outputs.notebook_list }}'
           echo "notebook_list=${notebook_list}"
           for notebook in $(echo $notebook_list | jq -r '.[]'); do
             echo "Checking links in $notebook"
