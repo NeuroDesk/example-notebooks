@@ -73,8 +73,6 @@
                 gtag('config', 'G-4Z9774J59Y');
             </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'workflows/nipype_full';</script>
     <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/workflows/nipype_full.html" />
     <link rel="icon" href="../_static/neurodesk_logo.svg"/>
@@ -530,9 +528,9 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/workflows/nipype_full.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Google Colab"/>   </a></p>
+  <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/workflows/nipype_full.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<section class="tex2jax_ignore mathjax_ignore" id="nipype-on-neurodesk">
+<section id="nipype-on-neurodesk">
 <h1>Nipype on Neurodesk<a class="headerlink" href="#nipype-on-neurodesk" title="Link to this heading">#</a></h1>
 <section id="an-interactive-rise-slideshow">
 <h2>An interactive RISE slideshow<a class="headerlink" href="#an-interactive-rise-slideshow" title="Link to this heading">#</a></h2>
@@ -611,12 +609,12 @@ model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
 <li><p>Facilitates seamless interaction between these packages</p></li>
 <li><p>Its flexibility has made it a preferred basis for widely used pre-processing tools such as fMRIPrep</p></li>
 </ul>
-<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> A primary goal driving Nipype is to simplify the integration of various analysis packages, allowing for the utilization of algorithms that are most appropriate for specific problems.</p>
+<p>$\rightarrow$ A primary goal driving Nipype is to simplify the integration of various analysis packages, allowing for the utilization of algorithms that are most appropriate for specific problems.</p>
 <img src="https://miykael.github.io/nipype_tutorial/static/images/nipype_example_graph.png" style="float: right; margin: 0 auto; padding: 5px;" width="50%" height="50%"> 
 <figcaption style="text-align: right;"><b>Figure 1:</b> Example Workflow</figcaption></section>
 <section id="nipype-in-jupyter-notebooks-on-neurodesk">
 <h2>2. Nipype in Jupyter Notebooks on Neurodesk<a class="headerlink" href="#nipype-in-jupyter-notebooks-on-neurodesk" title="Link to this heading">#</a></h2>
-<img src="https://www.neurodesk.org/static/favicons/neurodesk_logo.svg" style="float: right; margin: 0 auto; padding: 5px;" width="20%" height="20%">
+<a class="reference internal image-reference" href="https://www.neurodesk.org/static/favicons/neurodesk_logo.svg"><img alt="https://www.neurodesk.org/static/favicons/neurodesk_logo.svg" src="https://www.neurodesk.org/static/favicons/neurodesk_logo.svg" style="width: 20%;" /></a>
 <p>Neurodesk project enables the use of all neuroimaging applications inside computational notebooks</p>
 <p><strong>Demonstration of the module system in Python and Nipype:</strong></p>
 <p>We will use the software tool <code class="docutils literal notranslate"><span class="pre">lmod</span></code> to manage and load different software packages and libraires. It simplifies the process of accessing and utilizing various software applications and allows users to easily switch between different versions of software packages, manage dependencies, and ensure compatibility with their computing environment.</p>
@@ -1085,7 +1083,7 @@ skull_mask_file = &lt;undefined&gt;
 <li><p>A node is an object that executes a certain function: Nipype interface, a user-specified function or an external script.</p></li>
 </ul>
 <p>Each node consists of a name, an interface category and at least one input field, and at least one output field.</p>
-<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> Nodes expose inputs and outputs of the Interface as its own and add additional functionality allowing to connect Nodes into a Workflow (directed graph):</p>
+<p>$\rightarrow$ Nodes expose inputs and outputs of the Interface as its own and add additional functionality allowing to connect Nodes into a Workflow (directed graph):</p>
 <img src="https://miykael.github.io/nipype_tutorial/static/images/node_two_nodes.png" style="display: block; margin: 0 auto; padding: 30px;" width="50%" height="50%">
 <figcaption><b>Figure 3:</b> Nipype Nodes</figcaption></section>
 <section id="mapnode">
@@ -1279,7 +1277,7 @@ skull_mask_file = &lt;undefined&gt;
 <li><p>method called <code class="docutils literal notranslate"><span class="pre">connect</span></code> that is going to do most of the work</p></li>
 <li><p>checks if inputs and outputs are actually provided by the nodes that are being connected</p></li>
 </ul>
-<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> There are two different ways to call connect:</p>
+<p>$\rightarrow$ There are two different ways to call connect:</p>
 <p>Establish one connection at a time:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">wf</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">source</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;source_output&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">dest</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dest_input&quot;</span><span class="p">)</span><span class="w"> </span>
 </pre></div>
@@ -2204,14 +2202,14 @@ For example, to get rid of the string 'bold' and to adapt the file ending of the
 </section>
 <section id="pydra-a-modern-dataflow-engine-developed-for-the-nipype-project">
 <h2>4. Pydra: A modern dataflow engine developed for the Nipype project<a class="headerlink" href="#pydra-a-modern-dataflow-engine-developed-for-the-nipype-project" title="Link to this heading">#</a></h2>
-<img src="https://raw.githubusercontent.com/nipype/pydra/master/docs/logo/pydra_logo.jpg" style="float: right; margin: 0 auto; padding: 5px;" width="30%" height="30%">
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/nipype/pydra/master/docs/logo/pydra_logo.jpg"><img alt="https://raw.githubusercontent.com/nipype/pydra/master/docs/logo/pydra_logo.jpg" src="https://raw.githubusercontent.com/nipype/pydra/master/docs/logo/pydra_logo.jpg" style="width: 30%;" /></a>
 <ul class="simple">
 <li><p>Pydra is a rewrite of the Nipype engine and forms the core of the Nipype 2.0 ecosystem and is meant to provide <strong>additional flexibility</strong> allowing users to define custom processing steps, interfaces and nested workflows.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Is a standalone project and designed to support analytics in <strong>any scientific domain</strong> (whereas Nipype is specifically designed for neuroimaging data analysis pipelines).</p></li>
 </ul>
-<p><span class="math notranslate nohighlight">\(\rightarrow\)</span>  Pydra aims to offer a lightweight Python (3.7+) dataflow engine for the construction, manipulation, and distributed execution of computational graphs. It serves as a tool for building reproducible, scalable, reusable, and fully automated scientific workflows.</p>
+<p>$\rightarrow$  Pydra aims to offer a lightweight Python (3.7+) dataflow engine for the construction, manipulation, and distributed execution of computational graphs. It serves as a tool for building reproducible, scalable, reusable, and fully automated scientific workflows.</p>
 <p>The architecture in combination with several key features makes Pydra a customizable and powerful dataflow engine:</p>
 <ul class="simple">
 <li><p><strong>Architecture with three core components:</strong> Tasks (basic runnable components) including Workflows, Submitter (Classes for unpacking Tasks into standalone jobs) and Workers (Classes used to execute Tasks coordinate resource managment).</p></li>
@@ -2379,7 +2377,7 @@ numpy     : 1.26.4
 <li><p><a class="reference external" href="https://github.com/nipype/pydra-ml">Pydra-ML</a></p></li>
 </ul>
 </li>
-<li><p>Renton, A.I., Dao, T.T., Johnstone, T. et al. Neurodesk: an accessible, flexible and portable data analysis environment for reproducible neuroimaging. Nat Methods (2024). <a class="reference external" href="https://doi.org/10.1038/s41592-023-02145-x">https://doi.org/10.1038/s41592-023-02145-x</a></p>
+<li><p>Renton, A.I., Dao, T.T., Johnstone, T. et al. Neurodesk: an accessible, flexible and portable data analysis environment for reproducible neuroimaging. Nat Methods (2024). https://doi.org/10.1038/s41592-023-02145-x</p>
 <ul>
 <li><p><a class="reference external" href="https://www.neurodesk.org/">Neurodesk Website</a></p></li>
 <li><p><a class="reference external" href="https://www.neurodesk.org/example-notebooks/intro.html">Jupyter Notebook Examples on Neurodesk</a></p></li>
