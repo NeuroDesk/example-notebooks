@@ -45,3 +45,9 @@ html:
 sphinx:
   config:
     nb_execution_show_tb: True
+
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default! See here: https://jupyterbook.org/en/stable/customize/config.html
+    - html_image
