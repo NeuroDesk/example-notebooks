@@ -1,8 +1,8 @@
 name: check_broken_links
 
 on:
-  push:
-    branches: ["overwrite"]
+  schedule:
+    - cron: 30 17 * * *
   pull_request:
     paths:
       - '**/*.ipynb'
@@ -19,16 +19,45 @@ defaults:
     shell: bash
 
 jobs:
+  get-notebooks:
+    runs-on: ubuntu-22.04
+    outputs:
+      notebook_list: ${{ steps.list_all_notebooks.outputs.notebook_list }}
+    steps:
+    - uses: actions/checkout@v4
+    - name: Filter down to changed notebooks
+      id: list_all_notebooks
+      run: |
+        all_notebooks=($(find . -type f -name "*.ipynb"))
+        notebook_list='['
+        for NOTEBOOK in $(echo "${all_notebooks}"); do
+          notebook_list+="\"${NOTEBOOK}\","
+        done
+        notebook_list=$(sed '$s/,$//' <<< $notebook_list)
+        notebook_list+=']'
+        echo "notebook_list=${notebook_list}"
+        echo "notebook_list=${notebook_list}" >> $GITHUB_OUTPUT
+
   build:
+    needs: [ get-notebooks ]
+    if: ${{ needs.get-notebooks.outputs.notebook_list != '[]' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v2
-      - name: Check broken links
-        env:
-          INPUT_URL: "${{ steps.pages.outputs.base_url }}" 
-          INPUT_CMD_PARAMS: '--verbose --buffer-size=8192 --max-connections=15 --ignore-fragments --color=always --skip-tls-verification --exclude="(linkedin.com)"'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Python dependencies
         run: |
-          wget -qO- https://raw.githubusercontent.com/ruzickap/action-my-broken-link-checker/v2/entrypoint.sh | bash
+          python -m pip install pytest-check-links
+
+      - name: Check broken links
+        working-directory: ./books
+        run: |
+          notebook_list=${{ needs.get-notebooks.outputs.notebook_list }}
+          for notebook in $(echo $notebook_list | jq -r '.[]'); do
+            echo "Checking links in $notebook"
+            pytest --check-links $notebook
+          done
