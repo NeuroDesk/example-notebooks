@@ -3,6 +3,9 @@ name: check_broken_links
 on:
   schedule:
     - cron: 30 17 * * *
+  push:
+    paths:
+      - '**/*.ipynb'
   pull_request:
     paths:
       - '**/*.ipynb'
