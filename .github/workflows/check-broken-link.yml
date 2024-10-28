@@ -25,7 +25,8 @@ jobs:
       notebook_list: ${{ steps.list_all_notebooks.outputs.notebook_list }}
     steps:
     - uses: actions/checkout@v4
-    - name: Filter down to changed notebooks
+    - name: Get all notebooks
+      working-directory: ./books
       id: list_all_notebooks
       run: |
         all_notebooks=($(find . -type f -name "*.ipynb"))
