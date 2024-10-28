@@ -31,7 +31,8 @@ jobs:
       run: |
         all_notebooks=($(find . -type f -name "*.ipynb"))
         notebook_list='['
-        for NOTEBOOK in $(echo "${all_notebooks}"); do
+        for NOTEBOOK in "${all_notebooks[@]}"; do
+          echo "NOTEBOOK=${NOTEBOOK}"
           notebook_list+="\"${NOTEBOOK}\","
         done
         notebook_list=$(sed '$s/,$//' <<< $notebook_list)
@@ -39,7 +40,7 @@ jobs:
         echo "notebook_list=${notebook_list}"
         echo "notebook_list=${notebook_list}" >> $GITHUB_OUTPUT
 
-  build:
+  check-links:
     needs: [ get-notebooks ]
     if: ${{ needs.get-notebooks.outputs.notebook_list != '[]' }}
     runs-on: ubuntu-latest
