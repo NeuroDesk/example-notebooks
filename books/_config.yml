@@ -45,6 +45,7 @@ html:
 sphinx:
   config:
     nb_execution_show_tb: True
+    nb_code_prompt_hide: "outputs"
 
 parse:
   myst_enable_extensions:
