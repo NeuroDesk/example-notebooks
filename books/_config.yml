@@ -11,17 +11,15 @@ only_build_toc_files: true
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
-  allow_errors: true
+  allow_errors: false
   timeout: 18000
   stderr_output: error
   run_in_temp: true
-  nb_merge_streams:  True
   execution_show_tb: True
 
 launch_buttons:
   colab_url: "https://colab.research.google.com"
   notebook_interface: "jupyterlab"
-  binderhub_url: "https://play-iowa.neurodesk.org/hub/user-redirect/lab/tree/example-notebooks/books"
 
 # Information about where the book exists on the web
 repository:
