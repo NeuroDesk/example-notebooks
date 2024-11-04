@@ -18,6 +18,7 @@ parts:
       - file: structural_imaging/qsmxt_example
       - file: structural_imaging/sct_toolbox_example
       - file: structural_imaging/freesurfer_example
+      - file: structural_imaging/brain_extraction_different_tools
 
   - caption: "Functional Imaging"
     chapters:
