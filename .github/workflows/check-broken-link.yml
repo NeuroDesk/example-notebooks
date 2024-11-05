@@ -65,5 +65,5 @@ jobs:
           echo "notebook_list=${notebook_list}"
           for notebook in $(echo $notebook_list | jq -r '.[]'); do
             echo "Checking links in $notebook"
-            pytest --check-links --check-links-ignore "https://doi.org/.*/,https://www.sciencedirect.com/.*" $notebook
+            pytest --check-links --check-links-ignore "https://doi.org/.*/" --check-links-ignore "https://www.sciencedirect.com/.*" $notebook
           done
