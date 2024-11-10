@@ -25,6 +25,7 @@ parts:
       - file: functional_imaging/nipype_fsl_all_levels_flanker
       - file: functional_imaging/fmriprep_example
       - file: functional_imaging/first_and_second_level_spm
+      - file: functional_imaging/intro_to_preprocessing
 
   - caption: "Workflow"
     chapters:
