@@ -443,8 +443,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p><a href="https://play-iowa.neurodesk.org/hub/user-redirect/lab/tree/example-notebooks/template.ipynb" target="_parent"><img alt="Open In Binder" src="https://img.shields.io/badge/launch-binder-579aca.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADUElEQVR4nCyTzUtkRxfGn6pTtz/FtvsVp32NKBgF6QiBCU505xBpBdsJiMkyi2SRxSSEZPI3JKuEbGYREgaCi0zMENBeSCSCqwzRCCIzSBtHuqEl9ihif9zbfe+tqnCaqdXh1q1znuec31EAkM/nEYlEcH5+jmw2K5VSwvM8rVT3GmEYIh6PUxiGtlKpmNHRUQRBgK2tLdDi4iLOzs4wMjKCaDRKxhijlLIRx0kmk8lhIkoHQeArpTpaa5vJZCgej9vj42NMT09DVSoVXF5ewm21SAihAbwJ4HM/CO42ms2slJIT/wvgD2vtN9baQ8/zqFqtaiKCYIlLS0uklNJBEHwspfyu2WpF+lIpTIyPo9Fs4sXZGYzWiMVinTAMPyWi7621VCwWtSgUCuxNSynfl1L+zDLvzs3pd+/do/8PDsJrt1EqlfDL+rp+9vw5xWIxobV+T2u97jgOScdxjLU2o5R66LquffvOHfPJ/fuqL5USFxcXgs9bt2+LLx88UIPZrAmCwBLRQwBpfistayFaBZCBELqvr4+01uAJOI6DiOPg5uYG2Vu3MDc3R51ORwsh+olopft2cnISxpgvhBBvdNptWyqVZOnkBP/LZPD6xARe1mqonp+jVqvh1ydPcHV1ZdiGtbZORL91m7i8vLzt+/47+Xxe53I5+vPpU9xcX+O14WEcHBygv78fuVwOPP/t7W19eHhI0Wj0942NjbxaXV1Fu91uEhFb6c52fn4ejUYD+/v73XhsbIxBQrlcxs7ODqSUFkBjZWUFMpPJwFq7z/Stra1ZrthqtdgWewZb9DyPi6BYLHIC+2oSf/f29kIODQ1Ba/2YIerp6RG+79tkMgm+dF23i3E6nWYGGF/L/xhjQmvt41QqBbm3t8cQ/QPgaykllUqlIAgCI4RAIpFgCsFxo1E35XI5UEoRgK+klC9OT09JLCwsCMdx5NHRkZmamnqktf5gYGAAMzMzmJ2dNaxid3dXsrV6vQ4ierS5uflhoVCQYRgawcsEQLDsRCJhr6+vP/J9/7NOp5Nj2dwL3rxYLPZMKfVtOp3+0XVdwX0CYBXL44ArWWsZrB9yudxP1Wp12vO88VfLdNLTk/yrVnvpu64rm82m4e98/gsAAP//Lbmu802E+U4AAAAASUVORK5CYII=" />  </a>
-<a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/template.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
+  <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/diffusion_imaging/mrtrix.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
 <section id="mrtrix">
 <h1>MRtrix<a class="headerlink" href="#mrtrix" title="Permalink to this heading">#</a></h1>
 <p>Author:</p>
@@ -527,7 +526,7 @@ if IN_COLAB:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lmod Warning: The environment MODULEPATH has been changed in unexpected ways.
 Lmod is unable to use given MODULEPATH. It is using:
 
-&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/_diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/_functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/_workflows::&quot;.
+&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM::&quot;.
 
 Please use &quot;module use ...&quot; to change MODULEPATH instead. 
 </pre></div>
@@ -553,7 +552,7 @@ Please use &quot;module use ...&quot; to change MODULEPATH instead.
  &#39;It&#39;,
  &#39;is&#39;,
  &#39;using:&#39;,
- &#39;&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/_diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/_functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/_workflows::&quot;.&#39;,
+ &#39;&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM::&quot;.&#39;,
  &#39;Please&#39;,
  &#39;use&#39;,
  &#39;&quot;module&#39;,
@@ -588,21 +587,21 @@ Please use &quot;module use ...&quot; to change MODULEPATH instead.
                                               
 
 Counting:   0%|                              | 0.00/20.6k [00:00&lt;?, ? Objects/s]
-
-                                                                                
-
-Compressing:   0%|                           | 0.00/12.7k [00:00&lt;?, ? Objects/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
 
+Compressing:   0%|                           | 0.00/12.7k [00:00&lt;?, ? Objects/s]
+
+                                                                                
+
 Receiving:   0%|                             | 0.00/22.6k [00:00&lt;?, ? Objects/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving:  43%|████████▌           | 9.70k/22.6k [00:00&lt;00:00, 94.0k Objects/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving:  38%|███████▌            | 8.57k/22.6k [00:00&lt;00:00, 85.6k Objects/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving:  85%|█████████████████   | 19.2k/22.6k [00:00&lt;00:00, 88.1k Objects/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving:  91%|██████████████████▏ | 20.5k/22.6k [00:00&lt;00:00, 97.4k Objects/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
@@ -622,7 +621,7 @@ Resolving:   0%|                              | 0.00/5.65k [00:00&lt;?, ? Deltas
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO   ] Remote origin not usable by git-annex; setting annex-ignore 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): /storage/tmp/tmp1c78t5lc/ds002080 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): /storage/tmp/tmplv1qtrr0/ds002080 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>)
 
 </pre></div>
 </div>
@@ -632,97 +631,85 @@ Resolving:   0%|                              | 0.00/5.65k [00:00&lt;?, ? Deltas
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   0%|            | 0.00/8.06M [00:00&lt;?, ? Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   0%|    | 33.3k/8.06M [00:00&lt;00:54, 148k Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   0%|   | 33.3k/8.06M [00:00&lt;01:49, 73.4k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   1%|    | 87.3k/8.06M [00:00&lt;00:39, 200k Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   1%|   | 50.7k/8.06M [00:00&lt;01:48, 74.0k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   2%|     | 122k/8.06M [00:00&lt;00:44, 179k Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   1%|   | 68.2k/8.06M [00:01&lt;02:20, 56.9k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   2%|     | 174k/8.06M [00:00&lt;00:39, 198k Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   1%|   | 85.6k/8.06M [00:01&lt;02:12, 60.3k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   4%|▏    | 331k/8.06M [00:01&lt;00:20, 375k Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   1%|    | 103k/8.06M [00:01&lt;02:03, 64.4k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   8%|▍    | 628k/8.06M [00:01&lt;00:10, 691k Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   1%|    | 120k/8.06M [00:01&lt;01:57, 67.8k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:  12%|▌    | 940k/8.06M [00:01&lt;00:07, 911k Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   2%|    | 138k/8.06M [00:02&lt;01:52, 70.3k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:  23%|▋  | 1.88M/8.06M [00:01&lt;00:03, 1.93M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   2%|    | 155k/8.06M [00:02&lt;01:49, 72.1k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:  41%|█▏ | 3.34M/8.06M [00:02&lt;00:01, 3.33M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   2%|    | 173k/8.06M [00:02&lt;01:47, 73.3k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:  55%|█▋ | 4.42M/8.06M [00:02&lt;00:00, 3.76M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   2%|    | 190k/8.06M [00:02&lt;01:46, 74.2k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:  73%|██▏| 5.85M/8.06M [00:02&lt;00:00, 5.45M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   3%|    | 207k/8.06M [00:02&lt;01:32, 85.1k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:  87%|██▌| 7.03M/8.06M [00:02&lt;00:00, 6.32M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   3%|    | 226k/8.06M [00:03&lt;01:21, 96.6k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   3%|    | 242k/8.06M [00:03&lt;01:23, 94.1k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total:   8%|██▏                       | 8.06M/97.7M [00:06&lt;01:09, 1.28M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   3%|▏    | 277k/8.06M [00:03&lt;01:08, 114k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. P_dwi.nii.gz:   0%|            | 0.00/48.5M [00:00&lt;?, ? Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   4%|▏    | 312k/8.06M [00:03&lt;01:00, 127k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. P_dwi.nii.gz:   6%|▏  | 2.94M/48.5M [00:00&lt;00:03, 14.8M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   4%|▏    | 347k/8.06M [00:03&lt;00:56, 136k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. P_dwi.nii.gz:   9%|▎  | 4.54M/48.5M [00:00&lt;00:04, 10.5M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   5%|▏    | 399k/8.06M [00:04&lt;00:46, 164k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. P_dwi.nii.gz:  12%|▎  | 6.03M/48.5M [00:00&lt;00:03, 11.8M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   6%|▎    | 451k/8.06M [00:04&lt;00:40, 186k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. P_dwi.nii.gz:  18%|▌  | 8.49M/48.5M [00:00&lt;00:03, 11.3M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   6%|▎    | 503k/8.06M [00:04&lt;00:35, 213k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. P_dwi.nii.gz:  22%|▋  | 10.7M/48.5M [00:00&lt;00:03, 10.7M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   7%|▎    | 573k/8.06M [00:04&lt;00:32, 228k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. P_dwi.nii.gz:  27%|▊  | 12.9M/48.5M [00:01&lt;00:03, 10.2M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   8%|▍    | 643k/8.06M [00:04&lt;00:24, 301k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. P_dwi.nii.gz:  31%|▉  | 15.1M/48.5M [00:01&lt;00:03, 9.96M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:   9%|▍    | 730k/8.06M [00:05&lt;00:22, 328k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. P_dwi.nii.gz:  33%|▉  | 16.2M/48.5M [00:01&lt;00:03, 9.67M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:  10%|▌    | 835k/8.06M [00:05&lt;00:19, 372k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. P_dwi.nii.gz:  37%|█  | 17.7M/48.5M [00:01&lt;00:02, 10.8M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:  12%|▌    | 956k/8.06M [00:05&lt;00:19, 358k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. P_dwi.nii.gz:  41%|█▏ | 19.9M/48.5M [00:01&lt;00:02, 10.4M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:  13%|▌   | 1.08M/8.06M [00:05&lt;00:17, 407k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. P_dwi.nii.gz:  44%|█▎ | 21.2M/48.5M [00:02&lt;00:02, 10.3M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:  15%|▌   | 1.20M/8.06M [00:06&lt;00:13, 526k Bytes/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. P_dwi.nii.gz:  47%|█▍ | 22.8M/48.5M [00:02&lt;00:02, 11.4M Bytes/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. P_dwi.nii.gz:  52%|█▌ | 25.3M/48.5M [00:02&lt;00:02, 11.2M Bytes/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. P_dwi.nii.gz:  58%|█▋ | 28.0M/48.5M [00:02&lt;00:01, 11.4M Bytes/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. P_dwi.nii.gz:  63%|█▉ | 30.6M/48.5M [00:02&lt;00:01, 11.4M Bytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get sub-CON0 .. p_T1w.nii.gz:  17%|▋   | 1.36M/8.06M [00:06&lt;00:11, 579k Bytes/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
@@ -734,9 +721,9 @@ Resolving:   0%|                              | 0.00/5.65k [00:00&lt;?, ? Deltas
 ERROR: 
 Interrupted by user while doing magic: KeyboardInterrupt()
 
-Total:   8%|██▏                        | 8.06M/97.7M [00:09&lt;01:47, 833k Bytes/s]
+Total:   0%|                                   | 0.00/97.7M [00:10&lt;?, ? Bytes/s]
 
-Get sub-CON0 .. P_dwi.nii.gz:  65%|█▉ | 31.6M/48.5M [00:02&lt;00:01, 11.4M Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  17%|▋   | 1.37M/8.06M [00:06&lt;00:11, 579k Bytes/s]
 </pre></div>
 </div>
 </div>
