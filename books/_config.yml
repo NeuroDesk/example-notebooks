@@ -12,7 +12,7 @@ only_build_toc_files: true
 execute:
   execute_notebooks: force
   allow_errors: true
-  timeout: 25
+  timeout: 25000
   stderr_output: error
   run_in_temp: true
   execution_show_tb: True
