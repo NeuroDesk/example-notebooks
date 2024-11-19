@@ -48,22 +48,15 @@ jobs:
     if: ${{ needs.get-notebooks.outputs.notebook_list != '[]' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
         with:
-          python-version: '3.9'
+          ref: gh-pages
 
-      - name: Install Python dependencies
-        run: |
-          python -m pip install pytest-check-links
-
-      - name: Check broken links
-        working-directory: ./books
-        run: |
-          notebook_list='${{ needs.get-notebooks.outputs.notebook_list }}'
-          echo "notebook_list=${notebook_list}"
-          for notebook in $(echo $notebook_list | jq -r '.[]'); do
-            echo "Checking links in $notebook"
-            pytest --check-links --check-links-ignore "https://doi.org/.*/" --check-links-ignore "https://www.sciencedirect.com/.*" $notebook
-          done
+      - name: lychee Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v1.8.0
+        with:
+          args: --accept=200,401,403,429
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
