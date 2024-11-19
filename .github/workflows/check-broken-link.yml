@@ -35,14 +35,15 @@ jobs:
         all_notebooks=($(find . -type f -name "*.ipynb"))
         notebook_list='['
         for NOTEBOOK in "${all_notebooks[@]}"; do
-          echo "NOTEBOOK=${NOTEBOOK}"
-          notebook_list+="\"${NOTEBOOK}\","
+          html_notebook="${NOTEBOOK%.ipynb}.html"
+          echo "NOTEBOOK=${html_notebook}"
+          notebook_list+="\"${html_notebook}\","
         done
         notebook_list=$(sed '$s/,$//' <<< $notebook_list)
         notebook_list+=']'
         echo "notebook_list=${notebook_list}"
         echo "notebook_list=${notebook_list}" >> $GITHUB_OUTPUT
-
+        
   check-links:
     needs: [ get-notebooks ]
     if: ${{ needs.get-notebooks.outputs.notebook_list != '[]' }}
@@ -53,10 +54,16 @@ jobs:
           ref: gh-pages
 
       - name: lychee Link Checker
-        id: lychee
-        uses: lycheeverse/lychee-action@v1.8.0
-        with:
-          args: --accept=200,401,403,429 --base . --verbose --no-progress './**/*.md' './**/*.html' './**/*.rst' './**/*.ipynb'
-          fail: true
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: |
+          curl -sSf 'https://sh.rustup.rs' | sh
+          apt install gcc pkg-config libc6-dev libssl-dev
+          cargo install lychee
+
+      - name: Check broken links
+        run: |
+          notebook_list='${{ needs.get-notebooks.outputs.notebook_list }}'
+          echo "notebook_list=${notebook_list}"
+          for notebook in $(echo $notebook_list | jq -r '.[]'); do
+            echo "Checking links in $notebook"
+            lychee https://www.neurodesk.org/example-notebooks/${notebook}
+          done
