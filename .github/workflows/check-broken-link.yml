@@ -43,7 +43,7 @@ jobs:
         notebook_list+=']'
         echo "notebook_list=${notebook_list}"
         echo "notebook_list=${notebook_list}" >> $GITHUB_OUTPUT
-        
+
   check-links:
     needs: [ get-notebooks ]
     if: ${{ needs.get-notebooks.outputs.notebook_list != '[]' }}
@@ -56,7 +56,7 @@ jobs:
       - name: lychee Link Checker
         run: |
           curl -sSf 'https://sh.rustup.rs' | sh
-          apt install gcc pkg-config libc6-dev libssl-dev
+          apt install gcc pkg-config libc6-dev libssl-dev -y
           cargo install lychee
 
       - name: Check broken links
