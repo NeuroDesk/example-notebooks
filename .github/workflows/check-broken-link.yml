@@ -55,7 +55,7 @@ jobs:
 
       - name: lychee Link Checker
         run: |
-          curl -sSf 'https://sh.rustup.rs' | sh
+          curl -sSf 'https://sh.rustup.rs' | sh -s -- -y
           apt install gcc pkg-config libc6-dev libssl-dev -y
           cargo install lychee
 
