@@ -5,10 +5,10 @@ on:
     - cron: 30 17 * * *
   push:
     paths:
-      - '**/*.ipynb'
+      - '**/*.html'
   pull_request:
     paths:
-      - '**/*.ipynb'
+      - '**/*.html'
   # Trigger the workflow on manual dispatch
   workflow_dispatch:
 
