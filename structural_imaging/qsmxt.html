@@ -547,7 +547,7 @@ model name	: AMD EPYC-Rome Processor
 </div>
 </div>
 </section>
-<section id="qsmxt-interactive-notebook">
+<section class="tex2jax_ignore mathjax_ignore" id="qsmxt-interactive-notebook">
 <h1>QSMxT Interactive Notebook<a class="headerlink" href="#qsmxt-interactive-notebook" title="Link to this heading">#</a></h1>
 <p>This interactive notebook estimates Quantitative Susceptibility Maps (QSMs) for two gradient-echo (GRE) MRI acquisitions using <a class="reference external" href="https://github.com/QSMxT/QSMxT">QSMxT</a> provided by the <a class="reference external" href="https://neurodesk.org">Neurodesk</a> project.</p>
 <section id="what-is-qsm">
@@ -593,7 +593,7 @@ model name	: AMD EPYC-Rome Processor
 </ul>
 </section>
 </section>
-<section id="download-example-dicoms">
+<section class="tex2jax_ignore mathjax_ignore" id="download-example-dicoms">
 <h1>Download example DICOMs<a class="headerlink" href="#download-example-dicoms" title="Link to this heading">#</a></h1>
 <p>Here, we download some example DICOMs from our OSF repository for QSMxT.</p>
 <p>These data include GRE and T1-weighted acquisitions for one subject (duplicated to act as two subjects).</p>
@@ -634,7 +634,7 @@ There are 1216 unsorted DICOMs in ./dicoms-unsorted/
 </div>
 </div>
 </section>
-<section id="load-qsmxt">
+<section class="tex2jax_ignore mathjax_ignore" id="load-qsmxt">
 <h1>Load QSMxT<a class="headerlink" href="#load-qsmxt" title="Link to this heading">#</a></h1>
 <p>To load QSMxT inside a notebook, we can use the available module system:</p>
 <div class="cell docutils container">
@@ -652,7 +652,7 @@ There are 1216 unsorted DICOMs in ./dicoms-unsorted/
 </div>
 </div>
 </section>
-<section id="data-standardisation">
+<section class="tex2jax_ignore mathjax_ignore" id="data-standardisation">
 <h1>Data standardisation<a class="headerlink" href="#data-standardisation" title="Link to this heading">#</a></h1>
 <p>QSMxT requires input data to conform to the <a class="reference external" href="https://bids.neuroimaging.io/">Brain Imaging Data Structure (BIDS)</a>.</p>
 <p>Luckily, QSMxT also provides scripts that can convert unorganised NIfTI or DICOM images to BIDS. If you are using NIfTI images and do not have DICOMs, see <a class="reference external" href="https://qsmxt.github.io/QSMxT/using-qsmxt/data-preparation#nifti-to-bids">nifti-convert</a>.</p>
@@ -830,7 +830,7 @@ series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_
 </div>
 </section>
 </section>
-<section id="inspect-input-data">
+<section class="tex2jax_ignore mathjax_ignore" id="inspect-input-data">
 <h1>Inspect input data<a class="headerlink" href="#inspect-input-data" title="Link to this heading">#</a></h1>
 <p>Here we define a function we will use to visualise NIfTI images so we can view some of the input data:</p>
 <div class="cell docutils container">
@@ -898,7 +898,7 @@ series-6_mp2rage_highRes_0p5iso_slab_mp2rage_highRes_0p5iso_slab_20170705150219_
 <script type="application/vnd.jupyter.widget-view+json">{"model_id": "719b0dfe2273490abec3762e266925d3", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
-<section id="run-qsmxt">
+<section class="tex2jax_ignore mathjax_ignore" id="run-qsmxt">
 <h1>Run QSMxT<a class="headerlink" href="#run-qsmxt" title="Link to this heading">#</a></h1>
 <p>We are now ready to run QSMxT! We will generate susceptibility maps and segmentations, and export analysis CSVs to file.</p>
 <p>The usual way of running QSMxT is to use <code class="docutils literal notranslate"><span class="pre">qsmxt</span> <span class="pre">bids_dir</span></code>. This will launch an interactive command-line interface (CLI) to setup your desired pipelines. However, since we are running this in a notebook, we need to use command-line arguments to by-pass the interface and execute a pipeline.</p>
@@ -1615,7 +1615,7 @@ Input image is already aligned with the reference image
 </div>
 </div>
 </section>
-<section id="view-results">
+<section class="tex2jax_ignore mathjax_ignore" id="view-results">
 <h1>View results<a class="headerlink" href="#view-results" title="Link to this heading">#</a></h1>
 <p>Let’s have a look at the generated <code class="docutils literal notranslate"><span class="pre">qsm</span></code> folder:</p>
 <div class="cell docutils container">

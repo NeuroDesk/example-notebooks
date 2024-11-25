@@ -73,6 +73,8 @@
                 gtag('config', 'G-4Z9774J59Y');
             </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'workflows/nipype_full';</script>
     <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/workflows/nipype_full.html" />
     <link rel="icon" href="../_static/neurodesk_logo.svg"/>
@@ -519,7 +521,7 @@
                   
   <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/workflows/nipype_full.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<section id="nipype-on-neurodesk">
+<section class="tex2jax_ignore mathjax_ignore" id="nipype-on-neurodesk">
 <h1>Nipype on Neurodesk<a class="headerlink" href="#nipype-on-neurodesk" title="Link to this heading">#</a></h1>
 <section id="an-interactive-rise-slideshow">
 <h2>An interactive RISE slideshow<a class="headerlink" href="#an-interactive-rise-slideshow" title="Link to this heading">#</a></h2>
@@ -598,7 +600,7 @@ model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
 <li><p>Facilitates seamless interaction between these packages</p></li>
 <li><p>Its flexibility has made it a preferred basis for widely used pre-processing tools such as fMRIPrep</p></li>
 </ul>
-<p>$\rightarrow$ A primary goal driving Nipype is to simplify the integration of various analysis packages, allowing for the utilization of algorithms that are most appropriate for specific problems.</p>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> A primary goal driving Nipype is to simplify the integration of various analysis packages, allowing for the utilization of algorithms that are most appropriate for specific problems.</p>
 <img src="https://miykael.github.io/nipype_tutorial/static/images/nipype_example_graph.png" style="float: right; margin: 0 auto; padding: 5px;" width="50%" height="50%"> 
 <figcaption style="text-align: right;"><b>Figure 1:</b> Example Workflow</figcaption></section>
 <section id="nipype-in-jupyter-notebooks-on-neurodesk">
@@ -1072,7 +1074,7 @@ skull_mask_file = &lt;undefined&gt;
 <li><p>A node is an object that executes a certain function: Nipype interface, a user-specified function or an external script.</p></li>
 </ul>
 <p>Each node consists of a name, an interface category and at least one input field, and at least one output field.</p>
-<p>$\rightarrow$ Nodes expose inputs and outputs of the Interface as its own and add additional functionality allowing to connect Nodes into a Workflow (directed graph):</p>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> Nodes expose inputs and outputs of the Interface as its own and add additional functionality allowing to connect Nodes into a Workflow (directed graph):</p>
 <img src="https://miykael.github.io/nipype_tutorial/static/images/node_two_nodes.png" style="display: block; margin: 0 auto; padding: 30px;" width="50%" height="50%">
 <figcaption><b>Figure 3:</b> Nipype Nodes</figcaption></section>
 <section id="mapnode">
@@ -1266,7 +1268,7 @@ skull_mask_file = &lt;undefined&gt;
 <li><p>method called <code class="docutils literal notranslate"><span class="pre">connect</span></code> that is going to do most of the work</p></li>
 <li><p>checks if inputs and outputs are actually provided by the nodes that are being connected</p></li>
 </ul>
-<p>$\rightarrow$ There are two different ways to call connect:</p>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> There are two different ways to call connect:</p>
 <p>Establish one connection at a time:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">wf</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">source</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;source_output&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">dest</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dest_input&quot;</span><span class="p">)</span><span class="w"> </span>
 </pre></div>
@@ -2198,7 +2200,7 @@ For example, to get rid of the string 'bold' and to adapt the file ending of the
 <ul class="simple">
 <li><p>Is a standalone project and designed to support analytics in <strong>any scientific domain</strong> (whereas Nipype is specifically designed for neuroimaging data analysis pipelines).</p></li>
 </ul>
-<p>$\rightarrow$  Pydra aims to offer a lightweight Python (3.7+) dataflow engine for the construction, manipulation, and distributed execution of computational graphs. It serves as a tool for building reproducible, scalable, reusable, and fully automated scientific workflows.</p>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span>  Pydra aims to offer a lightweight Python (3.7+) dataflow engine for the construction, manipulation, and distributed execution of computational graphs. It serves as a tool for building reproducible, scalable, reusable, and fully automated scientific workflows.</p>
 <p>The architecture in combination with several key features makes Pydra a customizable and powerful dataflow engine:</p>
 <ul class="simple">
 <li><p><strong>Architecture with three core components:</strong> Tasks (basic runnable components) including Workflows, Submitter (Classes for unpacking Tasks into standalone jobs) and Workers (Classes used to execute Tasks coordinate resource managment).</p></li>
