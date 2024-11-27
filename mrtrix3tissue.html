@@ -457,9 +457,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/diffusion_imaging/mrtrix3tissue.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
-<section id="mrtrix3tissue">
+<section class="tex2jax_ignore mathjax_ignore" id="mrtrix3tissue">
 <h1>MRtrix3Tissue<a class="headerlink" href="#mrtrix3tissue" title="Permalink to this heading">#</a></h1>
-<p>Author: Thuy Dao</p>
+<p>Author: Thuy Dao, Monika Doerig</p>
 <p>Citation: 3tissue.github.io/about.html</p>
 <section id="setup-neurodesk">
 <h2>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Permalink to this heading">#</a></h2>
@@ -563,7 +563,7 @@ model name	: AMD EPYC-Rome Processor
 </section>
 <section id="data-preparation">
 <h2>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># download data</span>
 <span class="o">!</span>datalad install https://github.com/OpenNeuroDatasets/ds002080.git
@@ -580,77 +580,118 @@ Counting:   0%|                              | 0.00/20.6k [00:00&lt;?, ? Objects
 Compressing:   0%|                           | 0.00/12.7k [00:00&lt;?, ? Objects/s]
                                                                                 
 Receiving:   0%|                             | 0.00/22.6k [00:00&lt;?, ? Objects/s]
-Receiving:  36%|███████▏            | 8.12k/22.6k [00:00&lt;00:00, 80.6k Objects/s]
-Receiving:  72%|██████████████▍     | 16.2k/22.6k [00:00&lt;00:00, 78.4k Objects/s]
+Receiving:   6%|█▏                  | 1.35k/22.6k [00:00&lt;00:02, 7.92k Objects/s]
+Receiving:  14%|██▊                 | 3.16k/22.6k [00:00&lt;00:02, 9.62k Objects/s]
+Receiving:  45%|█████████           | 10.1k/22.6k [00:00&lt;00:00, 20.8k Objects/s]
+Receiving:  88%|█████████████████▌  | 19.8k/22.6k [00:00&lt;00:00, 35.3k Objects/s]
                                                                                 
 Resolving:   0%|                              | 0.00/5.65k [00:00&lt;?, ? Deltas/s]
 [INFO   ] scanning for unlocked files (this may take some time) 
 [INFO   ] Remote origin not usable by git-annex; setting annex-ignore 
-<span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): /storage/tmp/tmpufcuvdir/ds002080 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>)
+<span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): /storage/tmp/tmp25njh8_7/ds002080 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>)
 Total:   0%|                                   | 0.00/97.7M [00:00&lt;?, ? Bytes/s]
 Get sub-CON0 .. p_T1w.nii.gz:   0%|            | 0.00/8.06M [00:00&lt;?, ? Bytes/s]
-Get sub-CON0 .. p_T1w.nii.gz:   1%|    | 50.7k/8.06M [00:00&lt;00:35, 226k Bytes/s]
-Get sub-CON0 .. p_T1w.nii.gz:   1%|     | 103k/8.06M [00:00&lt;00:34, 228k Bytes/s]
-Get sub-CON0 .. p_T1w.nii.gz:   3%|▏    | 225k/8.06M [00:00&lt;00:21, 370k Bytes/s]
-Get sub-CON0 .. p_T1w.nii.gz:   6%|▎    | 451k/8.06M [00:00&lt;00:11, 644k Bytes/s]
-Get sub-CON0 .. p_T1w.nii.gz:  11%|▍   | 904k/8.06M [00:01&lt;00:06, 1.15M Bytes/s]
-Get sub-CON0 .. p_T1w.nii.gz:  22%|▋  | 1.81M/8.06M [00:01&lt;00:02, 2.13M Bytes/s]
-Get sub-CON0 .. p_T1w.nii.gz:  36%|█  | 2.94M/8.06M [00:01&lt;00:01, 3.77M Bytes/s]
-Get sub-CON0 .. p_T1w.nii.gz:  45%|█▎ | 3.62M/8.06M [00:01&lt;00:01, 4.17M Bytes/s]
-Get sub-CON0 .. p_T1w.nii.gz:  61%|█▊ | 4.92M/8.06M [00:01&lt;00:00, 6.05M Bytes/s]
-Get sub-CON0 .. p_T1w.nii.gz:  73%|██▏| 5.85M/8.06M [00:01&lt;00:00, 6.45M Bytes/s]
-Get sub-CON0 .. p_T1w.nii.gz:  90%|██▋| 7.28M/8.06M [00:01&lt;00:00, 8.31M Bytes/s]
-Total:   8%|██▏                       | 8.06M/97.7M [00:05&lt;01:03, 1.42M Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   0%|   | 33.3k/8.06M [00:00&lt;01:49, 73.1k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   1%|   | 50.7k/8.06M [00:00&lt;01:48, 73.5k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   1%|   | 62.5k/8.06M [00:00&lt;02:02, 65.4k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   1%|   | 78.9k/8.06M [00:01&lt;01:58, 67.4k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   1%|   | 96.3k/8.06M [00:01&lt;02:25, 54.8k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   1%|    | 114k/8.06M [00:01&lt;02:11, 60.5k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   2%|    | 131k/8.06M [00:02&lt;02:06, 62.8k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   2%|    | 149k/8.06M [00:02&lt;01:59, 66.5k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   2%|    | 166k/8.06M [00:02&lt;01:53, 69.2k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   2%|    | 183k/8.06M [00:02&lt;01:43, 75.8k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   3%|    | 218k/8.06M [00:02&lt;01:24, 92.4k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   3%|    | 236k/8.06M [00:03&lt;01:25, 91.5k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   3%|▏    | 270k/8.06M [00:03&lt;01:13, 106k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   4%|▏    | 305k/8.06M [00:03&lt;01:04, 120k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   4%|▏    | 340k/8.06M [00:03&lt;00:56, 138k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   5%|▏    | 392k/8.06M [00:04&lt;00:49, 156k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   6%|▎    | 444k/8.06M [00:04&lt;00:41, 183k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   6%|▎    | 497k/8.06M [00:04&lt;00:37, 203k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   7%|▎    | 566k/8.06M [00:04&lt;00:32, 234k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   8%|▍    | 653k/8.06M [00:04&lt;00:26, 279k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:   9%|▍    | 740k/8.06M [00:05&lt;00:23, 309k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  10%|▌    | 827k/8.06M [00:05&lt;00:21, 331k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  12%|▌    | 933k/8.06M [00:05&lt;00:17, 418k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  13%|▌   | 1.07M/8.06M [00:05&lt;00:16, 425k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  15%|▌   | 1.19M/8.06M [00:06&lt;00:13, 514k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  17%|▋   | 1.35M/8.06M [00:06&lt;00:13, 508k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  19%|▊   | 1.52M/8.06M [00:06&lt;00:11, 580k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  21%|▊   | 1.70M/8.06M [00:06&lt;00:08, 712k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  24%|▉   | 1.91M/8.06M [00:07&lt;00:08, 694k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  26%|█   | 2.13M/8.06M [00:07&lt;00:07, 778k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  29%|█▏  | 2.38M/8.06M [00:07&lt;00:06, 862k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  33%|█▎  | 2.64M/8.06M [00:07&lt;00:05, 947k Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  36%|█  | 2.92M/8.06M [00:07&lt;00:04, 1.16M Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  40%|█▏ | 3.25M/8.06M [00:08&lt;00:04, 1.11M Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  44%|█▎ | 3.58M/8.06M [00:08&lt;00:03, 1.36M Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  49%|█▍ | 3.94M/8.06M [00:08&lt;00:02, 1.44M Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  54%|█▌ | 4.34M/8.06M [00:08&lt;00:02, 1.53M Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  59%|█▊ | 4.78M/8.06M [00:09&lt;00:01, 1.64M Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  65%|█▉ | 5.25M/8.06M [00:09&lt;00:01, 1.59M Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  71%|██▏| 5.74M/8.06M [00:09&lt;00:01, 1.94M Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  78%|██▎| 6.28M/8.06M [00:09&lt;00:00, 2.07M Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  85%|██▌| 6.85M/8.06M [00:09&lt;00:00, 2.08M Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  89%|██▋| 7.20M/8.06M [00:10&lt;00:00, 2.29M Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  93%|██▊| 7.46M/8.06M [00:10&lt;00:00, 2.24M Bytes/s]
+Get sub-CON0 .. p_T1w.nii.gz:  97%|██▉| 7.82M/8.06M [00:10&lt;00:00, 2.50M Bytes/s]
+Total:   8%|██▏                        | 8.06M/97.7M [00:14&lt;02:36, 572k Bytes/s]
 Get sub-CON0 .. P_dwi.nii.gz:   0%|            | 0.00/48.5M [00:00&lt;?, ? Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:   5%|▏  | 2.60M/48.5M [00:00&lt;00:03, 13.0M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:   8%|▏  | 4.03M/48.5M [00:00&lt;00:03, 13.5M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  13%|▍  | 6.07M/48.5M [00:00&lt;00:03, 11.7M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  17%|▌  | 8.23M/48.5M [00:00&lt;00:03, 11.2M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  22%|▋  | 10.7M/48.5M [00:00&lt;00:03, 11.0M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  27%|▊  | 13.2M/48.5M [00:01&lt;00:03, 11.0M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  32%|▉  | 15.6M/48.5M [00:01&lt;00:03, 10.9M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  37%|█  | 17.9M/48.5M [00:01&lt;00:02, 10.7M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  39%|█▏ | 19.0M/48.5M [00:01&lt;00:02, 10.2M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  42%|█▎ | 20.4M/48.5M [00:01&lt;00:02, 11.0M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  47%|█▍ | 22.8M/48.5M [00:02&lt;00:02, 10.8M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  52%|█▌ | 25.3M/48.5M [00:02&lt;00:02, 10.8M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  57%|█▋ | 27.6M/48.5M [00:02&lt;00:01, 10.7M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  62%|█▊ | 30.1M/48.5M [00:02&lt;00:01, 10.7M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  67%|██ | 32.5M/48.5M [00:02&lt;00:01, 10.6M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  72%|██▏| 34.8M/48.5M [00:03&lt;00:01, 10.5M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  77%|██▎| 37.2M/48.5M [00:03&lt;00:01, 10.6M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  82%|██▍| 39.6M/48.5M [00:03&lt;00:00, 10.5M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  87%|██▌| 41.9M/48.5M [00:03&lt;00:00, 10.5M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  92%|██▋| 44.4M/48.5M [00:04&lt;00:00, 10.5M Bytes/s]
-Get sub-CON0 .. P_dwi.nii.gz:  97%|██▉| 46.8M/48.5M [00:04&lt;00:00, 10.6M Bytes/s]
-Total:  58%|███████████████           | 56.5M/97.7M [00:11&lt;00:08, 5.13M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:   1%|    | 690k/48.5M [00:00&lt;00:15, 3.04M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:   3%|   | 1.43M/48.5M [00:00&lt;00:14, 3.14M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:   5%|▏  | 2.20M/48.5M [00:00&lt;00:14, 3.24M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:   6%|▏  | 3.02M/48.5M [00:00&lt;00:13, 3.36M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:   8%|▏  | 3.87M/48.5M [00:01&lt;00:12, 3.51M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  10%|▎  | 4.78M/48.5M [00:01&lt;00:11, 3.65M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  12%|▎  | 5.74M/48.5M [00:01&lt;00:11, 3.84M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  14%|▍  | 6.77M/48.5M [00:01&lt;00:10, 4.03M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  16%|▍  | 7.85M/48.5M [00:02&lt;00:09, 4.24M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  19%|▌  | 8.98M/48.5M [00:02&lt;00:08, 4.49M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  21%|▋  | 10.2M/48.5M [00:02&lt;00:08, 4.72M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  24%|▋  | 11.5M/48.5M [00:02&lt;00:07, 4.97M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  26%|▊  | 12.8M/48.5M [00:02&lt;00:06, 5.23M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  29%|▉  | 14.2M/48.5M [00:03&lt;00:06, 5.54M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  32%|▉  | 15.6M/48.5M [00:03&lt;00:04, 6.81M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  35%|█  | 17.1M/48.5M [00:03&lt;00:04, 6.80M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  38%|█▏ | 18.7M/48.5M [00:03&lt;00:04, 6.73M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  42%|█▎ | 20.3M/48.5M [00:03&lt;00:04, 6.95M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  46%|█▎ | 22.1M/48.5M [00:04&lt;00:03, 7.15M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  49%|█▍ | 23.9M/48.5M [00:04&lt;00:03, 7.40M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  53%|█▌ | 25.7M/48.5M [00:04&lt;00:03, 7.55M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  57%|█▋ | 27.7M/48.5M [00:04&lt;00:02, 7.92M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  61%|█▊ | 29.8M/48.5M [00:05&lt;00:02, 8.30M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  66%|█▉ | 32.0M/48.5M [00:05&lt;00:01, 8.64M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  70%|██ | 33.9M/48.5M [00:05&lt;00:01, 8.63M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  74%|██▏| 36.1M/48.5M [00:05&lt;00:01, 8.90M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  79%|██▎| 38.3M/48.5M [00:06&lt;00:01, 9.10M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  83%|██▌| 40.4M/48.5M [00:06&lt;00:00, 9.14M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  88%|██▋| 42.5M/48.5M [00:06&lt;00:00, 9.18M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  92%|██▊| 44.5M/48.5M [00:06&lt;00:00, 9.04M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  96%|██▉| 46.8M/48.5M [00:06&lt;00:00, 9.22M Bytes/s]
+Get sub-CON0 .. P_dwi.nii.gz:  99%|██▉| 47.8M/48.5M [00:07&lt;00:00, 9.05M Bytes/s]
+Total:  58%|███████████████           | 56.5M/97.7M [00:21&lt;00:15, 2.59M Bytes/s]
 Get sub-CON0 .. A_dwi.nii.gz:   0%|            | 0.00/1.18M [00:00&lt;?, ? Bytes/s]
-Get sub-CON0 .. A_dwi.nii.gz:  51%|██  | 608k/1.18M [00:00&lt;00:00, 2.71M Bytes/s]
                                                                                 
 Get sub-CON0 .. _bold.nii.gz:   0%|            | 0.00/40.0M [00:00&lt;?, ? Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:   6%|▏  | 2.26M/40.0M [00:00&lt;00:03, 11.3M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:   9%|▎  | 3.51M/40.0M [00:00&lt;00:03, 11.8M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  14%|▍  | 5.52M/40.0M [00:00&lt;00:03, 9.52M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  18%|▌  | 7.21M/40.0M [00:00&lt;00:03, 8.53M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  21%|▌  | 8.31M/40.0M [00:00&lt;00:03, 8.66M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  23%|▋  | 9.24M/40.0M [00:01&lt;00:03, 8.78M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  29%|▊  | 11.6M/40.0M [00:01&lt;00:02, 9.48M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  35%|█  | 13.8M/40.0M [00:01&lt;00:02, 9.59M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  38%|█▏ | 15.3M/40.0M [00:01&lt;00:03, 7.09M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  42%|█▏ | 16.7M/40.0M [00:01&lt;00:02, 8.09M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  45%|█▎ | 17.8M/40.0M [00:02&lt;00:02, 8.35M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  48%|█▍ | 19.4M/40.0M [00:02&lt;00:02, 9.67M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  52%|█▌ | 20.9M/40.0M [00:02&lt;00:02, 8.63M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  58%|█▋ | 23.2M/40.0M [00:02&lt;00:01, 9.00M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  64%|█▉ | 25.5M/40.0M [00:03&lt;00:02, 7.09M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  67%|█▉ | 26.6M/40.0M [00:03&lt;00:01, 7.40M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  70%|██ | 28.1M/40.0M [00:03&lt;00:01, 8.45M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  74%|██▏| 29.7M/40.0M [00:03&lt;00:01, 8.04M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  79%|██▎| 31.4M/40.0M [00:03&lt;00:01, 7.89M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  82%|██▍| 33.0M/40.0M [00:03&lt;00:00, 7.61M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  87%|██▌| 35.0M/40.0M [00:04&lt;00:00, 7.94M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  92%|██▊| 36.7M/40.0M [00:04&lt;00:00, 7.90M Bytes/s]
-Get sub-CON0 .. _bold.nii.gz:  96%|██▉| 38.5M/40.0M [00:04&lt;00:00, 7.92M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:   7%|▏  | 2.69M/40.0M [00:00&lt;00:02, 13.5M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:  10%|▎  | 4.08M/40.0M [00:00&lt;00:02, 13.6M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:  15%|▍  | 6.10M/40.0M [00:00&lt;00:03, 10.4M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:  21%|▋  | 8.44M/40.0M [00:00&lt;00:03, 10.3M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:  26%|▊  | 10.4M/40.0M [00:01&lt;00:03, 9.64M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:  32%|▉  | 12.6M/40.0M [00:01&lt;00:02, 9.63M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:  37%|█  | 14.8M/40.0M [00:01&lt;00:02, 9.60M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:  42%|█▎ | 16.9M/40.0M [00:01&lt;00:02, 9.44M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:  48%|█▍ | 19.0M/40.0M [00:01&lt;00:02, 9.46M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:  53%|█▌ | 21.2M/40.0M [00:02&lt;00:02, 9.40M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:  58%|█▋ | 23.2M/40.0M [00:02&lt;00:01, 9.30M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:  64%|█▉ | 25.4M/40.0M [00:02&lt;00:01, 9.37M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:  69%|██ | 27.4M/40.0M [00:02&lt;00:01, 9.20M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:  74%|██▏| 29.7M/40.0M [00:03&lt;00:01, 9.41M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:  80%|██▍| 31.9M/40.0M [00:03&lt;00:00, 9.41M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:  85%|██▌| 33.9M/40.0M [00:03&lt;00:00, 9.30M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:  90%|██▋| 36.1M/40.0M [00:03&lt;00:00, 9.34M Bytes/s]
+Get sub-CON0 .. _bold.nii.gz:  95%|██▊| 38.2M/40.0M [00:03&lt;00:00, 9.23M Bytes/s]
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-CON02/ses-postop/anat/sub-CON02_ses-postop_T1w.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>)
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-CON02/ses-postop/dwi/sub-CON02_ses-postop_acq-AP_dwi.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>)
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-CON02/ses-postop/dwi/sub-CON02_ses-postop_acq-PA_dwi.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>)
@@ -668,21 +709,22 @@ action summary:
 <p>Once data is downloaded, it is recommended to import and store it as .mif file(s), the so-called “MRtrix Image Format”.</p>
 <p><code class="docutils literal notranslate"><span class="pre">mrconvert</span></code> is the tool to convert between all sorts of image formats (or extract parts of images or change properties) and enables you to read from e.g. DICOM folders or NIfTI (.nii) images and store an image as a .mif file.</p>
 <p>If your diffusion MRI data comes as a NIfTI (.nii) image instead, the gradient orientations and b-values will typically be stored in 2 separate files (a “bvecs” and “bvals” file).</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>mrconvert ds002080/sub-CON02/ses-postop/dwi/sub-CON02_ses-postop_acq-AP_dwi.nii.gz AP.mif -fslgrad ds002080/sub-CON02/ses-postop/dwi/sub-CON02_ses-postop_acq-AP_dwi.bvec ds002080/sub-CON02/ses-postop/dwi/sub-CON02_ses-postop_acq-AP_dwi.bval
-<span class="o">!</span>mrconvert ds002080/sub-CON02/ses-postop/dwi/sub-CON02_ses-postop_acq-PA_dwi.nii.gz PA.mif
-<span class="o">!</span>mrconvert PA.mif -fslgrad ds002080/sub-CON02/ses-postop/dwi/sub-CON02_ses-postop_acq-PA_dwi.bvec ds002080/sub-CON02/ses-postop/dwi/sub-CON02_ses-postop_acq-PA_dwi.bval - <span class="p">|</span> mrmath - mean mean_b0_PA.mif -axis <span class="m">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+mrconvert ds002080/sub-CON02/ses-postop/dwi/sub-CON02_ses-postop_acq-AP_dwi.nii.gz AP.mif -fslgrad ds002080/sub-CON02/ses-postop/dwi/sub-CON02_ses-postop_acq-AP_dwi.bvec ds002080/sub-CON02/ses-postop/dwi/sub-CON02_ses-postop_acq-AP_dwi.bval
+mrconvert ds002080/sub-CON02/ses-postop/dwi/sub-CON02_ses-postop_acq-PA_dwi.nii.gz PA.mif
+mrconvert PA.mif -fslgrad ds002080/sub-CON02/ses-postop/dwi/sub-CON02_ses-postop_acq-PA_dwi.bvec ds002080/sub-CON02/ses-postop/dwi/sub-CON02_ses-postop_acq-PA_dwi.bval - | mrmath - mean mean_b0_PA.mif -axis 3
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] uncompressing image &quot;ds002080/sub-CON02/ses-postop/dwi/sub-CON02_ses-postop_acq-AP_dwi.nii.gz&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] uncompressing image &quot;ds002080/sub-CON02/ses-postop/dwi/sub-CON02_ses-postop_acq-AP_dwi.nii.gz&quot;
 mrconvert: [100%] copying from &quot;ds002080/s...es-postop_acq-AP_dwi.nii.gz&quot; to &quot;AP.mif&quot;
 mrconvert: [100%] uncompressing image &quot;ds002080/sub-CON02/ses-postop/dwi/sub-CON02_ses-postop_acq-PA_dwi.nii.gz&quot;
 mrconvert: [100%] copying from &quot;ds002080/s...es-postop_acq-PA_dwi.nii.gz&quot; to &quot;PA.mif&quot;
-mrconvert: [100%] copying from &quot;PA.mif&quot; to &quot;/tmp/mrtrix-tmp-plszfT.mif&quot;
-mrmath: [100%] preloading data for &quot;/tmp/mrtrix-tmp-plszfT.mif&quot;
+mrconvert: [100%] copying from &quot;PA.mif&quot; to &quot;/tmp/mrtrix-tmp-bQrYZn.mif&quot;
+mrmath: [100%] preloading data for &quot;/tmp/mrtrix-tmp-bQrYZn.mif&quot;
 mrmath: [100%] computing mean along axis 3...
 </pre></div>
 </div>
@@ -697,15 +739,16 @@ mrmath: [100%] computing mean along axis 3...
 <h3>Denoising and Gibbs ringing removal (“unringing”)<a class="headerlink" href="#denoising-and-gibbs-ringing-removal-unringing" title="Permalink to this heading">#</a></h3>
 <p>The first preprocessing step is denoise the data by using <code class="docutils literal notranslate"><span class="pre">dwidenoise</span></code> command. This requires an input and an output argument, and you also have the option to output the noise map with the <code class="docutils literal notranslate"><span class="pre">-noise</span></code> option.</p>
 <p>The next step is to run <code class="docutils literal notranslate"><span class="pre">mrdegibbs</span></code>, which removes Gibbs’ ringing artifacts from the data.</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>dwidenoise AP.mif dwi_denoised.mif -noise noise.mif
-<span class="o">!</span>mrdegibbs dwi_denoised.mif dwi_denoised_unringed.mif
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+dwidenoise AP.mif dwi_denoised.mif -noise noise.mif
+mrdegibbs dwi_denoised.mif dwi_denoised_unringed.mif
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dwidenoise: [100%] preloading data for &quot;AP.mif&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dwidenoise: [100%] preloading data for &quot;AP.mif&quot;
 dwidenoise: [100%] running MP-PCA denoising
 mrdegibbs: [100%] performing Gibbs ringing removal
 </pre></div>
@@ -723,7 +766,7 @@ mrdegibbs: [100%] performing Gibbs ringing removal
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dwiextract: [100%] extracting volumes
-mrmath: [100%] preloading data for &quot;/tmp/mrtrix-tmp-jOO9hc.mif&quot;
+mrmath: [100%] preloading data for &quot;/tmp/mrtrix-tmp-oNvo0M.mif&quot;
 mrmath: [100%] computing mean along axis 3...
 mrcat: [100%] concatenating &quot;mean_b0_AP.mif&quot;
 mrcat: [100%] concatenating &quot;mean_b0_PA.mif&quot;
@@ -738,7 +781,7 @@ mrcat: [100%] concatenating &quot;mean_b0_PA.mif&quot;
 <p><code class="docutils literal notranslate"><span class="pre">-pe_dir</span></code> option is used to tell dwifslpreproc the phase-encoding direction of the scan.</p>
 <p><code class="docutils literal notranslate"> <span class="pre">-se_epi</span></code> is an additional image series consisting of spin-echo EPI images used by <code class="docutils literal notranslate"><span class="pre">topup</span></code> for estimating the inhomogeneity field</p>
 <p><code class="docutils literal notranslate"><span class="pre">-eddy_options</span></code> is an additional command-line options to the <code class="docutils literal notranslate"><span class="pre">eddy</span></code></p>
-<div class="cell docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>dwifslpreproc dwi_denoised_unringed.mif dwi_denoised_unringed_preproc.mif -pe_dir AP -rpe_pair -se_epi b0_pair.mif  -eddy_options <span class="s2">&quot; --slm=linear --data_is_shelled&quot;</span>
 </pre></div>
@@ -748,10 +791,10 @@ mrcat: [100%] concatenating &quot;mean_b0_PA.mif&quot;
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dwifslpreproc: 
 dwifslpreproc: <span class=" -Color -Color-Green">Note that this script makes use of commands / algorithms that have relevant articles for citation; INCLUDING FROM EXTERNAL SOFTWARE PACKAGES. Please consult the help page (-help option) for more information.</span>
 dwifslpreproc: 
-dwifslpreproc: <span class=" -Color -Color-Green">Generated scratch directory: /storage/tmp/tmpufcuvdir/dwifslpreproc-tmp-SFYCZI/</span>
-<span class=" -Color -Color-Cyan">Command:</span>  mrconvert /storage/tmp/tmpufcuvdir/dwi_denoised_unringed.mif /storage/tmp/tmpufcuvdir/dwifslpreproc-tmp-SFYCZI/dwi.mif -json_export /storage/tmp/tmpufcuvdir/dwifslpreproc-tmp-SFYCZI/dwi.json
-<span class=" -Color -Color-Cyan">Command:</span>  mrconvert /storage/tmp/tmpufcuvdir/b0_pair.mif /storage/tmp/tmpufcuvdir/dwifslpreproc-tmp-SFYCZI/se_epi.mif
-dwifslpreproc: <span class=" -Color -Color-Green">Changing to scratch directory (/storage/tmp/tmpufcuvdir/dwifslpreproc-tmp-SFYCZI/)</span>
+dwifslpreproc: <span class=" -Color -Color-Green">Generated scratch directory: /storage/tmp/tmp25njh8_7/dwifslpreproc-tmp-9L4XKO/</span>
+<span class=" -Color -Color-Cyan">Command:</span>  mrconvert /storage/tmp/tmp25njh8_7/dwi_denoised_unringed.mif /storage/tmp/tmp25njh8_7/dwifslpreproc-tmp-9L4XKO/dwi.mif -json_export /storage/tmp/tmp25njh8_7/dwifslpreproc-tmp-9L4XKO/dwi.json
+<span class=" -Color -Color-Cyan">Command:</span>  mrconvert /storage/tmp/tmp25njh8_7/b0_pair.mif /storage/tmp/tmp25njh8_7/dwifslpreproc-tmp-9L4XKO/se_epi.mif
+dwifslpreproc: <span class=" -Color -Color-Green">Changing to scratch directory (/storage/tmp/tmp25njh8_7/dwifslpreproc-tmp-9L4XKO/)</span>
 dwifslpreproc: <span class=" -Color -Color-Green">Total readout time not provided at command-line; assuming sane default of 0.1</span>
 <span class=" -Color -Color-Cyan">Command:</span>  mrinfo dwi.mif -export_grad_mrtrix grad.b
 <span class=" -Color -Color-Cyan">Command:</span>  mrconvert se_epi.mif topup_in.nii -import_pe_table se_epi_manual_pe_scheme.txt -strides -1,+2,+3,+4 -export_pe_table topup_datain.txt
@@ -766,9 +809,9 @@ dwifslpreproc: <span class=" -Color -Color-Green">Total readout time not provide
 dwifslpreproc: <span class=" -Color -Color-Green">CUDA version of &#39;eddy&#39; was not successful; attempting OpenMP version</span>
 <span class=" -Color -Color-Cyan">Command:</span>  eddy_openmp --imain=eddy_in.nii --mask=eddy_mask.nii --acqp=eddy_config.txt --index=eddy_indices.txt --bvecs=bvecs --bvals=bvals --topup=field --slm=linear --data_is_shelled --out=dwi_post_eddy --verbose
 <span class=" -Color -Color-Cyan">Command:</span>  mrconvert dwi_post_eddy.nii.gz result.mif -strides -1,2,3,4 -fslgrad dwi_post_eddy.eddy_rotated_bvecs bvals
-<span class=" -Color -Color-Cyan">Command:</span>  mrconvert result.mif /storage/tmp/tmpufcuvdir/dwi_denoised_unringed_preproc.mif
-dwifslpreproc: <span class=" -Color -Color-Green">Changing back to original directory (/storage/tmp/tmpufcuvdir)</span>
-dwifslpreproc: <span class=" -Color -Color-Green">Deleting scratch directory (/storage/tmp/tmpufcuvdir/dwifslpreproc-tmp-SFYCZI/)</span>
+<span class=" -Color -Color-Cyan">Command:</span>  mrconvert result.mif /storage/tmp/tmp25njh8_7/dwi_denoised_unringed_preproc.mif
+dwifslpreproc: <span class=" -Color -Color-Green">Changing back to original directory (/storage/tmp/tmp25njh8_7)</span>
+dwifslpreproc: <span class=" -Color -Color-Green">Deleting scratch directory (/storage/tmp/tmp25njh8_7/dwifslpreproc-tmp-9L4XKO/)</span>
 </pre></div>
 </div>
 </div>
@@ -776,7 +819,7 @@ dwifslpreproc: <span class=" -Color -Color-Green">Deleting scratch directory (/s
 <section id="bias-field-correction">
 <h4>Bias field correction<a class="headerlink" href="#bias-field-correction" title="Permalink to this heading">#</a></h4>
 <p>You can correct for bias fields at this point in the pipeline with the <code class="docutils literal notranslate"><span class="pre">dwibiascorrect</span> <span class="pre">ants</span></code> command</p>
-<div class="cell docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>dwibiascorrect ants dwi_denoised_unringed_preproc.mif dwi_denoised_unringed_preproc_unbiased.mif
 </pre></div>
@@ -786,9 +829,9 @@ dwifslpreproc: <span class=" -Color -Color-Green">Deleting scratch directory (/s
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dwibiascorrect: 
 dwibiascorrect: <span class=" -Color -Color-Green">Note that this script makes use of commands / algorithms that have relevant articles for citation; INCLUDING FROM EXTERNAL SOFTWARE PACKAGES. Please consult the help page (-help option) for more information.</span>
 dwibiascorrect: 
-dwibiascorrect: <span class=" -Color -Color-Green">Generated scratch directory: /storage/tmp/tmpufcuvdir/dwibiascorrect-tmp-JO3Z19/</span>
-<span class=" -Color -Color-Cyan">Command:</span>  mrconvert /storage/tmp/tmpufcuvdir/dwi_denoised_unringed_preproc.mif /storage/tmp/tmpufcuvdir/dwibiascorrect-tmp-JO3Z19/in.mif
-dwibiascorrect: <span class=" -Color -Color-Green">Changing to scratch directory (/storage/tmp/tmpufcuvdir/dwibiascorrect-tmp-JO3Z19/)</span>
+dwibiascorrect: <span class=" -Color -Color-Green">Generated scratch directory: /storage/tmp/tmp25njh8_7/dwibiascorrect-tmp-AKYKZD/</span>
+<span class=" -Color -Color-Cyan">Command:</span>  mrconvert /storage/tmp/tmp25njh8_7/dwi_denoised_unringed_preproc.mif /storage/tmp/tmp25njh8_7/dwibiascorrect-tmp-AKYKZD/in.mif
+dwibiascorrect: <span class=" -Color -Color-Green">Changing to scratch directory (/storage/tmp/tmp25njh8_7/dwibiascorrect-tmp-AKYKZD/)</span>
 <span class=" -Color -Color-Cyan">Command:</span>  dwi2mask in.mif mask.mif
 <span class=" -Color -Color-Cyan">Command:</span>  dwiextract in.mif - -bzero | mrmath - mean mean_bzero.mif -axis 3
 <span class=" -Color -Color-Cyan">Command:</span>  mrconvert mean_bzero.mif mean_bzero.nii -strides +1,+2,+3
@@ -796,11 +839,11 @@ dwibiascorrect: <span class=" -Color -Color-Green">Changing to scratch directory
 <span class=" -Color -Color-Cyan">Command:</span>  N4BiasFieldCorrection -d 3 -i mean_bzero.nii -w mask.nii -o [corrected.nii,init_bias.nii] -s 4 -b [100,3] -c [1000,0.0]
 <span class=" -Color -Color-Cyan">Command:</span>  mrcalc mean_bzero.mif mask.mif -mult - | mrmath - sum - -axis 0 | mrmath - sum - -axis 1 | mrmath - sum - -axis 2 | mrdump -
 <span class=" -Color -Color-Cyan">Command:</span>  mrcalc corrected.nii mask.mif -mult - | mrmath - sum - -axis 0 | mrmath - sum - -axis 1 | mrmath - sum - -axis 2 | mrdump -
-<span class=" -Color -Color-Cyan">Command:</span>  mrcalc init_bias.nii 0.563258981198 -mult bias.mif
+<span class=" -Color -Color-Cyan">Command:</span>  mrcalc init_bias.nii 0.569420008222 -mult bias.mif
 <span class=" -Color -Color-Cyan">Command:</span>  mrcalc in.mif bias.mif -div result.mif
-<span class=" -Color -Color-Cyan">Command:</span>  mrconvert result.mif /storage/tmp/tmpufcuvdir/dwi_denoised_unringed_preproc_unbiased.mif
-dwibiascorrect: <span class=" -Color -Color-Green">Changing back to original directory (/storage/tmp/tmpufcuvdir)</span>
-dwibiascorrect: <span class=" -Color -Color-Green">Deleting scratch directory (/storage/tmp/tmpufcuvdir/dwibiascorrect-tmp-JO3Z19/)</span>
+<span class=" -Color -Color-Cyan">Command:</span>  mrconvert result.mif /storage/tmp/tmp25njh8_7/dwi_denoised_unringed_preproc_unbiased.mif
+dwibiascorrect: <span class=" -Color -Color-Green">Changing back to original directory (/storage/tmp/tmp25njh8_7)</span>
+dwibiascorrect: <span class=" -Color -Color-Green">Deleting scratch directory (/storage/tmp/tmp25njh8_7/dwibiascorrect-tmp-AKYKZD/)</span>
 </pre></div>
 </div>
 </div>
@@ -810,7 +853,7 @@ dwibiascorrect: <span class=" -Color -Color-Green">Deleting scratch directory (/
 <section id="brain-mask-estimation">
 <h3>Brain mask estimation<a class="headerlink" href="#brain-mask-estimation" title="Permalink to this heading">#</a></h3>
 <p>A brain mask can be estimated automatically from the diffusion MRI data using <code class="docutils literal notranslate"><span class="pre">dwi2mask</span></code> as follows:</p>
-<div class="cell docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>dwi2mask dwi_denoised_unringed_preproc_unbiased.mif dwi_mask.mif
 </pre></div>
@@ -843,7 +886,7 @@ dwi2mask: [done] applying mask cleaning filter
 <section id="tissue-response-function-estimation">
 <h3>3-tissue response function estimation<a class="headerlink" href="#tissue-response-function-estimation" title="Permalink to this heading">#</a></h3>
 <p>An method to obtain 3-tissue response functions representing single-fibre white matter (WM), grey matter (GM) and CSF from the data itself, is available as the so-called <code class="docutils literal notranslate"><span class="pre">dwi2response</span> <span class="pre">dhollander</span></code> command from <code class="docutils literal notranslate"><span class="pre">MRtrix3Tissue</span></code> package.</p>
-<div class="cell docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>dwi2response dhollander dwi_denoised_unringed_preproc_unbiased.mif response_wm.txt response_gm.txt response_csf.txt
 </pre></div>
@@ -853,56 +896,56 @@ dwi2mask: [done] applying mask cleaning filter
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dwi2response: 
 dwi2response: <span class=" -Color -Color-Green">Note that this script makes use of commands / algorithms that have relevant articles for citation. Please consult the help page (-help option) for more information.</span>
 dwi2response: 
-dwi2response: <span class=" -Color -Color-Green">Generated scratch directory: /storage/tmp/tmpufcuvdir/dwi2response-tmp-08EMSA/</span>
-dwi2response: <span class=" -Color -Color-Green">Importing DWI data (/storage/tmp/tmpufcuvdir/dwi_denoised_unringed_preproc_unbiased.mif)...</span>
-dwi2response: <span class=" -Color -Color-Green">Changing to scratch directory (/storage/tmp/tmpufcuvdir/dwi2response-tmp-08EMSA/)</span>
+dwi2response: <span class=" -Color -Color-Green">Generated scratch directory: /storage/tmp/tmp25njh8_7/dwi2response-tmp-T069GP/</span>
+dwi2response: <span class=" -Color -Color-Green">Importing DWI data (/storage/tmp/tmp25njh8_7/dwi_denoised_unringed_preproc_unbiased.mif)...</span>
+dwi2response: <span class=" -Color -Color-Green">Changing to scratch directory (/storage/tmp/tmp25njh8_7/dwi2response-tmp-T069GP/)</span>
 dwi2response: <span class=" -Color -Color-Green">Computing brain mask (dwi2mask)...</span>
 dwi2response: <span class=" -Color -Color-Green">-------</span>
 dwi2response: <span class=" -Color -Color-Green">4 unique b-value(s) detected: 0,700,1200,2800 with 6,16,30,50 volumes</span>
 dwi2response: <span class=" -Color -Color-Green">-------</span>
 dwi2response: <span class=" -Color -Color-Green">Preparation:</span>
 dwi2response: <span class=" -Color -Color-Green">* Eroding brain mask by 3 pass(es)...</span>
-dwi2response: <span class=" -Color -Color-Green">  [ mask: 96503 -&gt; 69383 ]</span>
+dwi2response: <span class=" -Color -Color-Green">  [ mask: 96539 -&gt; 69393 ]</span>
 dwi2response: <span class=" -Color -Color-Green">* Computing signal decay metric (SDM):</span>
 dwi2response: <span class=" -Color -Color-Green"> * b=0...</span>
 dwi2response: <span class=" -Color -Color-Green"> * b=700...</span>
 dwi2response: <span class=" -Color -Color-Green"> * b=1200...</span>
 dwi2response: <span class=" -Color -Color-Green"> * b=2800...</span>
 dwi2response: <span class=" -Color -Color-Green">* Removing erroneous voxels from mask and correcting SDM...</span>
-dwi2response: <span class=" -Color -Color-Green">  [ mask: 69383 -&gt; 69383 ]</span>
+dwi2response: <span class=" -Color -Color-Green">  [ mask: 69393 -&gt; 69393 ]</span>
 dwi2response: <span class=" -Color -Color-Green">-------</span>
 dwi2response: <span class=" -Color -Color-Green">Crude segmentation:</span>
 dwi2response: <span class=" -Color -Color-Green">* Crude WM versus GM-CSF separation (at FA=0.2)...</span>
-dwi2response: <span class=" -Color -Color-Green">  [ 69383 -&gt; 37142 (WM) &amp; 32241 (GM-CSF) ]</span>
+dwi2response: <span class=" -Color -Color-Green">  [ 69393 -&gt; 37169 (WM) &amp; 32224 (GM-CSF) ]</span>
 dwi2response: <span class=" -Color -Color-Green">* Crude GM versus CSF separation...</span>
-dwi2response: <span class=" -Color -Color-Green">  [ 32241 -&gt; 21484 (GM) &amp; 10757 (CSF) ]</span>
+dwi2response: <span class=" -Color -Color-Green">  [ 32224 -&gt; 21456 (GM) &amp; 10768 (CSF) ]</span>
 dwi2response: <span class=" -Color -Color-Green">-------</span>
 dwi2response: <span class=" -Color -Color-Green">Refined segmentation:</span>
 dwi2response: <span class=" -Color -Color-Green">* Refining WM...</span>
-dwi2response: <span class=" -Color -Color-Green">  [ WM: 37142 -&gt; 33619 ]</span>
+dwi2response: <span class=" -Color -Color-Green">  [ WM: 37169 -&gt; 33634 ]</span>
 dwi2response: <span class=" -Color -Color-Green">* Refining GM...</span>
-dwi2response: <span class=" -Color -Color-Green">  [ GM: 21484 -&gt; 12004 ]</span>
+dwi2response: <span class=" -Color -Color-Green">  [ GM: 21456 -&gt; 11976 ]</span>
 dwi2response: <span class=" -Color -Color-Green">* Refining CSF...</span>
-dwi2response: <span class=" -Color -Color-Green">  [ CSF: 10757 -&gt; 5368 ]</span>
+dwi2response: <span class=" -Color -Color-Green">  [ CSF: 10768 -&gt; 5351 ]</span>
 dwi2response: <span class=" -Color -Color-Green">-------</span>
 dwi2response: <span class=" -Color -Color-Green">Final voxel selection and response function estimation:</span>
 dwi2response: <span class=" -Color -Color-Green">* CSF:</span>
 dwi2response: <span class=" -Color -Color-Green"> * Selecting final voxels (10.0% of refined CSF)...</span>
-dwi2response: <span class=" -Color -Color-Green">   [ CSF: 5368 -&gt; 537 ]</span>
+dwi2response: <span class=" -Color -Color-Green">   [ CSF: 5351 -&gt; 535 ]</span>
 dwi2response: <span class=" -Color -Color-Green"> * Estimating response function...</span>
 dwi2response: <span class=" -Color -Color-Green">* GM:</span>
 dwi2response: <span class=" -Color -Color-Green"> * Selecting final voxels (2.0% of refined GM)...</span>
-dwi2response: <span class=" -Color -Color-Green">   [ GM: 12004 -&gt; 240 ]</span>
+dwi2response: <span class=" -Color -Color-Green">   [ GM: 11976 -&gt; 240 ]</span>
 dwi2response: <span class=" -Color -Color-Green"> * Estimating response function...</span>
 dwi2response: <span class=" -Color -Color-Green">* single-fibre WM:</span>
 dwi2response: <span class=" -Color -Color-Green"> * Selecting final voxels (0.5% of refined WM)...</span>
-dwi2response: <span class=" -Color -Color-Green">   [ WM: 33619 -&gt; 168 (single-fibre) ]</span>
+dwi2response: <span class=" -Color -Color-Green">   [ WM: 33634 -&gt; 168 (single-fibre) ]</span>
 dwi2response: <span class=" -Color -Color-Green"> * Estimating response function...</span>
 dwi2response: <span class=" -Color -Color-Green">-------</span>
 dwi2response: <span class=" -Color -Color-Green">Generating outputs...</span>
 dwi2response: <span class=" -Color -Color-Green">-------</span>
-dwi2response: <span class=" -Color -Color-Green">Changing back to original directory (/storage/tmp/tmpufcuvdir)</span>
-dwi2response: <span class=" -Color -Color-Green">Deleting scratch directory (/storage/tmp/tmpufcuvdir/dwi2response-tmp-08EMSA/)</span>
+dwi2response: <span class=" -Color -Color-Green">Changing back to original directory (/storage/tmp/tmp25njh8_7)</span>
+dwi2response: <span class=" -Color -Color-Green">Deleting scratch directory (/storage/tmp/tmp25njh8_7/dwi2response-tmp-T069GP/)</span>
 </pre></div>
 </div>
 </div>
@@ -911,7 +954,7 @@ dwi2response: <span class=" -Color -Color-Green">Deleting scratch directory (/st
 <section id="upsampling">
 <h3>Upsampling<a class="headerlink" href="#upsampling" title="Permalink to this heading">#</a></h3>
 <p>Upsampling your preprocessed diffusion MRI data before the 3-tissue constrained spherical deconvolution (3-tissue CSD) step to get a higher quality result. Upsampling is useful if you’re after a higher quality visualisation, which reveals finer details using <code class="docutils literal notranslate"><span class="pre">mrgrid</span></code>.</p>
-<div class="cell docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>mrgrid dwi_denoised_unringed_preproc_unbiased.mif regrid dwi_denoised_unringed_preproc_unbiased_upsampled.mif -voxel <span class="m">1</span>.5
 </pre></div>
@@ -942,7 +985,7 @@ maskfilter: [100%] applying median filter to image -
 <h3>3-tissue CSD modelling<a class="headerlink" href="#tissue-csd-modelling" title="Permalink to this heading">#</a></h3>
 <p>Your data is now ready for 3-tissue CSD modelling with the previously obtained 3-tissue response functions, which will result in modelling the diffusion MRI data using WM-like (FOD), GM-like and CSF-like compartments. There are 2 different methods (or algorithms) available to perform 3-tissue CSD. The choice between both depends on what (part of your) data you intend to perform 3-tissue CSD modelling for.</p>
 <p>If you want to perform 3-tissue CSD modelling for multi-shell data, this can be achieved using the multi-shell multi-tissue CSD (MSMT-CSD) method or algorithm, as follows:</p>
-<div class="cell docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>dwi2fod msmt_csd dwi_denoised_unringed_preproc_unbiased_upsampled.mif response_wm.txt wmfod.mif response_gm.txt gm.mif response_csf.txt csf.mif -mask dwi_mask_upsampled.mif
 </pre></div>
@@ -987,17 +1030,18 @@ mtnormalise: [done] loading input images
 <li><p><code class="docutils literal notranslate"><span class="pre">csf_mask2.mif</span></code> from second criteria (note: 0.141047 might be half of max response function)</p></li>
 </ul>
 <p>Then find the overlap of both masks resulting in the final mask <code class="docutils literal notranslate"><span class="pre">csf_maskcombined.mif</span></code>.</p>
-<div class="cell docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>mrconvert wmfod_norm.mif -coord <span class="m">3</span> <span class="m">0</span> -axes <span class="m">0</span>,1,2 - <span class="p">|</span> mrcalc csf_norm.mif gm_norm.mif - -add <span class="m">5</span> -mult -gt csf_mask1.mif -datatype bit
-<span class="o">!</span>mrthreshold csf_norm.mif csf_mask2.mif -abs <span class="m">0</span>.141047
-<span class="o">!</span>mrcalc csf_mask1.mif csf_mask2.mif -mult csf_maskcombined.mif -datatype bit
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+mrconvert wmfod_norm.mif -coord 3 0 -axes 0,1,2 - | mrcalc csf_norm.mif gm_norm.mif - -add 5 -mult -gt csf_mask1.mif -datatype bit
+mrthreshold csf_norm.mif csf_mask2.mif -abs 0.141047
+mrcalc csf_mask1.mif csf_mask2.mif -mult csf_maskcombined.mif -datatype bit
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] copying from &quot;wmfod_norm.mif&quot; to &quot;/tmp/mrtrix-tmp-iN5KTw.mif&quot;
-mrcalc: [100%] computing: (csf_norm.mif &gt; ((gm_norm.mif + /tmp/mrtrix-tmp-iN5KTw.mif) * 5))
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] copying from &quot;wmfod_norm.mif&quot; to &quot;/tmp/mrtrix-tmp-omRrNc.mif&quot;
+mrcalc: [100%] computing: (csf_norm.mif &gt; ((gm_norm.mif + /tmp/mrtrix-tmp-omRrNc.mif) * 5))
 mrthreshold: [100%] Determining and applying per-volume thresholds
 mrcalc: [100%] computing: (csf_mask1.mif * csf_mask2.mif)
 </pre></div>
@@ -1023,260 +1067,21 @@ mrcalc: [100%] computing: (csf_mask1.mif * csf_mask2.mif)
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>mrconvert dwi_denoised_unringed_preproc_unbiased_upsampled.mif reduced.mif -coord <span class="m">3</span> <span class="k">$(</span>cat bval_less_1000.txt<span class="k">)</span>
-<span class="o">!</span>dwi2adc reduced.mif dwi_adc.mif
-<span class="o">!</span>mrconvert dwi_adc.mif extracted_adc.mif -coord <span class="m">3</span> <span class="m">1</span>
-<span class="o">!!</span>mrcalc extracted_adc.mif csf_maskcombined.mif -mult masked_adc.mif
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+mrconvert dwi_denoised_unringed_preproc_unbiased_upsampled.mif reduced.mif -coord 3 $(cat bval_less_1000.txt)
+dwi2adc reduced.mif dwi_adc.mif
+mrconvert dwi_adc.mif extracted_adc.mif -coord 3 1
+mrcalc extracted_adc.mif csf_maskcombined.mif -mult masked_adc.mif
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] copying from &quot;dwi_denois...proc_unbiased_upsampled.mif&quot; to &quot;reduced.mif&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] copying from &quot;dwi_denois...proc_unbiased_upsampled.mif&quot; to &quot;reduced.mif&quot;
 dwi2adc: [100%] computing ADC values
 mrconvert: [100%] copying from &quot;dwi_adc.mif&quot; to &quot;extracted_adc.mif&quot;
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;\x1b[?7l&#39;,
- &#39;mrcalc: [ 29%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 30%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 30%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 30%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 30%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 31%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 31%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 31%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 32%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 32%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 32%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 32%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 32%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 32%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 32%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 32%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 32%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 32%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 32%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 32%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 33%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 35%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 35%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 35%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 39%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 40%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 40%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 40%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 40%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 41%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 45%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 47%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 48%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 49%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 51%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 53%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 53%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 53%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 53%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 53%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 54%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 55%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 55%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 55%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 55%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 55%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 55%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 55%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 55%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 56%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 56%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 56%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 57%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 57%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 57%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 57%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 57%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 58%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 58%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 58%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 58%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 58%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 59%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 59%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 59%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 60%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 60%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 60%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 60%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 60%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 60%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 61%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 61%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 61%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 61%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 61%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 61%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 61%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 62%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 62%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 62%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 62%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 62%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 62%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 62%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 62%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 63%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 63%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 64%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 65%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 65%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 65%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 65%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 65%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 66%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 67%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 67%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 67%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 67%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 68%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 68%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 68%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 69%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 70%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 71%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 73%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 73%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 74%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 74%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 75%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 76%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 78%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 79%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 79%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 79%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 80%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 80%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 81%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 81%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 81%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 82%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 82%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 83%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 83%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 83%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 83%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 83%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 83%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 83%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 83%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 83%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 84%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 85%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 86%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 87%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 87%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 88%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 88%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 88%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 88%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 88%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 88%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 88%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 88%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 88%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 88%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 88%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 88%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 88%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 88%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 89%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 89%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 89%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 89%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 89%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 89%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 89%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 89%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 89%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 90%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 90%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 92%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 93%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 96%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 97%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 98%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 98%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [ 98%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h\x1b[?7l&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)... \x1b[0K\x1b[?7h&#39;,
- &#39;mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)\x1b[0K&#39;]
+mrcalc: [100%] computing: (extracted_adc.mif * csf_maskcombined.mif)
 </pre></div>
 </div>
 </div>
@@ -1350,7 +1155,7 @@ T = \frac{2256.74}{\ln\left(\frac{4.39221}{D}\right)} - 273
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/09e50474e79daf20ad95ef552630402687e08a87ab5745b830ee3c398ea8fca1.png" src="_images/09e50474e79daf20ad95ef552630402687e08a87ab5745b830ee3c398ea8fca1.png" />
+<img alt="_images/289379e9bac9b5b5677fcf7fc2f7561375b6bfd118a2807420abaefe12593b47.png" src="_images/289379e9bac9b5b5677fcf7fc2f7561375b6bfd118a2807420abaefe12593b47.png" />
 </div>
 </div>
 </section>
