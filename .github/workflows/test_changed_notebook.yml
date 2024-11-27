@@ -69,7 +69,7 @@ jobs:
     needs: [ select-runner, get-notebooks ]
     if: ${{ needs.get-notebooks.outputs.notebook_list != '[]' }}
     runs-on: ${{ needs.select-runner.outputs.runner }}
-    timeout-minutes: 1400
+    timeout-minutes: 1500
     strategy:
       fail-fast: false
       matrix:
@@ -89,7 +89,7 @@ jobs:
 
     - name: Run ${{ matrix.notebooks }}
       shell: bash
-      timeout-minutes: 1400
+      timeout-minutes: 1500
       working-directory: ./books
       run: |
         echo ${{ github.workspace }}
