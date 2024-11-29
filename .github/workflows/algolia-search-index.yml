@@ -22,6 +22,7 @@ jobs:
           uses: algolia/algoliasearch-crawler-github-actions@v1.1.9
           id: algolia_crawler
           with: # mandatory parameters
+            crawler-name: 'neurodesk-example-notebooks'
             crawler-user-id: ${{ secrets.CRAWLER_USER_ID }}
             crawler-api-key: ${{ secrets.CRAWLER_API_KEY }}
             algolia-app-id: ${{ secrets.ALGOLIA_APP_ID }}
