@@ -1,8 +1,6 @@
 name: algolia_search_index
 
 on:
-  schedule:
-    - cron: 30 17 * * *
   push:
     branches:
       - 'gh-pages'
