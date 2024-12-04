@@ -1,0 +1,1268 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Diffusion Analysis with MRtrix: Part 2 - Constrained Spherical Deconvolution and Tissue estimation &#8212; Neurodesk</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-4Z9774J59Y"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-4Z9774J59Y');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-4Z9774J59Y');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'diffusion_imaging/MRtrix_CSD';</script>
+    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/diffusion_imaging/MRtrix_CSD.html" />
+    <link rel="icon" href="../_static/neurodesk_logo.svg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ASLprep" href="../functional_imaging/aslprep.html" />
+    <link rel="prev" title="MRtrix3Tissue" href="mrtrix3tissue.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/neurodesk_logo.svg" class="logo__image only-light" alt="Neurodesk - Home"/>
+    <img src="../_static/neurodesk_logo.svg" class="logo__image only-dark pst-js-only" alt="Neurodesk - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Neurodesk environment
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workflows/bids_conversion.html">BIDS conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflows/nipype_full.html">Nipype on Neurodesk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflows/nipype_short.html">Basic Nipype</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../workflows/RISE_slideshow.html">RISE Slideshow of a Jupyter Notebook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Structural Imaging</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/sct_toolbox.html">SCT Toolbox</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/freesurfer.html">Freesurfer</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/brain_extraction_different_tools.html">Brain extraction with different software packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/qsmxt.html">QSMxT</a></li>
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Diffusion Imaging</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="MRtrix_Preprocessing.html">Diffusion Analysis with MRtrix: Part 1 - Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MRtrix_CoReg_Streamline.html">Diffusion Analysis with MRtrix: Part 3 - Registration and Streamline Fitting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mrtrix3tissue.html">MRtrix3Tissue</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Diffusion Analysis with MRtrix: Part 2 - Constrained Spherical Deconvolution and Tissue estimation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Imaging</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/aslprep.html">ASLprep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/intro_to_preprocessing.html">Introduction to Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/first_and_second_level_spm.html">First and Second Level fMRI Analysis with SPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/nipype_fsl_all_levels_flanker.html">FSL’s fMRI Data Analysis via Nipype</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/deepretinotopy.html">DeepRetinotopy</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/fmriprep.html">fMRIprep</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/diffusion_imaging/MRtrix_CSD.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/NeuroDesk/example-notebooks" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/edit/main/books/diffusion_imaging/MRtrix_CSD.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Fdiffusion_imaging/MRtrix_CSD.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/diffusion_imaging/MRtrix_CSD.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Diffusion Analysis with MRtrix: Part 2 - Constrained Spherical Deconvolution and Tissue estimation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-python-modules">Import Python Modules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-packages">Load packages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-the-preprocessed-data-from-mrtrix-part-1">Downloading the preprocessed data from MRtrix Part 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-spherical-deconvolution">Constrained Spherical Deconvolution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dwi2response">dwi2response</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiber-orientation-density-fod">Fiber Orientation Density (FOD)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">Normalization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-tissue-boundaries">Creating the Tissue Boundaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-the-anatomical-image">Converting the Anatomical Image</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/diffusion_imaging/MRtrix_Preprocessing.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="diffusion-analysis-with-mrtrix-part-2-constrained-spherical-deconvolution-and-tissue-estimation">
+<h1>Diffusion Analysis with MRtrix: Part 2 - Constrained Spherical Deconvolution and Tissue estimation<a class="headerlink" href="#diffusion-analysis-with-mrtrix-part-2-constrained-spherical-deconvolution-and-tissue-estimation" title="Link to this heading">#</a></h1>
+<p>This notebook is the second in a series on Diffusion Analysis using MRtrix and builds upon the preprocessed data generated in <strong>Diffusion Analysis with MRtrix: Part 1 - Preprocessing</strong>. The data necessary for this example will be downloaded from OSF.</p>
+<section id="id1">
+<h2><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Author: Monika Doerig</p>
+<p>Citation:</p>
+<p><strong>Andy’s Brain Book:</strong></p>
+<ul class="simple">
+<li><p>This MRtrix example is based on the <a class="reference external" href="https://andysbrainbook.readthedocs.io/en/latest/MRtrix/MRtrix_Introduction.html#">Diffusion Analysis with MRtrix</a> chapter from Andy’s Brain Book (Jahn, 2022. <a class="reference external" href="https://zenodo.org/records/5879294">doi:10.5281/zenodo.5879293</a>)</p></li>
+</ul>
+<p><strong>Original Data from OpenNeuro:</strong></p>
+<ul class="simple">
+<li><p>Hannelore Aerts and Daniele Marinazzo (2018). BTC_preop. <a class="reference external" href="https://openneuro.org/datasets/ds001226/versions/00001">OpenNeuro Dataset ds001226</a></p></li>
+</ul>
+<p><strong>Preprocessed Diffusion Data from OSF:</strong></p>
+<ul class="simple">
+<li><p>Dörig, M. (2024, November 19). Diffusion MRI Analysis with MRtrix: An Interactive Three-Part Series on Neurodesk. Retrieved from <a class="reference external" href="https://osf.io/y2dq4/">OSF</a></p></li>
+</ul>
+<p><strong>MRtrix3:</strong></p>
+<ul class="simple">
+<li><p>Tournier, J.-D.; Smith, R. E.; Raffelt, D.; Tabbara, R.; Dhollander, T.; Pietsch, M.; Christiaens, D.; Jeurissen, B.; Yeh, C.-H. &amp; Connelly, A. MRtrix3: A fast, flexible and open software framework for medical image processing and visualisation. NeuroImage, 2019, 202, 116137. https://doi.org/10.1016/j.neuroimage.2019.116137</p></li>
+<li><p>For more details: https://www.mrtrix.org/</p></li>
+</ul>
+<p><strong>DIPY:</strong></p>
+<ul class="simple">
+<li><p>Garyfallidis, E., Brett, M., Amirbekian, B., Rokem, A., van der Walt, S., Descoteaux, M., Nimmo-Smith, I., &amp; Dipy Contributors (2014). Dipy, a library for the analysis of diffusion MRI data. Frontiers in neuroinformatics, 8, 8. https://doi.org/10.3389/fninf.2014.00008</p></li>
+</ul>
+</section>
+<section id="setup-neurodesk">
+<h2>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">IN_COLAB</span> <span class="o">=</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span>
+
+<span class="k">if</span> <span class="n">IN_COLAB</span><span class="p">:</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_PRELOAD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;APPTAINER_BINDPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content,/tmp,/cvmfs&quot;</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MPLCONFIGDIR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content/matplotlib-mpldir&quot;</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LMOD_CMD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/share/lmod/lmod/libexec/lmod&quot;</span>
+
+  <span class="err">!</span><span class="n">curl</span> <span class="o">-</span><span class="n">J</span> <span class="o">-</span><span class="n">O</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NeuroDesk</span><span class="o">/</span><span class="n">neurocommand</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
+  <span class="err">!</span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
+  <span class="err">!</span><span class="o">./</span><span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
+
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MODULEPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
+<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: GenuineIntel
+model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
+</pre></div>
+</div>
+</div>
+</div>
+<section id="import-python-modules">
+<h3>Import Python Modules<a class="headerlink" href="#import-python-modules" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">nibabel</span> <span class="n">matplotlib</span> <span class="n">dipy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">from</span> <span class="nn">ipyniivue</span> <span class="kn">import</span> <span class="n">AnyNiivue</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+<span class="kn">from</span> <span class="nn">dipy.data</span> <span class="kn">import</span> <span class="n">default_sphere</span>
+<span class="kn">from</span> <span class="nn">dipy.reconst.shm</span> <span class="kn">import</span> <span class="n">sh_to_sf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>In this notebook, we focus on Constrained Spherical Deconvolution (CSD) to estimate Fiber Orientation Distributions (FODs) for the different tissue types. Additionally, FODs are normalized and tissue boundaries are derived from the anatomical image. The boundaries will be the starting point for generating streamlines in subsequent analyses.</p>
+<p>In the next part of this series, we will address registration and streamline fitting, advancing toward tractography.</p>
+<section id="load-packages">
+<h3>Load packages<a class="headerlink" href="#load-packages" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lmod</span>
+<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;mrtrix3/3.0.4&#39;</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;fsl/6.0.7.4&#39;</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mrtrix3/3.0.4&#39;, &#39;fsl/6.0.7.4&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="downloading-the-preprocessed-data-from-mrtrix-part-1">
+<h2>Downloading the preprocessed data from MRtrix Part 1<a class="headerlink" href="#downloading-the-preprocessed-data-from-mrtrix-part-1" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>osf<span class="w"> </span>-p<span class="w"> </span>y2dq4<span class="w"> </span>fetch<span class="w"> </span>preprocessed/mask.mif<span class="w"> </span>MRtrix_preprocessed/mask.mif
+<span class="o">!</span><span class="w"> </span>osf<span class="w"> </span>-p<span class="w"> </span>y2dq4<span class="w"> </span>fetch<span class="w"> </span>preprocessed/sub-02_den_preproc_unbiased.mif<span class="w"> </span>MRtrix_preprocessed/sub-02_den_preproc_unbiased.mif
+<span class="o">!</span><span class="w"> </span>osf<span class="w"> </span>-p<span class="w"> </span>y2dq4<span class="w"> </span>fetch<span class="w"> </span>preprocessed/sub-CON02_ses-preop_T1w.nii.gz<span class="w"> </span>MRtrix_preprocessed/sub-CON02_ses-preop_T1w.nii.gz
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████| 80.0k/80.0k [00:00&lt;00:00, 24.1Mbytes/s]
+100%|█████████████████████████████████████| 226M/226M [00:01&lt;00:00, 133Mbytes/s]
+100%|██████████████████████████████████| 8.31M/8.31M [00:00&lt;00:00, 78.1Mbytes/s]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save the original directory</span>
+<span class="n">original_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="c1"># Navigate to the diffusion data</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;MRtrix_preprocessed&quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/jovyan/Git_repositories/MRtrix_preprocessed&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Try typing one of the commands from the library, such as <code class="docutils literal notranslate"><span class="pre">mrconvert</span></code>. If MRtrix has been installed correctly, you should see the help page printed by default when no arguments are passed to the command:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>mrconvert<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">18</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MRtrix 3.0.4                        mrconvert                        Mar 20 2024
+
+     mrconvert: part of the MRtrix3 package
+
+SYNOPSIS
+
+     Perform conversion between different file types and optionally extract a
+     subset of the input image
+
+USAGE
+
+     mrconvert [ options ] input output
+
+        input        the input image.
+
+        output       the output image.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="constrained-spherical-deconvolution">
+<h2>Constrained Spherical Deconvolution<a class="headerlink" href="#constrained-spherical-deconvolution" title="Link to this heading">#</a></h2>
+<p>In order to determine the orientation of diffusion within each voxel, we will create a basis function from the subject’s own data. By extracting the diffusion signal from representative grey matter, white matter, and cerebrospinal fluid voxels, we will build a model to estimate what the signal should look like in different orientations and when we apply different b-values. The concept is similar to using a hemodynamic response function (HRF) as a basis function for fMRI data: We have a canonical shape of what we believe the fMRI signal should look like in response to a single event, and then we modulate it to fit the observed data.</p>
+<p>The response function is similar to the canonical HRF we use in fMRI studies. In this case, however, we’re estimating the response function for each tissue type. If you happened to collect your diffusion data with multiple b-values, then this approach in MRtrix is called multi-shell multi-tissue (MSMT).</p>
+<section id="dwi2response">
+<h3>dwi2response<a class="headerlink" href="#dwi2response" title="Link to this heading">#</a></h3>
+<p>Unlike most fMRI studies which use a basis function that has been created beforehand, MRtrix will derive a basis function from the diffusion data; using an individual subject’s data is more precise and specific to that subject. The command <code class="docutils literal notranslate"><span class="pre">dwi2response</span></code> has several different algorithms that you can choose from, but for this tutorial we will use the “dhollander” algorithm:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>dwi2response<span class="w"> </span>dhollander<span class="w"> </span>sub-02_den_preproc_unbiased.mif<span class="w"> </span>wm.txt<span class="w"> </span>gm.txt<span class="w"> </span>csf.txt<span class="w"> </span>-voxels<span class="w"> </span>voxels.mif
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dwi2response: 
+dwi2response: <span class=" -Color -Color-Green">Note that this script makes use of commands / algorithms that have relevant articles for citation. Please consult the help page (-help option) for more information.</span>
+dwi2response: 
+dwi2response: <span class=" -Color -Color-Green">Generated scratch directory: /home/jovyan/Git_repositories/MRtrix_preprocessed/dwi2response-tmp-102KTN/</span>
+dwi2response: <span class=" -Color -Color-Green">Importing DWI data (/home/jovyan/Git_repositories/MRtrix_preprocessed/sub-02_den_preproc_unbiased.mif)...</span>
+dwi2response: <span class=" -Color -Color-Green">Changing to scratch directory (/home/jovyan/Git_repositories/MRtrix_preprocessed/dwi2response-tmp-102KTN/)</span>
+dwi2response: <span class=" -Color -Color-Green">Computing brain mask (dwi2mask)...</span>
+dwi2response: <span class=" -Color -Color-Green">-------</span>
+dwi2response: <span class=" -Color -Color-Green">4 unique b-value(s) detected: 0,700,1200,2800 with 6,16,30,50 volumes</span>
+dwi2response: <span class=" -Color -Color-Green">-------</span>
+dwi2response: <span class=" -Color -Color-Green">Preparation:</span>
+dwi2response: <span class=" -Color -Color-Green">* Eroding brain mask by 3 pass(es)...</span>
+dwi2response: <span class=" -Color -Color-Green">  [ mask: 94895 -&gt; 66960 ]</span>
+dwi2response: <span class=" -Color -Color-Green">* Computing signal decay metric (SDM):</span>
+dwi2response: <span class=" -Color -Color-Green"> * b=0...</span>
+dwi2response: <span class=" -Color -Color-Green"> * b=700...</span>
+dwi2response: <span class=" -Color -Color-Green"> * b=1200...</span>
+dwi2response: <span class=" -Color -Color-Green"> * b=2800...</span>
+dwi2response: <span class=" -Color -Color-Green">* Removing erroneous voxels from mask and correcting SDM...</span>
+dwi2response: <span class=" -Color -Color-Green">  [ mask: 66960 -&gt; 66923 ]</span>
+dwi2response: <span class=" -Color -Color-Green">-------</span>
+dwi2response: <span class=" -Color -Color-Green">Crude segmentation:</span>
+dwi2response: <span class=" -Color -Color-Green">* Crude WM versus GM-CSF separation (at FA=0.2)...</span>
+dwi2response: <span class=" -Color -Color-Green">  [ 66923 -&gt; 36808 (WM) &amp; 30115 (GM-CSF) ]</span>
+dwi2response: <span class=" -Color -Color-Green">* Crude GM versus CSF separation...</span>
+dwi2response: <span class=" -Color -Color-Green">  [ 30115 -&gt; 19977 (GM) &amp; 10138 (CSF) ]</span>
+dwi2response: <span class=" -Color -Color-Green">-------</span>
+dwi2response: <span class=" -Color -Color-Green">Refined segmentation:</span>
+dwi2response: <span class=" -Color -Color-Green">* Refining WM...</span>
+dwi2response: <span class=" -Color -Color-Green">  [ WM: 36808 -&gt; 33730 ]</span>
+dwi2response: <span class=" -Color -Color-Green">* Refining GM...</span>
+dwi2response: <span class=" -Color -Color-Green">  [ GM: 19977 -&gt; 11830 ]</span>
+dwi2response: <span class=" -Color -Color-Green">* Refining CSF...</span>
+dwi2response: <span class=" -Color -Color-Green">  [ CSF: 10138 -&gt; 5102 ]</span>
+dwi2response: <span class=" -Color -Color-Green">-------</span>
+dwi2response: <span class=" -Color -Color-Green">Final voxel selection and response function estimation:</span>
+dwi2response: <span class=" -Color -Color-Green">* CSF:</span>
+dwi2response: <span class=" -Color -Color-Green"> * Selecting final voxels (10.0% of refined CSF)...</span>
+dwi2response: <span class=" -Color -Color-Green">   [ CSF: 5102 -&gt; 510 ]</span>
+dwi2response: <span class=" -Color -Color-Green"> * Estimating response function...</span>
+dwi2response: <span class=" -Color -Color-Green">* GM:</span>
+dwi2response: <span class=" -Color -Color-Green"> * Selecting final voxels (2.0% of refined GM)...</span>
+dwi2response: <span class=" -Color -Color-Green">   [ GM: 11830 -&gt; 237 ]</span>
+dwi2response: <span class=" -Color -Color-Green"> * Estimating response function...</span>
+dwi2response: <span class=" -Color -Color-Green">* Single-fibre WM:</span>
+dwi2response: <span class=" -Color -Color-Green"> * Selecting final voxels (0.5% of refined WM)...</span>
+dwi2response: <span class=" -Color -Color-Green">   Selecting WM single-fibre voxels using built-in (Dhollander et al., 2019) algorithm</span>
+dwi2response: <span class=" -Color -Color-Green">   [ WM: 33730 -&gt; 169 (single-fibre) ]</span>
+dwi2response: <span class=" -Color -Color-Green"> * Estimating response function...</span>
+dwi2response: <span class=" -Color -Color-Green">-------</span>
+dwi2response: <span class=" -Color -Color-Green">Generating outputs...</span>
+dwi2response: <span class=" -Color -Color-Green">-------</span>
+dwi2response: <span class=" -Color -Color-Green">Changing back to original directory (/home/jovyan/Git_repositories/MRtrix_preprocessed)</span>
+dwi2response: <span class=" -Color -Color-Green">Deleting scratch directory (/home/jovyan/Git_repositories/MRtrix_preprocessed/dwi2response-tmp-102KTN/)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h4><a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>This command uses an algorithm to deconvolve the fiber orientation distributions (FODs) - in other words, it tries to decompose the diffusion signal into a set of smaller individual fiber orientations. You have several algorithms to choose from, but the most common are tournier and dhollander. The tournier algorithm is used for single-shell data and for a single tissue type (e.g., white matter). The dhollander algorithm can be used for either single- or multi-shell data, and for multiple tissue types. Estimating the FOD for each tissue type will later help us do anatomically constrained tractography.</p>
+<p>The next argument specifies your input data, and the resulting response functions for the different tissue types. The order matters; you can call the output files whatever you want, but it makes the most sense to label them as some kind of variation on the phrases “white matter”, “grey matter”, and “cerebrospinal fluid” (here, labeled as “wm.txt”, “gm.txt”, and “csf.txt”). The last option, “-voxels”, specifies an output dataset that shows which voxels from the image were used to construct the basis functions for each tissue type. This dataset can be viewed by typing the following:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mrview</span><span class="w"> </span><span class="nx">sub</span><span class="o">-</span><span class="mo">02</span><span class="nx">_den_preproc_unbiased</span><span class="p">.</span><span class="nx">mif</span><span class="w"> </span><span class="o">-</span><span class="nx">overlay</span><span class="p">.</span><span class="nx">load</span><span class="w"> </span><span class="nx">voxels</span><span class="p">.</span><span class="nx">mif</span>
+</pre></div>
+</div>
+<p>We will visualize the voxels used to construct a basis function for each tissue type using Matplotlib. CSF voxels should be colored red, gray matter voxels green, and white matter voxels blue:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to convert .mif files to temporary .nii.gz files</span>
+<span class="k">def</span> <span class="nf">convert_mif_to_nii</span><span class="p">(</span><span class="n">mif_file</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.nii.gz&quot;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_file</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;mrconvert&quot;</span><span class="p">,</span> <span class="n">mif_file</span><span class="p">,</span> <span class="n">temp_file</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;-force&quot;</span><span class="p">],</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error in mrconvert: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">stderr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">exit</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">temp_file</span><span class="o">.</span><span class="n">name</span>
+
+<span class="n">mif_file_path1</span> <span class="o">=</span> <span class="s1">&#39;sub-02_den_preproc_unbiased.mif&#39;</span>
+<span class="n">mif_file_path2</span> <span class="o">=</span> <span class="s1">&#39;voxels.mif&#39;</span>
+
+<span class="c1"># Convert both .mif files to temporary .nii.gz files</span>
+<span class="n">nii_file1</span> <span class="o">=</span> <span class="n">convert_mif_to_nii</span><span class="p">(</span><span class="n">mif_file_path1</span><span class="p">)</span>
+<span class="n">nii_file2</span> <span class="o">=</span> <span class="n">convert_mif_to_nii</span><span class="p">(</span><span class="n">mif_file_path2</span><span class="p">)</span>
+
+<span class="c1"># Load the converted images</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">nii_file1</span><span class="p">)</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">nii_file2</span><span class="p">)</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
+
+<span class="c1"># Choose the middle slices </span>
+<span class="n">slice_idx1</span> <span class="o">=</span> <span class="n">data1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># Axial slice </span>
+<span class="n">slice_idx2</span> <span class="o">=</span> <span class="n">data1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># Coronal slice </span>
+<span class="n">slice_idx3</span> <span class="o">=</span> <span class="n">data1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># Sagittal slice</span>
+
+<span class="c1"># Prepare RGB overlay for tissue types </span>
+<span class="n">rgb_overlay</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">rgb_overlay</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">data2</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># Red for CSF</span>
+<span class="n">rgb_overlay</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">data2</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># Green for GM</span>
+<span class="n">rgb_overlay</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">data2</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>  <span class="c1"># Blue for WM</span>
+
+<span class="c1"># Plot the slices using Matplotlib</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Axial slice</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">data1</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">slice_idx1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greys_r&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">700</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">rgb_overlay</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">slice_idx1</span><span class="p">]),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Axial Slice&#39;</span><span class="p">)</span>
+
+<span class="c1"># Coronal slice</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">data1</span><span class="p">[:,</span> <span class="n">slice_idx2</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greys_r&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">700</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">rgb_overlay</span><span class="p">[:,</span> <span class="n">slice_idx2</span><span class="p">,</span> <span class="p">:]),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Coronal Slice&#39;</span><span class="p">)</span>
+
+<span class="c1"># Sagittal slice</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">data1</span><span class="p">[</span><span class="n">slice_idx3</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greys_r&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">700</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">rgb_overlay</span><span class="p">[</span><span class="n">slice_idx3</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Sagittal Slice&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adjust layout and display</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e3fae5017c1a83b273ac48e16313d1c99b736a55f31c25b21abb2d29ba615472.png" src="../_images/e3fae5017c1a83b273ac48e16313d1c99b736a55f31c25b21abb2d29ba615472.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="fiber-orientation-density-fod">
+<h2>Fiber Orientation Density (FOD)<a class="headerlink" href="#fiber-orientation-density-fod" title="Link to this heading">#</a></h2>
+<p>We will now use the basis functions generated above to create Fiber Orientation Densities, or FODs. These are estimates of the amount of diffusion in each of three orthogonal directions. As described in the introductory chapter, these are analogous to the tensors that are used in traditional diffusion studies. However, MRtrix allows for the estimation of multiple crossing fibers within a single voxel, and can resolve the diffusion signal into multiple directions.</p>
+<p>To do this, we will use the command <code class="docutils literal notranslate"><span class="pre">dwi2fod</span></code> to apply the basis functions to the diffusion data. The “-mask” option specifies which voxels we will use; this is simply to restrict our analysis to brain voxels and reduce the computing time. The “.mif” files specified after each basis function will output an FOD image for that tissue type:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>dwi2fod<span class="w"> </span>msmt_csd<span class="w"> </span>sub-02_den_preproc_unbiased.mif<span class="w"> </span>-mask<span class="w"> </span>mask.mif<span class="w"> </span>wm.txt<span class="w"> </span>wmfod.mif<span class="w"> </span>gm.txt<span class="w"> </span>gmfod.mif<span class="w"> </span>csf.txt<span class="w"> </span>csffod.mif
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dwi2fod: [100%] preloading data for &quot;sub-02_den_preproc_unbiased.mif&quot;[0K?7h?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l
+dwi2fod: [100%] performing MSMT CSD (4 shells, 3 tissues)[0K?7h?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l
+</pre></div>
+</div>
+</div>
+</div>
+<p>In order to view these FODs, we will combine them into a single image. The command <code class="docutils literal notranslate"><span class="pre">mrconvert</span></code> will extract the first image from the wmfod.mif file, which is the image with a b-value of 0. The output of this command is then used as the input into an <code class="docutils literal notranslate"><span class="pre">mrcat</span></code> command which combines the FOD images from all three tissue types into a single image that we will call “vf.mif”:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>mrconvert<span class="w"> </span>-coord<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>wmfod.mif<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>mrcat<span class="w"> </span>csffod.mif<span class="w"> </span>gmfod.mif<span class="w"> </span>-<span class="w"> </span>vf.mif
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] copying from &quot;wmfod.mif&quot; to &quot;/tmp/mrtrix-tmp-TcGmQq.mif&quot;[0K?7h?7l?7l
+mrcat: [100%] concatenating &quot;csffod.mif&quot;[0K?7h?7l
+mrcat: [100%] concatenating &quot;gmfod.mif&quot;[0K?7h?7l
+mrcat: [100%] concatenating &quot;/tmp/mrtrix-tmp-TcGmQq.mif&quot;[0K?7h?7l
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id3">
+<h3><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>The white matter FODs can then be overlaid on this image, so that we can observe whether the white matter FODs do indeed fall within the white matter, and also whether they are along the orientations that we would expect. The command for mrview is:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mrview</span><span class="w"> </span><span class="nx">vf</span><span class="p">.</span><span class="nx">mif</span><span class="w"> </span><span class="o">-</span><span class="nx">odf</span><span class="p">.</span><span class="nx">load_sh</span><span class="w"> </span><span class="nx">wmfod</span><span class="p">.</span><span class="nx">mif</span>
+</pre></div>
+</div>
+<p>Again, we will use the python libraries <strong>Matplotlib</strong> and <strong>Dipy</strong> to visualize white matter FODs of an axial slice. This quiver plot represents a simplification, as it projects the dominant FOD directions onto the XY plane (ignoring the Z component). The quiver lengths are not scaled by the FOD magnitude to maintain clarity in dense regions. Thus, the arrows indicate orientation but not the relative magnitude of anisotropy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert vf.mif and wmfod.mif to .nii.gz</span>
+<span class="n">vf_nii_path</span> <span class="o">=</span> <span class="n">convert_mif_to_nii</span><span class="p">(</span><span class="s1">&#39;vf.mif&#39;</span><span class="p">)</span>
+<span class="n">wmfod_nii_path</span> <span class="o">=</span> <span class="n">convert_mif_to_nii</span><span class="p">(</span><span class="s1">&#39;wmfod.mif&#39;</span><span class="p">)</span>
+
+<span class="c1"># Load the vf image and FOD WM</span>
+<span class="n">vf_data</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">vf_nii_path</span><span class="p">)</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
+<span class="n">wmfod_data</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">wmfod_nii_path</span><span class="p">)</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
+
+<span class="c1"># Initialize figure</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+
+<span class="c1"># Extract the middle axial slice of white matter, gray matter abd CSF</span>
+<span class="n">slice_index</span> <span class="o">=</span> <span class="n">vf_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="n">csf</span> <span class="o">=</span> <span class="n">vf_data</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">slice_index</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  
+<span class="n">gray_matter</span> <span class="o">=</span> <span class="n">vf_data</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">slice_index</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>   
+<span class="n">white_matter</span> <span class="o">=</span> <span class="n">vf_data</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">slice_index</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> 
+
+<span class="c1"># Plot each tissue type with the corresponding color</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">csf</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>  
+<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">gray_matter</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greens&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>  
+<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">white_matter</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+<span class="c1"># Extract the FOD data for the the WM</span>
+<span class="n">fod_slice</span> <span class="o">=</span> <span class="n">wmfod_data</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">slice_index</span><span class="p">]</span>
+
+<span class="c1"># Generate grid for plotting</span>
+<span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">fod_slice</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">fod_slice</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> 
+
+<span class="n">sh_order</span> <span class="o">=</span> <span class="mi">8</span>  <span class="c1"># Corresponds to lmax=8</span>
+<span class="n">fod_amplitudes</span> <span class="o">=</span> <span class="n">sh_to_sf</span><span class="p">(</span><span class="n">fod_slice</span><span class="p">,</span> <span class="n">default_sphere</span><span class="p">,</span> <span class="n">sh_order_max</span><span class="o">=</span><span class="n">sh_order</span><span class="p">,</span> <span class="n">basis_type</span><span class="o">=</span><span class="s1">&#39;tournier07&#39;</span><span class="p">)</span> 
+
+<span class="c1"># Find the dominant direction for each voxel</span>
+<span class="n">max_fod_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">fod_amplitudes</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>  
+<span class="n">dominant_directions</span> <span class="o">=</span> <span class="n">default_sphere</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="n">max_fod_index</span><span class="p">]</span>  <span class="c1"># directions are based on the default sphere</span>
+
+<span class="c1"># Extract the 2D components for quiver plot</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">dominant_directions</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># X-component</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">dominant_directions</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># Y-component</span>
+
+<span class="c1"># Apply the white matter mask </span>
+<span class="n">white_matter_mask</span> <span class="o">=</span> <span class="n">white_matter</span> <span class="o">&gt;</span> <span class="mf">0.1</span>
+<span class="n">u</span><span class="p">[</span><span class="o">~</span><span class="n">white_matter_mask</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">v</span><span class="p">[</span><span class="o">~</span><span class="n">white_matter_mask</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Normalize and scale the vectors for consistent arrow lengths and better visualization</span>
+<span class="n">magnitude</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">u</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">u_normalized</span> <span class="o">=</span> <span class="n">u</span> <span class="o">/</span> <span class="p">(</span><span class="n">magnitude</span> <span class="o">+</span> <span class="mf">1e-6</span><span class="p">)</span>
+<span class="n">v_normalized</span> <span class="o">=</span> <span class="n">v</span> <span class="o">/</span> <span class="p">(</span><span class="n">magnitude</span> <span class="o">+</span> <span class="mf">1e-6</span><span class="p">)</span>
+<span class="n">scale_factor</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">u_normalized</span> <span class="o">*=</span> <span class="n">scale_factor</span>
+<span class="n">v_normalized</span> <span class="o">*=</span> <span class="n">scale_factor</span>
+
+<span class="c1"># Plot the vectors using quiver</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">u_normalized</span><span class="p">,</span> <span class="n">v_normalized</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;White Matter FODs: Dominant Directions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/43f7b69e69ed79d2a2f4b129ebd2acd20a79bf22d4409129625cfddc9d2ff368.png" src="../_images/43f7b69e69ed79d2a2f4b129ebd2acd20a79bf22d4409129625cfddc9d2ff368.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="normalization">
+<h2>Normalization<a class="headerlink" href="#normalization" title="Link to this heading">#</a></h2>
+<p>In order to make the comparisons valid across subjects, we will need to normalize the FODs. This ensures that any differences we see are not due to intensity differences in the image, similar to how we correct for the size of the brain when comparing volumetric differences across subjects.</p>
+<p>To normalize the data, we will use the <code class="docutils literal notranslate"><span class="pre">mtnormalise</span></code> command. This requires an input and output for each tissue type, as well as a mask to restrict the analysis to brain voxels:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>mtnormalise<span class="w"> </span>wmfod.mif<span class="w"> </span>wmfod_norm.mif<span class="w"> </span>gmfod.mif<span class="w"> </span>gmfod_norm.mif<span class="w"> </span>csffod.mif<span class="w"> </span>csffod_norm.mif<span class="w"> </span>-mask<span class="w"> </span>mask.mif
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mtnormalise: [100%] performing log-domain intensity normalisation[0K?7h?7l?7l?7l?7l?7l?7l?7l?7l?7l
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we’ve correctly estimated the FODs for each tissue type, we are ready to begin laying down the foundation for our tractography analysis. The next step will be to determine the boundary between the grey matter and the white matter, which we will use as a starting point for our streamlines.</p>
+</section>
+<section id="creating-the-tissue-boundaries">
+<h2>Creating the Tissue Boundaries<a class="headerlink" href="#creating-the-tissue-boundaries" title="Link to this heading">#</a></h2>
+<p>We are almost ready to begin our streamline analysis, in which we will place seeds at random locations along the boundary between the grey matter and the white matter. A streamline will grow from each seed and trace a path from that seed region until it terminates in another region. Some of the streamlines will terminate in places that don’t make sense - for example, a streamline may terminate at the border of the ventricles. We will cull these “error” streamlines, and be left with a majority of streamlines that appear to connect distant grey matter regions.</p>
+<p>To do this, we will first need to create a boundary between the grey matter and the white matter. The MRtrix command <code class="docutils literal notranslate"><span class="pre">5ttgen</span></code> will use FSL’s FAST, along with other commands, to segment the anatomical image into five tissue types:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Grey Matter;
+
+Subcortical Grey Matter (such as the amygdala and basal ganglia);
+
+White Matter;
+
+Cerebrospinal Fluid; and
+
+Pathological Tissue.
+</pre></div>
+</div>
+<p>Once we have segmented the brain into those tissue classes, we can then use the boundary as a mask to restrict where we will place our seeds.</p>
+<section id="converting-the-anatomical-image">
+<h3>Converting the Anatomical Image<a class="headerlink" href="#converting-the-anatomical-image" title="Link to this heading">#</a></h3>
+<p>The anatomical image first needs to be converted to MRtrix format with <code class="docutils literal notranslate"><span class="pre">mrconvert</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>mrconvert<span class="w"> </span>sub-CON02_ses-preop_T1w.nii.gz<span class="w"> </span>T1.mif
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] uncompressing image &quot;sub-CON02_ses-preop_T1w.nii.gz&quot;[0K?7h?7l?7l?7l
+mrconvert: [100%] copying from &quot;sub-CON02_ses-preop_T1w.nii.gz&quot; to &quot;T1.mif&quot;[0K?7h?7l
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>5ttgen<span class="w"> </span>fsl<span class="w"> </span>T1.mif<span class="w"> </span>5tt_nocoreg.mif
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5ttgen: 
+5ttgen: <span class=" -Color -Color-Green">Note that this script makes use of commands / algorithms that have relevant articles for citation; INCLUDING FROM EXTERNAL SOFTWARE PACKAGES. Please consult the help page (-help option) for more information.</span>
+5ttgen: 
+5ttgen: <span class=" -Color -Color-Green">Generated scratch directory: /home/jovyan/Git_repositories/MRtrix_preprocessed/5ttgen-tmp-1LOI5O/</span>
+<span class=" -Color -Color-Cyan">Command:</span>  mrconvert /home/jovyan/Git_repositories/MRtrix_preprocessed/T1.mif /home/jovyan/Git_repositories/MRtrix_preprocessed/5ttgen-tmp-1LOI5O/input.mif
+5ttgen: <span class=" -Color -Color-Green">Changing to scratch directory (/home/jovyan/Git_repositories/MRtrix_preprocessed/5ttgen-tmp-1LOI5O/)</span>
+<span class=" -Color -Color-Cyan">Command:</span>  mrconvert input.mif T1.nii -strides -1,+2,+3
+<span class=" -Color -Color-Cyan">Command:</span>  maskfilter /opt/fsl-6.0.5.1/data/standard/MNI152_T1_1mm_brain_mask_dil.nii.gz dilate mni_mask.nii -npass 4
+<span class=" -Color -Color-Cyan">Command:</span>  standard_space_roi T1.nii T1_preBET.nii.gz -maskMASK mni_mask.nii -roiFOV
+<span class=" -Color -Color-Cyan">Command:</span>  bet T1_preBET.nii.gz T1_BET.nii.gz -f 0.15 -R
+<span class=" -Color -Color-Cyan">Command:</span>  fast T1_BET.nii.gz
+<span class=" -Color -Color-Cyan">Command:</span>  run_first_all -m none -s L_Accu,R_Accu,L_Caud,R_Caud,L_Pall,R_Pall,L_Puta,R_Puta,L_Thal,R_Thal -i T1.nii -o first
+5ttgen: <span class=" -Color -Color-Cyan">[100%]</span> <span class=" -Color -Color-Green">Generating partial volume images for SGM structures</span>?7h?7h?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l
+<span class=" -Color -Color-Cyan">Command:</span>  mrmath [mesh2voxel_*.mif (10 items)] sum - | mrcalc - 1.0 -min all_sgms.mif
+<span class=" -Color -Color-Cyan">Command:</span>  mrthreshold T1_BET_pve_2.nii.gz - -abs 0.001 | maskfilter - connect - -connectivity | mrcalc 1 - 1 -gt -sub remove_unconnected_wm_mask.mif -datatype bit
+<span class=" -Color -Color-Cyan">Command:</span>  mrcalc T1_BET_pve_0.nii.gz remove_unconnected_wm_mask.mif -mult csf.mif
+<span class=" -Color -Color-Cyan">Command:</span>  mrcalc 1.0 csf.mif -sub all_sgms.mif -min sgm.mif
+<span class=" -Color -Color-Cyan">Command:</span>  mrcalc 1.0 csf.mif sgm.mif -add -sub T1_BET_pve_1.nii.gz T1_BET_pve_2.nii.gz -add -div multiplier.mif
+<span class=" -Color -Color-Cyan">Command:</span>  mrcalc multiplier.mif -finite multiplier.mif 0.0 -if multiplier_noNAN.mif
+<span class=" -Color -Color-Cyan">Command:</span>  mrcalc T1_BET_pve_1.nii.gz multiplier_noNAN.mif -mult remove_unconnected_wm_mask.mif -mult cgm.mif
+<span class=" -Color -Color-Cyan">Command:</span>  mrcalc T1_BET_pve_2.nii.gz multiplier_noNAN.mif -mult remove_unconnected_wm_mask.mif -mult wm.mif
+<span class=" -Color -Color-Cyan">Command:</span>  mrcalc 0 wm.mif -min path.mif
+<span class=" -Color -Color-Cyan">Command:</span>  mrcat cgm.mif sgm.mif wm.mif csf.mif path.mif - -axis 3 | mrconvert - combined_precrop.mif -strides +2,+3,+4,+1
+<span class=" -Color -Color-Cyan">Command:</span>  mrmath combined_precrop.mif sum - -axis 3 | mrthreshold - - -abs 0.5 | mrgrid combined_precrop.mif crop result.mif -mask -
+<span class=" -Color -Color-Cyan">Command:</span>  mrconvert result.mif /home/jovyan/Git_repositories/MRtrix_preprocessed/5tt_nocoreg.mif
+<span class=" -Color -Color-Cyan">Command:</span>  5ttcheck result.mif
+5ttgen: <span class=" -Color -Color-Green">Changing back to original directory (/home/jovyan/Git_repositories/MRtrix_preprocessed)</span>
+5ttgen: <span class=" -Color -Color-Green">Deleting scratch directory (/home/jovyan/Git_repositories/MRtrix_preprocessed/5ttgen-tmp-1LOI5O/)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id4">
+<h4><a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>This command will take about 10-15 minutes. If the segmentation has finished successfully, you can visualize the images with</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mrview</span><span class="w"> </span><span class="mf">5</span><span class="nx">tt_nocoreg</span><span class="p">.</span><span class="nx">mif</span>
+</pre></div>
+</div>
+<p>The output from 5ttgen fsl anat.mif 5tt_nocoreg.mif will be a single dataset with 5 volumes, one per tissue type. Check this image with <code class="docutils literal notranslate"><span class="pre">mrview</span></code>, using the right and left arrow keys to toggle between tissue types. The tissue types are: GM, WM, CSF, subcortical GM, and pathological tissue. If no pathological tissue is detected, then that volume is blank.</p>
+<section id="id5">
+<h5><a class="headerlink" href="#id5" title="Link to this heading">#</a></h5>
+<p>Here, we will use <strong>AnyNiivue</strong> for interactive visualization of the different tissue types:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_files</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">mif_file_path</span> <span class="o">=</span> <span class="s1">&#39;5tt_nocoreg.mif&#39;</span>
+
+<span class="c1"># Extract frames with mrconvert into temporary files</span>
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.mif&quot;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_file</span><span class="p">:</span>
+        <span class="n">temp_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># Close the temp file so subprocess can overwrite it</span>
+        <span class="n">output_path</span> <span class="o">=</span> <span class="n">temp_file</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">output_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;mrconvert&quot;</span><span class="p">,</span> <span class="n">mif_file_path</span><span class="p">,</span> <span class="s2">&quot;-coord&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">idx</span><span class="p">),</span> <span class="n">output_path</span><span class="p">,</span> <span class="s2">&quot;-force&quot;</span><span class="p">,</span> <span class="s2">&quot;-quiet&quot;</span><span class="p">])</span>
+
+<span class="n">nv1</span> <span class="o">=</span> <span class="n">AnyNiivue</span><span class="p">()</span>
+<span class="n">nv2</span> <span class="o">=</span> <span class="n">AnyNiivue</span><span class="p">()</span>
+<span class="n">nv3</span> <span class="o">=</span> <span class="n">AnyNiivue</span><span class="p">()</span>
+<span class="n">nv4</span> <span class="o">=</span> <span class="n">AnyNiivue</span><span class="p">()</span>
+<span class="n">nv5</span> <span class="o">=</span> <span class="n">AnyNiivue</span><span class="p">()</span>
+
+<span class="c1"># Load the volumes into the separate viewers</span>
+<span class="n">nv1</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">0</span><span class="p">]}])</span>
+<span class="n">nv2</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">1</span><span class="p">]}])</span>
+<span class="n">nv3</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">2</span><span class="p">]}])</span>
+<span class="n">nv4</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">3</span><span class="p">]}])</span>
+<span class="n">nv5</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">4</span><span class="p">]}])</span>
+
+<span class="c1"># Display the viewers in separate outputs</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;### GM&quot;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">nv1</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;### Subcortical GM&quot;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">nv2</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;### WM&quot;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">nv3</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;### CSF&quot;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">nv4</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;### Pathological tissue&quot;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">nv5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<h3 class="rubric" id="gm">GM</h3>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "de6796189ad247faa5cb4ffc39877ed2", "version_major": 2, "version_minor": 0}</script><h3 class="rubric" id="subcortical-gm">Subcortical GM</h3>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "464e9a38af74427f9de2410cbe6b4d90", "version_major": 2, "version_minor": 0}</script><h3 class="rubric" id="wm">WM</h3>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "36fa76f867454819af732f0d43a727fa", "version_major": 2, "version_minor": 0}</script><h3 class="rubric" id="csf">CSF</h3>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0cec9a510593453e9cf54defb32b9958", "version_major": 2, "version_minor": 0}</script><h3 class="rubric" id="pathological-tissue">Pathological tissue</h3>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "44ad5e67061f4e0baec514bff592b269", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div style="background-color: #f0f8ff; padding: 10px; border-radius: 5px;">
+    <div style="background-color: #add8e6; padding: 5px; border-radius: 5px; font-weight: bold;">
+        <span style="font-size: 15px; color: #add8e6; background-color: white; border-radius: 50%; width: 20px; height: 20px; display: inline-block; text-align: center; line-height: 20px;">
+            !
+        </span> <span style="color: white;">Note:</span>
+    </div>
+    <p style="margin: 10px 0;">
+If the segmentation step fails, this may be due to insufficient contrast between the tissue types; for example, some anatomical images are either very dark across both the grey and white matter, or very light across both tissue types. We can help the segmentation process by increasing the intensity contrast (also known as intensity normalization) between the tissues with a command like AFNI’s 3dUnifize, e.g. </p>
+        <code>3dUnifize -input anat.nii -prefix anat_unifize.nii</code> </p>
+        The difference between the image before and after may be subtle, but it can prevent a segmentation error from being thrown.
+    </p>
+</div></section>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-root-py"
+        },
+        kernelOptions: {
+            name: "conda-root-py",
+            path: "./diffusion_imaging"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-root-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="mrtrix3tissue.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">MRtrix3Tissue</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../functional_imaging/aslprep.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ASLprep</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-python-modules">Import Python Modules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-packages">Load packages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-the-preprocessed-data-from-mrtrix-part-1">Downloading the preprocessed data from MRtrix Part 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-spherical-deconvolution">Constrained Spherical Deconvolution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dwi2response">dwi2response</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiber-orientation-density-fod">Fiber Orientation Density (FOD)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">Normalization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-tissue-boundaries">Creating the Tissue Boundaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-the-anatomical-image">Converting the Anatomical Image</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Neurodesk Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
