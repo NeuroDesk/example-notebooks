@@ -36,6 +36,8 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/docsearch.css?v=11fa07e7" />
+    <link rel="stylesheet" type="text/css" href="_static/algolia.css?v=6923f26e" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
@@ -73,6 +75,8 @@
             </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <script src="_static/docsearch.js?v=7f574ec7"></script>
+    <script src="_static/algolia.js?v=1ab818a8"></script>
     <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/genindex.html" />
     <link rel="icon" href="_static/neurodesk_logo.svg"/>
     <link rel="index" title="Index" href="#" />
@@ -184,23 +188,20 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="workflows/RISE_slideshow.html">RISE Slideshow of a Jupyter Notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflows/bids_conversion.html">BIDS conversion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflows/nipype_full.html">Nipype on Neurodesk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflows/nipype_short.html">Basic Nipype</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="workflows/RISE_slideshow.html">RISE Slideshow of a Jupyter Notebook</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Structural Imaging</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="structural_imaging/sct_toolbox.html">SCT Toolbox</a></li>
-
-
+<li class="toctree-l1"><a class="reference internal" href="structural_imaging/brain_extraction_different_tools.html">Brain extraction with different software packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structural_imaging/freesurfer.html">Freesurfer</a></li>
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="structural_imaging/brain_extraction_different_tools.html">Brain extraction with different software packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structural_imaging/qsmxt.html">QSMxT</a></li>
 
 
@@ -210,29 +211,32 @@
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="structural_imaging/sct_toolbox.html">SCT Toolbox</a></li>
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Diffusion Imaging</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="diffusion_imaging/MRtrix_Preprocessing.html">Diffusion Analysis with MRtrix: Part 1 - Preprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diffusion_imaging/MRtrix_CoReg_Streamline.html">Diffusion Analysis with MRtrix: Part 3 - Registration and Streamline Fitting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diffusion_imaging/mrtrix3tissue.html">MRtrix3Tissue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diffusion_imaging/MRtrix_CSD.html">Diffusion Analysis with MRtrix: Part 2 - Constrained Spherical Deconvolution and Tissue estimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diffusion_imaging/MRtrix_CoReg_Streamline.html">Diffusion Analysis with MRtrix: Part 3 - Registration and Streamline Fitting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diffusion_imaging/MRtrix_Preprocessing.html">Diffusion Analysis with MRtrix: Part 1 - Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diffusion_imaging/mrtrix3tissue.html">MRtrix3Tissue</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Imaging</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="functional_imaging/aslprep.html">ASLprep</a></li>
-<li class="toctree-l1"><a class="reference internal" href="functional_imaging/intro_to_preprocessing.html">Introduction to Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional_imaging/deepretinotopy.html">DeepRetinotopy</a></li>
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="functional_imaging/first_and_second_level_spm.html">First and Second Level fMRI Analysis with SPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional_imaging/fmriprep.html">fMRIprep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional_imaging/intro_to_preprocessing.html">Introduction to Preprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functional_imaging/nipype_fsl_all_levels_flanker.html">FSL’s fMRI Data Analysis via Nipype</a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="functional_imaging/deepretinotopy.html">DeepRetinotopy</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="functional_imaging/fmriprep.html">fMRIprep</a></li>
 </ul>
 
     </div>
