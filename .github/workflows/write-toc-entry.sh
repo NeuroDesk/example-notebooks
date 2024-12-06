@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the list of notebook files
-notebook_list=($(find . -type f -name "*.ipynb" | sed 's|^\./||'))
+notebook_list=($(find . -type f -name "*.ipynb" | sed 's|^\./||' | sort))
 
 # Function to capitalize the first letter of each word
 capitalize() {
