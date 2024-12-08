@@ -783,8 +783,7 @@ PATTERN_PATIENTS=&quot;sub-PAT0[1-4]&quot;
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pwd
-<span class="o">!</span><span class="w"> </span>mrconvert<span class="w"> </span>sub-CON02_ses-preop_acq-AP_dwi.nii.gz<span class="w"> </span>sub-02_dwi.mif<span class="w"> </span>-fslgrad<span class="w"> </span>sub-CON02_ses-preop_acq-AP_dwi.bvec<span class="w"> </span>sub-CON02_ses-preop_acq-AP_dwi.bval
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>mrconvert<span class="w"> </span>sub-CON02_ses-preop_acq-AP_dwi.nii.gz<span class="w"> </span>sub-02_dwi.mif<span class="w"> </span>-fslgrad<span class="w"> </span>sub-CON02_ses-preop_acq-AP_dwi.bvec<span class="w"> </span>sub-CON02_ses-preop_acq-AP_dwi.bval
 </pre></div>
 </div>
 </div>
@@ -899,59 +898,59 @@ If the number of volumes in your dataset and the number of bvals and bvecs do no
 <p>We will use AnyNiivue for the interactive visualization of 3 different volumes, which can be selected using radio buttons:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the .mif file and choose different volumes</span>
-<span class="n">mif_file_path</span> <span class="o">=</span> <span class="s2">&quot;sub-02_dwi.mif&quot;</span>
-<span class="n">volume_indices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">output_files</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # Load the .mif file and choose different volumes</span>
+<span class="c1"># mif_file_path = &quot;sub-02_dwi.mif&quot;</span>
+<span class="c1"># volume_indices = [0, 2, 3]</span>
+<span class="c1"># output_files = []</span>
 
-<span class="c1"># Extract frames/volumes with mrconvert into temporary files</span>
-<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">volume_indices</span><span class="p">:</span>
-    <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.mif&quot;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_file</span><span class="p">:</span>
-        <span class="n">temp_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># Close the temp file so subprocess can overwrite it</span>
-        <span class="n">output_path</span> <span class="o">=</span> <span class="n">temp_file</span><span class="o">.</span><span class="n">name</span>
-        <span class="n">output_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
-        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;mrconvert&quot;</span><span class="p">,</span> <span class="n">mif_file_path</span><span class="p">,</span> <span class="s2">&quot;-coord&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">idx</span><span class="p">),</span> <span class="n">output_path</span><span class="p">,</span> <span class="s2">&quot;-force&quot;</span><span class="p">,</span> <span class="s2">&quot;-quiet&quot;</span><span class="p">])</span>
+<span class="c1"># # Extract frames/volumes with mrconvert into temporary files</span>
+<span class="c1"># for idx in volume_indices:</span>
+<span class="c1">#     with tempfile.NamedTemporaryFile(suffix=&quot;.mif&quot;, delete=False) as temp_file:</span>
+<span class="c1">#         temp_file.close()  # Close the temp file so subprocess can overwrite it</span>
+<span class="c1">#         output_path = temp_file.name</span>
+<span class="c1">#         output_files.append(output_path)</span>
+<span class="c1">#         subprocess.run([&quot;mrconvert&quot;, mif_file_path, &quot;-coord&quot;, &quot;3&quot;, str(idx), output_path, &quot;-force&quot;, &quot;-quiet&quot;])</span>
 
-<span class="c1"># Initialize the Niivue viewer</span>
-<span class="n">nv</span> <span class="o">=</span> <span class="n">AnyNiivue</span><span class="p">()</span>
+<span class="c1"># # Initialize the Niivue viewer</span>
+<span class="c1"># nv = AnyNiivue()</span>
 
-<span class="c1"># Define the volumes with opacity set to 0 initially for all but the default layer 0 (opacity = 1.0)</span>
-<span class="n">volumes</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">},</span>
-<span class="p">]</span>
+<span class="c1"># # Define the volumes with opacity set to 0 initially for all but the default layer 0 (opacity = 1.0)</span>
+<span class="c1"># volumes = [</span>
+<span class="c1">#     {&quot;path&quot;: output_files[0], &quot;colormap&quot;: &quot;gray&quot;, &quot;opacity&quot;: 1.0},</span>
+<span class="c1">#     {&quot;path&quot;: output_files[1], &quot;colormap&quot;: &quot;gray&quot;, &quot;opacity&quot;: 0.0},</span>
+<span class="c1">#     {&quot;path&quot;: output_files[2], &quot;colormap&quot;: &quot;gray&quot;, &quot;opacity&quot;: 0.0},</span>
+<span class="c1"># ]</span>
 
-<span class="c1"># Load all the volumes into the viewer</span>
-<span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">(</span><span class="n">volumes</span><span class="p">)</span>
+<span class="c1"># # Load all the volumes into the viewer</span>
+<span class="c1"># nv.load_volumes(volumes)</span>
 
-<span class="c1"># Function to update the opacity of the layers based on selection</span>
-<span class="k">def</span> <span class="nf">update_layer</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
-    <span class="n">selected_index</span> <span class="o">=</span> <span class="n">change</span><span class="o">.</span><span class="n">new</span>
+<span class="c1"># # Function to update the opacity of the layers based on selection</span>
+<span class="c1"># def update_layer(change):</span>
+<span class="c1">#     selected_index = change.new</span>
 
-    <span class="c1"># Set opacity to 0 for all volumes</span>
-    <span class="k">for</span> <span class="n">volume</span> <span class="ow">in</span> <span class="n">nv</span><span class="o">.</span><span class="n">volumes</span><span class="p">:</span>
-        <span class="n">volume</span><span class="o">.</span><span class="n">opacity</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="c1">#     # Set opacity to 0 for all volumes</span>
+<span class="c1">#     for volume in nv.volumes:</span>
+<span class="c1">#         volume.opacity = 0.0</span>
 
-    <span class="c1"># Set opacity to 1 for the selected volume</span>
-    <span class="n">nv</span><span class="o">.</span><span class="n">volumes</span><span class="p">[</span><span class="n">selected_index</span><span class="p">]</span><span class="o">.</span><span class="n">opacity</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="c1">#     # Set opacity to 1 for the selected volume</span>
+<span class="c1">#     nv.volumes[selected_index].opacity = 1.0</span>
 
-<span class="c1"># Create RadioButtons widget for selecting the active layer</span>
-<span class="n">layer_selector</span> <span class="o">=</span> <span class="n">RadioButtons</span><span class="p">(</span>
-    <span class="n">options</span><span class="o">=</span><span class="p">[</span>
-        <span class="p">(</span><span class="s2">&quot;Volume 0&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;Volume 2&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;Volume 3&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-    <span class="p">],</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Select Volume:&#39;</span><span class="p">,</span>
-    <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;initial&#39;</span><span class="p">}</span>
-<span class="p">)</span>
+<span class="c1"># # Create RadioButtons widget for selecting the active layer</span>
+<span class="c1"># layer_selector = RadioButtons(</span>
+<span class="c1">#     options=[</span>
+<span class="c1">#         (&quot;Volume 0&quot;, 0),</span>
+<span class="c1">#         (&quot;Volume 2&quot;, 1),</span>
+<span class="c1">#         (&quot;Volume 3&quot;, 2),</span>
+<span class="c1">#     ],</span>
+<span class="c1">#     description=&#39;Select Volume:&#39;,</span>
+<span class="c1">#     style={&#39;description_width&#39;: &#39;initial&#39;}</span>
+<span class="c1"># )</span>
 
-<span class="c1"># Observe changes in the RadioButtons widget</span>
-<span class="n">layer_selector</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_layer</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="c1"># # Observe changes in the RadioButtons widget</span>
+<span class="c1"># layer_selector.observe(update_layer, names=&#39;value&#39;)</span>
 
-<span class="c1"># Display the RadioButtons and the AnyNiivue viewer</span>
-<span class="n">display</span><span class="p">(</span><span class="n">VBox</span><span class="p">([</span><span class="n">layer_selector</span><span class="p">,</span> <span class="n">nv</span><span class="p">]))</span>
+<span class="c1"># # Display the RadioButtons and the AnyNiivue viewer</span>
+<span class="c1"># display(VBox([layer_selector, nv]))</span>
 </pre></div>
 </div>
 </div>
