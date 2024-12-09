@@ -13,7 +13,7 @@ execute:
   execute_notebooks: force
   allow_errors: true
   timeout: 45000
-  stderr_output: error
+  stderr_output: show
   run_in_temp: true
   execution_show_tb: True
 
@@ -42,7 +42,7 @@ html:
 sphinx:
   config:
     nb_code_prompt_hide: "outputs"
-    nb_merge_streams: True
+    nb_merge_streams: true
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 parse:
