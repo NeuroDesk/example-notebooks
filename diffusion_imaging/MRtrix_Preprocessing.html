@@ -899,7 +899,7 @@ If the number of volumes in your dataset and the number of bvals and bvecs do no
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the .mif file and choose different volumes</span>
-<span class="n">mif_file_path</span> <span class="o">=</span> <span class="s2">&quot;./sub-02_dwi.mif&quot;</span>
+<span class="n">mif_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;sub-02_dwi.mif&quot;</span><span class="p">)</span>
 <span class="n">volume_indices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">output_files</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -1008,7 +1008,7 @@ dwidenoise: [100%] running MP-PCA denoising[0K?7h?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mif_file_path</span> <span class="o">=</span> <span class="s1">&#39;residual.mif&#39;</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mif_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s1">&#39;residual.mif&#39;</span><span class="p">)</span>
 
 <span class="c1"># Convert the .mif file to a temporary .nii.gz file with -force flag</span>
 <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.nii.gz&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_file</span><span class="p">:</span>
@@ -1144,8 +1144,8 @@ dwifslpreproc: <span class=" -Color -Color-Green">Scratch directory retained; lo
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># File paths for both images</span>
-<span class="n">mif_file_path1</span> <span class="o">=</span> <span class="s1">&#39;sub-02_den_preproc.mif&#39;</span>  
-<span class="n">mif_file_path2</span> <span class="o">=</span> <span class="s1">&#39;sub-02_dwi.mif&#39;</span>          
+<span class="n">mif_file_path1</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s1">&#39;sub-02_den_preproc.mif&#39;</span><span class="p">)</span>
+<span class="n">mif_file_path2</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s1">&#39;sub-02_dwi.mif&#39;</span><span class="p">)</span>
 
 <span class="c1"># Convert both .mif files to temporary .nii.gz files with -force flag</span>
 <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.nii.gz&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_file1</span><span class="p">,</span> \
@@ -1290,7 +1290,7 @@ dwi2mask: [done] applying mask cleaning filter[0K?7h?7l?7l
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mif_file_path</span> <span class="o">=</span> <span class="s1">&#39;mask.mif&#39;</span>  
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mif_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s1">&#39;mask.mif&#39;</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.nii.gz&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_file</span><span class="p">:</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;mrconvert&quot;</span><span class="p">,</span> <span class="n">mif_file_path</span><span class="p">,</span> <span class="n">temp_file</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;-force&quot;</span><span class="p">],</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
