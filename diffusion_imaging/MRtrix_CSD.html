@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/algolia.css?v=6923f26e" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -246,9 +246,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -492,13 +497,15 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiber-orientation-density-fod">Fiber Orientation Density (FOD)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruction-with-constrained-spherical-deconvolution-with-dipy">Reconstruction with Constrained Spherical Deconvolution with DIPY</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">Normalization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-tissue-boundaries">Creating the Tissue Boundaries</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-the-anatomical-image">Converting the Anatomical Image</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"></a></li>
 </ul>
 </li>
 </ul>
@@ -516,7 +523,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/diffusion_imaging/MRtrix_Preprocessing.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
+  <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/diffusion_imaging/MRtrix_CSD.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="diffusion-analysis-with-mrtrix-part-2-constrained-spherical-deconvolution-and-tissue-estimation">
 <h1>Diffusion Analysis with MRtrix: Part 2 - Constrained Spherical Deconvolution and Tissue estimation<a class="headerlink" href="#diffusion-analysis-with-mrtrix-part-2-constrained-spherical-deconvolution-and-tissue-estimation" title="Link to this heading">#</a></h1>
 <p>This notebook is the second in a series on Diffusion Analysis using MRtrix and builds upon the preprocessed data generated in <strong>Diffusion Analysis with MRtrix: Part 1 - Preprocessing</strong>. The data necessary for this example will be downloaded from OSF.</p>
@@ -590,7 +597,7 @@ model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">nibabel</span> <span class="n">matplotlib</span> <span class="n">dipy</span>
+<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">nibabel</span> <span class="n">matplotlib</span> <span class="n">dipy</span> <span class="n">fury</span>
 </pre></div>
 </div>
 </div>
@@ -605,8 +612,15 @@ model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
 <span class="kn">import</span> <span class="nn">tempfile</span>
 <span class="kn">from</span> <span class="nn">ipyniivue</span> <span class="kn">import</span> <span class="n">AnyNiivue</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">RadioButtons</span><span class="p">,</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">HBox</span><span class="p">,</span> <span class="n">Dropdown</span><span class="p">,</span> <span class="n">Output</span>
 <span class="kn">from</span> <span class="nn">dipy.data</span> <span class="kn">import</span> <span class="n">default_sphere</span>
-<span class="kn">from</span> <span class="nn">dipy.reconst.shm</span> <span class="kn">import</span> <span class="n">sh_to_sf</span>
+<span class="kn">from</span> <span class="nn">dipy.core.gradients</span> <span class="kn">import</span> <span class="n">gradient_table</span>
+<span class="kn">from</span> <span class="nn">dipy.io.image</span> <span class="kn">import</span> <span class="n">load_nifti</span>
+<span class="kn">from</span> <span class="nn">dipy.reconst.csdeconv</span> <span class="kn">import</span> <span class="n">auto_response_ssst</span>
+<span class="kn">from</span> <span class="nn">dipy.reconst.csdeconv</span> <span class="kn">import</span> <span class="n">ConstrainedSphericalDeconvModel</span>
+<span class="kn">from</span> <span class="nn">dipy.viz</span> <span class="kn">import</span> <span class="n">window</span><span class="p">,</span> <span class="n">actor</span>
+<span class="kn">from</span> <span class="nn">dipy.sims.voxel</span> <span class="kn">import</span> <span class="n">single_tensor_odf</span>
+<span class="kn">from</span> <span class="nn">dipy.direction</span> <span class="kn">import</span> <span class="n">peaks_from_model</span>
 </pre></div>
 </div>
 </div>
@@ -643,13 +657,15 @@ model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>osf<span class="w"> </span>-p<span class="w"> </span>y2dq4<span class="w"> </span>fetch<span class="w"> </span>preprocessed/mask.mif<span class="w"> </span>MRtrix_preprocessed/mask.mif
 <span class="o">!</span><span class="w"> </span>osf<span class="w"> </span>-p<span class="w"> </span>y2dq4<span class="w"> </span>fetch<span class="w"> </span>preprocessed/sub-02_den_preproc_unbiased.mif<span class="w"> </span>MRtrix_preprocessed/sub-02_den_preproc_unbiased.mif
 <span class="o">!</span><span class="w"> </span>osf<span class="w"> </span>-p<span class="w"> </span>y2dq4<span class="w"> </span>fetch<span class="w"> </span>preprocessed/sub-CON02_ses-preop_T1w.nii.gz<span class="w"> </span>MRtrix_preprocessed/sub-CON02_ses-preop_T1w.nii.gz
+<span class="o">!</span><span class="w"> </span>osf<span class="w"> </span>-p<span class="w"> </span>y2dq4<span class="w"> </span>fetch<span class="w"> </span>preprocessed/sub-02_AP.bval<span class="w"> </span>MRtrix_preprocessed/sub-02_AP.bval
+<span class="o">!</span><span class="w"> </span>osf<span class="w"> </span>-p<span class="w"> </span>y2dq4<span class="w"> </span>fetch<span class="w"> </span>preprocessed/sub-02_AP.bvec<span class="w"> </span>MRtrix_preprocessed/sub-02_AP.bvec
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████| 80.0k/80.0k [00:00&lt;00:00, 24.1Mbytes/s]
-100%|█████████████████████████████████████| 226M/226M [00:01&lt;00:00, 133Mbytes/s]
-100%|██████████████████████████████████| 8.31M/8.31M [00:00&lt;00:00, 78.1Mbytes/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████| 80.0k/80.0k [00:00&lt;00:00, 73.8Mbytes/s]
+100%|█████████████████████████████████████| 226M/226M [00:02&lt;00:00, 108Mbytes/s]
+100%|██████████████████████████████████| 8.31M/8.31M [00:00&lt;00:00, 56.3Mbytes/s]
 </pre></div>
 </div>
 </div>
@@ -658,7 +674,7 @@ model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save the original directory</span>
 <span class="n">original_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-<span class="c1"># Navigate to the diffusion data</span>
+<span class="c1"># Navigate to the dowloaded data</span>
 <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;MRtrix_preprocessed&quot;</span><span class="p">)</span>
 <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
 </pre></div>
@@ -716,9 +732,9 @@ USAGE
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dwi2response: 
 dwi2response: <span class=" -Color -Color-Green">Note that this script makes use of commands / algorithms that have relevant articles for citation. Please consult the help page (-help option) for more information.</span>
 dwi2response: 
-dwi2response: <span class=" -Color -Color-Green">Generated scratch directory: /home/jovyan/Git_repositories/MRtrix_preprocessed/dwi2response-tmp-102KTN/</span>
+dwi2response: <span class=" -Color -Color-Green">Generated scratch directory: /home/jovyan/Git_repositories/MRtrix_preprocessed/dwi2response-tmp-8O8KLK/</span>
 dwi2response: <span class=" -Color -Color-Green">Importing DWI data (/home/jovyan/Git_repositories/MRtrix_preprocessed/sub-02_den_preproc_unbiased.mif)...</span>
-dwi2response: <span class=" -Color -Color-Green">Changing to scratch directory (/home/jovyan/Git_repositories/MRtrix_preprocessed/dwi2response-tmp-102KTN/)</span>
+dwi2response: <span class=" -Color -Color-Green">Changing to scratch directory (/home/jovyan/Git_repositories/MRtrix_preprocessed/dwi2response-tmp-8O8KLK/)</span>
 dwi2response: <span class=" -Color -Color-Green">Computing brain mask (dwi2mask)...</span>
 dwi2response: <span class=" -Color -Color-Green">-------</span>
 dwi2response: <span class=" -Color -Color-Green">4 unique b-value(s) detected: 0,700,1200,2800 with 6,16,30,50 volumes</span>
@@ -766,7 +782,7 @@ dwi2response: <span class=" -Color -Color-Green">-------</span>
 dwi2response: <span class=" -Color -Color-Green">Generating outputs...</span>
 dwi2response: <span class=" -Color -Color-Green">-------</span>
 dwi2response: <span class=" -Color -Color-Green">Changing back to original directory (/home/jovyan/Git_repositories/MRtrix_preprocessed)</span>
-dwi2response: <span class=" -Color -Color-Green">Deleting scratch directory (/home/jovyan/Git_repositories/MRtrix_preprocessed/dwi2response-tmp-102KTN/)</span>
+dwi2response: <span class=" -Color -Color-Green">Deleting scratch directory (/home/jovyan/Git_repositories/MRtrix_preprocessed/dwi2response-tmp-8O8KLK/)</span>
 </pre></div>
 </div>
 </div>
@@ -778,7 +794,7 @@ dwi2response: <span class=" -Color -Color-Green">Deleting scratch directory (/ho
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mrview</span><span class="w"> </span><span class="nx">sub</span><span class="o">-</span><span class="mo">02</span><span class="nx">_den_preproc_unbiased</span><span class="p">.</span><span class="nx">mif</span><span class="w"> </span><span class="o">-</span><span class="nx">overlay</span><span class="p">.</span><span class="nx">load</span><span class="w"> </span><span class="nx">voxels</span><span class="p">.</span><span class="nx">mif</span>
 </pre></div>
 </div>
-<p>We will visualize the voxels used to construct a basis function for each tissue type using Matplotlib. CSF voxels should be colored red, gray matter voxels green, and white matter voxels blue:</p>
+<p>We will visualize the voxels used to construct a basis function for each tissue type using <strong>Matplotlib</strong>. CSF voxels should be colored red, gray matter voxels green, and white matter voxels blue:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to convert .mif files to temporary .nii.gz files</span>
@@ -840,7 +856,7 @@ dwi2response: <span class=" -Color -Color-Green">Deleting scratch directory (/ho
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e3fae5017c1a83b273ac48e16313d1c99b736a55f31c25b21abb2d29ba615472.png" src="../_images/e3fae5017c1a83b273ac48e16313d1c99b736a55f31c25b21abb2d29ba615472.png" />
+<img alt="../_images/3d4970124cc95148171e4dfa3add6627980aa5abf9fab17cc5045380e1d642bb.png" src="../_images/3d4970124cc95148171e4dfa3add6627980aa5abf9fab17cc5045380e1d642bb.png" />
 </div>
 </div>
 </section>
@@ -857,8 +873,8 @@ dwi2response: <span class=" -Color -Color-Green">Deleting scratch directory (/ho
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dwi2fod: [100%] preloading data for &quot;sub-02_den_preproc_unbiased.mif&quot;[0K?7h?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l
-dwi2fod: [100%] performing MSMT CSD (4 shells, 3 tissues)[0K?7h?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dwi2fod: [100%] preloading data for &quot;sub-02_den_preproc_unbiased.mif&quot;[0K?7h?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l
+dwi2fod: [100%] performing MSMT CSD (4 shells, 3 tissues)[0K?7h?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l
 </pre></div>
 </div>
 </div>
@@ -871,10 +887,10 @@ dwi2fod: [100%] performing MSMT CSD (4 shells, 3 tissues)[0K?7h?7l?7l?7l?7l?7l?7
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] copying from &quot;wmfod.mif&quot; to &quot;/tmp/mrtrix-tmp-TcGmQq.mif&quot;[0K?7h?7l?7l
-mrcat: [100%] concatenating &quot;csffod.mif&quot;[0K?7h?7l
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] copying from &quot;wmfod.mif&quot; to &quot;/tmp/mrtrix-tmp-yYcy0U.mif&quot;[0K?7h?7l
+mrcat: [100%] concatenating &quot;csffod.mif&quot;[0K?7h?7l?7l
 mrcat: [100%] concatenating &quot;gmfod.mif&quot;[0K?7h?7l
-mrcat: [100%] concatenating &quot;/tmp/mrtrix-tmp-TcGmQq.mif&quot;[0K?7h?7l
+mrcat: [100%] concatenating &quot;/tmp/mrtrix-tmp-yYcy0U.mif&quot;[0K?7h?7l?7l
 </pre></div>
 </div>
 </div>
@@ -885,71 +901,121 @@ mrcat: [100%] concatenating &quot;/tmp/mrtrix-tmp-TcGmQq.mif&quot;[0K?7h?7l
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mrview</span><span class="w"> </span><span class="nx">vf</span><span class="p">.</span><span class="nx">mif</span><span class="w"> </span><span class="o">-</span><span class="nx">odf</span><span class="p">.</span><span class="nx">load_sh</span><span class="w"> </span><span class="nx">wmfod</span><span class="p">.</span><span class="nx">mif</span>
 </pre></div>
 </div>
-<p>Again, we will use the python libraries <strong>Matplotlib</strong> and <strong>Dipy</strong> to visualize white matter FODs of an axial slice. This quiver plot represents a simplification, as it projects the dominant FOD directions onto the XY plane (ignoring the Z component). The quiver lengths are not scaled by the FOD magnitude to maintain clarity in dense regions. Thus, the arrows indicate orientation but not the relative magnitude of anisotropy.</p>
+</section>
+<section id="id4">
+<h3><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Now, we will use the python libraries <strong>DIPY</strong> and <strong>Matplotlib</strong> to visualize white matter FODs of an axial slice. However, we will also need to reconstruct the fiber orientation distribution function (fODF) with DIPY in two steps:</p>
+<ul class="simple">
+<li><p>Estimation of the fiber response function</p></li>
+<li><p>Use the response function to reconstruct the fODF</p></li>
+</ul>
+</section>
+<section id="reconstruction-with-constrained-spherical-deconvolution-with-dipy">
+<h3>Reconstruction with Constrained Spherical Deconvolution with DIPY<a class="headerlink" href="#reconstruction-with-constrained-spherical-deconvolution-with-dipy" title="Link to this heading">#</a></h3>
+<p>A straightforward method for estimating the fiber response function is to focus on regions of the brain known to contain single, coherent fiber populations. For instance, placing a region of interest (ROI) at the center of the brain can capture single fibers from the corpus callosum. The <code class="docutils literal notranslate"><span class="pre">auto_response_ssst</span></code> function computes the fractional anisotropy (FA) within a cuboidal ROI, defined by radii specified in roi_radii. It then derives the response function based on voxels with an FA value exceeding 0.7.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert vf.mif and wmfod.mif to .nii.gz</span>
-<span class="n">vf_nii_path</span> <span class="o">=</span> <span class="n">convert_mif_to_nii</span><span class="p">(</span><span class="s1">&#39;vf.mif&#39;</span><span class="p">)</span>
-<span class="n">wmfod_nii_path</span> <span class="o">=</span> <span class="n">convert_mif_to_nii</span><span class="p">(</span><span class="s1">&#39;wmfod.mif&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <span class="n">convert_mif_to_nii</span><span class="p">(</span><span class="s1">&#39;sub-02_den_preproc_unbiased.mif&#39;</span><span class="p">)</span>
 
-<span class="c1"># Load the vf image and FOD WM</span>
-<span class="n">vf_data</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">vf_nii_path</span><span class="p">)</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
-<span class="n">wmfod_data</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">wmfod_nii_path</span><span class="p">)</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
+<span class="c1"># Load the data</span>
+<span class="n">data</span><span class="p">,</span> <span class="n">affine</span> <span class="o">=</span> <span class="n">load_nifti</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span> 
 
-<span class="c1"># Initialize figure</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">bvals_ap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;sub-02_AP.bval&#39;</span><span class="p">)</span>
+<span class="n">bvecs_ap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;sub-02_AP.bvec&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># Make sure to transpose bvecs for correct shape</span>
 
-<span class="c1"># Extract the middle axial slice of white matter, gray matter abd CSF</span>
-<span class="n">slice_index</span> <span class="o">=</span> <span class="n">vf_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>
-<span class="n">csf</span> <span class="o">=</span> <span class="n">vf_data</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">slice_index</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  
-<span class="n">gray_matter</span> <span class="o">=</span> <span class="n">vf_data</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">slice_index</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>   
-<span class="n">white_matter</span> <span class="o">=</span> <span class="n">vf_data</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">slice_index</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> 
+<span class="c1"># Create the gradient table</span>
+<span class="n">gtab_ap</span> <span class="o">=</span> <span class="n">gradient_table</span><span class="p">(</span><span class="n">bvals_ap</span><span class="p">,</span> <span class="n">bvecs_ap</span><span class="p">)</span>
 
-<span class="c1"># Plot each tissue type with the corresponding color</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">csf</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>  
-<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">gray_matter</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greens&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>  
-<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">white_matter</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">response</span><span class="p">,</span> <span class="n">ratio</span> <span class="o">=</span> <span class="n">auto_response_ssst</span><span class="p">(</span><span class="n">gtab_ap</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">roi_radii</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fa_thr</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To ensure the response function is accurate, we can visualize its orientation distribution function (ODF):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">Scene</span><span class="p">()</span>
+<span class="n">evals</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">evecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
 
-<span class="c1"># Extract the FOD data for the the WM</span>
-<span class="n">fod_slice</span> <span class="o">=</span> <span class="n">wmfod_data</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">slice_index</span><span class="p">]</span>
+<span class="n">response_odf</span> <span class="o">=</span> <span class="n">single_tensor_odf</span><span class="p">(</span><span class="n">default_sphere</span><span class="o">.</span><span class="n">vertices</span><span class="p">,</span> <span class="n">evals</span><span class="p">,</span> <span class="n">evecs</span><span class="p">)</span>
+<span class="c1"># transform our data from 1D to 4D</span>
+<span class="n">response_odf</span> <span class="o">=</span> <span class="n">response_odf</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">response_actor</span> <span class="o">=</span> <span class="n">actor</span><span class="o">.</span><span class="n">odf_slicer</span><span class="p">(</span><span class="n">response_odf</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">default_sphere</span><span class="p">,</span>
+                                  <span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;plasma&#39;</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">response_actor</span><span class="p">)</span>
 
-<span class="c1"># Generate grid for plotting</span>
-<span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">fod_slice</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">fod_slice</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> 
+<span class="n">csd_response</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">snapshot</span><span class="p">(</span>
+    <span class="n">scene</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s1">&#39;csd_response.png&#39;</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
+    <span class="n">offscreen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="n">sh_order</span> <span class="o">=</span> <span class="mi">8</span>  <span class="c1"># Corresponds to lmax=8</span>
-<span class="n">fod_amplitudes</span> <span class="o">=</span> <span class="n">sh_to_sf</span><span class="p">(</span><span class="n">fod_slice</span><span class="p">,</span> <span class="n">default_sphere</span><span class="p">,</span> <span class="n">sh_order_max</span><span class="o">=</span><span class="n">sh_order</span><span class="p">,</span> <span class="n">basis_type</span><span class="o">=</span><span class="s1">&#39;tournier07&#39;</span><span class="p">)</span> 
-
-<span class="c1"># Find the dominant direction for each voxel</span>
-<span class="n">max_fod_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">fod_amplitudes</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>  
-<span class="n">dominant_directions</span> <span class="o">=</span> <span class="n">default_sphere</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="n">max_fod_index</span><span class="p">]</span>  <span class="c1"># directions are based on the default sphere</span>
-
-<span class="c1"># Extract the 2D components for quiver plot</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">dominant_directions</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># X-component</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">dominant_directions</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># Y-component</span>
-
-<span class="c1"># Apply the white matter mask </span>
-<span class="n">white_matter_mask</span> <span class="o">=</span> <span class="n">white_matter</span> <span class="o">&gt;</span> <span class="mf">0.1</span>
-<span class="n">u</span><span class="p">[</span><span class="o">~</span><span class="n">white_matter_mask</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">v</span><span class="p">[</span><span class="o">~</span><span class="n">white_matter_mask</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="c1"># Normalize and scale the vectors for consistent arrow lengths and better visualization</span>
-<span class="n">magnitude</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">u</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">u_normalized</span> <span class="o">=</span> <span class="n">u</span> <span class="o">/</span> <span class="p">(</span><span class="n">magnitude</span> <span class="o">+</span> <span class="mf">1e-6</span><span class="p">)</span>
-<span class="n">v_normalized</span> <span class="o">=</span> <span class="n">v</span> <span class="o">/</span> <span class="p">(</span><span class="n">magnitude</span> <span class="o">+</span> <span class="mf">1e-6</span><span class="p">)</span>
-<span class="n">scale_factor</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">u_normalized</span> <span class="o">*=</span> <span class="n">scale_factor</span>
-<span class="n">v_normalized</span> <span class="o">*=</span> <span class="n">scale_factor</span>
-
-<span class="c1"># Plot the vectors using quiver</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">u_normalized</span><span class="p">,</span> <span class="n">v_normalized</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;White Matter FODs: Dominant Directions&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">csd_response</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;plasma&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/43f7b69e69ed79d2a2f4b129ebd2acd20a79bf22d4409129625cfddc9d2ff368.png" src="../_images/43f7b69e69ed79d2a2f4b129ebd2acd20a79bf22d4409129625cfddc9d2ff368.png" />
+</div>
+<p>After estimating the response function, we can begin the deconvolution process by fitting the CSD model to the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up the scene for visualization</span>
+<span class="n">scene</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">Scene</span><span class="p">()</span>
+
+<span class="c1"># Fit the CSD model to the data</span>
+<span class="n">csd_model</span> <span class="o">=</span> <span class="n">ConstrainedSphericalDeconvModel</span><span class="p">(</span><span class="n">gtab_ap</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+
+<span class="c1"># Fit on a smaller portion of the data (optional for faster computation)</span>
+<span class="n">data_small</span> <span class="o">=</span>  <span class="n">data</span><span class="p">[</span><span class="mi">30</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="mi">29</span><span class="p">:</span><span class="mi">30</span><span class="p">]</span>    
+<span class="n">csd_fit</span> <span class="o">=</span> <span class="n">csd_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data_small</span><span class="p">)</span> 
+<span class="n">csd_odf</span> <span class="o">=</span> <span class="n">csd_fit</span><span class="o">.</span><span class="n">odf</span><span class="p">(</span><span class="n">default_sphere</span><span class="p">)</span>
+
+<span class="n">fodf_spheres</span> <span class="o">=</span> <span class="n">actor</span><span class="o">.</span><span class="n">odf_slicer</span><span class="p">(</span><span class="n">csd_odf</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">default_sphere</span><span class="p">,</span> 
+                              <span class="n">scale</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                              <span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;plasma&#39;</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">fodf_spheres</span><span class="p">)</span>
+
+<span class="n">csd_odfs</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">snapshot</span><span class="p">(</span>
+    <span class="n">scene</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s1">&#39;csd_odfs.png&#39;</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span>
+    <span class="n">offscreen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">csd_odfs</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;plasma&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using DIPY’s <code class="docutils literal notranslate"><span class="pre">peaks_from_model</span></code>, we can identify the peak directions (maxima) of the ODFs. We will then visualize the ODFs and their corresponding peaks in the same space.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">csd_peaks</span> <span class="o">=</span> <span class="n">peaks_from_model</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">csd_model</span><span class="p">,</span>
+                             <span class="n">data</span><span class="o">=</span><span class="n">data_small</span><span class="p">,</span>
+                             <span class="n">sphere</span><span class="o">=</span><span class="n">default_sphere</span><span class="p">,</span>
+                             <span class="n">relative_peak_threshold</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span>
+                             <span class="n">min_separation_angle</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+                             <span class="n">parallel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                             <span class="n">num_processes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">scene</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">fodf_peaks</span> <span class="o">=</span> <span class="n">actor</span><span class="o">.</span><span class="n">peak_slicer</span><span class="p">(</span><span class="n">csd_peaks</span><span class="o">.</span><span class="n">peak_dirs</span><span class="p">,</span> <span class="n">peaks_values</span><span class="o">=</span><span class="n">csd_peaks</span><span class="o">.</span><span class="n">peak_values</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">fodf_peaks</span><span class="p">)</span>
+
+<span class="n">fodf_spheres</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">()</span><span class="o">.</span><span class="n">SetOpacity</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">fodf_spheres</span><span class="p">)</span>
+
+<span class="n">csd_both</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">snapshot</span><span class="p">(</span>
+    <span class="n">scene</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s1">&#39;csd_both.png&#39;</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span>
+    <span class="n">offscreen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">csd_both</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;plasma&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -998,8 +1064,8 @@ Pathological Tissue.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] uncompressing image &quot;sub-CON02_ses-preop_T1w.nii.gz&quot;[0K?7h?7l?7l?7l
-mrconvert: [100%] copying from &quot;sub-CON02_ses-preop_T1w.nii.gz&quot; to &quot;T1.mif&quot;[0K?7h?7l
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] uncompressing image &quot;sub-CON02_ses-preop_T1w.nii.gz&quot;[0K?7h?7l?7l?7l?7l
+mrconvert: [100%] copying from &quot;sub-CON02_ses-preop_T1w.nii.gz&quot; to &quot;T1.mif&quot;[0K?7h
 </pre></div>
 </div>
 </div>
@@ -1014,9 +1080,9 @@ mrconvert: [100%] copying from &quot;sub-CON02_ses-preop_T1w.nii.gz&quot; to &qu
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5ttgen: 
 5ttgen: <span class=" -Color -Color-Green">Note that this script makes use of commands / algorithms that have relevant articles for citation; INCLUDING FROM EXTERNAL SOFTWARE PACKAGES. Please consult the help page (-help option) for more information.</span>
 5ttgen: 
-5ttgen: <span class=" -Color -Color-Green">Generated scratch directory: /home/jovyan/Git_repositories/MRtrix_preprocessed/5ttgen-tmp-1LOI5O/</span>
-<span class=" -Color -Color-Cyan">Command:</span>  mrconvert /home/jovyan/Git_repositories/MRtrix_preprocessed/T1.mif /home/jovyan/Git_repositories/MRtrix_preprocessed/5ttgen-tmp-1LOI5O/input.mif
-5ttgen: <span class=" -Color -Color-Green">Changing to scratch directory (/home/jovyan/Git_repositories/MRtrix_preprocessed/5ttgen-tmp-1LOI5O/)</span>
+5ttgen: <span class=" -Color -Color-Green">Generated scratch directory: /home/jovyan/Git_repositories/MRtrix_preprocessed/5ttgen-tmp-EHE0O1/</span>
+<span class=" -Color -Color-Cyan">Command:</span>  mrconvert /home/jovyan/Git_repositories/MRtrix_preprocessed/T1.mif /home/jovyan/Git_repositories/MRtrix_preprocessed/5ttgen-tmp-EHE0O1/input.mif
+5ttgen: <span class=" -Color -Color-Green">Changing to scratch directory (/home/jovyan/Git_repositories/MRtrix_preprocessed/5ttgen-tmp-EHE0O1/)</span>
 <span class=" -Color -Color-Cyan">Command:</span>  mrconvert input.mif T1.nii -strides -1,+2,+3
 <span class=" -Color -Color-Cyan">Command:</span>  maskfilter /opt/fsl-6.0.5.1/data/standard/MNI152_T1_1mm_brain_mask_dil.nii.gz dilate mni_mask.nii -npass 4
 <span class=" -Color -Color-Cyan">Command:</span>  standard_space_roi T1.nii T1_preBET.nii.gz -maskMASK mni_mask.nii -roiFOV
@@ -1038,68 +1104,83 @@ mrconvert: [100%] copying from &quot;sub-CON02_ses-preop_T1w.nii.gz&quot; to &qu
 <span class=" -Color -Color-Cyan">Command:</span>  mrconvert result.mif /home/jovyan/Git_repositories/MRtrix_preprocessed/5tt_nocoreg.mif
 <span class=" -Color -Color-Cyan">Command:</span>  5ttcheck result.mif
 5ttgen: <span class=" -Color -Color-Green">Changing back to original directory (/home/jovyan/Git_repositories/MRtrix_preprocessed)</span>
-5ttgen: <span class=" -Color -Color-Green">Deleting scratch directory (/home/jovyan/Git_repositories/MRtrix_preprocessed/5ttgen-tmp-1LOI5O/)</span>
+5ttgen: <span class=" -Color -Color-Green">Deleting scratch directory (/home/jovyan/Git_repositories/MRtrix_preprocessed/5ttgen-tmp-EHE0O1/)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="id4">
-<h4><a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<section id="id5">
+<h4><a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <p>This command will take about 10-15 minutes. If the segmentation has finished successfully, you can visualize the images with</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mrview</span><span class="w"> </span><span class="mf">5</span><span class="nx">tt_nocoreg</span><span class="p">.</span><span class="nx">mif</span>
 </pre></div>
 </div>
 <p>The output from 5ttgen fsl anat.mif 5tt_nocoreg.mif will be a single dataset with 5 volumes, one per tissue type. Check this image with <code class="docutils literal notranslate"><span class="pre">mrview</span></code>, using the right and left arrow keys to toggle between tissue types. The tissue types are: GM, WM, CSF, subcortical GM, and pathological tissue. If no pathological tissue is detected, then that volume is blank.</p>
-<section id="id5">
-<h5><a class="headerlink" href="#id5" title="Link to this heading">#</a></h5>
+<section id="id6">
+<h5><a class="headerlink" href="#id6" title="Link to this heading">#</a></h5>
 <p>Here, we will use <strong>AnyNiivue</strong> for interactive visualization of the different tissue types:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_files</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract frames from 5tt_nocoreg.mif into temporary files</span>
+<span class="n">output_files</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">mif_file_path</span> <span class="o">=</span> <span class="s1">&#39;5tt_nocoreg.mif&#39;</span>
 
-<span class="c1"># Extract frames with mrconvert into temporary files</span>
-<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.mif&quot;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_file</span><span class="p">:</span>
-        <span class="n">temp_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># Close the temp file so subprocess can overwrite it</span>
+        <span class="n">temp_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
         <span class="n">output_path</span> <span class="o">=</span> <span class="n">temp_file</span><span class="o">.</span><span class="n">name</span>
         <span class="n">output_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
         <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;mrconvert&quot;</span><span class="p">,</span> <span class="n">mif_file_path</span><span class="p">,</span> <span class="s2">&quot;-coord&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">idx</span><span class="p">),</span> <span class="n">output_path</span><span class="p">,</span> <span class="s2">&quot;-force&quot;</span><span class="p">,</span> <span class="s2">&quot;-quiet&quot;</span><span class="p">])</span>
 
-<span class="n">nv1</span> <span class="o">=</span> <span class="n">AnyNiivue</span><span class="p">()</span>
-<span class="n">nv2</span> <span class="o">=</span> <span class="n">AnyNiivue</span><span class="p">()</span>
-<span class="n">nv3</span> <span class="o">=</span> <span class="n">AnyNiivue</span><span class="p">()</span>
-<span class="n">nv4</span> <span class="o">=</span> <span class="n">AnyNiivue</span><span class="p">()</span>
-<span class="n">nv5</span> <span class="o">=</span> <span class="n">AnyNiivue</span><span class="p">()</span>
+<span class="c1"># Initialize the AnyNiivue viewer</span>
+<span class="n">nv</span> <span class="o">=</span> <span class="n">AnyNiivue</span><span class="p">()</span>
 
-<span class="c1"># Load the volumes into the separate viewers</span>
-<span class="n">nv1</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">0</span><span class="p">]}])</span>
-<span class="n">nv2</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">1</span><span class="p">]}])</span>
-<span class="n">nv3</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">2</span><span class="p">]}])</span>
-<span class="n">nv4</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">3</span><span class="p">]}])</span>
-<span class="n">nv5</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">4</span><span class="p">]}])</span>
+<span class="c1"># Define the volumes with opacity set to 0 initially for all but the default layer (opacity = 1.0)</span>
+<span class="n">volumes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">},</span> <span class="c1">#default layer</span>
+    <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_files</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">},</span>
+<span class="p">]</span>
 
-<span class="c1"># Display the viewers in separate outputs</span>
-<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;### GM&quot;</span><span class="p">))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">nv1</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;### Subcortical GM&quot;</span><span class="p">))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">nv2</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;### WM&quot;</span><span class="p">))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">nv3</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;### CSF&quot;</span><span class="p">))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">nv4</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;### Pathological tissue&quot;</span><span class="p">))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">nv5</span><span class="p">)</span>
+<span class="c1"># Load all the volumes into the viewer</span>
+<span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">(</span><span class="n">volumes</span><span class="p">)</span>
+
+<span class="c1"># Function to update the opacity of the layers based on selection</span>
+<span class="k">def</span> <span class="nf">update_layer</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+    <span class="n">selected_index</span> <span class="o">=</span> <span class="n">change</span><span class="o">.</span><span class="n">new</span>
+
+    <span class="c1"># Set opacity to 0 for all volumes</span>
+    <span class="k">for</span> <span class="n">volume</span> <span class="ow">in</span> <span class="n">nv</span><span class="o">.</span><span class="n">volumes</span><span class="p">:</span>
+        <span class="n">volume</span><span class="o">.</span><span class="n">opacity</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="c1"># Set opacity to 1 for the selected volume</span>
+    <span class="n">nv</span><span class="o">.</span><span class="n">volumes</span><span class="p">[</span><span class="n">selected_index</span><span class="p">]</span><span class="o">.</span><span class="n">opacity</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="c1"># Create RadioButtons widget for selecting the active layer</span>
+<span class="n">layer_selector</span> <span class="o">=</span> <span class="n">RadioButtons</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;GM&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Subcortical GM&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;WM&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;CSF&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Pathological Tissue&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+    <span class="p">],</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Select Tissue Type:&#39;</span><span class="p">,</span>
+    <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;initial&#39;</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1"># Observe changes in the RadioButtons widget</span>
+<span class="n">layer_selector</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_layer</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
+
+<span class="c1"># Display the RadioButtons and the AnyNiivue viewer</span>
+<span class="n">display</span><span class="p">(</span><span class="n">VBox</span><span class="p">([</span><span class="n">layer_selector</span><span class="p">,</span> <span class="n">nv</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<h3 class="rubric" id="gm">GM</h3>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "de6796189ad247faa5cb4ffc39877ed2", "version_major": 2, "version_minor": 0}</script><h3 class="rubric" id="subcortical-gm">Subcortical GM</h3>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "464e9a38af74427f9de2410cbe6b4d90", "version_major": 2, "version_minor": 0}</script><h3 class="rubric" id="wm">WM</h3>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "36fa76f867454819af732f0d43a727fa", "version_major": 2, "version_minor": 0}</script><h3 class="rubric" id="csf">CSF</h3>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0cec9a510593453e9cf54defb32b9958", "version_major": 2, "version_minor": 0}</script><h3 class="rubric" id="pathological-tissue">Pathological tissue</h3>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "44ad5e67061f4e0baec514bff592b269", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "9bae53c4cd5544429772b597066909b4", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div style="background-color: #f0f8ff; padding: 10px; border-radius: 5px;">
     <div style="background-color: #add8e6; padding: 5px; border-radius: 5px; font-weight: bold;">
@@ -1202,13 +1283,15 @@ If the segmentation step fails, this may be due to insufficient contrast between
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiber-orientation-density-fod">Fiber Orientation Density (FOD)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruction-with-constrained-spherical-deconvolution-with-dipy">Reconstruction with Constrained Spherical Deconvolution with DIPY</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">Normalization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-tissue-boundaries">Creating the Tissue Boundaries</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-the-anatomical-image">Converting the Anatomical Image</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"></a></li>
 </ul>
 </li>
 </ul>
@@ -1263,8 +1346,8 @@ By Neurodesk Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
