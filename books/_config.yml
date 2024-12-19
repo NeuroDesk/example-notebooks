@@ -11,7 +11,7 @@ only_build_toc_files: true
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
-  allow_errors: true
+  allow_errors: false
   timeout: 45000
   stderr_output: show
   run_in_temp: true
@@ -37,13 +37,21 @@ html:
   use_repository_button: true
   use_download_button: true
   use_edit_page_button: true
-  google_analytics_id: G-4Z9774J59Y
+  analytics:
+    google_analytics_id: G-4Z9774J59Y
 
 sphinx:
   config:
     nb_code_prompt_hide: "outputs"
     nb_merge_streams: true
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    html_css_files: ['algolia.css', 'https://cdn.jsdelivr.net/npm/@docsearch/css@3']
+    html_js_files: [
+        'https://cdn.jsdelivr.net/npm/@docsearch/js@3.3.3/dist/umd/index.js',
+        'algolia.js'
+    ]
+    html_static_path: ['_static']
+    html_extra_path: ['_static']
 
 parse:
   myst_enable_extensions:
