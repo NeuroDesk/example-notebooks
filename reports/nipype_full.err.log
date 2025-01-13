@@ -1,0 +1,97 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 172, in wrapped
+    return loop.run_until_complete(inner)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Create FSL BET Node with fractional intensity threshold of 0.3 and create a binary mask image
+
+# For reasons that will become clear in the Workflow section, it's important to pass filenames to Nodes as absolute paths.
+input_file = opj(os.getcwd(), 'ds000102/sub-01/anat/sub-01_T1w.nii.gz') 
+output_file = opj(os.getcwd(), 'output/T1w_nipype_bet.nii.gz')
+
+# Create FSL BET Node with fractional intensity threshold of 0.3 and create a binary mask image
+bet = Node(fsl.BET(), name='bet_node')
+
+# Define inputs 
+bet.inputs.frac = 0.3
+bet.inputs.mask = True
+bet.inputs.in_file = input_file
+bet.inputs.out_file = output_file
+
+# Run the node
+res = bet.run()
+------------------
+
+----- stdout -----
+250113-00:01:06,626 nipype.workflow INFO:
+	 [Node] Setting-up "bet_node" in "/storage/tmp/tmplkzt0dax/bet_node".
+----- stdout -----
+250113-00:01:06,634 nipype.workflow INFO:
+	 [Node] Executing "bet_node" <nipype.interfaces.fsl.preprocess.BET>
+----- stdout -----
+250113-00:01:07,171 nipype.interface INFO:
+	 stdout 2025-01-13T00:01:07.171703:
+----- stdout -----
+250113-00:01:07,174 nipype.interface INFO:
+	 stdout 2025-01-13T00:01:07.171703:Error: input image sub-01_T1w not valid
+----- stdout -----
+250113-00:01:07,175 nipype.interface INFO:
+	 stdout 2025-01-13T00:01:07.171703:
+----- stdout -----
+250113-00:01:07,329 nipype.workflow INFO:
+	 [Node] Finished "bet_node", elapsed time 0.692094s.
+----- stdout -----
+250113-00:01:07,334 nipype.workflow WARNING:
+	 [Node] Error on "bet_node" (/storage/tmp/tmplkzt0dax/bet_node)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNodeExecutionError[0m                        Traceback (most recent call last)
+Cell [0;32mIn[14], line 17[0m
+[1;32m     14[0m bet[38;5;241m.[39minputs[38;5;241m.[39mout_file [38;5;241m=[39m output_file
+[1;32m     16[0m [38;5;66;03m# Run the node[39;00m
+[0;32m---> 17[0m res [38;5;241m=[39m [43mbet[49m[38;5;241;43m.[39;49m[43mrun[49m[43m([49m[43m)[49m
+
+File [0;32m~/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py:527[0m, in [0;36mNode.run[0;34m(self, updatehash)[0m
+[1;32m    524[0m savepkl(op[38;5;241m.[39mjoin(outdir, [38;5;124m"[39m[38;5;124m_inputs.pklz[39m[38;5;124m"[39m), [38;5;28mself[39m[38;5;241m.[39minputs[38;5;241m.[39mget_traitsfree())
+[1;32m    526[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 527[0m     result [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_run_interface[49m[43m([49m[43mexecute[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
+[1;32m    528[0m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m:
+[1;32m    529[0m     logger[38;5;241m.[39mwarning([38;5;124m'[39m[38;5;124m[Node] Error on [39m[38;5;124m"[39m[38;5;132;01m%s[39;00m[38;5;124m"[39m[38;5;124m ([39m[38;5;132;01m%s[39;00m[38;5;124m)[39m[38;5;124m'[39m, [38;5;28mself[39m[38;5;241m.[39mfullname, outdir)
+
+File [0;32m~/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py:645[0m, in [0;36mNode._run_interface[0;34m(self, execute, updatehash)[0m
+[1;32m    643[0m     [38;5;28mself[39m[38;5;241m.[39m_update_hash()
+[1;32m    644[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_load_results()
+[0;32m--> 645[0m [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_run_command[49m[43m([49m[43mexecute[49m[43m)[49m
+
+File [0;32m~/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py:771[0m, in [0;36mNode._run_command[0;34m(self, execute, copyfiles)[0m
+[1;32m    769[0m     [38;5;66;03m# Always pass along the traceback[39;00m
+[1;32m    770[0m     msg [38;5;241m+[39m[38;5;241m=[39m [38;5;124mf[39m[38;5;124m"[39m[38;5;124mTraceback:[39m[38;5;130;01m\n[39;00m[38;5;132;01m{[39;00m_tab(runtime[38;5;241m.[39mtraceback)[38;5;132;01m}[39;00m[38;5;124m"[39m
+[0;32m--> 771[0m     [38;5;28;01mraise[39;00m NodeExecutionError(msg)
+[1;32m    773[0m [38;5;28;01mreturn[39;00m result
+
+[0;31mNodeExecutionError[0m: Exception raised while executing Node bet_node.
+
+Cmdline:
+	bet sub-01_T1w.nii.gz /storage/tmp/tmpugmqxr9r/output/T1w_nipype_bet.nii.gz -f 0.30 -m
+Stdout:
+
+	Error: input image sub-01_T1w not valid
+
+Stderr:
+
+Traceback:
+	RuntimeError: subprocess exited with code 1.
+
