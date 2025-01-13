@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Nipype on Neurodesk &#8212; Neurodesk</title>
   
@@ -15,71 +14,81 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/algolia.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/algolia.css?v=6923f26e" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.3.3/dist/umd/index.js"></script>
-    <script src="_static/algolia.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-4Z9774J59Y"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-4Z9774J59Y');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-4Z9774J59Y');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'nipype_full';</script>
-    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/nipype_full.html" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workflows/nipype_full';</script>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.3.3/dist/umd/index.js"></script>
+    <script src="../_static/algolia.js?v=b553005c"></script>
+    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/workflows/nipype_full.html" />
+    <link rel="icon" href="../_static/neurodesk_logo.svg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Basic Nipype" href="nipype_short.html" />
+    <link rel="prev" title="BIDS conversion" href="bids_conversion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,40 +96,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
-      action="search.html"
+      action="../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -128,16 +120,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -152,42 +153,114 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="../intro.html">
   
   
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/neurodesk_logo.svg" class="logo__image only-light" alt="Neurodesk - Home"/>
+    <img src="../_static/neurodesk_logo.svg" class="logo__image only-dark pst-js-only" alt="Neurodesk - Home"/>
   
-    <p class="title logo__title">Neurodesk</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
-                    Nipype on Neurodesk
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Neurodesk environment
                 </a>
             </li>
         </ul>
-        
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="RISE_slideshow.html">RISE Slideshow of a Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bids_conversion.html">BIDS conversion</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Nipype on Neurodesk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nipype_short.html">Basic Nipype</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Structural Imaging</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/brain_extraction_different_tools.html">Brain extraction with different software packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/freesurfer.html">Freesurfer</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/qsmxt.html">QSMxT</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/sct_toolbox.html">SCT Toolbox</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Diffusion Imaging</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../diffusion_imaging/MRtrix_CSD.html">Diffusion Analysis with MRtrix: Part 2 - Constrained Spherical Deconvolution and Tissue estimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion_imaging/MRtrix_CoReg_Streamline.html">Diffusion Analysis with MRtrix: Part 3 - Registration and Streamline Fitting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion_imaging/MRtrix_Preprocessing.html">Diffusion Analysis with MRtrix: Part 1 - Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion_imaging/mrtrix3tissue.html">MRtrix3Tissue</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Imaging</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/aslprep.html">ASLprep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/deepretinotopy.html">DeepRetinotopy</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/first_and_second_level_spm.html">First and Second Level fMRI Analysis with SPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/fmriprep.html">fMRIprep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/intro_to_preprocessing.html">Introduction to Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/nipype_fsl_all_levels_flanker.html">FSL’s fMRI Data Analysis via Nipype</a></li>
+
+
+
+
+</ul>
+
     </div>
 </nav></div>
     </div>
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -196,14 +269,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -226,16 +299,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/nipype_full.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/workflows/nipype_full.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -274,7 +347,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/NeuroDesk/example-notebooks/edit/main/books/nipype_full.ipynb" target="_blank"
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/edit/main/books/workflows/nipype_full.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -291,7 +364,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/NeuroDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Fnipype_full.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Fworkflows/nipype_full.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +394,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/nipype_full.ipynb" target="_blank"
+      <li><a href="../_sources/workflows/nipype_full.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -374,27 +447,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -464,38 +529,38 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/workflows/nipype_full.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <section class="tex2jax_ignore mathjax_ignore" id="nipype-on-neurodesk">
-<h1>Nipype on Neurodesk<a class="headerlink" href="#nipype-on-neurodesk" title="Permalink to this heading">#</a></h1>
+<h1>Nipype on Neurodesk<a class="headerlink" href="#nipype-on-neurodesk" title="Link to this heading">#</a></h1>
 <section id="an-interactive-rise-slideshow">
-<h2>An interactive RISE slideshow<a class="headerlink" href="#an-interactive-rise-slideshow" title="Permalink to this heading">#</a></h2>
+<h2>An interactive RISE slideshow<a class="headerlink" href="#an-interactive-rise-slideshow" title="Link to this heading">#</a></h2>
 <p style="font-size: 15px;"> <b>Author:</b> Monika Doerig </p>
 <p style="font-size: 12px;">Press <code>Space</code> to proceed through the slideshow.</p></section>
 <section id="set-up-neurodesk">
-<h2>Set up Neurodesk<a class="headerlink" href="#set-up-neurodesk" title="Permalink to this heading">#</a></h2>
+<h2>Set up Neurodesk<a class="headerlink" href="#set-up-neurodesk" title="Link to this heading">#</a></h2>
 <p>In code cells you press <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> (as usual) to evaluate your code and directly move to the next cell if it is already displayed.</p>
 <p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl-Enter</span></code> to run a command without direclty moving to the next cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
-import os
-import sys
-IN_COLAB = &#39;google.colab&#39; in sys.modules
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="n">IN_COLAB</span> <span class="o">=</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span>
 
-if IN_COLAB:
-  os.environ[&quot;LD_PRELOAD&quot;] = &quot;&quot;;
-  os.environ[&quot;APPTAINER_BINDPATH&quot;] = &quot;/content,/tmp,/cvmfs&quot;
-  os.environ[&quot;MPLCONFIGDIR&quot;] = &quot;/content/matplotlib-mpldir&quot;
-  os.environ[&quot;LMOD_CMD&quot;] = &quot;/usr/share/lmod/lmod/libexec/lmod&quot;
+<span class="k">if</span> <span class="n">IN_COLAB</span><span class="p">:</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_PRELOAD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;APPTAINER_BINDPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content,/tmp,/cvmfs&quot;</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MPLCONFIGDIR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content/matplotlib-mpldir&quot;</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LMOD_CMD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/share/lmod/lmod/libexec/lmod&quot;</span>
 
-  !curl -J -O https://raw.githubusercontent.com/NeuroDesk/neurocommand/main/googlecolab_setup.sh
-  !chmod +x googlecolab_setup.sh
-  !./googlecolab_setup.sh
+  <span class="err">!</span><span class="n">curl</span> <span class="o">-</span><span class="n">J</span> <span class="o">-</span><span class="n">O</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NeuroDesk</span><span class="o">/</span><span class="n">neurocommand</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
+  <span class="err">!</span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
+  <span class="err">!</span><span class="o">./</span><span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
 
-  os.environ[&quot;MODULEPATH&quot;] = &#39;:&#39;.join(map(str, list(map(lambda x: os.path.join(os.path.abspath(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;), x),os.listdir(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;)))))
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MODULEPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">)))))</span>
 </pre></div>
 </div>
 </div>
@@ -503,14 +568,14 @@ if IN_COLAB:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
-<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;vendor&#39;</span> <span class="p">|</span> uniq
-<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;model name&#39;</span> <span class="p">|</span> uniq
+<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: AuthenticAMD
-model name	: AMD EPYC-Rome Processor
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: GenuineIntel
+model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
 </pre></div>
 </div>
 </div>
@@ -533,14 +598,14 @@ model name	: AMD EPYC-Rome Processor
   </ul>
 </div></section>
 <section id="table-of-content">
-<h2>Table of content<a class="headerlink" href="#table-of-content" title="Permalink to this heading">#</a></h2>
-<p><span class="xref myst">1. Introduction to Nipype</span><br />
-<span class="xref myst">2. Nipype in Jupyter Notebooks on Neurodesk</span><br />
-<span class="xref myst">3. Exploration of Nipype’s building blocks</span><br />
-<span class="xref myst">4. Pydra: A modern dataflow engine developed for the Nipype project</span></p>
+<h2>Table of content<a class="headerlink" href="#table-of-content" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="#1.-Introduction-to-Nipype"><span class="xref myst">1. Introduction to Nipype</span></a><br />
+<a class="reference internal" href="#2.-Nipype-in-Jupyter-Notebooks-on-Neurodesk"><span class="xref myst">2. Nipype in Jupyter Notebooks on Neurodesk</span></a><br />
+<a class="reference internal" href="#3.-Exploration-of-Nipype's-building-blocks"><span class="xref myst">3. Exploration of Nipype’s building blocks</span></a><br />
+<a class="reference internal" href="#4.-Pydra:-A-modern-dataflow-engine-developed-for-the-Nipype-project"><span class="xref myst">4. Pydra: A modern dataflow engine developed for the Nipype project</span></a></p>
 </section>
 <section id="introduction-to-nipype">
-<h2>1. Introduction to Nipype<a class="headerlink" href="#introduction-to-nipype" title="Permalink to this heading">#</a></h2>
+<h2>1. Introduction to Nipype<a class="headerlink" href="#introduction-to-nipype" title="Link to this heading">#</a></h2>
 <center><img src="https://miykael.github.io/nipype_tutorial/static/images/logoNipype_text.png" width="50%" height="50%"></center><ul class="simple">
 <li><p>Open-source Python project that originated within the neuroimaging community</p></li>
 <li><p>Provides a unified interface to diverse neuroimaging packages including ANTS, SPM, FSL, FreeSurfer, and others</p></li>
@@ -551,7 +616,8 @@ model name	: AMD EPYC-Rome Processor
 <img src="https://miykael.github.io/nipype_tutorial/static/images/nipype_example_graph.png" style="float: right; margin: 0 auto; padding: 5px;" width="50%" height="50%"> 
 <figcaption style="text-align: right;"><b>Figure 1:</b> Example Workflow</figcaption></section>
 <section id="nipype-in-jupyter-notebooks-on-neurodesk">
-<h2>2. Nipype in Jupyter Notebooks on Neurodesk<a class="headerlink" href="#nipype-in-jupyter-notebooks-on-neurodesk" title="Permalink to this heading">#</a></h2>
+<h2>2. Nipype in Jupyter Notebooks on Neurodesk<a class="headerlink" href="#nipype-in-jupyter-notebooks-on-neurodesk" title="Link to this heading">#</a></h2>
+<a class="reference internal image-reference" href="https://www.neurodesk.org/static/favicons/neurodesk_logo.svg"><img alt="https://www.neurodesk.org/static/favicons/neurodesk_logo.svg" src="https://www.neurodesk.org/static/favicons/neurodesk_logo.svg" style="width: 20%;" /></a>
 <p>Neurodesk project enables the use of all neuroimaging applications inside computational notebooks</p>
 <p><strong>Demonstration of the module system in Python and Nipype:</strong></p>
 <p>We will use the software tool <code class="docutils literal notranslate"><span class="pre">lmod</span></code> to manage and load different software packages and libraires. It simplifies the process of accessing and utilizing various software applications and allows users to easily switch between different versions of software packages, manage dependencies, and ensure compatibility with their computing environment.</p>
@@ -561,51 +627,21 @@ model name	: AMD EPYC-Rome Processor
 <span class="c1"># Or press Ctrl-Enter to run a command without direclty moving to the next cell.</span>
 
 <span class="c1"># Use lmod to load any software tool with a specific version</span>
-<span class="kn">import</span> <span class="nn">lmod</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">lmod</span>
 <span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;fsl/6.0.7.4&#39;</span><span class="p">)</span>
 <span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Lmod&#39;,
- &#39;Warning:&#39;,
- &#39;The&#39;,
- &#39;environment&#39;,
- &#39;MODULEPATH&#39;,
- &#39;has&#39;,
- &#39;been&#39;,
- &#39;changed&#39;,
- &#39;in&#39;,
- &#39;unexpected&#39;,
- &#39;ways.&#39;,
- &#39;Lmod&#39;,
- &#39;is&#39;,
- &#39;unable&#39;,
- &#39;to&#39;,
- &#39;use&#39;,
- &#39;given&#39;,
- &#39;MODULEPATH.&#39;,
- &#39;It&#39;,
- &#39;is&#39;,
- &#39;using:&#39;,
- &#39;&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM::&quot;.&#39;,
- &#39;Please&#39;,
- &#39;use&#39;,
- &#39;&quot;module&#39;,
- &#39;use&#39;,
- &#39;to&#39;,
- &#39;change&#39;,
- &#39;MODULEPATH&#39;,
- &#39;instead.&#39;,
- &#39;fsl/6.0.7.4&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;fsl/6.0.7.4&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;FSLOUTPUTTYPE&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;NIFTI_GZ&quot;</span> <span class="c1"># Default is NIFTI</span>
 </pre></div>
 </div>
@@ -613,7 +649,7 @@ model name	: AMD EPYC-Rome Processor
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nipype.interfaces.fsl.base</span> <span class="kn">import</span> <span class="n">Info</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nipype.interfaces.fsl.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">Info</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Info</span><span class="o">.</span><span class="n">version</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Info</span><span class="o">.</span><span class="n">output_type</span><span class="p">())</span>
 <span class="c1"># If the FSL version is changed using lmod above, the kernel of the notebook needs to be restarted!</span>
@@ -637,63 +673,14 @@ NIFTI_GZ
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lmod Warning: The environment MODULEPATH has been changed in unexpected ways.
-Lmod is unable to use given MODULEPATH. It is using:
-
-&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM::&quot;.
-
-Please use &quot;module use ...&quot; to change MODULEPATH instead. 
-
-
-
-Lmod Warning: The environment MODULEPATH has been changed in unexpected ways.
-Lmod is unable to use given MODULEPATH. It is using:
-
-&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM::&quot;.
-
-Please use &quot;module use ...&quot; to change MODULEPATH instead. 
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Lmod&#39;,
- &#39;Warning:&#39;,
- &#39;The&#39;,
- &#39;environment&#39;,
- &#39;MODULEPATH&#39;,
- &#39;has&#39;,
- &#39;been&#39;,
- &#39;changed&#39;,
- &#39;in&#39;,
- &#39;unexpected&#39;,
- &#39;ways.&#39;,
- &#39;Lmod&#39;,
- &#39;is&#39;,
- &#39;unable&#39;,
- &#39;to&#39;,
- &#39;use&#39;,
- &#39;given&#39;,
- &#39;MODULEPATH.&#39;,
- &#39;It&#39;,
- &#39;is&#39;,
- &#39;using:&#39;,
- &#39;&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM::&quot;.&#39;,
- &#39;Please&#39;,
- &#39;use&#39;,
- &#39;&quot;module&#39;,
- &#39;use&#39;,
- &#39;to&#39;,
- &#39;change&#39;,
- &#39;MODULEPATH&#39;,
- &#39;instead.&#39;,
- &#39;fsl/6.0.7.4&#39;,
- &#39;afni/22.3.06&#39;,
- &#39;spm12/r7771&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;fsl/6.0.7.4&#39;, &#39;afni/22.3.06&#39;, &#39;spm12/r7771&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="exploration-of-nipype-s-building-blocks">
-<h2>3. Exploration of Nipype’s building blocks<a class="headerlink" href="#exploration-of-nipype-s-building-blocks" title="Permalink to this heading">#</a></h2>
+<h2>3. Exploration of Nipype’s building blocks<a class="headerlink" href="#exploration-of-nipype-s-building-blocks" title="Link to this heading">#</a></h2>
 <center><img src="https://miykael.github.io/nipype_tutorial/static/images/nipype_architecture.png" width="50%" height="50%"></center>
   <figcaption><b>Figure 2:</b> Nipype architecture</figcaption><ul class="simple">
 <li><p><font size="5"><strong>Interfaces:</strong> Wraps a program/ function </font></p></li>
@@ -716,19 +703,19 @@ Please use &quot;module use ...&quot; to change MODULEPATH instead.
 <li><p><font size="5"><strong>Plugin:</strong> A component that describes how a Workflow should be executed</font></p></li>
 </ul>
 <section id="preparation-download-of-opensource-data-installations-and-imports">
-<h3><strong>Preparation: Download of opensource data, installations and imports</strong><a class="headerlink" href="#preparation-download-of-opensource-data-installations-and-imports" title="Permalink to this heading">#</a></h3>
+<h3><strong>Preparation: Download of opensource data, installations and imports</strong><a class="headerlink" href="#preparation-download-of-opensource-data-installations-and-imports" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download 2 subjects of the Flanker Dataset</span>
 <span class="n">PATTERN</span> <span class="o">=</span> <span class="s2">&quot;sub-0[1-2]&quot;</span>
  
-<span class="o">!</span>datalad install https://github.com/OpenNeuroDatasets/ds000102.git
-<span class="o">!</span><span class="nb">cd</span> ds000102 <span class="o">&amp;&amp;</span> datalad get <span class="nv">$PATTERN</span>
+<span class="o">!</span>datalad<span class="w"> </span>install<span class="w"> </span>https://github.com/OpenNeuroDatasets/ds000102.git
+<span class="o">!</span><span class="nb">cd</span><span class="w"> </span>ds000102<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>datalad<span class="w"> </span>get<span class="w"> </span><span class="nv">$PATTERN</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Clone attempt:   0%|              | 0.00/2.00 [00:00&lt;?, ? Candidate locations/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning:   0%|                             | 0.00/2.00 [00:00&lt;?, ? candidates/s]
 Enumerating: 0.00 Objects [00:00, ? Objects/s]
                                               
 Counting:   0%|                               | 0.00/27.0 [00:00&lt;?, ? Objects/s]
@@ -738,202 +725,73 @@ Compressing:   0%|                            | 0.00/23.0 [00:00&lt;?, ? Objects
 Receiving:   0%|                             | 0.00/2.15k [00:00&lt;?, ? Objects/s]
                                                                                 
 Resolving:   0%|                                | 0.00/537 [00:00&lt;?, ? Deltas/s]
-[INFO   ] scanning for unlocked files (this may take some time) 
+[INFO   ] scanning for unlocked files (this may take some time)                 
 [INFO   ] Remote origin not usable by git-annex; setting annex-ignore 
 [INFO   ] access to 1 dataset sibling s3-PRIVATE not auto-enabled, enable with:
-| 		datalad siblings -d &quot;/storage/tmp/tmpugmqxr9r/ds000102&quot; enable -s s3-PRIVATE 
-<span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): /storage/tmp/tmpugmqxr9r/ds000102 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>)
+| 		datalad siblings -d &quot;/home/jovyan/neurodesktop-storage/ds000102&quot; enable -s s3-PRIVATE 
+<span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): /home/jovyan/neurodesktop-storage/ds000102 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>)
 Total:   0%|                                    | 0.00/136M [00:00&lt;?, ? Bytes/s]
 Get sub-02/a .. 2_T1w.nii.gz:   0%|            | 0.00/10.7M [00:00&lt;?, ? Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   0%|    | 16.4k/10.7M [00:00&lt;01:42, 105k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   0%|   | 33.4k/10.7M [00:00&lt;02:32, 70.0k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   1%|   | 62.5k/10.7M [00:00&lt;02:41, 66.1k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   1%|   | 96.3k/10.7M [00:01&lt;03:07, 56.8k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   1%|    | 114k/10.7M [00:01&lt;02:54, 61.0k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   1%|    | 131k/10.7M [00:02&lt;02:44, 64.6k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   1%|    | 149k/10.7M [00:02&lt;02:36, 67.6k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   2%|    | 166k/10.7M [00:02&lt;02:31, 69.7k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   2%|    | 201k/10.7M [00:02&lt;02:05, 84.1k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   2%|    | 218k/10.7M [00:02&lt;01:55, 90.7k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   3%|▏    | 270k/10.7M [00:03&lt;01:43, 102k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   3%|▏    | 305k/10.7M [00:03&lt;01:31, 114k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   3%|▏    | 340k/10.7M [00:03&lt;01:23, 125k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   4%|▏    | 392k/10.7M [00:04&lt;01:07, 153k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   4%|▏    | 444k/10.7M [00:04&lt;00:59, 174k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   5%|▏    | 514k/10.7M [00:04&lt;00:48, 211k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   5%|▎    | 566k/10.7M [00:04&lt;00:40, 253k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   6%|▎    | 653k/10.7M [00:05&lt;00:39, 255k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   7%|▎    | 740k/10.7M [00:05&lt;00:31, 317k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   8%|▍    | 810k/10.7M [00:05&lt;00:28, 351k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   9%|▍    | 949k/10.7M [00:05&lt;00:26, 370k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  10%|▍   | 1.04M/10.7M [00:05&lt;00:21, 443k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  11%|▍   | 1.23M/10.7M [00:06&lt;00:20, 475k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  13%|▌   | 1.38M/10.7M [00:06&lt;00:17, 534k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  14%|▌   | 1.54M/10.7M [00:06&lt;00:15, 580k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  16%|▋   | 1.73M/10.7M [00:06&lt;00:13, 655k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  18%|▋   | 1.94M/10.7M [00:07&lt;00:12, 729k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  20%|▊   | 2.15M/10.7M [00:07&lt;00:09, 914k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  22%|▉   | 2.41M/10.7M [00:07&lt;00:09, 855k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  25%|▉   | 2.66M/10.7M [00:07&lt;00:08, 998k Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  27%|▊  | 2.85M/10.7M [00:07&lt;00:07, 1.07M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  28%|▊  | 2.97M/10.7M [00:07&lt;00:07, 1.02M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  30%|▉  | 3.26M/10.7M [00:08&lt;00:06, 1.14M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  33%|▉  | 3.51M/10.7M [00:08&lt;00:05, 1.38M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  37%|█  | 3.98M/10.7M [00:08&lt;00:04, 1.60M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  39%|█▏ | 4.22M/10.7M [00:08&lt;00:04, 1.58M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  41%|█▏ | 4.40M/10.7M [00:08&lt;00:04, 1.41M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  43%|█▎ | 4.66M/10.7M [00:08&lt;00:03, 1.63M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  47%|█▍ | 5.09M/10.7M [00:09&lt;00:03, 1.75M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  49%|█▍ | 5.30M/10.7M [00:09&lt;00:03, 1.65M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  54%|█▌ | 5.75M/10.7M [00:09&lt;00:02, 2.23M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  59%|█▊ | 6.31M/10.7M [00:09&lt;00:01, 2.31M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  62%|█▊ | 6.68M/10.7M [00:09&lt;00:01, 2.13M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  69%|██ | 7.41M/10.7M [00:10&lt;00:01, 2.45M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  76%|██▎| 8.12M/10.7M [00:10&lt;00:00, 2.65M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  80%|██▍| 8.59M/10.7M [00:10&lt;00:00, 2.55M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  82%|██▍| 8.86M/10.7M [00:10&lt;00:00, 2.41M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  88%|██▋| 9.40M/10.7M [00:10&lt;00:00, 2.97M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  94%|██▊| 10.1M/10.7M [00:11&lt;00:00, 3.05M Bytes/s]
-                                                                                
-Get sub-02/a .. 2_T1w.nii.gz:   0%|            | 0.00/10.7M [00:00&lt;?, ? Bytes/s]
-Total:   8%|██▏                         | 10.7M/136M [00:12&lt;02:28, 845k Bytes/s]
+Get sub-02/a .. 2_T1w.nii.gz:   1%|    | 70.1k/10.7M [00:00&lt;00:28, 371k Bytes/s]
+Get sub-02/a .. 2_T1w.nii.gz:   2%|     | 209k/10.7M [00:00&lt;00:17, 590k Bytes/s]
+Get sub-02/a .. 2_T1w.nii.gz:   5%|▏   | 558k/10.7M [00:00&lt;00:06, 1.48M Bytes/s]
+Get sub-02/a .. 2_T1w.nii.gz:  10%|▎  | 1.04M/10.7M [00:00&lt;00:04, 2.03M Bytes/s]
+Get sub-02/a .. 2_T1w.nii.gz:  21%|▌  | 2.22M/10.7M [00:00&lt;00:01, 4.56M Bytes/s]
+Get sub-02/a .. 2_T1w.nii.gz:  33%|▉  | 3.50M/10.7M [00:00&lt;00:01, 6.79M Bytes/s]
+Get sub-02/a .. 2_T1w.nii.gz:  41%|█▏ | 4.39M/10.7M [00:00&lt;00:00, 7.29M Bytes/s]
+Get sub-02/a .. 2_T1w.nii.gz:  64%|█▉ | 6.86M/10.7M [00:01&lt;00:00, 12.2M Bytes/s]
+Get sub-02/a .. 2_T1w.nii.gz:  84%|██▌| 9.01M/10.7M [00:01&lt;00:00, 14.9M Bytes/s]
+Total:   8%|██▏                        | 10.7M/136M [00:01&lt;00:22, 5.57M Bytes/s]
 Get sub-02/f .. _bold.nii.gz:   0%|            | 0.00/29.2M [00:00&lt;?, ? Bytes/s]
-Get sub-02/f .. _bold.nii.gz:   3%|    | 855k/29.2M [00:00&lt;00:04, 6.14M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:   5%|▏  | 1.49M/29.2M [00:00&lt;00:09, 2.91M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:   9%|▎  | 2.51M/29.2M [00:00&lt;00:06, 4.01M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  11%|▎  | 3.19M/29.2M [00:00&lt;00:07, 3.34M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  13%|▍  | 3.88M/29.2M [00:01&lt;00:07, 3.23M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  16%|▍  | 4.60M/29.2M [00:01&lt;00:07, 3.20M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  18%|▌  | 5.34M/29.2M [00:01&lt;00:07, 3.22M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  21%|▋  | 6.09M/29.2M [00:01&lt;00:07, 3.25M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  24%|▋  | 6.86M/29.2M [00:02&lt;00:06, 3.29M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  26%|▊  | 7.65M/29.2M [00:02&lt;00:06, 3.34M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  29%|▊  | 8.47M/29.2M [00:02&lt;00:06, 3.41M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  32%|▉  | 9.27M/29.2M [00:02&lt;00:05, 3.90M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  35%|█  | 10.1M/29.2M [00:02&lt;00:05, 3.42M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  37%|█  | 10.9M/29.2M [00:03&lt;00:04, 3.66M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  40%|█▏ | 11.6M/29.2M [00:03&lt;00:04, 4.21M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  44%|█▎ | 12.7M/29.2M [00:03&lt;00:04, 3.47M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  46%|█▍ | 13.6M/29.2M [00:03&lt;00:04, 3.58M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  50%|█▍ | 14.5M/29.2M [00:04&lt;00:03, 3.93M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  51%|█▌ | 14.9M/29.2M [00:04&lt;00:03, 4.08M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  56%|█▋ | 16.3M/29.2M [00:04&lt;00:03, 3.66M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  59%|█▊ | 17.2M/29.2M [00:04&lt;00:03, 4.01M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  60%|█▊ | 17.6M/29.2M [00:04&lt;00:02, 4.12M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  65%|█▉ | 19.0M/29.2M [00:05&lt;00:02, 4.12M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  68%|██ | 19.9M/29.2M [00:05&lt;00:02, 4.21M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  71%|██▏| 20.8M/29.2M [00:05&lt;00:02, 3.83M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  74%|██▏| 21.6M/29.2M [00:05&lt;00:01, 4.40M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  78%|██▎| 22.7M/29.2M [00:06&lt;00:01, 3.71M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  81%|██▍| 23.6M/29.2M [00:06&lt;00:01, 3.81M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  84%|██▌| 24.6M/29.2M [00:06&lt;00:01, 3.89M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  87%|██▌| 25.5M/29.2M [00:06&lt;00:00, 4.53M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  91%|██▋| 26.5M/29.2M [00:07&lt;00:00, 3.87M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  94%|██▊| 27.4M/29.2M [00:07&lt;00:00, 4.64M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  97%|██▉| 28.3M/29.2M [00:07&lt;00:00, 4.34M Bytes/s]
-Total:  29%|███████▉                   | 39.9M/136M [00:20&lt;00:50, 1.92M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:   6%|▏  | 1.81M/29.2M [00:00&lt;00:01, 16.9M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  12%|▎  | 3.64M/29.2M [00:00&lt;00:01, 15.7M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  25%|▊  | 7.44M/29.2M [00:00&lt;00:01, 18.9M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  38%|█▏ | 11.2M/29.2M [00:00&lt;00:00, 18.8M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  45%|█▎ | 13.2M/29.2M [00:00&lt;00:00, 19.1M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  53%|█▌ | 15.5M/29.2M [00:00&lt;00:00, 20.0M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  60%|█▊ | 17.5M/29.2M [00:00&lt;00:00, 20.1M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  75%|██▏| 21.8M/29.2M [00:01&lt;00:00, 20.6M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  83%|██▍| 24.2M/29.2M [00:01&lt;00:00, 20.5M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  97%|██▉| 28.2M/29.2M [00:01&lt;00:00, 20.9M Bytes/s]
+Total:  29%|███████▉                   | 39.9M/136M [00:03&lt;00:09, 10.5M Bytes/s]
 Get sub-02/f .. _bold.nii.gz:   0%|            | 0.00/29.2M [00:00&lt;?, ? Bytes/s]
-Get sub-02/f .. _bold.nii.gz:   3%|▏   | 936k/29.2M [00:00&lt;00:04, 5.72M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:   5%|▏  | 1.54M/29.2M [00:00&lt;00:04, 5.84M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  10%|▎  | 2.82M/29.2M [00:00&lt;00:06, 3.91M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  13%|▍  | 3.78M/29.2M [00:00&lt;00:06, 3.98M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  16%|▍  | 4.72M/29.2M [00:01&lt;00:06, 4.03M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  19%|▌  | 5.67M/29.2M [00:01&lt;00:05, 4.07M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  23%|▋  | 6.60M/29.2M [00:01&lt;00:05, 4.09M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  26%|▊  | 7.55M/29.2M [00:01&lt;00:05, 4.11M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  29%|▊  | 8.48M/29.2M [00:02&lt;00:05, 4.12M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  32%|▉  | 9.42M/29.2M [00:02&lt;00:04, 4.73M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  36%|█  | 10.4M/29.2M [00:02&lt;00:04, 3.97M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  39%|█▏ | 11.3M/29.2M [00:02&lt;00:04, 4.30M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  40%|█▏ | 11.8M/29.2M [00:02&lt;00:03, 4.40M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  45%|█▎ | 13.2M/29.2M [00:03&lt;00:04, 3.95M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  48%|█▍ | 14.2M/29.2M [00:03&lt;00:03, 4.01M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  52%|█▌ | 15.1M/29.2M [00:03&lt;00:03, 4.05M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  55%|█▋ | 16.1M/29.2M [00:03&lt;00:03, 4.10M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  58%|█▋ | 17.0M/29.2M [00:04&lt;00:02, 4.12M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  62%|█▊ | 18.0M/29.2M [00:04&lt;00:02, 4.16M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  65%|█▉ | 18.9M/29.2M [00:04&lt;00:02, 4.54M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  68%|██ | 19.9M/29.2M [00:04&lt;00:01, 4.65M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  72%|██▏| 20.9M/29.2M [00:04&lt;00:02, 4.02M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  75%|██▏| 21.9M/29.2M [00:05&lt;00:01, 4.34M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  77%|██▎| 22.4M/29.2M [00:05&lt;00:01, 4.51M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  81%|██▍| 23.8M/29.2M [00:05&lt;00:01, 4.82M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  85%|██▌| 24.7M/29.2M [00:05&lt;00:01, 3.57M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  88%|██▋| 25.7M/29.2M [00:06&lt;00:00, 4.21M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  91%|██▋| 26.5M/29.2M [00:06&lt;00:00, 3.80M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  93%|██▊| 27.2M/29.2M [00:06&lt;00:00, 3.64M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  96%|██▊| 28.0M/29.2M [00:06&lt;00:00, 3.56M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  98%|██▉| 28.8M/29.2M [00:07&lt;00:00, 3.53M Bytes/s]
-Total:  51%|█████████████▋             | 69.1M/136M [00:28&lt;00:27, 2.43M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:   8%|▏  | 2.43M/29.2M [00:00&lt;00:01, 24.2M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  20%|▌  | 5.80M/29.2M [00:00&lt;00:00, 24.1M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  32%|▉  | 9.31M/29.2M [00:00&lt;00:00, 23.0M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  46%|█▍ | 13.4M/29.2M [00:00&lt;00:00, 21.7M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  54%|█▋ | 15.9M/29.2M [00:00&lt;00:00, 22.5M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  70%|██ | 20.6M/29.2M [00:00&lt;00:00, 22.9M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  84%|██▌| 24.5M/29.2M [00:01&lt;00:00, 21.6M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  94%|██▊| 27.4M/29.2M [00:01&lt;00:00, 21.5M Bytes/s]
+Total:  51%|█████████████▋             | 69.1M/136M [00:05&lt;00:05, 12.6M Bytes/s]
 Get sub-01/a .. 1_T1w.nii.gz:   0%|            | 0.00/10.6M [00:00&lt;?, ? Bytes/s]
-Get sub-01/a .. 1_T1w.nii.gz:   8%|▎   | 803k/10.6M [00:00&lt;00:01, 5.08M Bytes/s]
-Get sub-01/a .. 1_T1w.nii.gz:  16%|▍  | 1.67M/10.6M [00:00&lt;00:02, 3.50M Bytes/s]
-Get sub-01/a .. 1_T1w.nii.gz:  24%|▋  | 2.50M/10.6M [00:00&lt;00:02, 3.73M Bytes/s]
-Get sub-01/a .. 1_T1w.nii.gz:  32%|▉  | 3.37M/10.6M [00:00&lt;00:01, 3.63M Bytes/s]
-Get sub-01/a .. 1_T1w.nii.gz:  40%|█▏ | 4.25M/10.6M [00:01&lt;00:01, 3.72M Bytes/s]
-Get sub-01/a .. 1_T1w.nii.gz:  49%|█▍ | 5.13M/10.6M [00:01&lt;00:01, 3.79M Bytes/s]
-Get sub-01/a .. 1_T1w.nii.gz:  57%|█▋ | 6.05M/10.6M [00:01&lt;00:01, 3.85M Bytes/s]
-Get sub-01/a .. 1_T1w.nii.gz:  66%|█▉ | 6.97M/10.6M [00:01&lt;00:00, 3.90M Bytes/s]
-Get sub-01/a .. 1_T1w.nii.gz:  75%|██▏| 7.89M/10.6M [00:02&lt;00:00, 3.96M Bytes/s]
-Get sub-01/a .. 1_T1w.nii.gz:  83%|██▌| 8.82M/10.6M [00:02&lt;00:00, 4.70M Bytes/s]
-Get sub-01/a .. 1_T1w.nii.gz:  93%|██▊| 9.79M/10.6M [00:02&lt;00:00, 3.90M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  32%|▉  | 3.40M/10.6M [00:00&lt;00:00, 17.0M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  57%|█▋ | 6.02M/10.6M [00:00&lt;00:00, 14.7M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  82%|██▍| 8.67M/10.6M [00:00&lt;00:00, 18.2M Bytes/s]
                                                                                 
 Get sub-01/f .. _bold.nii.gz:   0%|            | 0.00/28.1M [00:00&lt;?, ? Bytes/s]
-Get sub-01/f .. _bold.nii.gz:   3%|▏   | 951k/28.1M [00:00&lt;00:04, 6.24M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:   7%|▏  | 1.93M/28.1M [00:00&lt;00:06, 4.04M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  10%|▎  | 2.90M/28.1M [00:00&lt;00:05, 4.37M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  14%|▍  | 3.85M/28.1M [00:00&lt;00:04, 5.52M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  17%|▌  | 4.87M/28.1M [00:01&lt;00:05, 3.94M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  21%|▋  | 5.87M/28.1M [00:01&lt;00:05, 4.07M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  24%|▋  | 6.85M/28.1M [00:01&lt;00:05, 4.16M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  28%|▊  | 7.85M/28.1M [00:01&lt;00:04, 4.23M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  32%|▉  | 8.86M/28.1M [00:02&lt;00:04, 4.29M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  35%|█  | 9.85M/28.1M [00:02&lt;00:03, 5.11M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  39%|█▏ | 10.9M/28.1M [00:02&lt;00:04, 4.16M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  42%|█▎ | 11.9M/28.1M [00:02&lt;00:03, 4.65M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  46%|█▍ | 12.9M/28.1M [00:02&lt;00:03, 4.19M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  49%|█▍ | 13.9M/28.1M [00:03&lt;00:03, 4.38M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  53%|█▌ | 14.9M/28.1M [00:03&lt;00:03, 4.26M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  57%|█▋ | 15.9M/28.1M [00:03&lt;00:02, 4.31M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  60%|█▊ | 16.9M/28.1M [00:03&lt;00:02, 4.36M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  64%|█▉ | 17.9M/28.1M [00:04&lt;00:02, 4.39M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  68%|██ | 19.0M/28.1M [00:04&lt;00:02, 4.42M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  71%|██▏| 20.0M/28.1M [00:04&lt;00:01, 4.41M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  75%|██▏| 21.0M/28.1M [00:04&lt;00:01, 5.20M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  78%|██▎| 22.0M/28.1M [00:05&lt;00:01, 4.25M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  82%|██▍| 23.0M/28.1M [00:05&lt;00:01, 4.69M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  86%|██▌| 24.0M/28.1M [00:05&lt;00:00, 4.23M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  89%|██▋| 25.0M/28.1M [00:05&lt;00:00, 4.42M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  93%|██▊| 26.0M/28.1M [00:05&lt;00:00, 5.26M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  96%|██▉| 27.1M/28.1M [00:06&lt;00:00, 4.14M Bytes/s]
-Total:  79%|██████████████████████▏     | 108M/136M [00:38&lt;00:09, 2.82M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:   7%|▏  | 1.82M/28.1M [00:00&lt;00:01, 18.2M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  18%|▌  | 5.14M/28.1M [00:00&lt;00:01, 17.8M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  25%|▊  | 7.15M/28.1M [00:00&lt;00:01, 17.9M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  33%|▉  | 9.14M/28.1M [00:00&lt;00:01, 18.5M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  46%|█▍ | 12.9M/28.1M [00:00&lt;00:00, 18.6M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  59%|█▊ | 16.6M/28.1M [00:00&lt;00:00, 18.6M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  72%|██▏| 20.2M/28.1M [00:01&lt;00:00, 18.3M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  79%|██▎| 22.0M/28.1M [00:01&lt;00:00, 17.8M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  85%|██▌| 23.8M/28.1M [00:01&lt;00:00, 17.8M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  92%|██▊| 25.7M/28.1M [00:01&lt;00:00, 18.1M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  99%|██▉| 27.7M/28.1M [00:01&lt;00:00, 18.4M Bytes/s]
+Total:  79%|██████████████████████▏     | 108M/136M [00:08&lt;00:02, 13.1M Bytes/s]
 Get sub-01/f .. _bold.nii.gz:   0%|            | 0.00/28.1M [00:00&lt;?, ? Bytes/s]
-Get sub-01/f .. _bold.nii.gz:   4%|   | 1.01M/28.1M [00:00&lt;00:04, 5.51M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:   6%|▏  | 1.77M/28.1M [00:00&lt;00:04, 6.40M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  11%|▎  | 3.06M/28.1M [00:00&lt;00:06, 4.15M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  14%|▍  | 4.07M/28.1M [00:00&lt;00:05, 4.26M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  18%|▌  | 5.10M/28.1M [00:01&lt;00:05, 4.36M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  22%|▋  | 6.12M/28.1M [00:01&lt;00:05, 4.40M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  25%|▊  | 7.15M/28.1M [00:01&lt;00:04, 4.42M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  29%|▊  | 8.18M/28.1M [00:01&lt;00:04, 4.47M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  33%|▉  | 9.22M/28.1M [00:02&lt;00:04, 4.49M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  36%|█  | 10.2M/28.1M [00:02&lt;00:03, 5.03M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  40%|█▏ | 11.3M/28.1M [00:02&lt;00:03, 4.41M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  44%|█▎ | 12.3M/28.1M [00:02&lt;00:03, 4.67M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  47%|█▍ | 13.2M/28.1M [00:02&lt;00:02, 5.27M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  51%|█▌ | 14.5M/28.1M [00:03&lt;00:03, 4.35M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  55%|█▋ | 15.6M/28.1M [00:03&lt;00:02, 4.46M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  59%|█▊ | 16.7M/28.1M [00:03&lt;00:02, 4.54M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  63%|█▉ | 17.8M/28.1M [00:03&lt;00:02, 4.63M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  67%|██ | 18.8M/28.1M [00:04&lt;00:01, 4.70M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  71%|██▏| 20.0M/28.1M [00:04&lt;00:01, 5.67M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  75%|██▎| 21.1M/28.1M [00:04&lt;00:01, 4.61M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  79%|██▎| 22.2M/28.1M [00:04&lt;00:01, 5.24M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  83%|██▍| 23.4M/28.1M [00:05&lt;00:01, 4.72M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  87%|██▌| 24.6M/28.1M [00:05&lt;00:00, 5.03M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  90%|██▋| 25.4M/28.1M [00:05&lt;00:00, 5.47M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  96%|██▉| 27.0M/28.1M [00:05&lt;00:00, 4.92M Bytes/s]
-Get sub-01/f .. _bold.nii.gz: 100%|██▉| 28.1M/28.1M [00:05&lt;00:00, 5.83M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  14%|▍  | 3.84M/28.1M [00:00&lt;00:01, 19.2M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  21%|▌  | 5.82M/28.1M [00:00&lt;00:01, 19.4M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  28%|▊  | 7.80M/28.1M [00:00&lt;00:01, 19.5M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  35%|█  | 9.80M/28.1M [00:00&lt;00:00, 19.6M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  49%|█▍ | 13.8M/28.1M [00:00&lt;00:00, 19.7M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  63%|█▉ | 17.8M/28.1M [00:00&lt;00:00, 19.5M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  77%|██▎| 21.7M/28.1M [00:01&lt;00:00, 19.0M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  84%|██▌| 23.7M/28.1M [00:01&lt;00:00, 19.2M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  99%|██▉| 27.8M/28.1M [00:01&lt;00:00, 19.7M Bytes/s]
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-02/anat/sub-02_T1w.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-02/func/sub-02_task-flanker_run-1_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-02/func/sub-02_task-flanker_run-2_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
@@ -951,60 +809,56 @@ action summary:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> pip install nilearn
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>nilearn
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: nilearn in /home/ubuntu/.local/lib/python3.10/site-packages (0.10.2)
-Requirement already satisfied: joblib&gt;=1.0.0 in /home/ubuntu/.local/lib/python3.10/site-packages (from nilearn) (1.3.2)
-Requirement already satisfied: lxml in /home/ubuntu/.local/lib/python3.10/site-packages (from nilearn) (4.9.4)
-Requirement already satisfied: nibabel&gt;=3.2.0 in /home/ubuntu/.local/lib/python3.10/site-packages (from nilearn) (5.2.0)
-Requirement already satisfied: numpy&gt;=1.19.0 in /home/ubuntu/.local/lib/python3.10/site-packages (from nilearn) (1.26.2)
-Requirement already satisfied: packaging in /usr/lib/python3/dist-packages (from nilearn) (21.3)
-Requirement already satisfied: pandas&gt;=1.1.5 in /home/ubuntu/.local/lib/python3.10/site-packages (from nilearn) (2.1.4)
-Requirement already satisfied: requests&gt;=2.25.0 in /home/ubuntu/.local/lib/python3.10/site-packages (from nilearn) (2.32.3)
-Requirement already satisfied: scikit-learn&gt;=1.0.0 in /home/ubuntu/.local/lib/python3.10/site-packages (from nilearn) (1.3.2)
-Requirement already satisfied: scipy&gt;=1.6.0 in /home/ubuntu/.local/lib/python3.10/site-packages (from nilearn) (1.11.4)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/ubuntu/.local/lib/python3.10/site-packages (from pandas&gt;=1.1.5-&gt;nilearn) (2.8.2)
-Requirement already satisfied: pytz&gt;=2020.1 in /usr/lib/python3/dist-packages (from pandas&gt;=1.1.5-&gt;nilearn) (2022.1)
-Requirement already satisfied: tzdata&gt;=2022.1 in /home/ubuntu/.local/lib/python3.10/site-packages (from pandas&gt;=1.1.5-&gt;nilearn) (2023.3)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/ubuntu/.local/lib/python3.10/site-packages (from requests&gt;=2.25.0-&gt;nilearn) (3.3.2)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packages (from requests&gt;=2.25.0-&gt;nilearn) (3.3)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/lib/python3/dist-packages (from requests&gt;=2.25.0-&gt;nilearn) (1.26.5)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/lib/python3/dist-packages (from requests&gt;=2.25.0-&gt;nilearn) (2020.6.20)
-Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /home/ubuntu/.local/lib/python3.10/site-packages (from scikit-learn&gt;=1.0.0-&gt;nilearn) (3.2.0)
-Requirement already satisfied: six&gt;=1.5 in /usr/lib/python3/dist-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=1.1.5-&gt;nilearn) (1.16.0)
-<span class=" -Color -Color-Yellow">WARNING: Error parsing dependencies of distro-info: Invalid version: &#39;1.1build1&#39;</span>
-<span class=" -Color -Color-Yellow">WARNING: Error parsing dependencies of python-debian: Invalid version: &#39;0.1.43ubuntu1&#39;</span>
-
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: nilearn in /opt/conda/lib/python3.11/site-packages (0.10.4)
+Requirement already satisfied: joblib&gt;=1.0.0 in /opt/conda/lib/python3.11/site-packages (from nilearn) (1.4.2)
+Requirement already satisfied: lxml in /opt/conda/lib/python3.11/site-packages (from nilearn) (5.2.1)
+Requirement already satisfied: nibabel&gt;=4.0.0 in /opt/conda/lib/python3.11/site-packages (from nilearn) (5.2.1)
+Requirement already satisfied: numpy&gt;=1.19.0 in /opt/conda/lib/python3.11/site-packages (from nilearn) (1.26.4)
+Requirement already satisfied: packaging in /opt/conda/lib/python3.11/site-packages (from nilearn) (23.2)
+Requirement already satisfied: pandas&gt;=1.1.5 in /opt/conda/lib/python3.11/site-packages (from nilearn) (2.2.2)
+Requirement already satisfied: requests&gt;=2.25.0 in /opt/conda/lib/python3.11/site-packages (from nilearn) (2.31.0)
+Requirement already satisfied: scikit-learn&gt;=1.0.0 in /opt/conda/lib/python3.11/site-packages (from nilearn) (1.5.0)
+Requirement already satisfied: scipy&gt;=1.8.0 in /opt/conda/lib/python3.11/site-packages (from nilearn) (1.13.0)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /opt/conda/lib/python3.11/site-packages (from pandas&gt;=1.1.5-&gt;nilearn) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /opt/conda/lib/python3.11/site-packages (from pandas&gt;=1.1.5-&gt;nilearn) (2023.3)
+Requirement already satisfied: tzdata&gt;=2022.7 in /opt/conda/lib/python3.11/site-packages (from pandas&gt;=1.1.5-&gt;nilearn) (2024.1)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /opt/conda/lib/python3.11/site-packages (from requests&gt;=2.25.0-&gt;nilearn) (3.3.0)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/conda/lib/python3.11/site-packages (from requests&gt;=2.25.0-&gt;nilearn) (3.4)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /opt/conda/lib/python3.11/site-packages (from requests&gt;=2.25.0-&gt;nilearn) (2.0.7)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/conda/lib/python3.11/site-packages (from requests&gt;=2.25.0-&gt;nilearn) (2024.2.2)
+Requirement already satisfied: threadpoolctl&gt;=3.1.0 in /opt/conda/lib/python3.11/site-packages (from scikit-learn&gt;=1.0.0-&gt;nilearn) (3.5.0)
+Requirement already satisfied: six&gt;=1.5 in /opt/conda/lib/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=1.1.5-&gt;nilearn) (1.16.0)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nipype</span> <span class="kn">import</span> <span class="n">Node</span><span class="p">,</span> <span class="n">Workflow</span><span class="p">,</span> <span class="n">DataGrabber</span><span class="p">,</span> <span class="n">DataSink</span>
-<span class="kn">from</span> <span class="nn">nipype.interfaces.utility</span> <span class="kn">import</span> <span class="n">IdentityInterface</span>
-<span class="kn">from</span> <span class="nn">nipype.interfaces</span> <span class="kn">import</span> <span class="n">fsl</span>
-<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span> 
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">opj</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nipype</span><span class="w"> </span><span class="kn">import</span> <span class="n">Node</span><span class="p">,</span> <span class="n">Workflow</span><span class="p">,</span> <span class="n">DataGrabber</span><span class="p">,</span> <span class="n">DataSink</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nipype.interfaces.utility</span><span class="w"> </span><span class="kn">import</span> <span class="n">IdentityInterface</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nipype.interfaces</span><span class="w"> </span><span class="kn">import</span> <span class="n">fsl</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nilearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">plotting</span> 
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">os.path</span><span class="w"> </span><span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">opj</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nibabel</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nib</span> 
 
 <span class="c1"># Create directory for all the outputs (if it doesn&#39;t exist yet)</span>
-<span class="o">!</span> <span class="o">[</span> ! -d output <span class="o">]</span> <span class="o">&amp;&amp;</span> mkdir output
+<span class="o">!</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span>output<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mkdir<span class="w"> </span>output
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="interfaces-the-core-pieces-of-nipype">
-<h3>3.1. Interfaces : The core pieces of Nipype<a class="headerlink" href="#interfaces-the-core-pieces-of-nipype" title="Permalink to this heading">#</a></h3>
+<h3>3.1. Interfaces : The core pieces of Nipype<a class="headerlink" href="#interfaces-the-core-pieces-of-nipype" title="Link to this heading">#</a></h3>
 <p>Python wrapper around a particular piece of software (even if it is written in another programming language than python):</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- FSL
 - AFNI
@@ -1021,7 +875,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/lib/python3/dist-packages (fr
 <p>Such an interface knows what sort of options an external program has and how to execute it (e.g., keeps track of the inputs and outputs, and checks their expected types).</p>
 <p>In the Nipype framework we can get an information page on an interface class by using the <code class="docutils literal notranslate"><span class="pre">help()</span></code> function.</p>
 <section id="example-interface-for-fsl-s-brain-extraction-tool-bet">
-<h4><strong>Example: Interface for FSL’s Brain Extraction Tool <em>BET</em></strong><a class="headerlink" href="#example-interface-for-fsl-s-brain-extraction-tool-bet" title="Permalink to this heading">#</a></h4>
+<h4><strong>Example: Interface for FSL’s Brain Extraction Tool <em>BET</em></strong><a class="headerlink" href="#example-interface-for-fsl-s-brain-extraction-tool-bet" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># help() function to get a general explanation of the class as well as a list of possible (mandatory and optional) input and output parameters </span>
@@ -1198,7 +1052,7 @@ None
 inskull_mesh_file = &lt;undefined&gt;
 mask_file = &lt;undefined&gt;
 meshfile = &lt;undefined&gt;
-out_file = /storage/tmp/tmpugmqxr9r/output/T1w_nipype_bet.nii.gz
+out_file = /home/jovyan/neurodesktop-storage/output/T1w_nipype_bet.nii.gz
 outline_file = &lt;undefined&gt;
 outskin_mask_file = &lt;undefined&gt;
 outskin_mesh_file = &lt;undefined&gt;
@@ -1226,7 +1080,7 @@ skull_mask_file = &lt;undefined&gt;
 </section>
 </section>
 <section id="nodes-the-light-wrapper-around-interfaces">
-<h3>3.2. Nodes: The light wrapper around interfaces<a class="headerlink" href="#nodes-the-light-wrapper-around-interfaces" title="Permalink to this heading">#</a></h3>
+<h3>3.2. Nodes: The light wrapper around interfaces<a class="headerlink" href="#nodes-the-light-wrapper-around-interfaces" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>To streamline the analysis and to execute multiple interfaces in a sensible order, they need to be put in a Node.</p></li>
 <li><p>A node is an object that executes a certain function: Nipype interface, a user-specified function or an external script.</p></li>
@@ -1236,7 +1090,7 @@ skull_mask_file = &lt;undefined&gt;
 <img src="https://miykael.github.io/nipype_tutorial/static/images/node_two_nodes.png" style="display: block; margin: 0 auto; padding: 30px;" width="50%" height="50%">
 <figcaption><b>Figure 3:</b> Nipype Nodes</figcaption></section>
 <section id="mapnode">
-<h3>MapNode<a class="headerlink" href="#mapnode" title="Permalink to this heading">#</a></h3>
+<h3>MapNode<a class="headerlink" href="#mapnode" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Quite similar to a normal Node, but it can take a list of inputs and operate over each input separately, ultimately returning a list of outputs.</p></li>
 <li><p>Example:  Multiple functional images (A) and each of them should be motion corrected (B1, B2, B3,..). Afterwards, put them all together into a GLM, i.e. the input for the GLM should be an array of [B1, B2, B3, …].</p></li>
@@ -1245,7 +1099,7 @@ skull_mask_file = &lt;undefined&gt;
 <figcaption><b>Figure 4:</b> MapNode</figcaption>
 </section>
 <section id="iterables">
-<h3>Iterables<a class="headerlink" href="#iterables" title="Permalink to this heading">#</a></h3>
+<h3>Iterables<a class="headerlink" href="#iterables" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>For repetitive steps: Iterables split up the execution workflow into many different branches.</p></li>
 <li><p>Example: Running the same preprocessing on multiple subjects or doing statistical inference on multiple files.</p></li>
@@ -1253,7 +1107,7 @@ skull_mask_file = &lt;undefined&gt;
 <center><img src=https://miykael.github.io/nipype_tutorial/static/images/iterables.png></center>
 <figcaption><b>Figure 5:</b> Iterables</figcaption></section>
 <section id="joinnode">
-<h3>JoinNode<a class="headerlink" href="#joinnode" title="Permalink to this heading">#</a></h3>
+<h3>JoinNode<a class="headerlink" href="#joinnode" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Has the opposite effect of iterables: JoinNode merges the different branches back into one node.</p></li>
 <li><p>A JoinNode generalizes MapNode to operate in conjunction with an upstream iterable node to reassemble downstream results, e.g., to merge files into a group level analysis.</p></li>
@@ -1261,10 +1115,10 @@ skull_mask_file = &lt;undefined&gt;
 <center><img src=https://miykael.github.io/nipype_tutorial/static/images/joinnode.png></center>
 <figcaption><b>Figure 6:</b> JoinNode</figcaption>
 <section id="example-node">
-<h4><strong>Example: Node</strong><a class="headerlink" href="#example-node" title="Permalink to this heading">#</a></h4>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">nipype</span><span class="p">.</span><span class="nx">pipeline</span><span class="p">.</span><span class="nx">engine</span><span class="p">.</span><span class="nx">nodes</span> <span class="nx">module</span>
+<h4><strong>Example: Node</strong><a class="headerlink" href="#example-node" title="Link to this heading">#</a></h4>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">nipype</span><span class="p">.</span><span class="nx">pipeline</span><span class="p">.</span><span class="nx">engine</span><span class="p">.</span><span class="nx">nodes</span><span class="w"> </span><span class="nx">module</span>
 
-<span class="nx">nodename</span> <span class="o">=</span> <span class="nx">Nodetype</span><span class="p">(</span><span class="nx">interface_function</span><span class="p">(),</span> <span class="nx">name</span><span class="o">=</span><span class="s1">&#39;labelname&#39;</span><span class="p">)</span>
+<span class="nx">nodename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Nodetype</span><span class="p">(</span><span class="nx">interface_function</span><span class="p">(),</span><span class="w"> </span><span class="nx">name</span><span class="o">=</span><span class="s1">&#39;labelname&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -1303,59 +1157,12 @@ skull_mask_file = &lt;undefined&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250113-00:01:06,626 nipype.workflow INFO:
-	 [Node] Setting-up &quot;bet_node&quot; in &quot;/storage/tmp/tmplkzt0dax/bet_node&quot;.
-250113-00:01:06,634 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240613-06:55:40,240 nipype.workflow INFO:
+	 [Node] Setting-up &quot;bet_node&quot; in &quot;/tmp/tmpbdkoaxdf/bet_node&quot;.
+240613-06:55:40,244 nipype.workflow INFO:
 	 [Node] Executing &quot;bet_node&quot; &lt;nipype.interfaces.fsl.preprocess.BET&gt;
-250113-00:01:07,171 nipype.interface INFO:
-	 stdout 2025-01-13T00:01:07.171703:
-250113-00:01:07,174 nipype.interface INFO:
-	 stdout 2025-01-13T00:01:07.171703:Error: input image sub-01_T1w not valid
-250113-00:01:07,175 nipype.interface INFO:
-	 stdout 2025-01-13T00:01:07.171703:
-250113-00:01:07,329 nipype.workflow INFO:
-	 [Node] Finished &quot;bet_node&quot;, elapsed time 0.692094s.
-250113-00:01:07,334 nipype.workflow WARNING:
-	 [Node] Error on &quot;bet_node&quot; (/storage/tmp/tmplkzt0dax/bet_node)
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NodeExecutionError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">17</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">bet</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">out_file</span> <span class="o">=</span> <span class="n">output_file</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1"># Run the node</span>
-<span class="ne">---&gt; </span><span class="mi">17</span> <span class="n">res</span> <span class="o">=</span> <span class="n">bet</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-
-<span class="nn">File ~/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py:527,</span> in <span class="ni">Node.run</span><span class="nt">(self, updatehash)</span>
-<span class="g g-Whitespace">    </span><span class="mi">524</span> <span class="n">savepkl</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">outdir</span><span class="p">,</span> <span class="s2">&quot;_inputs.pklz&quot;</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">get_traitsfree</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">526</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">527</span>     <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_interface</span><span class="p">(</span><span class="n">execute</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">528</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">529</span>     <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;[Node] Error on &quot;</span><span class="si">%s</span><span class="s1">&quot; (</span><span class="si">%s</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fullname</span><span class="p">,</span> <span class="n">outdir</span><span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py:645,</span> in <span class="ni">Node._run_interface</span><span class="nt">(self, execute, updatehash)</span>
-<span class="g g-Whitespace">    </span><span class="mi">643</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_update_hash</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">644</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_results</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">645</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_command</span><span class="p">(</span><span class="n">execute</span><span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py:771,</span> in <span class="ni">Node._run_command</span><span class="nt">(self, execute, copyfiles)</span>
-<span class="g g-Whitespace">    </span><span class="mi">769</span>     <span class="c1"># Always pass along the traceback</span>
-<span class="g g-Whitespace">    </span><span class="mi">770</span>     <span class="n">msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Traceback:</span><span class="se">\n</span><span class="si">{</span><span class="n">_tab</span><span class="p">(</span><span class="n">runtime</span><span class="o">.</span><span class="n">traceback</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">771</span>     <span class="k">raise</span> <span class="n">NodeExecutionError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">773</span> <span class="k">return</span> <span class="n">result</span>
-
-<span class="ne">NodeExecutionError</span>: Exception raised while executing Node bet_node.
-
-<span class="ne">Cmdline</span>:
-	<span class="n">bet</span> <span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="n">_T1w</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span> <span class="o">/</span><span class="n">storage</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">tmpugmqxr9r</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">T1w_nipype_bet</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span> <span class="o">-</span><span class="n">f</span> <span class="mf">0.30</span> <span class="o">-</span><span class="n">m</span>
-<span class="ne">Stdout</span>:
-
-	<span class="n">Error</span><span class="p">:</span> <span class="nb">input</span> <span class="n">image</span> <span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="n">_T1w</span> <span class="ow">not</span> <span class="n">valid</span>
-
-<span class="ne">Stderr</span>:
-
-<span class="ne">Traceback</span>:
-	<span class="ne">RuntimeError</span><span class="p">:</span> <span class="n">subprocess</span> <span class="n">exited</span> <span class="k">with</span> <span class="n">code</span> <span class="mf">1.</span>
+240613-06:55:44,124 nipype.workflow INFO:
+	 [Node] Finished &quot;bet_node&quot;, elapsed time 3.879271s.
 </pre></div>
 </div>
 </div>
@@ -1397,14 +1204,14 @@ skull_mask_file = &lt;undefined&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/57d7b249e50367bf11e45c9ead868d6f2d4f75d7f81f958b125b1719092d838f.png" src="_images/57d7b249e50367bf11e45c9ead868d6f2d4f75d7f81f958b125b1719092d838f.png" />
-<img alt="_images/412d92cfade6fd972dd42db0ca945e4636ca1df9e73496b5797b7f0871d90b4b.png" src="_images/412d92cfade6fd972dd42db0ca945e4636ca1df9e73496b5797b7f0871d90b4b.png" />
+<img alt="../_images/57d7b249e50367bf11e45c9ead868d6f2d4f75d7f81f958b125b1719092d838f.png" src="../_images/57d7b249e50367bf11e45c9ead868d6f2d4f75d7f81f958b125b1719092d838f.png" />
+<img alt="../_images/412d92cfade6fd972dd42db0ca945e4636ca1df9e73496b5797b7f0871d90b4b.png" src="../_images/412d92cfade6fd972dd42db0ca945e4636ca1df9e73496b5797b7f0871d90b4b.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="workflows">
-<h3>3.3. Workflows<a class="headerlink" href="#workflows" title="Permalink to this heading">#</a></h3>
+<h3>3.3. Workflows<a class="headerlink" href="#workflows" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Define functionality for pipelined execution of interfaces</p></li>
 <li><p>Consist of multiple nodes, each representing a specific interface.</p></li>
@@ -1413,9 +1220,9 @@ skull_mask_file = &lt;undefined&gt;
 <li><p>Control the setup and the execution of individual interfaces.</p></li>
 <li><p>Will take care of inputs and outputs of each interface and arrange the execution of each interface in the most efficient way.</p></li>
 </ul>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">nipype</span><span class="p">.</span><span class="nx">pipeline</span><span class="p">.</span><span class="nx">engine</span><span class="p">.</span><span class="nx">workflows</span> <span class="nx">module</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">nipype</span><span class="p">.</span><span class="nx">pipeline</span><span class="p">.</span><span class="nx">engine</span><span class="p">.</span><span class="nx">workflows</span><span class="w"> </span><span class="nx">module</span>
 
-<span class="nx">Workflow</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">base_dir</span><span class="o">=</span><span class="nx">None</span><span class="p">)</span>
+<span class="nx">Workflow</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">base_dir</span><span class="o">=</span><span class="nx">None</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -1429,7 +1236,7 @@ skull_mask_file = &lt;undefined&gt;
 <li><p><code class="docutils literal notranslate"><span class="pre">Workflow.run()</span></code>: Execute the workflow</p></li>
 </ul>
 <section id="example-workflow">
-<h4><strong>Example: Workflow</strong><a class="headerlink" href="#example-workflow" title="Permalink to this heading">#</a></h4>
+<h4><strong>Example: Workflow</strong><a class="headerlink" href="#example-workflow" title="Link to this heading">#</a></h4>
 <p>First, define different nodes to:</p>
 <ul class="simple">
 <li><p>Skullstrip an image to obtain a mask</p></li>
@@ -1455,7 +1262,7 @@ skull_mask_file = &lt;undefined&gt;
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a working directory for all workflows created during this workshop</span>
-<span class="o">!</span> <span class="o">[</span> ! -d output/working_dir <span class="o">]</span> <span class="o">&amp;&amp;</span> mkdir output/working_dir
+<span class="o">!</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span>output/working_dir<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mkdir<span class="w"> </span>output/working_dir
 
 <span class="n">wf_work_dir</span> <span class="o">=</span> <span class="n">opj</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s1">&#39;output/working_dir&#39;</span><span class="p">)</span> 
 
@@ -1468,21 +1275,21 @@ skull_mask_file = &lt;undefined&gt;
 </div>
 </section>
 <section id="connect-nodes-within-a-workflow">
-<h4>Connect nodes within a workflow<a class="headerlink" href="#connect-nodes-within-a-workflow" title="Permalink to this heading">#</a></h4>
+<h4>Connect nodes within a workflow<a class="headerlink" href="#connect-nodes-within-a-workflow" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>method called <code class="docutils literal notranslate"><span class="pre">connect</span></code> that is going to do most of the work</p></li>
 <li><p>checks if inputs and outputs are actually provided by the nodes that are being connected</p></li>
 </ul>
 <p><span class="math notranslate nohighlight">\(\rightarrow\)</span> There are two different ways to call connect:</p>
 <p>Establish one connection at a time:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">wf</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">source</span><span class="p">,</span> <span class="s2">&quot;source_output&quot;</span><span class="p">,</span> <span class="nx">dest</span><span class="p">,</span> <span class="s2">&quot;dest_input&quot;</span><span class="p">)</span> 
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">wf</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">source</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;source_output&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">dest</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dest_input&quot;</span><span class="p">)</span><span class="w"> </span>
 </pre></div>
 </div>
 <p>Establish multiple connections between two nodes at once:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">wf</span><span class="p">.</span><span class="nx">connect</span><span class="p">([(</span><span class="nx">source</span><span class="p">,</span> <span class="nx">dest</span><span class="p">,</span> <span class="p">[(</span><span class="s2">&quot;source_output1&quot;</span><span class="p">,</span> <span class="s2">&quot;dest_input1&quot;</span><span class="p">),</span>
-                         <span class="p">(</span><span class="s2">&quot;source_output2&quot;</span><span class="p">,</span> <span class="s2">&quot;dest_input2&quot;</span><span class="p">)</span>
-                         <span class="p">])</span>
-         <span class="p">])</span> 
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">wf</span><span class="p">.</span><span class="nx">connect</span><span class="p">([(</span><span class="nx">source</span><span class="p">,</span><span class="w"> </span><span class="nx">dest</span><span class="p">,</span><span class="w"> </span><span class="p">[(</span><span class="s2">&quot;source_output1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dest_input1&quot;</span><span class="p">),</span>
+<span class="w">                         </span><span class="p">(</span><span class="s2">&quot;source_output2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dest_input2&quot;</span><span class="p">)</span>
+<span class="w">                         </span><span class="p">])</span>
+<span class="w">         </span><span class="p">])</span><span class="w"> </span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1510,7 +1317,7 @@ skull_mask_file = &lt;undefined&gt;
 	 Generated workflow graph: /home/jovyan/neurodesktop-storage/output/working_dir/smoothflow/workflow_graph.png (graph2use=hierarchical, simple_form=True).
 </pre></div>
 </div>
-<img alt="_images/32fcfb2329fe3d59a6dab0a41afe4f4a865b0b313875c6f4ad5ca857ac36427c.png" src="_images/32fcfb2329fe3d59a6dab0a41afe4f4a865b0b313875c6f4ad5ca857ac36427c.png" />
+<img alt="../_images/32fcfb2329fe3d59a6dab0a41afe4f4a865b0b313875c6f4ad5ca857ac36427c.png" src="../_images/32fcfb2329fe3d59a6dab0a41afe4f4a865b0b313875c6f4ad5ca857ac36427c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1527,7 +1334,7 @@ skull_mask_file = &lt;undefined&gt;
 	 Generated workflow graph: /home/jovyan/neurodesktop-storage/output/working_dir/smoothflow/graph.png (graph2use=flat, simple_form=True).
 </pre></div>
 </div>
-<img alt="_images/633f4e5b88aaaf63d098dc5fa40c770829b503750804aa1f285e463f6566e4f4.png" src="_images/633f4e5b88aaaf63d098dc5fa40c770829b503750804aa1f285e463f6566e4f4.png" />
+<img alt="../_images/633f4e5b88aaaf63d098dc5fa40c770829b503750804aa1f285e463f6566e4f4.png" src="../_images/633f4e5b88aaaf63d098dc5fa40c770829b503750804aa1f285e463f6566e4f4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1570,7 +1377,7 @@ skull_mask_file = &lt;undefined&gt;
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the working directories of the workflow</span>
-<span class="o">!</span>tree  output/working_dir/smoothflow/ -I <span class="s1">&#39;*js|*json|*html|*pklz|_report&#39;</span>
+<span class="o">!</span>tree<span class="w">  </span>output/working_dir/smoothflow/<span class="w"> </span>-I<span class="w"> </span><span class="s1">&#39;*js|*json|*html|*pklz|_report&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1600,7 +1407,7 @@ skull_mask_file = &lt;undefined&gt;
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Helper function to plot 3D NIfTI images</span>
-<span class="k">def</span> <span class="nf">plot_slice</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_slice</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
 
     <span class="c1"># Load the image</span>
     <span class="n">img</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
@@ -1629,13 +1436,13 @@ skull_mask_file = &lt;undefined&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e23b762a19fa1ecd2413f1a7914a91c3d8e8cf1ec45dc213f5f61c520406dd47.png" src="_images/e23b762a19fa1ecd2413f1a7914a91c3d8e8cf1ec45dc213f5f61c520406dd47.png" />
+<img alt="../_images/e23b762a19fa1ecd2413f1a7914a91c3d8e8cf1ec45dc213f5f61c520406dd47.png" src="../_images/e23b762a19fa1ecd2413f1a7914a91c3d8e8cf1ec45dc213f5f61c520406dd47.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="execution-plugins-execution-on-different-systems">
-<h3>3.4. Execution Plugins: Execution on different systems<a class="headerlink" href="#execution-plugins-execution-on-different-systems" title="Permalink to this heading">#</a></h3>
+<h3>3.4. Execution Plugins: Execution on different systems<a class="headerlink" href="#execution-plugins-execution-on-different-systems" title="Link to this heading">#</a></h3>
 <p>Allow seamless execution across many architectures and make using parallel computation quite easy.</p>
 <ul class="simple">
 <li><p>Local Machines:</p>
@@ -1663,7 +1470,7 @@ skull_mask_file = &lt;undefined&gt;
 </ul>
 <p class="important-title" style="font-size: 1.2em; color: red;"><i class="fas fa-exclamation-circle" style="color: red;"></i> <span style="font-size: 1.5em;">Cluster operation often needs a special setup.</span></p>
 <p>All plugins can be executed with:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">workflow</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">plugin</span><span class="o">=</span><span class="nx">PLUGIN_NAME</span><span class="p">,</span> <span class="nx">plugin_args</span><span class="o">=</span><span class="nx">ARGS_DICT</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">workflow</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">plugin</span><span class="o">=</span><span class="nx">PLUGIN_NAME</span><span class="p">,</span><span class="w"> </span><span class="nx">plugin_args</span><span class="o">=</span><span class="nx">ARGS_DICT</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>To run the workflow one node at a time:</p>
@@ -1671,14 +1478,14 @@ skull_mask_file = &lt;undefined&gt;
 </pre></div>
 </div>
 <p>To distribute processing on a multicore machine, number of processors/threads will be automatically detected:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">wf</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">plugin</span><span class="o">=</span><span class="s1">&#39;MultiProc&#39;</span><span class="p">)</span> 
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">wf</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">plugin</span><span class="o">=</span><span class="s1">&#39;MultiProc&#39;</span><span class="p">)</span><span class="w"> </span>
 </pre></div>
 </div>
 <p>Plugin arguments:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">arguments</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;n_procs&#39;</span> <span class="o">:</span> <span class="nx">num_threads</span><span class="p">,</span>
-               <span class="s1">&#39;memory_gb&#39;</span> <span class="o">:</span> <span class="nx">num_gb</span><span class="p">}</span> 
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;n_procs&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">num_threads</span><span class="p">,</span>
+<span class="w">               </span><span class="s1">&#39;memory_gb&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">num_gb</span><span class="p">}</span><span class="w"> </span>
 
-<span class="nx">wf</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">plugin</span><span class="o">=</span><span class="s1">&#39;MultiProc&#39;</span><span class="p">,</span> <span class="nx">plugin_args</span><span class="o">=</span><span class="nx">arguments</span><span class="p">)</span>
+<span class="nx">wf</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">plugin</span><span class="o">=</span><span class="s1">&#39;MultiProc&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">plugin_args</span><span class="o">=</span><span class="nx">arguments</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>In order to use Nipype with SLURM simply call:</p>
@@ -1690,7 +1497,7 @@ skull_mask_file = &lt;undefined&gt;
 <p style="font-size: 13px;"><code>sbatch_args</code>: Takes any arguments such as nodes/partitions/gres/etc that you would want to pass on to the sbatch command underneath.</p>
 <p style="font-size: 13px;"><code>jobid_re</code>: Regular expression for custom job submission id search.</p></section>
 <section id="data-input-first-step-of-every-analysis">
-<h3>3.5. Data Input: First step of every analysis<a class="headerlink" href="#data-input-first-step-of-every-analysis" title="Permalink to this heading">#</a></h3>
+<h3>3.5. Data Input: First step of every analysis<a class="headerlink" href="#data-input-first-step-of-every-analysis" title="Link to this heading">#</a></h3>
 <p>Nipype provides many different modules how to get the data into the framework.</p>
 <p>We will work through an example with the DataGrabber module:</p>
 <ul class="simple">
@@ -1708,11 +1515,11 @@ skull_mask_file = &lt;undefined&gt;
 <li><p><strong>XNATSource:</strong> Pull data from an XNAT server.</p></li>
 </ul>
 <section id="example-datagrabber">
-<h4><strong>Example: DataGrabber</strong><a class="headerlink" href="#example-datagrabber" title="Permalink to this heading">#</a></h4>
+<h4><strong>Example: DataGrabber</strong><a class="headerlink" href="#example-datagrabber" title="Link to this heading">#</a></h4>
 <p>Let’s assume we want to grab the anatomical and functional images of certain subjects of the Flanker dataset:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree -L <span class="m">4</span> ds000102/ -I <span class="s1">&#39;*csv|*pdf&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree<span class="w"> </span>-L<span class="w"> </span><span class="m">4</span><span class="w"> </span>ds000102/<span class="w"> </span>-I<span class="w"> </span><span class="s1">&#39;*csv|*pdf&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -2006,7 +1813,7 @@ skull_mask_file = &lt;undefined&gt;
 </div>
 <p>To feed dynamic parameters into the node either do this by specifying them directly as node inputs, or using another node and feed <strong>subject_id</strong> as connections to the DataGrabber node.</p>
 <p>Specifying the input fields of DataGrabber directly for one subject:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">dg</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">subject_id</span> <span class="o">=</span> <span class="s1">&#39;01&#39;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">dg</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">subject_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;01&#39;</span>
 </pre></div>
 </div>
 <p>If we want to start our workflow from creating subgraphs, i.e. running it for more than one subject, we can use another node:
@@ -2057,11 +1864,11 @@ skull_mask_file = &lt;undefined&gt;
 </section>
 </section>
 <section id="data-output">
-<h3>3.6. Data Output<a class="headerlink" href="#data-output" title="Permalink to this heading">#</a></h3>
+<h3>3.6. Data Output<a class="headerlink" href="#data-output" title="Link to this heading">#</a></h3>
 <p>A workflow working directory is like a cache containing the outputs of various processing stages and various extraneous information such as execution reports, hashfiles determining the input state of processes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree  output/working_dir/smoothflow/ -I <span class="s1">&#39;*js|*dot|*png|*html|*json&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree<span class="w">  </span>output/working_dir/smoothflow/<span class="w"> </span>-I<span class="w"> </span><span class="s1">&#39;*js|*dot|*png|*html|*json&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -2110,23 +1917,23 @@ skull_mask_file = &lt;undefined&gt;
 <li><p><strong>XNATSink</strong></p></li>
 </ul>
 <section id="example-datasink">
-<h4><strong>Example: DataSink</strong><a class="headerlink" href="#example-datasink" title="Permalink to this heading">#</a></h4>
+<h4><strong>Example: DataSink</strong><a class="headerlink" href="#example-datasink" title="Link to this heading">#</a></h4>
 <p>The following code segment defines the DataSink node and sets the <code class="docutils literal notranslate"><span class="pre">base_directory</span></code> in which all outputs will be stored. The <code class="docutils literal notranslate"><span class="pre">container</span></code> input creates a subdirectory within the base_directory.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">from</span> <span class="nx">nipype</span><span class="p">.</span><span class="nx">interfaces</span><span class="p">.</span><span class="nx">io</span> <span class="k">import</span> <span class="nx">DataSink</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">from</span><span class="w"> </span><span class="nx">nipype</span><span class="p">.</span><span class="nx">interfaces</span><span class="p">.</span><span class="nx">io</span><span class="w"> </span><span class="k">import</span><span class="w"> </span><span class="nx">DataSink</span>
 
 
-<span class="nx">datasink</span> <span class="o">=</span> <span class="nx">Node</span><span class="p">(</span><span class="nx">DataSink</span><span class="p">(),</span> <span class="nx">name</span><span class="o">=</span><span class="s1">&#39;sinker&#39;</span><span class="p">)</span>
-<span class="nx">datasink</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">base_directory</span> <span class="o">=</span> <span class="s1">&#39;/path/to/output&#39;</span>
-<span class="nx">workflow</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">inputnode</span><span class="p">,</span> <span class="s1">&#39;subject_id&#39;</span><span class="p">,</span> <span class="nx">datasink</span><span class="p">,</span> <span class="s1">&#39;container&#39;</span><span class="p">)</span>
+<span class="nx">datasink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Node</span><span class="p">(</span><span class="nx">DataSink</span><span class="p">(),</span><span class="w"> </span><span class="nx">name</span><span class="o">=</span><span class="s1">&#39;sinker&#39;</span><span class="p">)</span>
+<span class="nx">datasink</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">base_directory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/path/to/output&#39;</span>
+<span class="nx">workflow</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">inputnode</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;subject_id&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">datasink</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;container&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>To store different outputs in the same place, a second port needs to be created with (.)  This stores the files in a separate subfolder called mask:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">workflow</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">inputnode</span><span class="p">,</span> <span class="s1">&#39;mask_out_file&#39;</span><span class="p">,</span> <span class="nx">datasink</span><span class="p">,</span> <span class="s1">&#39;container.mask&#39;</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">workflow</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">inputnode</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;mask_out_file&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">datasink</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;container.mask&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If you want to store the files in the same folder, use the .&#64; syntax. The &#64; tells the DataSink interface to not create the subfolder. This will allow to create different named input ports for DataSink and allow the user to store the files in the same folder.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">workflow</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">inputnode</span><span class="p">,</span> <span class="s1">&#39;subject_id&#39;</span><span class="p">,</span> <span class="nx">datasink</span><span class="p">,</span> <span class="s1">&#39;container&#39;</span><span class="p">)</span>
-<span class="nx">workflow</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">inputnode</span><span class="p">,</span> <span class="s1">&#39;mask_out_file&#39;</span><span class="p">,</span> <span class="nx">datasink</span><span class="p">,</span> <span class="s1">&#39;container.@mask&#39;</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">workflow</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">inputnode</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;subject_id&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">datasink</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;container&#39;</span><span class="p">)</span>
+<span class="nx">workflow</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">inputnode</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;mask_out_file&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">datasink</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;container.@mask&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="important-title" style="font-size: 1.5em; color: purple;">
@@ -2214,7 +2021,7 @@ skull_mask_file = &lt;undefined&gt;
 	 Generated workflow graph: /home/jovyan/neurodesktop-storage/output/working_dir/preproc/graph.png (graph2use=colored, simple_form=True).
 </pre></div>
 </div>
-<img alt="_images/6684b0d309ede89a63ecb4e1a3b6c1a7349f9b5fbbf5f521832c1e69ac05369a.png" src="_images/6684b0d309ede89a63ecb4e1a3b6c1a7349f9b5fbbf5f521832c1e69ac05369a.png" />
+<img alt="../_images/6684b0d309ede89a63ecb4e1a3b6c1a7349f9b5fbbf5f521832c1e69ac05369a.png" src="../_images/6684b0d309ede89a63ecb4e1a3b6c1a7349f9b5fbbf5f521832c1e69ac05369a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2288,7 +2095,7 @@ skull_mask_file = &lt;undefined&gt;
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> tree output/working_dir/preproc/results
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>tree<span class="w"> </span>output/working_dir/preproc/results
 </pre></div>
 </div>
 </div>
@@ -2368,7 +2175,7 @@ For example, to get rid of the string 'bold' and to adapt the file ending of the
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> tree output/working_dir/preproc/results
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>tree<span class="w"> </span>output/working_dir/preproc/results
 </pre></div>
 </div>
 </div>
@@ -2397,7 +2204,8 @@ For example, to get rid of the string 'bold' and to adapt the file ending of the
 </section>
 </section>
 <section id="pydra-a-modern-dataflow-engine-developed-for-the-nipype-project">
-<h2>4. Pydra: A modern dataflow engine developed for the Nipype project<a class="headerlink" href="#pydra-a-modern-dataflow-engine-developed-for-the-nipype-project" title="Permalink to this heading">#</a></h2>
+<h2>4. Pydra: A modern dataflow engine developed for the Nipype project<a class="headerlink" href="#pydra-a-modern-dataflow-engine-developed-for-the-nipype-project" title="Link to this heading">#</a></h2>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/nipype/pydra/master/docs/logo/pydra_logo.jpg"><img alt="https://raw.githubusercontent.com/nipype/pydra/master/docs/logo/pydra_logo.jpg" src="https://raw.githubusercontent.com/nipype/pydra/master/docs/logo/pydra_logo.jpg" style="width: 30%;" /></a>
 <ul class="simple">
 <li><p>Pydra is a rewrite of the Nipype engine and forms the core of the Nipype 2.0 ecosystem and is meant to provide <strong>additional flexibility</strong> allowing users to define custom processing steps, interfaces and nested workflows.</p></li>
 </ul>
@@ -2414,7 +2222,7 @@ For example, to get rid of the string 'bold' and to adapt the file ending of the
 <li><p><strong>Splitting &amp; combining semantics</strong> for creating nested loops over input sets (MapReduce extended to graphs).</p></li>
 </ul>
 <section id="key-features-in-more-detail">
-<h3>Key features in more detail:<a class="headerlink" href="#key-features-in-more-detail" title="Permalink to this heading">#</a></h3>
+<h3>Key features in more detail:<a class="headerlink" href="#key-features-in-more-detail" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Composable dataflows:</strong> A dataflow is represented as a directed acyclic graph, where each Task represents a Python function, execution of an external tool, or another dataflow. This enables the creation of simpe linear pipelines to complex nested dataflows of any depth. This approach promotes the development of reusable dataflows, enhancing modularity and scalability.</p></li>
 </ul>
@@ -2478,13 +2286,13 @@ For example, to get rid of the string 'bold' and to adapt the file ending of the
 </section>
 </section>
 <section id="dependencies-in-jupyter-python">
-<h2>Dependencies in Jupyter/Python<a class="headerlink" href="#dependencies-in-jupyter-python" title="Permalink to this heading">#</a></h2>
+<h2>Dependencies in Jupyter/Python<a class="headerlink" href="#dependencies-in-jupyter-python" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Using the package <a class="reference external" href="https://github.com/rasbt/watermark">watermark</a> to print out computer characteristics and software versions.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install watermark
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>watermark
 </pre></div>
 </div>
 </div>
@@ -2555,7 +2363,7 @@ numpy     : 1.26.4
 </div>
 </section>
 <section id="references-resources">
-<h2>References/ Resources<a class="headerlink" href="#references-resources" title="Permalink to this heading">#</a></h2>
+<h2>References/ Resources<a class="headerlink" href="#references-resources" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Gorgolewski K, Burns CD, Madison C, Clark D, Halchenko YO, Waskom ML, Ghosh SS. (2011). Nipype: a flexible, lightweight and extensible neuroimaging data processing framework in Python. Front. Neuroinform. 5:13.</p>
 <ul>
@@ -2595,7 +2403,7 @@ numpy     : 1.26.4
         },
         kernelOptions: {
             name: "python3",
-            path: "./."
+            path: "./workflows"
         },
         predefinedOutput: true
     }
@@ -2609,9 +2417,27 @@ numpy     : 1.26.4
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="bids_conversion.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">BIDS conversion</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="nipype_short.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Basic Nipype</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -2619,7 +2445,9 @@ numpy     : 1.26.4
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2691,7 +2519,7 @@ By Neurodesk Team
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -2715,8 +2543,8 @@ By Neurodesk Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

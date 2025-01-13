@@ -9,6 +9,11 @@ addEventListener("DOMContentLoaded", (event) => {
     let docsearchDiv = document.createElement("DIV")
     docsearchDiv.id = 'docsearch';
     container.appendChild(docsearchDiv);
+
+    const sidebar_container = document.querySelector(".sidebar-primary-item");
+    let sidebar_docsearchDiv = document.createElement("DIV")
+    sidebar_docsearchDiv.id = 'docsearch';
+    sidebar_container.appendChild(sidebar_docsearchDiv);
   
     setTimeout(() => {
       docsearch({
