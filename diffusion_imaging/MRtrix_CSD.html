@@ -523,7 +523,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/diffusion_imaging/MRtrix_CSD.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
+  <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/diffusion_imaging/MRtrix_Preprocessing.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="diffusion-analysis-with-mrtrix-part-2-constrained-spherical-deconvolution-and-tissue-estimation">
 <h1>Diffusion Analysis with MRtrix: Part 2 - Constrained Spherical Deconvolution and Tissue estimation<a class="headerlink" href="#diffusion-analysis-with-mrtrix-part-2-constrained-spherical-deconvolution-and-tissue-estimation" title="Link to this heading">#</a></h1>
 <p>This notebook is the second in a series on Diffusion Analysis using MRtrix and builds upon the preprocessed data generated in <strong>Diffusion Analysis with MRtrix: Part 1 - Preprocessing</strong>. The data necessary for this example will be downloaded from OSF.</p>
@@ -542,6 +542,10 @@
 <p><strong>Preprocessed Diffusion Data from OSF:</strong></p>
 <ul class="simple">
 <li><p>Dörig, M. (2024, November 19). Diffusion MRI Analysis with MRtrix: An Interactive Three-Part Series on Neurodesk. Retrieved from <a class="reference external" href="https://osf.io/y2dq4/">OSF</a></p></li>
+</ul>
+<p><strong>Tutorial: Publishing and Accessing Open Data on OSF with <code class="docutils literal notranslate"><span class="pre">osfclient</span></code> on Neurodesk:</strong></p>
+<ul class="simple">
+<li><p>https://www.neurodesk.org/tutorials-examples/tutorials/open_data/osfclient/</p></li>
 </ul>
 <p><strong>MRtrix3:</strong></p>
 <ul class="simple">
@@ -587,7 +591,7 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: GenuineIntel
-model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
+model name	: 12th Gen Intel(R) Core(TM) i7-12700
 </pre></div>
 </div>
 </div>
@@ -597,7 +601,7 @@ model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">nibabel</span> <span class="n">matplotlib</span> <span class="n">dipy</span> <span class="n">fury</span>
+<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">dipy</span><span class="o">==</span><span class="mf">1.9.0</span> <span class="n">fury</span><span class="o">==</span><span class="mf">0.11.0</span> <span class="n">numpy</span><span class="o">==</span><span class="mf">1.26.4</span>
 </pre></div>
 </div>
 </div>
@@ -610,7 +614,7 @@ model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">ipyniivue</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnyNiivue</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipyniivue</span><span class="w"> </span><span class="kn">import</span> <span class="n">NiiVue</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">RadioButtons</span><span class="p">,</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">HBox</span><span class="p">,</span> <span class="n">Dropdown</span><span class="p">,</span> <span class="n">Output</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">dipy.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">default_sphere</span>
@@ -663,25 +667,11 @@ model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████| 80.0k/80.0k [00:00&lt;00:00, 73.8Mbytes/s]
-100%|█████████████████████████████████████| 226M/226M [00:02&lt;00:00, 108Mbytes/s]
-100%|██████████████████████████████████| 8.31M/8.31M [00:00&lt;00:00, 56.3Mbytes/s]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save the original directory</span>
-<span class="n">original_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-<span class="c1"># Navigate to the dowloaded data</span>
-<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;MRtrix_preprocessed&quot;</span><span class="p">)</span>
-<span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/jovyan/Git_repositories/MRtrix_preprocessed&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|███████████████████████████████████| 80.0k/80.0k [00:00&lt;00:00, 121kbytes/s]
+100%|████████████████████████████████████| 226M/226M [00:19&lt;00:00, 11.7Mbytes/s]
+100%|██████████████████████████████████| 8.31M/8.31M [00:02&lt;00:00, 2.83Mbytes/s]
+100%|██████████████████████████████████████| 476/476 [00:00&lt;00:00, 5.85Mbytes/s]
+100%|██████████████████████████████████| 2.77k/2.77k [00:00&lt;00:00, 26.1Mbytes/s]
 </pre></div>
 </div>
 </div>
@@ -722,9 +712,9 @@ USAGE
 <section id="dwi2response">
 <h3>dwi2response<a class="headerlink" href="#dwi2response" title="Link to this heading">#</a></h3>
 <p>Unlike most fMRI studies which use a basis function that has been created beforehand, MRtrix will derive a basis function from the diffusion data; using an individual subject’s data is more precise and specific to that subject. The command <code class="docutils literal notranslate"><span class="pre">dwi2response</span></code> has several different algorithms that you can choose from, but for this tutorial we will use the “dhollander” algorithm:</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>dwi2response<span class="w"> </span>dhollander<span class="w"> </span>sub-02_den_preproc_unbiased.mif<span class="w"> </span>wm.txt<span class="w"> </span>gm.txt<span class="w"> </span>csf.txt<span class="w"> </span>-voxels<span class="w"> </span>voxels.mif
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>dwi2response<span class="w"> </span>dhollander<span class="w"> </span>MRtrix_preprocessed/sub-02_den_preproc_unbiased.mif<span class="w"> </span>wm.txt<span class="w"> </span>gm.txt<span class="w"> </span>csf.txt<span class="w"> </span>-voxels<span class="w"> </span>voxels.mif
 </pre></div>
 </div>
 </div>
@@ -732,9 +722,9 @@ USAGE
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dwi2response: 
 dwi2response: <span class=" -Color -Color-Green">Note that this script makes use of commands / algorithms that have relevant articles for citation. Please consult the help page (-help option) for more information.</span>
 dwi2response: 
-dwi2response: <span class=" -Color -Color-Green">Generated scratch directory: /home/jovyan/Git_repositories/MRtrix_preprocessed/dwi2response-tmp-8O8KLK/</span>
-dwi2response: <span class=" -Color -Color-Green">Importing DWI data (/home/jovyan/Git_repositories/MRtrix_preprocessed/sub-02_den_preproc_unbiased.mif)...</span>
-dwi2response: <span class=" -Color -Color-Green">Changing to scratch directory (/home/jovyan/Git_repositories/MRtrix_preprocessed/dwi2response-tmp-8O8KLK/)</span>
+dwi2response: <span class=" -Color -Color-Green">Generated scratch directory: /data/books/diffusion_imaging/dwi2response-tmp-ACKXQY/</span>
+dwi2response: <span class=" -Color -Color-Green">Importing DWI data (/data/books/diffusion_imaging/MRtrix_preprocessed/sub-02_den_preproc_unbiased.mif)...</span>
+dwi2response: <span class=" -Color -Color-Green">Changing to scratch directory (/data/books/diffusion_imaging/dwi2response-tmp-ACKXQY/)</span>
 dwi2response: <span class=" -Color -Color-Green">Computing brain mask (dwi2mask)...</span>
 dwi2response: <span class=" -Color -Color-Green">-------</span>
 dwi2response: <span class=" -Color -Color-Green">4 unique b-value(s) detected: 0,700,1200,2800 with 6,16,30,50 volumes</span>
@@ -781,8 +771,8 @@ dwi2response: <span class=" -Color -Color-Green"> * Estimating response function
 dwi2response: <span class=" -Color -Color-Green">-------</span>
 dwi2response: <span class=" -Color -Color-Green">Generating outputs...</span>
 dwi2response: <span class=" -Color -Color-Green">-------</span>
-dwi2response: <span class=" -Color -Color-Green">Changing back to original directory (/home/jovyan/Git_repositories/MRtrix_preprocessed)</span>
-dwi2response: <span class=" -Color -Color-Green">Deleting scratch directory (/home/jovyan/Git_repositories/MRtrix_preprocessed/dwi2response-tmp-8O8KLK/)</span>
+dwi2response: <span class=" -Color -Color-Green">Changing back to original directory (/data/books/diffusion_imaging)</span>
+dwi2response: <span class=" -Color -Color-Green">Deleting scratch directory (/data/books/diffusion_imaging/dwi2response-tmp-ACKXQY/)</span>
 </pre></div>
 </div>
 </div>
@@ -806,7 +796,7 @@ dwi2response: <span class=" -Color -Color-Green">Deleting scratch directory (/ho
             <span class="n">exit</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">temp_file</span><span class="o">.</span><span class="n">name</span>
 
-<span class="n">mif_file_path1</span> <span class="o">=</span> <span class="s1">&#39;sub-02_den_preproc_unbiased.mif&#39;</span>
+<span class="n">mif_file_path1</span> <span class="o">=</span> <span class="s1">&#39;MRtrix_preprocessed/sub-02_den_preproc_unbiased.mif&#39;</span>
 <span class="n">mif_file_path2</span> <span class="o">=</span> <span class="s1">&#39;voxels.mif&#39;</span>
 
 <span class="c1"># Convert both .mif files to temporary .nii.gz files</span>
@@ -856,7 +846,7 @@ dwi2response: <span class=" -Color -Color-Green">Deleting scratch directory (/ho
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3d4970124cc95148171e4dfa3add6627980aa5abf9fab17cc5045380e1d642bb.png" src="../_images/3d4970124cc95148171e4dfa3add6627980aa5abf9fab17cc5045380e1d642bb.png" />
+<img alt="../_images/655bc15a40b4b5b416b8cf6545f0789474373a82186564c7ca159ec3911e622c.png" src="../_images/655bc15a40b4b5b416b8cf6545f0789474373a82186564c7ca159ec3911e622c.png" />
 </div>
 </div>
 </section>
@@ -868,13 +858,13 @@ dwi2response: <span class=" -Color -Color-Green">Deleting scratch directory (/ho
 <p>To do this, we will use the command <code class="docutils literal notranslate"><span class="pre">dwi2fod</span></code> to apply the basis functions to the diffusion data. The “-mask” option specifies which voxels we will use; this is simply to restrict our analysis to brain voxels and reduce the computing time. The “.mif” files specified after each basis function will output an FOD image for that tissue type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>dwi2fod<span class="w"> </span>msmt_csd<span class="w"> </span>sub-02_den_preproc_unbiased.mif<span class="w"> </span>-mask<span class="w"> </span>mask.mif<span class="w"> </span>wm.txt<span class="w"> </span>wmfod.mif<span class="w"> </span>gm.txt<span class="w"> </span>gmfod.mif<span class="w"> </span>csf.txt<span class="w"> </span>csffod.mif
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>dwi2fod<span class="w"> </span>msmt_csd<span class="w"> </span>MRtrix_preprocessed/sub-02_den_preproc_unbiased.mif<span class="w"> </span>-mask<span class="w"> </span>MRtrix_preprocessed/mask.mif<span class="w"> </span>wm.txt<span class="w"> </span>wmfod.mif<span class="w"> </span>gm.txt<span class="w"> </span>gmfod.mif<span class="w"> </span>csf.txt<span class="w"> </span>csffod.mif
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dwi2fod: [100%] preloading data for &quot;sub-02_den_preproc_unbiased.mif&quot;[0K?7h?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l
-dwi2fod: [100%] performing MSMT CSD (4 shells, 3 tissues)[0K?7h?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dwi2fod: [100%] preloading data for &quot;MRtrix_preprocessed/sub-02_den_preproc_unbiased.mif&quot;[0K?7h?7l
+dwi2fod: [100%] performing MSMT CSD (4 shells, 3 tissues)[0K?7h?7l
 </pre></div>
 </div>
 </div>
@@ -887,10 +877,10 @@ dwi2fod: [100%] performing MSMT CSD (4 shells, 3 tissues)[0K?7h?7l?7l?7l?7l?7l?7
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] copying from &quot;wmfod.mif&quot; to &quot;/tmp/mrtrix-tmp-yYcy0U.mif&quot;[0K?7h?7l
-mrcat: [100%] concatenating &quot;csffod.mif&quot;[0K?7h?7l?7l
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] copying from &quot;wmfod.mif&quot; to &quot;/tmp/mrtrix-tmp-ZclMoZ.mif&quot;[0K?7h?7l
+mrcat: [100%] concatenating &quot;csffod.mif&quot;[0K?7h?7l
 mrcat: [100%] concatenating &quot;gmfod.mif&quot;[0K?7h?7l
-mrcat: [100%] concatenating &quot;/tmp/mrtrix-tmp-yYcy0U.mif&quot;[0K?7h?7l?7l
+mrcat: [100%] concatenating &quot;/tmp/mrtrix-tmp-ZclMoZ.mif&quot;[0K?7h?7l
 </pre></div>
 </div>
 </div>
@@ -912,16 +902,16 @@ mrcat: [100%] concatenating &quot;/tmp/mrtrix-tmp-yYcy0U.mif&quot;[0K?7h?7l?7l
 </section>
 <section id="reconstruction-with-constrained-spherical-deconvolution-with-dipy">
 <h3>Reconstruction with Constrained Spherical Deconvolution with DIPY<a class="headerlink" href="#reconstruction-with-constrained-spherical-deconvolution-with-dipy" title="Link to this heading">#</a></h3>
-<p>A straightforward method for estimating the fiber response function is to focus on regions of the brain known to contain single, coherent fiber populations. For instance, placing a region of interest (ROI) at the center of the brain can capture single fibers from the corpus callosum. The <code class="docutils literal notranslate"><span class="pre">auto_response_ssst</span></code> function computes the fractional anisotropy (FA) within a cuboidal ROI, defined by radii specified in roi_radii. It then derives the response function based on voxels with an FA value exceeding 0.7.</p>
+<p>One simple way to estimate the fiber response function is to look for regions of the brain where it is known that there are single coherent fiber populations. For example, if we use a ROI at the center of the brain, we will find single fibers from the corpus callosum. The <code class="docutils literal notranslate"><span class="pre">auto_response_ssst</span></code> function will calculate FA for a cuboid ROI of radii equal to roi_radii in the center of the volume and return the response function estimated in that region for the voxels with FA higher than 0.7.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <span class="n">convert_mif_to_nii</span><span class="p">(</span><span class="s1">&#39;sub-02_den_preproc_unbiased.mif&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <span class="n">convert_mif_to_nii</span><span class="p">(</span><span class="s1">&#39;MRtrix_preprocessed/sub-02_den_preproc_unbiased.mif&#39;</span><span class="p">)</span>
 
 <span class="c1"># Load the data</span>
 <span class="n">data</span><span class="p">,</span> <span class="n">affine</span> <span class="o">=</span> <span class="n">load_nifti</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span> 
 
-<span class="n">bvals_ap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;sub-02_AP.bval&#39;</span><span class="p">)</span>
-<span class="n">bvecs_ap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;sub-02_AP.bvec&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># Make sure to transpose bvecs for correct shape</span>
+<span class="n">bvals_ap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;MRtrix_preprocessed/sub-02_AP.bval&#39;</span><span class="p">)</span>
+<span class="n">bvecs_ap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;MRtrix_preprocessed/sub-02_AP.bvec&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># Make sure to transpose bvecs for correct shape</span>
 
 <span class="c1"># Create the gradient table</span>
 <span class="n">gtab_ap</span> <span class="o">=</span> <span class="n">gradient_table</span><span class="p">(</span><span class="n">bvals_ap</span><span class="p">,</span> <span class="n">bvecs_ap</span><span class="p">)</span>
@@ -931,7 +921,7 @@ mrcat: [100%] concatenating &quot;/tmp/mrtrix-tmp-yYcy0U.mif&quot;[0K?7h?7l?7l
 </div>
 </div>
 </div>
-<p>To ensure the response function is accurate, we can visualize its orientation distribution function (ODF):</p>
+<p>To double-check that we have a good response function we can visualize the response function’s ODF:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">Scene</span><span class="p">()</span>
@@ -956,8 +946,24 @@ mrcat: [100%] concatenating &quot;/tmp/mrtrix-tmp-yYcy0U.mif&quot;[0K?7h?7l?7l
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>libEGL warning: failed to open /dev/dri/renderD128: Permission denied
+
+libEGL warning: failed to open /dev/dri/renderD128: Permission denied
+
+libEGL warning: failed to open /dev/dri/card0: Permission denied
+
+libEGL warning: failed to open /dev/dri/renderD128: Permission denied
+
+libEGL warning: failed to open /dev/dri/renderD128: Permission denied
+
+libEGL warning: failed to open /dev/dri/card0: Permission denied
+</pre></div>
 </div>
-<p>After estimating the response function, we can begin the deconvolution process by fitting the CSD model to the data.</p>
+<img alt="../_images/5b4f31c76c509c0b08702762eb718c3a4cb718438f29c9c5afb52e7b66906a36.png" src="../_images/5b4f31c76c509c0b08702762eb718c3a4cb718438f29c9c5afb52e7b66906a36.png" />
+</div>
+</div>
+<p>After estimating a response function, we can start the deconvolution process with fitting CSD model to the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up the scene for visualization</span>
@@ -987,8 +993,25 @@ mrcat: [100%] concatenating &quot;/tmp/mrtrix-tmp-yYcy0U.mif&quot;[0K?7h?7l?7l
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 900/900 [00:00&lt;00:00, 8823.86it/s]
+libEGL warning: failed to open /dev/dri/renderD128: Permission denied
+
+libEGL warning: failed to open /dev/dri/renderD128: Permission denied
+
+libEGL warning: failed to open /dev/dri/card0: Permission denied
+
+libEGL warning: failed to open /dev/dri/renderD128: Permission denied
+
+libEGL warning: failed to open /dev/dri/renderD128: Permission denied
+
+libEGL warning: failed to open /dev/dri/card0: Permission denied
+</pre></div>
 </div>
-<p>Using DIPY’s <code class="docutils literal notranslate"><span class="pre">peaks_from_model</span></code>, we can identify the peak directions (maxima) of the ODFs. We will then visualize the ODFs and their corresponding peaks in the same space.</p>
+<img alt="../_images/07b129f64c1e207b97b879f5369b8c5d22eb3515f8330cf96dda3166c72213f9.png" src="../_images/07b129f64c1e207b97b879f5369b8c5d22eb3515f8330cf96dda3166c72213f9.png" />
+</div>
+</div>
+<p>With DIPY’s <code class="docutils literal notranslate"><span class="pre">peaks_from_model</span></code> the peak directions (maxima) of the ODFs can be found. We will visualize both the ODFs and peaks in the same space:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">csd_peaks</span> <span class="o">=</span> <span class="n">peaks_from_model</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">csd_model</span><span class="p">,</span>
@@ -1017,6 +1040,22 @@ mrcat: [100%] concatenating &quot;/tmp/mrtrix-tmp-yYcy0U.mif&quot;[0K?7h?7l?7l
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>libEGL warning: failed to open /dev/dri/renderD128: Permission denied
+
+libEGL warning: failed to open /dev/dri/renderD128: Permission denied
+
+libEGL warning: failed to open /dev/dri/card0: Permission denied
+
+libEGL warning: failed to open /dev/dri/renderD128: Permission denied
+
+libEGL warning: failed to open /dev/dri/renderD128: Permission denied
+
+libEGL warning: failed to open /dev/dri/card0: Permission denied
+</pre></div>
+</div>
+<img alt="../_images/23d953af73e1292d3df78d9313502dd06aff1e891c45d357252159165f13d345.png" src="../_images/23d953af73e1292d3df78d9313502dd06aff1e891c45d357252159165f13d345.png" />
+</div>
 </div>
 </section>
 </section>
@@ -1026,12 +1065,12 @@ mrcat: [100%] concatenating &quot;/tmp/mrtrix-tmp-yYcy0U.mif&quot;[0K?7h?7l?7l
 <p>To normalize the data, we will use the <code class="docutils literal notranslate"><span class="pre">mtnormalise</span></code> command. This requires an input and output for each tissue type, as well as a mask to restrict the analysis to brain voxels:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>mtnormalise<span class="w"> </span>wmfod.mif<span class="w"> </span>wmfod_norm.mif<span class="w"> </span>gmfod.mif<span class="w"> </span>gmfod_norm.mif<span class="w"> </span>csffod.mif<span class="w"> </span>csffod_norm.mif<span class="w"> </span>-mask<span class="w"> </span>mask.mif
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>mtnormalise<span class="w"> </span>wmfod.mif<span class="w"> </span>wmfod_norm.mif<span class="w"> </span>gmfod.mif<span class="w"> </span>gmfod_norm.mif<span class="w"> </span>csffod.mif<span class="w"> </span>csffod_norm.mif<span class="w"> </span>-mask<span class="w"> </span>MRtrix_preprocessed/mask.mif
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mtnormalise: [100%] performing log-domain intensity normalisation[0K?7h?7l?7l?7l?7l?7l?7l?7l?7l?7l
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mtnormalise: [100%] performing log-domain intensity normalisation[0K?7h?7l
 </pre></div>
 </div>
 </div>
@@ -1059,18 +1098,18 @@ Pathological Tissue.
 <p>The anatomical image first needs to be converted to MRtrix format with <code class="docutils literal notranslate"><span class="pre">mrconvert</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>mrconvert<span class="w"> </span>sub-CON02_ses-preop_T1w.nii.gz<span class="w"> </span>T1.mif
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>mrconvert<span class="w"> </span>MRtrix_preprocessed/sub-CON02_ses-preop_T1w.nii.gz<span class="w"> </span>T1.mif
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] uncompressing image &quot;sub-CON02_ses-preop_T1w.nii.gz&quot;[0K?7h?7l?7l?7l?7l
-mrconvert: [100%] copying from &quot;sub-CON02_ses-preop_T1w.nii.gz&quot; to &quot;T1.mif&quot;[0K?7h
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mrconvert: [100%] uncompressing image &quot;MRtrix_preprocessed/sub-CON02_ses-preop_T1w.nii.gz&quot;[0K?7h?7l
+mrconvert: [100%] copying from &quot;MRtrix_pre...-CON02_ses-preop_T1w.nii.gz&quot; to &quot;T1.mif&quot;[0K?7h?7l
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>5ttgen<span class="w"> </span>fsl<span class="w"> </span>T1.mif<span class="w"> </span>5tt_nocoreg.mif
 </pre></div>
@@ -1080,16 +1119,16 @@ mrconvert: [100%] copying from &quot;sub-CON02_ses-preop_T1w.nii.gz&quot; to &qu
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5ttgen: 
 5ttgen: <span class=" -Color -Color-Green">Note that this script makes use of commands / algorithms that have relevant articles for citation; INCLUDING FROM EXTERNAL SOFTWARE PACKAGES. Please consult the help page (-help option) for more information.</span>
 5ttgen: 
-5ttgen: <span class=" -Color -Color-Green">Generated scratch directory: /home/jovyan/Git_repositories/MRtrix_preprocessed/5ttgen-tmp-EHE0O1/</span>
-<span class=" -Color -Color-Cyan">Command:</span>  mrconvert /home/jovyan/Git_repositories/MRtrix_preprocessed/T1.mif /home/jovyan/Git_repositories/MRtrix_preprocessed/5ttgen-tmp-EHE0O1/input.mif
-5ttgen: <span class=" -Color -Color-Green">Changing to scratch directory (/home/jovyan/Git_repositories/MRtrix_preprocessed/5ttgen-tmp-EHE0O1/)</span>
+5ttgen: <span class=" -Color -Color-Green">Generated scratch directory: /data/books/diffusion_imaging/5ttgen-tmp-O1CUR0/</span>
+<span class=" -Color -Color-Cyan">Command:</span>  mrconvert /data/books/diffusion_imaging/T1.mif /data/books/diffusion_imaging/5ttgen-tmp-O1CUR0/input.mif
+5ttgen: <span class=" -Color -Color-Green">Changing to scratch directory (/data/books/diffusion_imaging/5ttgen-tmp-O1CUR0/)</span>
 <span class=" -Color -Color-Cyan">Command:</span>  mrconvert input.mif T1.nii -strides -1,+2,+3
 <span class=" -Color -Color-Cyan">Command:</span>  maskfilter /opt/fsl-6.0.5.1/data/standard/MNI152_T1_1mm_brain_mask_dil.nii.gz dilate mni_mask.nii -npass 4
 <span class=" -Color -Color-Cyan">Command:</span>  standard_space_roi T1.nii T1_preBET.nii.gz -maskMASK mni_mask.nii -roiFOV
 <span class=" -Color -Color-Cyan">Command:</span>  bet T1_preBET.nii.gz T1_BET.nii.gz -f 0.15 -R
 <span class=" -Color -Color-Cyan">Command:</span>  fast T1_BET.nii.gz
 <span class=" -Color -Color-Cyan">Command:</span>  run_first_all -m none -s L_Accu,R_Accu,L_Caud,R_Caud,L_Pall,R_Pall,L_Puta,R_Puta,L_Thal,R_Thal -i T1.nii -o first
-5ttgen: <span class=" -Color -Color-Cyan">[100%]</span> <span class=" -Color -Color-Green">Generating partial volume images for SGM structures</span>?7h?7h?7l?7l?7l?7l?7l?7l?7l?7l?7l?7l
+5ttgen: <span class=" -Color -Color-Cyan">[100%]</span> <span class=" -Color -Color-Green">Generating partial volume images for SGM structures</span>?7h?7h?7l
 <span class=" -Color -Color-Cyan">Command:</span>  mrmath [mesh2voxel_*.mif (10 items)] sum - | mrcalc - 1.0 -min all_sgms.mif
 <span class=" -Color -Color-Cyan">Command:</span>  mrthreshold T1_BET_pve_2.nii.gz - -abs 0.001 | maskfilter - connect - -connectivity | mrcalc 1 - 1 -gt -sub remove_unconnected_wm_mask.mif -datatype bit
 <span class=" -Color -Color-Cyan">Command:</span>  mrcalc T1_BET_pve_0.nii.gz remove_unconnected_wm_mask.mif -mult csf.mif
@@ -1101,10 +1140,10 @@ mrconvert: [100%] copying from &quot;sub-CON02_ses-preop_T1w.nii.gz&quot; to &qu
 <span class=" -Color -Color-Cyan">Command:</span>  mrcalc 0 wm.mif -min path.mif
 <span class=" -Color -Color-Cyan">Command:</span>  mrcat cgm.mif sgm.mif wm.mif csf.mif path.mif - -axis 3 | mrconvert - combined_precrop.mif -strides +2,+3,+4,+1
 <span class=" -Color -Color-Cyan">Command:</span>  mrmath combined_precrop.mif sum - -axis 3 | mrthreshold - - -abs 0.5 | mrgrid combined_precrop.mif crop result.mif -mask -
-<span class=" -Color -Color-Cyan">Command:</span>  mrconvert result.mif /home/jovyan/Git_repositories/MRtrix_preprocessed/5tt_nocoreg.mif
+<span class=" -Color -Color-Cyan">Command:</span>  mrconvert result.mif /data/books/diffusion_imaging/5tt_nocoreg.mif
 <span class=" -Color -Color-Cyan">Command:</span>  5ttcheck result.mif
-5ttgen: <span class=" -Color -Color-Green">Changing back to original directory (/home/jovyan/Git_repositories/MRtrix_preprocessed)</span>
-5ttgen: <span class=" -Color -Color-Green">Deleting scratch directory (/home/jovyan/Git_repositories/MRtrix_preprocessed/5ttgen-tmp-EHE0O1/)</span>
+5ttgen: <span class=" -Color -Color-Green">Changing back to original directory (/data/books/diffusion_imaging)</span>
+5ttgen: <span class=" -Color -Color-Green">Deleting scratch directory (/data/books/diffusion_imaging/5ttgen-tmp-O1CUR0/)</span>
 </pre></div>
 </div>
 </div>
@@ -1133,7 +1172,7 @@ mrconvert: [100%] copying from &quot;sub-CON02_ses-preop_T1w.nii.gz&quot; to &qu
         <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;mrconvert&quot;</span><span class="p">,</span> <span class="n">mif_file_path</span><span class="p">,</span> <span class="s2">&quot;-coord&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">idx</span><span class="p">),</span> <span class="n">output_path</span><span class="p">,</span> <span class="s2">&quot;-force&quot;</span><span class="p">,</span> <span class="s2">&quot;-quiet&quot;</span><span class="p">])</span>
 
 <span class="c1"># Initialize the AnyNiivue viewer</span>
-<span class="n">nv</span> <span class="o">=</span> <span class="n">AnyNiivue</span><span class="p">()</span>
+<span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">()</span>
 
 <span class="c1"># Define the volumes with opacity set to 0 initially for all but the default layer (opacity = 1.0)</span>
 <span class="n">volumes</span> <span class="o">=</span> <span class="p">[</span>
@@ -1180,7 +1219,7 @@ mrconvert: [100%] copying from &quot;sub-CON02_ses-preop_T1w.nii.gz&quot; to &qu
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "9bae53c4cd5544429772b597066909b4", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "f5b55bc631884eb7b8cc09b77f6e37f1", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div style="background-color: #f0f8ff; padding: 10px; border-radius: 5px;">
     <div style="background-color: #add8e6; padding: 5px; border-radius: 5px; font-weight: bold;">
@@ -1208,16 +1247,16 @@ If the segmentation step fails, this may be due to insufficient contrast between
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./diffusion_imaging"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               
