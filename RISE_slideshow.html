@@ -35,6 +35,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/algolia.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -54,15 +56,10 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.3.3/dist/umd/index.js"></script>
+    <script src="_static/algolia.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-4Z9774J59Y"></script>
-    <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){ dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-4Z9774J59Y');
-            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -224,24 +221,6 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-rocket"></i>
   </button>
   <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://play-iowa.neurodesk.org/hub/user-redirect/lab/tree/example-notebooks/books/v2/gh/NeuroDesk/example-notebooks/main?urlpath=lab/tree/books/RISE_slideshow.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
       
       
       
@@ -461,11 +440,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="rise-slideshow-of-a-jupyter-notebook">
 <h1>RISE Slideshow of a Jupyter Notebook<a class="headerlink" href="#rise-slideshow-of-a-jupyter-notebook" title="Permalink to this heading">#</a></h1>
-<p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/workflows/RISE_slideshow.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Google Colab"/>   </a></p>
+<p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/workflows/RISE_slideshow.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
 <p>Author: Monika Doerig</p>
 <p>Citation:</p>
 <ul class="simple">
-<li><p>Full documentation of the RISE notebook extension: <a class="reference external" href="http://rise.readthedocs.io/">http://rise.readthedocs.io/</a>.</p></li>
+<li><p>Full documentation of the <a class="reference external" href="http://rise.readthedocs.io/">RISE notebook extension</a></p></li>
 </ul>
 <p>Press <code class="docutils literal notranslate"><span class="pre">Space</span></code> to proceed.</p>
 <p>Before getting to the introduction and details of creating a slideshow, let’s set up this notebook to run in Google Colab.</p>
@@ -509,9 +488,7 @@ if IN_COLAB:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: AuthenticAMD
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>model name	: AMD EPYC-Rome Processor
+model name	: AMD EPYC-Rome Processor
 </pre></div>
 </div>
 </div>
@@ -519,7 +496,7 @@ if IN_COLAB:
 </section>
 <section id="introduction-to-rise">
 <h2>Introduction to RISE<a class="headerlink" href="#introduction-to-rise" title="Permalink to this heading">#</a></h2>
-<p>RISE is Jupyter notebook slideshow extension that allows you to turn a Jupyter notebook into a live presentation based on <a class="reference external" href="https://revealjs.com/">reveal.js</a>. The full documentation can be found here: <a class="reference external" href="http://rise.readthedocs.io/">http://rise.readthedocs.io/</a>.</p>
+<p>RISE is Jupyter notebook slideshow extension that allows you to turn a Jupyter notebook into a live presentation based on <a class="reference external" href="https://revealjs.com/">reveal.js</a>. The full documentation can be found <a class="reference external" href="http://rise.readthedocs.io/">here</a>.</p>
 <p>Keep pressing <code class="docutils literal notranslate"><span class="pre">Space</span></code> to proceed along the main line.</p>
 <section id="how-to-create-slideshows">
 <h3>1. How to create slideshows<a class="headerlink" href="#how-to-create-slideshows" title="Permalink to this heading">#</a></h3>
@@ -591,8 +568,7 @@ if IN_COLAB:
 </section>
 <section id="customize-rise">
 <h3>3. Customize RISE<a class="headerlink" href="#customize-rise" title="Permalink to this heading">#</a></h3>
-<p>RISE can be customized in many ways - here some pointers on what can be customized:</p>
-<p><a class="reference external" href="https://rise.readthedocs.io/en/latest/customize.html#how-to-customize/">https://rise.readthedocs.io/en/latest/customize.html#how-to-customize/</a></p>
+<p>RISE can be customized in many ways - here some pointers on what can be <a class="reference external" href="https://rise.readthedocs.io/en/latest/customize.html#how-to-customize/">customized</a>:</p>
 <ul class="simple">
 <li><p>presentation theme</p></li>
 <li><p>transition between slides</p></li>
