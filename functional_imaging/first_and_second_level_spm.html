@@ -506,7 +506,6 @@ document.write(`
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-level-glm">First-level GLM</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#level1design-canonical-hrf">Level1Design: canonical HRF</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-in-nipype-version-1-8-7-when-factor-info-parameter-is-used-in-level1design-t-and-f-contrasts-ess-con-spmf-and-spmt-images-are-created-automatically-in-estimatemodel-by-spm-they-need-to-be-connected-directly-to-a-data-output-module">Starting in nipype version 1.8.7., when factor_info parameter is used in Level1design, T and F contrasts (ess*, con*, spmF* and spmT* images) are created automatically in EstimateModel by SPM. They need to be connected directly to a data output module</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-glm-contrast-for-nipype-1-8-6">Specify GLM contrast for nipype&lt;=1.8.6</a></li>
 </ul>
 </li>
@@ -547,14 +546,15 @@ document.write(`
 <p><strong>Citation:</strong></p>
 <ul class="simple">
 <li><p>Wakeman, DG and Henson, RN (2021). Multisubject, multimodal face processing. OpenNeuro. [Dataset] doi: <a class="reference external" href="https://openneuro.org/datasets/ds000117/versions/1.0.5">10.18112/openneuro.ds000117.v1.0.5</a></p></li>
-<li><p>Wakeman, D.G. &amp; Henson, R.N. (2015). A multi-subject, multi-modal human neuroimaging dataset. Sci. Data 2:150001 doi: 10.1038/sdata.2015.1</p></li>
+<li><p>Wakeman, D.G. &amp; Henson, R.N. (2015). A multi-subject, multi-modal human neuroimaging dataset. Sci. Data 2:150001 doi: <a class="reference external" href="https://www.nature.com/articles/sdata20151">10.1038/sdata.2015.1</a></p></li>
 </ul>
 <p><strong>Useful resources:</strong></p>
 <ul class="simple">
-<li><p>SPM Tutorial on event-related fMRI: https://www.fil.ion.ucl.ac.uk/spm/docs/tutorials/fmri/event/</p></li>
-<li><p>SPM Manual,  group face fMRI: https://www.fil.ion.ucl.ac.uk/spm/docs/manual/faces_group/face_group/#introduction</p></li>
-<li><p>SPM Wikibooks, group analysis: https://en.wikibooks.org/wiki/SPM/Group_Analysis / https://www.fil.ion.ucl.ac.uk/spm/docs/wikibooks/Group_Analysis/</p></li>
-<li><p>Nipype Documentation: fMRI: Famous vs non-famous faces in SPM: https://nipype.readthedocs.io/en/latest/users/examples/fmri_spm_face.html</p></li>
+<li><p><a class="reference external" href="https://www.fil.ion.ucl.ac.uk/spm/docs/tutorials/fmri/event/">SPM Documentation: Event-related fMRI</a></p></li>
+<li><p><a class="reference external" href="https://www.fil.ion.ucl.ac.uk/spm/docs/manual/faces_group/face_group/">SPM Documentation: Face group fMRI data</a></p></li>
+<li><p><a class="reference external" href="https://www.fil.ion.ucl.ac.uk/spm/docs/wikibooks/Group_Analysis/">SPM Documentation: Group Analysis</a></p></li>
+<li><p><a class="reference external" href="https://en.wikibooks.org/wiki/SPM/Group_Analysis">Wikibooks: SPM Group analysis</a></p></li>
+<li><p><a class="reference external" href="https://nipype.readthedocs.io/en/latest/users/examples/fmri_spm_face.html">Nipype Documentation: fMRI: Famous vs non-famous faces in SPM</a></p></li>
 </ul>
 <section id="setup-neurodesk">
 <h2>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Link to this heading">#</a></h2>
@@ -698,8 +698,8 @@ To ensure that each stimulus received equal attention, participants were instruc
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Installations</span>
-<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>nilearn<span class="w"> </span>pandas
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">nilearn</span> <span class="n">pandas</span>
 </pre></div>
 </div>
 </div>
@@ -909,7 +909,7 @@ Requirement already satisfied: threadpoolctl&gt;=3.1.0 in /opt/conda/lib/python3
 <h4>First-level GLM<a class="headerlink" href="#first-level-glm" title="Link to this heading">#</a></h4>
 <p>The subsequent task involves obtaining information such as stimuli type, onset, duration, and other regressors for integration into the GLM model. To accomplish this, a helper function needs to be created, which will be referred to as subjectinfo.</p>
 <p>A TSV file for each run looks like this:</p>
-<div class="cell docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>ds000117/sub-01/ses-mri/func/sub-01_ses-mri_task-facerecognition_run-01_events.tsv
 </pre></div>
@@ -1125,9 +1125,7 @@ Requirement already satisfied: threadpoolctl&gt;=3.1.0 in /opt/conda/lib/python3
 <section id="level1design-canonical-hrf">
 <h5>Level1Design: canonical HRF<a class="headerlink" href="#level1design-canonical-hrf" title="Link to this heading">#</a></h5>
 <p>The design matrix will be constructed without including derivatives of the hemodynamic response function (HRF) and therefore assumes a constant delay and dispersion for the hemodynamic response.</p>
-</section>
-<section id="starting-in-nipype-version-1-8-7-when-factor-info-parameter-is-used-in-level1design-t-and-f-contrasts-ess-con-spmf-and-spmt-images-are-created-automatically-in-estimatemodel-by-spm-they-need-to-be-connected-directly-to-a-data-output-module">
-<h5>Starting in nipype version 1.8.7., when factor_info parameter is used in Level1design, T and F contrasts (ess*, con*, spmF* and spmT* images) are created automatically in EstimateModel by SPM. They need to be connected directly to a data output module<a class="headerlink" href="#starting-in-nipype-version-1-8-7-when-factor-info-parameter-is-used-in-level1design-t-and-f-contrasts-ess-con-spmf-and-spmt-images-are-created-automatically-in-estimatemodel-by-spm-they-need-to-be-connected-directly-to-a-data-output-module" title="Link to this heading">#</a></h5>
+<p><em>Starting in nipype version 1.8.7., when factor_info parameter is used in Level1design, T and F contrasts (ess, con, spmF and spmT images) are created automatically in EstimateModel by SPM. They need to be connected directly to a data output module</em></p>
 <p>The following lines automatically inform SPM to create a default set of
 contrats for a factorial design.</p>
 <div class="cell docutils container">
@@ -1157,7 +1155,7 @@ contrats for a factorial design.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># EstimateModel - estimate the parameters of the model </span>
-<span class="n">level1estimate</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">spm</span><span class="o">.</span><span class="n">EstimateModel</span><span class="p">(</span><span class="n">estimation_method</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Classical&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">}),</span> <span class="c1">#EstimateModel2</span>
+<span class="n">level1estimate</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">spm</span><span class="o">.</span><span class="n">EstimateModel</span><span class="p">(</span><span class="n">estimation_method</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Classical&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">}),</span> 
                                    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;level1estimate&#39;</span><span class="p">)</span>
 
 <span class="n">wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">level1design</span><span class="p">,</span> <span class="s1">&#39;spm_mat_file&#39;</span><span class="p">,</span> <span class="n">level1estimate</span><span class="p">,</span> <span class="s1">&#39;spm_mat_file&#39;</span><span class="p">)</span>
@@ -1284,10 +1282,9 @@ contrats for a factorial design.</p>
 <img alt="../_images/135c7f15d8ad55999d01dd4d248532edc969047f02244f5dff22f2fb91d6a6bf.png" src="../_images/135c7f15d8ad55999d01dd4d248532edc969047f02244f5dff22f2fb91d6a6bf.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wf</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">plugin</span><span class="o">=</span><span class="s2">&quot;MultiProc&quot;</span><span class="p">)</span> <span class="c1">#will use all CPUs</span>
-<span class="c1">#ca. 10 min</span>
 </pre></div>
 </div>
 </div>
@@ -3069,12 +3066,9 @@ Positive interaction of Face x Rep2    T                           [0, 0, 1, -1,
 <p>Test for significantly non-zero BOLD responses over all subjects.</p>
 <ul class="simple">
 <li><p>con_0005: Positive effect</p></li>
-<li></li>
 <li><p>con_0006: Positive Effect F&gt;S</p></li>
 <li><p>con_0007: Positive Effect S&gt;U</p></li>
-<li></li>
 <li><p>con_0008: Positive Effect of rep1&gt;rep2</p></li>
-<li></li>
 <li><p>con_0009: Positive Interaction Face (F/S) x Rep</p></li>
 <li><p>con_0010: Positive Interaction Face (S/U) x Rep</p></li>
 </ul>
@@ -3195,10 +3189,9 @@ Positive interaction of Face x Rep2    T                           [0, 0, 1, -1,
 <img alt="../_images/ff7ce359d8023b6dd43286df00de75769cc9ddb0a358de34e1a679c5125d1246.png" src="../_images/ff7ce359d8023b6dd43286df00de75769cc9ddb0a358de34e1a679c5125d1246.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wf_2ndlevel_onesample</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">plugin</span><span class="o">=</span><span class="s2">&quot;MultiProc&quot;</span><span class="p">)</span>
-<span class="c1"># 2min</span>
 </pre></div>
 </div>
 </div>
@@ -3840,7 +3833,7 @@ stty: &#39;standard input&#39;: Inappropriate ioctl for device
 <img alt="../_images/fdfdff75dc71c3c56741668ac8fa5e55686478b18e023641dd3bbb33594790db.png" src="../_images/fdfdff75dc71c3c56741668ac8fa5e55686478b18e023641dd3bbb33594790db.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wf_2ndlevel_twosample</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">plugin</span><span class="o">=</span><span class="s2">&quot;MultiProc&quot;</span><span class="p">)</span>
 </pre></div>
@@ -4006,7 +3999,7 @@ stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contrast_id_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="c1">#con_0009</span>
 <span class="n">contrast_id_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="c1">#con_0010 </span>
@@ -4385,7 +4378,6 @@ stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-level-glm">First-level GLM</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#level1design-canonical-hrf">Level1Design: canonical HRF</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-in-nipype-version-1-8-7-when-factor-info-parameter-is-used-in-level1design-t-and-f-contrasts-ess-con-spmf-and-spmt-images-are-created-automatically-in-estimatemodel-by-spm-they-need-to-be-connected-directly-to-a-data-output-module">Starting in nipype version 1.8.7., when factor_info parameter is used in Level1design, T and F contrasts (ess*, con*, spmF* and spmT* images) are created automatically in EstimateModel by SPM. They need to be connected directly to a data output module</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-glm-contrast-for-nipype-1-8-6">Specify GLM contrast for nipype&lt;=1.8.6</a></li>
 </ul>
 </li>
