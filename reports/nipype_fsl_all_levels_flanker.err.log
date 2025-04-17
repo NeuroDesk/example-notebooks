@@ -1,38 +1,1085 @@
 Traceback (most recent call last):
-  File "/home/runnerx/.local/lib/python3.10/site-packages/nbclient/client.py", line 778, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-  File "/home/runnerx/.local/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 182, in ensure_async
-    result = await obj
-  File "/home/runnerx/.local/lib/python3.10/site-packages/jupyter_client/channels.py", line 315, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runnerx/.local/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/home/runnerx/.local/lib/python3.10/site-packages/nbclient/client.py", line 1305, in execute
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nbclient/client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/home/runnerx/.local/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 172, in wrapped
     return loop.run_until_complete(inner)
-  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
     return future.result()
-  File "/home/runnerx/.local/lib/python3.10/site-packages/nbclient/client.py", line 705, in async_execute
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nbclient/client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "/home/runnerx/.local/lib/python3.10/site-packages/nbclient/client.py", line 1001, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-  File "/home/runnerx/.local/lib/python3.10/site-packages/nbclient/client.py", line 802, in _async_poll_for_reply
-    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
-  File "/home/runnerx/.local/lib/python3.10/site-packages/nbclient/client.py", line 852, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 200 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
 import logging
 logging.getLogger('nipype.workflow').setLevel(0) #set to 1 if nipype output is wanted
 # Run Workflow
 wf_first.run(plugin="MultiProc", plugin_args={"n_procs": 8})
--------------------
+------------------
+
+----- stdout -----
+250417-05:12:27,165 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:27,172 nipype.workflow WARNING:
+	 [Node] Error on "_img2float1" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float1)
+----- stdout -----
+250417-05:12:27,290 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:27,295 nipype.workflow WARNING:
+	 [Node] Error on "_img2float1" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_02/img2float/mapflow/_img2float1)
+----- stdout -----
+250417-05:12:27,314 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:27,320 nipype.workflow WARNING:
+	 [Node] Error on "_img2float0" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_02/img2float/mapflow/_img2float0)
+----- stdout -----
+250417-05:12:27,353 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:27,359 nipype.workflow WARNING:
+	 [Node] Error on "_img2float0" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float0)
+----- stdout -----
+250417-05:12:27,619 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:27,626 nipype.workflow WARNING:
+	 [Node] Error on "_img2float1" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_03/img2float/mapflow/_img2float1)
+----- stdout -----
+250417-05:12:27,651 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:27,656 nipype.workflow WARNING:
+	 [Node] Error on "_img2float0" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_03/img2float/mapflow/_img2float0)
+----- stdout -----
+250417-05:12:28,114 nipype.workflow ERROR:
+	 Node _img2float0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:28,118 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051228-ubuntu-_img2float0-4c4ac67d-4535-4bca-b7b0-98f6347cfde7.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float0/sub-01_task-flanker_run-1_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-1_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-1_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3869701 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float0/sub-01_task-flanker_run-1_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float0/sub-01_task-flanker_run-1_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:28,122 nipype.workflow ERROR:
+	 Node _img2float1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:28,123 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051228-ubuntu-_img2float1-aeeec26c-575a-4746-8339-ac57b77c8620.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float1/sub-01_task-flanker_run-2_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-2_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-2_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3869702 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float1/sub-01_task-flanker_run-2_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float1/sub-01_task-flanker_run-2_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:28,126 nipype.workflow ERROR:
+	 Node _img2float0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:28,127 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051228-ubuntu-_img2float0-f349089d-2dad-4d7b-a1d3-2272ac992dae.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-02/func/sub-02_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_02/img2float/mapflow/_img2float0/sub-02_task-flanker_run-1_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-02/func/sub-02_task-flanker_run-1_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-02/func/sub-02_task-flanker_run-1_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3869700 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_02/img2float/mapflow/_img2float0/sub-02_task-flanker_run-1_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_02/img2float/mapflow/_img2float0/sub-02_task-flanker_run-1_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:28,130 nipype.workflow ERROR:
+	 Node _img2float1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:28,131 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051228-ubuntu-_img2float1-34487a93-633f-4436-aaf2-72474c703dc1.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-02/func/sub-02_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_02/img2float/mapflow/_img2float1/sub-02_task-flanker_run-2_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-02/func/sub-02_task-flanker_run-2_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-02/func/sub-02_task-flanker_run-2_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3869703 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_02/img2float/mapflow/_img2float1/sub-02_task-flanker_run-2_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_02/img2float/mapflow/_img2float1/sub-02_task-flanker_run-2_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:28,137 nipype.workflow ERROR:
+	 Node _img2float0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:28,138 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051228-ubuntu-_img2float0-6ff13409-2e9a-450d-b0f9-52c2caa99bda.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-03/func/sub-03_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_03/img2float/mapflow/_img2float0/sub-03_task-flanker_run-1_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-03/func/sub-03_task-flanker_run-1_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-03/func/sub-03_task-flanker_run-1_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3869903 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_03/img2float/mapflow/_img2float0/sub-03_task-flanker_run-1_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_03/img2float/mapflow/_img2float0/sub-03_task-flanker_run-1_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:28,140 nipype.workflow ERROR:
+	 Node _img2float1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:28,142 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051228-ubuntu-_img2float1-5cbea289-721c-418a-b290-52ce346a05b4.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-03/func/sub-03_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_03/img2float/mapflow/_img2float1/sub-03_task-flanker_run-2_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-03/func/sub-03_task-flanker_run-2_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-03/func/sub-03_task-flanker_run-2_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3869904 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_03/img2float/mapflow/_img2float1/sub-03_task-flanker_run-2_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_03/img2float/mapflow/_img2float1/sub-03_task-flanker_run-2_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:29,127 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:29,132 nipype.workflow WARNING:
+	 [Node] Error on "_img2float0" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_04/img2float/mapflow/_img2float0)
+----- stdout -----
+250417-05:12:29,134 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:29,138 nipype.workflow WARNING:
+	 [Node] Error on "_img2float1" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_05/img2float/mapflow/_img2float1)
+----- stdout -----
+250417-05:12:29,197 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:29,201 nipype.workflow WARNING:
+	 [Node] Error on "_img2float1" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_04/img2float/mapflow/_img2float1)
+----- stdout -----
+250417-05:12:29,206 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:29,209 nipype.workflow WARNING:
+	 [Node] Error on "_img2float0" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_05/img2float/mapflow/_img2float0)
+----- stdout -----
+250417-05:12:30,117 nipype.workflow ERROR:
+	 Node _img2float0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:30,120 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051230-ubuntu-_img2float0-e37f55c3-72f4-4b88-bc2f-4c649e379b53.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-04/func/sub-04_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_04/img2float/mapflow/_img2float0/sub-04_task-flanker_run-1_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-04/func/sub-04_task-flanker_run-1_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-04/func/sub-04_task-flanker_run-1_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870100 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_04/img2float/mapflow/_img2float0/sub-04_task-flanker_run-1_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_04/img2float/mapflow/_img2float0/sub-04_task-flanker_run-1_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:30,123 nipype.workflow ERROR:
+	 Node _img2float1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:30,125 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051230-ubuntu-_img2float1-a9ab16fb-f659-4edc-9475-1c693f0f9636.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-04/func/sub-04_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_04/img2float/mapflow/_img2float1/sub-04_task-flanker_run-2_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-04/func/sub-04_task-flanker_run-2_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-04/func/sub-04_task-flanker_run-2_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870098 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_04/img2float/mapflow/_img2float1/sub-04_task-flanker_run-2_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_04/img2float/mapflow/_img2float1/sub-04_task-flanker_run-2_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:30,129 nipype.workflow ERROR:
+	 Node _img2float0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:30,130 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051230-ubuntu-_img2float0-a742aa09-006c-4da8-8984-546197afb6e3.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-05/func/sub-05_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_05/img2float/mapflow/_img2float0/sub-05_task-flanker_run-1_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-05/func/sub-05_task-flanker_run-1_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-05/func/sub-05_task-flanker_run-1_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870103 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_05/img2float/mapflow/_img2float0/sub-05_task-flanker_run-1_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_05/img2float/mapflow/_img2float0/sub-05_task-flanker_run-1_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:30,133 nipype.workflow ERROR:
+	 Node _img2float1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:30,134 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051230-ubuntu-_img2float1-02c279da-9dd8-4ee3-909f-7df0b88fd155.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-05/func/sub-05_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_05/img2float/mapflow/_img2float1/sub-05_task-flanker_run-2_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-05/func/sub-05_task-flanker_run-2_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-05/func/sub-05_task-flanker_run-2_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870104 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_05/img2float/mapflow/_img2float1/sub-05_task-flanker_run-2_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_05/img2float/mapflow/_img2float1/sub-05_task-flanker_run-2_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:31,128 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:31,133 nipype.workflow WARNING:
+	 [Node] Error on "_img2float0" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_06/img2float/mapflow/_img2float0)
+----- stdout -----
+250417-05:12:31,171 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:31,175 nipype.workflow WARNING:
+	 [Node] Error on "_img2float1" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_06/img2float/mapflow/_img2float1)
+----- stdout -----
+250417-05:12:32,123 nipype.workflow ERROR:
+	 Node _img2float0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:32,127 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051232-ubuntu-_img2float0-aeb9f27f-b738-4176-8010-e3991e8178fb.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-06/func/sub-06_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_06/img2float/mapflow/_img2float0/sub-06_task-flanker_run-1_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-06/func/sub-06_task-flanker_run-1_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-06/func/sub-06_task-flanker_run-1_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870306 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_06/img2float/mapflow/_img2float0/sub-06_task-flanker_run-1_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_06/img2float/mapflow/_img2float0/sub-06_task-flanker_run-1_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:32,130 nipype.workflow ERROR:
+	 Node _img2float1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:32,132 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051232-ubuntu-_img2float1-839ed4ed-da62-4303-894f-cb095e5977d2.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-06/func/sub-06_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_06/img2float/mapflow/_img2float1/sub-06_task-flanker_run-2_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-06/func/sub-06_task-flanker_run-2_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-06/func/sub-06_task-flanker_run-2_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870309 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_06/img2float/mapflow/_img2float1/sub-06_task-flanker_run-2_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_06/img2float/mapflow/_img2float1/sub-06_task-flanker_run-2_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:33,150 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:33,155 nipype.workflow WARNING:
+	 [Node] Error on "_img2float1" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_07/img2float/mapflow/_img2float1)
+----- stdout -----
+250417-05:12:33,194 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:33,198 nipype.workflow WARNING:
+	 [Node] Error on "_img2float0" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_07/img2float/mapflow/_img2float0)
+----- stdout -----
+250417-05:12:33,251 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:33,255 nipype.workflow WARNING:
+	 [Node] Error on "_img2float0" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_08/img2float/mapflow/_img2float0)
+----- stdout -----
+250417-05:12:33,294 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:33,298 nipype.workflow WARNING:
+	 [Node] Error on "_img2float1" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_08/img2float/mapflow/_img2float1)
+----- stdout -----
+250417-05:12:34,124 nipype.workflow ERROR:
+	 Node _img2float0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:34,126 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051234-ubuntu-_img2float0-1a005598-9f7a-4bbb-81eb-c01c0106de93.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-07/func/sub-07_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_07/img2float/mapflow/_img2float0/sub-07_task-flanker_run-1_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-07/func/sub-07_task-flanker_run-1_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-07/func/sub-07_task-flanker_run-1_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870440 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_07/img2float/mapflow/_img2float0/sub-07_task-flanker_run-1_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_07/img2float/mapflow/_img2float0/sub-07_task-flanker_run-1_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:34,129 nipype.workflow ERROR:
+	 Node _img2float1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:34,131 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051234-ubuntu-_img2float1-3e9a6e08-53fd-4dad-8b8c-93615b0c3292.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-07/func/sub-07_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_07/img2float/mapflow/_img2float1/sub-07_task-flanker_run-2_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-07/func/sub-07_task-flanker_run-2_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-07/func/sub-07_task-flanker_run-2_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870442 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_07/img2float/mapflow/_img2float1/sub-07_task-flanker_run-2_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_07/img2float/mapflow/_img2float1/sub-07_task-flanker_run-2_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:34,135 nipype.workflow ERROR:
+	 Node _img2float0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:34,136 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051234-ubuntu-_img2float0-67a006c1-08a5-4c36-a9fa-24199e9575a7.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-08/func/sub-08_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_08/img2float/mapflow/_img2float0/sub-08_task-flanker_run-1_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-08/func/sub-08_task-flanker_run-1_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-08/func/sub-08_task-flanker_run-1_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870447 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_08/img2float/mapflow/_img2float0/sub-08_task-flanker_run-1_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_08/img2float/mapflow/_img2float0/sub-08_task-flanker_run-1_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:34,139 nipype.workflow ERROR:
+	 Node _img2float1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:34,141 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051234-ubuntu-_img2float1-1face8ba-d283-49b6-acdd-620a3690af6d.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-08/func/sub-08_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_08/img2float/mapflow/_img2float1/sub-08_task-flanker_run-2_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-08/func/sub-08_task-flanker_run-2_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-08/func/sub-08_task-flanker_run-2_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870446 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_08/img2float/mapflow/_img2float1/sub-08_task-flanker_run-2_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_08/img2float/mapflow/_img2float1/sub-08_task-flanker_run-2_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:35,215 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:35,219 nipype.workflow WARNING:
+	 [Node] Error on "_img2float1" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_09/img2float/mapflow/_img2float1)
+----- stdout -----
+250417-05:12:35,240 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:12:35,244 nipype.workflow WARNING:
+	 [Node] Error on "_img2float0" (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_09/img2float/mapflow/_img2float0)
+----- stdout -----
+250417-05:12:36,128 nipype.workflow ERROR:
+	 Node _img2float0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:36,131 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051236-ubuntu-_img2float0-d087dcf1-7bd0-411e-84ae-83f7df85dcaf.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-09/func/sub-09_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_09/img2float/mapflow/_img2float0/sub-09_task-flanker_run-1_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-09/func/sub-09_task-flanker_run-1_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-09/func/sub-09_task-flanker_run-1_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870653 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_09/img2float/mapflow/_img2float0/sub-09_task-flanker_run-1_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_09/img2float/mapflow/_img2float0/sub-09_task-flanker_run-1_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:36,135 nipype.workflow ERROR:
+	 Node _img2float1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:12:36,137 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051236-ubuntu-_img2float1-173508ea-7933-44ca-b591-e559568f5219.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-09/func/sub-09_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_09/img2float/mapflow/_img2float1/sub-09_task-flanker_run-2_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-09/func/sub-09_task-flanker_run-2_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-09/func/sub-09_task-flanker_run-2_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870655 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_09/img2float/mapflow/_img2float1/sub-09_task-flanker_run-2_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_09/img2float/mapflow/_img2float1/sub-09_task-flanker_run-2_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+----- stdout -----
+250417-05:12:40,123 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b0
+----- stdout -----
+250417-05:12:40,126 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b0
+----- stdout -----
+250417-05:12:40,127 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b1
+----- stdout -----
+250417-05:12:40,127 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b1
+----- stdout -----
+250417-05:12:40,128 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b2
+----- stdout -----
+250417-05:12:40,129 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b2
+----- stdout -----
+250417-05:12:40,130 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b3
+----- stdout -----
+250417-05:12:40,131 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b3
+----- stdout -----
+250417-05:12:40,132 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b4
+----- stdout -----
+250417-05:12:40,133 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b4
+----- stdout -----
+250417-05:12:40,134 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b5
+----- stdout -----
+250417-05:12:40,135 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b5
+----- stdout -----
+250417-05:12:40,136 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b6
+----- stdout -----
+250417-05:12:40,137 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b6
+----- stdout -----
+250417-05:12:40,138 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b7
+----- stdout -----
+250417-05:12:40,139 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b7
+----- stdout -----
+250417-05:12:40,140 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b8
+----- stdout -----
+250417-05:12:40,141 nipype.workflow ERROR:
+	 could not run node: level1.img2float.b8
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mRuntimeError[0m                              Traceback (most recent call last)
+[0;31mRuntimeError[0m: Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
+
+Cmdline:
+	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float0/sub-01_task-flanker_run-1_bold_dtype.nii.gz -odt float
+Stdout:
+
+Stderr:
+	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-1_bold
+	terminate called after throwing an instance of 'std::runtime_error'
+	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-1_bold
+	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3869701 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd "$PWD" /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths "$@"
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 453, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 330, in validate
+	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py", line 135, in validate
+	    self.error(objekt, name, str(value))
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float0/sub-01_task-flanker_run-1_bold_dtype.nii.gz' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 400, in run
+	    outputs = self.aggregate_outputs(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 460, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float0/sub-01_task-flanker_run-1_bold_dtype.nii.gz' for output 'out_file' of a ImageMaths interface
+
+
+
+The above exception was the direct cause of the following exception:
+
+[0;31mRuntimeError[0m                              Traceback (most recent call last)
+Cell [0;32mIn[45], line 4[0m
+[1;32m      2[0m logging[38;5;241m.[39mgetLogger([38;5;124m'[39m[38;5;124mnipype.workflow[39m[38;5;124m'[39m)[38;5;241m.[39msetLevel([38;5;241m0[39m) [38;5;66;03m#set to 1 if nipype output is wanted[39;00m
+[1;32m      3[0m [38;5;66;03m# Run Workflow[39;00m
+[0;32m----> 4[0m [43mwf_first[49m[38;5;241;43m.[39;49m[43mrun[49m[43m([49m[43mplugin[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mMultiProc[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[43mplugin_args[49m[38;5;241;43m=[39;49m[43m{[49m[38;5;124;43m"[39;49m[38;5;124;43mn_procs[39;49m[38;5;124;43m"[39;49m[43m:[49m[43m [49m[38;5;241;43m8[39;49m[43m}[49m[43m)[49m
+
+File [0;32m~/.local/lib/python3.10/site-packages/nipype/pipeline/engine/workflows.py:638[0m, in [0;36mWorkflow.run[0;34m(self, plugin, plugin_args, updatehash)[0m
+[1;32m    636[0m [38;5;28;01mif[39;00m str2bool([38;5;28mself[39m[38;5;241m.[39mconfig[[38;5;124m"[39m[38;5;124mexecution[39m[38;5;124m"[39m][[38;5;124m"[39m[38;5;124mcreate_report[39m[38;5;124m"[39m]):
+[1;32m    637[0m     [38;5;28mself[39m[38;5;241m.[39m_write_report_info([38;5;28mself[39m[38;5;241m.[39mbase_dir, [38;5;28mself[39m[38;5;241m.[39mname, execgraph)
+[0;32m--> 638[0m [43mrunner[49m[38;5;241;43m.[39;49m[43mrun[49m[43m([49m[43mexecgraph[49m[43m,[49m[43m [49m[43mupdatehash[49m[38;5;241;43m=[39;49m[43mupdatehash[49m[43m,[49m[43m [49m[43mconfig[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mconfig[49m[43m)[49m
+[1;32m    639[0m datestr [38;5;241m=[39m datetime[38;5;241m.[39mutcnow()[38;5;241m.[39mstrftime([38;5;124m"[39m[38;5;124m%[39m[38;5;124mY[39m[38;5;124m%[39m[38;5;124mm[39m[38;5;132;01m%d[39;00m[38;5;124mT[39m[38;5;124m%[39m[38;5;124mH[39m[38;5;124m%[39m[38;5;124mM[39m[38;5;124m%[39m[38;5;124mS[39m[38;5;124m"[39m)
+[1;32m    640[0m [38;5;28;01mif[39;00m str2bool([38;5;28mself[39m[38;5;241m.[39mconfig[[38;5;124m"[39m[38;5;124mexecution[39m[38;5;124m"[39m][[38;5;124m"[39m[38;5;124mwrite_provenance[39m[38;5;124m"[39m]):
+
+File [0;32m~/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/base.py:224[0m, in [0;36mDistributedPluginBase.run[0;34m(self, graph, config, updatehash)[0m
+[1;32m    218[0m [38;5;28;01mif[39;00m [38;5;28mlen[39m(errors) [38;5;241m>[39m [38;5;241m1[39m:
+[1;32m    219[0m     error, cause [38;5;241m=[39m (
+[1;32m    220[0m         [38;5;167;01mRuntimeError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(errors)[38;5;132;01m}[39;00m[38;5;124m raised. Re-raising first.[39m[38;5;124m"[39m),
+[1;32m    221[0m         error,
+[1;32m    222[0m     )
+[0;32m--> 224[0m [38;5;28;01mraise[39;00m error [38;5;28;01mfrom[39;00m [38;5;21;01mcause[39;00m
+
+[0;31mRuntimeError[0m: 18 raised. Re-raising first.
 
