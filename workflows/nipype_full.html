@@ -719,7 +719,7 @@ NIFTI_GZ
 </ul>
 <section id="preparation-download-of-opensource-data-installations-and-imports">
 <h3><strong>Preparation: Download of opensource data, installations and imports</strong><a class="headerlink" href="#preparation-download-of-opensource-data-installations-and-imports" title="Link to this heading">#</a></h3>
-<div class="cell tag_scroll-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download 2 subjects of the Flanker Dataset</span>
 <span class="n">PATTERN</span> <span class="o">=</span> <span class="s2">&quot;sub-0[1-2]&quot;</span>
@@ -824,8 +824,7 @@ action summary:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">nilearn</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>nilearn
 </pre></div>
 </div>
 </div>
@@ -892,7 +891,7 @@ Requirement already satisfied: six&gt;=1.5 in /opt/conda/lib/python3.11/site-pac
 <p>In the Nipype framework we can get an information page on an interface class by using the <code class="docutils literal notranslate"><span class="pre">help()</span></code> function.</p>
 <section id="example-interface-for-fsl-s-brain-extraction-tool-bet">
 <h4><strong>Example: Interface for FSL’s Brain Extraction Tool <em>BET</em></strong><a class="headerlink" href="#example-interface-for-fsl-s-brain-extraction-tool-bet" title="Link to this heading">#</a></h4>
-<div class="cell tag_scroll-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># help() function to get a general explanation of the class as well as a list of possible (mandatory and optional) input and output parameters </span>
 <span class="n">fsl</span><span class="o">.</span><span class="n">BET</span><span class="o">.</span><span class="n">help</span><span class="p">()</span>
@@ -1353,7 +1352,7 @@ skull_mask_file = &lt;undefined&gt;
 <img alt="../_images/633f4e5b88aaaf63d098dc5fa40c770829b503750804aa1f285e463f6566e4f4.png" src="../_images/633f4e5b88aaaf63d098dc5fa40c770829b503750804aa1f285e463f6566e4f4.png" />
 </div>
 </div>
-<div class="cell tag_scroll-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Execute the workflow (running serially here)</span>
 <span class="n">wf</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
@@ -1533,7 +1532,7 @@ skull_mask_file = &lt;undefined&gt;
 <section id="example-datagrabber">
 <h4><strong>Example: DataGrabber</strong><a class="headerlink" href="#example-datagrabber" title="Link to this heading">#</a></h4>
 <p>Let’s assume we want to grab the anatomical and functional images of certain subjects of the Flanker dataset:</p>
-<div class="cell tag_scroll-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree<span class="w"> </span>-L<span class="w"> </span><span class="m">4</span><span class="w"> </span>ds000102/<span class="w"> </span>-I<span class="w"> </span><span class="s1">&#39;*csv|*pdf&#39;</span>
 </pre></div>
@@ -2040,7 +2039,7 @@ skull_mask_file = &lt;undefined&gt;
 <img alt="../_images/6684b0d309ede89a63ecb4e1a3b6c1a7349f9b5fbbf5f521832c1e69ac05369a.png" src="../_images/6684b0d309ede89a63ecb4e1a3b6c1a7349f9b5fbbf5f521832c1e69ac05369a.png" />
 </div>
 </div>
-<div class="cell tag_scroll-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run workflow with distributed processing</span>
 <span class="n">wf_preproc</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;MultiProc&#39;</span><span class="p">)</span>
@@ -2131,7 +2130,7 @@ skull_mask_file = &lt;undefined&gt;
 <ul>
 DataSink offers the substitution input field to rename output files.
 For example, to get rid of the string 'bold' and to adapt the file ending of the motion parameter file:
-</ul><div class="cell tag_scroll-output docutils container">
+</ul><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define substitution strings</span>
 <span class="n">substitutions</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;_bold&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
@@ -2309,8 +2308,7 @@ For example, to get rid of the string 'bold' and to adapt the file ending of the
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">watermark</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>watermark
 </pre></div>
 </div>
 </div>

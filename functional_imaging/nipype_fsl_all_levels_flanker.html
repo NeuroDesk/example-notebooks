@@ -579,11 +579,8 @@ document.write(`
 <section id="fsl-s-fmri-data-analysis-via-nipype">
 <h1>FSL’s fMRI Data Analysis via Nipype<a class="headerlink" href="#fsl-s-fmri-data-analysis-via-nipype" title="Link to this heading">#</a></h1>
 <p>Author: Monika Doerig</p>
-<p>Citation:</p>
-<ul class="simple">
-<li><p>Chen Y, Hopp FR, Malik M, Wang PT, Woodman K, Youk S and Weber R (2022) Reproducing FSL’s fMRI data analysis via Nipype: Relevance, challenges, and solutions. Front. Neuroimaging 1:953215. doi: <a class="reference external" href="https://www.frontiersin.org/articles/10.3389/fnimg.2022.953215/full">10.3389/fnimg.2022.953215</a></p></li>
-<li><p><a class="reference external" href="https://osf.io/prg53/?view_only=9d7974834a484cdb972bcc3989589b78">Original code on OSF</a></p></li>
-</ul>
+<p>Original peper: https://www.frontiersin.org/articles/10.3389/fnimg.2022.953215/full</p>
+<p>Original code: https://osf.io/prg53/?view_only=9d7974834a484cdb972bcc3989589b78</p>
 </section>
 <section id="setup-neurodesk">
 <h1>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Link to this heading">#</a></h1>
@@ -727,7 +724,7 @@ model name	: AMD EPYC 7742 64-Core Processor
 </div>
 </div>
 </div>
-<div class="cell tag_scroll-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>datalad<span class="w"> </span>install<span class="w"> </span>https://github.com/OpenNeuroDatasets/ds000102.git
 <span class="o">!</span><span class="nb">cd</span><span class="w"> </span>ds000102<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>datalad<span class="w"> </span>get<span class="w"> </span><span class="nv">$PATTERN</span>
@@ -1998,7 +1995,7 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </div>
 </div>
 </div>
-<div class="cell tag_scroll-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span><span class="p">(</span><span class="n">nipype_cope1</span><span class="p">,</span> <span class="n">bg_img</span><span class="o">=</span><span class="n">nipype_cope1</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Nipype - COPE1&#39;</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;bwr&#39;</span><span class="p">,</span> <span class="n">colorbar</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -2281,7 +2278,7 @@ Instead, we use <a class="reference external" href="https://nipype.readthedocs.i
 </div>
 </div>
 </div>
-<div class="cell tag_scroll-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span><span class="p">(</span><span class="n">nipype_cope1</span><span class="p">,</span> <span class="n">bg_img</span><span class="o">=</span><span class="n">nipype_cope1</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Nipype - COPE1&#39;</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;bwr&#39;</span><span class="p">,</span> <span class="n">colorbar</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span><span class="p">(</span><span class="n">nipype_cope2</span><span class="p">,</span> <span class="n">bg_img</span><span class="o">=</span><span class="n">nipype_cope2</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Nipype - COPE2&#39;</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;bwr&#39;</span><span class="p">,</span> <span class="n">colorbar</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
@@ -2301,7 +2298,7 @@ Instead, we use <a class="reference external" href="https://nipype.readthedocs.i
 </section>
 <section id="copes-from-the-second-level-glm">
 <h3>Copes from the second-level GLM<a class="headerlink" href="#copes-from-the-second-level-glm" title="Link to this heading">#</a></h3>
-<p>Copes from subject-01:</p>
+<p>copes from subject-01</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nipype_cope1</span> <span class="o">=</span> <span class="s1">&#39;./output_level2/level2_results/contrast_1/stats_dir/_contr_id_1/stats/cope1.nii.gz&#39;</span>
@@ -2312,7 +2309,7 @@ Instead, we use <a class="reference external" href="https://nipype.readthedocs.i
 </div>
 </div>
 </div>
-<div class="cell tag_scroll-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plotting</span><span class="o">.</span><span class="n">plot_glass_brain</span><span class="p">(</span><span class="n">nipype_cope1</span><span class="p">,</span> <span class="n">bg_img</span><span class="o">=</span><span class="n">nipype_cope1</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Nipype - COPE1&#39;</span><span class="p">)</span>
 <span class="n">plotting</span><span class="o">.</span><span class="n">plot_glass_brain</span><span class="p">(</span><span class="n">nipype_cope2</span><span class="p">,</span> <span class="n">bg_img</span><span class="o">=</span><span class="n">nipype_cope2</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Nipype - COPE2&#39;</span><span class="p">)</span>
@@ -2647,7 +2644,7 @@ If we have an ANOVA-like design, using <a class="reference external" href="https
 </div>
 </div>
 </div>
-<div class="cell tag_scroll-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_nipype_cope1</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">vol_to_surf</span><span class="p">(</span><span class="n">nipype_cope1</span><span class="p">,</span> <span class="n">fsaverage</span><span class="o">.</span><span class="n">pial_right</span><span class="p">)</span>
 <span class="n">plotting</span><span class="o">.</span><span class="n">plot_surf_stat_map</span><span class="p">(</span>
@@ -2701,7 +2698,7 @@ If we have an ANOVA-like design, using <a class="reference external" href="https
 </div>
 </div>
 </div>
-<div class="cell tag_scroll-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plotting</span><span class="o">.</span><span class="n">plot_img_on_surf</span><span class="p">(</span><span class="n">nipype_cope1</span><span class="p">,</span>
                           <span class="n">views</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lateral&#39;</span><span class="p">],</span>
