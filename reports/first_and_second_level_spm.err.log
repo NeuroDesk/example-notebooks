@@ -1,15 +1,4 @@
 Traceback (most recent call last):
-  File "/home/ubuntu/.local/lib/python3.10/site-packages/nbclient/client.py", line 778, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-  File "/home/ubuntu/.local/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 188, in ensure_async
-    result = await obj
-  File "/home/ubuntu/.local/lib/python3.10/site-packages/jupyter_client/channels.py", line 315, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "/home/ubuntu/.local/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
   File "/home/ubuntu/.local/lib/python3.10/site-packages/nbclient/client.py", line 1305, in execute
@@ -20,17 +9,1828 @@ Traceback (most recent call last):
     return future.result()
   File "/home/ubuntu/.local/lib/python3.10/site-packages/nbclient/client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "/home/ubuntu/.local/lib/python3.10/site-packages/nbclient/client.py", line 1001, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-  File "/home/ubuntu/.local/lib/python3.10/site-packages/nbclient/client.py", line 802, in _async_poll_for_reply
-    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
-  File "/home/ubuntu/.local/lib/python3.10/site-packages/nbclient/client.py", line 852, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 18000 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-wf_2ndlevel_onesample.run(plugin="MultiProc")
-# 2min
--------------------
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+wf.run(plugin="MultiProc") #will use all CPUs
+------------------
+
+----- stdout -----
+250417-05:20:29,541 nipype.workflow INFO:
+	 Workflow level1_spm settings: ['check', 'execution', 'logging', 'monitoring']
+----- stdout -----
+250417-05:20:29,653 nipype.workflow INFO:
+	 Running in parallel.
+----- stdout -----
+250417-05:20:29,659 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 9 jobs ready. Free memory (GB): 113.22/113.22, Free processors: 32/32.
+----- stdout -----
+250417-05:20:30,371 nipype.workflow INFO:
+	 [Node] Setting-up "level1_spm.datagrabber" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_03/datagrabber".
+----- stdout -----
+250417-05:20:30,364 nipype.workflow INFO:
+	 [Node] Setting-up "level1_spm.datagrabber" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_01/datagrabber".
+----- stdout -----
+250417-05:20:30,373 nipype.workflow INFO:
+	 [Node] Setting-up "level1_spm.datagrabber" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_02/datagrabber".
+----- stdout -----
+250417-05:20:30,376 nipype.workflow INFO:
+	 [Node] Setting-up "level1_spm.datagrabber" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_06/datagrabber".
+----- stdout -----
+250417-05:20:30,377 nipype.workflow INFO:
+	 [Node] Setting-up "level1_spm.datagrabber" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_05/datagrabber".
+----- stdout -----
+250417-05:20:30,380 nipype.workflow INFO:
+	 [Node] Setting-up "level1_spm.datagrabber" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_08/datagrabber".
+----- stdout -----
+250417-05:20:30,379 nipype.workflow INFO:
+	 [Node] Setting-up "level1_spm.datagrabber" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_09/datagrabber".
+----- stdout -----
+250417-05:20:30,379 nipype.workflow INFO:
+	 [Node] Setting-up "level1_spm.datagrabber" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_04/datagrabber".
+----- stdout -----
+250417-05:20:30,409 nipype.workflow INFO:
+	 [Node] Executing "datagrabber" <nipype.interfaces.io.DataGrabber>
+----- stdout -----
+250417-05:20:30,411 nipype.workflow INFO:
+	 [Node] Executing "datagrabber" <nipype.interfaces.io.DataGrabber>
+----- stdout -----
+250417-05:20:30,415 nipype.workflow INFO:
+	 [Node] Executing "datagrabber" <nipype.interfaces.io.DataGrabber>
+----- stdout -----
+250417-05:20:30,420 nipype.workflow INFO:
+	 [Node] Executing "datagrabber" <nipype.interfaces.io.DataGrabber>
+----- stdout -----
+250417-05:20:30,420 nipype.workflow INFO:
+	 [Node] Executing "datagrabber" <nipype.interfaces.io.DataGrabber>
+----- stdout -----
+250417-05:20:30,391 nipype.workflow INFO:
+	 [Node] Setting-up "level1_spm.datagrabber" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_07/datagrabber".
+----- stdout -----
+250417-05:20:30,421 nipype.workflow INFO:
+	 [Node] Executing "datagrabber" <nipype.interfaces.io.DataGrabber>
+----- stdout -----
+250417-05:20:30,422 nipype.workflow INFO:
+	 [Node] Executing "datagrabber" <nipype.interfaces.io.DataGrabber>
+----- stdout -----
+250417-05:20:30,431 nipype.workflow INFO:
+	 [Node] Finished "datagrabber", elapsed time 0.007857s.
+----- stdout -----
+250417-05:20:30,434 nipype.workflow INFO:
+	 [Node] Finished "datagrabber", elapsed time 0.009303s.
+----- stdout -----
+250417-05:20:30,438 nipype.workflow INFO:
+	 [Node] Finished "datagrabber", elapsed time 0.009388s.
+----- stdout -----
+250417-05:20:30,440 nipype.workflow INFO:
+	 [Node] Executing "datagrabber" <nipype.interfaces.io.DataGrabber>
+----- stdout -----
+250417-05:20:30,441 nipype.workflow INFO:
+	 [Node] Finished "datagrabber", elapsed time 0.00763s.
+----- stdout -----
+250417-05:20:30,443 nipype.workflow INFO:
+	 [Node] Finished "datagrabber", elapsed time 0.00991s.
+----- stdout -----
+250417-05:20:30,444 nipype.workflow INFO:
+	 [Node] Finished "datagrabber", elapsed time 0.008653s.
+----- stdout -----
+250417-05:20:30,444 nipype.workflow INFO:
+	 [Node] Finished "datagrabber", elapsed time 0.007351s.
+----- stdout -----
+250417-05:20:30,452 nipype.workflow INFO:
+	 [Node] Executing "datagrabber" <nipype.interfaces.io.DataGrabber>
+----- stdout -----
+250417-05:20:30,457 nipype.workflow INFO:
+	 [Node] Finished "datagrabber", elapsed time 0.005386s.
+----- stdout -----
+250417-05:20:30,469 nipype.workflow INFO:
+	 [Node] Finished "datagrabber", elapsed time 0.006023s.
+----- stdout -----
+250417-05:20:31,666 nipype.workflow INFO:
+	 [Job 0] Completed (level1_spm.datagrabber).
+----- stdout -----
+250417-05:20:31,675 nipype.workflow INFO:
+	 [Job 1] Completed (level1_spm.datagrabber).
+----- stdout -----
+250417-05:20:31,678 nipype.workflow INFO:
+	 [Job 2] Completed (level1_spm.datagrabber).
+----- stdout -----
+250417-05:20:31,680 nipype.workflow INFO:
+	 [Job 3] Completed (level1_spm.datagrabber).
+----- stdout -----
+250417-05:20:31,684 nipype.workflow INFO:
+	 [Job 4] Completed (level1_spm.datagrabber).
+----- stdout -----
+250417-05:20:31,686 nipype.workflow INFO:
+	 [Job 5] Completed (level1_spm.datagrabber).
+----- stdout -----
+250417-05:20:31,688 nipype.workflow INFO:
+	 [Job 6] Completed (level1_spm.datagrabber).
+----- stdout -----
+250417-05:20:31,691 nipype.workflow INFO:
+	 [Job 7] Completed (level1_spm.datagrabber).
+----- stdout -----
+250417-05:20:31,693 nipype.workflow INFO:
+	 [Job 8] Completed (level1_spm.datagrabber).
+----- stdout -----
+250417-05:20:31,697 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 18 jobs ready. Free memory (GB): 113.22/113.22, Free processors: 32/32.
+----- stdout -----
+250417-05:20:33,665 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 36 jobs ready. Free memory (GB): 113.22/113.22, Free processors: 32/32.
+----- stdout -----
+250417-05:20:33,822 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_01/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:33,823 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_01/getsubjectinfo/mapflow/_getsubjectinfo1".
+----- stdout -----
+250417-05:20:33,822 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_01/getsubjectinfo/mapflow/_getsubjectinfo0".
+----- stdout -----
+250417-05:20:33,825 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_01/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:33,830 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_02/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:33,851 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_05/getsubjectinfo/mapflow/_getsubjectinfo1".
+----- stdout -----
+250417-05:20:33,834 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_02/getsubjectinfo/mapflow/_getsubjectinfo1".
+----- stdout -----
+250417-05:20:33,863 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_06/getsubjectinfo/mapflow/_getsubjectinfo1".
+----- stdout -----
+250417-05:20:33,840 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_04/getsubjectinfo/mapflow/_getsubjectinfo1".
+----- stdout -----
+250417-05:20:33,832 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_02/getsubjectinfo/mapflow/_getsubjectinfo0".
+----- stdout -----
+250417-05:20:33,871 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_07/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:33,871 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_07/getsubjectinfo/mapflow/_getsubjectinfo0".
+----- stdout -----
+250417-05:20:33,871 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_07/getsubjectinfo/mapflow/_getsubjectinfo1".
+----- stdout -----
+250417-05:20:33,835 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_02/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:33,872 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_07/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:33,879 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_08/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:33,883 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func1" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:33,885 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_08/getsubjectinfo/mapflow/_getsubjectinfo1".
+----- stdout -----
+250417-05:20:33,846 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_03/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:33,888 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo1" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:33,877 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_08/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:33,849 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_03/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:33,882 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_08/getsubjectinfo/mapflow/_getsubjectinfo0".
+----- stdout -----
+250417-05:20:33,896 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func0" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:33,899 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func1" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:33,855 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_04/getsubjectinfo/mapflow/_getsubjectinfo0".
+----- stdout -----
+250417-05:20:33,893 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo1" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:33,843 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_03/getsubjectinfo/mapflow/_getsubjectinfo1".
+----- stdout -----
+250417-05:20:33,856 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_04/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:33,904 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func0" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:33,890 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo0" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:33,861 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_04/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:33,847 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_03/getsubjectinfo/mapflow/_getsubjectinfo0".
+----- stdout -----
+250417-05:20:33,908 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo1" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:33,911 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo0" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:33,863 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_05/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:33,917 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo0" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:33,918 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func1" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:33,913 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func0" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:33,915 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo1" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:33,925 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func1" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:33,897 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_06/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:33,937 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo1" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:33,935 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func0" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:33,941 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo1" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:33,950 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo1" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:33,910 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_06/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:33,909 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_06/getsubjectinfo/mapflow/_getsubjectinfo0".
+----- stdout -----
+250417-05:20:33,955 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func1" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:33,956 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func0" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:33,971 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo0" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:33,974 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo1" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:33,976 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo0" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:33,983 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func0" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:33,990 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func1" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:33,993 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func1" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:33,995 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo0" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:33,985 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func0" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:34,16 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func0" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:34,31 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo0" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:33,870 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_05/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:33,868 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_05/getsubjectinfo/mapflow/_getsubjectinfo0".
+----- stdout -----
+250417-05:20:34,230 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func1" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:34,230 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo0" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:34,297 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo0", elapsed time 0.248392s.
+----- stdout -----
+250417-05:20:34,295 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo1", elapsed time 0.232634s.
+----- stdout -----
+250417-05:20:34,317 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo1", elapsed time 0.257993s.
+----- stdout -----
+250417-05:20:34,306 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:34,306 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:34,329 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo0", elapsed time 0.241953s.
+----- stdout -----
+250417-05:20:34,334 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo1" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_07/getsubjectinfo/mapflow/_getsubjectinfo1)
+----- stdout -----
+250417-05:20:34,333 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo0" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_07/getsubjectinfo/mapflow/_getsubjectinfo0)
+----- stdout -----
+250417-05:20:34,338 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:34,350 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo1", elapsed time 0.257389s.
+----- stdout -----
+250417-05:20:34,337 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:34,357 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:34,362 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo0" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_01/getsubjectinfo/mapflow/_getsubjectinfo0)
+----- stdout -----
+250417-05:20:34,365 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo1", elapsed time 0.240084s.
+----- stdout -----
+250417-05:20:34,363 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo1", elapsed time 0.249246s.
+----- stdout -----
+250417-05:20:34,374 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:34,374 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:34,371 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo1" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_06/getsubjectinfo/mapflow/_getsubjectinfo1)
+----- stdout -----
+250417-05:20:34,371 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo1" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_01/getsubjectinfo/mapflow/_getsubjectinfo1)
+----- stdout -----
+250417-05:20:34,387 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo1" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_04/getsubjectinfo/mapflow/_getsubjectinfo1)
+----- stdout -----
+250417-05:20:34,388 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo1" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_02/getsubjectinfo/mapflow/_getsubjectinfo1)
+----- stdout -----
+250417-05:20:34,393 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo1", elapsed time 0.251646s.
+----- stdout -----
+250417-05:20:34,397 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:34,401 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo0", elapsed time 0.288668s.
+----- stdout -----
+250417-05:20:34,403 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo0", elapsed time 0.254662s.
+----- stdout -----
+250417-05:20:34,404 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:34,409 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo1" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_03/getsubjectinfo/mapflow/_getsubjectinfo1)
+----- stdout -----
+250417-05:20:34,406 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:34,411 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo0", elapsed time 0.251584s.
+----- stdout -----
+250417-05:20:34,415 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo0" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_02/getsubjectinfo/mapflow/_getsubjectinfo0)
+----- stdout -----
+250417-05:20:34,415 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:34,418 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo0", elapsed time 0.27547s.
+----- stdout -----
+250417-05:20:34,422 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:34,421 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo0" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_04/getsubjectinfo/mapflow/_getsubjectinfo0)
+----- stdout -----
+250417-05:20:34,426 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo0" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_06/getsubjectinfo/mapflow/_getsubjectinfo0)
+----- stdout -----
+250417-05:20:34,427 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo0", elapsed time 0.321754s.
+----- stdout -----
+250417-05:20:34,431 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo0" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_03/getsubjectinfo/mapflow/_getsubjectinfo0)
+----- stdout -----
+250417-05:20:34,433 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:34,440 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo1", elapsed time 0.350692s.
+----- stdout -----
+250417-05:20:34,443 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo0" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_08/getsubjectinfo/mapflow/_getsubjectinfo0)
+----- stdout -----
+250417-05:20:34,445 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:34,459 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo1" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_08/getsubjectinfo/mapflow/_getsubjectinfo1)
+----- stdout -----
+250417-05:20:34,490 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo1", elapsed time 0.38473s.
+----- stdout -----
+250417-05:20:34,495 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:34,495 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo0", elapsed time 0.185208s.
+----- stdout -----
+250417-05:20:34,502 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:34,503 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo1" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_05/getsubjectinfo/mapflow/_getsubjectinfo1)
+----- stdout -----
+250417-05:20:34,510 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo0" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_05/getsubjectinfo/mapflow/_getsubjectinfo0)
+----- stdout -----
+250417-05:20:35,668 nipype.workflow ERROR:
+	 Node _getsubjectinfo0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:35,671 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo0-2640d395-b811-43e6-a999-0993112f7512.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo0.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:35,675 nipype.workflow ERROR:
+	 Node _getsubjectinfo1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:35,677 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo1-927d1d39-5d0f-4fa9-acc8-3d75532493dd.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo1.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:35,679 nipype.workflow ERROR:
+	 Node _getsubjectinfo0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:35,680 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo0-eadbc4eb-ece5-42b3-8c44-ee60d3c66316.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo0.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:35,683 nipype.workflow ERROR:
+	 Node _getsubjectinfo1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:35,684 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo1-52d0e147-4014-4289-a631-64624ae7324d.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo1.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:35,687 nipype.workflow ERROR:
+	 Node _getsubjectinfo0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:35,688 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo0-a1e746e5-894c-448e-9454-8ac2b9632aaa.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo0.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:35,690 nipype.workflow ERROR:
+	 Node _getsubjectinfo1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:35,692 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo1-e5fc138a-5ce2-4119-af77-24f5af2e6d36.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo1.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:35,694 nipype.workflow ERROR:
+	 Node _getsubjectinfo0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:35,696 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo0-a5db643a-3120-40aa-86ba-a4dfff48ac2a.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo0.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:35,698 nipype.workflow ERROR:
+	 Node _getsubjectinfo1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:35,700 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo1-0c391c25-dace-4033-b87a-1a6dfe02023e.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo1.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:35,702 nipype.workflow ERROR:
+	 Node _getsubjectinfo0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:35,703 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo0-cf79849d-b9e3-4836-861d-af56414d3969.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo0.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:35,706 nipype.workflow ERROR:
+	 Node _getsubjectinfo1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:35,707 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo1-3268beb8-86a4-4b0a-a6de-41bbb334c179.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo1.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:35,709 nipype.workflow ERROR:
+	 Node _getsubjectinfo0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:35,711 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo0-b1e98f1f-5919-4d9b-ab12-161a8739aa49.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo0.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:35,713 nipype.workflow ERROR:
+	 Node _getsubjectinfo1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:35,715 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo1-3ba2880f-6431-4f3e-bb74-cbadc764219b.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo1.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:35,718 nipype.workflow ERROR:
+	 Node _getsubjectinfo0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:35,719 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo0-e4cb2b6b-fad7-4281-aa27-50cc8aa0cf75.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo0.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:35,721 nipype.workflow ERROR:
+	 Node _getsubjectinfo1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:35,722 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo1-2cb31d13-2385-4492-bc6b-0acf9979d45b.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo1.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:35,724 nipype.workflow ERROR:
+	 Node _getsubjectinfo0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:35,726 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo0-a5968316-040f-41d9-8f38-db9d6343be94.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo0.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:35,728 nipype.workflow ERROR:
+	 Node _getsubjectinfo1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:35,730 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo1-65df8b25-7a6b-4173-a36a-71a5710df5d4.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo1.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:35,734 nipype.workflow INFO:
+	 [MultiProc] Running 16 tasks, and 4 jobs ready. Free memory (GB): 110.02/113.22, Free processors: 16/32.
+                     Currently running:
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+----- stdout -----
+250417-05:20:35,949 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_09/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:35,950 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_09/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:35,950 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_09/getsubjectinfo/mapflow/_getsubjectinfo0".
+----- stdout -----
+250417-05:20:35,951 nipype.workflow INFO:
+	 [Node] Setting-up "_getsubjectinfo1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_09/getsubjectinfo/mapflow/_getsubjectinfo1".
+----- stdout -----
+250417-05:20:35,957 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo0" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:35,958 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func0" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:35,958 nipype.workflow INFO:
+	 [Node] Executing "_gunzip_func1" <nipype.algorithms.misc.Gunzip>
+----- stdout -----
+250417-05:20:35,964 nipype.workflow INFO:
+	 [Node] Executing "_getsubjectinfo1" <nipype.interfaces.utility.wrappers.Function>
+----- stdout -----
+250417-05:20:35,969 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo0", elapsed time 0.005869s.
+----- stdout -----
+250417-05:20:35,974 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:35,976 nipype.workflow INFO:
+	 [Node] Finished "_getsubjectinfo1", elapsed time 0.005845s.
+----- stdout -----
+250417-05:20:35,977 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo0" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_09/getsubjectinfo/mapflow/_getsubjectinfo0)
+----- stdout -----
+250417-05:20:35,979 nipype.workflow WARNING:
+	 Storing result file without outputs
+----- stdout -----
+250417-05:20:35,986 nipype.workflow WARNING:
+	 [Node] Error on "_getsubjectinfo1" (/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_09/getsubjectinfo/mapflow/_getsubjectinfo1)
+----- stdout -----
+250417-05:20:37,670 nipype.workflow ERROR:
+	 Node _getsubjectinfo0 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:37,673 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052037-ubuntu-_getsubjectinfo0-73d5f398-05ad-4b30-9c5a-3a6d57737c68.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo0.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:37,685 nipype.workflow ERROR:
+	 Node _getsubjectinfo1 failed to run on host github-action-runner.
+----- stdout -----
+250417-05:20:37,686 nipype.workflow ERROR:
+	 Saving crash info to /storage/tmp/tmphmg90rrq/crash-20250417-052037-ubuntu-_getsubjectinfo1-bc32f72c-441f-4531-b32f-d8ff427eeb33.txt
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo1.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+----- stdout -----
+250417-05:20:37,691 nipype.workflow INFO:
+	 [MultiProc] Running 18 tasks, and 0 jobs ready. Free memory (GB): 109.62/113.22, Free processors: 14/32.
+                     Currently running:
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+----- stdout -----
+250417-05:20:46,498 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func0", elapsed time 12.575508s.
+----- stdout -----
+250417-05:20:47,676 nipype.workflow INFO:
+	 [Job 100] Completed (_gunzip_func0).
+----- stdout -----
+250417-05:20:47,681 nipype.workflow INFO:
+	 [MultiProc] Running 17 tasks, and 0 jobs ready. Free memory (GB): 109.82/113.22, Free processors: 15/32.
+                     Currently running:
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+----- stdout -----
+250417-05:20:50,559 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func1", elapsed time 16.597565s.
+----- stdout -----
+250417-05:20:50,842 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func0", elapsed time 16.788011s.
+----- stdout -----
+250417-05:20:51,680 nipype.workflow INFO:
+	 [Job 73] Completed (_gunzip_func1).
+----- stdout -----
+250417-05:20:51,684 nipype.workflow INFO:
+	 [Job 92] Completed (_gunzip_func0).
+----- stdout -----
+250417-05:20:51,687 nipype.workflow INFO:
+	 [MultiProc] Running 15 tasks, and 0 jobs ready. Free memory (GB): 110.22/113.22, Free processors: 17/32.
+                     Currently running:
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func0
+----- stdout -----
+250417-05:20:53,340 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func0", elapsed time 19.292957s.
+----- stdout -----
+250417-05:20:53,682 nipype.workflow INFO:
+	 [Job 88] Completed (_gunzip_func0).
+----- stdout -----
+250417-05:20:53,686 nipype.workflow INFO:
+	 [MultiProc] Running 14 tasks, and 0 jobs ready. Free memory (GB): 110.42/113.22, Free processors: 18/32.
+                     Currently running:
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func1
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func0
+----- stdout -----
+250417-05:20:53,868 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func1", elapsed time 19.835512s.
+----- stdout -----
+250417-05:20:54,223 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func1", elapsed time 20.230085s.
+----- stdout -----
+250417-05:20:55,19 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func1", elapsed time 21.068027s.
+----- stdout -----
+250417-05:20:55,358 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func0", elapsed time 21.409039s.
+----- stdout -----
+250417-05:20:55,684 nipype.workflow INFO:
+	 [Job 72] Completed (_gunzip_func0).
+----- stdout -----
+250417-05:20:55,688 nipype.workflow INFO:
+	 [Job 77] Completed (_gunzip_func1).
+----- stdout -----
+250417-05:20:55,690 nipype.workflow INFO:
+	 [Job 81] Completed (_gunzip_func1).
+----- stdout -----
+250417-05:20:55,692 nipype.workflow INFO:
+	 [Job 93] Completed (_gunzip_func1).
+----- stdout -----
+250417-05:20:55,695 nipype.workflow INFO:
+	 [MultiProc] Running 10 tasks, and 2 jobs ready. Free memory (GB): 111.22/113.22, Free processors: 22/32.
+                     Currently running:
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func1
+                       * _gunzip_func1
+                       * _gunzip_func0
+                       * _gunzip_func0
+                       * _gunzip_func0
+----- stdout -----
+250417-05:20:55,806 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func1", elapsed time 21.89874s.
+----- stdout -----
+250417-05:20:55,986 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_06/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:55,989 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func0" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:55,991 nipype.workflow INFO:
+	 [Node] "_gunzip_func0" found cached.
+----- stdout -----
+250417-05:20:55,990 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_01/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:55,993 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_06/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:55,996 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func1" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:55,997 nipype.workflow INFO:
+	 [Node] "_gunzip_func1" found cached.
+----- stdout -----
+250417-05:20:56,1 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func0" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:56,4 nipype.workflow INFO:
+	 [Node] "_gunzip_func0" found cached.
+----- stdout -----
+250417-05:20:56,9 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_01/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:56,15 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func1" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:56,18 nipype.workflow INFO:
+	 [Node] "_gunzip_func1" found cached.
+----- stdout -----
+250417-05:20:56,177 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func0", elapsed time 22.248424s.
+----- stdout -----
+250417-05:20:56,187 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func0", elapsed time 22.177121s.
+----- stdout -----
+250417-05:20:56,238 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func1", elapsed time 21.975353s.
+----- stdout -----
+250417-05:20:56,417 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func0", elapsed time 22.425635s.
+----- stdout -----
+250417-05:20:56,659 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func0", elapsed time 22.690185s.
+----- stdout -----
+250417-05:20:56,707 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func1", elapsed time 22.672618s.
+----- stdout -----
+250417-05:20:56,783 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func1", elapsed time 22.885594s.
+----- stdout -----
+250417-05:20:56,948 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func0", elapsed time 20.978946s.
+----- stdout -----
+250417-05:20:57,137 nipype.workflow INFO:
+	 [Node] Finished "_gunzip_func1", elapsed time 21.171587s.
+----- stdout -----
+250417-05:20:57,687 nipype.workflow INFO:
+	 [Job 76] Completed (_gunzip_func0).
+----- stdout -----
+250417-05:20:57,691 nipype.workflow INFO:
+	 [Job 80] Completed (_gunzip_func0).
+----- stdout -----
+250417-05:20:57,693 nipype.workflow INFO:
+	 [Job 84] Completed (_gunzip_func0).
+----- stdout -----
+250417-05:20:57,695 nipype.workflow INFO:
+	 [Job 85] Completed (_gunzip_func1).
+----- stdout -----
+250417-05:20:57,697 nipype.workflow INFO:
+	 [Job 89] Completed (_gunzip_func1).
+----- stdout -----
+250417-05:20:57,699 nipype.workflow INFO:
+	 [Job 96] Completed (_gunzip_func0).
+----- stdout -----
+250417-05:20:57,701 nipype.workflow INFO:
+	 [Job 97] Completed (_gunzip_func1).
+----- stdout -----
+250417-05:20:57,703 nipype.workflow INFO:
+	 [Job 101] Completed (_gunzip_func1).
+----- stdout -----
+250417-05:20:57,706 nipype.workflow INFO:
+	 [Job 104] Completed (_gunzip_func0).
+----- stdout -----
+250417-05:20:57,708 nipype.workflow INFO:
+	 [Job 105] Completed (_gunzip_func1).
+----- stdout -----
+250417-05:20:57,710 nipype.workflow INFO:
+	 [Job 9] Completed (level1_spm.gunzip_func).
+----- stdout -----
+250417-05:20:57,713 nipype.workflow INFO:
+	 [Job 19] Completed (level1_spm.gunzip_func).
+----- stdout -----
+250417-05:20:57,717 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 7 jobs ready. Free memory (GB): 113.22/113.22, Free processors: 32/32.
+----- stdout -----
+250417-05:20:57,994 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_04/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:57,995 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_02/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:57,995 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_05/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:57,995 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_07/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:57,996 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_03/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:57,996 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_09/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:57,997 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func0" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_08/gunzip_func/mapflow/_gunzip_func0".
+----- stdout -----
+250417-05:20:57,999 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func0" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:58,0 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func0" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:58,0 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func0" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:58,1 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func0" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:58,2 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func0" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:58,2 nipype.workflow INFO:
+	 [Node] "_gunzip_func0" found cached.
+----- stdout -----
+250417-05:20:58,2 nipype.workflow INFO:
+	 [Node] "_gunzip_func0" found cached.
+----- stdout -----
+250417-05:20:58,3 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func0" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:58,3 nipype.workflow INFO:
+	 [Node] "_gunzip_func0" found cached.
+----- stdout -----
+250417-05:20:58,3 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func0" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:58,4 nipype.workflow INFO:
+	 [Node] "_gunzip_func0" found cached.
+----- stdout -----
+250417-05:20:58,5 nipype.workflow INFO:
+	 [Node] "_gunzip_func0" found cached.
+----- stdout -----
+250417-05:20:58,4 nipype.workflow INFO:
+	 [Node] "_gunzip_func0" found cached.
+----- stdout -----
+250417-05:20:58,6 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_02/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:58,6 nipype.workflow INFO:
+	 [Node] "_gunzip_func0" found cached.
+----- stdout -----
+250417-05:20:58,7 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_05/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:58,7 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_04/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:58,8 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_03/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:58,8 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_08/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:58,9 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_07/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:58,10 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func1" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:58,11 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func1" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:58,11 nipype.workflow INFO:
+	 [Node] Setting-up "_gunzip_func1" in "/storage/tmp/tmphmg90rrq/spm_analysis/level1_spm/_subject_id_09/gunzip_func/mapflow/_gunzip_func1".
+----- stdout -----
+250417-05:20:58,12 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func1" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:58,12 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func1" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:58,12 nipype.workflow INFO:
+	 [Node] "_gunzip_func1" found cached.
+----- stdout -----
+250417-05:20:58,13 nipype.workflow INFO:
+	 [Node] "_gunzip_func1" found cached.
+----- stdout -----
+250417-05:20:58,14 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func1" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:58,14 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func1" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:58,14 nipype.workflow INFO:
+	 [Node] "_gunzip_func1" found cached.
+----- stdout -----
+250417-05:20:58,15 nipype.workflow INFO:
+	 [Node] "_gunzip_func1" found cached.
+----- stdout -----
+250417-05:20:58,16 nipype.workflow INFO:
+	 [Node] "_gunzip_func1" found cached.
+----- stdout -----
+250417-05:20:58,16 nipype.workflow INFO:
+	 [Node] Cached "_gunzip_func1" - collecting precomputed outputs
+----- stdout -----
+250417-05:20:58,17 nipype.workflow INFO:
+	 [Node] "_gunzip_func1" found cached.
+----- stdout -----
+250417-05:20:58,19 nipype.workflow INFO:
+	 [Node] "_gunzip_func1" found cached.
+----- stdout -----
+250417-05:20:59,689 nipype.workflow INFO:
+	 [Job 11] Completed (level1_spm.gunzip_func).
+----- stdout -----
+250417-05:20:59,692 nipype.workflow INFO:
+	 [Job 13] Completed (level1_spm.gunzip_func).
+----- stdout -----
+250417-05:20:59,695 nipype.workflow INFO:
+	 [Job 15] Completed (level1_spm.gunzip_func).
+----- stdout -----
+250417-05:20:59,697 nipype.workflow INFO:
+	 [Job 17] Completed (level1_spm.gunzip_func).
+----- stdout -----
+250417-05:20:59,700 nipype.workflow INFO:
+	 [Job 21] Completed (level1_spm.gunzip_func).
+----- stdout -----
+250417-05:20:59,702 nipype.workflow INFO:
+	 [Job 23] Completed (level1_spm.gunzip_func).
+----- stdout -----
+250417-05:20:59,704 nipype.workflow INFO:
+	 [Job 25] Completed (level1_spm.gunzip_func).
+----- stdout -----
+250417-05:20:59,709 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 0 jobs ready. Free memory (GB): 113.22/113.22, Free processors: 32/32.
+----- stdout -----
+250417-05:21:01,689 nipype.workflow INFO:
+	 ***********************************
+----- stdout -----
+250417-05:21:01,691 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a0
+----- stdout -----
+250417-05:21:01,692 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo0-2640d395-b811-43e6-a999-0993112f7512.txt
+----- stdout -----
+250417-05:21:01,693 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a0
+----- stdout -----
+250417-05:21:01,694 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo1-927d1d39-5d0f-4fa9-acc8-3d75532493dd.txt
+----- stdout -----
+250417-05:21:01,695 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a1
+----- stdout -----
+250417-05:21:01,696 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo0-eadbc4eb-ece5-42b3-8c44-ee60d3c66316.txt
+----- stdout -----
+250417-05:21:01,697 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a1
+----- stdout -----
+250417-05:21:01,697 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo1-52d0e147-4014-4289-a631-64624ae7324d.txt
+----- stdout -----
+250417-05:21:01,698 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a2
+----- stdout -----
+250417-05:21:01,699 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo0-a1e746e5-894c-448e-9454-8ac2b9632aaa.txt
+----- stdout -----
+250417-05:21:01,700 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a2
+----- stdout -----
+250417-05:21:01,701 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo1-e5fc138a-5ce2-4119-af77-24f5af2e6d36.txt
+----- stdout -----
+250417-05:21:01,702 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a3
+----- stdout -----
+250417-05:21:01,703 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo0-a5db643a-3120-40aa-86ba-a4dfff48ac2a.txt
+----- stdout -----
+250417-05:21:01,707 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a3
+----- stdout -----
+250417-05:21:01,708 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo1-0c391c25-dace-4033-b87a-1a6dfe02023e.txt
+----- stdout -----
+250417-05:21:01,709 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a4
+----- stdout -----
+250417-05:21:01,709 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo0-cf79849d-b9e3-4836-861d-af56414d3969.txt
+----- stdout -----
+250417-05:21:01,710 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a4
+----- stdout -----
+250417-05:21:01,712 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo1-3268beb8-86a4-4b0a-a6de-41bbb334c179.txt
+----- stdout -----
+250417-05:21:01,712 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a5
+----- stdout -----
+250417-05:21:01,713 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo0-b1e98f1f-5919-4d9b-ab12-161a8739aa49.txt
+----- stdout -----
+250417-05:21:01,715 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a5
+----- stdout -----
+250417-05:21:01,716 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo1-3ba2880f-6431-4f3e-bb74-cbadc764219b.txt
+----- stdout -----
+250417-05:21:01,717 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a6
+----- stdout -----
+250417-05:21:01,718 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo0-e4cb2b6b-fad7-4281-aa27-50cc8aa0cf75.txt
+----- stdout -----
+250417-05:21:01,719 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a6
+----- stdout -----
+250417-05:21:01,720 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo1-2cb31d13-2385-4492-bc6b-0acf9979d45b.txt
+----- stdout -----
+250417-05:21:01,721 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a7
+----- stdout -----
+250417-05:21:01,722 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo0-a5968316-040f-41d9-8f38-db9d6343be94.txt
+----- stdout -----
+250417-05:21:01,724 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a7
+----- stdout -----
+250417-05:21:01,725 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052035-ubuntu-_getsubjectinfo1-65df8b25-7a6b-4173-a36a-71a5710df5d4.txt
+----- stdout -----
+250417-05:21:01,726 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a8
+----- stdout -----
+250417-05:21:01,727 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052037-ubuntu-_getsubjectinfo0-73d5f398-05ad-4b30-9c5a-3a6d57737c68.txt
+----- stdout -----
+250417-05:21:01,728 nipype.workflow ERROR:
+	 could not run node: level1_spm.getsubjectinfo.a8
+----- stdout -----
+250417-05:21:01,729 nipype.workflow INFO:
+	 crashfile: /storage/tmp/tmphmg90rrq/crash-20250417-052037-ubuntu-_getsubjectinfo1-bc32f72c-441f-4531-b32f-d8ff427eeb33.txt
+----- stdout -----
+250417-05:21:01,730 nipype.workflow INFO:
+	 ***********************************
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mRuntimeError[0m                              Traceback (most recent call last)
+[0;31mRuntimeError[0m: Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _getsubjectinfo0.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+	    return self._engine.get_loc(casted_key)
+	  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+	  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+	KeyError: 'stim_type'
+
+	The above exception was the direct cause of the following exception:
+
+	Traceback (most recent call last):
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/utility/wrappers.py", line 142, in _run_interface
+	    out = function_handle(**args)
+	  File "<string>", line 11, in subjectinfo
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+	    indexer = self.columns.get_loc(key)
+	  File "/home/ubuntu/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+	    raise KeyError(key) from err
+	KeyError: 'stim_type'
+
+
+
+The above exception was the direct cause of the following exception:
+
+[0;31mRuntimeError[0m                              Traceback (most recent call last)
+Cell [0;32mIn[31], line 1[0m
+[0;32m----> 1[0m [43mwf[49m[38;5;241;43m.[39;49m[43mrun[49m[43m([49m[43mplugin[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mMultiProc[39;49m[38;5;124;43m"[39;49m[43m)[49m [38;5;66;03m#will use all CPUs[39;00m
+
+File [0;32m~/.local/lib/python3.10/site-packages/nipype/pipeline/engine/workflows.py:638[0m, in [0;36mWorkflow.run[0;34m(self, plugin, plugin_args, updatehash)[0m
+[1;32m    636[0m [38;5;28;01mif[39;00m str2bool([38;5;28mself[39m[38;5;241m.[39mconfig[[38;5;124m"[39m[38;5;124mexecution[39m[38;5;124m"[39m][[38;5;124m"[39m[38;5;124mcreate_report[39m[38;5;124m"[39m]):
+[1;32m    637[0m     [38;5;28mself[39m[38;5;241m.[39m_write_report_info([38;5;28mself[39m[38;5;241m.[39mbase_dir, [38;5;28mself[39m[38;5;241m.[39mname, execgraph)
+[0;32m--> 638[0m [43mrunner[49m[38;5;241;43m.[39;49m[43mrun[49m[43m([49m[43mexecgraph[49m[43m,[49m[43m [49m[43mupdatehash[49m[38;5;241;43m=[39;49m[43mupdatehash[49m[43m,[49m[43m [49m[43mconfig[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mconfig[49m[43m)[49m
+[1;32m    639[0m datestr [38;5;241m=[39m datetime[38;5;241m.[39mutcnow()[38;5;241m.[39mstrftime([38;5;124m"[39m[38;5;124m%[39m[38;5;124mY[39m[38;5;124m%[39m[38;5;124mm[39m[38;5;132;01m%d[39;00m[38;5;124mT[39m[38;5;124m%[39m[38;5;124mH[39m[38;5;124m%[39m[38;5;124mM[39m[38;5;124m%[39m[38;5;124mS[39m[38;5;124m"[39m)
+[1;32m    640[0m [38;5;28;01mif[39;00m str2bool([38;5;28mself[39m[38;5;241m.[39mconfig[[38;5;124m"[39m[38;5;124mexecution[39m[38;5;124m"[39m][[38;5;124m"[39m[38;5;124mwrite_provenance[39m[38;5;124m"[39m]):
+
+File [0;32m~/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/base.py:224[0m, in [0;36mDistributedPluginBase.run[0;34m(self, graph, config, updatehash)[0m
+[1;32m    218[0m [38;5;28;01mif[39;00m [38;5;28mlen[39m(errors) [38;5;241m>[39m [38;5;241m1[39m:
+[1;32m    219[0m     error, cause [38;5;241m=[39m (
+[1;32m    220[0m         [38;5;167;01mRuntimeError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(errors)[38;5;132;01m}[39;00m[38;5;124m raised. Re-raising first.[39m[38;5;124m"[39m),
+[1;32m    221[0m         error,
+[1;32m    222[0m     )
+[0;32m--> 224[0m [38;5;28;01mraise[39;00m error [38;5;28;01mfrom[39;00m [38;5;21;01mcause[39;00m
+
+[0;31mRuntimeError[0m: 18 raised. Re-raising first.
 
