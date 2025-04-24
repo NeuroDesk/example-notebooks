@@ -649,9 +649,7 @@ Please use &quot;module use ...&quot; to change MODULEPATH instead.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;FSLDIR&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20221016/fsl_6.0.5.1_20221016.simg/opt/fsl-6.0.5.1/&quot;</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;FSLOUTPUTTYPE&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;NIFTI_GZ&quot;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;SINGULARITY_BINDPATH&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;/data,/neurodesktop-storage,/tmp,/cvmfs&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -692,7 +690,7 @@ Please use &quot;module use ...&quot; to change MODULEPATH instead.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NIFTI_GZ
-6.0.5.1:57b01774
+None
 </pre></div>
 </div>
 </div>
@@ -742,465 +740,460 @@ Resolving:   0%|                                | 0.00/537 [00:00&lt;?, ? Deltas
 [INFO   ] scanning for unlocked files (this may take some time) 
 [INFO   ] Remote origin not usable by git-annex; setting annex-ignore 
 [INFO   ] access to 1 dataset sibling s3-PRIVATE not auto-enabled, enable with:
-| 		datalad siblings -d &quot;/storage/tmp/tmpnd097gat/ds000102&quot; enable -s s3-PRIVATE 
-<span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): /storage/tmp/tmpnd097gat/ds000102 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>)
+| 		datalad siblings -d &quot;/storage/tmp/tmputamwm6w/ds000102&quot; enable -s s3-PRIVATE 
+<span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): /storage/tmp/tmputamwm6w/ds000102 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>)
 Total:   0%|                                    | 0.00/618M [00:00&lt;?, ? Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   0%|            | 0.00/10.8M [00:00&lt;?, ? Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   0%|    | 16.4k/10.8M [00:00&lt;01:16, 141k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   0%|   | 33.4k/10.8M [00:00&lt;02:40, 66.8k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   0%|   | 50.8k/10.8M [00:01&lt;04:33, 39.1k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   1%|   | 85.6k/10.8M [00:01&lt;02:44, 64.9k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   1%|    | 120k/10.8M [00:01&lt;02:34, 68.9k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   1%|    | 138k/10.8M [00:02&lt;02:31, 70.3k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   1%|    | 155k/10.8M [00:02&lt;02:28, 71.5k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   2%|    | 173k/10.8M [00:02&lt;02:25, 72.5k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   2%|    | 190k/10.8M [00:02&lt;02:24, 73.3k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   2%|    | 207k/10.8M [00:02&lt;02:17, 76.6k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   2%|    | 225k/10.8M [00:03&lt;02:02, 86.0k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   2%|    | 242k/10.8M [00:03&lt;01:47, 97.4k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   3%|▏    | 277k/10.8M [00:03&lt;01:30, 116k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   3%|▏    | 294k/10.8M [00:03&lt;01:29, 117k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   3%|▏    | 347k/10.8M [00:03&lt;01:15, 138k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   4%|▏    | 382k/10.8M [00:04&lt;01:09, 150k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   4%|▏    | 451k/10.8M [00:04&lt;00:54, 187k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   5%|▏    | 503k/10.8M [00:04&lt;00:51, 200k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   5%|▎    | 590k/10.8M [00:04&lt;00:40, 251k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   6%|▎    | 660k/10.8M [00:05&lt;00:36, 276k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   7%|▎    | 765k/10.8M [00:05&lt;00:31, 318k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   8%|▍    | 852k/10.8M [00:05&lt;00:24, 402k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:   9%|▍    | 956k/10.8M [00:05&lt;00:22, 439k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  10%|▍   | 1.10M/10.8M [00:05&lt;00:20, 472k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  11%|▍   | 1.23M/10.8M [00:06&lt;00:18, 508k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  13%|▌   | 1.41M/10.8M [00:06&lt;00:18, 502k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  15%|▌   | 1.57M/10.8M [00:06&lt;00:15, 610k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  16%|▋   | 1.74M/10.8M [00:06&lt;00:11, 788k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  18%|▋   | 1.97M/10.8M [00:07&lt;00:12, 682k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  20%|▊   | 2.19M/10.8M [00:07&lt;00:09, 901k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  23%|▉   | 2.47M/10.8M [00:07&lt;00:09, 833k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  26%|█   | 2.75M/10.8M [00:07&lt;00:08, 935k Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  28%|▊  | 3.04M/10.8M [00:07&lt;00:06, 1.18M Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  31%|▉  | 3.32M/10.8M [00:08&lt;00:05, 1.32M Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  35%|█  | 3.72M/10.8M [00:08&lt;00:05, 1.32M Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  38%|█▏ | 4.09M/10.8M [00:08&lt;00:04, 1.46M Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  42%|█▎ | 4.52M/10.8M [00:08&lt;00:04, 1.52M Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  46%|█▍ | 4.98M/10.8M [00:09&lt;00:03, 1.65M Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  51%|█▌ | 5.46M/10.8M [00:09&lt;00:02, 1.78M Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  56%|█▋ | 5.99M/10.8M [00:09&lt;00:02, 1.92M Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  61%|█▊ | 6.54M/10.8M [00:09&lt;00:02, 2.06M Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  66%|█▉ | 7.14M/10.8M [00:10&lt;00:01, 2.23M Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  72%|██▏| 7.78M/10.8M [00:10&lt;00:01, 2.39M Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  79%|██▎| 8.45M/10.8M [00:10&lt;00:00, 2.63M Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  85%|██▌| 9.17M/10.8M [00:10&lt;00:00, 2.78M Bytes/s]
-Get sub-05/a .. 5_T1w.nii.gz:  93%|██▊| 9.96M/10.8M [00:10&lt;00:00, 2.96M Bytes/s]
-Total:   2%|▍                           | 10.8M/618M [00:12&lt;11:58, 845k Bytes/s]
-Get sub-05/f .. _bold.nii.gz:   0%|            | 0.00/29.7M [00:00&lt;?, ? Bytes/s]
-Get sub-05/f .. _bold.nii.gz:   3%|    | 871k/29.7M [00:00&lt;00:04, 5.88M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:   6%|▏  | 1.81M/29.7M [00:00&lt;00:07, 3.69M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:   9%|▎  | 2.75M/29.7M [00:00&lt;00:06, 4.23M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  12%|▎  | 3.45M/29.7M [00:00&lt;00:05, 4.87M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  16%|▍  | 4.85M/29.7M [00:01&lt;00:06, 4.08M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  20%|▌  | 5.99M/29.7M [00:01&lt;00:05, 4.26M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  24%|▋  | 7.19M/29.7M [00:01&lt;00:04, 4.54M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  28%|▊  | 8.45M/29.7M [00:01&lt;00:04, 4.78M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  33%|▉  | 9.78M/29.7M [00:01&lt;00:03, 5.89M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  36%|█  | 10.5M/29.7M [00:02&lt;00:03, 5.54M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  38%|█▏ | 11.2M/29.7M [00:02&lt;00:03, 5.64M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  43%|█▎ | 12.7M/29.7M [00:02&lt;00:03, 5.37M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  47%|█▍ | 14.0M/29.7M [00:02&lt;00:02, 6.71M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  52%|█▌ | 15.6M/29.7M [00:02&lt;00:02, 6.73M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  58%|█▋ | 17.2M/29.7M [00:03&lt;00:01, 6.84M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  64%|█▉ | 18.9M/29.7M [00:03&lt;00:01, 7.02M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  70%|██ | 20.7M/29.7M [00:03&lt;00:01, 7.24M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  76%|██▎| 22.6M/29.7M [00:03&lt;00:00, 7.57M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  83%|██▍| 24.6M/29.7M [00:04&lt;00:00, 7.96M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  89%|██▋| 26.3M/29.7M [00:04&lt;00:00, 7.97M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  93%|██▊| 27.6M/29.7M [00:04&lt;00:00, 8.07M Bytes/s]
-Total:   7%|█▊                         | 40.4M/618M [00:17&lt;04:13, 2.28M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:   0%|            | 0.00/29.7M [00:00&lt;?, ? Bytes/s]
-Get sub-05/f .. _bold.nii.gz:   8%|▏  | 2.30M/29.7M [00:00&lt;00:01, 14.1M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  13%|▍  | 3.75M/29.7M [00:00&lt;00:02, 10.9M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  20%|▌  | 5.92M/29.7M [00:00&lt;00:02, 10.0M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  26%|▊  | 7.78M/29.7M [00:00&lt;00:02, 9.71M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  31%|▉  | 9.13M/29.7M [00:00&lt;00:02, 9.30M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  35%|█  | 10.5M/29.7M [00:01&lt;00:01, 10.2M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  43%|█▎ | 12.6M/29.7M [00:01&lt;00:01, 9.82M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  50%|█▍ | 14.8M/29.7M [00:01&lt;00:01, 9.28M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  53%|█▌ | 15.8M/29.7M [00:01&lt;00:01, 8.86M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  60%|█▊ | 17.8M/29.7M [00:01&lt;00:01, 8.86M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  64%|█▉ | 19.1M/29.7M [00:01&lt;00:01, 9.51M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  70%|██ | 20.7M/29.7M [00:02&lt;00:00, 9.16M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  74%|██▏| 22.0M/29.7M [00:02&lt;00:00, 8.76M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  79%|██▎| 23.3M/29.7M [00:02&lt;00:00, 9.54M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  86%|██▌| 25.6M/29.7M [00:02&lt;00:00, 9.73M Bytes/s]
-Get sub-05/f .. _bold.nii.gz:  94%|██▊| 27.8M/29.7M [00:02&lt;00:00, 9.57M Bytes/s]
-                                                                                
-Get sub-07/a .. 7_T1w.nii.gz:   0%|            | 0.00/10.7M [00:00&lt;?, ? Bytes/s]
-Get sub-07/a .. 7_T1w.nii.gz:  13%|▍  | 1.42M/10.7M [00:00&lt;00:00, 12.3M Bytes/s]
-Get sub-07/a .. 7_T1w.nii.gz:  38%|█▏ | 4.04M/10.7M [00:00&lt;00:00, 13.6M Bytes/s]
-Get sub-07/a .. 7_T1w.nii.gz:  58%|█▋ | 6.17M/10.7M [00:00&lt;00:00, 10.4M Bytes/s]
-Get sub-07/a .. 7_T1w.nii.gz:  69%|██ | 7.40M/10.7M [00:00&lt;00:00, 10.1M Bytes/s]
-Get sub-07/a .. 7_T1w.nii.gz:  83%|██▍| 8.89M/10.7M [00:00&lt;00:00, 11.3M Bytes/s]
-Total:  13%|███▌                       | 80.8M/618M [00:22&lt;02:31, 3.54M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:   0%|            | 0.00/28.9M [00:00&lt;?, ? Bytes/s]
-Get sub-07/f .. _bold.nii.gz:   6%|▏  | 1.78M/28.9M [00:00&lt;00:02, 13.6M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  14%|▍  | 4.19M/28.9M [00:00&lt;00:01, 14.0M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  21%|▌  | 5.98M/28.9M [00:00&lt;00:02, 9.81M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  25%|▊  | 7.30M/28.9M [00:00&lt;00:02, 9.65M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  30%|▉  | 8.68M/28.9M [00:00&lt;00:01, 10.6M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  34%|█  | 9.88M/28.9M [00:00&lt;00:01, 9.88M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  39%|█▏ | 11.3M/28.9M [00:01&lt;00:01, 10.8M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  43%|█▎ | 12.6M/28.9M [00:01&lt;00:01, 10.3M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  48%|█▍ | 14.0M/28.9M [00:01&lt;00:01, 11.2M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  55%|█▋ | 16.0M/28.9M [00:01&lt;00:01, 10.8M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  59%|█▊ | 17.2M/28.9M [00:01&lt;00:01, 10.9M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  67%|█▉ | 19.3M/28.9M [00:01&lt;00:00, 10.8M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  75%|██▏| 21.7M/28.9M [00:02&lt;00:00, 10.7M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  79%|██▍| 23.0M/28.9M [00:02&lt;00:00, 10.8M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  87%|██▌| 25.2M/28.9M [00:02&lt;00:00, 10.9M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  94%|██▊| 27.3M/28.9M [00:02&lt;00:00, 10.7M Bytes/s]
-                                                                                
-Get sub-07/f .. _bold.nii.gz:   0%|            | 0.00/29.0M [00:00&lt;?, ? Bytes/s]
-Get sub-07/f .. _bold.nii.gz:   5%|▏  | 1.35M/29.0M [00:00&lt;00:02, 13.4M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  10%|▎  | 2.90M/29.0M [00:00&lt;00:01, 14.6M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  16%|▍  | 4.55M/29.0M [00:00&lt;00:02, 9.74M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  20%|▌  | 5.82M/29.0M [00:00&lt;00:02, 10.6M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  25%|▋  | 7.16M/29.0M [00:00&lt;00:01, 11.3M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  33%|▉  | 9.45M/29.0M [00:00&lt;00:01, 11.3M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  38%|█▏ | 11.1M/29.0M [00:01&lt;00:01, 10.1M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  46%|█▍ | 13.3M/29.0M [00:01&lt;00:01, 10.0M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  54%|█▌ | 15.6M/29.0M [00:01&lt;00:01, 9.77M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  58%|█▋ | 16.7M/29.0M [00:01&lt;00:01, 9.49M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  62%|█▊ | 18.0M/29.0M [00:01&lt;00:01, 10.0M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  66%|█▉ | 19.1M/29.0M [00:01&lt;00:01, 9.29M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  69%|██ | 20.1M/29.0M [00:01&lt;00:00, 9.40M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  74%|██▏| 21.5M/29.0M [00:02&lt;00:00, 10.5M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  82%|██▍| 23.7M/29.0M [00:02&lt;00:00, 9.14M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  86%|██▌| 25.0M/29.0M [00:02&lt;00:00, 9.97M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  91%|██▋| 26.3M/29.0M [00:02&lt;00:00, 9.68M Bytes/s]
-Get sub-07/f .. _bold.nii.gz:  96%|██▊| 27.7M/29.0M [00:02&lt;00:00, 10.5M Bytes/s]
-Total:  22%|██████▎                     | 139M/618M [00:29&lt;01:41, 4.72M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:   0%|            | 0.00/10.7M [00:00&lt;?, ? Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  20%|▌  | 2.17M/10.7M [00:00&lt;00:00, 12.8M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  36%|█  | 3.91M/10.7M [00:00&lt;00:00, 13.1M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  53%|█▌ | 5.74M/10.7M [00:00&lt;00:00, 9.91M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  66%|█▉ | 7.07M/10.7M [00:00&lt;00:00, 10.7M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  83%|██▌| 8.95M/10.7M [00:00&lt;00:00, 10.2M Bytes/s]
-Get sub-02/a .. 2_T1w.nii.gz:  99%|██▉| 10.6M/10.7M [00:01&lt;00:00, 9.46M Bytes/s]
-                                                                                
-Get sub-02/f .. _bold.nii.gz:   0%|            | 0.00/29.2M [00:00&lt;?, ? Bytes/s]
-Get sub-02/f .. _bold.nii.gz:   8%|▏  | 2.41M/29.2M [00:00&lt;00:02, 12.0M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  13%|▍  | 3.66M/29.2M [00:00&lt;00:02, 12.2M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  20%|▌  | 5.78M/29.2M [00:00&lt;00:02, 9.77M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  24%|▋  | 7.04M/29.2M [00:00&lt;00:02, 9.48M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  31%|▉  | 9.17M/29.2M [00:00&lt;00:02, 9.17M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  36%|█  | 10.4M/29.2M [00:01&lt;00:01, 9.74M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  40%|█▏ | 11.5M/29.2M [00:01&lt;00:01, 9.27M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  47%|█▍ | 13.8M/29.2M [00:01&lt;00:01, 9.22M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  52%|█▌ | 15.1M/29.2M [00:01&lt;00:01, 10.0M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  58%|█▋ | 16.8M/29.2M [00:01&lt;00:01, 9.52M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  64%|█▉ | 18.7M/29.2M [00:01&lt;00:01, 9.79M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  73%|██▏| 21.3M/29.2M [00:02&lt;00:00, 10.1M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  77%|██▎| 22.5M/29.2M [00:02&lt;00:00, 10.3M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  82%|██▍| 23.9M/29.2M [00:02&lt;00:00, 10.2M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  86%|██▌| 25.2M/29.2M [00:02&lt;00:00, 11.0M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  94%|██▊| 27.5M/29.2M [00:02&lt;00:00, 10.4M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  99%|██▉| 29.0M/29.2M [00:02&lt;00:00, 10.1M Bytes/s]
-                                                                                
-Get sub-02/f .. _bold.nii.gz:   0%|            | 0.00/29.2M [00:00&lt;?, ? Bytes/s]
-Get sub-02/f .. _bold.nii.gz:   9%|▎  | 2.55M/29.2M [00:00&lt;00:02, 12.7M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  13%|▍  | 3.90M/29.2M [00:00&lt;00:01, 13.0M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  20%|▌  | 5.87M/29.2M [00:00&lt;00:02, 9.94M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  25%|▋  | 7.18M/29.2M [00:00&lt;00:02, 9.68M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  29%|▉  | 8.53M/29.2M [00:00&lt;00:01, 10.6M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  36%|█  | 10.6M/29.2M [00:01&lt;00:01, 9.66M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  40%|█▏ | 11.8M/29.2M [00:01&lt;00:01, 9.20M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  45%|█▎ | 13.1M/29.2M [00:01&lt;00:01, 10.1M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  52%|█▌ | 15.3M/29.2M [00:01&lt;00:01, 9.69M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  56%|█▋ | 16.4M/29.2M [00:01&lt;00:01, 9.10M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  64%|█▉ | 18.7M/29.2M [00:01&lt;00:01, 9.26M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  69%|██ | 20.0M/29.2M [00:02&lt;00:00, 10.1M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  76%|██▎| 22.1M/29.2M [00:02&lt;00:00, 9.55M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  80%|██▍| 23.3M/29.2M [00:02&lt;00:00, 9.15M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  85%|██▌| 24.7M/29.2M [00:02&lt;00:00, 10.1M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  92%|██▊| 26.8M/29.2M [00:02&lt;00:00, 9.57M Bytes/s]
-Get sub-02/f .. _bold.nii.gz:  96%|██▊| 27.9M/29.2M [00:02&lt;00:00, 9.06M Bytes/s]
-Total:  34%|█████████▍                  | 208M/618M [00:37&lt;01:14, 5.54M Bytes/s]
-Get sub-06/a .. 6_T1w.nii.gz:   0%|            | 0.00/10.6M [00:00&lt;?, ? Bytes/s]
-Get sub-06/a .. 6_T1w.nii.gz:  20%|▌  | 2.15M/10.6M [00:00&lt;00:00, 13.8M Bytes/s]
-Get sub-06/a .. 6_T1w.nii.gz:  37%|█  | 3.94M/10.6M [00:00&lt;00:00, 13.0M Bytes/s]
-Get sub-06/a .. 6_T1w.nii.gz:  55%|█▋ | 5.82M/10.6M [00:00&lt;00:00, 9.89M Bytes/s]
-Get sub-06/a .. 6_T1w.nii.gz:  68%|██ | 7.18M/10.6M [00:00&lt;00:00, 10.5M Bytes/s]
-Get sub-06/a .. 6_T1w.nii.gz:  88%|██▋| 9.35M/10.6M [00:00&lt;00:00, 9.23M Bytes/s]
-                                                                                
-Get sub-06/f .. _bold.nii.gz:   0%|            | 0.00/29.4M [00:00&lt;?, ? Bytes/s]
-Get sub-06/f .. _bold.nii.gz:   7%|▏  | 1.95M/29.4M [00:00&lt;00:01, 13.7M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  13%|▍  | 3.93M/29.4M [00:00&lt;00:01, 13.0M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  20%|▌  | 5.93M/29.4M [00:00&lt;00:02, 10.4M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  24%|▋  | 7.17M/29.4M [00:00&lt;00:02, 10.7M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  32%|▉  | 9.45M/29.4M [00:00&lt;00:02, 9.45M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  37%|█  | 10.8M/29.4M [00:01&lt;00:01, 10.3M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  44%|█▎ | 13.0M/29.4M [00:01&lt;00:01, 10.1M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  49%|█▍ | 14.3M/29.4M [00:01&lt;00:01, 9.44M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  53%|█▌ | 15.7M/29.4M [00:01&lt;00:01, 10.3M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  61%|█▊ | 18.1M/29.4M [00:01&lt;00:01, 10.2M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  65%|█▉ | 19.2M/29.4M [00:01&lt;00:01, 9.50M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  70%|██ | 20.5M/29.4M [00:01&lt;00:00, 10.2M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  73%|██▏| 21.6M/29.4M [00:02&lt;00:00, 9.46M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  78%|██▎| 22.9M/29.4M [00:02&lt;00:00, 10.3M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  82%|██▍| 24.0M/29.4M [00:02&lt;00:00, 9.43M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  86%|██▌| 25.2M/29.4M [00:02&lt;00:00, 10.2M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  90%|██▋| 26.3M/29.4M [00:02&lt;00:00, 9.43M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  94%|██▊| 27.6M/29.4M [00:02&lt;00:00, 10.3M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  98%|██▉| 28.8M/29.4M [00:02&lt;00:00, 9.49M Bytes/s]
-                                                                                
-Get sub-06/f .. _bold.nii.gz:   0%|            | 0.00/29.4M [00:00&lt;?, ? Bytes/s]
-Get sub-06/f .. _bold.nii.gz:   6%|▏  | 1.68M/29.4M [00:00&lt;00:02, 13.2M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  14%|▍  | 3.98M/29.4M [00:00&lt;00:01, 13.3M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  20%|▌  | 5.86M/29.4M [00:00&lt;00:02, 9.98M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  24%|▋  | 7.19M/29.4M [00:00&lt;00:02, 9.80M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  30%|▉  | 8.70M/29.4M [00:00&lt;00:01, 11.1M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  36%|█  | 10.6M/29.4M [00:01&lt;00:01, 9.60M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  40%|█▏ | 11.9M/29.4M [00:01&lt;00:01, 9.43M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  45%|█▎ | 13.3M/29.4M [00:01&lt;00:01, 10.4M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  52%|█▌ | 15.4M/29.4M [00:01&lt;00:01, 9.68M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  56%|█▋ | 16.5M/29.4M [00:01&lt;00:01, 9.75M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  64%|█▉ | 18.8M/29.4M [00:01&lt;00:01, 9.03M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  68%|██ | 20.1M/29.4M [00:02&lt;00:00, 9.87M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  76%|██▎| 22.3M/29.4M [00:02&lt;00:00, 9.75M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  80%|██▍| 23.4M/29.4M [00:02&lt;00:00, 9.09M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  88%|██▋| 25.8M/29.4M [00:02&lt;00:00, 9.29M Bytes/s]
-Get sub-06/f .. _bold.nii.gz:  92%|██▊| 27.1M/29.4M [00:02&lt;00:00, 10.0M Bytes/s]
-Total:  45%|████████████▌               | 277M/618M [00:45&lt;00:56, 6.05M Bytes/s]
-Get sub-04/a .. 4_T1w.nii.gz:   0%|            | 0.00/10.7M [00:00&lt;?, ? Bytes/s]
-Get sub-04/a .. 4_T1w.nii.gz:  21%|▋  | 2.27M/10.7M [00:00&lt;00:00, 14.0M Bytes/s]
-Get sub-04/a .. 4_T1w.nii.gz:  37%|█  | 3.95M/10.7M [00:00&lt;00:00, 13.0M Bytes/s]
-Get sub-04/a .. 4_T1w.nii.gz:  56%|█▋ | 6.04M/10.7M [00:00&lt;00:00, 10.0M Bytes/s]
-Get sub-04/a .. 4_T1w.nii.gz:  68%|██ | 7.26M/10.7M [00:00&lt;00:00, 10.5M Bytes/s]
-Get sub-04/a .. 4_T1w.nii.gz:  88%|██▋| 9.41M/10.7M [00:00&lt;00:00, 9.06M Bytes/s]
-                                                                                
-Get sub-04/f .. _bold.nii.gz:   0%|            | 0.00/29.1M [00:00&lt;?, ? Bytes/s]
-Get sub-04/f .. _bold.nii.gz:   5%|▏  | 1.50M/29.1M [00:00&lt;00:02, 12.5M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  13%|▍  | 3.90M/29.1M [00:00&lt;00:01, 13.1M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  20%|▌  | 5.94M/29.1M [00:00&lt;00:02, 9.89M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  25%|▊  | 7.28M/29.1M [00:00&lt;00:02, 9.75M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  30%|▉  | 8.64M/29.1M [00:00&lt;00:01, 10.7M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  37%|█  | 10.8M/29.1M [00:01&lt;00:01, 9.75M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  41%|█▏ | 11.8M/29.1M [00:01&lt;00:01, 9.17M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  45%|█▎ | 13.1M/29.1M [00:01&lt;00:01, 9.81M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  52%|█▌ | 15.2M/29.1M [00:01&lt;00:01, 9.29M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  56%|█▋ | 16.3M/29.1M [00:01&lt;00:01, 9.03M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  60%|█▊ | 17.6M/29.1M [00:01&lt;00:01, 9.70M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  69%|██ | 19.9M/29.1M [00:02&lt;00:00, 9.71M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  74%|██▏| 21.6M/29.1M [00:02&lt;00:00, 9.24M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  79%|██▍| 23.0M/29.1M [00:02&lt;00:00, 10.2M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  85%|██▌| 24.6M/29.1M [00:02&lt;00:00, 9.41M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  92%|██▊| 26.8M/29.1M [00:02&lt;00:00, 9.45M Bytes/s]
-Get sub-04/f .. _bold.nii.gz: 100%|██▉| 29.1M/29.1M [00:02&lt;00:00, 9.39M Bytes/s]
-                                                                                
-Get sub-04/f .. _bold.nii.gz:   0%|            | 0.00/29.1M [00:00&lt;?, ? Bytes/s]
-Get sub-04/f .. _bold.nii.gz:   6%|▏  | 1.70M/29.1M [00:00&lt;00:02, 13.6M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  14%|▍  | 3.95M/29.1M [00:00&lt;00:01, 13.1M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  21%|▌  | 5.99M/29.1M [00:00&lt;00:02, 10.0M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  25%|▊  | 7.28M/29.1M [00:00&lt;00:02, 9.72M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  29%|▉  | 8.54M/29.1M [00:00&lt;00:01, 10.4M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  37%|█  | 10.6M/29.1M [00:01&lt;00:01, 9.58M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  40%|█▏ | 11.8M/29.1M [00:01&lt;00:01, 9.14M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  45%|█▎ | 13.1M/29.1M [00:01&lt;00:01, 9.98M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  52%|█▌ | 15.2M/29.1M [00:01&lt;00:01, 9.36M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  56%|█▋ | 16.2M/29.1M [00:01&lt;00:01, 8.88M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  61%|█▊ | 17.6M/29.1M [00:01&lt;00:01, 9.89M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  68%|██ | 19.9M/29.1M [00:02&lt;00:00, 9.68M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  74%|██▏| 21.6M/29.1M [00:02&lt;00:00, 9.14M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  79%|██▍| 23.1M/29.1M [00:02&lt;00:00, 8.90M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  83%|██▌| 24.2M/29.1M [00:02&lt;00:00, 9.45M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  87%|██▌| 25.3M/29.1M [00:02&lt;00:00, 9.21M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  91%|██▋| 26.4M/29.1M [00:02&lt;00:00, 9.55M Bytes/s]
-Get sub-04/f .. _bold.nii.gz:  96%|██▊| 27.8M/29.1M [00:02&lt;00:00, 9.29M Bytes/s]
-                                                                                
-Get sub-08/a .. 8_T1w.nii.gz:   0%|            | 0.00/10.6M [00:00&lt;?, ? Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  12%|▎  | 1.32M/10.6M [00:00&lt;00:00, 12.2M Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  35%|█  | 3.66M/10.6M [00:00&lt;00:00, 12.2M Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  57%|█▋ | 6.04M/10.6M [00:00&lt;00:00, 10.2M Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  76%|██▎| 8.02M/10.6M [00:00&lt;00:00, 10.0M Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  88%|██▋| 9.33M/10.6M [00:00&lt;00:00, 10.7M Bytes/s]
-Total:  58%|████████████████▏           | 357M/618M [00:55&lt;00:40, 6.39M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:   0%|            | 0.00/28.6M [00:00&lt;?, ? Bytes/s]
-Get sub-08/f .. _bold.nii.gz:   5%|▏  | 1.39M/28.6M [00:00&lt;00:02, 11.8M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  14%|▍  | 3.97M/28.6M [00:00&lt;00:01, 13.5M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  20%|▌  | 5.80M/28.6M [00:00&lt;00:02, 9.83M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  25%|▊  | 7.20M/28.6M [00:00&lt;00:02, 9.82M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  30%|▉  | 8.47M/28.6M [00:00&lt;00:01, 10.5M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  37%|█  | 10.6M/28.6M [00:01&lt;00:01, 9.71M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  41%|█▏ | 11.7M/28.6M [00:01&lt;00:01, 9.10M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  45%|█▎ | 12.8M/28.6M [00:01&lt;00:01, 9.62M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  48%|█▍ | 13.9M/28.6M [00:01&lt;00:01, 8.88M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  53%|█▌ | 15.1M/28.6M [00:01&lt;00:01, 9.73M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  57%|█▋ | 16.2M/28.6M [00:01&lt;00:01, 9.04M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  61%|█▊ | 17.5M/28.6M [00:01&lt;00:01, 9.90M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  69%|██ | 19.7M/28.6M [00:02&lt;00:00, 9.66M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  73%|██▏| 20.8M/28.6M [00:02&lt;00:00, 9.70M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  79%|██▍| 22.7M/28.6M [00:02&lt;00:00, 9.61M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  86%|██▌| 24.7M/28.6M [00:02&lt;00:00, 9.71M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  91%|██▋| 26.1M/28.6M [00:02&lt;00:00, 8.81M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  96%|██▉| 27.6M/28.6M [00:02&lt;00:00, 9.85M Bytes/s]
-                                                                                
-Get sub-08/f .. _bold.nii.gz:   0%|            | 0.00/28.6M [00:00&lt;?, ? Bytes/s]
-Get sub-08/f .. _bold.nii.gz:   5%|▏  | 1.41M/28.6M [00:00&lt;00:02, 11.9M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  13%|▍  | 3.77M/28.6M [00:00&lt;00:01, 12.6M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  21%|▌  | 5.88M/28.6M [00:00&lt;00:02, 9.48M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  26%|▊  | 7.42M/28.6M [00:00&lt;00:02, 9.87M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  33%|▉  | 9.45M/28.6M [00:00&lt;00:02, 9.23M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  38%|█▏ | 10.8M/28.6M [00:01&lt;00:01, 10.1M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  42%|█▏ | 11.9M/28.6M [00:01&lt;00:01, 9.38M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  46%|█▍ | 13.2M/28.6M [00:01&lt;00:01, 10.3M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  54%|█▌ | 15.4M/28.6M [00:01&lt;00:01, 9.71M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  58%|█▋ | 16.5M/28.6M [00:01&lt;00:01, 9.17M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  62%|█▊ | 17.8M/28.6M [00:01&lt;00:01, 9.96M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  70%|██ | 20.1M/28.6M [00:02&lt;00:00, 9.64M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  74%|██▏| 21.2M/28.6M [00:02&lt;00:00, 9.15M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  78%|██▎| 22.5M/28.6M [00:02&lt;00:00, 9.97M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  86%|██▌| 24.7M/28.6M [00:02&lt;00:00, 9.61M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  90%|██▋| 25.7M/28.6M [00:02&lt;00:00, 9.77M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  98%|██▉| 28.0M/28.6M [00:02&lt;00:00, 9.01M Bytes/s]
-                                                                                
-Get sub-03/a .. 3_T1w.nii.gz:   0%|            | 0.00/10.7M [00:00&lt;?, ? Bytes/s]
-Get sub-03/a .. 3_T1w.nii.gz:  24%|▋  | 2.57M/10.7M [00:00&lt;00:00, 12.9M Bytes/s]
-Get sub-03/a .. 3_T1w.nii.gz:  37%|█  | 4.00M/10.7M [00:00&lt;00:00, 13.4M Bytes/s]
-Get sub-03/a .. 3_T1w.nii.gz:  55%|█▋ | 5.92M/10.7M [00:00&lt;00:00, 9.50M Bytes/s]
-Get sub-03/a .. 3_T1w.nii.gz:  68%|██ | 7.33M/10.7M [00:00&lt;00:00, 9.58M Bytes/s]
-Get sub-03/a .. 3_T1w.nii.gz:  80%|██▍| 8.59M/10.7M [00:00&lt;00:00, 10.3M Bytes/s]
-                                                                                
-Get sub-03/f .. _bold.nii.gz:   0%|            | 0.00/28.8M [00:00&lt;?, ? Bytes/s]
-Get sub-03/f .. _bold.nii.gz:   5%|▏  | 1.40M/28.8M [00:00&lt;00:01, 14.0M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  10%|▎  | 2.91M/28.8M [00:00&lt;00:01, 14.6M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  16%|▍  | 4.67M/28.8M [00:00&lt;00:02, 9.46M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  22%|▋  | 6.24M/28.8M [00:00&lt;00:02, 11.2M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  31%|▉  | 8.80M/28.8M [00:00&lt;00:01, 10.8M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  38%|█▏ | 11.0M/28.8M [00:01&lt;00:01, 10.2M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  47%|█▍ | 13.5M/28.8M [00:01&lt;00:01, 10.2M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  55%|█▋ | 15.8M/28.8M [00:01&lt;00:01, 9.96M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  64%|█▉ | 18.3M/28.8M [00:01&lt;00:01, 9.96M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  72%|██▏| 20.6M/28.8M [00:02&lt;00:00, 9.88M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  78%|██▎| 22.5M/28.8M [00:02&lt;00:00, 9.67M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  83%|██▍| 23.9M/28.8M [00:02&lt;00:00, 9.10M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  88%|██▋| 25.4M/28.8M [00:02&lt;00:00, 10.2M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  95%|██▊| 27.4M/28.8M [00:02&lt;00:00, 9.72M Bytes/s]
-Get sub-03/f .. _bold.nii.gz: 100%|██▉| 28.7M/28.8M [00:02&lt;00:00, 9.20M Bytes/s]
-Total:  73%|████████████████████▌       | 453M/618M [01:07&lt;00:24, 6.68M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:   0%|            | 0.00/28.8M [00:00&lt;?, ? Bytes/s]
-Get sub-03/f .. _bold.nii.gz:   5%|▏  | 1.50M/28.8M [00:00&lt;00:02, 12.5M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  14%|▍  | 4.03M/28.8M [00:00&lt;00:01, 13.5M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  21%|▋  | 6.15M/28.8M [00:00&lt;00:02, 10.3M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  30%|▉  | 8.74M/28.8M [00:00&lt;00:01, 10.5M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  38%|█▏ | 10.8M/28.8M [00:01&lt;00:01, 9.75M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  46%|█▎ | 13.2M/28.8M [00:01&lt;00:01, 9.68M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  54%|█▌ | 15.4M/28.8M [00:01&lt;00:01, 9.53M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  62%|█▊ | 17.8M/28.8M [00:01&lt;00:01, 9.57M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  69%|██ | 19.9M/28.8M [00:02&lt;00:00, 9.32M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  75%|██▎| 21.6M/28.8M [00:02&lt;00:00, 9.13M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  80%|██▍| 23.0M/28.8M [00:02&lt;00:00, 8.63M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  85%|██▌| 24.4M/28.8M [00:02&lt;00:00, 9.57M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  92%|██▊| 26.5M/28.8M [00:02&lt;00:00, 9.56M Bytes/s]
-Get sub-03/f .. _bold.nii.gz:  96%|██▊| 27.5M/28.8M [00:02&lt;00:00, 8.72M Bytes/s]
-Total:  78%|█████████████████████▊      | 482M/618M [01:11&lt;00:20, 6.75M Bytes/s]
 Get sub-01/a .. 1_T1w.nii.gz:   0%|            | 0.00/10.6M [00:00&lt;?, ? Bytes/s]
-Get sub-01/a .. 1_T1w.nii.gz:  20%|▌  | 2.12M/10.6M [00:00&lt;00:00, 14.3M Bytes/s]
-Get sub-01/a .. 1_T1w.nii.gz:  38%|█▏ | 4.02M/10.6M [00:00&lt;00:00, 13.2M Bytes/s]
-Get sub-01/a .. 1_T1w.nii.gz:  58%|█▋ | 6.16M/10.6M [00:00&lt;00:00, 10.4M Bytes/s]
-Get sub-01/a .. 1_T1w.nii.gz:  69%|██ | 7.30M/10.6M [00:00&lt;00:00, 9.66M Bytes/s]
-Get sub-01/a .. 1_T1w.nii.gz:  83%|██▍| 8.80M/10.6M [00:00&lt;00:00, 10.9M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   0%|   | 8.53k/10.6M [00:00&lt;07:15, 24.3k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   0%|   | 24.9k/10.6M [00:00&lt;02:48, 62.6k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   1%|   | 59.7k/10.6M [00:01&lt;03:16, 53.4k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   1%|   | 96.3k/10.6M [00:01&lt;03:13, 54.1k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   1%|    | 114k/10.6M [00:02&lt;02:59, 58.3k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   1%|    | 131k/10.6M [00:02&lt;02:52, 60.5k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   1%|    | 149k/10.6M [00:02&lt;02:43, 63.9k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   2%|    | 166k/10.6M [00:02&lt;02:35, 66.8k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   2%|    | 183k/10.6M [00:02&lt;02:21, 73.7k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   2%|    | 218k/10.6M [00:03&lt;01:56, 89.0k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   2%|     | 253k/10.6M [00:03&lt;01:37, 106k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   3%|    | 270k/10.6M [00:03&lt;01:45, 97.9k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   3%|▏    | 288k/10.6M [00:03&lt;01:41, 101k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   3%|▏    | 340k/10.6M [00:04&lt;01:10, 145k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   3%|▏    | 357k/10.6M [00:04&lt;01:08, 149k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   4%|▏    | 375k/10.6M [00:04&lt;01:17, 131k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   4%|▏    | 444k/10.6M [00:04&lt;00:48, 210k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   5%|▏    | 514k/10.6M [00:04&lt;00:46, 217k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   5%|▎    | 566k/10.6M [00:04&lt;00:38, 261k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   6%|▎    | 653k/10.6M [00:05&lt;00:33, 300k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   7%|▎    | 723k/10.6M [00:05&lt;00:30, 326k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   7%|▎    | 758k/10.6M [00:05&lt;00:33, 293k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   8%|▍    | 845k/10.6M [00:05&lt;00:25, 387k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   9%|▍    | 932k/10.6M [00:05&lt;00:24, 394k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:   9%|▍    | 984k/10.6M [00:05&lt;00:24, 394k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  10%|▍   | 1.09M/10.6M [00:06&lt;00:19, 477k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  11%|▍   | 1.14M/10.6M [00:06&lt;00:19, 483k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  12%|▍   | 1.23M/10.6M [00:06&lt;00:16, 555k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  12%|▍   | 1.30M/10.6M [00:06&lt;00:16, 561k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  13%|▌   | 1.40M/10.6M [00:06&lt;00:16, 541k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  15%|▌   | 1.54M/10.6M [00:06&lt;00:12, 707k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  16%|▋   | 1.73M/10.6M [00:07&lt;00:11, 752k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  18%|▋   | 1.94M/10.6M [00:07&lt;00:10, 809k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  21%|▊   | 2.19M/10.6M [00:07&lt;00:09, 888k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  23%|▉   | 2.43M/10.6M [00:07&lt;00:08, 943k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  24%|▉   | 2.55M/10.6M [00:07&lt;00:08, 935k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  26%|█   | 2.76M/10.6M [00:08&lt;00:08, 955k Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  28%|▊  | 3.00M/10.6M [00:08&lt;00:06, 1.18M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  31%|▉  | 3.32M/10.6M [00:08&lt;00:05, 1.37M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  35%|█  | 3.68M/10.6M [00:08&lt;00:05, 1.32M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  38%|█▏ | 4.05M/10.6M [00:08&lt;00:04, 1.45M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  42%|█▎ | 4.47M/10.6M [00:09&lt;00:04, 1.52M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  46%|█▍ | 4.92M/10.6M [00:09&lt;00:03, 1.65M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  51%|█▌ | 5.39M/10.6M [00:09&lt;00:02, 1.77M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  56%|█▋ | 5.91M/10.6M [00:09&lt;00:02, 1.92M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  61%|█▊ | 6.47M/10.6M [00:10&lt;00:01, 2.06M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  67%|██ | 7.06M/10.6M [00:10&lt;00:01, 2.21M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  73%|██▏| 7.69M/10.6M [00:10&lt;00:01, 2.37M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  79%|██▎| 8.36M/10.6M [00:10&lt;00:00, 2.53M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  82%|██▍| 8.64M/10.6M [00:10&lt;00:00, 2.44M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  87%|██▌| 9.23M/10.6M [00:11&lt;00:00, 2.54M Bytes/s]
+Get sub-01/a .. 1_T1w.nii.gz:  93%|██▊| 9.85M/10.6M [00:11&lt;00:00, 3.09M Bytes/s]
                                                                                 
+Get sub-01/a .. 1_T1w.nii.gz:   0%|            | 0.00/10.6M [00:00&lt;?, ? Bytes/s]
+Total:   2%|▍                           | 10.6M/618M [00:12&lt;12:08, 834k Bytes/s]
 Get sub-01/f .. _bold.nii.gz:   0%|            | 0.00/28.1M [00:00&lt;?, ? Bytes/s]
-Get sub-01/f .. _bold.nii.gz:   9%|▎  | 2.49M/28.1M [00:00&lt;00:01, 14.8M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  15%|▍  | 4.07M/28.1M [00:00&lt;00:01, 13.3M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  21%|▋  | 5.87M/28.1M [00:00&lt;00:02, 10.0M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  26%|▊  | 7.27M/28.1M [00:00&lt;00:02, 10.2M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  31%|▉  | 8.71M/28.1M [00:00&lt;00:01, 11.2M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  40%|█▏ | 11.1M/28.1M [00:01&lt;00:01, 10.3M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  49%|█▍ | 13.7M/28.1M [00:01&lt;00:01, 10.5M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  57%|█▋ | 16.0M/28.1M [00:01&lt;00:01, 10.2M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  62%|█▊ | 17.3M/28.1M [00:01&lt;00:01, 9.55M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  69%|██ | 19.4M/28.1M [00:01&lt;00:00, 9.54M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  78%|██▎| 21.9M/28.1M [00:02&lt;00:00, 9.79M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  84%|██▌| 23.5M/28.1M [00:02&lt;00:00, 10.8M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  92%|██▊| 25.9M/28.1M [00:02&lt;00:00, 10.4M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  98%|██▉| 27.5M/28.1M [00:02&lt;00:00, 9.90M Bytes/s]
-Total:  84%|███████████████████████▌    | 521M/618M [01:16&lt;00:14, 6.84M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:   3%|    | 861k/28.1M [00:00&lt;00:07, 3.73M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:   6%|▏  | 1.76M/28.1M [00:00&lt;00:06, 3.83M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  10%|▎  | 2.69M/28.1M [00:00&lt;00:05, 4.80M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  13%|▍  | 3.73M/28.1M [00:00&lt;00:06, 3.93M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  17%|▌  | 4.78M/28.1M [00:01&lt;00:05, 4.52M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  19%|▌  | 5.28M/28.1M [00:01&lt;00:04, 4.62M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  21%|▋  | 5.91M/28.1M [00:01&lt;00:05, 4.20M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  25%|▊  | 7.07M/28.1M [00:01&lt;00:03, 5.73M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  29%|▊  | 8.17M/28.1M [00:01&lt;00:03, 5.46M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  34%|█  | 9.62M/28.1M [00:01&lt;00:03, 5.64M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  39%|█▏ | 11.0M/28.1M [00:02&lt;00:03, 5.65M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  44%|█▎ | 12.2M/28.1M [00:02&lt;00:02, 5.64M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  47%|█▍ | 13.2M/28.1M [00:02&lt;00:02, 5.41M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  50%|█▌ | 14.1M/28.1M [00:02&lt;00:02, 5.38M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  55%|█▋ | 15.3M/28.1M [00:02&lt;00:01, 6.61M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  60%|█▊ | 16.9M/28.1M [00:03&lt;00:01, 6.80M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  67%|█▉ | 18.7M/28.1M [00:03&lt;00:01, 7.01M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  73%|██▏| 20.4M/28.1M [00:03&lt;00:01, 7.11M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  75%|██▎| 21.1M/28.1M [00:03&lt;00:01, 6.79M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  82%|██▍| 23.1M/28.1M [00:03&lt;00:00, 7.41M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  87%|██▌| 24.3M/28.1M [00:04&lt;00:00, 8.27M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  94%|██▊| 26.4M/28.1M [00:04&lt;00:00, 8.55M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  97%|██▉| 27.4M/28.1M [00:04&lt;00:00, 8.22M Bytes/s]
+Total:   6%|█▋                         | 38.6M/618M [00:17&lt;04:26, 2.17M Bytes/s]
 Get sub-01/f .. _bold.nii.gz:   0%|            | 0.00/28.1M [00:00&lt;?, ? Bytes/s]
-Get sub-01/f .. _bold.nii.gz:   8%|▏  | 2.22M/28.1M [00:00&lt;00:01, 13.4M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  14%|▍  | 3.97M/28.1M [00:00&lt;00:01, 13.2M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  21%|▋  | 6.02M/28.1M [00:00&lt;00:02, 10.0M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  26%|▊  | 7.20M/28.1M [00:00&lt;00:02, 10.3M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  33%|▉  | 9.33M/28.1M [00:00&lt;00:02, 8.98M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  38%|█▏ | 10.7M/28.1M [00:01&lt;00:01, 9.94M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  46%|█▎ | 12.9M/28.1M [00:01&lt;00:01, 9.84M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  55%|█▋ | 15.4M/28.1M [00:01&lt;00:01, 9.75M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  63%|█▉ | 17.7M/28.1M [00:01&lt;00:01, 9.69M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  71%|██▏| 20.0M/28.1M [00:02&lt;00:00, 9.57M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  75%|██▏| 21.1M/28.1M [00:02&lt;00:00, 8.98M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  83%|██▍| 23.2M/28.1M [00:02&lt;00:00, 9.10M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  88%|██▋| 24.7M/28.1M [00:02&lt;00:00, 10.1M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  92%|██▊| 26.0M/28.1M [00:02&lt;00:00, 9.35M Bytes/s]
-Get sub-01/f .. _bold.nii.gz:  99%|██▉| 27.9M/28.1M [00:02&lt;00:00, 9.15M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:   5%|▏  | 1.37M/28.1M [00:00&lt;00:01, 13.7M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  13%|▍  | 3.71M/28.1M [00:00&lt;00:02, 11.0M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  20%|▌  | 5.71M/28.1M [00:00&lt;00:02, 9.73M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  28%|▊  | 7.99M/28.1M [00:00&lt;00:02, 9.76M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  36%|█  | 10.1M/28.1M [00:01&lt;00:01, 9.61M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  44%|█▎ | 12.3M/28.1M [00:01&lt;00:01, 9.48M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  51%|█▌ | 14.3M/28.1M [00:01&lt;00:01, 9.17M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  58%|█▋ | 16.2M/28.1M [00:01&lt;00:01, 9.15M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  61%|█▊ | 17.3M/28.1M [00:01&lt;00:01, 8.63M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  67%|█▉ | 18.7M/28.1M [00:01&lt;00:00, 9.70M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  74%|██▏| 20.7M/28.1M [00:02&lt;00:00, 9.33M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  82%|██▍| 23.1M/28.1M [00:02&lt;00:00, 9.63M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  87%|██▌| 24.6M/28.1M [00:02&lt;00:00, 9.13M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  93%|██▊| 26.0M/28.1M [00:02&lt;00:00, 8.91M Bytes/s]
+Get sub-01/f .. _bold.nii.gz:  98%|██▉| 27.5M/28.1M [00:02&lt;00:00, 9.89M Bytes/s]
+Total:  11%|██▉                        | 66.8M/618M [00:21&lt;02:55, 3.15M Bytes/s]
+Get sub-02/a .. 2_T1w.nii.gz:   0%|            | 0.00/10.7M [00:00&lt;?, ? Bytes/s]
+Get sub-02/a .. 2_T1w.nii.gz:  19%|▌  | 2.07M/10.7M [00:00&lt;00:00, 13.4M Bytes/s]
+Get sub-02/a .. 2_T1w.nii.gz:  37%|█  | 4.00M/10.7M [00:00&lt;00:00, 13.3M Bytes/s]
+Get sub-02/a .. 2_T1w.nii.gz:  59%|█▊ | 6.35M/10.7M [00:00&lt;00:00, 10.7M Bytes/s]
+Get sub-02/a .. 2_T1w.nii.gz:  81%|██▍| 8.74M/10.7M [00:00&lt;00:00, 10.6M Bytes/s]
+                                                                                
+Get sub-02/f .. _bold.nii.gz:   0%|            | 0.00/29.2M [00:00&lt;?, ? Bytes/s]
+Get sub-02/f .. _bold.nii.gz:   5%|▏  | 1.39M/29.2M [00:00&lt;00:02, 13.6M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  14%|▍  | 4.20M/29.2M [00:00&lt;00:01, 14.1M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  20%|▌  | 5.94M/29.2M [00:00&lt;00:02, 10.2M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  25%|▋  | 7.22M/29.2M [00:00&lt;00:02, 10.1M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  30%|▉  | 8.73M/29.2M [00:00&lt;00:01, 11.3M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  39%|█▏ | 11.4M/29.2M [00:01&lt;00:01, 11.4M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  47%|█▍ | 13.7M/29.2M [00:01&lt;00:01, 11.3M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  54%|█▋ | 15.8M/29.2M [00:01&lt;00:01, 11.1M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  62%|█▊ | 18.1M/29.2M [00:01&lt;00:00, 11.2M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  67%|██ | 19.6M/29.2M [00:01&lt;00:00, 11.0M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  72%|██▏| 21.1M/29.2M [00:01&lt;00:00, 11.8M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  76%|██▎| 22.3M/29.2M [00:01&lt;00:00, 11.1M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  81%|██▍| 23.7M/29.2M [00:02&lt;00:00, 11.9M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  86%|██▌| 25.1M/29.2M [00:02&lt;00:00, 11.4M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  95%|██▊| 27.8M/29.2M [00:02&lt;00:00, 11.5M Bytes/s]
+Total:  17%|████▊                       | 107M/618M [00:25&lt;02:03, 4.15M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:   0%|            | 0.00/29.2M [00:00&lt;?, ? Bytes/s]
+Get sub-02/f .. _bold.nii.gz:   6%|▏  | 1.78M/29.2M [00:00&lt;00:02, 13.1M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  14%|▍  | 4.15M/29.2M [00:00&lt;00:01, 13.9M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  21%|▌  | 6.02M/29.2M [00:00&lt;00:02, 10.4M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  25%|▋  | 7.20M/29.2M [00:00&lt;00:02, 9.92M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  32%|▉  | 9.33M/29.2M [00:00&lt;00:02, 9.60M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  37%|█  | 10.7M/29.2M [00:01&lt;00:01, 10.5M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  45%|█▎ | 13.2M/29.2M [00:01&lt;00:01, 10.5M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  53%|█▌ | 15.3M/29.2M [00:01&lt;00:01, 10.1M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  57%|█▋ | 16.7M/29.2M [00:01&lt;00:01, 9.59M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  64%|█▉ | 18.6M/29.2M [00:01&lt;00:01, 9.57M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  68%|██ | 19.9M/29.2M [00:01&lt;00:00, 10.3M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  74%|██▏| 21.7M/29.2M [00:02&lt;00:00, 9.69M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  79%|██▎| 23.1M/29.2M [00:02&lt;00:00, 9.49M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  84%|██▌| 24.5M/29.2M [00:02&lt;00:00, 10.4M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  91%|██▋| 26.5M/29.2M [00:02&lt;00:00, 9.64M Bytes/s]
+Get sub-02/f .. _bold.nii.gz:  95%|██▊| 27.6M/29.2M [00:02&lt;00:00, 9.35M Bytes/s]
+Get sub-02/f .. _bold.nii.gz: 100%|██▉| 29.1M/29.2M [00:02&lt;00:00, 10.6M Bytes/s]
+                                                                                
+Get sub-06/a .. 6_T1w.nii.gz:   0%|            | 0.00/10.6M [00:00&lt;?, ? Bytes/s]
+Get sub-06/a .. 6_T1w.nii.gz:  14%|▍  | 1.51M/10.6M [00:00&lt;00:00, 13.2M Bytes/s]
+Get sub-06/a .. 6_T1w.nii.gz:  39%|█▏ | 4.17M/10.6M [00:00&lt;00:00, 14.0M Bytes/s]
+Get sub-06/a .. 6_T1w.nii.gz:  56%|█▋ | 5.93M/10.6M [00:00&lt;00:00, 8.69M Bytes/s]
+Get sub-06/a .. 6_T1w.nii.gz:  71%|██▏| 7.54M/10.6M [00:00&lt;00:00, 8.42M Bytes/s]
+Get sub-06/a .. 6_T1w.nii.gz:  93%|██▊| 9.92M/10.6M [00:01&lt;00:00, 9.26M Bytes/s]
+                                                                                
+Get sub-06/f .. _bold.nii.gz:   0%|            | 0.00/29.4M [00:00&lt;?, ? Bytes/s]
+Get sub-06/f .. _bold.nii.gz:   7%|▏  | 2.10M/29.4M [00:00&lt;00:01, 13.9M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  14%|▍  | 4.03M/29.4M [00:00&lt;00:02, 11.9M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  20%|▌  | 6.01M/29.4M [00:00&lt;00:02, 10.1M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  28%|▊  | 8.37M/29.4M [00:00&lt;00:02, 10.1M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  35%|█  | 10.4M/29.4M [00:01&lt;00:01, 9.61M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  42%|█▎ | 12.5M/29.4M [00:01&lt;00:01, 9.37M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  50%|█▍ | 14.5M/29.4M [00:01&lt;00:01, 9.22M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  53%|█▌ | 15.7M/29.4M [00:01&lt;00:01, 8.63M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  59%|█▊ | 17.4M/29.4M [00:01&lt;00:01, 8.65M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  64%|█▉ | 18.9M/29.4M [00:01&lt;00:01, 9.68M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  69%|██ | 20.4M/29.4M [00:02&lt;00:01, 8.89M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  74%|██▏| 21.8M/29.4M [00:02&lt;00:00, 8.93M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  79%|██▍| 23.3M/29.4M [00:02&lt;00:00, 10.1M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  87%|██▌| 25.4M/29.4M [00:02&lt;00:00, 9.76M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  94%|██▊| 27.7M/29.4M [00:02&lt;00:00, 9.76M Bytes/s]
+Total:  28%|███████▉                    | 176M/618M [00:34&lt;01:26, 5.13M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:   0%|            | 0.00/29.4M [00:00&lt;?, ? Bytes/s]
+Get sub-06/f .. _bold.nii.gz:   5%|▏  | 1.46M/29.4M [00:00&lt;00:02, 13.5M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  14%|▍  | 4.17M/29.4M [00:00&lt;00:01, 13.9M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  21%|▋  | 6.25M/29.4M [00:00&lt;00:02, 10.4M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  30%|▉  | 8.72M/29.4M [00:00&lt;00:01, 10.5M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  36%|█  | 10.7M/29.4M [00:01&lt;00:01, 9.68M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  40%|█▏ | 11.7M/29.4M [00:01&lt;00:01, 9.28M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  45%|█▎ | 13.1M/29.4M [00:01&lt;00:01, 10.3M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  52%|█▌ | 15.2M/29.4M [00:01&lt;00:01, 9.65M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  59%|█▊ | 17.3M/29.4M [00:01&lt;00:01, 9.75M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  67%|█▉ | 19.6M/29.4M [00:01&lt;00:01, 9.52M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  71%|██▏| 20.9M/29.4M [00:02&lt;00:00, 9.22M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  77%|██▎| 22.6M/29.4M [00:02&lt;00:00, 9.04M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  82%|██▍| 24.2M/29.4M [00:02&lt;00:00, 10.1M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  88%|██▋| 25.8M/29.4M [00:02&lt;00:00, 9.58M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  92%|██▊| 27.2M/29.4M [00:02&lt;00:00, 9.13M Bytes/s]
+Get sub-06/f .. _bold.nii.gz:  98%|██▉| 28.7M/29.4M [00:02&lt;00:00, 10.3M Bytes/s]
+                                                                                
+Get sub-05/a .. 5_T1w.nii.gz:   0%|            | 0.00/10.8M [00:00&lt;?, ? Bytes/s]
+Get sub-05/a .. 5_T1w.nii.gz:  14%|▍  | 1.47M/10.8M [00:00&lt;00:00, 13.2M Bytes/s]
+Get sub-05/a .. 5_T1w.nii.gz:  39%|█▏ | 4.14M/10.8M [00:00&lt;00:00, 13.9M Bytes/s]
+Get sub-05/a .. 5_T1w.nii.gz:  57%|█▋ | 6.12M/10.8M [00:00&lt;00:00, 10.2M Bytes/s]
+Get sub-05/a .. 5_T1w.nii.gz:  68%|██ | 7.32M/10.8M [00:00&lt;00:00, 9.86M Bytes/s]
+Get sub-05/a .. 5_T1w.nii.gz:  82%|██▍| 8.83M/10.8M [00:00&lt;00:00, 11.1M Bytes/s]
+Get sub-05/a .. 5_T1w.nii.gz:  99%|██▉| 10.6M/10.8M [00:01&lt;00:00, 9.61M Bytes/s]
+                                                                                
+Get sub-05/f .. _bold.nii.gz:   0%|            | 0.00/29.7M [00:00&lt;?, ? Bytes/s]
+Get sub-05/f .. _bold.nii.gz:   9%|▎  | 2.73M/29.7M [00:00&lt;00:01, 13.7M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  14%|▍  | 4.13M/29.7M [00:00&lt;00:01, 13.8M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  20%|▌  | 6.02M/29.7M [00:00&lt;00:02, 9.87M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  25%|▋  | 7.31M/29.7M [00:00&lt;00:02, 9.88M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  30%|▉  | 8.80M/29.7M [00:00&lt;00:01, 11.1M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  36%|█  | 10.8M/29.7M [00:01&lt;00:01, 9.89M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  44%|█▎ | 13.2M/29.7M [00:01&lt;00:01, 10.1M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  51%|█▌ | 15.2M/29.7M [00:01&lt;00:01, 9.66M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  58%|█▋ | 17.2M/29.7M [00:01&lt;00:01, 9.49M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  62%|█▊ | 18.4M/29.7M [00:01&lt;00:01, 9.13M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  67%|██ | 19.8M/29.7M [00:01&lt;00:00, 10.1M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  74%|██▏| 22.0M/29.7M [00:02&lt;00:00, 9.84M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  82%|██▍| 24.3M/29.7M [00:02&lt;00:00, 9.93M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  88%|██▋| 26.0M/29.7M [00:02&lt;00:00, 9.62M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  92%|██▊| 27.4M/29.7M [00:02&lt;00:00, 9.21M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  97%|██▉| 28.8M/29.7M [00:02&lt;00:00, 10.1M Bytes/s]
+Total:  40%|███████████▏                | 246M/618M [00:42&lt;01:04, 5.75M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:   0%|            | 0.00/29.7M [00:00&lt;?, ? Bytes/s]
+Get sub-05/f .. _bold.nii.gz:   7%|▏  | 2.11M/29.7M [00:00&lt;00:01, 13.8M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  14%|▍  | 4.17M/29.7M [00:00&lt;00:01, 13.9M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  21%|▋  | 6.30M/29.7M [00:00&lt;00:02, 10.5M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  30%|▉  | 8.77M/29.7M [00:00&lt;00:01, 10.6M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  37%|█  | 10.9M/29.7M [00:01&lt;00:01, 9.99M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  44%|█▎ | 13.1M/29.7M [00:01&lt;00:01, 9.89M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  48%|█▍ | 14.1M/29.7M [00:01&lt;00:01, 9.43M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  53%|█▌ | 15.7M/29.7M [00:01&lt;00:01, 10.5M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  58%|█▋ | 17.1M/29.7M [00:01&lt;00:01, 9.95M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  64%|█▉ | 19.1M/29.7M [00:01&lt;00:01, 10.0M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  70%|██ | 20.6M/29.7M [00:01&lt;00:00, 11.1M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  76%|██▎| 22.7M/29.7M [00:02&lt;00:00, 10.6M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  81%|██▍| 24.1M/29.7M [00:02&lt;00:00, 10.2M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  86%|██▌| 25.5M/29.7M [00:02&lt;00:00, 10.9M Bytes/s]
+Get sub-05/f .. _bold.nii.gz:  95%|██▊| 28.1M/29.7M [00:02&lt;00:00, 11.1M Bytes/s]
                                                                                 
 Get sub-09/a .. 9_T1w.nii.gz:   0%|            | 0.00/10.8M [00:00&lt;?, ? Bytes/s]
-Get sub-09/a .. 9_T1w.nii.gz:  14%|▍  | 1.48M/10.8M [00:00&lt;00:00, 14.1M Bytes/s]
-Get sub-09/a .. 9_T1w.nii.gz:  38%|█▏ | 4.05M/10.8M [00:00&lt;00:00, 13.4M Bytes/s]
-Get sub-09/a .. 9_T1w.nii.gz:  55%|█▋ | 5.97M/10.8M [00:00&lt;00:00, 10.4M Bytes/s]
-Get sub-09/a .. 9_T1w.nii.gz:  68%|██ | 7.36M/10.8M [00:00&lt;00:00, 10.2M Bytes/s]
-Get sub-09/a .. 9_T1w.nii.gz:  83%|██▍| 8.90M/10.8M [00:00&lt;00:00, 11.5M Bytes/s]
-Total:  91%|█████████████████████████▎  | 560M/618M [01:20&lt;00:08, 6.92M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:   0%|            | 0.00/29.2M [00:00&lt;?, ? Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  10%|▎  | 2.80M/29.2M [00:00&lt;00:01, 14.0M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  16%|▍  | 4.77M/29.2M [00:00&lt;00:02, 9.23M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  25%|▊  | 7.32M/29.2M [00:00&lt;00:02, 9.82M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  30%|▉  | 8.80M/29.2M [00:00&lt;00:01, 10.8M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  38%|█▏ | 11.0M/29.2M [00:01&lt;00:01, 10.0M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  46%|█▍ | 13.4M/29.2M [00:01&lt;00:01, 10.0M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  54%|█▌ | 15.6M/29.2M [00:01&lt;00:01, 9.72M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  61%|█▊ | 18.0M/29.2M [00:01&lt;00:01, 9.68M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  69%|██ | 20.2M/29.2M [00:02&lt;00:00, 9.53M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  77%|██▎| 22.6M/29.2M [00:02&lt;00:00, 9.64M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  85%|██▌| 24.8M/29.2M [00:02&lt;00:00, 9.49M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  93%|██▊| 27.2M/29.2M [00:02&lt;00:00, 9.57M Bytes/s]
+Get sub-09/a .. 9_T1w.nii.gz:  15%|▍  | 1.67M/10.8M [00:00&lt;00:00, 13.8M Bytes/s]
+Get sub-09/a .. 9_T1w.nii.gz:  38%|█▏ | 4.04M/10.8M [00:00&lt;00:00, 13.4M Bytes/s]
+Get sub-09/a .. 9_T1w.nii.gz:  60%|█▊ | 6.43M/10.8M [00:00&lt;00:00, 10.9M Bytes/s]
+Get sub-09/a .. 9_T1w.nii.gz:  83%|██▍| 8.97M/10.8M [00:00&lt;00:00, 10.9M Bytes/s]
                                                                                 
 Get sub-09/f .. _bold.nii.gz:   0%|            | 0.00/29.2M [00:00&lt;?, ? Bytes/s]
-Get sub-09/f .. _bold.nii.gz:   7%|▏  | 1.93M/29.2M [00:00&lt;00:01, 13.8M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  14%|▍  | 3.99M/29.2M [00:00&lt;00:01, 13.2M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  21%|▋  | 6.17M/29.2M [00:00&lt;00:02, 10.3M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  30%|▉  | 8.82M/29.2M [00:00&lt;00:01, 10.6M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  37%|█  | 10.9M/29.2M [00:01&lt;00:01, 9.73M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  41%|█▏ | 11.9M/29.2M [00:01&lt;00:01, 9.09M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  46%|█▍ | 13.5M/29.2M [00:01&lt;00:01, 10.4M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  53%|█▌ | 15.6M/29.2M [00:01&lt;00:01, 9.79M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  60%|█▊ | 17.5M/29.2M [00:01&lt;00:01, 9.49M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  64%|█▉ | 18.8M/29.2M [00:01&lt;00:01, 8.86M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  69%|██ | 20.2M/29.2M [00:02&lt;00:00, 9.90M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  76%|██▎| 22.3M/29.2M [00:02&lt;00:00, 9.70M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  80%|██▍| 23.4M/29.2M [00:02&lt;00:00, 8.82M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  85%|██▌| 24.9M/29.2M [00:02&lt;00:00, 10.1M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  92%|██▊| 26.9M/29.2M [00:02&lt;00:00, 9.34M Bytes/s]
-Get sub-09/f .. _bold.nii.gz:  97%|██▉| 28.3M/29.2M [00:02&lt;00:00, 8.76M Bytes/s]
-<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-05/anat/sub-05_T1w.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
-<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-05/func/sub-05_task-flanker_run-1_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
-<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-05/func/sub-05_task-flanker_run-2_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
-<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-07/anat/sub-07_T1w.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
-<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-07/func/sub-07_task-flanker_run-1_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
-<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-07/func/sub-07_task-flanker_run-2_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
+Get sub-09/f .. _bold.nii.gz:  10%|▎  | 2.83M/29.2M [00:00&lt;00:01, 14.2M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  17%|▍  | 4.84M/29.2M [00:00&lt;00:02, 9.93M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  21%|▋  | 6.21M/29.2M [00:00&lt;00:02, 10.9M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  25%|▊  | 7.39M/29.2M [00:00&lt;00:02, 10.3M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  31%|▉  | 8.91M/29.2M [00:00&lt;00:01, 11.5M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  37%|█  | 10.8M/29.2M [00:01&lt;00:01, 10.0M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  46%|█▎ | 13.3M/29.2M [00:01&lt;00:01, 10.3M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  52%|█▌ | 15.3M/29.2M [00:01&lt;00:01, 9.62M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  61%|█▊ | 17.8M/29.2M [00:01&lt;00:01, 9.99M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  68%|██ | 19.9M/29.2M [00:01&lt;00:00, 9.73M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  76%|██▎| 22.2M/29.2M [00:02&lt;00:00, 9.83M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  84%|██▌| 24.4M/29.2M [00:02&lt;00:00, 9.69M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  88%|██▋| 25.6M/29.2M [00:02&lt;00:00, 9.09M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  94%|██▊| 27.4M/29.2M [00:02&lt;00:00, 9.10M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  99%|██▉| 28.9M/29.2M [00:02&lt;00:00, 10.1M Bytes/s]
+                                                                                
+Get sub-09/f .. _bold.nii.gz:   0%|            | 0.00/29.2M [00:00&lt;?, ? Bytes/s]
+Get sub-09/f .. _bold.nii.gz:   8%|▏  | 2.39M/29.2M [00:00&lt;00:02, 11.9M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  13%|▍  | 3.76M/29.2M [00:00&lt;00:02, 12.7M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  20%|▌  | 5.77M/29.2M [00:00&lt;00:02, 10.4M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  26%|▊  | 7.67M/29.2M [00:00&lt;00:01, 10.9M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  31%|▉  | 9.16M/29.2M [00:00&lt;00:01, 11.8M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  40%|█▏ | 11.7M/29.2M [00:01&lt;00:01, 11.4M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  49%|█▍ | 14.2M/29.2M [00:01&lt;00:01, 11.2M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  53%|█▌ | 15.4M/29.2M [00:01&lt;00:01, 10.8M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  58%|█▋ | 16.8M/29.2M [00:01&lt;00:01, 11.4M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  62%|█▊ | 18.0M/29.2M [00:01&lt;00:01, 10.8M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  66%|█▉ | 19.4M/29.2M [00:01&lt;00:00, 11.4M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  71%|██ | 20.6M/29.2M [00:01&lt;00:00, 10.8M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  75%|██▎| 22.0M/29.2M [00:01&lt;00:00, 11.5M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  84%|██▌| 24.5M/29.2M [00:02&lt;00:00, 11.8M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  91%|██▋| 26.7M/29.2M [00:02&lt;00:00, 11.6M Bytes/s]
+Get sub-09/f .. _bold.nii.gz:  97%|██▉| 28.2M/29.2M [00:02&lt;00:00, 12.3M Bytes/s]
+Total:  56%|███████████████▌            | 345M/618M [00:54&lt;00:42, 6.37M Bytes/s]
+Get sub-03/a .. 3_T1w.nii.gz:   0%|            | 0.00/10.7M [00:00&lt;?, ? Bytes/s]
+Get sub-03/a .. 3_T1w.nii.gz:  17%|▍  | 1.77M/10.7M [00:00&lt;00:00, 13.8M Bytes/s]
+Get sub-03/a .. 3_T1w.nii.gz:  39%|█▏ | 4.18M/10.7M [00:00&lt;00:00, 13.9M Bytes/s]
+Get sub-03/a .. 3_T1w.nii.gz:  59%|█▊ | 6.28M/10.7M [00:00&lt;00:00, 10.4M Bytes/s]
+Get sub-03/a .. 3_T1w.nii.gz:  83%|██▍| 8.88M/10.7M [00:00&lt;00:00, 10.8M Bytes/s]
+Get sub-03/a .. 3_T1w.nii.gz: 100%|██▉| 10.7M/10.7M [00:01&lt;00:00, 9.61M Bytes/s]
+Total:  57%|████████████████            | 355M/618M [00:55&lt;00:41, 6.39M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:   0%|            | 0.00/28.8M [00:00&lt;?, ? Bytes/s]
+Get sub-03/f .. _bold.nii.gz:   9%|▎  | 2.71M/28.8M [00:00&lt;00:01, 13.6M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  14%|▍  | 4.14M/28.8M [00:00&lt;00:01, 13.8M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  21%|▋  | 6.02M/28.8M [00:00&lt;00:02, 9.93M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  25%|▊  | 7.32M/28.8M [00:00&lt;00:02, 9.90M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  30%|▉  | 8.68M/28.8M [00:00&lt;00:01, 10.8M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  37%|█  | 10.7M/28.8M [00:01&lt;00:01, 9.89M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  46%|█▎ | 13.1M/28.8M [00:01&lt;00:01, 10.1M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  53%|█▌ | 15.3M/28.8M [00:01&lt;00:01, 9.82M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  60%|█▊ | 17.2M/28.8M [00:01&lt;00:01, 9.65M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  64%|█▉ | 18.4M/28.8M [00:01&lt;00:01, 9.10M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  69%|██ | 19.9M/28.8M [00:01&lt;00:00, 10.2M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  77%|██▎| 22.0M/28.8M [00:02&lt;00:00, 9.86M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  85%|██▌| 24.5M/28.8M [00:02&lt;00:00, 10.1M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  90%|██▋| 26.0M/28.8M [00:02&lt;00:00, 9.55M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  96%|██▊| 27.5M/28.8M [00:02&lt;00:00, 9.29M Bytes/s]
+Total:  62%|█████████████████▍          | 384M/618M [00:58&lt;00:35, 6.51M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:   0%|            | 0.00/28.8M [00:00&lt;?, ? Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  10%|▎  | 2.90M/28.8M [00:00&lt;00:01, 14.5M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  17%|▌  | 4.90M/28.8M [00:00&lt;00:02, 10.0M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  22%|▋  | 6.43M/28.8M [00:00&lt;00:01, 11.4M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  31%|▉  | 9.05M/28.8M [00:00&lt;00:01, 11.3M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  39%|█▏ | 11.1M/28.8M [00:01&lt;00:01, 10.4M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  47%|█▍ | 13.5M/28.8M [00:01&lt;00:01, 10.3M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  54%|█▋ | 15.7M/28.8M [00:01&lt;00:01, 9.99M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  62%|█▊ | 18.0M/28.8M [00:01&lt;00:01, 9.98M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  70%|██ | 20.3M/28.8M [00:01&lt;00:00, 9.99M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  78%|██▎| 22.5M/28.8M [00:02&lt;00:00, 9.86M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  86%|██▌| 24.9M/28.8M [00:02&lt;00:00, 9.97M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  91%|██▋| 26.2M/28.8M [00:02&lt;00:00, 9.47M Bytes/s]
+Get sub-03/f .. _bold.nii.gz:  97%|██▉| 28.0M/28.8M [00:02&lt;00:00, 9.37M Bytes/s]
+Total:  67%|██████████████████▋         | 413M/618M [01:02&lt;00:31, 6.61M Bytes/s]
+Get sub-07/a .. 7_T1w.nii.gz:   0%|            | 0.00/10.7M [00:00&lt;?, ? Bytes/s]
+Get sub-07/a .. 7_T1w.nii.gz:  26%|▊  | 2.83M/10.7M [00:00&lt;00:00, 14.1M Bytes/s]
+Get sub-07/a .. 7_T1w.nii.gz:  45%|█▎ | 4.85M/10.7M [00:00&lt;00:00, 9.94M Bytes/s]
+Get sub-07/a .. 7_T1w.nii.gz:  59%|█▊ | 6.30M/10.7M [00:00&lt;00:00, 11.2M Bytes/s]
+Get sub-07/a .. 7_T1w.nii.gz:  83%|██▌| 8.94M/10.7M [00:00&lt;00:00, 11.3M Bytes/s]
+                                                                                
+Get sub-07/f .. _bold.nii.gz:   0%|            | 0.00/28.9M [00:00&lt;?, ? Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  10%|▎  | 2.75M/28.9M [00:00&lt;00:01, 13.8M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  16%|▍  | 4.74M/28.9M [00:00&lt;00:02, 9.60M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  23%|▋  | 6.73M/28.9M [00:00&lt;00:01, 11.3M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  30%|▉  | 8.77M/28.9M [00:00&lt;00:01, 10.9M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  39%|█▏ | 11.2M/28.9M [00:01&lt;00:01, 10.7M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  47%|█▍ | 13.7M/28.9M [00:01&lt;00:01, 10.6M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  56%|█▋ | 16.1M/28.9M [00:01&lt;00:01, 10.6M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  59%|█▊ | 17.2M/28.9M [00:01&lt;00:01, 10.6M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  63%|█▉ | 18.3M/28.9M [00:01&lt;00:01, 10.6M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  68%|██ | 19.7M/28.9M [00:01&lt;00:00, 10.0M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  73%|██▏| 21.2M/28.9M [00:01&lt;00:00, 11.1M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  82%|██▍| 23.7M/28.9M [00:02&lt;00:00, 11.0M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  91%|██▋| 26.2M/28.9M [00:02&lt;00:00, 11.0M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  97%|██▉| 28.0M/28.9M [00:02&lt;00:00, 10.6M Bytes/s]
+Total:  73%|████████████████████▍       | 452M/618M [01:07&lt;00:24, 6.73M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:   0%|            | 0.00/29.0M [00:00&lt;?, ? Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  10%|▎  | 2.91M/29.0M [00:00&lt;00:01, 14.6M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  17%|▍  | 4.79M/29.0M [00:00&lt;00:02, 9.72M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  22%|▋  | 6.26M/29.0M [00:00&lt;00:02, 11.0M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  30%|▉  | 8.79M/29.0M [00:00&lt;00:01, 11.0M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  38%|█▏ | 10.9M/29.0M [00:01&lt;00:01, 10.2M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  45%|█▎ | 13.2M/29.0M [00:01&lt;00:01, 10.1M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  53%|█▌ | 15.3M/29.0M [00:01&lt;00:01, 9.80M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  61%|█▊ | 17.6M/29.0M [00:01&lt;00:01, 9.81M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  68%|██ | 19.8M/29.0M [00:01&lt;00:00, 9.77M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  76%|██▎| 21.9M/29.0M [00:02&lt;00:00, 9.72M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  84%|██▌| 24.4M/29.0M [00:02&lt;00:00, 9.82M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  88%|██▋| 25.4M/29.0M [00:02&lt;00:00, 9.15M Bytes/s]
+Get sub-07/f .. _bold.nii.gz:  95%|██▊| 27.4M/29.0M [00:02&lt;00:00, 9.19M Bytes/s]
+Get sub-07/f .. _bold.nii.gz: 100%|██▉| 28.9M/29.0M [00:02&lt;00:00, 10.2M Bytes/s]
+                                                                                
+Get sub-04/a .. 4_T1w.nii.gz:   0%|            | 0.00/10.7M [00:00&lt;?, ? Bytes/s]
+Get sub-04/a .. 4_T1w.nii.gz:  20%|▌  | 2.13M/10.7M [00:00&lt;00:00, 13.9M Bytes/s]
+Get sub-04/a .. 4_T1w.nii.gz:  39%|█▏ | 4.18M/10.7M [00:00&lt;00:00, 13.9M Bytes/s]
+Get sub-04/a .. 4_T1w.nii.gz:  59%|█▊ | 6.31M/10.7M [00:00&lt;00:00, 10.4M Bytes/s]
+Get sub-04/a .. 4_T1w.nii.gz:  82%|██▍| 8.85M/10.7M [00:00&lt;00:00, 10.7M Bytes/s]
+Total:  80%|██████████████████████▎     | 492M/618M [01:12&lt;00:18, 6.83M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:   0%|            | 0.00/29.1M [00:00&lt;?, ? Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  10%|▎  | 2.83M/29.1M [00:00&lt;00:01, 14.2M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  16%|▍  | 4.71M/29.1M [00:00&lt;00:02, 9.70M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  21%|▌  | 6.04M/29.1M [00:00&lt;00:02, 10.6M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  25%|▋  | 7.23M/29.1M [00:00&lt;00:02, 10.1M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  29%|▉  | 8.56M/29.1M [00:00&lt;00:01, 10.9M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  36%|█  | 10.4M/29.1M [00:01&lt;00:01, 9.61M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  40%|█▏ | 11.6M/29.1M [00:01&lt;00:01, 9.32M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  44%|█▎ | 12.8M/29.1M [00:01&lt;00:01, 10.0M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  52%|█▌ | 15.0M/29.1M [00:01&lt;00:01, 9.81M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  59%|█▊ | 17.1M/29.1M [00:01&lt;00:01, 9.51M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  66%|█▉ | 19.3M/29.1M [00:01&lt;00:01, 9.46M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  73%|██▏| 21.2M/29.1M [00:02&lt;00:00, 9.28M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  77%|██▎| 22.5M/29.1M [00:02&lt;00:00, 9.10M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  85%|██▌| 24.7M/29.1M [00:02&lt;00:00, 9.27M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  89%|██▋| 25.9M/29.1M [00:02&lt;00:00, 9.70M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  97%|██▉| 28.2M/29.1M [00:02&lt;00:00, 9.76M Bytes/s]
+                                                                                
+Get sub-04/f .. _bold.nii.gz:   0%|            | 0.00/29.1M [00:00&lt;?, ? Bytes/s]
+                                                                                
+Get sub-04/f .. _bold.nii.gz:   0%|            | 0.00/29.1M [00:00&lt;?, ? Bytes/s]
+Get sub-04/f .. _bold.nii.gz:   9%|▎  | 2.58M/29.1M [00:00&lt;00:02, 12.9M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  13%|▍  | 3.90M/29.1M [00:00&lt;00:01, 13.0M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  21%|▌  | 6.05M/29.1M [00:00&lt;00:02, 10.1M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  25%|▋  | 7.15M/29.1M [00:00&lt;00:02, 9.57M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  29%|▊  | 8.46M/29.1M [00:00&lt;00:01, 10.4M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  36%|█  | 10.4M/29.1M [00:01&lt;00:01, 9.47M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  39%|█▏ | 11.4M/29.1M [00:01&lt;00:01, 9.08M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  44%|█▎ | 12.7M/29.1M [00:01&lt;00:01, 9.87M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  51%|█▌ | 14.7M/29.1M [00:01&lt;00:01, 9.35M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  54%|█▋ | 15.8M/29.1M [00:01&lt;00:01, 9.39M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  62%|█▊ | 17.9M/29.1M [00:01&lt;00:01, 9.02M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  66%|█▉ | 19.2M/29.1M [00:01&lt;00:01, 9.74M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  74%|██▏| 21.4M/29.1M [00:02&lt;00:00, 9.59M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  81%|██▍| 23.5M/29.1M [00:02&lt;00:00, 9.52M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  86%|██▌| 25.0M/29.1M [00:02&lt;00:00, 9.01M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  91%|██▋| 26.6M/29.1M [00:02&lt;00:00, 9.01M Bytes/s]
+Get sub-04/f .. _bold.nii.gz:  99%|██▉| 28.7M/29.1M [00:03&lt;00:00, 9.07M Bytes/s]
+Total:  89%|████████████████████████▉   | 550M/618M [01:19&lt;00:09, 6.94M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:   0%|            | 0.00/10.6M [00:00&lt;?, ? Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  13%|▍  | 1.33M/10.6M [00:00&lt;00:00, 12.9M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  39%|█▏ | 4.08M/10.6M [00:00&lt;00:00, 13.7M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  56%|█▋ | 5.92M/10.6M [00:00&lt;00:00, 9.77M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  68%|██ | 7.18M/10.6M [00:00&lt;00:00, 9.73M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  80%|██▍| 8.46M/10.6M [00:00&lt;00:00, 10.5M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  98%|██▉| 10.4M/10.6M [00:01&lt;00:00, 9.48M Bytes/s]
+                                                                                
+Get sub-08/f .. _bold.nii.gz:   0%|            | 0.00/28.6M [00:00&lt;?, ? Bytes/s]
+Get sub-08/f .. _bold.nii.gz:   5%|▏  | 1.32M/28.6M [00:00&lt;00:02, 12.5M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  14%|▍  | 4.12M/28.6M [00:00&lt;00:01, 13.9M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  21%|▋  | 5.99M/28.6M [00:00&lt;00:02, 10.0M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  25%|▊  | 7.25M/28.6M [00:00&lt;00:02, 9.91M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  30%|▉  | 8.61M/28.6M [00:00&lt;00:01, 10.8M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  36%|█  | 10.4M/28.6M [00:01&lt;00:01, 9.51M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  40%|█▏ | 11.5M/28.6M [00:01&lt;00:01, 9.17M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  45%|█▎ | 12.8M/28.6M [00:01&lt;00:01, 10.0M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  51%|█▌ | 14.7M/28.6M [00:01&lt;00:01, 9.22M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  55%|█▋ | 15.9M/28.6M [00:01&lt;00:01, 9.22M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  60%|█▊ | 17.1M/28.6M [00:01&lt;00:01, 9.96M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  67%|██ | 19.3M/28.6M [00:01&lt;00:00, 9.52M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  72%|██▏| 20.5M/28.6M [00:02&lt;00:00, 9.04M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  78%|██▎| 22.4M/28.6M [00:02&lt;00:00, 9.09M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  83%|██▍| 23.7M/28.6M [00:02&lt;00:00, 9.80M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  89%|██▋| 25.4M/28.6M [00:02&lt;00:00, 9.42M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  94%|██▊| 26.8M/28.6M [00:02&lt;00:00, 9.15M Bytes/s]
+                                                                                
+Get sub-08/f .. _bold.nii.gz:   0%|            | 0.00/28.6M [00:00&lt;?, ? Bytes/s]
+Get sub-08/f .. _bold.nii.gz:   7%|▏  | 1.88M/28.6M [00:00&lt;00:02, 12.9M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  14%|▍  | 3.95M/28.6M [00:00&lt;00:01, 13.1M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  21%|▋  | 5.97M/28.6M [00:00&lt;00:02, 9.90M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  25%|▊  | 7.16M/28.6M [00:00&lt;00:02, 9.67M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  30%|▉  | 8.46M/28.6M [00:00&lt;00:01, 10.5M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  36%|█  | 10.4M/28.6M [00:01&lt;00:01, 9.54M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  44%|█▎ | 12.6M/28.6M [00:01&lt;00:01, 9.67M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  52%|█▌ | 14.9M/28.6M [00:01&lt;00:01, 9.55M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  56%|█▋ | 16.1M/28.6M [00:01&lt;00:01, 9.06M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  63%|█▉ | 18.0M/28.6M [00:01&lt;00:01, 9.13M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  70%|██ | 20.2M/28.6M [00:02&lt;00:00, 9.26M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  75%|██▎| 21.5M/28.6M [00:02&lt;00:00, 9.91M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  83%|██▌| 23.9M/28.6M [00:02&lt;00:00, 10.1M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  91%|██▋| 26.1M/28.6M [00:02&lt;00:00, 9.90M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  99%|██▉| 28.4M/28.6M [00:02&lt;00:00, 9.88M Bytes/s]
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-01/anat/sub-01_T1w.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-01/func/sub-01_task-flanker_run-1_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-01/func/sub-01_task-flanker_run-2_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-02/anat/sub-02_T1w.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-02/func/sub-02_task-flanker_run-1_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-02/func/sub-02_task-flanker_run-2_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-06/anat/sub-06_T1w.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-06/func/sub-06_task-flanker_run-1_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-06/func/sub-06_task-flanker_run-2_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-05/anat/sub-05_T1w.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
   [17 similar messages have been suppressed; disable with datalad.ui.suppress-similar-results=off]
-<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-05 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">directory</span>)
-<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-07 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">directory</span>)
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-01 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">directory</span>)
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-02 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">directory</span>)
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-06 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">directory</span>)
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-05 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">directory</span>)
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-09 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">directory</span>)
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-03 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">directory</span>)
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-07 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">directory</span>)
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-04 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">directory</span>)
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">directory</span>)
-<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-03 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">directory</span>)
-<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-01 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">directory</span>)
-<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-09 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">directory</span>)
 action summary:
   get (ok: 36)
 
@@ -1877,6 +1870,49 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">File ~/.local/lib/python3.10/site-packages/nipype/interfaces/fsl/base.py:120,</span> in <span class="ni">Info.standard_image</span><span class="nt">(img_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">120</span>     <span class="n">fsldir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;FSLDIR&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+
+<span class="nn">File /usr/lib/python3.10/os.py:680,</span> in <span class="ni">_Environ.__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">    </span><span class="mi">678</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">679</span>     <span class="c1"># raise KeyError with the original key value</span>
+<span class="ne">--&gt; </span><span class="mi">680</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">681</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">decodevalue</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: &#39;FSLDIR&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">40</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">flt</span> <span class="o">=</span> <span class="n">pe</span><span class="o">.</span><span class="n">MapNode</span><span class="p">(</span><span class="n">interface</span><span class="o">=</span><span class="n">fsl</span><span class="o">.</span><span class="n">FLIRT</span><span class="p">(</span><span class="n">cost</span><span class="o">=</span><span class="s1">&#39;corratio&#39;</span><span class="p">,</span> <span class="n">dof</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>                                     <span class="n">searchr_x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="mi">90</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>                                     <span class="n">searchr_y</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="mi">90</span><span class="p">],</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                <span class="n">name</span><span class="o">=</span><span class="s1">&#39;example_func2standard&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                <span class="n">iterfield</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;in_file&#39;</span><span class="p">])</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">flt</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">reference</span> <span class="o">=</span> <span class="n">fsl</span><span class="o">.</span><span class="n">Info</span><span class="o">.</span><span class="n">standard_image</span><span class="p">(</span><span class="s1">&#39;MNI152_T1_2mm_brain.nii.gz&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">wf_first</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">extract_ref</span><span class="p">,</span> <span class="s1">&#39;roi_file&#39;</span><span class="p">,</span> <span class="n">flt</span><span class="p">,</span> <span class="s1">&#39;in_file&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">convertxfm</span> <span class="o">=</span> <span class="n">pe</span><span class="o">.</span><span class="n">MapNode</span><span class="p">(</span><span class="n">interface</span><span class="o">=</span><span class="n">fsl</span><span class="o">.</span><span class="n">ConvertXFM</span><span class="p">(</span><span class="n">invert_xfm</span> <span class="o">=</span> <span class="kc">True</span><span class="p">),</span> 
+<span class="g g-Whitespace">     </span><span class="mi">13</span>                          <span class="n">name</span><span class="o">=</span><span class="s1">&#39;convertxfm&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>                          <span class="n">iterfield</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;in_file&#39;</span><span class="p">])</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/nipype/interfaces/fsl/base.py:122,</span> in <span class="ni">Info.standard_image</span><span class="nt">(img_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span>     <span class="n">fsldir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;FSLDIR&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">122</span>     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;FSL environment variables not set&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span> <span class="n">stdpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fsldir</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;standard&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span> <span class="k">if</span> <span class="n">img_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="ne">Exception</span>: FSL environment variables not set
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="step-2">
@@ -1972,11 +2008,11 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250417-05:12:19,685 nipype.workflow INFO:
-	 Generated workflow graph: /storage/tmp/tmpnd097gat/output_level1/level1/graph.png (graph2use=colored, simple_form=True).
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230622-04:04:13,752 nipype.workflow INFO:
+	 Generated workflow graph: /home/jovyan/example-notebooks/functional_imaging/output_level1/level1/graph.png (graph2use=colored, simple_form=True).
 </pre></div>
 </div>
-<img alt="_images/8010b4778b5ee347acd42069e3835ef642181453b86be90343c7c109230443d6.png" src="_images/8010b4778b5ee347acd42069e3835ef642181453b86be90343c7c109230443d6.png" />
+<img alt="_images/a062279807265ff39c961ecbe84a428502dcece4ef8ede59a95af6b44c5290a8.png" src="_images/a062279807265ff39c961ecbe84a428502dcece4ef8ede59a95af6b44c5290a8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1989,1013 +2025,7 @@ Interpolation (‘spline’ or ‘nn’ or ‘sinc’) – Interpolation method 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250417-05:12:27,165 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:27,172 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float1&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float1)
-250417-05:12:27,290 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:27,295 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float1&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_02/img2float/mapflow/_img2float1)
-250417-05:12:27,314 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:27,320 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float0&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_02/img2float/mapflow/_img2float0)
-250417-05:12:27,353 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:27,359 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float0&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float0)
-250417-05:12:27,619 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:27,626 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float1&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_03/img2float/mapflow/_img2float1)
-250417-05:12:27,651 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:27,656 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float0&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_03/img2float/mapflow/_img2float0)
-250417-05:12:28,114 nipype.workflow ERROR:
-	 Node _img2float0 failed to run on host github-action-runner.
-250417-05:12:28,118 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051228-ubuntu-_img2float0-4c4ac67d-4535-4bca-b7b0-98f6347cfde7.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float0/sub-01_task-flanker_run-1_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-1_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-1_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3869701 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float0/sub-01_task-flanker_run-1_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float0/sub-01_task-flanker_run-1_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:28,122 nipype.workflow ERROR:
-	 Node _img2float1 failed to run on host github-action-runner.
-250417-05:12:28,123 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051228-ubuntu-_img2float1-aeeec26c-575a-4746-8339-ac57b77c8620.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float1/sub-01_task-flanker_run-2_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-2_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-2_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3869702 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float1/sub-01_task-flanker_run-2_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float1/sub-01_task-flanker_run-2_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:28,126 nipype.workflow ERROR:
-	 Node _img2float0 failed to run on host github-action-runner.
-250417-05:12:28,127 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051228-ubuntu-_img2float0-f349089d-2dad-4d7b-a1d3-2272ac992dae.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-02/func/sub-02_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_02/img2float/mapflow/_img2float0/sub-02_task-flanker_run-1_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-02/func/sub-02_task-flanker_run-1_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-02/func/sub-02_task-flanker_run-1_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3869700 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_02/img2float/mapflow/_img2float0/sub-02_task-flanker_run-1_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_02/img2float/mapflow/_img2float0/sub-02_task-flanker_run-1_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:28,130 nipype.workflow ERROR:
-	 Node _img2float1 failed to run on host github-action-runner.
-250417-05:12:28,131 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051228-ubuntu-_img2float1-34487a93-633f-4436-aaf2-72474c703dc1.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-02/func/sub-02_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_02/img2float/mapflow/_img2float1/sub-02_task-flanker_run-2_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-02/func/sub-02_task-flanker_run-2_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-02/func/sub-02_task-flanker_run-2_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3869703 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_02/img2float/mapflow/_img2float1/sub-02_task-flanker_run-2_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_02/img2float/mapflow/_img2float1/sub-02_task-flanker_run-2_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:28,137 nipype.workflow ERROR:
-	 Node _img2float0 failed to run on host github-action-runner.
-250417-05:12:28,138 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051228-ubuntu-_img2float0-6ff13409-2e9a-450d-b0f9-52c2caa99bda.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-03/func/sub-03_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_03/img2float/mapflow/_img2float0/sub-03_task-flanker_run-1_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-03/func/sub-03_task-flanker_run-1_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-03/func/sub-03_task-flanker_run-1_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3869903 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_03/img2float/mapflow/_img2float0/sub-03_task-flanker_run-1_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_03/img2float/mapflow/_img2float0/sub-03_task-flanker_run-1_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:28,140 nipype.workflow ERROR:
-	 Node _img2float1 failed to run on host github-action-runner.
-250417-05:12:28,142 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051228-ubuntu-_img2float1-5cbea289-721c-418a-b290-52ce346a05b4.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-03/func/sub-03_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_03/img2float/mapflow/_img2float1/sub-03_task-flanker_run-2_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-03/func/sub-03_task-flanker_run-2_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-03/func/sub-03_task-flanker_run-2_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3869904 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_03/img2float/mapflow/_img2float1/sub-03_task-flanker_run-2_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_03/img2float/mapflow/_img2float1/sub-03_task-flanker_run-2_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:29,127 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:29,132 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float0&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_04/img2float/mapflow/_img2float0)
-250417-05:12:29,134 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:29,138 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float1&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_05/img2float/mapflow/_img2float1)
-250417-05:12:29,197 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:29,201 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float1&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_04/img2float/mapflow/_img2float1)
-250417-05:12:29,206 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:29,209 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float0&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_05/img2float/mapflow/_img2float0)
-250417-05:12:30,117 nipype.workflow ERROR:
-	 Node _img2float0 failed to run on host github-action-runner.
-250417-05:12:30,120 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051230-ubuntu-_img2float0-e37f55c3-72f4-4b88-bc2f-4c649e379b53.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-04/func/sub-04_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_04/img2float/mapflow/_img2float0/sub-04_task-flanker_run-1_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-04/func/sub-04_task-flanker_run-1_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-04/func/sub-04_task-flanker_run-1_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870100 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_04/img2float/mapflow/_img2float0/sub-04_task-flanker_run-1_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_04/img2float/mapflow/_img2float0/sub-04_task-flanker_run-1_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:30,123 nipype.workflow ERROR:
-	 Node _img2float1 failed to run on host github-action-runner.
-250417-05:12:30,125 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051230-ubuntu-_img2float1-a9ab16fb-f659-4edc-9475-1c693f0f9636.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-04/func/sub-04_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_04/img2float/mapflow/_img2float1/sub-04_task-flanker_run-2_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-04/func/sub-04_task-flanker_run-2_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-04/func/sub-04_task-flanker_run-2_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870098 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_04/img2float/mapflow/_img2float1/sub-04_task-flanker_run-2_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_04/img2float/mapflow/_img2float1/sub-04_task-flanker_run-2_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:30,129 nipype.workflow ERROR:
-	 Node _img2float0 failed to run on host github-action-runner.
-250417-05:12:30,130 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051230-ubuntu-_img2float0-a742aa09-006c-4da8-8984-546197afb6e3.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-05/func/sub-05_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_05/img2float/mapflow/_img2float0/sub-05_task-flanker_run-1_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-05/func/sub-05_task-flanker_run-1_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-05/func/sub-05_task-flanker_run-1_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870103 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_05/img2float/mapflow/_img2float0/sub-05_task-flanker_run-1_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_05/img2float/mapflow/_img2float0/sub-05_task-flanker_run-1_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:30,133 nipype.workflow ERROR:
-	 Node _img2float1 failed to run on host github-action-runner.
-250417-05:12:30,134 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051230-ubuntu-_img2float1-02c279da-9dd8-4ee3-909f-7df0b88fd155.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-05/func/sub-05_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_05/img2float/mapflow/_img2float1/sub-05_task-flanker_run-2_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-05/func/sub-05_task-flanker_run-2_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-05/func/sub-05_task-flanker_run-2_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870104 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_05/img2float/mapflow/_img2float1/sub-05_task-flanker_run-2_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_05/img2float/mapflow/_img2float1/sub-05_task-flanker_run-2_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:31,128 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:31,133 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float0&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_06/img2float/mapflow/_img2float0)
-250417-05:12:31,171 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:31,175 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float1&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_06/img2float/mapflow/_img2float1)
-250417-05:12:32,123 nipype.workflow ERROR:
-	 Node _img2float0 failed to run on host github-action-runner.
-250417-05:12:32,127 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051232-ubuntu-_img2float0-aeb9f27f-b738-4176-8010-e3991e8178fb.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-06/func/sub-06_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_06/img2float/mapflow/_img2float0/sub-06_task-flanker_run-1_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-06/func/sub-06_task-flanker_run-1_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-06/func/sub-06_task-flanker_run-1_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870306 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_06/img2float/mapflow/_img2float0/sub-06_task-flanker_run-1_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_06/img2float/mapflow/_img2float0/sub-06_task-flanker_run-1_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:32,130 nipype.workflow ERROR:
-	 Node _img2float1 failed to run on host github-action-runner.
-250417-05:12:32,132 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051232-ubuntu-_img2float1-839ed4ed-da62-4303-894f-cb095e5977d2.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-06/func/sub-06_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_06/img2float/mapflow/_img2float1/sub-06_task-flanker_run-2_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-06/func/sub-06_task-flanker_run-2_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-06/func/sub-06_task-flanker_run-2_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870309 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_06/img2float/mapflow/_img2float1/sub-06_task-flanker_run-2_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_06/img2float/mapflow/_img2float1/sub-06_task-flanker_run-2_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:33,150 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:33,155 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float1&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_07/img2float/mapflow/_img2float1)
-250417-05:12:33,194 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:33,198 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float0&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_07/img2float/mapflow/_img2float0)
-250417-05:12:33,251 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:33,255 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float0&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_08/img2float/mapflow/_img2float0)
-250417-05:12:33,294 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:33,298 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float1&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_08/img2float/mapflow/_img2float1)
-250417-05:12:34,124 nipype.workflow ERROR:
-	 Node _img2float0 failed to run on host github-action-runner.
-250417-05:12:34,126 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051234-ubuntu-_img2float0-1a005598-9f7a-4bbb-81eb-c01c0106de93.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-07/func/sub-07_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_07/img2float/mapflow/_img2float0/sub-07_task-flanker_run-1_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-07/func/sub-07_task-flanker_run-1_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-07/func/sub-07_task-flanker_run-1_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870440 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_07/img2float/mapflow/_img2float0/sub-07_task-flanker_run-1_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_07/img2float/mapflow/_img2float0/sub-07_task-flanker_run-1_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:34,129 nipype.workflow ERROR:
-	 Node _img2float1 failed to run on host github-action-runner.
-250417-05:12:34,131 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051234-ubuntu-_img2float1-3e9a6e08-53fd-4dad-8b8c-93615b0c3292.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-07/func/sub-07_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_07/img2float/mapflow/_img2float1/sub-07_task-flanker_run-2_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-07/func/sub-07_task-flanker_run-2_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-07/func/sub-07_task-flanker_run-2_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870442 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_07/img2float/mapflow/_img2float1/sub-07_task-flanker_run-2_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_07/img2float/mapflow/_img2float1/sub-07_task-flanker_run-2_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:34,135 nipype.workflow ERROR:
-	 Node _img2float0 failed to run on host github-action-runner.
-250417-05:12:34,136 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051234-ubuntu-_img2float0-67a006c1-08a5-4c36-a9fa-24199e9575a7.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-08/func/sub-08_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_08/img2float/mapflow/_img2float0/sub-08_task-flanker_run-1_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-08/func/sub-08_task-flanker_run-1_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-08/func/sub-08_task-flanker_run-1_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870447 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_08/img2float/mapflow/_img2float0/sub-08_task-flanker_run-1_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_08/img2float/mapflow/_img2float0/sub-08_task-flanker_run-1_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:34,139 nipype.workflow ERROR:
-	 Node _img2float1 failed to run on host github-action-runner.
-250417-05:12:34,141 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051234-ubuntu-_img2float1-1face8ba-d283-49b6-acdd-620a3690af6d.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-08/func/sub-08_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_08/img2float/mapflow/_img2float1/sub-08_task-flanker_run-2_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-08/func/sub-08_task-flanker_run-2_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-08/func/sub-08_task-flanker_run-2_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870446 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_08/img2float/mapflow/_img2float1/sub-08_task-flanker_run-2_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_08/img2float/mapflow/_img2float1/sub-08_task-flanker_run-2_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:35,215 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:35,219 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float1&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_09/img2float/mapflow/_img2float1)
-250417-05:12:35,240 nipype.workflow WARNING:
-	 Storing result file without outputs
-250417-05:12:35,244 nipype.workflow WARNING:
-	 [Node] Error on &quot;_img2float0&quot; (/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_09/img2float/mapflow/_img2float0)
-250417-05:12:36,128 nipype.workflow ERROR:
-	 Node _img2float0 failed to run on host github-action-runner.
-250417-05:12:36,131 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051236-ubuntu-_img2float0-d087dcf1-7bd0-411e-84ae-83f7df85dcaf.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-09/func/sub-09_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_09/img2float/mapflow/_img2float0/sub-09_task-flanker_run-1_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-09/func/sub-09_task-flanker_run-1_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-09/func/sub-09_task-flanker_run-1_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870653 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_09/img2float/mapflow/_img2float0/sub-09_task-flanker_run-1_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_09/img2float/mapflow/_img2float0/sub-09_task-flanker_run-1_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:36,135 nipype.workflow ERROR:
-	 Node _img2float1 failed to run on host github-action-runner.
-250417-05:12:36,137 nipype.workflow ERROR:
-	 Saving crash info to /storage/tmp/tmpnd097gat/crash-20250417-051236-ubuntu-_img2float1-173508ea-7933-44ca-b591-e559568f5219.txt
-Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float1.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-09/func/sub-09_task-flanker_run-2_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_09/img2float/mapflow/_img2float1/sub-09_task-flanker_run-2_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-09/func/sub-09_task-flanker_run-2_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-09/func/sub-09_task-flanker_run-2_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3870655 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_09/img2float/mapflow/_img2float1/sub-09_task-flanker_run-2_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_09/img2float/mapflow/_img2float1/sub-09_task-flanker_run-2_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-250417-05:12:40,123 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b0
-250417-05:12:40,126 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b0
-250417-05:12:40,127 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b1
-250417-05:12:40,127 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b1
-250417-05:12:40,128 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b2
-250417-05:12:40,129 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b2
-250417-05:12:40,130 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b3
-250417-05:12:40,131 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b3
-250417-05:12:40,132 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b4
-250417-05:12:40,133 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b4
-250417-05:12:40,134 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b5
-250417-05:12:40,135 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b5
-250417-05:12:40,136 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b6
-250417-05:12:40,137 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b6
-250417-05:12:40,138 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b7
-250417-05:12:40,139 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b7
-250417-05:12:40,140 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b8
-250417-05:12:40,141 nipype.workflow ERROR:
-	 could not run node: level1.img2float.b8
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-RuntimeError                              Traceback (most recent call last)
-RuntimeError: Traceback (most recent call last):
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/multiproc.py&quot;, line 67, in run_node
-    result[&quot;result&quot;] = node.run(updatehash=updatehash)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _img2float0.
-
-Cmdline:
-	fslmaths /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-1_bold.nii.gz  /storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float0/sub-01_task-flanker_run-1_bold_dtype.nii.gz -odt float
-Stdout:
-
-Stderr:
-	Image Exception : #63 :: No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-1_bold
-	terminate called after throwing an instance of &#39;std::runtime_error&#39;
-	  what():  No image files match: /storage/tmp/tmpnd097gat/ds000102/sub-01/func/sub-01_task-flanker_run-1_bold
-	/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fslmaths: line 3: 3869701 Aborted                 (core dumped) singularity --silent exec --cleanenv --env DISPLAY=$DISPLAY $neurodesk_singularity_opts --pwd &quot;$PWD&quot; /cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.5.1_20220120/fsl_6.0.5.1_20220120.simg fslmaths &quot;$@&quot;
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 453, in aggregate_outputs
-	    setattr(outputs, key, val)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 330, in validate
-	    value = super(File, self).validate(objekt, name, value, return_pathlike=True)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/traits_extension.py&quot;, line 135, in validate
-	    self.error(objekt, name, str(value))
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/traits/base_trait_handler.py&quot;, line 74, in error
-	    raise TraitError(
-	traits.trait_errors.TraitError: The &#39;out_file&#39; trait of an ImageMathsOutputSpec instance must be a pathlike object or string representing an existing file, but a value of &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float0/sub-01_task-flanker_run-1_bold_dtype.nii.gz&#39; &lt;class &#39;str&#39;&gt; was specified.
-
-	During handling of the above exception, another exception occurred:
-
-	Traceback (most recent call last):
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 400, in run
-	    outputs = self.aggregate_outputs(runtime)
-	  File &quot;/home/ubuntu/.local/lib/python3.10/site-packages/nipype/interfaces/base/core.py&quot;, line 460, in aggregate_outputs
-	    raise FileNotFoundError(msg)
-	FileNotFoundError: No such file or directory &#39;/storage/tmp/tmpnd097gat/output_level1/level1/_subject_id_01/img2float/mapflow/_img2float0/sub-01_task-flanker_run-1_bold_dtype.nii.gz&#39; for output &#39;out_file&#39; of a ImageMaths interface
-
-
-
-The above exception was the direct cause of the following exception:
-
-RuntimeError                              Traceback (most recent call last)
-Cell In[45], line 4
-      2 logging.getLogger(&#39;nipype.workflow&#39;).setLevel(0) #set to 1 if nipype output is wanted
-      3 # Run Workflow
-----&gt; 4 wf_first.run(plugin=&quot;MultiProc&quot;, plugin_args={&quot;n_procs&quot;: 8})
-
-File ~/.local/lib/python3.10/site-packages/nipype/pipeline/engine/workflows.py:638, in Workflow.run(self, plugin, plugin_args, updatehash)
-    636 if str2bool(self.config[&quot;execution&quot;][&quot;create_report&quot;]):
-    637     self._write_report_info(self.base_dir, self.name, execgraph)
---&gt; 638 runner.run(execgraph, updatehash=updatehash, config=self.config)
-    639 datestr = datetime.utcnow().strftime(&quot;%Y%m%dT%H%M%S&quot;)
-    640 if str2bool(self.config[&quot;execution&quot;][&quot;write_provenance&quot;]):
-
-File ~/.local/lib/python3.10/site-packages/nipype/pipeline/plugins/base.py:224, in DistributedPluginBase.run(self, graph, config, updatehash)
-    218 if len(errors) &gt; 1:
-    219     error, cause = (
-    220         RuntimeError(f&quot;{len(errors)} raised. Re-raising first.&quot;),
-    221         error,
-    222     )
---&gt; 224 raise error from cause
-
-RuntimeError: 18 raised. Re-raising first.
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f21f9399810&gt;
 </pre></div>
 </div>
 </div>
