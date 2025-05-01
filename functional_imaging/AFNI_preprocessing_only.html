@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Preprocessing with AFNI &#8212; Neurodesk</title>
   
@@ -14,75 +15,69 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/algolia.css?v=6923f26e" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/algolia.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.3.3/dist/umd/index.js"></script>
+    <script src="_static/algolia.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-4Z9774J59Y"></script>
-    <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){ dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-4Z9774J59Y');
-            </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){ dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-4Z9774J59Y');
-            </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'functional_imaging/AFNI_preprocessing_only';</script>
-    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.3.3/dist/umd/index.js"></script>
-    <script src="../_static/algolia.js?v=b553005c"></script>
-    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/functional_imaging/AFNI_preprocessing_only.html" />
-    <link rel="icon" href="../_static/neurodesk_logo.svg"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ASLprep" href="aslprep.html" />
-    <link rel="prev" title="AFNI Preprocessing and GLM" href="AFNI_preprocessing_and_glm.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'AFNI_preprocessing_only';</script>
+    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/AFNI_preprocessing_only.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -92,29 +87,34 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="../search.html"
+      action="search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -130,20 +130,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -160,102 +152,28 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
-<a class="navbar-brand logo" href="../intro.html">
+<a class="navbar-brand logo" href="#">
   
   
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/neurodesk_logo.svg" class="logo__image only-light" alt="Neurodesk - Home"/>
-    <script>document.write(`<img src="../_static/neurodesk_logo.svg" class="logo__image only-dark" alt="Neurodesk - Home"/>`);</script>
   
+    <p class="title logo__title">Neurodesk</p>
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Neurodesk environment
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Preprocessing with AFNI
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../workflows/RISE_slideshow.html">RISE Slideshow of a Jupyter Notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../workflows/bids_conversion.html">BIDS conversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../workflows/nipype_full.html">Nipype on Neurodesk</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../workflows/nipype_short.html">Basic Nipype</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="../workflows/pyBIDS.html">pyBIDS - a Python API for working with BIDS datasets</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Structural Imaging</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/brain_extraction_different_tools.html">Brain extraction with different software packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/freesurfer.html">Freesurfer</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/qsmxt.html">QSMxT</a></li>
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/sct_toolbox.html">SCT Toolbox</a></li>
-
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Diffusion Imaging</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../diffusion_imaging/MRtrix_CSD.html">Diffusion Analysis with MRtrix: Part 2 - Constrained Spherical Deconvolution and Tissue estimation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../diffusion_imaging/MRtrix_CoReg_Streamline.html">Diffusion Analysis with MRtrix: Part 3 - Registration and Streamline Fitting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../diffusion_imaging/MRtrix_Preprocessing.html">Diffusion Analysis with MRtrix: Part 1 - Preprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../diffusion_imaging/mrtrix3tissue.html">MRtrix3Tissue</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Imaging</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="AFNI_preprocessing_and_glm.html">AFNI Preprocessing and GLM</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Preprocessing with AFNI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aslprep.html">ASLprep</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deepretinotopy.html">DeepRetinotopy</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="first_and_second_level_spm.html">First and Second Level fMRI Analysis with SPM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fmriprep.html">fMRIprep</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro_to_preprocessing.html">Introduction to Preprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nipype_fsl_all_levels_flanker.html">FSL’s fMRI Data Analysis via Nipype</a></li>
-
-
-
-
-</ul>
-
+        
     </div>
 </nav></div>
     </div>
@@ -269,7 +187,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -278,14 +196,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -308,16 +226,16 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/functional_imaging/AFNI_preprocessing_only.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/AFNI_preprocessing_only.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
+   title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+    <img src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -356,7 +274,7 @@
       
       
       
-      <li><a href="https://github.com/NeuroDesk/example-notebooks/edit/main/books/functional_imaging/AFNI_preprocessing_only.ipynb" target="_blank"
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/edit/main/books/AFNI_preprocessing_only.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -373,7 +291,7 @@
       
       
       
-      <li><a href="https://github.com/NeuroDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Ffunctional_imaging/AFNI_preprocessing_only.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2FAFNI_preprocessing_only.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -403,7 +321,7 @@
       
       
       
-      <li><a href="../_sources/functional_imaging/AFNI_preprocessing_only.ipynb" target="_blank"
+      <li><a href="_sources/AFNI_preprocessing_only.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -458,10 +376,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -469,14 +387,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -538,11 +456,11 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/functional_imaging/AFNI_preprocessing.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="preprocessing-with-afni">
-<h1>Preprocessing with AFNI<a class="headerlink" href="#preprocessing-with-afni" title="Link to this heading">#</a></h1>
+<h1>Preprocessing with AFNI<a class="headerlink" href="#preprocessing-with-afni" title="Permalink to this heading">#</a></h1>
 <p>Author: Monika Doerig</p>
 <p>Citation:</p>
 <p><strong>Andy’s Brain Book:</strong></p>
@@ -557,25 +475,25 @@ document.write(`
 <li><p>Mennes, M., Zuo, X.N., Kelly, C., Di Martino, A., Zang, Y.F., Biswal, B., Castellanos, F.X., Milham, M.P. (2011). Linking inter-individual differences in neural activation and behavior to intrinsic brain dynamics. Neuroimage, 54(4):2950-9. doi: <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2010.10.046">10.1016/j.neuroimage.2010.10.046</a></p></li>
 </ul>
 <section id="setup-neurodesk">
-<h2>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Link to this heading">#</a></h2>
+<h2>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="n">IN_COLAB</span> <span class="o">=</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
+import os
+import sys
+IN_COLAB = &#39;google.colab&#39; in sys.modules
 
-<span class="k">if</span> <span class="n">IN_COLAB</span><span class="p">:</span>
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_PRELOAD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;APPTAINER_BINDPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content,/tmp,/cvmfs&quot;</span>
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MPLCONFIGDIR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content/matplotlib-mpldir&quot;</span>
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LMOD_CMD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/share/lmod/lmod/libexec/lmod&quot;</span>
+if IN_COLAB:
+  os.environ[&quot;LD_PRELOAD&quot;] = &quot;&quot;;
+  os.environ[&quot;APPTAINER_BINDPATH&quot;] = &quot;/content,/tmp,/cvmfs&quot;
+  os.environ[&quot;MPLCONFIGDIR&quot;] = &quot;/content/matplotlib-mpldir&quot;
+  os.environ[&quot;LMOD_CMD&quot;] = &quot;/usr/share/lmod/lmod/libexec/lmod&quot;
 
-  <span class="err">!</span><span class="n">curl</span> <span class="o">-</span><span class="n">J</span> <span class="o">-</span><span class="n">O</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NeuroDesk</span><span class="o">/</span><span class="n">neurocommand</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
-  <span class="err">!</span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
-  <span class="err">!</span><span class="o">./</span><span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
+  !curl -J -O https://raw.githubusercontent.com/NeuroDesk/neurocommand/main/googlecolab_setup.sh
+  !chmod +x googlecolab_setup.sh
+  !./googlecolab_setup.sh
 
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MODULEPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">)))))</span>
+  os.environ[&quot;MODULEPATH&quot;] = &#39;:&#39;.join(map(str, list(map(lambda x: os.path.join(os.path.abspath(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;), x),os.listdir(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;)))))
 </pre></div>
 </div>
 </div>
@@ -583,41 +501,71 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;vendor&#39;</span> <span class="p">|</span> uniq
+<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;model name&#39;</span> <span class="p">|</span> uniq
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: GenuineIntel
-model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: AuthenticAMD
+model name	: AMD EPYC-Rome Processor
 </pre></div>
 </div>
 </div>
 </div>
 <section id="load-packages">
-<h3>Load packages<a class="headerlink" href="#load-packages" title="Link to this heading">#</a></h3>
+<h3>Load packages<a class="headerlink" href="#load-packages" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">lmod</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lmod</span>
 <span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;afni/21.2.00&#39;</span><span class="p">)</span>
 <span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;afni/21.2.00&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Lmod&#39;,
+ &#39;Warning:&#39;,
+ &#39;The&#39;,
+ &#39;environment&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;has&#39;,
+ &#39;been&#39;,
+ &#39;changed&#39;,
+ &#39;in&#39;,
+ &#39;unexpected&#39;,
+ &#39;ways.&#39;,
+ &#39;Lmod&#39;,
+ &#39;is&#39;,
+ &#39;unable&#39;,
+ &#39;to&#39;,
+ &#39;use&#39;,
+ &#39;given&#39;,
+ &#39;MODULEPATH.&#39;,
+ &#39;It&#39;,
+ &#39;is&#39;,
+ &#39;using:&#39;,
+ &#39;&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM::&quot;.&#39;,
+ &#39;Please&#39;,
+ &#39;use&#39;,
+ &#39;&quot;module&#39;,
+ &#39;use&#39;,
+ &#39;to&#39;,
+ &#39;change&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;instead.&#39;,
+ &#39;afni/21.2.00&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="install-tcsh">
-<h3>Install tcsh<a class="headerlink" href="#install-tcsh" title="Link to this heading">#</a></h3>
+<h3>Install tcsh<a class="headerlink" href="#install-tcsh" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_scroll-ouput docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="err">!</span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span><span class="p">;</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">tcsh</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
+!sudo apt update; sudo apt install tcsh
 </pre></div>
 </div>
 </div>
@@ -639,17 +587,31 @@ echo $var
 </div>
 </section>
 <section id="import-python-modules">
-<h3>Import Python Modules<a class="headerlink" href="#import-python-modules" title="Link to this heading">#</a></h3>
+<h3>Import Python Modules<a class="headerlink" href="#import-python-modules" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">nibabel</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nib</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">ipyniivue</span><span class="w"> </span><span class="kn">import</span> <span class="n">NiiVue</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">Dropdown</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">ipyniivue</span> <span class="kn">import</span> <span class="n">NiiVue</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">Dropdown</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">ipyniivue</span> <span class="kn">import</span> <span class="n">NiiVue</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">Dropdown</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;NiiVue&#39; from &#39;ipyniivue&#39; (/home/ubuntu/.local/lib/python3.10/site-packages/ipyniivue/__init__.py)
 </pre></div>
 </div>
 </div>
@@ -657,12 +619,12 @@ echo $var
 </section>
 </section>
 <section id="data-preparation">
-<h2>Data preparation<a class="headerlink" href="#data-preparation" title="Link to this heading">#</a></h2>
-<div class="cell tag_scroll-ouput docutils container">
+<h2>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this heading">#</a></h2>
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PATTERN</span> <span class="o">=</span> <span class="s2">&quot;sub-08&quot;</span>
-<span class="o">!</span>datalad<span class="w"> </span>install<span class="w"> </span>https://github.com/OpenNeuroDatasets/ds000102.git
-<span class="o">!</span><span class="nb">cd</span><span class="w"> </span>ds000102<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>datalad<span class="w"> </span>get<span class="w"> </span><span class="nv">$PATTERN</span>
+<span class="o">!</span>datalad install https://github.com/OpenNeuroDatasets/ds000102.git
+<span class="o">!</span><span class="nb">cd</span> ds000102 <span class="o">&amp;&amp;</span> datalad get <span class="nv">$PATTERN</span>
 </pre></div>
 </div>
 </div>
@@ -729,9 +691,9 @@ action summary:
 </div>
 </div>
 <p>The data is structured in BIDS format:</p>
-<div class="cell tag_scroll-ouput docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree<span class="w"> </span>-L<span class="w"> </span><span class="m">4</span><span class="w"> </span>ds000102
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree -L <span class="m">4</span> ds000102
 </pre></div>
 </div>
 </div>
@@ -1016,9 +978,9 @@ action summary:
 </div>
 </div>
 <section id="inspecting-the-anatomical-and-functional-images">
-<h3>Inspecting the anatomical and functional images<a class="headerlink" href="#inspecting-the-anatomical-and-functional-images" title="Link to this heading">#</a></h3>
+<h3>Inspecting the anatomical and functional images<a class="headerlink" href="#inspecting-the-anatomical-and-functional-images" title="Permalink to this heading">#</a></h3>
 <p>To use the AFNI graphical user interface, you would type:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">afni</span><span class="w"> </span><span class="nx">sub</span><span class="o">-</span><span class="mf">08</span><span class="nx">_T1w</span><span class="p">.</span><span class="nx">nii</span><span class="p">.</span><span class="nx">gz</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">afni</span> <span class="nx">sub</span><span class="o">-</span><span class="mf">08</span><span class="nx">_T1w</span><span class="p">.</span><span class="nx">nii</span><span class="p">.</span><span class="nx">gz</span>
 </pre></div>
 </div>
 <p>We will use ipyniivue to look at the data:</p>
@@ -1060,7 +1022,7 @@ action summary:
 </section>
 </section>
 <section id="afni-commands-and-preprocessing">
-<h2>AFNI Commands and Preprocessing<a class="headerlink" href="#afni-commands-and-preprocessing" title="Link to this heading">#</a></h2>
+<h2>AFNI Commands and Preprocessing<a class="headerlink" href="#afni-commands-and-preprocessing" title="Permalink to this heading">#</a></h2>
 <p>We will be working with the data from subject sub-08. First, we’ll introduce basic AFNI commands. Then, we’ll create a processing script using <code class="docutils literal notranslate"><span class="pre">afni_proc.py</span></code>, which automates the entire preprocessing workflow. AFNI also provides graphical user interfaces (GUIs), such as <code class="docutils literal notranslate"><span class="pre">uber_subject.py</span></code> and <code class="docutils literal notranslate"><span class="pre">uber_ttest.py</span></code> (for group analysis), which help build processing scripts by combining many commands in the correct order. However, since GUIs cannot be used within a Jupyter Notebook environment, we will focus on writing the scripts directly.</p>
 <p>After setting up the automated script, we’ll walk through each preprocessing step individually and discuss how to check data quality before and after each step.</p>
 <ul class="simple">
@@ -1076,12 +1038,12 @@ action summary:
 </li>
 </ul>
 <section id="afni-commands">
-<h3>1. AFNI commands<a class="headerlink" href="#afni-commands" title="Link to this heading">#</a></h3>
+<h3>1. AFNI commands<a class="headerlink" href="#afni-commands" title="Permalink to this heading">#</a></h3>
 <p>AFNI commands typicallly require at least one argument, or input, and they also usually require you to specify what to call the output of the command.</p>
 <p>Let’s take skull-stripping, for example - a common preprocessing step that removes the skull from the brain. The AFNI command to do this step is called 3dSkullStrip. Use the <code class="docutils literal notranslate"><span class="pre">-h</span></code> flag to print the help page.</p>
-<div class="cell tag_scroll-ouput docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>3dSkullStrip<span class="w"> </span>-h
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>3dSkullStrip -h
 </pre></div>
 </div>
 </div>
@@ -1428,7 +1390,7 @@ action summary:
 Compile Date:
    Jul  8 2021
 
-       Ziad S. Saad SSCC/NIMH/NIH saadz@mail.nih.gov
+       Ziad S. Saad SSCC/NIMH/NIH saadz@mail.nih.gov     
 </pre></div>
 </div>
 </div>
@@ -1437,7 +1399,7 @@ Compile Date:
 <p>The simplest way to run <code class="docutils literal notranslate"><span class="pre">3dSkullStrip</span></code> is by using the <code class="docutils literal notranslate"><span class="pre">-input</span></code> option to specify the anatomical dataset for processing. The <code class="docutils literal notranslate"><span class="pre">-prefix</span></code> option is also used to output a NIfTI image for visualization with ipyniivue.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>3dSkullStrip<span class="w"> </span>-input<span class="w"> </span><span class="nv">$anat_image</span><span class="w"> </span>-prefix<span class="w"> </span>anat_ss.nii.gz<span class="w"> </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>3dSkullStrip -input <span class="nv">$anat_image</span> -prefix anat_ss.nii.gz 
 </pre></div>
 </div>
 </div>
@@ -1470,7 +1432,7 @@ to generate a new masked version of the input.
 </div>
 </section>
 <section id="preprocessing">
-<h3>2. Preprocessing<a class="headerlink" href="#preprocessing" title="Link to this heading">#</a></h3>
+<h3>2. Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h3>
 <p>To automate preprocessing in AFNI, the powerful <code class="docutils literal notranslate"><span class="pre">afni_proc.py</span></code> tool is used. This command generates a fully customizable tcsh script that includes all necessary preprocessing steps, from slice timing correction to scaling.</p>
 <p>The basic idea is:</p>
 <ul class="simple">
@@ -1498,25 +1460,25 @@ to generate a new masked version of the input.
 <div style="background-color: #e8f5e9; padding: 12px; border-left: 6px solid #66bb6a; margin: 10px 0; font-size: 16px;">
 <b>Preprocessing Workflow:</b><br><br>
 ➡️ <code>setup</code> ➡️ <code>tcat</code> ➡️ <code>tshift</code> ➡️ <code>align</code> ➡️ <code>tlrc</code> ➡️ <code>volreg</code> ➡️ <code>blur</code> ➡️ <code>mask</code> ➡️ <code>scale</code> ➡️ ✅ <b>outputs</b>
-</div><div class="cell tag_scroll-ouput docutils container">
+</div><div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>afni_proc.py<span class="w">                                                              </span><span class="err">\</span>
-    <span class="o">-</span><span class="n">subj_id</span>                     <span class="n">sub_08</span>                                   \
-    <span class="o">-</span><span class="n">script</span>                      <span class="n">proc</span><span class="o">.</span><span class="n">sub_08</span>                              \
-    <span class="o">-</span><span class="n">scr_overwrite</span>                                                        \
-    <span class="o">-</span><span class="n">out_dir</span>                     <span class="o">./</span><span class="n">afni_processing</span><span class="o">/</span><span class="n">sub_08</span><span class="o">.</span><span class="n">results</span>         \
-    <span class="o">-</span><span class="n">blocks</span>                      <span class="n">tshift</span> <span class="n">align</span> <span class="n">tlrc</span> <span class="n">volreg</span> <span class="n">blur</span> <span class="n">mask</span> <span class="n">scale</span> \
-    <span class="o">-</span><span class="n">copy_anat</span>                   <span class="err">$</span><span class="n">anat_image</span>                              \
-    <span class="o">-</span><span class="n">dsets</span>                                                                \
-                                 <span class="err">$</span><span class="n">func1_image</span>                             \
-                                 <span class="err">$</span><span class="n">func2_image</span>                             \
-    <span class="o">-</span><span class="n">tcat_remove_first_trs</span>       <span class="mi">0</span>                                        \
-    <span class="o">-</span><span class="n">align_opts_aea</span> <span class="o">-</span><span class="n">giant_move</span>                                           \
-    <span class="o">-</span><span class="n">tlrc_base</span>                   <span class="n">MNI_avg152T1</span><span class="o">+</span><span class="n">tlrc</span>                        \
-    <span class="o">-</span><span class="n">volreg_align_to</span>             <span class="n">MIN_OUTLIER</span>                              \
-    <span class="o">-</span><span class="n">volreg_align_e2a</span>                                                     \
-    <span class="o">-</span><span class="n">volreg_tlrc_warp</span>                                                     \
-    <span class="o">-</span><span class="n">blur_size</span>                   <span class="mf">4.0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>!afni_proc.py                                                              \
+    -subj_id                     sub_08                                   \
+    -script                      proc.sub_08                              \
+    -scr_overwrite                                                        \
+    -out_dir                     ./afni_processing/sub_08.results         \
+    -blocks                      tshift align tlrc volreg blur mask scale \
+    -copy_anat                   $anat_image                              \
+    -dsets                                                                \
+                                 $func1_image                             \
+                                 $func2_image                             \
+    -tcat_remove_first_trs       0                                        \
+    -align_opts_aea -giant_move                                           \
+    -tlrc_base                   MNI_avg152T1+tlrc                        \
+    -volreg_align_to             MIN_OUTLIER                              \
+    -volreg_align_e2a                                                     \
+    -volreg_tlrc_warp                                                     \
+    -blur_size                   4.0
 </pre></div>
 </div>
 </div>
@@ -1549,13 +1511,13 @@ to generate a new masked version of the input.
 </div>
 <p><strong>Run the Preprocessing Script and Inspect the Output</strong></p>
 <p>Now that we have generated our preprocessing script <code class="docutils literal notranslate"><span class="pre">proc.sub_08</span></code>, we can run it using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>!<span class="w"> </span>tcsh<span class="w"> </span>-xef<span class="w"> </span>proc.sub_08<span class="w"> </span><span class="p">|&amp;</span><span class="w"> </span>tee<span class="w"> </span>output.proc.sub_08
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>! tcsh -xef proc.sub_08 <span class="p">|&amp;</span> tee output.proc.sub_08
 </pre></div>
 </div>
 <p>This will execute the script and save a full record of the output in a file called <code class="docutils literal notranslate"><span class="pre">output.proc.sub_08</span></code>, while also displaying it in the notebook.</p>
-<div class="cell tag_scroll-ouput docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>tcsh<span class="w"> </span>-xef<span class="w"> </span>proc.sub_08<span class="w"> </span><span class="p">|&amp;</span><span class="w"> </span>tee<span class="w"> </span>output.proc.sub_08
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> tcsh -xef proc.sub_08 <span class="p">|&amp;</span> tee output.proc.sub_08
 </pre></div>
 </div>
 </div>
@@ -3012,13 +2974,13 @@ execution finished: Thu May  1 05:12:31 UTC 2025
 </div>
 </div>
 </div>
-<div class="cell tag_scroll-ouput docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Delete any previous output (if needed)</span>
-<span class="o">!</span><span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>./afni_processing/sub_08.results
+<span class="o">!</span> rm -r ./afni_processing/sub_08.results
 
 <span class="c1"># Rerun the processing script</span>
-<span class="o">!</span><span class="w"> </span>tcsh<span class="w"> </span>-xef<span class="w"> </span>proc.sub_08<span class="w"> </span><span class="p">|&amp;</span><span class="w"> </span>tee<span class="w"> </span>output.proc.sub_08
+<span class="o">!</span> tcsh -xef proc.sub_08 <span class="p">|&amp;</span> tee output.proc.sub_08
 </pre></div>
 </div>
 </div>
@@ -4446,7 +4408,7 @@ execution finished: Thu May  1 05:16:14 UTC 2025
 </div>
 <p>While the preprocessing is running, here’s a brief overview of the key steps. For a more detailed explanation of each preprocessing stage, have another look at <a class="reference external" href="https://andysbrainbook.readthedocs.io/en/latest/AFNI/AFNI_Short_Course/AFNI_04_Preprocessing.html">Andy’s Brain Book’s excellent tutorial</a>.</p>
 <section id="slice-time-correction">
-<h4>Slice Time Correction<a class="headerlink" href="#slice-time-correction" title="Link to this heading">#</a></h4>
+<h4>Slice Time Correction<a class="headerlink" href="#slice-time-correction" title="Permalink to this heading">#</a></h4>
 <p>Even though slice timing correction is often applied to functional data, in this dataset the slices were already aligned in time.<br />
 When running <code class="docutils literal notranslate"><span class="pre">3dTshift</span></code>, AFNI detected this and simply created a copy of the input data without modification (as indicated by the warning message).</p>
 <p>Normally, if slice timing correction were needed, it would use the first slice as the reference (specified by the <code class="docutils literal notranslate"><span class="pre">-tzero</span> <span class="pre">0</span></code> option in <code class="docutils literal notranslate"><span class="pre">3dTshift</span></code>).<br />
@@ -4462,7 +4424,7 @@ end
 </pre></p>
 </div></section>
 <section id="registration-and-normalization">
-<h4>Registration and Normalization<a class="headerlink" href="#registration-and-normalization" title="Link to this heading">#</a></h4>
+<h4>Registration and Normalization<a class="headerlink" href="#registration-and-normalization" title="Permalink to this heading">#</a></h4>
 <p>Registration aligns the functional and anatomical images. It usually begins by assuming the images are roughly in the same space; if not, their outlines are aligned.
 To fine-tune the alignment, the algorithm uses differences in contrast (mutual information), matching dark areas on one image with bright areas on the other. AFNI’s preferred method is Local Pearson Correlation (LPC), which gives greater weight to brighter areas in the functional data.
 Once a good alignment is found, the same transformations can later be applied to warp the functional images to a standard template.</p>
@@ -4477,7 +4439,7 @@ Once a good alignment is found, the same transformations can later be applied to
 </ul>
 </section>
 <section id="registration-with-afni-s-align-epi-anat-py">
-<h4>Registration with AFNI`s align_epi_anat.py<a class="headerlink" href="#registration-with-afni-s-align-epi-anat-py" title="Link to this heading">#</a></h4>
+<h4>Registration with AFNI`s align_epi_anat.py<a class="headerlink" href="#registration-with-afni-s-align-epi-anat-py" title="Permalink to this heading">#</a></h4>
 <div style="background-color: #fff9db; padding: 5px; border-radius: 5px; font-family: monospace; color: #333;">
 <pre style="margin: 0; background-color: #fff9db;">
 <span style="color: gray;">=================== align ====================</span>
@@ -4490,7 +4452,7 @@ Once a good alignment is found, the same transformations can later be applied to
 </pre></p>
 </div></section>
 <section id="normalization-with-afni-s-auto-tlrc">
-<h4>Normalization with AFNI’s &#64;auto_tlrc<a class="headerlink" href="#normalization-with-afni-s-auto-tlrc" title="Link to this heading">#</a></h4>
+<h4>Normalization with AFNI’s &#64;auto_tlrc<a class="headerlink" href="#normalization-with-afni-s-auto-tlrc" title="Permalink to this heading">#</a></h4>
 <p>After registration, the anatomical image is normalized to a standard template (MNI_avg152T1) using AFNI’s <code class="docutils literal notranslate"><span class="pre">&#64;auto_tlrc</span></code> command. Since the anatomical image has already been skull-stripped, the <code class="docutils literal notranslate"><span class="pre">-no_ss</span></code> option is used. Because the centers of the anatomical and template images were far apart, the <code class="docutils literal notranslate"><span class="pre">-init_xform</span> <span class="pre">AUTO_CENTER</span></code> option was included.<br />
 This helps by roughly aligning the centers of the two images before the fine registration step.
 The transformation needed to align the anatomical image to the template is stored as an affine matrix in the header of the anatomical iamge.
@@ -4504,7 +4466,7 @@ cat_matvec sub-08_T1w_ns+tlrc::WARP_DATA -I &gt; warp.anat.Xat.1D
 </pre></p>
 </div></section>
 <section id="alignment-and-motion-correction">
-<h4>Alignment and Motion Correction<a class="headerlink" href="#alignment-and-motion-correction" title="Link to this heading">#</a></h4>
+<h4>Alignment and Motion Correction<a class="headerlink" href="#alignment-and-motion-correction" title="Permalink to this heading">#</a></h4>
 <p>Motion correction is done with AFNI’s <code class="docutils literal notranslate"><span class="pre">3dvolreg</span></code> command.
 The functional volumes are aligned to a reference image, which is selected as the volume with the fewest outliers (identified using <code class="docutils literal notranslate"><span class="pre">3dToutcount</span></code> earlier).
 Motion parameters are saved into a text file (<code class="docutils literal notranslate"><span class="pre">-1Dfile</span></code>) and the corresponding affine transformation matrices into another file (<code class="docutils literal notranslate"><span class="pre">-1Dmatrix_save</span></code>).</p>
@@ -4542,7 +4504,7 @@ cat_matvec -ONELINE                                        \
 </pre>
 </div></section>
 <section id="smoothing">
-<h4>Smoothing<a class="headerlink" href="#smoothing" title="Link to this heading">#</a></h4>
+<h4>Smoothing<a class="headerlink" href="#smoothing" title="Permalink to this heading">#</a></h4>
 <p>Smoothing is done with AFNI’s <code class="docutils literal notranslate"><span class="pre">3dmerge</span></code> command, which can be found under the “blur” header.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">-1blur_fwhm</span></code> option applies spatial smoothing with a 4mm kernel, and <code class="docutils literal notranslate"><span class="pre">-doall</span></code> ensures smoothing is done across all volumes. After smoothing, the images are scaled to a mean intensity of 100, allowing changes to be interpreted as percent signal change. Finally, a brain mask is applied to remove non-brain voxels, preparing the data for statistical analysis.</p>
 <div style="background-color: #fff9db; padding: 5px; border-radius: 5px; font-family: monospace; color: #333;">
@@ -4556,9 +4518,9 @@ end
 </pre>
 </div></section>
 <section id="masking-and-scaling">
-<h4>Masking and Scaling<a class="headerlink" href="#masking-and-scaling" title="Link to this heading">#</a></h4>
+<h4>Masking and Scaling<a class="headerlink" href="#masking-and-scaling" title="Permalink to this heading">#</a></h4>
 <section id="masking">
-<h5>Masking<a class="headerlink" href="#masking" title="Link to this heading">#</a></h5>
+<h5>Masking<a class="headerlink" href="#masking" title="Permalink to this heading">#</a></h5>
 <p>fMRI datasets include not only brain voxels but also irrelevant areas like the skull, neck, and air. To focus analysis and speed up processing, a mask is applied: voxels inside the mask are kept, and those outside are discarded. AFNI’s <code class="docutils literal notranslate"><span class="pre">3dAutomask</span></code> creates these masks by simply specifying the input and output datasets. The additional steps combine individual fMRI masks into a union mask, compute a mask for the anatomical image, and take the intersection of both to define the final analysis region.</p>
 <div style="background-color: #fff9db; padding: 5px; border-radius: 5px; font-family: monospace; color: #333;">
 <pre style="margin: 0; background-color: #fff9db;">
@@ -4597,7 +4559,7 @@ end</p>
 |&amp; tee out.mask_at_dice.txt</p>
 </section>
 <section id="scaling">
-<h5>Scaling<a class="headerlink" href="#scaling" title="Link to this heading">#</a></h5>
+<h5>Scaling<a class="headerlink" href="#scaling" title="Permalink to this heading">#</a></h5>
 <p>fMRI signal intensities are arbitrary and vary between subjects and runs. To make meaningful comparisons, AFNI scales each voxel’s time series to a mean of 100, allowing for consistent signal intensity contrasts between conditions and across subjects.</p>
 <div style="background-color: #fff9db; padding: 5px; border-radius: 5px; font-family: monospace; color: #333;">
 <pre style="margin: 0; background-color: #fff9db;">
@@ -4615,8 +4577,8 @@ end <p><strong>Effect of Scaling:</strong> Before scaling, time-series values ar
 The following plot compares the signal intensity time series from a voxel at the center of the brain, before and after scaling. The red dashed line indicates the mean signal intensity for each time series.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>3dAFNItoNIFTI<span class="w"> </span>-prefix<span class="w"> </span>./afni_processing/sub_08.results/pb03.sub_08.r01.blur.nii.gz<span class="w"> </span>./afni_processing/sub_08.results/pb03.sub_08.r01.blur+tlrc
-<span class="o">!</span>3dAFNItoNIFTI<span class="w"> </span>-prefix<span class="w"> </span>./afni_processing/sub_08.results/pb04.sub_08.r01.scale.nii.gz<span class="w"> </span>./afni_processing/sub_08.results/pb04.sub_08.r01.scale+tlrc
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>3dAFNItoNIFTI -prefix ./afni_processing/sub_08.results/pb03.sub_08.r01.blur.nii.gz ./afni_processing/sub_08.results/pb03.sub_08.r01.blur+tlrc
+<span class="o">!</span>3dAFNItoNIFTI -prefix ./afni_processing/sub_08.results/pb04.sub_08.r01.scale.nii.gz ./afni_processing/sub_08.results/pb04.sub_08.r01.scale+tlrc
 </pre></div>
 </div>
 </div>
@@ -4670,7 +4632,7 @@ The following plot compares the signal intensity time series from a voxel at the
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/265bd083ab640f8841509bb6b949dc189eb392734743659df561f42fc0d30cca.png" src="../_images/265bd083ab640f8841509bb6b949dc189eb392734743659df561f42fc0d30cca.png" />
+<img alt="_images/265bd083ab640f8841509bb6b949dc189eb392734743659df561f42fc0d30cca.png" src="_images/265bd083ab640f8841509bb6b949dc189eb392734743659df561f42fc0d30cca.png" />
 </div>
 </div>
 </section>
@@ -4678,11 +4640,11 @@ The following plot compares the signal intensity time series from a voxel at the
 </section>
 </section>
 <section id="results-checking-preprocessing">
-<h2>Results: Checking Preprocessing<a class="headerlink" href="#results-checking-preprocessing" title="Link to this heading">#</a></h2>
+<h2>Results: Checking Preprocessing<a class="headerlink" href="#results-checking-preprocessing" title="Permalink to this heading">#</a></h2>
 <p>Let’s have a look at the results directory. The files containing the <strong>pb</strong> string are the preprocessed functional images at each preprocessing step, and the files with the <strong>T1w</strong> string are the preprocessed anatomical images. Auxiliary functional images are created to assist with specific preprocessing steps, and auxiliary text files contain information about transformation matrices and movement parameter:</p>
-<div class="cell tag_scroll-ouput docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>./afni_processing/sub_08.results
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls ./afni_processing/sub_08.results
 </pre></div>
 </div>
 </div>
@@ -4741,16 +4703,16 @@ pb01.sub_08.r01.tshift+orig.BRIK
         In AFNI, a +tlrc extension (and the “Talairach View”) indicates that the image has been normalized. However, this does not necessarily mean the image is in Talairach space. The Talairach label is retained for legacy reasons, ensuring compatibility with older versions of the software. To verify which space the image has been warped to, you can use the <code>3dinfo</code> command and check the “Template Space” field. The three possibilities are: “ORIG” (the image has not been warped), “TLRC” (normalized to Talairach space), and “MNI” (normalized to MNI space).
     </p>
 </div><section id="visualizations">
-<h3>Visualizations<a class="headerlink" href="#visualizations" title="Link to this heading">#</a></h3>
+<h3>Visualizations<a class="headerlink" href="#visualizations" title="Permalink to this heading">#</a></h3>
 <p>To visualize the preprocessing outputs with ipyniivue, the files are first converted to NIfTI format. Once loaded, check whether the functional and anatomical images are properly aligned to MNI space. Misalignments could indicate issues with the preprocessing steps. Smoothed images will generally appear less detailed than the original images due to the blurring effect; this is expected, but they should not be excessively blurry or too sharp. The scaled functional image will have less anatomical definition, as the signal intensity has been normalized across time, making it more uniform across brain voxels. When reviewing the masks, ensure they appropriately cover the brain regions of interest and match the underlying anatomy. For example, the “mask_group” is typically a more liberal mask compared to the “full_mask”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>3dAFNItoNIFTI<span class="w"> </span>-prefix<span class="w"> </span>./afni_processing/mni152.nii.gz<span class="w"> </span>/cvmfs/neurodesk.ardc.edu.au/containers/afni_21.2.00_20210714/afni_21.2.00_20210714.simg/opt/afni-latest/MNI_avg152T1+tlrc
-<span class="o">!</span>3dAFNItoNIFTI<span class="w"> </span>-prefix<span class="w"> </span>./afni_processing/sub_08.results/anat_w_skull_warped.nii.gz<span class="w"> </span>./afni_processing/sub_08.results/anat_w_skull_warped+tlrc
-<span class="o">!</span>3dAFNItoNIFTI<span class="w"> </span>-prefix<span class="w"> </span>./afni_processing/sub_08.results/anat_final.nii.gz<span class="w"> </span>./afni_processing/sub_08.results/anat_final.sub_08+tlrc
-<span class="o">!</span>3dAFNItoNIFTI<span class="w"> </span>-prefix<span class="w"> </span>./afni_processing/sub_08.results/pb02.sub_08.r01.volreg+tlrc.nii.gz<span class="w"> </span>./afni_processing/sub_08.results/pb02.sub_08.r01.volreg+tlrc
-<span class="o">!</span>3dAFNItoNIFTI<span class="w"> </span>-prefix<span class="w"> </span>./afni_processing/sub_08.results/full_mask.sub_08+tlrc.nii.gz<span class="w"> </span>./afni_processing/sub_08.results/full_mask.sub_08+tlrc
-<span class="o">!</span>3dAFNItoNIFTI<span class="w"> </span>-prefix<span class="w"> </span>./afni_processing/sub_08.results/mask_group.nii.gz<span class="w"> </span>./afni_processing/sub_08.results/mask_group+tlrc
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>3dAFNItoNIFTI -prefix ./afni_processing/mni152.nii.gz /cvmfs/neurodesk.ardc.edu.au/containers/afni_21.2.00_20210714/afni_21.2.00_20210714.simg/opt/afni-latest/MNI_avg152T1+tlrc
+<span class="o">!</span>3dAFNItoNIFTI -prefix ./afni_processing/sub_08.results/anat_w_skull_warped.nii.gz ./afni_processing/sub_08.results/anat_w_skull_warped+tlrc
+<span class="o">!</span>3dAFNItoNIFTI -prefix ./afni_processing/sub_08.results/anat_final.nii.gz ./afni_processing/sub_08.results/anat_final.sub_08+tlrc
+<span class="o">!</span>3dAFNItoNIFTI -prefix ./afni_processing/sub_08.results/pb02.sub_08.r01.volreg+tlrc.nii.gz ./afni_processing/sub_08.results/pb02.sub_08.r01.volreg+tlrc
+<span class="o">!</span>3dAFNItoNIFTI -prefix ./afni_processing/sub_08.results/full_mask.sub_08+tlrc.nii.gz ./afni_processing/sub_08.results/full_mask.sub_08+tlrc
+<span class="o">!</span>3dAFNItoNIFTI -prefix ./afni_processing/sub_08.results/mask_group.nii.gz ./afni_processing/sub_08.results/mask_group+tlrc
 </pre></div>
 </div>
 </div>
@@ -4816,7 +4778,7 @@ pb01.sub_08.r01.tshift+orig.BRIK
 <span class="p">)</span>
 
 <span class="c1"># Update function</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">update_overlay</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">update_overlay</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
     <span class="n">selected_idx</span> <span class="o">=</span> <span class="n">change</span><span class="o">.</span><span class="n">new</span>
 
     <span class="c1"># Set all overlays to 0 opacity</span>
@@ -4857,7 +4819,7 @@ pb01.sub_08.r01.tshift+orig.BRIK
         },
         kernelOptions: {
             name: "python3",
-            path: "./functional_imaging"
+            path: "./."
         },
         predefinedOutput: true
     }
@@ -4871,27 +4833,9 @@ pb01.sub_08.r01.tshift+orig.BRIK
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="AFNI_preprocessing_and_glm.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">AFNI Preprocessing and GLM</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="aslprep.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ASLprep</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -4900,7 +4844,6 @@ pb01.sub_08.r01.tshift+orig.BRIK
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -4964,7 +4907,7 @@ By Neurodesk Team
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
     
   </p>
@@ -4988,8 +4931,8 @@ By Neurodesk Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

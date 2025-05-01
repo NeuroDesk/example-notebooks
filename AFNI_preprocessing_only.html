@@ -620,7 +620,7 @@ echo $var
 </section>
 <section id="data-preparation">
 <h2>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this heading">#</a></h2>
-<div class="cell tag_scroll-ouput docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PATTERN</span> <span class="o">=</span> <span class="s2">&quot;sub-08&quot;</span>
 <span class="o">!</span>datalad install https://github.com/OpenNeuroDatasets/ds000102.git
@@ -691,7 +691,7 @@ action summary:
 </div>
 </div>
 <p>The data is structured in BIDS format:</p>
-<div class="cell tag_scroll-ouput docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree -L <span class="m">4</span> ds000102
 </pre></div>
@@ -1041,7 +1041,7 @@ action summary:
 <h3>1. AFNI commands<a class="headerlink" href="#afni-commands" title="Permalink to this heading">#</a></h3>
 <p>AFNI commands typicallly require at least one argument, or input, and they also usually require you to specify what to call the output of the command.</p>
 <p>Let’s take skull-stripping, for example - a common preprocessing step that removes the skull from the brain. The AFNI command to do this step is called 3dSkullStrip. Use the <code class="docutils literal notranslate"><span class="pre">-h</span></code> flag to print the help page.</p>
-<div class="cell tag_scroll-ouput docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>3dSkullStrip -h
 </pre></div>
@@ -1460,7 +1460,7 @@ to generate a new masked version of the input.
 <div style="background-color: #e8f5e9; padding: 12px; border-left: 6px solid #66bb6a; margin: 10px 0; font-size: 16px;">
 <b>Preprocessing Workflow:</b><br><br>
 ➡️ <code>setup</code> ➡️ <code>tcat</code> ➡️ <code>tshift</code> ➡️ <code>align</code> ➡️ <code>tlrc</code> ➡️ <code>volreg</code> ➡️ <code>blur</code> ➡️ <code>mask</code> ➡️ <code>scale</code> ➡️ ✅ <b>outputs</b>
-</div><div class="cell tag_scroll-ouput docutils container">
+</div><div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>!afni_proc.py                                                              \
     -subj_id                     sub_08                                   \
@@ -1515,7 +1515,7 @@ to generate a new masked version of the input.
 </pre></div>
 </div>
 <p>This will execute the script and save a full record of the output in a file called <code class="docutils literal notranslate"><span class="pre">output.proc.sub_08</span></code>, while also displaying it in the notebook.</p>
-<div class="cell tag_scroll-ouput docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> tcsh -xef proc.sub_08 <span class="p">|&amp;</span> tee output.proc.sub_08
 </pre></div>
@@ -2974,7 +2974,7 @@ execution finished: Thu May  1 05:12:31 UTC 2025
 </div>
 </div>
 </div>
-<div class="cell tag_scroll-ouput docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Delete any previous output (if needed)</span>
 <span class="o">!</span> rm -r ./afni_processing/sub_08.results
@@ -4642,7 +4642,7 @@ The following plot compares the signal intensity time series from a voxel at the
 <section id="results-checking-preprocessing">
 <h2>Results: Checking Preprocessing<a class="headerlink" href="#results-checking-preprocessing" title="Permalink to this heading">#</a></h2>
 <p>Let’s have a look at the results directory. The files containing the <strong>pb</strong> string are the preprocessed functional images at each preprocessing step, and the files with the <strong>T1w</strong> string are the preprocessed anatomical images. Auxiliary functional images are created to assist with specific preprocessing steps, and auxiliary text files contain information about transformation matrices and movement parameter:</p>
-<div class="cell tag_scroll-ouput docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls ./afni_processing/sub_08.results
 </pre></div>
