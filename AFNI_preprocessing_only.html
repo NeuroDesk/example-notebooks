@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Preprocessing with AFNI &#8212; Neurodesk</title>
+    <title>AFNI Preprocessing &#8212; Neurodesk</title>
   
   
   
@@ -72,8 +72,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'AFNI_preprocessing_only';</script>
     <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/AFNI_preprocessing_only.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -169,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Preprocessing with AFNI
+                    AFNI Preprocessing
                 </a>
             </li>
         </ul>
@@ -405,7 +403,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Preprocessing with AFNI</h1>
+    <h1>AFNI Preprocessing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -416,7 +414,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-packages">Load packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-afni">Load AFNI</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-tcsh">Install tcsh</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-python-modules">Import Python Modules</a></li>
 </ul>
@@ -430,8 +428,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">2. Preprocessing</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#slice-time-correction">Slice Time Correction</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#registration-and-normalization">Registration and Normalization</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#registration-with-afni-s-align-epi-anat-py">Registration with AFNI`s align_epi_anat.py</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization-with-afni-s-auto-tlrc">Normalization with AFNI’s @auto_tlrc</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#registration-with-align-epi-anat-py">Registration with <code class="docutils literal notranslate"><span class="pre">align_epi_anat.py</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization-with-auto-tlrc">Normalization with <code class="docutils literal notranslate"><span class="pre">@auto_tlrc</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#alignment-and-motion-correction">Alignment and Motion Correction</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#smoothing">Smoothing</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#masking-and-scaling">Masking and Scaling</a><ul class="nav section-nav flex-column">
@@ -458,9 +456,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/functional_imaging/AFNI_preprocessing.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="preprocessing-with-afni">
-<h1>Preprocessing with AFNI<a class="headerlink" href="#preprocessing-with-afni" title="Permalink to this heading">#</a></h1>
+  <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/functional_imaging/AFNI_preprocessing_only.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="afni-preprocessing">
+<h1>AFNI Preprocessing<a class="headerlink" href="#afni-preprocessing" title="Permalink to this heading">#</a></h1>
 <p>Author: Monika Doerig</p>
 <p>Citation:</p>
 <p><strong>Andy’s Brain Book:</strong></p>
@@ -513,8 +511,8 @@ model name	: AMD EPYC-Rome Processor
 </div>
 </div>
 </div>
-<section id="load-packages">
-<h3>Load packages<a class="headerlink" href="#load-packages" title="Permalink to this heading">#</a></h3>
+<section id="load-afni">
+<h3>Load AFNI<a class="headerlink" href="#load-afni" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lmod</span>
@@ -1510,11 +1508,7 @@ to generate a new masked version of the input.
 </div>
 </div>
 <p><strong>Run the Preprocessing Script and Inspect the Output</strong></p>
-<p>Now that we have generated our preprocessing script <code class="docutils literal notranslate"><span class="pre">proc.sub_08</span></code>, we can run it using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>! tcsh -xef proc.sub_08 <span class="p">|&amp;</span> tee output.proc.sub_08
-</pre></div>
-</div>
-<p>This will execute the script and save a full record of the output in a file called <code class="docutils literal notranslate"><span class="pre">output.proc.sub_08</span></code>, while also displaying it in the notebook.</p>
+<p>Now that we have generated our preprocessing script <code class="docutils literal notranslate"><span class="pre">proc.sub_08</span></code>, we can execute it via tcsh and save a full record of the output in a file called <code class="docutils literal notranslate"><span class="pre">output.proc.sub_08</span></code>.</p>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> tcsh -xef proc.sub_08 <span class="p">|&amp;</span> tee output.proc.sub_08
@@ -4416,12 +4410,12 @@ You can still see the slice timing correction step in the <code class="docutils 
 <p><strong>Note:</strong> Although slice-timing correction is common, there are some general objections: it involves interpolating the data (which is best avoided when possible), it may not significantly improve results when the TR is short (e.g., around 1 second), and timing differences can sometimes be modeled later using a temporal derivative during model fitting.</p>
 <div style="background-color: #fff9db; padding: 5px; border-radius: 5px; font-family: monospace; color: #333;">
 <pre style="margin: 0; background-color: #fff9db;">
-<span style="color: gray;"># =================== tshift ===================</span>
-<p>foreach run ( <span class="math notranslate nohighlight">\(runs )
-  3dTshift -tzero 0 -quintic -prefix pb01.\)</span>subj.r<span class="math notranslate nohighlight">\(run.tshift \
-           pb00.\)</span>subj.r$run.tcat+orig
+<span style="color: gray;"># =================== tshift ===================</span>  
+foreach run ( $runs )
+  3dTshift -tzero 0 -quintic -prefix pb01.$subj.r$run.tshift \
+           pb00.$subj.r$run.tcat+orig
 end
-</pre></p>
+</pre>
 </div></section>
 <section id="registration-and-normalization">
 <h4>Registration and Normalization<a class="headerlink" href="#registration-and-normalization" title="Permalink to this heading">#</a></h4>
@@ -4438,21 +4432,21 @@ Once a good alignment is found, the same transformations can later be applied to
 <li><p><code class="docutils literal notranslate"><span class="pre">-volreg</span> <span class="pre">off</span></code>, <code class="docutils literal notranslate"><span class="pre">-tshift</span> <span class="pre">off</span></code>:  Indicates that alignment and slice-timing correction are not included in the current command.</p></li>
 </ul>
 </section>
-<section id="registration-with-afni-s-align-epi-anat-py">
-<h4>Registration with AFNI`s align_epi_anat.py<a class="headerlink" href="#registration-with-afni-s-align-epi-anat-py" title="Permalink to this heading">#</a></h4>
+<section id="registration-with-align-epi-anat-py">
+<h4>Registration with <code class="docutils literal notranslate"><span class="pre">align_epi_anat.py</span></code><a class="headerlink" href="#registration-with-align-epi-anat-py" title="Permalink to this heading">#</a></h4>
 <div style="background-color: #fff9db; padding: 5px; border-radius: 5px; font-family: monospace; color: #333;">
 <pre style="margin: 0; background-color: #fff9db;">
 <span style="color: gray;">=================== align ====================</span>
-<p>align_epi_anat.py -anat2epi -anat sub-08_T1w+orig <br />
--save_skullstrip -suffix _al_junk          <br />
--epi vr_base_min_outlier+orig -epi_base 0  <br />
--epi_strip 3dAutomask                      <br />
--giant_move                                <br />
--volreg off -tshift off
-</pre></p>
+align_epi_anat.py -anat2epi -anat sub-08_T1w+orig \
+     -save_skullstrip -suffix _al_junk          \
+     -epi vr_base_min_outlier+orig -epi_base 0  \
+     -epi_strip 3dAutomask                      \
+     -giant_move                                \
+     -volreg off -tshift off
+</pre>
 </div></section>
-<section id="normalization-with-afni-s-auto-tlrc">
-<h4>Normalization with AFNI’s &#64;auto_tlrc<a class="headerlink" href="#normalization-with-afni-s-auto-tlrc" title="Permalink to this heading">#</a></h4>
+<section id="normalization-with-auto-tlrc">
+<h4>Normalization with <code class="docutils literal notranslate"><span class="pre">&#64;auto_tlrc</span></code><a class="headerlink" href="#normalization-with-auto-tlrc" title="Permalink to this heading">#</a></h4>
 <p>After registration, the anatomical image is normalized to a standard template (MNI_avg152T1) using AFNI’s <code class="docutils literal notranslate"><span class="pre">&#64;auto_tlrc</span></code> command. Since the anatomical image has already been skull-stripped, the <code class="docutils literal notranslate"><span class="pre">-no_ss</span></code> option is used. Because the centers of the anatomical and template images were far apart, the <code class="docutils literal notranslate"><span class="pre">-init_xform</span> <span class="pre">AUTO_CENTER</span></code> option was included.<br />
 This helps by roughly aligning the centers of the two images before the fine registration step.
 The transformation needed to align the anatomical image to the template is stored as an affine matrix in the header of the anatomical iamge.
@@ -4473,16 +4467,14 @@ Motion parameters are saved into a text file (<code class="docutils literal notr
 <div style="background-color: #fff9db; padding: 5px; border-radius: 5px; font-family: monospace; color: #333;">
 <pre style="margin: 0; background-color: #fff9db;">
 <span style="color: gray;"># =================== volreg ===================
-                        ...
 #register and warp</span>
-foreach run ( $runs ) 
-<p><span style="color: gray;">#register each volume to the base image</span>
-3dvolreg -verbose -zpad 1 -base vr_base_min_outlier+orig   \
--1Dfile dfile.r<span class="math notranslate nohighlight">\(run.1D -prefix rm.epi.volreg.r\)</span>run  \
--cubic                                              \
--1Dmatrix_save mat.r<span class="math notranslate nohighlight">\(run.vr.aff12.1D                \
-            pb01.\)</span>subj.r$run.tshift+orig
-</pre></p>
+foreach run ( $runs )
+    3dvolreg -verbose -zpad 1 -base vr_base_min_outlier+orig   \
+           -1Dfile dfile.r$run.1D -prefix rm.epi.volreg.r$run  \
+           -cubic                                              \
+           -1Dmatrix_save mat.r$run.vr.aff12.1D                \
+            pb01.$subj.r$run.tshift+orig
+</pre>
 </div><p>These motion correction matrices are then concatenated with the matrices from anatomical registration and normalization.</p>
 <div style="background-color: #fff9db; padding: 5px; border-radius: 5px; font-family: monospace; color: #333;">
 <pre style="margin: 0; background-color: #fff9db;">
@@ -4521,42 +4513,16 @@ end
 <h4>Masking and Scaling<a class="headerlink" href="#masking-and-scaling" title="Permalink to this heading">#</a></h4>
 <section id="masking">
 <h5>Masking<a class="headerlink" href="#masking" title="Permalink to this heading">#</a></h5>
-<p>fMRI datasets include not only brain voxels but also irrelevant areas like the skull, neck, and air. To focus analysis and speed up processing, a mask is applied: voxels inside the mask are kept, and those outside are discarded. AFNI’s <code class="docutils literal notranslate"><span class="pre">3dAutomask</span></code> creates these masks by simply specifying the input and output datasets. The additional steps combine individual fMRI masks into a union mask, compute a mask for the anatomical image, and take the intersection of both to define the final analysis region.</p>
+<p>fMRI datasets include not only brain voxels but also irrelevant areas like the skull, neck, and air. To focus analysis and speed up processing, a mask is applied: voxels inside the mask are kept, and those outside are discarded. AFNI’s <code class="docutils literal notranslate"><span class="pre">3dAutomask</span></code> creates these masks by simply specifying the input and output datasets.</p>
 <div style="background-color: #fff9db; padding: 5px; border-radius: 5px; font-family: monospace; color: #333;">
 <pre style="margin: 0; background-color: #fff9db;">
 <span style="color: gray;"># ==================== mask ====================
 # create 'full_mask' dataset (union mask)</span>  
-<p>foreach run ( <span class="math notranslate nohighlight">\(runs )
-    3dAutomask -prefix rm.mask_r\)</span>run pb03.<span class="math notranslate nohighlight">\(subj.r\)</span>run.blur+tlrc
-end</p>
-<p><span style="color: gray;">#create union of inputs, output type is byte</span>
-3dmask_tool -inputs rm.mask_r*+tlrc.HEAD -union -prefix full_mask.$subj</p>
-<p><span style="color: gray;"># —- create subject anatomy mask —-</span>
-<span style="color: gray;">#      (resampled from tlrc anat)</span>
-3dresample -master full_mask.$subj+tlrc -input sub-08_T1w_ns+tlrc     <br />
--prefix rm.resam.anat</p>
-<p><span style="color: gray;"># convert to binary anat mask; fill gaps and holes</span>
-3dmask_tool -dilate_input 5 -5 -fill_holes -input rm.resam.anat+tlrc  <br />
--prefix mask_anat.$subj</p>
-<p><span style="color: gray;"># compute tighter EPI mask by intersecting with anat mask</span>
-3dmask_tool -input full_mask.<span class="math notranslate nohighlight">\(subj+tlrc mask_anat.\)</span>subj+tlrc          <br />
--inter -prefix mask_epi_anat.$subj</p>
-<p><span style="color: gray;"># compute overlaps between anat and EPI masks</span>
-3dABoverlap -no_automask full_mask.<span class="math notranslate nohighlight">\(subj+tlrc mask_anat.\)</span>subj+tlrc    <br />
-|&amp; tee out.mask_ae_overlap.txt</p>
-<p><span style="color: gray;"># note Dice coefficient of masks, as well
-3ddot -dodice full_mask.<span class="math notranslate nohighlight">\(subj+tlrc mask_anat.\)</span>subj+tlrc               <br />
-|&amp; tee out.mask_ae_dice.txt</p>
-<p><span style="color: gray;"># —- create group anatomy mask, mask_group+tlrc —-</span>
-<span style="color: gray;">#      (resampled from tlrc base anat, MNI_avg152T1+tlrc)</span>
-3dresample -master full_mask.$subj+tlrc -prefix ./rm.resam.group      <br />
--input /opt/afni-latest/MNI_avg152T1+tlrc</p>
-<p><span style="color: gray;"># convert to binary group mask; fill gaps and holes</span>
-3dmask_tool -dilate_input 5 -5 -fill_holes -input rm.resam.group+tlrc <br />
--prefix mask_group</p>
-<p><span style="color: gray;"># note Dice coefficient of anat and template masks</span>
-3ddot -dodice mask_anat.$subj+tlrc mask_group+tlrc                    <br />
-|&amp; tee out.mask_at_dice.txt</p>
+foreach run ( $runs )
+    3dAutomask -prefix rm.mask_r$run pb03.$subj.r$run.blur+tlrc
+end
+</pre>
+</div><p>The additional steps within the “mask” block combine individual fMRI masks into a union mask, compute a mask for the anatomical image, and take the intersection of both to define the final analysis region.</p>
 </section>
 <section id="scaling">
 <h5>Scaling<a class="headerlink" href="#scaling" title="Permalink to this heading">#</a></h5>
@@ -4573,7 +4539,9 @@ foreach run ( $runs )
            -c mask_epi_extents+tlrc                            \
            -expr 'c * min(200, a/b*100)*step(a)*step(b)'       \
            -prefix pb04.$subj.r$run.scale
-end <p><strong>Effect of Scaling:</strong> Before scaling, time-series values are arbitrary and vary between subjects. After scaling, each subject’s data is normalized to the same mean, enabling consistent comparisons across runs and subjects. To visualize both the original and scaled data with Matplotlib, the AFNI format needs to be converted to NIfTI format using the <code class="docutils literal notranslate"><span class="pre">3dAFNItonNIFI</span></code> command.
+end 
+</pre>
+</div><p><strong>Effect of Scaling:</strong> Before scaling, time-series values are arbitrary and vary between subjects. After scaling, each subject’s data is normalized to the same mean, enabling consistent comparisons across runs and subjects. To visualize both the original and scaled data with Matplotlib, the AFNI format needs to be converted to NIfTI format using the <code class="docutils literal notranslate"><span class="pre">3dAFNItonNIFI</span></code> command.
 The following plot compares the signal intensity time series from a voxel at the center of the brain, before and after scaling. The red dashed line indicates the mean signal intensity for each time series.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4852,7 +4820,7 @@ pb01.sub_08.r01.tshift+orig.BRIK
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-packages">Load packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-afni">Load AFNI</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-tcsh">Install tcsh</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-python-modules">Import Python Modules</a></li>
 </ul>
@@ -4866,8 +4834,8 @@ pb01.sub_08.r01.tshift+orig.BRIK
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">2. Preprocessing</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#slice-time-correction">Slice Time Correction</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#registration-and-normalization">Registration and Normalization</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#registration-with-afni-s-align-epi-anat-py">Registration with AFNI`s align_epi_anat.py</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization-with-afni-s-auto-tlrc">Normalization with AFNI’s @auto_tlrc</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#registration-with-align-epi-anat-py">Registration with <code class="docutils literal notranslate"><span class="pre">align_epi_anat.py</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization-with-auto-tlrc">Normalization with <code class="docutils literal notranslate"><span class="pre">@auto_tlrc</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#alignment-and-motion-correction">Alignment and Motion Correction</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#smoothing">Smoothing</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#masking-and-scaling">Masking and Scaling</a><ul class="nav section-nav flex-column">
