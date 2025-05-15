@@ -1,0 +1,1938 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>FSL Preprocessing and GLM &#8212; Neurodesk</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/algolia.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.3.3/dist/umd/index.js"></script>
+    <script src="_static/algolia.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'FSL_preproc_glm';</script>
+    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/FSL_preproc_glm.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Neurodesk</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    FSL Preprocessing and GLM
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/FSL_preproc_glm.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/NeuroDesk/example-notebooks" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/edit/main/books/FSL_preproc_glm.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2FFSL_preproc_glm.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/FSL_preproc_glm.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>FSL Preprocessing and GLM</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-fsl-and-import-python-libraries">Load FSL and Import Python Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">Data preparation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-the-anatomical-and-functional-images">Inspecting the anatomical and functional images</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">1. Preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-extraction">Brain Extraction</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-of-the-brain-extracted-image">Visualization of the brain extracted image</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-a-bad-skullstrip">Fixing a bad skullstrip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motion-correction">Motion Correction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slice-timing-correction">Slice-Timing Correction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smoothing">Smoothing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#registration-and-normalization">Registration and Normalization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-preprocessing">Checking Preprocessing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics-and-modeling">2. Statistics and Modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-timing-files">Create timing files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-first-level-analysis">Running the First-Level Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#feat-design-files-for-both-runs">FEAT Design Files for both runs</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-of-first-level-design-and-results-run-1">Visualization of First-level Design and Results (Run 1)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/functional_imaging/FSL_preproc_glm.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="fsl-preprocessing-and-glm">
+<h1>FSL Preprocessing and GLM<a class="headerlink" href="#fsl-preprocessing-and-glm" title="Permalink to this heading">#</a></h1>
+<p>This notebook showcases the FSL software package and performs preprocessing and first-level analysis on one subject from the Flanker dataset. The example is closely inspired by the FSL tutorial in Andy’s Brain Book and follows the steps outlined in <em>Chapter 4: Preprocessing</em> and <em>Chapter 5: Statistics and Modeling</em>. For detailed information about the dataset and analysis pipeline, refer to Andy’s original tutorial.</p>
+<section id="id1">
+<h2><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Author: Monika Doerig</p>
+<p>Citation:</p>
+<p><strong>Andy’s Brain Book:</strong></p>
+<ul class="simple">
+<li><p>This FSL example is based on the <a class="reference external" href="https://andysbrainbook.readthedocs.io/en/latest/fMRI_Short_Course/fMRI_Intro.html">fMRI Short Course with FSL: Preprocessing</a>  from Andy’s Brain Book (Jahn, 2022. <a class="reference external" href="https://zenodo.org/records/5879294">doi:10.5281/zenodo.5879293</a>)</p></li>
+</ul>
+<p><strong>Data from OpenNeuro:</strong> Flanker Dataset</p>
+<ul class="simple">
+<li><p>Kelly AMC and Uddin LQ and Biswal BB and Castellanos FX and Milham MP (2018). Flanker task (event-related). <a class="reference external" href="https://openneuro.org/datasets/ds000102/versions/00001/">OpenNeuro Dataset ds000102</a>. [Dataset] doi: null</p></li>
+<li><p>Kelly AM, Uddin LQ, Biswal BB, Castellanos FX, Milham MP. Competition between functional brain networks mediates behavioral variability. Neuroimage. 2008 Jan 1;39(1):527-37. doi: <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2007.08.008">10.1016/j.neuroimage.2007.08.008</a>. Epub 2007 Aug 23. PMID: 17919929.</p></li>
+<li><p>Mennes, M., Kelly, C., Zuo, X.N., Di Martino, A., Biswal, B.B., Castellanos, F.X., Milham, M.P. (2010). Inter-individual differences in resting-state functional connectivity predict task-induced BOLD activity. Neuroimage, 50(4):1690-701. doi: <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2010.01.002">10.1016/j.neuroimage.2010.01.002</a>. Epub 2010 Jan 15. Erratum in: Neuroimage. 2011 Mar 1;55(1):434</p></li>
+<li><p>Mennes, M., Zuo, X.N., Kelly, C., Di Martino, A., Zang, Y.F., Biswal, B., Castellanos, F.X., Milham, M.P. (2011). Linking inter-individual differences in neural activation and behavior to intrinsic brain dynamics. Neuroimage, 54(4):2950-9. doi: <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2010.10.046">10.1016/j.neuroimage.2010.10.046</a></p></li>
+</ul>
+</section>
+<section id="setup-neurodesk">
+<h2>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
+import os
+import sys
+IN_COLAB = &#39;google.colab&#39; in sys.modules
+
+if IN_COLAB:
+  os.environ[&quot;LD_PRELOAD&quot;] = &quot;&quot;;
+  os.environ[&quot;APPTAINER_BINDPATH&quot;] = &quot;/content,/tmp,/cvmfs&quot;
+  os.environ[&quot;MPLCONFIGDIR&quot;] = &quot;/content/matplotlib-mpldir&quot;
+  os.environ[&quot;LMOD_CMD&quot;] = &quot;/usr/share/lmod/lmod/libexec/lmod&quot;
+
+  !curl -J -O https://raw.githubusercontent.com/NeuroDesk/neurocommand/main/googlecolab_setup.sh
+  !chmod +x googlecolab_setup.sh
+  !./googlecolab_setup.sh
+
+  os.environ[&quot;MODULEPATH&quot;] = &#39;:&#39;.join(map(str, list(map(lambda x: os.path.join(os.path.abspath(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;), x),os.listdir(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;)))))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
+<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;vendor&#39;</span> <span class="p">|</span> uniq
+<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;model name&#39;</span> <span class="p">|</span> uniq
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: AuthenticAMD
+model name	: AMD EPYC-Rome Processor
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="load-fsl-and-import-python-libraries">
+<h2>Load FSL and Import Python Libraries<a class="headerlink" href="#load-fsl-and-import-python-libraries" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lmod</span>
+<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;fsl/6.0.7.4&#39;</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Lmod&#39;,
+ &#39;Warning:&#39;,
+ &#39;The&#39;,
+ &#39;environment&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;has&#39;,
+ &#39;been&#39;,
+ &#39;changed&#39;,
+ &#39;in&#39;,
+ &#39;unexpected&#39;,
+ &#39;ways.&#39;,
+ &#39;Lmod&#39;,
+ &#39;is&#39;,
+ &#39;unable&#39;,
+ &#39;to&#39;,
+ &#39;use&#39;,
+ &#39;given&#39;,
+ &#39;MODULEPATH.&#39;,
+ &#39;It&#39;,
+ &#39;is&#39;,
+ &#39;using:&#39;,
+ &#39;&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM::&quot;.&#39;,
+ &#39;Please&#39;,
+ &#39;use&#39;,
+ &#39;&quot;module&#39;,
+ &#39;use&#39;,
+ &#39;to&#39;,
+ &#39;change&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;instead.&#39;,
+ &#39;fsl/6.0.7.4&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipyniivue</span> <span class="kn">import</span> <span class="n">NiiVue</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">index_img</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">ipyniivue</span> <span class="kn">import</span> <span class="n">NiiVue</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;NiiVue&#39; from &#39;ipyniivue&#39; (/home/ubuntu/.local/lib/python3.10/site-packages/ipyniivue/__init__.py)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this makes it so FSL knows how we want our output files</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;FSLOUTPUTTYPE&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;NIFTI_GZ&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-preparation">
+<h2>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this heading">#</a></h2>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>datalad install https://github.com/OpenNeuroDatasets/ds000102.git
+<span class="o">!</span><span class="nb">cd</span> ./ds000102 <span class="o">&amp;&amp;</span> datalad get sub-08
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning:   0%|                             | 0.00/2.00 [00:00&lt;?, ? candidates/s]
+Enumerating: 0.00 Objects [00:00, ? Objects/s]
+                                              
+Counting:   0%|                               | 0.00/27.0 [00:00&lt;?, ? Objects/s]
+                                                                                
+Compressing:   0%|                            | 0.00/23.0 [00:00&lt;?, ? Objects/s]
+                                                                                
+Receiving:   0%|                             | 0.00/2.15k [00:00&lt;?, ? Objects/s]
+                                                                                
+Resolving:   0%|                                | 0.00/537 [00:00&lt;?, ? Deltas/s]
+[INFO   ] scanning for unlocked files (this may take some time)                 
+[INFO   ] Remote origin not usable by git-annex; setting annex-ignore 
+[INFO   ] access to 1 dataset sibling s3-PRIVATE not auto-enabled, enable with:
+| 		datalad siblings -d &quot;/home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/ds000102&quot; enable -s s3-PRIVATE 
+<span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/ds000102 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>)
+Total:   0%|                                   | 0.00/67.8M [00:00&lt;?, ? Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:   0%|            | 0.00/10.6M [00:00&lt;?, ? Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:   1%|     | 104k/10.6M [00:00&lt;00:20, 517k Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:   3%|▏    | 312k/10.6M [00:00&lt;00:11, 863k Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:   7%|▎   | 747k/10.6M [00:00&lt;00:05, 1.93M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  13%|▍  | 1.37M/10.6M [00:00&lt;00:02, 3.24M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  26%|▊  | 2.76M/10.6M [00:00&lt;00:01, 6.44M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  46%|█▍ | 4.89M/10.6M [00:00&lt;00:00, 8.74M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  72%|██▏| 7.59M/10.6M [00:00&lt;00:00, 13.4M Bytes/s]
+Total:  16%|████                      | 10.6M/67.8M [00:01&lt;00:10, 5.56M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:   0%|            | 0.00/28.6M [00:00&lt;?, ? Bytes/s]
+Get sub-08/f .. _bold.nii.gz:   5%|▏  | 1.41M/28.6M [00:00&lt;00:02, 10.4M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  12%|▎  | 3.34M/28.6M [00:00&lt;00:02, 11.2M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  22%|▋  | 6.41M/28.6M [00:00&lt;00:01, 16.1M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  30%|▉  | 8.73M/28.6M [00:00&lt;00:01, 18.3M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  39%|█▏ | 11.1M/28.6M [00:00&lt;00:00, 19.9M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  53%|█▌ | 15.3M/28.6M [00:00&lt;00:00, 22.2M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  66%|█▉ | 18.9M/28.6M [00:00&lt;00:00, 23.6M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  82%|██▍| 23.5M/28.6M [00:01&lt;00:00, 23.4M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  90%|██▋| 25.9M/28.6M [00:01&lt;00:00, 20.6M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  98%|██▉| 28.1M/28.6M [00:01&lt;00:00, 18.9M Bytes/s]
+Total:  58%|███████████████           | 39.2M/67.8M [00:03&lt;00:02, 10.2M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:   0%|            | 0.00/28.6M [00:00&lt;?, ? Bytes/s]
+Get sub-08/f .. _bold.nii.gz:   5%|▏  | 1.52M/28.6M [00:00&lt;00:02, 12.0M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  13%|▍  | 3.71M/28.6M [00:00&lt;00:01, 13.3M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  21%|▌  | 5.89M/28.6M [00:00&lt;00:01, 13.1M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  32%|▉  | 9.08M/28.6M [00:00&lt;00:01, 14.4M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  38%|█▏ | 10.9M/28.6M [00:00&lt;00:01, 14.3M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  44%|█▎ | 12.6M/28.6M [00:00&lt;00:01, 12.6M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  49%|█▍ | 13.9M/28.6M [00:01&lt;00:01, 12.7M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  53%|█▌ | 15.2M/28.6M [00:01&lt;00:01, 12.8M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  58%|█▋ | 16.6M/28.6M [00:01&lt;00:00, 13.1M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  63%|█▉ | 18.1M/28.6M [00:01&lt;00:00, 13.4M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  68%|██ | 19.5M/28.6M [00:01&lt;00:00, 13.6M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  73%|██▏| 20.9M/28.6M [00:01&lt;00:00, 13.7M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  83%|██▍| 23.7M/28.6M [00:01&lt;00:00, 13.8M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  92%|██▊| 26.4M/28.6M [00:01&lt;00:00, 13.7M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  97%|██▉| 27.9M/28.6M [00:02&lt;00:00, 13.9M Bytes/s]
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08/anat/sub-08_T1w.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08/func/sub-08_task-flanker_run-1_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08/func/sub-08_task-flanker_run-2_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
+<span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">directory</span>)
+action summary:
+  get (ok: 4)
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree -L <span class="m">4</span> ./ds000102/sub-08/
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">./ds000102/sub-08/</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">anat</span>
+│   └── <span class=" -Color -Color-Bold -Color-Bold-Cyan">sub-08_T1w.nii.gz</span> -&gt; <span class=" -Color -Color-Bold -Color-Bold-Red">../../.git/annex/objects/mw/MM/MD5E-s10561256--b94dddd8dc1c146aa8cd97f8d9994146.nii.gz/MD5E-s10561256--b94dddd8dc1c146aa8cd97f8d9994146.nii.gz</span>
+└── <span class=" -Color -Color-Bold -Color-Bold-Blue">func</span>
+    ├── <span class=" -Color -Color-Bold -Color-Bold-Cyan">sub-08_task-flanker_run-1_bold.nii.gz</span> -&gt; <span class=" -Color -Color-Bold -Color-Bold-Red">../../.git/annex/objects/zX/v9/MD5E-s28641609--47314e6d1a14b8545686110b5b67f8b8.nii.gz/MD5E-s28641609--47314e6d1a14b8545686110b5b67f8b8.nii.gz</span>
+    ├── sub-08_task-flanker_run-1_events.tsv
+    ├── <span class=" -Color -Color-Bold -Color-Bold-Cyan">sub-08_task-flanker_run-2_bold.nii.gz</span> -&gt; <span class=" -Color -Color-Bold -Color-Bold-Red">../../.git/annex/objects/WZ/F0/MD5E-s28636310--4535bf26281e1c5556ad0d3468e7fe4e.nii.gz/MD5E-s28636310--4535bf26281e1c5556ad0d3468e7fe4e.nii.gz</span>
+    └── sub-08_task-flanker_run-2_events.tsv
+
+2 directories, 5 files
+</pre></div>
+</div>
+</div>
+</div>
+<section id="inspecting-the-anatomical-and-functional-images">
+<h3>Inspecting the anatomical and functional images<a class="headerlink" href="#inspecting-the-anatomical-and-functional-images" title="Permalink to this heading">#</a></h3>
+<p>Before beginning any preprocessing or analysis, it’s essential to visually inspect both anatomical and functional MRI data. This helps catch common issues such as motion artifacts, abnormal intensities, or poor image quality that could affect downstream results. To look at the data with FSL’s image viewer, you would type:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">fsleyes</span> <span class="nx">ds000102</span><span class="o">/</span><span class="nx">sub</span><span class="o">-</span><span class="mf">08</span><span class="o">/</span><span class="nx">anat</span><span class="o">/</span><span class="nx">sub</span><span class="o">-</span><span class="mf">08</span><span class="nx">_T1w</span><span class="p">.</span><span class="nx">nii</span><span class="p">.</span><span class="nx">gz</span>
+</pre></div>
+</div>
+<p>We will use ipyniivue to look at the data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># anatomical image</span>
+<span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">()</span>
+<span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./ds000102/sub-08/anat/sub-08_T1w.nii.gz&quot;</span><span class="p">}])</span>
+<span class="n">nv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "6adab9c8867648859251f1aac4812fdf", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># functional image run 1</span>
+<span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">()</span>
+<span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./ds000102/sub-08/func/sub-08_task-flanker_run-1_bold.nii.gz&quot;</span><span class="p">}])</span>
+<span class="n">nv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "eefec67ca0d04a138620636718824f3a", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># functional image run 2</span>
+<span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">()</span>
+<span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./ds000102/sub-08/func/sub-08_task-flanker_run-2_bold.nii.gz&quot;</span><span class="p">}])</span>
+<span class="n">nv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "a12155b37ffd47aa8483ba77fd70828e", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+</section>
+<section id="preprocessing">
+<h2>1. Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h2>
+<section id="brain-extraction">
+<h3>Brain Extraction<a class="headerlink" href="#brain-extraction" title="Permalink to this heading">#</a></h3>
+<p>The first step is to remove the skull and non-brain areas from the image with FSL’s <code class="docutils literal notranslate"><span class="pre">bet</span></code>, the Brain Extraction Tool.</p>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> bet -help
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Usage:    bet &lt;input&gt; &lt;output&gt; [options]
+
+Main bet2 options:
+  -o          generate brain surface outline overlaid onto original image
+  -m          generate binary brain mask
+  -s          generate approximate skull image
+  -n          don&#39;t generate segmented brain image output
+  -f &lt;f&gt;      fractional intensity threshold (0-&gt;1); default=0.5; smaller values give larger brain outline estimates
+  -g &lt;g&gt;      vertical gradient in fractional intensity threshold (-1-&gt;1); default=0; positive values give larger brain outline at bottom, smaller at top
+  -r &lt;r&gt;      head radius (mm not voxels); initial surface sphere is set to half of this
+  -c &lt;x y z&gt;  centre-of-gravity (voxels not mm) of initial mesh surface.
+  -t          apply thresholding to segmented brain image and mask
+  -e          generates brain surface as mesh in .vtk format
+
+Variations on default bet2 functionality (mutually exclusive options):
+  (default)   just run bet2
+  -R          robust brain centre estimation (iterates BET several times)
+  -S          eye &amp; optic nerve cleanup (can be useful in SIENA - disables -o option)
+  -B          bias field &amp; neck cleanup (can be useful in SIENA)
+  -Z          improve BET if FOV is very small in Z (by temporarily padding end slices)
+  -F          apply to 4D FMRI data (uses -f 0.3 and dilates brain mask slightly)
+  -A          run bet2 and then betsurf to get additional skull and scalp surfaces (includes registrations)
+  -A2 &lt;T2&gt;    as with -A, when also feeding in non-brain-extracted T2 (includes registrations)
+
+Miscellaneous options:
+  -v          verbose (switch on diagnostic messages)
+  -h          display this help, then exits
+  -d          debug (don&#39;t delete temporary intermediate images)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Brain extraction with default settings, set input and output image </span>
+<span class="o">!</span>mkdir -p FSL_preproc
+<span class="o">!</span>bet ./ds000102/sub-08/anat/sub-08_T1w.nii.gz ./FSL_preproc/sub-08_T1w_brain.nii.gz
+</pre></div>
+</div>
+</div>
+</div>
+<section id="visualization-of-the-brain-extracted-image">
+<h4>Visualization of the brain extracted image<a class="headerlink" href="#visualization-of-the-brain-extracted-image" title="Permalink to this heading">#</a></h4>
+<p>Check the following overlay image for areas where too much brain tissue has been removed or where parts of the skull haven’t been fully stripped away. The goal is to produce an image where the skull and face are completely removed, leaving only the brain—cortex, subcortical structures, brainstem, and cerebellum—intact.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualize the skull-stripped (red) on top of the original T1 anatomical image</span>
+<span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">()</span>
+<span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([</span>
+    <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./ds000102/sub-08/anat/sub-08_T1w.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;T1w&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./FSL_preproc/sub-08_T1w_brain.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;T1w_brain&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
+<span class="p">])</span> 
+<span class="n">nv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d3bd3cb6b93f47aba707037512d77a45", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+</section>
+<section id="fixing-a-bad-skullstrip">
+<h3>Fixing a bad skullstrip<a class="headerlink" href="#fixing-a-bad-skullstrip" title="Permalink to this heading">#</a></h3>
+<p>If the skullstripping results aren’t satisfactory, you can adjust the parameters in the <code class="docutils literal notranslate"><span class="pre">bet</span></code> command. The <code class="docutils literal notranslate"><span class="pre">-f</span></code> option sets the fractional intensity threshold, which controls how much brain tissue is included—lower values result in a more generous brain mask, while higher values are more conservative. If too much brain was removed, try lowering the threshold. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>bet ./ds000102/sub-08/anat/sub-08_T1w.nii.gz ./FSL_preproc/sub-08_T1w_brain_f02.nii.gz -f <span class="m">0</span>.2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Overlay brain extacted image with f=0.2 in red color ontop of the previous one with f=0.5 (gray)</span>
+<span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">()</span>
+<span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([</span>
+    <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./FSL_preproc/sub-08_T1w_brain_f02.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./FSL_preproc/sub-08_T1w_brain.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span>
+<span class="p">])</span> 
+<span class="n">nv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "dd170315bbd54d7382360413119251db", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+<section id="motion-correction">
+<h3>Motion Correction<a class="headerlink" href="#motion-correction" title="Permalink to this heading">#</a></h3>
+<p>Motion correction realigns all volumes in a time series to a single reference volume to correct for head movement during the scan. The reference volume is typically the first, middle, or last volume in the series. FSL’s <code class="docutils literal notranslate"><span class="pre">mcflirt</span></code> can perform this correction by aligning each volume to the selected reference using rigid-body transformations that undo any detected motion.</p>
+<p>The following commands use the first volume as the reference (- refvol 0) to perform motion correction:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#apply motion correction to the functional image with FSL MCFLIRT</span>
+<span class="o">!</span>mcflirt -in ./ds000102/sub-08/func/sub-08_task-flanker_run-1_bold.nii.gz -out ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf.nii.gz -plots -refvol <span class="m">0</span>
+<span class="o">!</span>mcflirt -in ./ds000102/sub-08/func/sub-08_task-flanker_run-2_bold.nii.gz -out ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf.nii.gz -plots -refvol <span class="m">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="slice-timing-correction">
+<h3>Slice-Timing Correction<a class="headerlink" href="#slice-timing-correction" title="Permalink to this heading">#</a></h3>
+<p>FSL does not perform slice-timing correction by default. Instead, it accounts for timing differences by including a temporal derivative in the statistical model.</p>
+</section>
+<section id="smoothing">
+<h3>Smoothing<a class="headerlink" href="#smoothing" title="Permalink to this heading">#</a></h3>
+<p>Smoothing replaces each voxel’s signal with a weighted average of its neighbors, reducing noise at the cost of spatial resolution. While this blurs the image, it can enhance the signal-to-noise ratio by minimizing random fluctuations. Smoothing also helps improve statistical power and facilitates normalization to a standard template, as it makes anatomical differences between subjects less pronounced.
+To apply smoothing using <code class="docutils literal notranslate"><span class="pre">fslmaths</span></code>, the smoothing kernel is defined by its sigma (standard deviation). However, smoothing parameters are often specified using Full Width at Half Maximum (FWHM). To convert FWHM to sigma, use the formula:</p>
+<p><span class="math notranslate nohighlight">\(\text{𝜎} = FWHM/ \sqrt{8 \ln 2} = FWHM/  \approx 2.3548 \ \)</span></p>
+<p>For a FWHM of 5 mm, this gives:</p>
+<p><span class="math notranslate nohighlight">\(\text{𝜎} = 5/2.3548 ≈ 2.1 \ \)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Spatial smoothing FWHM=5mm (𝜎=2.1)</span>
+<span class="o">!</span>fslmaths ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf.nii.gz -s <span class="m">2</span>.1 ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth.nii.gz
+<span class="o">!</span>fslmaths ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf.nii.gz -s <span class="m">2</span>.1 ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth.nii.gz
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="registration-and-normalization">
+<h3>Registration and Normalization<a class="headerlink" href="#registration-and-normalization" title="Permalink to this heading">#</a></h3>
+<p>Registration aligns functional images to the subject’s anatomical scan, while normalization aligns the anatomical scan to a standard template (e.g., MNI). Both steps involve estimating transformations and applying them to the data. The typical steps include:</p>
+<ol class="arabic simple">
+<li><p>Initial Alignment: The functional and anatomical images are assumed to be roughly in the same location. If not, the outlines of the images are aligned.</p></li>
+<li><p>Mutual Information: Given that the anatomical and functional images have different contrast weightings (e.g., cerebrospinal fluid appears dark in the anatomical image but bright in the functional image), the algorithm uses this contrast difference. It matches bright voxels on one image to dark voxels on the other by testing different overlays until the best alignment is found.</p></li>
+<li><p>Transformation: Once the optimal match is achieved, the transformations used to align the anatomical image to the template are also applied to the functional images.</p></li>
+</ol>
+<p><strong>1. Extract a representative volume from each functional run (for flirt)</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the middle volume indices (timepoints) for each file</span>
+<span class="n">middle_index1</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth.nii.gz&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="n">middle_index2</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth.nii.gz&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">middle_index1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>73
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>fslroi ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth.nii.gz ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_middle.nii.gz <span class="o">{</span>middle_index1<span class="o">}</span> <span class="m">1</span>
+<span class="o">!</span>fslroi ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth.nii.gz ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_middle.nii.gz <span class="o">{</span>middle_index2<span class="o">}</span> <span class="m">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>2. Register functional to anatomical (EPI to T1w)</strong></p>
+<p>Use full 3D search and 12 DOF for better alignment</p>
+<ul class="simple">
+<li><p>Search options (<code class="docutils literal notranslate"><span class="pre">-searchrx/y/z</span></code>): Correspond to Full search in the FSL GUI, covering the full 3D rotation space (-180 to 180 degrees) to improve alignment.</p></li>
+<li><p>Degrees of Freedom (<code class="docutils literal notranslate"><span class="pre">-dof</span> <span class="pre">12</span></code>): Allows affine transformations including translation, rotation, scaling, and shearing.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>flirt -in ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_middle.nii.gz -ref ./FSL_preproc/sub-08_T1w_brain_f02.nii.gz -out ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt.nii.gz -omat ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt.mat -searchrx -180 <span class="m">180</span> -searchry -180 <span class="m">180</span> -searchrz -180 <span class="m">180</span> -dof <span class="m">12</span>
+<span class="o">!</span>flirt -in ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_middle.nii.gz -ref ./FSL_preproc/sub-08_T1w_brain_f02.nii.gz -out ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt.nii.gz -omat ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt.mat -searchrx -180 <span class="m">180</span> -searchry -180 <span class="m">180</span> -searchrz -180 <span class="m">180</span> -dof <span class="m">12</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>3. Register anatomical to MNI template (T1w to MNI)</strong></p>
+<p>Same settings: full search, 12 DOF</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># extract the mni template</span>
+<span class="n">fsl_path</span> <span class="o">=</span> <span class="o">!</span>which fsl
+<span class="n">fsl_version</span> <span class="o">=</span> <span class="n">fsl_path</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">MNI_BRAIN</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="s1">&#39;/opt&#39;</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s1">&#39;fsl-</span><span class="si">{</span><span class="n">fsl_version</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;data&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;standard&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;MNI152_T1_2mm_brain.nii.gz&#39;</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">MNI_BRAIN</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/fsl-6.0.7.4/data/standard/MNI152_T1_2mm_brain.nii.gz
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Register the T1w image to the MNI template and concatenate the transformation matrices</span>
+<span class="o">!</span>flirt -in ./FSL_preproc/sub-08_T1w_brain_f02.nii.gz -ref <span class="s2">&quot;{MNI_BRAIN}&quot;</span> -out ./FSL_preproc/sub-08_T1w_brain_f02_flirt.nii.gz -omat ./FSL_preproc/sub-08_T1w_brain_f02_flirt.mat
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>4. Concatenate transforms</strong></p>
+<p>Combines functional → T1w and T1w → MNI into a single matrix</p>
+<p>⚠️ There’s an important ordering rule when using <code class="docutils literal notranslate"><span class="pre">convert_xfm</span> <span class="pre">-concat</span></code> that you must follow:</p>
+<p><strong>result = mat2 * mat1</strong></p>
+<p>So, <code class="docutils literal notranslate"><span class="pre">convert_xfm</span> <span class="pre">-omat</span> <span class="pre">output.mat</span> <span class="pre">-concat</span> <span class="pre">A.mat</span> <span class="pre">B.mat</span></code> applys B first, then A.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>convert_xfm -omat ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt2mni.mat -concat ./FSL_preproc/sub-08_T1w_brain_f02_flirt.mat ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt.mat
+<span class="o">!</span>convert_xfm -omat ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt2mni.mat -concat ./FSL_preproc/sub-08_T1w_brain_f02_flirt.mat ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt.mat
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>5. Apply the transform to the full 4D functional data</strong></p>
+<p>Applies the final</p>
+<p><code class="docutils literal notranslate"><span class="pre">Functional</span> <span class="pre">→</span> <span class="pre">Anatomical</span> <span class="pre">→</span> <span class="pre">MNI</span></code></p>
+<p>transform in a single step using the .mat file created earlier, and resampling the functional images into MNI space.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply the concatenated transformation matrices to the functional images</span>
+<span class="o">!</span>flirt -in ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth.nii.gz -ref <span class="s2">&quot;{MNI_BRAIN}&quot;</span> -out ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt2mni.nii.gz -applyxfm -init ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt2mni.mat
+<span class="o">!</span>flirt -in ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth.nii.gz -ref <span class="s2">&quot;{MNI_BRAIN}&quot;</span> -out ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt2mni.nii.gz -applyxfm -init ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt2mni.mat
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="checking-preprocessing">
+<h3>Checking Preprocessing<a class="headerlink" href="#checking-preprocessing" title="Permalink to this heading">#</a></h3>
+<p><strong>Alignment</strong></p>
+<p>To visualize the alignment of functional run 1 in MNI space, the middle volume of the 4D dataset will be extracted and used as an overlay. Extracting a single volume instead of displaying the full 4D image reduces file size and computational load, making it more efficient for visualization and suitable for interactive display tools such as NiiVue.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index_img</span><span class="p">(</span><span class="s2">&quot;./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt2mni.nii.gz&quot;</span><span class="p">,</span> <span class="n">middle_index1</span><span class="p">)</span><span class="o">.</span><span class="n">to_filename</span><span class="p">(</span><span class="s2">&quot;./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt2mni_middle_3d.nii.gz&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verify the registration by overlaying the functional image on MNI</span>
+<span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">()</span>  
+<span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([</span>
+    <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.7.4_20231005/fsl_6.0.7.4_20231005.simg/opt/fsl-6.0.7.4/data/standard/MNI152_T1_2mm_brain.nii.gz&quot;</span><span class="p">,</span>  <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt2mni_middle_3d.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">}</span>
+<span class="p">])</span>
+<span class="n">nv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "3a70fa3ce2854e9ea5e904c98291698d", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<p><strong>Motion parameters</strong></p>
+<p>The motion plots show translation and rotation over time, with each timepoint (volume) on the x-axis. For translation, values are in millimeters. Look for sudden spikes greater than half the voxel size, or gradual drifts exceeding a full voxel. For example, with 3 mm isotropic voxels, relative motion over 1.5 mm between volumes or absolute shifts over 3 mm across the run may warrant closer inspection.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load motion parameters</span>
+<span class="n">motion_params_run1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf.nii.gz.par&#39;</span><span class="p">)</span>
+<span class="n">motion_params_run2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf.nii.gz.par&#39;</span><span class="p">)</span>
+
+<span class="c1"># Create subplots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Run 1</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">motion_params_run1</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Translation (mm)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Run 1: Translation&quot;</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">motion_params_run1</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Rotation (rad)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Pitch&quot;</span><span class="p">,</span> <span class="s2">&quot;Roll&quot;</span><span class="p">,</span> <span class="s2">&quot;Yaw&quot;</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Run 1: Rotation&quot;</span><span class="p">)</span>
+
+<span class="c1"># Run 2</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">motion_params_run2</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Translation (mm)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time (TR)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Run 2: Translation&quot;</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">motion_params_run2</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Rotation (rad)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time (TR)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Pitch&quot;</span><span class="p">,</span> <span class="s2">&quot;Roll&quot;</span><span class="p">,</span> <span class="s2">&quot;Yaw&quot;</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Run 2: Rotation&quot;</span><span class="p">)</span>
+
+<span class="c1"># Adjust layout</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Motion Parameters for Both Runs&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">rect</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/921ce19886ecbee1d090c1ee11eb1525a727b40728df705e277b4161025c68f6.png" src="_images/921ce19886ecbee1d090c1ee11eb1525a727b40728df705e277b4161025c68f6.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="statistics-and-modeling">
+<h2>2. Statistics and Modeling<a class="headerlink" href="#statistics-and-modeling" title="Permalink to this heading">#</a></h2>
+<section id="create-timing-files">
+<h3>Create timing files<a class="headerlink" href="#create-timing-files" title="Permalink to this heading">#</a></h3>
+<p>To prepare condition-specific regressors for FSL analysis, timing files are required that specify the onset and duration of each event type. These are extracted from each subject’s events.tsv files. One timing file is generated per condition per run, formatted for use in FSL.</p>
+<p>A Bash script called <code class="docutils literal notranslate"><span class="pre">make_FSL_Timings.sh</span></code> can be used to automate this step. It is available from Andy’s <a class="reference external" href="https://github.com/andrewjahn/FSL_Scripts/blob/master/make_FSL_Timings.sh">FSL_Scripts repository</a> and should be placed in the directory containing the subject folders (e.g., ds000102/). Running the script will produce timing files in the appropriate format.</p>
+<p><em>NOTE</em>: This script only extracts the trials in which the subject made a correct response. Accuracy is nearly 100% for all subjects, but as an exercise you can modify this to extract the incorrect trials as well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download timing file from Andy&#39;s FSL_Scripts repository</span>
+<span class="o">!</span>wget -O ./ds000102/make_FSL_Timings.sh https://raw.githubusercontent.com/andrewjahn/FSL_Scripts/master/make_FSL_Timings.sh
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-05-15 06:02:49--  https://raw.githubusercontent.com/andrewjahn/FSL_Scripts/master/make_FSL_Timings.sh
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.110.133, 185.199.109.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1220 (1.2K) [text/plain]
+Saving to: ‘./ds000102/make_FSL_Timings.sh’
+
+./ds000102/make_FSL 100%[===================&gt;]   1.19K  --.-KB/s    in 0s      
+
+2025-05-15 06:02:50 (99.2 MB/s) - ‘./ds000102/make_FSL_Timings.sh’ saved [1220/1220]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show the file</span>
+<span class="o">!</span>cat ./ds000102/make_FSL_Timings.sh
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+
+#Check whether the file subjList.txt exists; if not, create it
+if [ ! -f subjList.txt ]; then
+        ls -d sub-?? &gt; subjList.txt
+fi
+
+#Loop over all subjects and format timing files into FSL format
+for subj in `cat subjList.txt` ; do
+        cd $subj/func #Navigate to the subject&#39;s func directory, which contains the timing files
+        
+        #Extract the onset times for the incongruent and congruent trials for each run. NOTE: This script only extracts the trials in which the subject made a correct response. Accuracy is nearly 100% for all subjects, but as an exercise the student can modify this to extract the incorrect trials as well.
+        cat ${subj}_task-flanker_run-1_events.tsv | awk &#39;{if ($3==&quot;incongruent_correct&quot;) {print $1, $2, &quot;1&quot;}}&#39; &gt; incongruent_run1.txt
+        cat ${subj}_task-flanker_run-1_events.tsv | awk &#39;{if ($3==&quot;congruent_correct&quot;) {print $1, $2, &quot;1&quot;}}&#39; &gt; congruent_run1.txt
+
+        cat ${subj}_task-flanker_run-2_events.tsv | awk &#39;{if ($3==&quot;incongruent_correct&quot;) {print $1, $2, &quot;1&quot;}}&#39; &gt; incongruent_run2.txt
+        cat ${subj}_task-flanker_run-2_events.tsv | awk &#39;{if ($3==&quot;congruent_correct&quot;) {print $1, $2, &quot;1&quot;}}&#39; &gt; congruent_run2.txt
+        
+        cd ../..
+done
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the file to get individual timing files for each run</span>
+<span class="o">!</span><span class="nb">cd</span> ./ds000102 <span class="o">&amp;&amp;</span> chmod +x make_FSL_Timings.sh <span class="o">&amp;&amp;</span> bash make_FSL_Timings.sh
+</pre></div>
+</div>
+</div>
+</div>
+<p>Inspect the output:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat ./ds000102/sub-08/func/incongruent_run1.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0 2.0 1
+10.0 2.0 1
+20.0 2.0 1
+52.0 2.0 1
+88.0 2.0 1
+130.0 2.0 1
+144.0 2.0 1
+174.0 2.0 1
+248.0 2.0 1
+260.0 2.0 1
+274.0 2.0 1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="running-the-first-level-analysis">
+<h3>Running the First-Level Analysis<a class="headerlink" href="#running-the-first-level-analysis" title="Permalink to this heading">#</a></h3>
+<p>As introduced in the beginning, this example uses the Flanker dataset, which is also described in <a class="reference external" href="https://andysbrainbook.readthedocs.io/en/latest/fMRI_Short_Course/fMRI_02_ExperimentalDesign.html">Andy’s Brain Book</a>.
+The contrasts are set up to compare congruent and incongruent trial types, reflecting typical cognitive control analyses.</p>
+<section id="feat-design-files-for-both-runs">
+<h4>FEAT Design Files for both runs<a class="headerlink" href="#feat-design-files-for-both-runs" title="Permalink to this heading">#</a></h4>
+<p>This file configures a first-level GLM analysis in FSL, skipping preprocessing steps and assuming the input data has already been preprocessed. Each <code class="docutils literal notranslate"><span class="pre">.fsf</span> <span class="pre">file</span></code> is tailored to a specific run, with unique input files and event timing. Below are the key sections to review and understand.</p>
+<p>✅ <strong>General Analysis Settings</strong></p>
+<ul class="simple">
+<li><p>set fmri(level) 1: This is a first-level analysis (within-subject, per-run).</p></li>
+<li><p>set fmri(analysis) 2: Only the Statistics stage is run (preprocessing is skipped).</p></li>
+<li><p>set feat_files(1): Points to the preprocessed functional NIfTI file to analyze.</p></li>
+<li><p>set fmri(outputdir): Path to where the FEAT results will be saved.</p></li>
+</ul>
+<p>🧠 <strong>Model Specification</strong>
+Two Explanatory Variables (EVs):</p>
+<ul class="simple">
+<li><p>evtitle1: “incongruent”</p></li>
+<li><p>evtitle2: “congruent”</p></li>
+</ul>
+<p>Each EV uses:</p>
+<ul class="simple">
+<li><p>Custom timing files (custom1, custom2) in 3-column format (onset, duration, amplitude).</p></li>
+<li><p>Double-Gamma HRF (set fmri(convolve1) 2).</p></li>
+<li><p>No temporal derivative added (keeps design simpler to inspect).</p></li>
+</ul>
+<p>📊 <strong>Contrasts</strong>
+Three contrasts are defined:</p>
+<ul class="simple">
+<li><p>“incongruent”: [1 0]</p></li>
+<li><p>“congruent”: [0 1]</p></li>
+<li><p>“incongruent-congruent”: [1 -1]</p></li>
+</ul>
+<p>These correspond to cope1, cope2, and cope3, respectively.</p>
+<p>This setup allows testing condition effects vs baseline, and the difference between conditions.</p>
+<p>⚙️ <strong>Other Notable Settings</strong></p>
+<ul class="simple">
+<li><p>TR: 2s (extracted from images)</p></li>
+<li><p>Volumes: 146 (extracted from images)</p></li>
+<li><p>Highpass filter: 100s cutoff</p></li>
+<li><p>No motion regressors: (assumed already regressed out or not needed)</p></li>
+<li><p>No registration: Standard space registration is enabled, but main structural registration is off (reghighres_yn is 0).</p></li>
+<li><p>No pre-stats or post-stats steps (filtering_yn = 0, poststats_yn = 0).</p></li>
+</ul>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get parameters for the design files</span>
+<span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="n">img1</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt2mni.nii.gz&#39;</span><span class="p">)</span>
+<span class="n">img2</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt2mni.nii.gz&#39;</span><span class="p">)</span>
+<span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">img1</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">img2</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">TR1</span> <span class="o">=</span> <span class="n">img1</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get_zooms</span><span class="p">()[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">TR2</span> <span class="o">=</span> <span class="n">img2</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get_zooms</span><span class="p">()[</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># Define run-specific parameters</span>
+<span class="n">runs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;run1&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;outputdir&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="s1">&#39;feat_run_1&#39;</span><span class="p">),</span>
+        <span class="s2">&quot;TR&quot;</span><span class="p">:</span> <span class="n">TR1</span><span class="p">,</span>
+        <span class="s2">&quot;npts&quot;</span><span class="p">:</span> <span class="n">t1</span><span class="p">,</span>
+        <span class="s2">&quot;total_voxels&quot;</span><span class="p">:</span> <span class="n">x1</span> <span class="o">*</span> <span class="n">y1</span> <span class="o">*</span> <span class="n">z1</span> <span class="o">*</span> <span class="n">t1</span><span class="p">,</span>
+        <span class="s2">&quot;func&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="s1">&#39;FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt2mni&#39;</span><span class="p">),</span>
+        <span class="s2">&quot;incongruent&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="s1">&#39;ds000102/sub-08/func/incongruent_run1.txt&#39;</span><span class="p">),</span>
+        <span class="s2">&quot;congruent&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="s1">&#39;ds000102/sub-08/func/congruent_run1.txt&#39;</span><span class="p">),</span>
+        <span class="s2">&quot;design_file&quot;</span><span class="p">:</span> <span class="s2">&quot;design_run1.fsf&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;run2&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;outputdir&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="s1">&#39;feat_run_2&#39;</span><span class="p">),</span>
+        <span class="s2">&quot;TR&quot;</span><span class="p">:</span> <span class="n">TR2</span><span class="p">,</span>
+        <span class="s2">&quot;npts&quot;</span><span class="p">:</span> <span class="n">t2</span><span class="p">,</span>
+        <span class="s2">&quot;total_voxels&quot;</span><span class="p">:</span> <span class="n">x2</span> <span class="o">*</span> <span class="n">y2</span> <span class="o">*</span> <span class="n">z2</span> <span class="o">*</span> <span class="n">t2</span><span class="p">,</span>
+        <span class="s2">&quot;func&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="s1">&#39;FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt2mni&#39;</span><span class="p">),</span>
+        <span class="s2">&quot;incongruent&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="s1">&#39;ds000102/sub-08/func/incongruent_run2.txt&#39;</span><span class="p">),</span>
+        <span class="s2">&quot;congruent&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="s1">&#39;ds000102/sub-08/func/congruent_run2.txt&#39;</span><span class="p">),</span>
+        <span class="s2">&quot;design_file&quot;</span><span class="p">:</span> <span class="s2">&quot;design_run2.fsf&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create feat design files for both runs</span>
+<span class="k">for</span> <span class="n">run_key</span><span class="p">,</span> <span class="n">params</span> <span class="ow">in</span> <span class="n">runs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;design_file&quot;</span><span class="p">],</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2"># FEAT version number</span>
+<span class="s2">set fmri(version) 6.00</span>
+
+<span class="s2"># Are we in MELODIC?</span>
+<span class="s2">set fmri(inmelodic) 0</span>
+
+<span class="s2"># Analysis level</span>
+<span class="s2"># 1 : First-level analysis</span>
+<span class="s2"># 2 : Higher-level analysis</span>
+<span class="s2">set fmri(level) 1</span>
+
+<span class="s2"># Which stages to run</span>
+<span class="s2"># 0 : No first-level analysis (registration and/or group stats only)</span>
+<span class="s2"># 7 : Full first-level analysis</span>
+<span class="s2"># 1 : Pre-processing</span>
+<span class="s2"># 2 : Statistics</span>
+<span class="s2">set fmri(analysis) 2</span>
+
+<span class="s2"># Use relative filenames</span>
+<span class="s2">set fmri(relative_yn) 0</span>
+
+<span class="s2"># Balloon help</span>
+<span class="s2">set fmri(help_yn) 1</span>
+
+<span class="s2"># Run Featwatcher</span>
+<span class="s2">set fmri(featwatcher_yn) 1</span>
+
+<span class="s2"># Cleanup first-level standard-space images</span>
+<span class="s2">set fmri(sscleanup_yn) 0</span>
+
+<span class="s2"># Output directory</span>
+<span class="s2">set fmri(outputdir)  &quot;</span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;outputdir&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="s2"># TR(s)</span>
+<span class="s2">set fmri(tr) </span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;TR&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"></span>
+
+<span class="s2"># Total volumes</span>
+<span class="s2">set fmri(npts) </span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;npts&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"></span>
+
+<span class="s2"># Delete volumes</span>
+<span class="s2">set fmri(ndelete) 0</span>
+
+<span class="s2"># Perfusion tag/control order</span>
+<span class="s2">set fmri(tagfirst) 1</span>
+
+<span class="s2"># Number of first-level analyses</span>
+<span class="s2">set fmri(multiple) 1</span>
+
+<span class="s2"># Higher-level input type</span>
+<span class="s2"># 1 : Inputs are lower-level FEAT directories</span>
+<span class="s2"># 2 : Inputs are cope images from FEAT directories</span>
+<span class="s2">set fmri(inputtype) 2</span>
+
+<span class="s2"># Carry out pre-stats processing?</span>
+<span class="s2">set fmri(filtering_yn) 0</span>
+
+<span class="s2"># Brain/background threshold, %</span>
+<span class="s2">set fmri(brain_thresh) 10</span>
+
+<span class="s2"># Critical z for design efficiency calculation</span>
+<span class="s2">set fmri(critical_z) 5.3</span>
+
+<span class="s2"># Noise level</span>
+<span class="s2">set fmri(noise) 0.66</span>
+
+<span class="s2"># Noise AR(1)</span>
+<span class="s2">set fmri(noisear) 0.34</span>
+
+<span class="s2"># Motion correction</span>
+<span class="s2"># 0 : None</span>
+<span class="s2"># 1 : MCFLIRT</span>
+<span class="s2">set fmri(mc) 1</span>
+
+<span class="s2"># Spin-history (currently obsolete)</span>
+<span class="s2">set fmri(sh_yn) 0</span>
+
+<span class="s2"># B0 fieldmap unwarping?</span>
+<span class="s2">set fmri(regunwarp_yn) 0</span>
+
+<span class="s2"># GDC Test</span>
+<span class="s2">set fmri(gdc) &quot;&quot;</span>
+
+<span class="s2"># EPI dwell time (ms)</span>
+<span class="s2">set fmri(dwell) 0.0</span>
+
+<span class="s2"># EPI TE (ms)</span>
+<span class="s2">set fmri(te) 0.0</span>
+
+<span class="s2"># % Signal loss threshold</span>
+<span class="s2">set fmri(signallossthresh) 10</span>
+
+<span class="s2"># Unwarp direction</span>
+<span class="s2">set fmri(unwarp_dir) y-</span>
+
+<span class="s2"># Slice timing correction</span>
+<span class="s2"># 0 : None</span>
+<span class="s2"># 1 : Regular up (0, 1, 2, 3, ...)</span>
+<span class="s2"># 2 : Regular down</span>
+<span class="s2"># 3 : Use slice order file</span>
+<span class="s2"># 4 : Use slice timings file</span>
+<span class="s2"># 5 : Interleaved (0, 2, 4 ... 1, 3, 5 ... )</span>
+<span class="s2">set fmri(st) 0</span>
+
+<span class="s2"># Slice timings file</span>
+<span class="s2">set fmri(st_file) &quot;&quot;</span>
+
+<span class="s2"># BET brain extraction</span>
+<span class="s2">set fmri(bet_yn) 1</span>
+
+<span class="s2"># Spatial smoothing FWHM (mm)</span>
+<span class="s2">set fmri(smooth) 5</span>
+
+<span class="s2"># Intensity normalization</span>
+<span class="s2">set fmri(norm_yn) 0</span>
+
+<span class="s2"># Perfusion subtraction</span>
+<span class="s2">set fmri(perfsub_yn) 0</span>
+
+<span class="s2"># Highpass temporal filtering</span>
+<span class="s2">set fmri(temphp_yn) 1</span>
+
+<span class="s2"># Lowpass temporal filtering</span>
+<span class="s2">set fmri(templp_yn) 0</span>
+
+<span class="s2"># MELODIC ICA data exploration</span>
+<span class="s2">set fmri(melodic_yn) 0</span>
+
+<span class="s2"># Carry out main stats?</span>
+<span class="s2">set fmri(stats_yn) 1</span>
+
+<span class="s2"># Carry out prewhitening?</span>
+<span class="s2">set fmri(prewhiten_yn) 1</span>
+
+<span class="s2"># Add motion parameters to model</span>
+<span class="s2"># 0 : No</span>
+<span class="s2"># 1 : Yes</span>
+<span class="s2">set fmri(motionevs) 0</span>
+<span class="s2">set fmri(motionevsbeta) &quot;&quot;</span>
+<span class="s2">set fmri(scriptevsbeta) &quot;&quot;</span>
+
+<span class="s2"># Robust outlier detection in FLAME?</span>
+<span class="s2">set fmri(robust_yn) 0</span>
+
+<span class="s2"># Higher-level modelling</span>
+<span class="s2"># 3 : Fixed effects</span>
+<span class="s2"># 0 : Mixed Effects: Simple OLS</span>
+<span class="s2"># 2 : Mixed Effects: FLAME 1</span>
+<span class="s2"># 1 : Mixed Effects: FLAME 1+2</span>
+<span class="s2">set fmri(mixed_yn) 2</span>
+
+<span class="s2"># Higher-level permutations</span>
+<span class="s2">set fmri(randomisePermutations) 5000</span>
+
+<span class="s2"># Number of EVs</span>
+<span class="s2">set fmri(evs_orig) 2</span>
+<span class="s2">set fmri(evs_real) 2</span>
+<span class="s2">set fmri(evs_vox) 0</span>
+
+<span class="s2"># Number of contrasts</span>
+<span class="s2">set fmri(ncon_orig) 3</span>
+<span class="s2">set fmri(ncon_real) 3</span>
+
+<span class="s2"># Number of F-tests</span>
+<span class="s2">set fmri(nftests_orig) 0</span>
+<span class="s2">set fmri(nftests_real) 0</span>
+
+<span class="s2"># Add constant column to design matrix? (obsolete)</span>
+<span class="s2">set fmri(constcol) 0</span>
+
+<span class="s2"># Carry out post-stats steps?</span>
+<span class="s2">set fmri(poststats_yn) 0</span>
+
+<span class="s2"># Pre-threshold masking?</span>
+<span class="s2">set fmri(threshmask) &quot;&quot;</span>
+
+<span class="s2"># Thresholding</span>
+<span class="s2"># 0 : None</span>
+<span class="s2"># 1 : Uncorrected</span>
+<span class="s2"># 2 : Voxel</span>
+<span class="s2"># 3 : Cluster</span>
+<span class="s2">set fmri(thresh) 3</span>
+
+<span class="s2"># P threshold</span>
+<span class="s2">set fmri(prob_thresh) 0.05</span>
+
+<span class="s2"># Z threshold</span>
+<span class="s2">set fmri(z_thresh) 3.1</span>
+
+<span class="s2"># Z min/max for colour rendering</span>
+<span class="s2"># 0 : Use actual Z min/max</span>
+<span class="s2"># 1 : Use preset Z min/max</span>
+<span class="s2">set fmri(zdisplay) 0</span>
+
+<span class="s2"># Z min in colour rendering</span>
+<span class="s2">set fmri(zmin) 2</span>
+
+<span class="s2"># Z max in colour rendering</span>
+<span class="s2">set fmri(zmax) 8</span>
+
+<span class="s2"># Colour rendering type</span>
+<span class="s2"># 0 : Solid blobs</span>
+<span class="s2"># 1 : Transparent blobs</span>
+<span class="s2">set fmri(rendertype) 1</span>
+
+<span class="s2"># Background image for higher-level stats overlays</span>
+<span class="s2"># 1 : Mean highres</span>
+<span class="s2"># 2 : First highres</span>
+<span class="s2"># 3 : Mean functional</span>
+<span class="s2"># 4 : First functional</span>
+<span class="s2"># 5 : Standard space template</span>
+<span class="s2">set fmri(bgimage) 1</span>
+
+<span class="s2"># Create time series plots</span>
+<span class="s2">set fmri(tsplot_yn) 1</span>
+
+<span class="s2"># Registration to initial structural</span>
+<span class="s2">set fmri(reginitial_highres_yn) 0</span>
+
+<span class="s2"># Search space for registration to initial structural</span>
+<span class="s2"># 0   : No search</span>
+<span class="s2"># 90  : Normal search</span>
+<span class="s2"># 180 : Full search</span>
+<span class="s2">set fmri(reginitial_highres_search) 90</span>
+
+<span class="s2"># Degrees of Freedom for registration to initial structural</span>
+<span class="s2">set fmri(reginitial_highres_dof) 3</span>
+
+<span class="s2"># Registration to main structural</span>
+<span class="s2">set fmri(reghighres_yn) 0</span>
+
+<span class="s2"># Search space for registration to main structural</span>
+<span class="s2"># 0   : No search</span>
+<span class="s2"># 90  : Normal search</span>
+<span class="s2"># 180 : Full search</span>
+<span class="s2">set fmri(reghighres_search) 90</span>
+
+<span class="s2"># Degrees of Freedom for registration to main structural</span>
+<span class="s2">set fmri(reghighres_dof) BBR</span>
+
+<span class="s2"># Registration to standard image?</span>
+<span class="s2">set fmri(regstandard_yn) 1</span>
+
+<span class="s2"># Use alternate reference images?</span>
+<span class="s2">set fmri(alternateReference_yn) 0</span>
+
+<span class="s2"># Standard image</span>
+<span class="s2">set fmri(regstandard) &quot;</span><span class="si">{</span><span class="n">MNI_BRAIN</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="s2"># Search space for registration to standard space</span>
+<span class="s2"># 0   : No search</span>
+<span class="s2"># 90  : Normal search</span>
+<span class="s2"># 180 : Full search</span>
+<span class="s2">set fmri(regstandard_search) 90</span>
+
+<span class="s2"># Degrees of Freedom for registration to standard space</span>
+<span class="s2">set fmri(regstandard_dof) 12</span>
+
+<span class="s2"># Do nonlinear registration from structural to standard space?</span>
+<span class="s2">set fmri(regstandard_nonlinear_yn) 0</span>
+
+<span class="s2"># Control nonlinear warp field resolution</span>
+<span class="s2">set fmri(regstandard_nonlinear_warpres) 10</span>
+
+<span class="s2"># High pass filter cutoff</span>
+<span class="s2">set fmri(paradigm_hp) 100</span>
+
+<span class="s2"># Total voxels</span>
+<span class="s2">set fmri(totalVoxels) </span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;total_voxels&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"></span>
+
+
+<span class="s2"># Number of lower-level copes feeding into higher-level analysis</span>
+<span class="s2">set fmri(ncopeinputs) 0</span>
+
+<span class="s2"># 4D AVW data or FEAT directory (1)</span>
+<span class="s2">set feat_files(1) &quot;</span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;func&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="s2"># Add confound EVs text file</span>
+<span class="s2">set fmri(confoundevs) 0</span>
+
+<span class="s2"># EV 1 title</span>
+<span class="s2">set fmri(evtitle1) &quot;incongruent&quot;</span>
+
+<span class="s2"># Basic waveform shape (EV 1)</span>
+<span class="s2"># 0 : Square</span>
+<span class="s2"># 1 : Sinusoid</span>
+<span class="s2"># 2 : Custom (1 entry per volume)</span>
+<span class="s2"># 3 : Custom (3 column format)</span>
+<span class="s2"># 4 : Interaction</span>
+<span class="s2"># 10 : Empty (all zeros)</span>
+<span class="s2">set fmri(shape1) 3</span>
+
+<span class="s2"># Convolution (EV 1)</span>
+<span class="s2"># 0 : None</span>
+<span class="s2"># 1 : Gaussian</span>
+<span class="s2"># 2 : Gamma</span>
+<span class="s2"># 3 : Double-Gamma HRF</span>
+<span class="s2"># 4 : Gamma basis functions</span>
+<span class="s2"># 5 : Sine basis functions</span>
+<span class="s2"># 6 : FIR basis functions</span>
+<span class="s2"># 8 : Alternate Double-Gamma</span>
+<span class="s2">set fmri(convolve1) 2</span>
+
+<span class="s2"># Convolve phase (EV 1)</span>
+<span class="s2">set fmri(convolve_phase1) 0</span>
+
+<span class="s2"># Apply temporal filtering (EV 1)</span>
+<span class="s2">set fmri(tempfilt_yn1) 1</span>
+
+<span class="s2"># Add temporal derivative (EV 1)</span>
+<span class="s2">set fmri(deriv_yn1) 0</span>
+
+<span class="s2"># Custom EV file (EV 1)</span>
+<span class="s2">set fmri(custom1) &quot;</span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;incongruent&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="s2"># Gamma sigma (EV 1)</span>
+<span class="s2">set fmri(gammasigma1) 3</span>
+
+<span class="s2"># Gamma delay (EV 1)</span>
+<span class="s2">set fmri(gammadelay1) 6</span>
+
+<span class="s2"># Orthogonalise EV 1 wrt EV 0</span>
+<span class="s2">set fmri(ortho1.0) 0</span>
+
+<span class="s2"># Orthogonalise EV 1 wrt EV 1</span>
+<span class="s2">set fmri(ortho1.1) 0</span>
+
+<span class="s2"># Orthogonalise EV 1 wrt EV 2</span>
+<span class="s2">set fmri(ortho1.2) 0</span>
+
+<span class="s2"># EV 2 title</span>
+<span class="s2">set fmri(evtitle2) &quot;congruent&quot;</span>
+
+<span class="s2"># Basic waveform shape (EV 2)</span>
+<span class="s2"># 0 : Square</span>
+<span class="s2"># 1 : Sinusoid</span>
+<span class="s2"># 2 : Custom (1 entry per volume)</span>
+<span class="s2"># 3 : Custom (3 column format)</span>
+<span class="s2"># 4 : Interaction</span>
+<span class="s2"># 10 : Empty (all zeros)</span>
+<span class="s2">set fmri(shape2) 3</span>
+
+<span class="s2"># Convolution (EV 2)</span>
+<span class="s2"># 0 : None</span>
+<span class="s2"># 1 : Gaussian</span>
+<span class="s2"># 2 : Gamma</span>
+<span class="s2"># 3 : Double-Gamma HRF</span>
+<span class="s2"># 4 : Gamma basis functions</span>
+<span class="s2"># 5 : Sine basis functions</span>
+<span class="s2"># 6 : FIR basis functions</span>
+<span class="s2"># 8 : Alternate Double-Gamma</span>
+<span class="s2">set fmri(convolve2) 2</span>
+
+<span class="s2"># Convolve phase (EV 2)</span>
+<span class="s2">set fmri(convolve_phase2) 0</span>
+
+<span class="s2"># Apply temporal filtering (EV 2)</span>
+<span class="s2">set fmri(tempfilt_yn2) 1</span>
+
+<span class="s2"># Add temporal derivative (EV 2)</span>
+<span class="s2">set fmri(deriv_yn2) 0</span>
+
+<span class="s2"># Custom EV file (EV 2)</span>
+<span class="s2">set fmri(custom2) &quot;</span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;congruent&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="s2"># Gamma sigma (EV 2)</span>
+<span class="s2">set fmri(gammasigma2) 3</span>
+
+<span class="s2"># Gamma delay (EV 2)</span>
+<span class="s2">set fmri(gammadelay2) 6</span>
+
+<span class="s2"># Orthogonalise EV 2 wrt EV 0</span>
+<span class="s2">set fmri(ortho2.0) 0</span>
+
+<span class="s2"># Orthogonalise EV 2 wrt EV 1</span>
+<span class="s2">set fmri(ortho2.1) 0</span>
+
+<span class="s2"># Orthogonalise EV 2 wrt EV 2</span>
+<span class="s2">set fmri(ortho2.2) 0</span>
+
+<span class="s2"># Contrast &amp; F-tests mode</span>
+<span class="s2"># real : control real EVs</span>
+<span class="s2"># orig : control original EVs</span>
+<span class="s2">set fmri(con_mode_old) orig</span>
+<span class="s2">set fmri(con_mode) orig</span>
+
+<span class="s2"># Display images for contrast_real 1</span>
+<span class="s2">set fmri(conpic_real.1) 1</span>
+
+<span class="s2"># Title for contrast_real 1</span>
+<span class="s2">set fmri(conname_real.1) &quot;incongruent&quot;</span>
+
+<span class="s2"># Real contrast_real vector 1 element 1</span>
+<span class="s2">set fmri(con_real1.1) 1</span>
+
+<span class="s2"># Real contrast_real vector 1 element 2</span>
+<span class="s2">set fmri(con_real1.2) 0</span>
+
+<span class="s2"># Display images for contrast_real 2</span>
+<span class="s2">set fmri(conpic_real.2) 1</span>
+
+<span class="s2"># Title for contrast_real 2</span>
+<span class="s2">set fmri(conname_real.2) &quot;congruent&quot;</span>
+
+<span class="s2"># Real contrast_real vector 2 element 1</span>
+<span class="s2">set fmri(con_real2.1) 0</span>
+
+<span class="s2"># Real contrast_real vector 2 element 2</span>
+<span class="s2">set fmri(con_real2.2) 1.0</span>
+
+<span class="s2"># Display images for contrast_real 3</span>
+<span class="s2">set fmri(conpic_real.3) 1</span>
+
+<span class="s2"># Title for contrast_real 3</span>
+<span class="s2">set fmri(conname_real.3) &quot;incongruent-congruent&quot;</span>
+
+<span class="s2"># Real contrast_real vector 3 element 1</span>
+<span class="s2">set fmri(con_real3.1) 1.0</span>
+
+<span class="s2"># Real contrast_real vector 3 element 2</span>
+<span class="s2">set fmri(con_real3.2) -1.0</span>
+
+<span class="s2"># Display images for contrast_orig 1</span>
+<span class="s2">set fmri(conpic_orig.1) 1</span>
+
+<span class="s2"># Title for contrast_orig 1</span>
+<span class="s2">set fmri(conname_orig.1) &quot;incongruent&quot;</span>
+
+<span class="s2"># Real contrast_orig vector 1 element 1</span>
+<span class="s2">set fmri(con_orig1.1) 1</span>
+
+<span class="s2"># Real contrast_orig vector 1 element 2</span>
+<span class="s2">set fmri(con_orig1.2) 0</span>
+
+<span class="s2"># Display images for contrast_orig 2</span>
+<span class="s2">set fmri(conpic_orig.2) 1</span>
+
+<span class="s2"># Title for contrast_orig 2</span>
+<span class="s2">set fmri(conname_orig.2) &quot;congruent&quot;</span>
+
+<span class="s2"># Real contrast_orig vector 2 element 1</span>
+<span class="s2">set fmri(con_orig2.1) 0</span>
+
+<span class="s2"># Real contrast_orig vector 2 element 2</span>
+<span class="s2">set fmri(con_orig2.2) 1.0</span>
+
+<span class="s2"># Display images for contrast_orig 3</span>
+<span class="s2">set fmri(conpic_orig.3) 1</span>
+
+<span class="s2"># Title for contrast_orig 3</span>
+<span class="s2">set fmri(conname_orig.3) &quot;incongruent-congruent&quot;</span>
+
+<span class="s2"># Real contrast_orig vector 3 element 1</span>
+<span class="s2">set fmri(con_orig3.1) 1.0</span>
+
+<span class="s2"># Real contrast_orig vector 3 element 2</span>
+<span class="s2">set fmri(con_orig3.2) -1.0</span>
+
+<span class="s2"># Contrast masking - use &gt;0 instead of thresholding?</span>
+<span class="s2">set fmri(conmask_zerothresh_yn) 0</span>
+
+<span class="s2"># Mask real contrast/F-test 1 with real contrast/F-test 2?</span>
+<span class="s2">set fmri(conmask1_2) 0</span>
+
+<span class="s2"># Mask real contrast/F-test 1 with real contrast/F-test 3?</span>
+<span class="s2">set fmri(conmask1_3) 0</span>
+
+<span class="s2"># Mask real contrast/F-test 2 with real contrast/F-test 1?</span>
+<span class="s2">set fmri(conmask2_1) 0</span>
+
+<span class="s2"># Mask real contrast/F-test 2 with real contrast/F-test 3?</span>
+<span class="s2">set fmri(conmask2_3) 0</span>
+
+<span class="s2"># Mask real contrast/F-test 3 with real contrast/F-test 1?</span>
+<span class="s2">set fmri(conmask3_1) 0</span>
+
+<span class="s2"># Mask real contrast/F-test 3 with real contrast/F-test 2?</span>
+<span class="s2">set fmri(conmask3_2) 0</span>
+
+<span class="s2"># Do contrast masking at all?</span>
+<span class="s2">set fmri(conmask1_1) 0</span>
+
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To ensure compatibility across environments, explicitly define the <code class="docutils literal notranslate"><span class="pre">USER</span></code> variable using <code class="docutils literal notranslate"><span class="pre">whoami</span></code>, which retrieves the current username. This step helps avoid issues when running FSL’s feat, which expects <code class="docutils literal notranslate"><span class="pre">USER</span></code> to be set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">run1_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="s1">&#39;design_run1&#39;</span><span class="p">)</span>
+<span class="n">run2_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="s1">&#39;design_run2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cmd</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;export USER=$</span><span class="se">{{</span><span class="s1">USER:-$(whoami)</span><span class="se">}}</span><span class="s1"> &amp;&amp; feat &quot;</span><span class="si">{</span><span class="n">run1_path</span><span class="si">}</span><span class="s1">&quot; &amp;&amp; feat &quot;</span><span class="si">{</span><span class="n">run2_path</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+<span class="o">!{</span>cmd<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="visualization-of-first-level-design-and-results-run-1">
+<h3>Visualization of First-level Design and Results (Run 1)<a class="headerlink" href="#visualization-of-first-level-design-and-results-run-1" title="Permalink to this heading">#</a></h3>
+<p>Below, the design matrix and selected results from the first run are shown. Since both runs use the same design and contrasts, the results of the second run can be explored using the same approach.</p>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">design</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;./feat_run_1.feat/design.png&#39;</span><span class="p">)</span>
+<span class="n">design_cov</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;./feat_run_1.feat/design_cov.png&#39;</span><span class="p">)</span>
+<span class="n">rendered_thresh_zstats1</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;./feat_run_1.feat/rendered_thresh_zstat1.png&#39;</span><span class="p">)</span>
+<span class="n">rendered_thresh_zstats2</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;./feat_run_1.feat/rendered_thresh_zstat2.png&#39;</span><span class="p">)</span>
+<span class="n">rendered_thresh_zstats3</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;./feat_run_1.feat/rendered_thresh_zstat3.png&#39;</span><span class="p">)</span>
+<span class="n">tsplotzstats1_ev1</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;./feat_run_1.feat/tsplot/ps_tsplot_zstat1_ev1.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>First, check the desgin <strong>Matrix, covariance matrix and design efficiency</strong>. The design efficiency report shows how well the model can detect each contrast. The correlation between regressors (0.573) is moderate and acceptable, although lower is better. The required effect sizes for detecting the contrasts (C1, C2, C3) are all under 1.5%, indicating good design sensitivity. In general, values below 2% suggest the design is capable of detecting realistic BOLD responses.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">design</span><span class="p">,</span> <span class="n">design_cov</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/49ba66f3bb9f64e4b759f6acb2ad6aaf10996dcc4f2cd682a6652a7402f98cbe.png" src="_images/49ba66f3bb9f64e4b759f6acb2ad6aaf10996dcc4f2cd682a6652a7402f98cbe.png" />
+<img alt="_images/0a55eb2fc97cfcf10fe9f0bad1858a535d856797bfa8276926a5c05a7d74cb15.png" src="_images/0a55eb2fc97cfcf10fe9f0bad1858a535d856797bfa8276926a5c05a7d74cb15.png" />
+</div>
+</div>
+<p>Let’s now display the <strong>thresholded activation maps</strong>. A voxelwise threshold of Z &gt; 3.1 was applied, followed by cluster-level correction at p &lt; 0.05 (corrected for multiple comparisons).</p>
+<ul class="simple">
+<li><p>zstat1   -   C1 (incongruent)</p></li>
+<li><p>zstat2   -   C2 (congruent)</p></li>
+<li><p>zstat3   -   C3 (incongruent-congruent)</p></li>
+</ul>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;#### Incongruent&quot;</span><span class="p">),</span> <span class="n">rendered_thresh_zstats1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p class="rubric">Incongruent</p>
+<img alt="_images/70d5bfb32d2a8973b754c774eced45152182f409aafa62669cc919fc7ad0d510.png" src="_images/70d5bfb32d2a8973b754c774eced45152182f409aafa62669cc919fc7ad0d510.png" />
+</div>
+</div>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;#### Congruent&quot;</span><span class="p">),</span> <span class="n">rendered_thresh_zstats2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p class="rubric">Congruent</p>
+<img alt="_images/44a06c8f44f83b791cb0d9925e1ade580b27cc4adaf8d40b212e5183b80bc0e5.png" src="_images/44a06c8f44f83b791cb0d9925e1ade580b27cc4adaf8d40b212e5183b80bc0e5.png" />
+</div>
+</div>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;#### Incongruent-Congruent&quot;</span><span class="p">),</span> <span class="n">rendered_thresh_zstats3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p class="rubric">Incongruent-Congruent</p>
+<img alt="_images/ba2fba80e8d612fb38016c27e85e4da1eeb292d9df37f4b7b6e58be02c5d9975.png" src="_images/ba2fba80e8d612fb38016c27e85e4da1eeb292d9df37f4b7b6e58be02c5d9975.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-fsl-and-import-python-libraries">Load FSL and Import Python Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">Data preparation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-the-anatomical-and-functional-images">Inspecting the anatomical and functional images</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">1. Preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-extraction">Brain Extraction</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-of-the-brain-extracted-image">Visualization of the brain extracted image</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-a-bad-skullstrip">Fixing a bad skullstrip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motion-correction">Motion Correction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slice-timing-correction">Slice-Timing Correction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smoothing">Smoothing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#registration-and-normalization">Registration and Normalization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-preprocessing">Checking Preprocessing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics-and-modeling">2. Statistics and Modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-timing-files">Create timing files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-first-level-analysis">Running the First-Level Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#feat-design-files-for-both-runs">FEAT Design Files for both runs</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-of-first-level-design-and-results-run-1">Visualization of First-level Design and Results (Run 1)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Neurodesk Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
