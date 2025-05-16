@@ -21,6 +21,7 @@ jobs:
                 # Get the list of new or updated notebooks by comparing the checksum of notebooks from github and zenodo
                 echo "Comparing checksum notebooks from GH repo and zenodo..."
                 export UPDATED_NOTEBOOKS=$(python .github/workflows/get-updated-notebooks.py --zenodo_token ${{ secrets.ZENODO_TOKEN }})
+                echo "updated_notebooks_list" $UPDATED_NOTEBOOKS
                 echo "updated_notebooks_list=${UPDATED_NOTEBOOKS}" >> $GITHUB_ENV
 
     publish-doi:
