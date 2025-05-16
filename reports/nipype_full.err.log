@@ -35,26 +35,26 @@ res = bet.run()
 ------------------
 
 ----- stdout -----
-250417-05:11:25,596 nipype.workflow INFO:
-	 [Node] Setting-up "bet_node" in "/storage/tmp/tmp2gimu47c/bet_node".
+250516-00:07:20,140 nipype.workflow INFO:
+	 [Node] Setting-up "bet_node" in "/storage/tmp/tmpfvydxqm5/bet_node".
 ----- stdout -----
-250417-05:11:25,602 nipype.workflow INFO:
+250516-00:07:20,148 nipype.workflow INFO:
 	 [Node] Executing "bet_node" <nipype.interfaces.fsl.preprocess.BET>
 ----- stdout -----
-250417-05:11:26,159 nipype.interface INFO:
-	 stdout 2025-04-17T05:11:26.159422:
+250516-00:07:20,792 nipype.interface INFO:
+	 stdout 2025-05-16T00:07:20.792417:
 ----- stdout -----
-250417-05:11:26,161 nipype.interface INFO:
-	 stdout 2025-04-17T05:11:26.159422:Error: input image sub-01_T1w not valid
+250516-00:07:20,795 nipype.interface INFO:
+	 stdout 2025-05-16T00:07:20.792417:Error: input image sub-01_T1w not valid
 ----- stdout -----
-250417-05:11:26,162 nipype.interface INFO:
-	 stdout 2025-04-17T05:11:26.159422:
+250516-00:07:20,796 nipype.interface INFO:
+	 stdout 2025-05-16T00:07:20.792417:
 ----- stdout -----
-250417-05:11:26,282 nipype.workflow INFO:
-	 [Node] Finished "bet_node", elapsed time 0.677204s.
+250516-00:07:21,6 nipype.workflow INFO:
+	 [Node] Finished "bet_node", elapsed time 0.854953s.
 ----- stdout -----
-250417-05:11:26,285 nipype.workflow WARNING:
-	 [Node] Error on "bet_node" (/storage/tmp/tmp2gimu47c/bet_node)
+250516-00:07:21,10 nipype.workflow WARNING:
+	 [Node] Error on "bet_node" (/storage/tmp/tmpfvydxqm5/bet_node)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
@@ -85,7 +85,7 @@ File [0;32m~/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.p
 [0;31mNodeExecutionError[0m: Exception raised while executing Node bet_node.
 
 Cmdline:
-	bet sub-01_T1w.nii.gz /storage/tmp/tmp2e39k1m8/output/T1w_nipype_bet.nii.gz -f 0.30 -m
+	bet sub-01_T1w.nii.gz /storage/tmp/tmpj7eme85r/output/T1w_nipype_bet.nii.gz -f 0.30 -m
 Stdout:
 
 	Error: input image sub-01_T1w not valid
