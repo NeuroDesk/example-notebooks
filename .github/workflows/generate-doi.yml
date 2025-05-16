@@ -1,0 +1,52 @@
+name: generate-doi
+
+on:
+    schedule:
+        - cron: '0 0 1 * *' # Every Sunday at midnight
+    workflow_dispatch:
+
+jobs:
+    get-updated-notebooks:
+        runs-on: ubuntu-22.04
+        outputs:
+            updated_notebooks_list: ${{ steps.list_notebooks.outputs.updated_notebooks_list }}
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                fetch-depth: 0
+            - name: Check for notebooks to publish to Zenodo
+              id : list_notebooks
+              run: |
+                # Get the list of new or updated notebooks by comparing the checksum of notebooks from github and zenodo
+                echo "Comparing checksum notebooks from GH repo and zenodo..."
+                export UPDATED_NOTEBOOKS=$(python .github/workflows/get-updated-notebooks.py --zenodo_token ${{ secrets.ZENODO_TOKEN }})
+                echo "updated_notebooks_list=${UPDATED_NOTEBOOKS}" >> $GITHUB_ENV
+
+    publish-doi:
+      needs: get-updated-notebooks
+      runs-on: ubuntu-22.04
+      if: ${{ needs.get-updated-notebooks.outputs.updated_notebooks_list != '[]' }}
+      strategy:
+          fail-fast: false
+          matrix:
+            notebooks: ${{ fromJSON(needs.get-updated-notebooks.outputs.updated_notebooks_list) }}
+      steps:
+          - name: Checkout
+            uses: actions/checkout@v4
+            with:
+                fetch-depth: 0
+          - uses: actions/setup-python@v5
+            with:
+              python-version: 3.8
+          - name : Publish singularity container files in nectar cloud to Zenodo
+            shell: bash
+            run: |
+              curl --output ".github/workflows/publish-doi.py" "https://raw.githubusercontent.com/NeuroDesk/neurocommand/refs/heads/main/.github/workflows/publish-doi.py"
+              echo "Upload notebook to Zenodo"      
+              BUILDDATE=`date +%Y%m%d`
+              echo "BUILDDATE: $BUILDDATE"
+              NOTEBOOK_NAME=$(echo "${{ matrix.notebooks }}" | cut -d'/' -f2)
+              NOTEBOOK_BUILDDATE="${NOTEBOOK_NAME}_${BUILDDATE}"
+              export DOI_URL=$(python3 .github/workflows/publish-doi.py --container_filepath="./${{ matrix.notebooks }}" --container_name=${NOTEBOOK_BUILDDATE} --token=${{ secrets.ZENODO_TOKEN }})
+              echo "DOI_URL: $DOI_URL"
