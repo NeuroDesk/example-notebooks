@@ -53,7 +53,7 @@ jobs:
               echo "Upload notebook to Zenodo"      
               BUILDDATE=`date +%Y%m%d`
               echo "BUILDDATE: $BUILDDATE"
-              NOTEBOOK_NAME=$(echo "${{ matrix.notebooks }}" | cut -d'/' -f2)
+              NOTEBOOK_NAME=$(echo "${{ matrix.notebooks }}" | cut -d'/' -f3)
               NOTEBOOK_BUILDDATE="${NOTEBOOK_NAME}_${BUILDDATE}"
               export DOI_URL=$(python3 .github/workflows/publish-doi.py --container_filepath="./${{ matrix.notebooks }}" --container_name=${NOTEBOOK_BUILDDATE} --token=${{ secrets.ZENODO_TOKEN }})
               echo "DOI_URL: $DOI_URL"
