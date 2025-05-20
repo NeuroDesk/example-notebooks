@@ -520,7 +520,7 @@ model name	: AMD EPYC-Rome Processor
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lmod</span>
-<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;fsl/6.0.7.4&#39;</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;fsl/6.0.7.16&#39;</span><span class="p">)</span>
 <span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -556,7 +556,7 @@ model name	: AMD EPYC-Rome Processor
  &#39;change&#39;,
  &#39;MODULEPATH&#39;,
  &#39;instead.&#39;,
- &#39;fsl/6.0.7.4&#39;]
+ &#39;fsl/6.0.7.16&#39;]
 </pre></div>
 </div>
 </div>
@@ -622,42 +622,38 @@ Resolving:   0%|                                | 0.00/537 [00:00&lt;?, ? Deltas
 <span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/ds000102 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>)
 Total:   0%|                                   | 0.00/67.8M [00:00&lt;?, ? Bytes/s]
 Get sub-08/a .. 8_T1w.nii.gz:   0%|            | 0.00/10.6M [00:00&lt;?, ? Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:   1%|     | 104k/10.6M [00:00&lt;00:20, 517k Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:   3%|▏    | 312k/10.6M [00:00&lt;00:11, 863k Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:   7%|▎   | 747k/10.6M [00:00&lt;00:05, 1.93M Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  13%|▍  | 1.37M/10.6M [00:00&lt;00:02, 3.24M Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  26%|▊  | 2.76M/10.6M [00:00&lt;00:01, 6.44M Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  46%|█▍ | 4.89M/10.6M [00:00&lt;00:00, 8.74M Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  72%|██▏| 7.59M/10.6M [00:00&lt;00:00, 13.4M Bytes/s]
-Total:  16%|████                      | 10.6M/67.8M [00:01&lt;00:10, 5.56M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:   2%|     | 190k/10.6M [00:00&lt;00:15, 654k Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:   5%|▏   | 486k/10.6M [00:00&lt;00:07, 1.41M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  16%|▍  | 1.74M/10.6M [00:00&lt;00:02, 3.76M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  28%|▊  | 2.96M/10.6M [00:00&lt;00:01, 5.94M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  35%|█  | 3.72M/10.6M [00:00&lt;00:01, 6.36M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  44%|█▎ | 4.65M/10.6M [00:00&lt;00:00, 7.18M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  67%|██ | 7.11M/10.6M [00:00&lt;00:00, 12.1M Bytes/s]
+Total:  16%|████                      | 10.6M/67.8M [00:01&lt;00:09, 5.80M Bytes/s]
 Get sub-08/f .. _bold.nii.gz:   0%|            | 0.00/28.6M [00:00&lt;?, ? Bytes/s]
-Get sub-08/f .. _bold.nii.gz:   5%|▏  | 1.41M/28.6M [00:00&lt;00:02, 10.4M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  12%|▎  | 3.34M/28.6M [00:00&lt;00:02, 11.2M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  22%|▋  | 6.41M/28.6M [00:00&lt;00:01, 16.1M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  30%|▉  | 8.73M/28.6M [00:00&lt;00:01, 18.3M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  39%|█▏ | 11.1M/28.6M [00:00&lt;00:00, 19.9M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  53%|█▌ | 15.3M/28.6M [00:00&lt;00:00, 22.2M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  66%|█▉ | 18.9M/28.6M [00:00&lt;00:00, 23.6M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  82%|██▍| 23.5M/28.6M [00:01&lt;00:00, 23.4M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  90%|██▋| 25.9M/28.6M [00:01&lt;00:00, 20.6M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  98%|██▉| 28.1M/28.6M [00:01&lt;00:00, 18.9M Bytes/s]
-Total:  58%|███████████████           | 39.2M/67.8M [00:03&lt;00:02, 10.2M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:   7%|▏  | 1.95M/28.6M [00:00&lt;00:01, 19.5M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  19%|▌  | 5.58M/28.6M [00:00&lt;00:01, 19.3M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  27%|▊  | 7.71M/28.6M [00:00&lt;00:01, 18.1M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  35%|█  | 9.89M/28.6M [00:00&lt;00:00, 19.3M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  42%|█▏ | 11.9M/28.6M [00:00&lt;00:00, 19.5M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  49%|█▍ | 13.9M/28.6M [00:00&lt;00:00, 19.7M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  56%|█▋ | 16.0M/28.6M [00:00&lt;00:00, 20.0M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  63%|█▉ | 18.0M/28.6M [00:00&lt;00:00, 20.1M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  70%|██ | 20.1M/28.6M [00:01&lt;00:00, 20.2M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  77%|██▎| 22.1M/28.6M [00:01&lt;00:00, 20.3M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  84%|██▌| 24.2M/28.6M [00:01&lt;00:00, 20.3M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  92%|██▊| 26.3M/28.6M [00:01&lt;00:00, 20.6M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  99%|██▉| 28.4M/28.6M [00:01&lt;00:00, 20.7M Bytes/s]
+Total:  58%|███████████████           | 39.2M/67.8M [00:03&lt;00:02, 10.7M Bytes/s]
 Get sub-08/f .. _bold.nii.gz:   0%|            | 0.00/28.6M [00:00&lt;?, ? Bytes/s]
-Get sub-08/f .. _bold.nii.gz:   5%|▏  | 1.52M/28.6M [00:00&lt;00:02, 12.0M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  13%|▍  | 3.71M/28.6M [00:00&lt;00:01, 13.3M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  21%|▌  | 5.89M/28.6M [00:00&lt;00:01, 13.1M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  32%|▉  | 9.08M/28.6M [00:00&lt;00:01, 14.4M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  38%|█▏ | 10.9M/28.6M [00:00&lt;00:01, 14.3M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  44%|█▎ | 12.6M/28.6M [00:00&lt;00:01, 12.6M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  49%|█▍ | 13.9M/28.6M [00:01&lt;00:01, 12.7M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  53%|█▌ | 15.2M/28.6M [00:01&lt;00:01, 12.8M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  58%|█▋ | 16.6M/28.6M [00:01&lt;00:00, 13.1M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  63%|█▉ | 18.1M/28.6M [00:01&lt;00:00, 13.4M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  68%|██ | 19.5M/28.6M [00:01&lt;00:00, 13.6M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  73%|██▏| 20.9M/28.6M [00:01&lt;00:00, 13.7M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  83%|██▍| 23.7M/28.6M [00:01&lt;00:00, 13.8M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  92%|██▊| 26.4M/28.6M [00:01&lt;00:00, 13.7M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  97%|██▉| 27.9M/28.6M [00:02&lt;00:00, 13.9M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  14%|▍  | 4.04M/28.6M [00:00&lt;00:01, 20.2M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  29%|▊  | 8.19M/28.6M [00:00&lt;00:00, 20.5M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  43%|█▎ | 12.4M/28.6M [00:00&lt;00:00, 20.6M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  51%|█▌ | 14.5M/28.6M [00:00&lt;00:00, 20.6M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  58%|█▋ | 16.6M/28.6M [00:00&lt;00:00, 20.9M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  73%|██▏| 20.8M/28.6M [00:01&lt;00:00, 20.8M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  87%|██▌| 24.8M/28.6M [00:01&lt;00:00, 20.6M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  95%|██▊| 27.1M/28.6M [00:01&lt;00:00, 21.0M Bytes/s]
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08/anat/sub-08_T1w.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08/func/sub-08_task-flanker_run-1_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08/func/sub-08_task-flanker_run-2_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
@@ -707,7 +703,7 @@ action summary:
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "6adab9c8867648859251f1aac4812fdf", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0589e2307f80466b88ab32b28cefedc7", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -719,7 +715,7 @@ action summary:
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "eefec67ca0d04a138620636718824f3a", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "691f73a55f6b4b27941d03f0e736a399", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -731,7 +727,7 @@ action summary:
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "a12155b37ffd47aa8483ba77fd70828e", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "1363048ef6b24a5c9d6afa13872d16b8", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 </section>
@@ -804,7 +800,7 @@ Miscellaneous options:
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d3bd3cb6b93f47aba707037512d77a45", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "2b1fab6e208b4fcea6f29034960f38b6", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 </section>
@@ -831,7 +827,7 @@ Miscellaneous options:
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "dd170315bbd54d7382360413119251db", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0a1e50b40bc143c2a76c56ae6f7dc40f", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="motion-correction">
@@ -937,7 +933,7 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/fsl-6.0.7.4/data/standard/MNI152_T1_2mm_brain.nii.gz
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/fsl-6.0.7.16/data/standard/MNI152_T1_2mm_brain.nii.gz
 </pre></div>
 </div>
 </div>
@@ -1001,7 +997,7 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "3a70fa3ce2854e9ea5e904c98291698d", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "c248c119ded8447d986c3713600d095d", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <p><strong>Motion parameters</strong></p>
 <p>The motion plots show translation and rotation over time, with each timepoint (volume) on the x-axis. For translation, values are in millimeters. Look for sudden spikes greater than half the voxel size, or gradual drifts exceeding a full voxel. For example, with 3 mm isotropic voxels, relative motion over 1.5 mm between volumes or absolute shifts over 3 mm across the run may warrant closer inspection.</p>
@@ -1066,16 +1062,16 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-05-15 06:02:49--  https://raw.githubusercontent.com/andrewjahn/FSL_Scripts/master/make_FSL_Timings.sh
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.110.133, 185.199.109.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-05-20 03:46:42--  https://raw.githubusercontent.com/andrewjahn/FSL_Scripts/master/make_FSL_Timings.sh
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.110.133, 185.199.111.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 1220 (1.2K) [text/plain]
 Saving to: ‘./ds000102/make_FSL_Timings.sh’
 
 ./ds000102/make_FSL 100%[===================&gt;]   1.19K  --.-KB/s    in 0s      
 
-2025-05-15 06:02:50 (99.2 MB/s) - ‘./ds000102/make_FSL_Timings.sh’ saved [1220/1220]
+2025-05-20 03:46:42 (90.5 MB/s) - ‘./ds000102/make_FSL_Timings.sh’ saved [1220/1220]
 </pre></div>
 </div>
 </div>
@@ -1226,7 +1222,7 @@ Three contrasts are defined:</p>
 </div>
 </div>
 </div>
-<div class="cell tag_scroll-output docutils container">
+<div class="cell tag_scroll-output tag_scroll-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create feat design files for both runs</span>
 <span class="k">for</span> <span class="n">run_key</span><span class="p">,</span> <span class="n">params</span> <span class="ow">in</span> <span class="n">runs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -1718,19 +1714,12 @@ Three contrasts are defined:</p>
 </div>
 </div>
 </div>
-<p>To ensure compatibility across environments, explicitly define the <code class="docutils literal notranslate"><span class="pre">USER</span></code> variable using <code class="docutils literal notranslate"><span class="pre">whoami</span></code>, which retrieves the current username. This step helps avoid issues when running FSL’s feat, which expects <code class="docutils literal notranslate"><span class="pre">USER</span></code> to be set.</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">feat</span></code> for each of the two design files.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">run1_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="s1">&#39;design_run1&#39;</span><span class="p">)</span>
-<span class="n">run2_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="s1">&#39;design_run2&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cmd</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;export USER=$</span><span class="se">{{</span><span class="s1">USER:-$(whoami)</span><span class="se">}}</span><span class="s1"> &amp;&amp; feat &quot;</span><span class="si">{</span><span class="n">run1_path</span><span class="si">}</span><span class="s1">&quot; &amp;&amp; feat &quot;</span><span class="si">{</span><span class="n">run2_path</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
-<span class="o">!{</span>cmd<span class="o">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+feat design_run1
+feat design_run2
 </pre></div>
 </div>
 </div>
@@ -1792,7 +1781,7 @@ Three contrasts are defined:</p>
 <img alt="_images/44a06c8f44f83b791cb0d9925e1ade580b27cc4adaf8d40b212e5183b80bc0e5.png" src="_images/44a06c8f44f83b791cb0d9925e1ade580b27cc4adaf8d40b212e5183b80bc0e5.png" />
 </div>
 </div>
-<div class="cell tag_scroll-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;#### Incongruent-Congruent&quot;</span><span class="p">),</span> <span class="n">rendered_thresh_zstats3</span><span class="p">)</span>
 </pre></div>

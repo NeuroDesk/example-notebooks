@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>FSL Preprocessing and GLM &#8212; Neurodesk</title>
   
@@ -14,75 +15,69 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/algolia.css?v=6923f26e" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/algolia.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.3.3/dist/umd/index.js"></script>
+    <script src="_static/algolia.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-4Z9774J59Y"></script>
-    <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){ dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-4Z9774J59Y');
-            </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){ dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-4Z9774J59Y');
-            </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'functional_imaging/FSL_preproc_glm';</script>
-    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.3.3/dist/umd/index.js"></script>
-    <script src="../_static/algolia.js?v=b553005c"></script>
-    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/functional_imaging/FSL_preproc_glm.html" />
-    <link rel="icon" href="../_static/neurodesk_logo.svg"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ASLprep" href="aslprep.html" />
-    <link rel="prev" title="AFNI Preprocessing" href="AFNI_preprocessing_only.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'FSL_preproc_glm';</script>
+    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/FSL_preproc_glm.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -92,29 +87,34 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="../search.html"
+      action="search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -130,20 +130,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -160,104 +152,28 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
-<a class="navbar-brand logo" href="../intro.html">
+<a class="navbar-brand logo" href="#">
   
   
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/neurodesk_logo.svg" class="logo__image only-light" alt="Neurodesk - Home"/>
-    <script>document.write(`<img src="../_static/neurodesk_logo.svg" class="logo__image only-dark" alt="Neurodesk - Home"/>`);</script>
   
+    <p class="title logo__title">Neurodesk</p>
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Neurodesk environment
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    FSL Preprocessing and GLM
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../workflows/MRIQC.html">MRIQC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../workflows/RISE_slideshow.html">RISE Slideshow of a Jupyter Notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../workflows/bids_conversion.html">BIDS conversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../workflows/nipype_full.html">Nipype on Neurodesk</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../workflows/nipype_short.html">Basic Nipype</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="../workflows/pyBIDS.html">pyBIDS - a Python API for working with BIDS datasets</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Structural Imaging</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/brain_extraction_different_tools.html">Brain extraction with different software packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/freesurfer.html">Freesurfer</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/qsmxt.html">QSMxT</a></li>
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/sct_toolbox.html">SCT Toolbox</a></li>
-
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Diffusion Imaging</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../diffusion_imaging/MRtrix_CSD.html">Diffusion Analysis with MRtrix: Part 2 - Constrained Spherical Deconvolution and Tissue estimation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../diffusion_imaging/MRtrix_CoReg_Streamline.html">Diffusion Analysis with MRtrix: Part 3 - Registration and Streamline Fitting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../diffusion_imaging/MRtrix_Preprocessing.html">Diffusion Analysis with MRtrix: Part 1 - Preprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../diffusion_imaging/mrtrix3tissue.html">MRtrix3Tissue</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Imaging</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="AFNI_preprocessing_and_glm.html">AFNI Preprocessing and GLM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="AFNI_preprocessing_only.html">AFNI Preprocessing</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">FSL Preprocessing and GLM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aslprep.html">ASLprep</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deepretinotopy.html">DeepRetinotopy</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="first_and_second_level_spm.html">First and Second Level fMRI Analysis with SPM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fmriprep.html">fMRIprep</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro_to_preprocessing.html">Introduction to Preprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nipype_fsl_all_levels_flanker.html">FSL’s fMRI Data Analysis via Nipype</a></li>
-
-
-
-
-</ul>
-
+        
     </div>
 </nav></div>
     </div>
@@ -271,7 +187,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -280,14 +196,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -310,16 +226,16 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/functional_imaging/FSL_preproc_glm.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/FSL_preproc_glm.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
+   title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+    <img src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -358,7 +274,7 @@
       
       
       
-      <li><a href="https://github.com/NeuroDesk/example-notebooks/edit/main/books/functional_imaging/FSL_preproc_glm.ipynb" target="_blank"
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/edit/main/books/FSL_preproc_glm.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -375,7 +291,7 @@
       
       
       
-      <li><a href="https://github.com/NeuroDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Ffunctional_imaging/FSL_preproc_glm.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2FFSL_preproc_glm.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -405,7 +321,7 @@
       
       
       
-      <li><a href="../_sources/functional_imaging/FSL_preproc_glm.ipynb" target="_blank"
+      <li><a href="_sources/FSL_preproc_glm.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -460,10 +376,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -471,14 +387,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -537,14 +453,14 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/functional_imaging/FSL_preproc_glm.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="fsl-preprocessing-and-glm">
-<h1>FSL Preprocessing and GLM<a class="headerlink" href="#fsl-preprocessing-and-glm" title="Link to this heading">#</a></h1>
+<h1>FSL Preprocessing and GLM<a class="headerlink" href="#fsl-preprocessing-and-glm" title="Permalink to this heading">#</a></h1>
 <p>This notebook showcases the FSL software package and performs preprocessing and first-level analysis on one subject from the Flanker dataset. The example is closely inspired by the FSL tutorial in Andy’s Brain Book and follows the steps outlined in <em>Chapter 4: Preprocessing</em> and <em>Chapter 5: Statistics and Modeling</em>. For detailed information about the dataset and analysis pipeline, refer to Andy’s original tutorial.</p>
 <section id="id1">
-<h2><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>Author: Monika Doerig</p>
 <p>Citation:</p>
 <p><strong>Andy’s Brain Book:</strong></p>
@@ -560,25 +476,25 @@ document.write(`
 </ul>
 </section>
 <section id="setup-neurodesk">
-<h2>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Link to this heading">#</a></h2>
+<h2>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="n">IN_COLAB</span> <span class="o">=</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
+import os
+import sys
+IN_COLAB = &#39;google.colab&#39; in sys.modules
 
-<span class="k">if</span> <span class="n">IN_COLAB</span><span class="p">:</span>
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_PRELOAD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;APPTAINER_BINDPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content,/tmp,/cvmfs&quot;</span>
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MPLCONFIGDIR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content/matplotlib-mpldir&quot;</span>
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LMOD_CMD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/share/lmod/lmod/libexec/lmod&quot;</span>
+if IN_COLAB:
+  os.environ[&quot;LD_PRELOAD&quot;] = &quot;&quot;;
+  os.environ[&quot;APPTAINER_BINDPATH&quot;] = &quot;/content,/tmp,/cvmfs&quot;
+  os.environ[&quot;MPLCONFIGDIR&quot;] = &quot;/content/matplotlib-mpldir&quot;
+  os.environ[&quot;LMOD_CMD&quot;] = &quot;/usr/share/lmod/lmod/libexec/lmod&quot;
 
-  <span class="err">!</span><span class="n">curl</span> <span class="o">-</span><span class="n">J</span> <span class="o">-</span><span class="n">O</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NeuroDesk</span><span class="o">/</span><span class="n">neurocommand</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
-  <span class="err">!</span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
-  <span class="err">!</span><span class="o">./</span><span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
+  !curl -J -O https://raw.githubusercontent.com/NeuroDesk/neurocommand/main/googlecolab_setup.sh
+  !chmod +x googlecolab_setup.sh
+  !./googlecolab_setup.sh
 
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MODULEPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">)))))</span>
+  os.environ[&quot;MODULEPATH&quot;] = &#39;:&#39;.join(map(str, list(map(lambda x: os.path.join(os.path.abspath(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;), x),os.listdir(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;)))))
 </pre></div>
 </div>
 </div>
@@ -586,44 +502,86 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;vendor&#39;</span> <span class="p">|</span> uniq
+<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;model name&#39;</span> <span class="p">|</span> uniq
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: GenuineIntel
-model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: AuthenticAMD
+model name	: AMD EPYC-Rome Processor
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="load-fsl-and-import-python-libraries">
-<h2>Load FSL and Import Python Libraries<a class="headerlink" href="#load-fsl-and-import-python-libraries" title="Link to this heading">#</a></h2>
+<h2>Load FSL and Import Python Libraries<a class="headerlink" href="#load-fsl-and-import-python-libraries" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">lmod</span>
-<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;fsl/6.0.7.4&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lmod</span>
+<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;fsl/6.0.7.16&#39;</span><span class="p">)</span>
 <span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;fsl/6.0.7.4&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Lmod&#39;,
+ &#39;Warning:&#39;,
+ &#39;The&#39;,
+ &#39;environment&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;has&#39;,
+ &#39;been&#39;,
+ &#39;changed&#39;,
+ &#39;in&#39;,
+ &#39;unexpected&#39;,
+ &#39;ways.&#39;,
+ &#39;Lmod&#39;,
+ &#39;is&#39;,
+ &#39;unable&#39;,
+ &#39;to&#39;,
+ &#39;use&#39;,
+ &#39;given&#39;,
+ &#39;MODULEPATH.&#39;,
+ &#39;It&#39;,
+ &#39;is&#39;,
+ &#39;using:&#39;,
+ &#39;&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM::&quot;.&#39;,
+ &#39;Please&#39;,
+ &#39;use&#39;,
+ &#39;&quot;module&#39;,
+ &#39;use&#39;,
+ &#39;to&#39;,
+ &#39;change&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;instead.&#39;,
+ &#39;fsl/6.0.7.16&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ipyniivue</span><span class="w"> </span><span class="kn">import</span> <span class="n">NiiVue</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">nibabel</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nib</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">nilearn.image</span><span class="w"> </span><span class="kn">import</span> <span class="n">index_img</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipyniivue</span> <span class="kn">import</span> <span class="n">NiiVue</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">index_img</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">ipyniivue</span> <span class="kn">import</span> <span class="n">NiiVue</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;NiiVue&#39; from &#39;ipyniivue&#39; (/home/ubuntu/.local/lib/python3.10/site-packages/ipyniivue/__init__.py)
 </pre></div>
 </div>
 </div>
@@ -638,11 +596,11 @@ model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
 </div>
 </section>
 <section id="data-preparation">
-<h2>Data preparation<a class="headerlink" href="#data-preparation" title="Link to this heading">#</a></h2>
+<h2>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>datalad<span class="w"> </span>install<span class="w"> </span>https://github.com/OpenNeuroDatasets/ds000102.git
-<span class="o">!</span><span class="nb">cd</span><span class="w"> </span>./ds000102<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>datalad<span class="w"> </span>get<span class="w"> </span>sub-08
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>datalad install https://github.com/OpenNeuroDatasets/ds000102.git
+<span class="o">!</span><span class="nb">cd</span> ./ds000102 <span class="o">&amp;&amp;</span> datalad get sub-08
 </pre></div>
 </div>
 </div>
@@ -664,42 +622,38 @@ Resolving:   0%|                                | 0.00/537 [00:00&lt;?, ? Deltas
 <span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/ds000102 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>)
 Total:   0%|                                   | 0.00/67.8M [00:00&lt;?, ? Bytes/s]
 Get sub-08/a .. 8_T1w.nii.gz:   0%|            | 0.00/10.6M [00:00&lt;?, ? Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:   1%|     | 104k/10.6M [00:00&lt;00:20, 517k Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:   3%|▏    | 312k/10.6M [00:00&lt;00:11, 863k Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:   7%|▎   | 747k/10.6M [00:00&lt;00:05, 1.93M Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  13%|▍  | 1.37M/10.6M [00:00&lt;00:02, 3.24M Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  26%|▊  | 2.76M/10.6M [00:00&lt;00:01, 6.44M Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  46%|█▍ | 4.89M/10.6M [00:00&lt;00:00, 8.74M Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  72%|██▏| 7.59M/10.6M [00:00&lt;00:00, 13.4M Bytes/s]
-Total:  16%|████                      | 10.6M/67.8M [00:01&lt;00:10, 5.56M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:   2%|     | 190k/10.6M [00:00&lt;00:15, 654k Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:   5%|▏   | 486k/10.6M [00:00&lt;00:07, 1.41M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  16%|▍  | 1.74M/10.6M [00:00&lt;00:02, 3.76M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  28%|▊  | 2.96M/10.6M [00:00&lt;00:01, 5.94M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  35%|█  | 3.72M/10.6M [00:00&lt;00:01, 6.36M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  44%|█▎ | 4.65M/10.6M [00:00&lt;00:00, 7.18M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  67%|██ | 7.11M/10.6M [00:00&lt;00:00, 12.1M Bytes/s]
+Total:  16%|████                      | 10.6M/67.8M [00:01&lt;00:09, 5.80M Bytes/s]
 Get sub-08/f .. _bold.nii.gz:   0%|            | 0.00/28.6M [00:00&lt;?, ? Bytes/s]
-Get sub-08/f .. _bold.nii.gz:   5%|▏  | 1.41M/28.6M [00:00&lt;00:02, 10.4M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  12%|▎  | 3.34M/28.6M [00:00&lt;00:02, 11.2M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  22%|▋  | 6.41M/28.6M [00:00&lt;00:01, 16.1M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  30%|▉  | 8.73M/28.6M [00:00&lt;00:01, 18.3M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  39%|█▏ | 11.1M/28.6M [00:00&lt;00:00, 19.9M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  53%|█▌ | 15.3M/28.6M [00:00&lt;00:00, 22.2M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  66%|█▉ | 18.9M/28.6M [00:00&lt;00:00, 23.6M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  82%|██▍| 23.5M/28.6M [00:01&lt;00:00, 23.4M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  90%|██▋| 25.9M/28.6M [00:01&lt;00:00, 20.6M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  98%|██▉| 28.1M/28.6M [00:01&lt;00:00, 18.9M Bytes/s]
-Total:  58%|███████████████           | 39.2M/67.8M [00:03&lt;00:02, 10.2M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:   7%|▏  | 1.95M/28.6M [00:00&lt;00:01, 19.5M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  19%|▌  | 5.58M/28.6M [00:00&lt;00:01, 19.3M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  27%|▊  | 7.71M/28.6M [00:00&lt;00:01, 18.1M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  35%|█  | 9.89M/28.6M [00:00&lt;00:00, 19.3M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  42%|█▏ | 11.9M/28.6M [00:00&lt;00:00, 19.5M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  49%|█▍ | 13.9M/28.6M [00:00&lt;00:00, 19.7M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  56%|█▋ | 16.0M/28.6M [00:00&lt;00:00, 20.0M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  63%|█▉ | 18.0M/28.6M [00:00&lt;00:00, 20.1M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  70%|██ | 20.1M/28.6M [00:01&lt;00:00, 20.2M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  77%|██▎| 22.1M/28.6M [00:01&lt;00:00, 20.3M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  84%|██▌| 24.2M/28.6M [00:01&lt;00:00, 20.3M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  92%|██▊| 26.3M/28.6M [00:01&lt;00:00, 20.6M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  99%|██▉| 28.4M/28.6M [00:01&lt;00:00, 20.7M Bytes/s]
+Total:  58%|███████████████           | 39.2M/67.8M [00:03&lt;00:02, 10.7M Bytes/s]
 Get sub-08/f .. _bold.nii.gz:   0%|            | 0.00/28.6M [00:00&lt;?, ? Bytes/s]
-Get sub-08/f .. _bold.nii.gz:   5%|▏  | 1.52M/28.6M [00:00&lt;00:02, 12.0M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  13%|▍  | 3.71M/28.6M [00:00&lt;00:01, 13.3M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  21%|▌  | 5.89M/28.6M [00:00&lt;00:01, 13.1M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  32%|▉  | 9.08M/28.6M [00:00&lt;00:01, 14.4M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  38%|█▏ | 10.9M/28.6M [00:00&lt;00:01, 14.3M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  44%|█▎ | 12.6M/28.6M [00:00&lt;00:01, 12.6M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  49%|█▍ | 13.9M/28.6M [00:01&lt;00:01, 12.7M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  53%|█▌ | 15.2M/28.6M [00:01&lt;00:01, 12.8M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  58%|█▋ | 16.6M/28.6M [00:01&lt;00:00, 13.1M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  63%|█▉ | 18.1M/28.6M [00:01&lt;00:00, 13.4M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  68%|██ | 19.5M/28.6M [00:01&lt;00:00, 13.6M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  73%|██▏| 20.9M/28.6M [00:01&lt;00:00, 13.7M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  83%|██▍| 23.7M/28.6M [00:01&lt;00:00, 13.8M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  92%|██▊| 26.4M/28.6M [00:01&lt;00:00, 13.7M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  97%|██▉| 27.9M/28.6M [00:02&lt;00:00, 13.9M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  14%|▍  | 4.04M/28.6M [00:00&lt;00:01, 20.2M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  29%|▊  | 8.19M/28.6M [00:00&lt;00:00, 20.5M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  43%|█▎ | 12.4M/28.6M [00:00&lt;00:00, 20.6M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  51%|█▌ | 14.5M/28.6M [00:00&lt;00:00, 20.6M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  58%|█▋ | 16.6M/28.6M [00:00&lt;00:00, 20.9M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  73%|██▏| 20.8M/28.6M [00:01&lt;00:00, 20.8M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  87%|██▌| 24.8M/28.6M [00:01&lt;00:00, 20.6M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  95%|██▊| 27.1M/28.6M [00:01&lt;00:00, 21.0M Bytes/s]
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08/anat/sub-08_T1w.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08/func/sub-08_task-flanker_run-1_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08/func/sub-08_task-flanker_run-2_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
@@ -713,7 +667,7 @@ action summary:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree<span class="w"> </span>-L<span class="w"> </span><span class="m">4</span><span class="w"> </span>./ds000102/sub-08/
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree -L <span class="m">4</span> ./ds000102/sub-08/
 </pre></div>
 </div>
 </div>
@@ -733,9 +687,9 @@ action summary:
 </div>
 </div>
 <section id="inspecting-the-anatomical-and-functional-images">
-<h3>Inspecting the anatomical and functional images<a class="headerlink" href="#inspecting-the-anatomical-and-functional-images" title="Link to this heading">#</a></h3>
+<h3>Inspecting the anatomical and functional images<a class="headerlink" href="#inspecting-the-anatomical-and-functional-images" title="Permalink to this heading">#</a></h3>
 <p>Before beginning any preprocessing or analysis, it’s essential to visually inspect both anatomical and functional MRI data. This helps catch common issues such as motion artifacts, abnormal intensities, or poor image quality that could affect downstream results. To look at the data with FSL’s image viewer, you would type:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">fsleyes</span><span class="w"> </span><span class="nx">ds000102</span><span class="o">/</span><span class="nx">sub</span><span class="o">-</span><span class="mf">08</span><span class="o">/</span><span class="nx">anat</span><span class="o">/</span><span class="nx">sub</span><span class="o">-</span><span class="mf">08</span><span class="nx">_T1w</span><span class="p">.</span><span class="nx">nii</span><span class="p">.</span><span class="nx">gz</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">fsleyes</span> <span class="nx">ds000102</span><span class="o">/</span><span class="nx">sub</span><span class="o">-</span><span class="mf">08</span><span class="o">/</span><span class="nx">anat</span><span class="o">/</span><span class="nx">sub</span><span class="o">-</span><span class="mf">08</span><span class="nx">_T1w</span><span class="p">.</span><span class="nx">nii</span><span class="p">.</span><span class="nx">gz</span>
 </pre></div>
 </div>
 <p>We will use ipyniivue to look at the data:</p>
@@ -749,7 +703,7 @@ action summary:
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "6adab9c8867648859251f1aac4812fdf", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0589e2307f80466b88ab32b28cefedc7", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -761,7 +715,7 @@ action summary:
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "eefec67ca0d04a138620636718824f3a", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "691f73a55f6b4b27941d03f0e736a399", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -773,18 +727,18 @@ action summary:
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "a12155b37ffd47aa8483ba77fd70828e", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "1363048ef6b24a5c9d6afa13872d16b8", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 </section>
 <section id="preprocessing">
-<h2>1. Preprocessing<a class="headerlink" href="#preprocessing" title="Link to this heading">#</a></h2>
+<h2>1. Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h2>
 <section id="brain-extraction">
-<h3>Brain Extraction<a class="headerlink" href="#brain-extraction" title="Link to this heading">#</a></h3>
+<h3>Brain Extraction<a class="headerlink" href="#brain-extraction" title="Permalink to this heading">#</a></h3>
 <p>The first step is to remove the skull and non-brain areas from the image with FSL’s <code class="docutils literal notranslate"><span class="pre">bet</span></code>, the Brain Extraction Tool.</p>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>bet<span class="w"> </span>-help
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> bet -help
 </pre></div>
 </div>
 </div>
@@ -824,14 +778,14 @@ Miscellaneous options:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Brain extraction with default settings, set input and output image </span>
-<span class="o">!</span>mkdir<span class="w"> </span>-p<span class="w"> </span>FSL_preproc
-<span class="o">!</span>bet<span class="w"> </span>./ds000102/sub-08/anat/sub-08_T1w.nii.gz<span class="w"> </span>./FSL_preproc/sub-08_T1w_brain.nii.gz
+<span class="o">!</span>mkdir -p FSL_preproc
+<span class="o">!</span>bet ./ds000102/sub-08/anat/sub-08_T1w.nii.gz ./FSL_preproc/sub-08_T1w_brain.nii.gz
 </pre></div>
 </div>
 </div>
 </div>
 <section id="visualization-of-the-brain-extracted-image">
-<h4>Visualization of the brain extracted image<a class="headerlink" href="#visualization-of-the-brain-extracted-image" title="Link to this heading">#</a></h4>
+<h4>Visualization of the brain extracted image<a class="headerlink" href="#visualization-of-the-brain-extracted-image" title="Permalink to this heading">#</a></h4>
 <p>Check the following overlay image for areas where too much brain tissue has been removed or where parts of the skull haven’t been fully stripped away. The goal is to produce an image where the skull and face are completely removed, leaving only the brain—cortex, subcortical structures, brainstem, and cerebellum—intact.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -846,16 +800,16 @@ Miscellaneous options:
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d3bd3cb6b93f47aba707037512d77a45", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "2b1fab6e208b4fcea6f29034960f38b6", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 </section>
 <section id="fixing-a-bad-skullstrip">
-<h3>Fixing a bad skullstrip<a class="headerlink" href="#fixing-a-bad-skullstrip" title="Link to this heading">#</a></h3>
+<h3>Fixing a bad skullstrip<a class="headerlink" href="#fixing-a-bad-skullstrip" title="Permalink to this heading">#</a></h3>
 <p>If the skullstripping results aren’t satisfactory, you can adjust the parameters in the <code class="docutils literal notranslate"><span class="pre">bet</span></code> command. The <code class="docutils literal notranslate"><span class="pre">-f</span></code> option sets the fractional intensity threshold, which controls how much brain tissue is included—lower values result in a more generous brain mask, while higher values are more conservative. If too much brain was removed, try lowering the threshold. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>bet<span class="w"> </span>./ds000102/sub-08/anat/sub-08_T1w.nii.gz<span class="w"> </span>./FSL_preproc/sub-08_T1w_brain_f02.nii.gz<span class="w"> </span>-f<span class="w"> </span><span class="m">0</span>.2
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>bet ./ds000102/sub-08/anat/sub-08_T1w.nii.gz ./FSL_preproc/sub-08_T1w_brain_f02.nii.gz -f <span class="m">0</span>.2
 </pre></div>
 </div>
 </div>
@@ -873,29 +827,29 @@ Miscellaneous options:
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "dd170315bbd54d7382360413119251db", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0a1e50b40bc143c2a76c56ae6f7dc40f", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="motion-correction">
-<h3>Motion Correction<a class="headerlink" href="#motion-correction" title="Link to this heading">#</a></h3>
+<h3>Motion Correction<a class="headerlink" href="#motion-correction" title="Permalink to this heading">#</a></h3>
 <p>Motion correction realigns all volumes in a time series to a single reference volume to correct for head movement during the scan. The reference volume is typically the first, middle, or last volume in the series. FSL’s <code class="docutils literal notranslate"><span class="pre">mcflirt</span></code> can perform this correction by aligning each volume to the selected reference using rigid-body transformations that undo any detected motion.</p>
 <p>The following commands use the first volume as the reference (- refvol 0) to perform motion correction:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#apply motion correction to the functional image with FSL MCFLIRT</span>
-<span class="o">!</span>mcflirt<span class="w"> </span>-in<span class="w"> </span>./ds000102/sub-08/func/sub-08_task-flanker_run-1_bold.nii.gz<span class="w"> </span>-out<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf.nii.gz<span class="w"> </span>-plots<span class="w"> </span>-refvol<span class="w"> </span><span class="m">0</span>
-<span class="o">!</span>mcflirt<span class="w"> </span>-in<span class="w"> </span>./ds000102/sub-08/func/sub-08_task-flanker_run-2_bold.nii.gz<span class="w"> </span>-out<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf.nii.gz<span class="w"> </span>-plots<span class="w"> </span>-refvol<span class="w"> </span><span class="m">0</span>
+<span class="o">!</span>mcflirt -in ./ds000102/sub-08/func/sub-08_task-flanker_run-1_bold.nii.gz -out ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf.nii.gz -plots -refvol <span class="m">0</span>
+<span class="o">!</span>mcflirt -in ./ds000102/sub-08/func/sub-08_task-flanker_run-2_bold.nii.gz -out ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf.nii.gz -plots -refvol <span class="m">0</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="slice-timing-correction">
-<h3>Slice-Timing Correction<a class="headerlink" href="#slice-timing-correction" title="Link to this heading">#</a></h3>
+<h3>Slice-Timing Correction<a class="headerlink" href="#slice-timing-correction" title="Permalink to this heading">#</a></h3>
 <p>FSL does not perform slice-timing correction by default. Instead, it accounts for timing differences by including a temporal derivative in the statistical model.</p>
 </section>
 <section id="smoothing">
-<h3>Smoothing<a class="headerlink" href="#smoothing" title="Link to this heading">#</a></h3>
+<h3>Smoothing<a class="headerlink" href="#smoothing" title="Permalink to this heading">#</a></h3>
 <p>Smoothing replaces each voxel’s signal with a weighted average of its neighbors, reducing noise at the cost of spatial resolution. While this blurs the image, it can enhance the signal-to-noise ratio by minimizing random fluctuations. Smoothing also helps improve statistical power and facilitates normalization to a standard template, as it makes anatomical differences between subjects less pronounced.
 To apply smoothing using <code class="docutils literal notranslate"><span class="pre">fslmaths</span></code>, the smoothing kernel is defined by its sigma (standard deviation). However, smoothing parameters are often specified using Full Width at Half Maximum (FWHM). To convert FWHM to sigma, use the formula:</p>
 <p><span class="math notranslate nohighlight">\(\text{𝜎} = FWHM/ \sqrt{8 \ln 2} = FWHM/  \approx 2.3548 \ \)</span></p>
@@ -904,15 +858,15 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Spatial smoothing FWHM=5mm (𝜎=2.1)</span>
-<span class="o">!</span>fslmaths<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf.nii.gz<span class="w"> </span>-s<span class="w"> </span><span class="m">2</span>.1<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth.nii.gz
-<span class="o">!</span>fslmaths<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf.nii.gz<span class="w"> </span>-s<span class="w"> </span><span class="m">2</span>.1<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth.nii.gz
+<span class="o">!</span>fslmaths ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf.nii.gz -s <span class="m">2</span>.1 ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth.nii.gz
+<span class="o">!</span>fslmaths ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf.nii.gz -s <span class="m">2</span>.1 ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth.nii.gz
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="registration-and-normalization">
-<h3>Registration and Normalization<a class="headerlink" href="#registration-and-normalization" title="Link to this heading">#</a></h3>
+<h3>Registration and Normalization<a class="headerlink" href="#registration-and-normalization" title="Permalink to this heading">#</a></h3>
 <p>Registration aligns functional images to the subject’s anatomical scan, while normalization aligns the anatomical scan to a standard template (e.g., MNI). Both steps involve estimating transformations and applying them to the data. The typical steps include:</p>
 <ol class="arabic simple">
 <li><p>Initial Alignment: The functional and anatomical images are assumed to be roughly in the same location. If not, the outlines of the images are aligned.</p></li>
@@ -938,8 +892,8 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>fslroi<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth.nii.gz<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_middle.nii.gz<span class="w"> </span><span class="o">{</span>middle_index1<span class="o">}</span><span class="w"> </span><span class="m">1</span>
-<span class="o">!</span>fslroi<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth.nii.gz<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_middle.nii.gz<span class="w"> </span><span class="o">{</span>middle_index2<span class="o">}</span><span class="w"> </span><span class="m">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>fslroi ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth.nii.gz ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_middle.nii.gz <span class="o">{</span>middle_index1<span class="o">}</span> <span class="m">1</span>
+<span class="o">!</span>fslroi ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth.nii.gz ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_middle.nii.gz <span class="o">{</span>middle_index2<span class="o">}</span> <span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -952,8 +906,8 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>flirt<span class="w"> </span>-in<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_middle.nii.gz<span class="w"> </span>-ref<span class="w"> </span>./FSL_preproc/sub-08_T1w_brain_f02.nii.gz<span class="w"> </span>-out<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt.nii.gz<span class="w"> </span>-omat<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt.mat<span class="w"> </span>-searchrx<span class="w"> </span>-180<span class="w"> </span><span class="m">180</span><span class="w"> </span>-searchry<span class="w"> </span>-180<span class="w"> </span><span class="m">180</span><span class="w"> </span>-searchrz<span class="w"> </span>-180<span class="w"> </span><span class="m">180</span><span class="w"> </span>-dof<span class="w"> </span><span class="m">12</span>
-<span class="o">!</span>flirt<span class="w"> </span>-in<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_middle.nii.gz<span class="w"> </span>-ref<span class="w"> </span>./FSL_preproc/sub-08_T1w_brain_f02.nii.gz<span class="w"> </span>-out<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt.nii.gz<span class="w"> </span>-omat<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt.mat<span class="w"> </span>-searchrx<span class="w"> </span>-180<span class="w"> </span><span class="m">180</span><span class="w"> </span>-searchry<span class="w"> </span>-180<span class="w"> </span><span class="m">180</span><span class="w"> </span>-searchrz<span class="w"> </span>-180<span class="w"> </span><span class="m">180</span><span class="w"> </span>-dof<span class="w"> </span><span class="m">12</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>flirt -in ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_middle.nii.gz -ref ./FSL_preproc/sub-08_T1w_brain_f02.nii.gz -out ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt.nii.gz -omat ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt.mat -searchrx -180 <span class="m">180</span> -searchry -180 <span class="m">180</span> -searchrz -180 <span class="m">180</span> -dof <span class="m">12</span>
+<span class="o">!</span>flirt -in ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_middle.nii.gz -ref ./FSL_preproc/sub-08_T1w_brain_f02.nii.gz -out ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt.nii.gz -omat ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt.mat -searchrx -180 <span class="m">180</span> -searchry -180 <span class="m">180</span> -searchrz -180 <span class="m">180</span> -dof <span class="m">12</span>
 </pre></div>
 </div>
 </div>
@@ -963,7 +917,7 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># extract the mni template</span>
-<span class="n">fsl_path</span> <span class="o">=</span> <span class="o">!</span>which<span class="w"> </span>fsl
+<span class="n">fsl_path</span> <span class="o">=</span> <span class="o">!</span>which fsl
 <span class="n">fsl_version</span> <span class="o">=</span> <span class="n">fsl_path</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="n">MNI_BRAIN</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
@@ -979,7 +933,7 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/fsl-6.0.7.4/data/standard/MNI152_T1_2mm_brain.nii.gz
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/fsl-6.0.7.16/data/standard/MNI152_T1_2mm_brain.nii.gz
 </pre></div>
 </div>
 </div>
@@ -987,7 +941,7 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Register the T1w image to the MNI template and concatenate the transformation matrices</span>
-<span class="o">!</span>flirt<span class="w"> </span>-in<span class="w"> </span>./FSL_preproc/sub-08_T1w_brain_f02.nii.gz<span class="w"> </span>-ref<span class="w"> </span><span class="s2">&quot;{MNI_BRAIN}&quot;</span><span class="w"> </span>-out<span class="w"> </span>./FSL_preproc/sub-08_T1w_brain_f02_flirt.nii.gz<span class="w"> </span>-omat<span class="w"> </span>./FSL_preproc/sub-08_T1w_brain_f02_flirt.mat
+<span class="o">!</span>flirt -in ./FSL_preproc/sub-08_T1w_brain_f02.nii.gz -ref <span class="s2">&quot;{MNI_BRAIN}&quot;</span> -out ./FSL_preproc/sub-08_T1w_brain_f02_flirt.nii.gz -omat ./FSL_preproc/sub-08_T1w_brain_f02_flirt.mat
 </pre></div>
 </div>
 </div>
@@ -999,8 +953,8 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 <p>So, <code class="docutils literal notranslate"><span class="pre">convert_xfm</span> <span class="pre">-omat</span> <span class="pre">output.mat</span> <span class="pre">-concat</span> <span class="pre">A.mat</span> <span class="pre">B.mat</span></code> applys B first, then A.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>convert_xfm<span class="w"> </span>-omat<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt2mni.mat<span class="w"> </span>-concat<span class="w"> </span>./FSL_preproc/sub-08_T1w_brain_f02_flirt.mat<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt.mat
-<span class="o">!</span>convert_xfm<span class="w"> </span>-omat<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt2mni.mat<span class="w"> </span>-concat<span class="w"> </span>./FSL_preproc/sub-08_T1w_brain_f02_flirt.mat<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt.mat
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>convert_xfm -omat ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt2mni.mat -concat ./FSL_preproc/sub-08_T1w_brain_f02_flirt.mat ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt.mat
+<span class="o">!</span>convert_xfm -omat ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt2mni.mat -concat ./FSL_preproc/sub-08_T1w_brain_f02_flirt.mat ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt.mat
 </pre></div>
 </div>
 </div>
@@ -1012,15 +966,15 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply the concatenated transformation matrices to the functional images</span>
-<span class="o">!</span>flirt<span class="w"> </span>-in<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth.nii.gz<span class="w"> </span>-ref<span class="w"> </span><span class="s2">&quot;{MNI_BRAIN}&quot;</span><span class="w"> </span>-out<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt2mni.nii.gz<span class="w"> </span>-applyxfm<span class="w"> </span>-init<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt2mni.mat
-<span class="o">!</span>flirt<span class="w"> </span>-in<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth.nii.gz<span class="w"> </span>-ref<span class="w"> </span><span class="s2">&quot;{MNI_BRAIN}&quot;</span><span class="w"> </span>-out<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt2mni.nii.gz<span class="w"> </span>-applyxfm<span class="w"> </span>-init<span class="w"> </span>./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt2mni.mat
+<span class="o">!</span>flirt -in ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth.nii.gz -ref <span class="s2">&quot;{MNI_BRAIN}&quot;</span> -out ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt2mni.nii.gz -applyxfm -init ./FSL_preproc/sub-08_task-flanker_run-1_bold_mcf_smooth_flirt2mni.mat
+<span class="o">!</span>flirt -in ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth.nii.gz -ref <span class="s2">&quot;{MNI_BRAIN}&quot;</span> -out ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt2mni.nii.gz -applyxfm -init ./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt2mni.mat
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="checking-preprocessing">
-<h3>Checking Preprocessing<a class="headerlink" href="#checking-preprocessing" title="Link to this heading">#</a></h3>
+<h3>Checking Preprocessing<a class="headerlink" href="#checking-preprocessing" title="Permalink to this heading">#</a></h3>
 <p><strong>Alignment</strong></p>
 <p>To visualize the alignment of functional run 1 in MNI space, the middle volume of the 4D dataset will be extracted and used as an overlay. Extracting a single volume instead of displaying the full 4D image reduces file size and computational load, making it more efficient for visualization and suitable for interactive display tools such as NiiVue.</p>
 <div class="cell docutils container">
@@ -1043,7 +997,7 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "3a70fa3ce2854e9ea5e904c98291698d", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "c248c119ded8447d986c3713600d095d", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <p><strong>Motion parameters</strong></p>
 <p>The motion plots show translation and rotation over time, with each timepoint (volume) on the x-axis. For translation, values are in millimeters. Look for sudden spikes greater than half the voxel size, or gradual drifts exceeding a full voxel. For example, with 3 mm isotropic voxels, relative motion over 1.5 mm between volumes or absolute shifts over 3 mm across the run may warrant closer inspection.</p>
@@ -1088,36 +1042,36 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/921ce19886ecbee1d090c1ee11eb1525a727b40728df705e277b4161025c68f6.png" src="../_images/921ce19886ecbee1d090c1ee11eb1525a727b40728df705e277b4161025c68f6.png" />
+<img alt="_images/921ce19886ecbee1d090c1ee11eb1525a727b40728df705e277b4161025c68f6.png" src="_images/921ce19886ecbee1d090c1ee11eb1525a727b40728df705e277b4161025c68f6.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="statistics-and-modeling">
-<h2>2. Statistics and Modeling<a class="headerlink" href="#statistics-and-modeling" title="Link to this heading">#</a></h2>
+<h2>2. Statistics and Modeling<a class="headerlink" href="#statistics-and-modeling" title="Permalink to this heading">#</a></h2>
 <section id="create-timing-files">
-<h3>Create timing files<a class="headerlink" href="#create-timing-files" title="Link to this heading">#</a></h3>
+<h3>Create timing files<a class="headerlink" href="#create-timing-files" title="Permalink to this heading">#</a></h3>
 <p>To prepare condition-specific regressors for FSL analysis, timing files are required that specify the onset and duration of each event type. These are extracted from each subject’s events.tsv files. One timing file is generated per condition per run, formatted for use in FSL.</p>
 <p>A Bash script called <code class="docutils literal notranslate"><span class="pre">make_FSL_Timings.sh</span></code> can be used to automate this step. It is available from Andy’s <a class="reference external" href="https://github.com/andrewjahn/FSL_Scripts/blob/master/make_FSL_Timings.sh">FSL_Scripts repository</a> and should be placed in the directory containing the subject folders (e.g., ds000102/). Running the script will produce timing files in the appropriate format.</p>
 <p><em>NOTE</em>: This script only extracts the trials in which the subject made a correct response. Accuracy is nearly 100% for all subjects, but as an exercise you can modify this to extract the incorrect trials as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download timing file from Andy&#39;s FSL_Scripts repository</span>
-<span class="o">!</span>wget<span class="w"> </span>-O<span class="w"> </span>./ds000102/make_FSL_Timings.sh<span class="w"> </span>https://raw.githubusercontent.com/andrewjahn/FSL_Scripts/master/make_FSL_Timings.sh
+<span class="o">!</span>wget -O ./ds000102/make_FSL_Timings.sh https://raw.githubusercontent.com/andrewjahn/FSL_Scripts/master/make_FSL_Timings.sh
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-05-15 06:02:49--  https://raw.githubusercontent.com/andrewjahn/FSL_Scripts/master/make_FSL_Timings.sh
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.110.133, 185.199.109.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-05-20 03:46:42--  https://raw.githubusercontent.com/andrewjahn/FSL_Scripts/master/make_FSL_Timings.sh
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.110.133, 185.199.111.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 1220 (1.2K) [text/plain]
 Saving to: ‘./ds000102/make_FSL_Timings.sh’
 
 ./ds000102/make_FSL 100%[===================&gt;]   1.19K  --.-KB/s    in 0s      
 
-2025-05-15 06:02:50 (99.2 MB/s) - ‘./ds000102/make_FSL_Timings.sh’ saved [1220/1220]
+2025-05-20 03:46:42 (90.5 MB/s) - ‘./ds000102/make_FSL_Timings.sh’ saved [1220/1220]
 </pre></div>
 </div>
 </div>
@@ -1125,7 +1079,7 @@ Saving to: ‘./ds000102/make_FSL_Timings.sh’
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show the file</span>
-<span class="o">!</span>cat<span class="w"> </span>./ds000102/make_FSL_Timings.sh
+<span class="o">!</span>cat ./ds000102/make_FSL_Timings.sh
 </pre></div>
 </div>
 </div>
@@ -1157,7 +1111,7 @@ done
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the file to get individual timing files for each run</span>
-<span class="o">!</span><span class="nb">cd</span><span class="w"> </span>./ds000102<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>make_FSL_Timings.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>bash<span class="w"> </span>make_FSL_Timings.sh
+<span class="o">!</span><span class="nb">cd</span> ./ds000102 <span class="o">&amp;&amp;</span> chmod +x make_FSL_Timings.sh <span class="o">&amp;&amp;</span> bash make_FSL_Timings.sh
 </pre></div>
 </div>
 </div>
@@ -1165,7 +1119,7 @@ done
 <p>Inspect the output:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>./ds000102/sub-08/func/incongruent_run1.txt
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat ./ds000102/sub-08/func/incongruent_run1.txt
 </pre></div>
 </div>
 </div>
@@ -1187,11 +1141,11 @@ done
 </div>
 </section>
 <section id="running-the-first-level-analysis">
-<h3>Running the First-Level Analysis<a class="headerlink" href="#running-the-first-level-analysis" title="Link to this heading">#</a></h3>
+<h3>Running the First-Level Analysis<a class="headerlink" href="#running-the-first-level-analysis" title="Permalink to this heading">#</a></h3>
 <p>As introduced in the beginning, this example uses the Flanker dataset, which is also described in <a class="reference external" href="https://andysbrainbook.readthedocs.io/en/latest/fMRI_Short_Course/fMRI_02_ExperimentalDesign.html">Andy’s Brain Book</a>.
 The contrasts are set up to compare congruent and incongruent trial types, reflecting typical cognitive control analyses.</p>
 <section id="feat-design-files-for-both-runs">
-<h4>FEAT Design Files for both runs<a class="headerlink" href="#feat-design-files-for-both-runs" title="Link to this heading">#</a></h4>
+<h4>FEAT Design Files for both runs<a class="headerlink" href="#feat-design-files-for-both-runs" title="Permalink to this heading">#</a></h4>
 <p>This file configures a first-level GLM analysis in FSL, skipping preprocessing steps and assuming the input data has already been preprocessed. Each <code class="docutils literal notranslate"><span class="pre">.fsf</span> <span class="pre">file</span></code> is tailored to a specific run, with unique input files and event timing. Below are the key sections to review and understand.</p>
 <p>✅ <strong>General Analysis Settings</strong></p>
 <ul class="simple">
@@ -1268,7 +1222,7 @@ Three contrasts are defined:</p>
 </div>
 </div>
 </div>
-<div class="cell tag_scroll-output docutils container">
+<div class="cell tag_scroll-output tag_scroll-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create feat design files for both runs</span>
 <span class="k">for</span> <span class="n">run_key</span><span class="p">,</span> <span class="n">params</span> <span class="ow">in</span> <span class="n">runs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -1308,10 +1262,10 @@ Three contrasts are defined:</p>
 <span class="s2">set fmri(outputdir)  &quot;</span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;outputdir&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
 
 <span class="s2"># TR(s)</span>
-<span class="s2">set fmri(tr) </span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;TR&#39;</span><span class="p">]</span><span class="si">}</span>
+<span class="s2">set fmri(tr) </span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;TR&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"></span>
 
 <span class="s2"># Total volumes</span>
-<span class="s2">set fmri(npts) </span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;npts&#39;</span><span class="p">]</span><span class="si">}</span>
+<span class="s2">set fmri(npts) </span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;npts&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"></span>
 
 <span class="s2"># Delete volumes</span>
 <span class="s2">set fmri(ndelete) 0</span>
@@ -1541,7 +1495,7 @@ Three contrasts are defined:</p>
 <span class="s2">set fmri(paradigm_hp) 100</span>
 
 <span class="s2"># Total voxels</span>
-<span class="s2">set fmri(totalVoxels) </span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;total_voxels&#39;</span><span class="p">]</span><span class="si">}</span>
+<span class="s2">set fmri(totalVoxels) </span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;total_voxels&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"></span>
 
 
 <span class="s2"># Number of lower-level copes feeding into higher-level analysis</span>
@@ -1760,19 +1714,12 @@ Three contrasts are defined:</p>
 </div>
 </div>
 </div>
-<p>To ensure compatibility across environments, explicitly define the <code class="docutils literal notranslate"><span class="pre">USER</span></code> variable using <code class="docutils literal notranslate"><span class="pre">whoami</span></code>, which retrieves the current username. This step helps avoid issues when running FSL’s feat, which expects <code class="docutils literal notranslate"><span class="pre">USER</span></code> to be set.</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">feat</span></code> for each of the two design files.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">run1_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="s1">&#39;design_run1&#39;</span><span class="p">)</span>
-<span class="n">run2_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="s1">&#39;design_run2&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cmd</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;export USER=$</span><span class="se">{{</span><span class="s1">USER:-$(whoami)</span><span class="se">}}</span><span class="s1"> &amp;&amp; feat &quot;</span><span class="si">{</span><span class="n">run1_path</span><span class="si">}</span><span class="s1">&quot; &amp;&amp; feat &quot;</span><span class="si">{</span><span class="n">run2_path</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
-<span class="o">!{</span>cmd<span class="o">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+feat design_run1
+feat design_run2
 </pre></div>
 </div>
 </div>
@@ -1780,7 +1727,7 @@ Three contrasts are defined:</p>
 </section>
 </section>
 <section id="visualization-of-first-level-design-and-results-run-1">
-<h3>Visualization of First-level Design and Results (Run 1)<a class="headerlink" href="#visualization-of-first-level-design-and-results-run-1" title="Link to this heading">#</a></h3>
+<h3>Visualization of First-level Design and Results (Run 1)<a class="headerlink" href="#visualization-of-first-level-design-and-results-run-1" title="Permalink to this heading">#</a></h3>
 <p>Below, the design matrix and selected results from the first run are shown. Since both runs use the same design and contrasts, the results of the second run can be explored using the same approach.</p>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
@@ -1802,8 +1749,8 @@ Three contrasts are defined:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/49ba66f3bb9f64e4b759f6acb2ad6aaf10996dcc4f2cd682a6652a7402f98cbe.png" src="../_images/49ba66f3bb9f64e4b759f6acb2ad6aaf10996dcc4f2cd682a6652a7402f98cbe.png" />
-<img alt="../_images/0a55eb2fc97cfcf10fe9f0bad1858a535d856797bfa8276926a5c05a7d74cb15.png" src="../_images/0a55eb2fc97cfcf10fe9f0bad1858a535d856797bfa8276926a5c05a7d74cb15.png" />
+<img alt="_images/49ba66f3bb9f64e4b759f6acb2ad6aaf10996dcc4f2cd682a6652a7402f98cbe.png" src="_images/49ba66f3bb9f64e4b759f6acb2ad6aaf10996dcc4f2cd682a6652a7402f98cbe.png" />
+<img alt="_images/0a55eb2fc97cfcf10fe9f0bad1858a535d856797bfa8276926a5c05a7d74cb15.png" src="_images/0a55eb2fc97cfcf10fe9f0bad1858a535d856797bfa8276926a5c05a7d74cb15.png" />
 </div>
 </div>
 <p>Let’s now display the <strong>thresholded activation maps</strong>. A voxelwise threshold of Z &gt; 3.1 was applied, followed by cluster-level correction at p &lt; 0.05 (corrected for multiple comparisons).</p>
@@ -1819,8 +1766,8 @@ Three contrasts are defined:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<h4 class="rubric" id="incongruent">Incongruent</h4>
-<img alt="../_images/70d5bfb32d2a8973b754c774eced45152182f409aafa62669cc919fc7ad0d510.png" src="../_images/70d5bfb32d2a8973b754c774eced45152182f409aafa62669cc919fc7ad0d510.png" />
+<p class="rubric">Incongruent</p>
+<img alt="_images/70d5bfb32d2a8973b754c774eced45152182f409aafa62669cc919fc7ad0d510.png" src="_images/70d5bfb32d2a8973b754c774eced45152182f409aafa62669cc919fc7ad0d510.png" />
 </div>
 </div>
 <div class="cell tag_scroll-output docutils container">
@@ -1830,19 +1777,19 @@ Three contrasts are defined:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<h4 class="rubric" id="congruent">Congruent</h4>
-<img alt="../_images/44a06c8f44f83b791cb0d9925e1ade580b27cc4adaf8d40b212e5183b80bc0e5.png" src="../_images/44a06c8f44f83b791cb0d9925e1ade580b27cc4adaf8d40b212e5183b80bc0e5.png" />
+<p class="rubric">Congruent</p>
+<img alt="_images/44a06c8f44f83b791cb0d9925e1ade580b27cc4adaf8d40b212e5183b80bc0e5.png" src="_images/44a06c8f44f83b791cb0d9925e1ade580b27cc4adaf8d40b212e5183b80bc0e5.png" />
 </div>
 </div>
-<div class="cell tag_scroll-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;#### Incongruent-Congruent&quot;</span><span class="p">),</span> <span class="n">rendered_thresh_zstats3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<h4 class="rubric" id="incongruent-congruent">Incongruent-Congruent</h4>
-<img alt="../_images/ba2fba80e8d612fb38016c27e85e4da1eeb292d9df37f4b7b6e58be02c5d9975.png" src="../_images/ba2fba80e8d612fb38016c27e85e4da1eeb292d9df37f4b7b6e58be02c5d9975.png" />
+<p class="rubric">Incongruent-Congruent</p>
+<img alt="_images/ba2fba80e8d612fb38016c27e85e4da1eeb292d9df37f4b7b6e58be02c5d9975.png" src="_images/ba2fba80e8d612fb38016c27e85e4da1eeb292d9df37f4b7b6e58be02c5d9975.png" />
 </div>
 </div>
 </section>
@@ -1862,7 +1809,7 @@ Three contrasts are defined:</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./functional_imaging"
+            path: "./."
         },
         predefinedOutput: true
     }
@@ -1876,27 +1823,9 @@ Three contrasts are defined:</p>
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="AFNI_preprocessing_only.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">AFNI Preprocessing</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="aslprep.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ASLprep</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -1905,7 +1834,6 @@ Three contrasts are defined:</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1966,7 +1894,7 @@ By Neurodesk Team
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
     
   </p>
@@ -1990,8 +1918,8 @@ By Neurodesk Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
