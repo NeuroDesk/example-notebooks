@@ -27,6 +27,8 @@ jobs:
     publish-doi:
       needs: get-updated-notebooks
       runs-on: ubuntu-22.04
+      outputs:
+          doi_url: ${{ steps.publish_doi.outputs.doi_url }}
       if: ${{ needs.get-updated-notebooks.outputs.updated_notebooks_list != '[]' }}
       strategy:
           fail-fast: false
@@ -57,3 +59,25 @@ jobs:
               NOTEBOOK_BUILDDATE="${NOTEBOOK_NAME}_${BUILDDATE}"
               export DOI_URL=$(python3 .github/workflows/publish-doi.py --container_filepath="./${{ matrix.notebooks }}" --container_name=${NOTEBOOK_BUILDDATE} --token=${{ secrets.ZENODO_TOKEN }})
               echo "DOI_URL: $DOI_URL"
+              echo "doi_url=${DOI_URL}" >> $GITHUB_OUTPUT
+
+    update-rendered-notebooks:
+      needs: publish-doi
+      runs-on: ubuntu-22.04
+      if: ${{ needs.publish-doi.outputs.doi_url != '' }}
+      steps:
+          - name: Checkout
+            uses: actions/checkout@v4
+            with:
+                ref: gh-pages
+                fetch-depth: 0
+          - name: Install node
+            uses: actions/setup-node@v4
+            with:
+              node-version: '20.x'
+              cache: 'yarn'
+    
+          - name: Update rendered notebooks with DOI
+            run: |
+              echo "Update rendered notebooks with DOI"
+              node add-doi-button.js "${{ needs.publish-doi.outputs.doi_url }}" 
