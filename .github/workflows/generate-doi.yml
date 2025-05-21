@@ -27,8 +27,6 @@ jobs:
     publish-doi:
       needs: get-updated-notebooks
       runs-on: ubuntu-22.04
-      outputs:
-          doi_url: ${{ steps.publish_doi.outputs.doi_url }}
       if: ${{ needs.get-updated-notebooks.outputs.updated_notebooks_list != '[]' }}
       strategy:
           fail-fast: false
@@ -59,18 +57,13 @@ jobs:
               NOTEBOOK_BUILDDATE="${NOTEBOOK_NAME}_${BUILDDATE}"
               export DOI_URL=$(python3 .github/workflows/scripts/publish-doi.py --container_filepath="./${{ matrix.notebooks }}" --container_name=${NOTEBOOK_BUILDDATE} --token=${{ secrets.ZENODO_TOKEN }})
               echo "DOI_URL: $DOI_URL"
-              echo "doi_url=${DOI_URL}" >> $GITHUB_OUTPUT
 
-    update-rendered-notebooks:
-      needs: publish-doi
-      runs-on: ubuntu-22.04
-      if: ${{ needs.publish-doi.outputs.doi_url != '' }}
-      steps:
-          - name: Checkout
+          - name: Checkout gh-pages branch
             uses: actions/checkout@v4
             with:
                 ref: gh-pages
                 fetch-depth: 0
+                
           - name: Install node
             uses: actions/setup-node@v4
             with:
@@ -81,12 +74,17 @@ jobs:
             run: |
               echo "Update rendered notebooks with DOI"
               curl --output "add-doi-button.js" "https://raw.githubusercontent.com/iishiishii/example-notebooks/refs/heads/main/.github/workflows/scripts/add-doi-button.js"
-              node add-doi-button.js "${{ needs.publish-doi.outputs.doi_url }}" 
+              NOTEBOOK_NAME=$(echo "${{ matrix.notebooks }}" | cut -d'/' -f3 | cut -d'.' -f1)
+              NOTEBOOK_HTML="${NOTEBOOK_NAME}.html"
+              NOTEBOOK_PARENT=$(echo "${{ matrix.notebooks }}" | cut -d'/' -f2)
+              HTML_PATH="${NOTEBOOK_PARENT}/${NOTEBOOK_NAME}.html"
+              node add-doi-button.js "${DOI_URL}" "${HTML_PATH}"
 
           - name: Push to GitHub Pages
             uses: peaceiris/actions-gh-pages@v4.0.0
             with:
               github_token: ${{ secrets.GITHUB_TOKEN }}
-              publish_dir: ./books/_build/**/**/html
+              publish_dir: ./
+              publish_branch: gh-pages
               keep_files: true
               cname: www.neurodesk.org
