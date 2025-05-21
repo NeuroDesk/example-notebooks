@@ -79,7 +79,7 @@ jobs:
 
     - name: Test singularity and cvmfs before pushing to neurocommand
       run: 
-        /bin/bash .github/workflows/scripts/setup-cvmfs.sh
+        /bin/bash .github/scripts/setup-cvmfs.sh
 
     - name: Install dependencies
       shell: bash
@@ -160,7 +160,7 @@ jobs:
       working-directory: ./books
       run: |
         export PATH=$HOME/.local/bin:$PATH
-        /bin/bash ../.github/workflows/scripts/write-toc-entry.sh
+        /bin/bash ../.github/scripts/write-toc-entry.sh
         sed -i 's/execute_notebooks: .*/execute_notebooks: off/' _config.yml
         cat _config.yml
         jb build .

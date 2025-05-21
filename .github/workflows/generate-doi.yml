@@ -20,7 +20,7 @@ jobs:
               run: |
                 # Get the list of new or updated notebooks by comparing the checksum of notebooks from github and zenodo
                 echo "Comparing checksum notebooks from GH repo and zenodo..."
-                export UPDATED_NOTEBOOKS=$(python .github/workflows/scripts/get-updated-notebooks.py --zenodo_token ${{ secrets.ZENODO_TOKEN }})
+                export UPDATED_NOTEBOOKS=$(python .github/scripts/get-updated-notebooks.py --zenodo_token ${{ secrets.ZENODO_TOKEN }})
                 echo "updated_notebooks_list" $UPDATED_NOTEBOOKS
                 echo "updated_notebooks_list=${UPDATED_NOTEBOOKS}" >> $GITHUB_OUTPUT
 
@@ -55,7 +55,7 @@ jobs:
               echo "BUILDDATE: $BUILDDATE"
               NOTEBOOK_NAME=$(echo "${{ matrix.notebooks }}" | cut -d'/' -f3)
               NOTEBOOK_BUILDDATE="${NOTEBOOK_NAME}_${BUILDDATE}"
-              export DOI_URL=$(python3 .github/workflows/scripts/publish-doi.py --container_filepath="./${{ matrix.notebooks }}" --container_name=${NOTEBOOK_BUILDDATE} --token=${{ secrets.ZENODO_TOKEN }})
+              export DOI_URL=$(python3 .github/scripts/publish-doi.py --container_filepath="./${{ matrix.notebooks }}" --container_name=${NOTEBOOK_BUILDDATE} --token=${{ secrets.ZENODO_TOKEN }})
               echo "DOI_URL: $DOI_URL"
 
           - name: Checkout gh-pages branch
@@ -73,7 +73,7 @@ jobs:
           - name: Update rendered notebooks with DOI
             run: |
               echo "Update rendered notebooks with DOI"
-              curl --output "add-doi-button.js" "https://raw.githubusercontent.com/iishiishii/example-notebooks/refs/heads/main/.github/workflows/scripts/add-doi-button.js"
+              curl --output "add-doi-button.js" "https://raw.githubusercontent.com/iishiishii/example-notebooks/refs/heads/main/.github/scripts/add-doi-button.js"
               NOTEBOOK_NAME=$(echo "${{ matrix.notebooks }}" | cut -d'/' -f3 | cut -d'.' -f1)
               NOTEBOOK_HTML="${NOTEBOOK_NAME}.html"
               NOTEBOOK_PARENT=$(echo "${{ matrix.notebooks }}" | cut -d'/' -f2)
