@@ -85,7 +85,7 @@ jobs:
       shell: bash
       run: |
         python -m pip install --upgrade pip
-        python -m pip install jupyter-book jupyterlmod ghp-import graphviz ipyniivue osfclient
+        python -m pip install jupyter-book ghp-import graphviz ipyniivue osfclient
 
     - name: Run ${{ matrix.notebooks }}
       shell: bash
