@@ -43,7 +43,7 @@ if [ ! -d "/cvmfs/neurodesk.ardc.edu.au/containers" ]; then
     sleep 5 # to allow update lock to disappear
 
     echo "[DEBUG]: install cvmfs and other dependencies "
-    sudo apt-get install -y software-properties-common tree cvmfs apptainer datalad apptainer-suid lmod --allow-unauthenticated
+    sudo apt-get install -y software-properties-common tree graphviz cvmfs apptainer datalad apptainer-suid lmod --allow-unauthenticated
     sleep 5 # to allow update lock to disappear
 
     sudo apptainer config fakeroot --add root
