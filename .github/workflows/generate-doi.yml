@@ -57,6 +57,7 @@ jobs:
               NOTEBOOK_BUILDDATE="${NOTEBOOK_NAME}_${BUILDDATE}"
               export DOI_URL=$(python3 .github/scripts/publish-doi.py --container_filepath="./${{ matrix.notebooks }}" --container_name=${NOTEBOOK_BUILDDATE} --token=${{ secrets.ZENODO_TOKEN }})
               echo "DOI_URL: $DOI_URL"
+              echo "DOI_URL=${DOI_URL}" >> $GITHUB_ENV
 
           - name: Checkout gh-pages branch
             uses: actions/checkout@v4
