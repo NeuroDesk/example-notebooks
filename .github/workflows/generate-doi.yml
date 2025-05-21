@@ -49,7 +49,7 @@ jobs:
             id: publish_doi
             shell: bash
             run: |
-              curl --output ".github/workflows/publish-doi.py" "https://raw.githubusercontent.com/NeuroDesk/neurocommand/refs/heads/main/.github/workflows/publish-doi.py"
+              curl --output ".github/scripts/publish-doi.py" "https://raw.githubusercontent.com/NeuroDesk/neurocommand/refs/heads/main/.github/workflows/publish-doi.py"
               echo "Upload notebook to Zenodo"      
               BUILDDATE=`date +%Y%m%d`
               echo "BUILDDATE: $BUILDDATE"
@@ -68,16 +68,21 @@ jobs:
             uses: actions/setup-node@v4
             with:
               node-version: '20.x'
-              cache: 'yarn'
-    
+          - name: Install dependencies
+            run: |
+              npm install jsdom
           - name: Update rendered notebooks with DOI
             run: |
               echo "Update rendered notebooks with DOI"
               curl --output "add-doi-button.js" "https://raw.githubusercontent.com/iishiishii/example-notebooks/refs/heads/main/.github/scripts/add-doi-button.js"
               NOTEBOOK_NAME=$(echo "${{ matrix.notebooks }}" | cut -d'/' -f3 | cut -d'.' -f1)
+              echo "NOTEBOOK_NAME: $NOTEBOOK_NAME"
               NOTEBOOK_HTML="${NOTEBOOK_NAME}.html"
+              echo "NOTEBOOK_HTML: $NOTEBOOK_HTML"
               NOTEBOOK_PARENT=$(echo "${{ matrix.notebooks }}" | cut -d'/' -f2)
+              echo "NOTEBOOK_PARENT: $NOTEBOOK_PARENT"
               HTML_PATH="${NOTEBOOK_PARENT}/${NOTEBOOK_NAME}.html"
+              echo "HTML_PATH: $HTML_PATH"
               node add-doi-button.js "${DOI_URL}" "${HTML_PATH}"
 
           - name: Push to GitHub Pages
