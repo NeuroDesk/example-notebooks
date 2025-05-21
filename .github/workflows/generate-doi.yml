@@ -49,7 +49,7 @@ jobs:
             id: publish_doi
             shell: bash
             run: |
-              curl --output ".github/scripts/publish-doi.py" "https://raw.githubusercontent.com/NeuroDesk/neurocommand/refs/heads/main/.github/workflows/publish-doi.py"
+              curl --output ".github/scripts/publish-doi.py" "https://raw.githubusercontent.com/iishiishii/neurocommand/refs/heads/main/.github/workflows/publish-doi.py"
               echo "Upload notebook to Zenodo"      
               BUILDDATE=`date +%Y%m%d`
               echo "BUILDDATE: $BUILDDATE"
