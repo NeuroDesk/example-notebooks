@@ -56,7 +56,7 @@ jobs:
               NOTEBOOK_NAME=$(echo "${{ matrix.notebooks }}" | cut -d'/' -f3 | cut -d'.' -f1)
               echo "NOTEBOOK_NAME=$NOTEBOOK_NAME" >> $GITHUB_ENV
               NOTEBOOK_BUILDDATE="${NOTEBOOK_NAME}_${BUILDDATE}"
-              export DOI_URL=$(python3 .github/scripts/publish-doi.py --container_filepath="./${{ matrix.notebooks }}" --container_name=${NOTEBOOK_BUILDDATE} --token=${{ secrets.ZENODO_TOKEN }})
+              export DOI_URL=$(python3 .github/scripts/publish-doi.py --container_filepath="https://raw.githubusercontent.com/iishiishii/example-notebooks/refs/heads/main/${{ matrix.notebooks }}" --container_name=${NOTEBOOK_BUILDDATE} --token=${{ secrets.ZENODO_TOKEN }})
               echo "DOI_URL: $DOI_URL"
               echo "DOI_URL=${DOI_URL}" >> $GITHUB_ENV
 
