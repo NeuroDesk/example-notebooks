@@ -20,7 +20,7 @@ jobs:
               run: |
                 # Get the list of new or updated notebooks by comparing the checksum of notebooks from github and zenodo
                 echo "Comparing checksum notebooks from GH repo and zenodo..."
-                export UPDATED_NOTEBOOKS=$(python .github/workflows/get-updated-notebooks.py --zenodo_token ${{ secrets.ZENODO_TOKEN }})
+                export UPDATED_NOTEBOOKS=$(python .github/workflows/scripts/get-updated-notebooks.py --zenodo_token ${{ secrets.ZENODO_TOKEN }})
                 echo "updated_notebooks_list" $UPDATED_NOTEBOOKS
                 echo "updated_notebooks_list=${UPDATED_NOTEBOOKS}" >> $GITHUB_OUTPUT
 
@@ -57,7 +57,7 @@ jobs:
               echo "BUILDDATE: $BUILDDATE"
               NOTEBOOK_NAME=$(echo "${{ matrix.notebooks }}" | cut -d'/' -f3)
               NOTEBOOK_BUILDDATE="${NOTEBOOK_NAME}_${BUILDDATE}"
-              export DOI_URL=$(python3 .github/workflows/publish-doi.py --container_filepath="./${{ matrix.notebooks }}" --container_name=${NOTEBOOK_BUILDDATE} --token=${{ secrets.ZENODO_TOKEN }})
+              export DOI_URL=$(python3 .github/workflows/scripts/publish-doi.py --container_filepath="./${{ matrix.notebooks }}" --container_name=${NOTEBOOK_BUILDDATE} --token=${{ secrets.ZENODO_TOKEN }})
               echo "DOI_URL: $DOI_URL"
               echo "doi_url=${DOI_URL}" >> $GITHUB_OUTPUT
 
@@ -80,4 +80,13 @@ jobs:
           - name: Update rendered notebooks with DOI
             run: |
               echo "Update rendered notebooks with DOI"
+              curl --output "add-doi-button.js" "https://raw.githubusercontent.com/iishiishii/example-notebooks/refs/heads/main/.github/workflows/scripts/add-doi-button.js"
               node add-doi-button.js "${{ needs.publish-doi.outputs.doi_url }}" 
+
+          - name: Push to GitHub Pages
+            uses: peaceiris/actions-gh-pages@v4.0.0
+            with:
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              publish_dir: ./books/_build/**/**/html
+              keep_files: true
+              cname: www.neurodesk.org
