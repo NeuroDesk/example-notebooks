@@ -26,7 +26,7 @@ function injectDoiLink(doi, htmlFilePath) {
   // Create the <a> element styled as a button
   const link = document.createElement('a');
   link.textContent = `${doi}`;
-  link.href = `https://doi.org/${doi}`;
+  link.href = `${doi}`;
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
   link.className = 'btn btn-sm nav-link pst-navbar-icon theme-switch-button';
