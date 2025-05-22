@@ -79,13 +79,13 @@ jobs:
 
     - name: Test singularity and cvmfs before pushing to neurocommand
       run: 
-        /bin/bash .github/workflows/setup_cvmfs.sh
+        /bin/bash .github/scripts/setup-cvmfs.sh
 
     - name: Install dependencies
       shell: bash
       run: |
         python -m pip install --upgrade pip
-        python -m pip install jupyter-book ghp-import graphviz ipyniivue osfclient osfclient
+        python -m pip install jupyter-book ghp-import graphviz ipyniivue osfclient
 
     - name: Run ${{ matrix.notebooks }}
       shell: bash
@@ -98,7 +98,7 @@ jobs:
         echo "PATH=$PATH"
         export LD_PRELOAD=
         echo "LD_PRELOAD=$LD_PRELOAD"
-        export APPTAINER_BINDPATH=${{ github.workspace }},/cvmfs
+        export APPTAINER_BINDPATH=${{ github.workspace }},/tmp,/cvmfs
         echo "APPTAINER_BINDPATH=$APPTAINER_BINDPATH"
         export LMOD_CMD=/usr/share/lmod/lmod/libexec/lmod
         export MPLCONFIGDIR=${{ github.workspace }}/matplotlib-mpldir
@@ -131,6 +131,7 @@ jobs:
 
     - name: Push to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4.0.0
+      if: github.event_name != 'pull_request'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./books/_build/**/**/html
@@ -160,7 +161,7 @@ jobs:
       working-directory: ./books
       run: |
         export PATH=$HOME/.local/bin:$PATH
-        /bin/bash ../.github/workflows/write-toc-entry.sh
+        /bin/bash ../.github/scripts/write-toc-entry.sh
         sed -i 's/execute_notebooks: .*/execute_notebooks: off/' _config.yml
         cat _config.yml
         jb build .
@@ -168,6 +169,7 @@ jobs:
 
     - name: Push to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4.0.0
+      if: github.event_name != 'pull_request'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./books/_build/html
