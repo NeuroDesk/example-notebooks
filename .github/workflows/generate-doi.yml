@@ -49,14 +49,15 @@ jobs:
             id: publish_doi
             shell: bash
             run: |
-              curl --output ".github/scripts/publish-doi.py" "https://raw.githubusercontent.com/iishiishii/neurocommand/refs/heads/main/.github/workflows/publish-doi.py"
+              curl --output ".github/scripts/publish-doi.py" "https://raw.githubusercontent.com/Neurodesk/neurocommand/refs/heads/main/.github/workflows/publish-doi.py"
               echo "Upload notebook to Zenodo"      
               BUILDDATE=`date +%Y%m%d`
               echo "BUILDDATE: $BUILDDATE"
               NOTEBOOK_NAME=$(echo "${{ matrix.notebooks }}" | cut -d'/' -f3 | cut -d'.' -f1)
               echo "NOTEBOOK_NAME=$NOTEBOOK_NAME" >> $GITHUB_ENV
               NOTEBOOK_BUILDDATE="${NOTEBOOK_NAME}_${BUILDDATE}"
-              export DOI_URL=$(python3 .github/scripts/publish-doi.py --container_filepath="https://raw.githubusercontent.com/iishiishii/example-notebooks/refs/heads/main/${{ matrix.notebooks }}" --container_name=${NOTEBOOK_BUILDDATE} --token=${{ secrets.ZENODO_TOKEN }})
+              sed -i "s/^[[:space:]]*license = get_license(args.container_name, args.gh_token)/    license = 'mit'/" .github/scripts/publish-doi.py
+              export DOI_URL=$(python3 .github/scripts/publish-doi.py --container_filepath="https://raw.githubusercontent.com/Neurodesk/example-notebooks/refs/heads/main/${{ matrix.notebooks }}" --container_name=${NOTEBOOK_BUILDDATE} --zenodo_token=${{ secrets.ZENODO_TOKEN }} --gh_token=${{ secrets.GITHUB_TOKEN }} | tail -n 1)
               echo "DOI_URL: $DOI_URL"
               echo "DOI_URL=${DOI_URL}" >> $GITHUB_ENV
 
