@@ -76,8 +76,8 @@ def list_updated_notebooks(repo_checksums, zenodo_checksums):
     """
     updated_notebooks = []
     for notebook, checksum in repo_checksums.items():
-        if checksum not in zenodo_checksums:
-            updated_notebooks.append(notebook)
+        # if checksum not in zenodo_checksums:
+        updated_notebooks.append(notebook)
     return updated_notebooks
     
 if __name__ == "__main__":
