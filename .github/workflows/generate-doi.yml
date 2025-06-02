@@ -85,6 +85,7 @@ jobs:
               echo "NOTEBOOK_PARENT: $NOTEBOOK_PARENT"
               HTML_PATH="${NOTEBOOK_PARENT}/${NOTEBOOK_NAME}.html"
               echo "HTML_PATH: $HTML_PATH"
+              echo "HTML_PATH=${HTML_PATH}" >> $GITHUB_ENV
               node add-doi-button.js "${DOI_URL}" "${HTML_PATH}"
           - name: Upload updated notebook
             uses: actions/upload-artifact@v4
