@@ -59,14 +59,31 @@ jobs:
               sed -i "s/^[[:space:]]*license = get_license(args.container_name, args.gh_token)/    license = 'mit'/" .github/scripts/publish-doi.py
               export DOI_URL=$(python3 .github/scripts/publish-doi.py --container_filepath="https://raw.githubusercontent.com/Neurodesk/example-notebooks/refs/heads/main/${{ matrix.notebooks }}" --container_name=${NOTEBOOK_BUILDDATE} --zenodo_token=${{ secrets.ZENODO_TOKEN }} --gh_token=${{ secrets.GITHUB_TOKEN }} | tail -n 1)
               echo "DOI_URL: $DOI_URL"
-              echo "DOI_URL=${DOI_URL}" >> $GITHUB_ENV
+              echo "${DOI_URL}" >> ${NOTEBOOK_NAME}.txt
+          - name: Upload updated notebook
+            uses: actions/upload-artifact@v4
+            with:
+              name: notebook-doi
+              path: ${NOTEBOOK_NAME}.txt
 
+
+    add-doi-button:
+      needs: publish-doi
+      runs-on: ubuntu-22.04
+      strategy:
+          fail-fast: false
+          matrix:
+            notebooks: ${{ fromJSON(needs.get-updated-notebooks.outputs.updated_notebooks_list) }}
+      steps:
           - name: Checkout gh-pages branch
             uses: actions/checkout@v4
             with:
                 ref: gh-pages
                 fetch-depth: 0
-                
+          - name: Download all updated notebooks
+            uses: actions/download-artifact@v4
+            with:
+              path: notebook-doi
           - name: Install node
             uses: actions/setup-node@v4
             with:
@@ -86,11 +103,13 @@ jobs:
               HTML_PATH="${NOTEBOOK_PARENT}/${NOTEBOOK_NAME}.html"
               echo "HTML_PATH: $HTML_PATH"
               echo "HTML_PATH=${HTML_PATH}" >> $GITHUB_ENV
+              DOI_URL=$(cat notebook-doi/${NOTEBOOK_NAME}.txt)
+              echo "DOI_URL: $DOI_URL"
               node add-doi-button.js "${DOI_URL}" "${HTML_PATH}"
           - name: Upload updated notebook
             uses: actions/upload-artifact@v4
             with:
-              name: updated-notebook-${{ matrix.notebooks }}
+              name: updated-notebook
               path: ${{ env.HTML_PATH }}
 
     publish-pages:
