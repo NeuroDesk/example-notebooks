@@ -86,12 +86,36 @@ jobs:
               HTML_PATH="${NOTEBOOK_PARENT}/${NOTEBOOK_NAME}.html"
               echo "HTML_PATH: $HTML_PATH"
               node add-doi-button.js "${DOI_URL}" "${HTML_PATH}"
-
-          - name: Push to GitHub Pages
-            uses: peaceiris/actions-gh-pages@v4.0.0
+          - name: Upload updated notebook
+            uses: actions/upload-artifact@v4
             with:
-              github_token: ${{ secrets.GITHUB_TOKEN }}
-              publish_dir: ./
-              publish_branch: gh-pages
-              keep_files: true
-              cname: www.neurodesk.org
+              name: updated-notebook-${{ matrix.notebooks }}
+              path: ${{ env.HTML_PATH }}
+
+    publish-pages:
+      needs: publish-doi
+      runs-on: ubuntu-22.04
+      steps:
+        - name: Checkout gh-pages branch
+          uses: actions/checkout@v4
+          with:
+            ref: gh-pages
+            fetch-depth: 0
+
+        - name: Download all updated notebooks
+          uses: actions/download-artifact@v4
+          with:
+            path: updated-notebooks
+
+        - name: Move updated notebooks to correct locations
+          run: |
+            find updated-notebooks -type f -name '*.html' -exec cp --parents {} . \;
+
+        - name: Push to GitHub Pages
+          uses: peaceiris/actions-gh-pages@v4.0.0
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./
+            publish_branch: gh-pages
+            keep_files: true
+            cname: www.neurodesk.org
