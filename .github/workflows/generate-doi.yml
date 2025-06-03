@@ -140,7 +140,8 @@ jobs:
           run: ls -R
         - name: Move updated notebooks to correct locations
           run: |
-            find updated-notebooks -type f -name '*.html' -exec cp --parents {} . \;
+            cd updated-notebooks
+            find . -type f -name '*.html' -exec cp --parents {} .. \;
 
         - name: Push to GitHub Pages
           uses: peaceiris/actions-gh-pages@v4.0.0
