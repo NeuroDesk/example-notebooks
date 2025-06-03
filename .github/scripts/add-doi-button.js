@@ -23,18 +23,31 @@ function injectDoiLink(doi, htmlFilePath) {
     process.exit(1);
   }
 
-  // Create the <a> element styled as a button
-  const link = document.createElement('a');
-  link.textContent = `${doi}`;
-  link.href = `${doi}`;
-  link.target = '_blank';
-  link.rel = 'noopener noreferrer';
-  link.className = 'btn btn-sm nav-link pst-navbar-icon theme-switch-button';
+  const doiHref = `${doi}`;
+    // Try to find an existing DOI button based on known pattern
+  let existingButton = Array.from(container.querySelectorAll('a')).find(a => 
+    a.href.includes('doi.org')
+  );
 
-  container.prepend(link);
+  if (existingButton) {
+    // Update existing DOI button
+    existingButton.href = doiHref;
+    existingButton.textContent = `${doi}`;
+    console.log(`🔄 Updated existing DOI button with: ${doiHref}`);
+  } else {
+    // Create the <a> element styled as a button
+    const link = document.createElement('a');
+    link.textContent = `${doi}`;
+    link.href = `${doi}`;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.className = 'btn btn-sm nav-link pst-navbar-icon theme-switch-button';
 
-  fs.writeFileSync(htmlFilePath, dom.serialize());
-  console.log(`DOI link added to ${htmlFilePath}`);
+    container.prepend(link);
+
+    fs.writeFileSync(htmlFilePath, dom.serialize());
+    console.log(`DOI link added to ${htmlFilePath}`);
+  }
 }
 
 // --- CLI Entry Point ---

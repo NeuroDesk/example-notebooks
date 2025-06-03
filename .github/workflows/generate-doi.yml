@@ -44,7 +44,7 @@ jobs:
           - name: Install dependencies
             run: |
               python -m pip install --upgrade pip
-              pip install requests
+              pip install requests pyyaml>=6.0.2
           - name : Publish singularity container files in nectar cloud to Zenodo
             id: publish_doi
             shell: bash
@@ -59,14 +59,40 @@ jobs:
               sed -i "s/^[[:space:]]*license = get_license(args.container_name, args.gh_token)/    license = 'mit'/" .github/scripts/publish-doi.py
               export DOI_URL=$(python3 .github/scripts/publish-doi.py --container_filepath="https://raw.githubusercontent.com/Neurodesk/example-notebooks/refs/heads/main/${{ matrix.notebooks }}" --container_name=${NOTEBOOK_BUILDDATE} --zenodo_token=${{ secrets.ZENODO_TOKEN }} --gh_token=${{ secrets.GITHUB_TOKEN }} | tail -n 1)
               echo "DOI_URL: $DOI_URL"
-              echo "DOI_URL=${DOI_URL}" >> $GITHUB_ENV
+              echo "${DOI_URL}" >> ${NOTEBOOK_NAME}.txt
+          - name: Upload updated notebook
+            uses: actions/upload-artifact@v4
+            with:
+              name: ${{ env.NOTEBOOK_NAME }}
+              path: ${{ env.NOTEBOOK_NAME }}.txt
 
+
+    add-doi-button:
+      needs: [get-updated-notebooks, publish-doi]
+      runs-on: ubuntu-22.04
+      strategy:
+          fail-fast: false
+          matrix:
+            notebooks: ${{ fromJSON(needs.get-updated-notebooks.outputs.updated_notebooks_list) }}
+      outputs:
+          notebook_name: ${{ steps.get_notebook_name.outputs.NOTEBOOK_NAME }}
+      steps:
           - name: Checkout gh-pages branch
             uses: actions/checkout@v4
             with:
                 ref: gh-pages
                 fetch-depth: 0
-                
+          - name: Get notebook name
+            id: get_notebook_name
+            run: |
+              NOTEBOOK_NAME=$(echo "${{ matrix.notebooks }}" | cut -d'/' -f3 | cut -d'.' -f1)
+              echo "NOTEBOOK_NAME=$NOTEBOOK_NAME" >> $GITHUB_ENV
+              echo "NOTEBOOK_NAME=${NOTEBOOK_NAME}" >> $GITHUB_OUTPUT
+          - name: Download all updated notebooks
+            uses: actions/download-artifact@v4
+            with:
+              name: ${{ env.NOTEBOOK_NAME }}
+              path: notebook-doi
           - name: Install node
             uses: actions/setup-node@v4
             with:
@@ -85,13 +111,43 @@ jobs:
               echo "NOTEBOOK_PARENT: $NOTEBOOK_PARENT"
               HTML_PATH="${NOTEBOOK_PARENT}/${NOTEBOOK_NAME}.html"
               echo "HTML_PATH: $HTML_PATH"
+              echo "HTML_PATH=${HTML_PATH}" >> $GITHUB_ENV
+              DOI_URL=$(cat notebook-doi/${NOTEBOOK_NAME}.txt)
+              echo "DOI_URL: $DOI_URL"
               node add-doi-button.js "${DOI_URL}" "${HTML_PATH}"
-
-          - name: Push to GitHub Pages
-            uses: peaceiris/actions-gh-pages@v4.0.0
+          - name: Upload updated notebook
+            uses: actions/upload-artifact@v4
             with:
-              github_token: ${{ secrets.GITHUB_TOKEN }}
-              publish_dir: ./
-              publish_branch: gh-pages
-              keep_files: true
-              cname: www.neurodesk.org
+              name: updated-notebook-${{ env.NOTEBOOK_NAME }}
+              path: ${{ github.workspace }}/*${{ env.HTML_PATH }}
+
+    publish-pages:
+      needs: add-doi-button
+      runs-on: ubuntu-22.04
+      steps:
+        - name: Checkout gh-pages branch
+          uses: actions/checkout@v4
+          with:
+            ref: gh-pages
+            fetch-depth: 0
+
+        - name: Download all updated notebooks
+          uses: actions/download-artifact@v4
+          with:
+            path: updated-notebooks
+            merge-multiple: true
+        - name: Display structure of downloaded files
+          run: ls -R
+        - name: Move updated notebooks to correct locations
+          run: |
+            cd updated-notebooks
+            find . -type f -name '*.html' -exec cp --parents {} .. \;
+
+        - name: Push to GitHub Pages
+          uses: peaceiris/actions-gh-pages@v4.0.0
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./
+            publish_branch: gh-pages
+            keep_files: true
+            cname: www.neurodesk.org
