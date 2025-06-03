@@ -63,26 +63,35 @@ jobs:
           - name: Upload updated notebook
             uses: actions/upload-artifact@v4
             with:
-              name: notebook-doi
+              name: ${{ env.NOTEBOOK_NAME }}
               path: ${{ env.NOTEBOOK_NAME }}.txt
 
 
     add-doi-button:
-      needs: publish-doi
+      needs: [get-updated-notebooks, publish-doi]
       runs-on: ubuntu-22.04
       strategy:
           fail-fast: false
           matrix:
             notebooks: ${{ fromJSON(needs.get-updated-notebooks.outputs.updated_notebooks_list) }}
+      outputs:
+          notebook_name: ${{ steps.get_notebook_name.outputs.NOTEBOOK_NAME }}
       steps:
           - name: Checkout gh-pages branch
             uses: actions/checkout@v4
             with:
                 ref: gh-pages
                 fetch-depth: 0
+          - name: Get notebook name
+            id: get_notebook_name
+            run: |
+              NOTEBOOK_NAME=$(echo "${{ matrix.notebooks }}" | cut -d'/' -f3 | cut -d'.' -f1)
+              echo "NOTEBOOK_NAME=$NOTEBOOK_NAME" >> $GITHUB_ENV
+              echo "NOTEBOOK_NAME=${NOTEBOOK_NAME}" >> $GITHUB_OUTPUT
           - name: Download all updated notebooks
             uses: actions/download-artifact@v4
             with:
+              name: ${{ env.NOTEBOOK_NAME }}
               path: notebook-doi
           - name: Install node
             uses: actions/setup-node@v4
@@ -109,8 +118,8 @@ jobs:
           - name: Upload updated notebook
             uses: actions/upload-artifact@v4
             with:
-              name: updated-notebook
-              path: ${{ env.HTML_PATH }}
+              name: updated-notebook-${{ env.NOTEBOOK_NAME }}
+              path: ${{ github.workspace }}/*/${{ env.HTML_PATH }}
 
     publish-pages:
       needs: add-doi-button
@@ -126,7 +135,9 @@ jobs:
           uses: actions/download-artifact@v4
           with:
             path: updated-notebooks
-
+            merge-multiple: true
+        - name: Display structure of downloaded files
+          run: ls -R
         - name: Move updated notebooks to correct locations
           run: |
             find updated-notebooks -type f -name '*.html' -exec cp --parents {} . \;
