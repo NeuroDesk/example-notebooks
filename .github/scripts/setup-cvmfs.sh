@@ -47,7 +47,7 @@ if [ ! -d "/cvmfs/neurodesk.ardc.edu.au/containers" ]; then
     sleep 5 # to allow update lock to disappear
 
     sudo apptainer config fakeroot --add root
-    pip install pandas nilearn matplotlib nipype jupyterlmod==4.0.3 
+    pip install pandas nilearn matplotlib nipype jupyterlmod==5.2.2
 
     sudo mkdir -p /etc/cvmfs/keys/ardc.edu.au/
 
