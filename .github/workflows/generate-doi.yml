@@ -113,7 +113,7 @@ jobs:
               path: ${{ env.HTML_PATH }}
 
     publish-pages:
-      needs: publish-doi
+      needs: add-doi-button
       runs-on: ubuntu-22.04
       steps:
         - name: Checkout gh-pages branch
