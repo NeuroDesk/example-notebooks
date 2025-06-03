@@ -1,8 +1,18 @@
 /* Hide search button from article-header-buttons
 Removing `search_bar_text` from 
 `html_theme_options` in conf.py doesn't work */
-.btn.search-button-field.search-button__button {
+.search-button-field {
     display: none;
+}
+
+@media (min-width: 992px) {
+  .search-button {
+    display: none !important;
+  }
+
+  .search-button-field {
+    display: flex;
+  }
 }
 
 /* Hide the search wrapper window when hitting Ctrl+K */
