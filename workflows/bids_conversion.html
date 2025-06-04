@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>BIDS conversion &#8212; Neurodesk</title>
   
@@ -15,67 +14,73 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/algolia.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/algolia.css?v=353b52f6" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.3.3/dist/umd/index.js"></script>
-    <script src="_static/algolia.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'bids_conversion';</script>
-    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/bids_conversion.html" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-4Z9774J59Y"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-4Z9774J59Y');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-4Z9774J59Y');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workflows/bids_conversion';</script>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.3.3/dist/umd/index.js"></script>
+    <script src="../_static/algolia.js?v=b553005c"></script>
+    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/workflows/bids_conversion.html" />
+    <link rel="icon" href="../_static/neurodesk_logo.svg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Nipype on Neurodesk" href="nipype_full.html" />
+    <link rel="prev" title="RISE Slideshow of a Jupyter Notebook" href="RISE_slideshow.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -85,34 +90,29 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="search.html"
+      action="../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -128,12 +128,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -150,28 +158,104 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="../intro.html">
   
   
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/neurodesk_logo.svg" class="logo__image only-light" alt="Neurodesk - Home"/>
+    <script>document.write(`<img src="../_static/neurodesk_logo.svg" class="logo__image only-dark" alt="Neurodesk - Home"/>`);</script>
   
-    <p class="title logo__title">Neurodesk</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
-                    BIDS conversion
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Neurodesk environment
                 </a>
             </li>
         </ul>
-        
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="MRIQC.html">MRIQC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PyBIDS.html">PyBIDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RISE_slideshow.html">RISE Slideshow of a Jupyter Notebook</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">BIDS conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nipype_full.html">Nipype on Neurodesk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nipype_short.html">Basic Nipype</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Structural Imaging</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/brain_extraction_different_tools.html">Different Brain Extraction Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/freesurfer.html">Freesurfer</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/qsmxt.html">QSMxT</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../structural_imaging/sct_toolbox.html">SCT Toolbox</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Diffusion Imaging</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../diffusion_imaging/MRtrix_CSD.html">Diffusion Analysis with MRtrix: Part 2 - Constrained Spherical Deconvolution and Tissue estimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion_imaging/MRtrix_CoReg_Streamline.html">Diffusion Analysis with MRtrix: Part 3 - Registration and Streamline Fitting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion_imaging/MRtrix_Preprocessing.html">Diffusion Analysis with MRtrix: Part 1 - Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion_imaging/mrtrix3tissue.html">MRtrix3Tissue</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Imaging</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/AFNI_preprocessing_and_glm.html">AFNI Preprocessing and GLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/AFNI_preprocessing_only.html">AFNI Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/FSL_preproc_glm.html">FSL Preprocessing and GLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/aslprep.html">ASLprep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/deepretinotopy.html">DeepRetinotopy</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/first_and_second_level_spm.html">First and Second Level fMRI Analysis with SPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/fmriprep.html">fMRIprep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/intro_to_preprocessing.html">Introduction to Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_imaging/nipype_fsl_all_levels_flanker.html">FSL’s fMRI Data Analysis via Nipype</a></li>
+
+
+
+
+</ul>
+
     </div>
 </nav></div>
     </div>
@@ -185,7 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -194,14 +278,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -224,16 +308,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/bids_conversion.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/workflows/bids_conversion.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -272,7 +356,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/NeuroDesk/example-notebooks/edit/main/books/bids_conversion.ipynb" target="_blank"
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/edit/main/books/workflows/bids_conversion.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -289,7 +373,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/NeuroDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Fbids_conversion.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2Fworkflows/bids_conversion.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +403,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/bids_conversion.ipynb" target="_blank"
+      <li><a href="../_sources/workflows/bids_conversion.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -374,10 +458,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -385,14 +469,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -435,11 +519,11 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/workflows/bids_conversion.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="bids-conversion">
-<h1>BIDS conversion<a class="headerlink" href="#bids-conversion" title="Permalink to this heading">#</a></h1>
+<h1>BIDS conversion<a class="headerlink" href="#bids-conversion" title="Link to this heading">#</a></h1>
 <p>Author: Thuy Dao</p>
 <p>Citation:</p>
 <ul class="simple">
@@ -451,25 +535,25 @@ document.write(`
 <li><p><a class="reference external" href="https://github.com/niivue/niivue">NiiVue</a></p></li>
 </ul>
 <section id="setup-neurodesk">
-<h2>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Permalink to this heading">#</a></h2>
+<h2>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
-import os
-import sys
-IN_COLAB = &#39;google.colab&#39; in sys.modules
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="n">IN_COLAB</span> <span class="o">=</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span>
 
-if IN_COLAB:
-  os.environ[&quot;LD_PRELOAD&quot;] = &quot;&quot;;
-  os.environ[&quot;APPTAINER_BINDPATH&quot;] = &quot;/content,/tmp,/cvmfs&quot;
-  os.environ[&quot;MPLCONFIGDIR&quot;] = &quot;/content/matplotlib-mpldir&quot;
-  os.environ[&quot;LMOD_CMD&quot;] = &quot;/usr/share/lmod/lmod/libexec/lmod&quot;
+<span class="k">if</span> <span class="n">IN_COLAB</span><span class="p">:</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_PRELOAD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;APPTAINER_BINDPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content,/tmp,/cvmfs&quot;</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MPLCONFIGDIR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content/matplotlib-mpldir&quot;</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LMOD_CMD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/share/lmod/lmod/libexec/lmod&quot;</span>
 
-  !curl -J -O https://raw.githubusercontent.com/NeuroDesk/neurocommand/main/googlecolab_setup.sh
-  !chmod +x googlecolab_setup.sh
-  !./googlecolab_setup.sh
+  <span class="err">!</span><span class="n">curl</span> <span class="o">-</span><span class="n">J</span> <span class="o">-</span><span class="n">O</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NeuroDesk</span><span class="o">/</span><span class="n">neurocommand</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
+  <span class="err">!</span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
+  <span class="err">!</span><span class="o">./</span><span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
 
-  os.environ[&quot;MODULEPATH&quot;] = &#39;:&#39;.join(map(str, list(map(lambda x: os.path.join(os.path.abspath(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;), x),os.listdir(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;)))))
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MODULEPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">)))))</span>
 </pre></div>
 </div>
 </div>
@@ -477,21 +561,21 @@ if IN_COLAB:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
-<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;vendor&#39;</span> <span class="p">|</span> uniq
-<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;model name&#39;</span> <span class="p">|</span> uniq
+<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: AuthenticAMD
-model name	: AMD EPYC-Rome Processor
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: GenuineIntel
+model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="id1">
-<h2>BIDS conversion<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>BIDS conversion<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>In this interactive example notebook, we first download DICOM data using <code class="docutils literal notranslate"><span class="pre">datalad</span></code>.</p></li>
 <li><p>Next we will convert DICOMS into the BIDS data structure using:</p>
@@ -504,7 +588,7 @@ model name	: AMD EPYC-Rome Processor
 </ol>
 </section>
 <section id="data-preparation">
-<h2>1. Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this heading">#</a></h2>
+<h2>1. Data preparation<a class="headerlink" href="#data-preparation" title="Link to this heading">#</a></h2>
 <p>This example uses a phantom dataset generated by the University of Arizona on their Siemens Skyra 3T with Syngo MR VE11c software on 2018_02_08.</p>
 <p>Download DICOM data from Datalad.</p>
 <div class="cell tag_scroll-output docutils container">
@@ -516,7 +600,7 @@ cd heudiconv-reproin-example/REPROIN/dicom &amp;&amp; datalad get 001
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>install(ok): /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example (dataset)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>install(ok): /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example (dataset)
 get(ok): REPROIN/dicom/001/Patterson_Coben - 1/Localizers_4/IM-0012-0001-0001.dcm (file) [from origin...]
 get(ok): REPROIN/dicom/001/Patterson_Coben - 1/Localizers_4/IM-0012-0001-0002.dcm (file) [from origin...]
 get(ok): REPROIN/dicom/001/Patterson_Coben - 1/Localizers_4/IM-0012-0001-0003.dcm (file) [from origin...]
@@ -1313,16 +1397,16 @@ action summary:
   get (ok: 792)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] Cloning dataset to Dataset(/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example) 
-[INFO] Attempting to clone from https://datasets.datalad.org/repronim/heudiconv-reproin-example to /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example 
-[INFO] Attempting to clone from https://datasets.datalad.org/repronim/heudiconv-reproin-example/.git to /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] Attempting a clone into /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example 
+[INFO] Attempting to clone from https://datasets.datalad.org/repronim/heudiconv-reproin-example to /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example 
+[INFO] Attempting to clone from https://datasets.datalad.org/repronim/heudiconv-reproin-example/.git to /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example 
 [INFO] Start enumerating objects 
 [INFO] Start counting objects 
 [INFO] Start compressing objects 
 [INFO] Start receiving objects 
 [INFO] Start resolving deltas 
-[INFO] Completed clone attempts for Dataset(/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example) 
-[INFO] scanning for unlocked files (this may take some time) 
+[INFO] Completed clone attempts for Dataset(/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example) 
+[INFO] scanning for unlocked files (this may take some time)
 </pre></div>
 </div>
 </div>
@@ -1330,7 +1414,7 @@ action summary:
 <p>We will be working from a directory called <code class="docutils literal notranslate"><span class="pre">REPROIN</span></code>. Under the REPROIN directory is the <code class="docutils literal notranslate"><span class="pre">dicom</span></code> subdirectory: Under the subject number <code class="docutils literal notranslate"><span class="pre">001</span></code> the session <code class="docutils literal notranslate"><span class="pre">Patterson_Coben</span> <span class="pre">-</span> <span class="pre">1</span></code> is nested. Each dicom sequence folder is nested under the session:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree heudiconv-reproin-example/REPROIN/ -I <span class="s2">&quot;*.dcm&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree<span class="w"> </span>heudiconv-reproin-example/REPROIN/<span class="w"> </span>-I<span class="w"> </span><span class="s2">&quot;*.dcm&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -1339,13 +1423,13 @@ action summary:
 └── <span class=" -Color -Color-Bold -Color-Bold-Blue">dicom</span>
     └── <span class=" -Color -Color-Bold -Color-Bold-Blue">001</span>
         └── <span class=" -Color -Color-Bold -Color-Bold-Blue">Patterson_Coben - 1</span>
+            ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">Localizers_4</span>
             ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">anatT1w_acqMPRAGE_6</span>
             ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">dwi_dirAP_9</span>
             ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">fmap_acq4mm_7</span>
             ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">fmap_acq4mm_8</span>
             ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">fmap_dirPA_15</span>
-            ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">func_taskrest_16</span>
-            └── <span class=" -Color -Color-Bold -Color-Bold-Blue">Localizers_4</span>
+            └── <span class=" -Color -Color-Bold -Color-Bold-Blue">func_taskrest_16</span>
 
 10 directories, 0 files
 </pre></div>
@@ -1354,15 +1438,15 @@ action summary:
 </div>
 </section>
 <section id="convert-dicoms-to-bids-formatted-nifti">
-<h2>2. Convert DICOMS to BIDS-formatted NIfTI<a class="headerlink" href="#convert-dicoms-to-bids-formatted-nifti" title="Permalink to this heading">#</a></h2>
+<h2>2. Convert DICOMS to BIDS-formatted NIfTI<a class="headerlink" href="#convert-dicoms-to-bids-formatted-nifti" title="Link to this heading">#</a></h2>
 <section id="using-dcm2niix-manual-workflow">
-<h3>2.1. Using dcm2niix (manual workflow)<a class="headerlink" href="#using-dcm2niix-manual-workflow" title="Permalink to this heading">#</a></h3>
+<h3>2.1. Using dcm2niix (manual workflow)<a class="headerlink" href="#using-dcm2niix-manual-workflow" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">dcm2niix</span></code> converts neuroimaging data from the DICOM format to the NIfTI format and generates a BIDS JSON format sidecar which includes relevant information. However, users need to manually organize these files into a bids-compliant subject directory.</p>
 <section id="convert-dicom-to-nifti">
-<h4>2.1.1. Convert DICOM to NIfTI<a class="headerlink" href="#convert-dicom-to-nifti" title="Permalink to this heading">#</a></h4>
+<h4>2.1.1. Convert DICOM to NIfTI<a class="headerlink" href="#convert-dicom-to-nifti" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">module</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">module</span>
 <span class="k">await</span> <span class="n">module</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;dcm2niix/v1.0.20240202&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1370,7 +1454,7 @@ action summary:
 </div>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>dcm2niix -h
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>dcm2niix<span class="w"> </span>-h
 </pre></div>
 </div>
 </div>
@@ -1408,7 +1492,7 @@ usage: dcm2niix [options] &lt;in_folder&gt;
   --terse : omit filename post-fixes (can cause overwrites)
   --version : report version
   --xml : Slicer format features
- Defaults file : /home/ubuntu/.dcm2nii.ini
+ Defaults file : /home/jovyan/.dcm2nii.ini
  Examples :
   dcm2niix /Users/chris/dir
   dcm2niix -c &quot;my comment&quot; /Users/chris/dir
@@ -1423,8 +1507,8 @@ Example output filename: &#39;myFolder_MPRAGE_19770703150928_1.nii&#39;
 </div>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>mkdir dcm2niix_bids
-<span class="o">!</span>dcm2niix n -o ./dcm2niix_bids ./heudiconv-reproin-example/REPROIN/dicom
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>mkdir<span class="w"> </span>dcm2niix_bids
+<span class="o">!</span>dcm2niix<span class="w"> </span>n<span class="w"> </span>-o<span class="w"> </span>./dcm2niix_bids<span class="w"> </span>./heudiconv-reproin-example/REPROIN/dicom
 </pre></div>
 </div>
 </div>
@@ -1434,32 +1518,32 @@ Found 791 DICOM file(s)
 Slices not stacked: orientation varies (vNav or localizer?) [0.0964069 0.780133 0.618141 0.0553476 0.615871 -0.7859] != [-0.522168 0.736033 0.430808 0.0695744 0.540223 -0.838641]
 Convert 2 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_3_i00001 (162x162x2x1)
 Convert 1 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_3_i00004 (162x162x1x1)
-Convert 1 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_3_i00002 (162x162x1x1)
 Convert 1 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_3_i00003 (162x162x1x1)
+Convert 1 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_3_i00002 (162x162x1x1)
 Convert 128 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_1 (160x160x128x1)
 Convert 128 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_2 (160x160x128x1)
 Convert 4 DICOM as ./dcm2niix_bids/dicom_func_task-rest_20190208142838_16 (64x64x44x4)
 Convert 132 DICOM as ./dcm2niix_bids/dicom_fmap_dir-PA_20190208142838_15 (122x122x66x2)
-Convert 1 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_4_i00002 (162x162x1x1)
-Convert 1 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_4_i00003 (162x162x1x1)
 Convert 1 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_4_i00001 (162x162x1x1)
+Convert 1 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_4_i00003 (162x162x1x1)
+Convert 1 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_4_i00002 (162x162x1x1)
 Convert 16 DICOM as ./dcm2niix_bids/dicom_dwi_dir-AP_20190208142838_9 (122x122x66x16)
 Slices not stacked: echo varies (TE 4.92, 7.38; echo 1, 2). Use &#39;merge 2D slices&#39; option to force stacking
 Convert 44 DICOM as ./dcm2niix_bids/dicom_fmap_acq-4mm_20190208142838_7_e1 (64x64x44x1)
 Convert 44 DICOM as ./dcm2niix_bids/dicom_fmap_acq-4mm_20190208142838_7_e2 (64x64x44x1)
 Convert 240 DICOM as ./dcm2niix_bids/dicom_anat-T1w_acq-MPRAGE_20190208142838_6 (224x224x240x1)
 Convert 1 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_5_i00003 (162x162x1x1)
-Convert 1 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_5_i00001 (162x162x1x1)
 Convert 1 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_5_i00002 (162x162x1x1)
+Convert 1 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_5_i00001 (162x162x1x1)
 Convert 44 DICOM as ./dcm2niix_bids/dicom_fmap_acq-4mm_20190208142838_8_e2_ph (64x64x44x1)
-Conversion required 1.189596 seconds (1.187536 for core code).
+Conversion required 1.111782 seconds (1.107384 for core code).
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="organize-data-into-bids-structure">
-<h4>2.1.2. Organize data into BIDS structure<a class="headerlink" href="#organize-data-into-bids-structure" title="Permalink to this heading">#</a></h4>
+<h4>2.1.2. Organize data into BIDS structure<a class="headerlink" href="#organize-data-into-bids-structure" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
@@ -1478,13 +1562,15 @@ find ./dcm2niix_bids -maxdepth 1 -type f -name *func* -exec mv {} ./dcm2niix_bid
 </div>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree ./dcm2niix_bids/
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree<span class="w"> </span>./dcm2niix_bids/
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">./dcm2niix_bids/</span>
 ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">anat</span>
+│   ├── dicom_anat-T1w_acq-MPRAGE_20190208142838_6.json
+│   ├── dicom_anat-T1w_acq-MPRAGE_20190208142838_6.nii
 │   ├── dicom_anat-scout_20190208142838_1.json
 │   ├── dicom_anat-scout_20190208142838_1.nii
 │   ├── dicom_anat-scout_20190208142838_2.json
@@ -1508,9 +1594,7 @@ find ./dcm2niix_bids -maxdepth 1 -type f -name *func* -exec mv {} ./dcm2niix_bid
 │   ├── dicom_anat-scout_20190208142838_5_i00002.json
 │   ├── dicom_anat-scout_20190208142838_5_i00002.nii
 │   ├── dicom_anat-scout_20190208142838_5_i00003.json
-│   ├── dicom_anat-scout_20190208142838_5_i00003.nii
-│   ├── dicom_anat-T1w_acq-MPRAGE_20190208142838_6.json
-│   └── dicom_anat-T1w_acq-MPRAGE_20190208142838_6.nii
+│   └── dicom_anat-scout_20190208142838_5_i00003.nii
 ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">dwi</span>
 │   ├── dicom_dwi_dir-AP_20190208142838_9.bval
 │   ├── dicom_dwi_dir-AP_20190208142838_9.bvec
@@ -1539,7 +1623,7 @@ find ./dcm2niix_bids -maxdepth 1 -type f -name *func* -exec mv {} ./dcm2niix_bid
 </section>
 </section>
 <section id="using-heudiconv-automated-workflow">
-<h3>2.2. Using HeuDiConv (automated workflow)<a class="headerlink" href="#using-heudiconv-automated-workflow" title="Permalink to this heading">#</a></h3>
+<h3>2.2. Using HeuDiConv (automated workflow)<a class="headerlink" href="#using-heudiconv-automated-workflow" title="Link to this heading">#</a></h3>
 <p>Typical use of heudiconv will require the creation and editing of your heuristics file.</p>
 <p>But heudiconv also comes with existing heuristics which can be used as is, like <code class="docutils literal notranslate"><span class="pre">convertall</span></code> or <code class="docutils literal notranslate"><span class="pre">ReproIn</span></code> could be immediately reused and represent two ends of the spectrum in heuristics:</p>
 <ul class="simple">
@@ -1552,20 +1636,10 @@ find ./dcm2niix_bids -maxdepth 1 -type f -name *func* -exec mv {} ./dcm2niix_bid
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lmod Warning: The environment MODULEPATH has been changed in unexpected ways.
-Lmod is unable to use given MODULEPATH. It is using:
-
-&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM::&quot;.
-
-Please use &quot;module use ...&quot; to change MODULEPATH instead. 
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>heudiconv -f reproin -b -o ./heudiconv_reproin_bids --files ./heudiconv-reproin-example/REPROIN/dicom/001
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>heudiconv<span class="w"> </span>-f<span class="w"> </span>reproin<span class="w"> </span>-b<span class="w"> </span>-o<span class="w"> </span>./heudiconv_reproin_bids<span class="w"> </span>--files<span class="w"> </span>./heudiconv-reproin-example/REPROIN/dicom/001
 </pre></div>
 </div>
 </div>
@@ -1578,237 +1652,237 @@ INFO: Generated sequence info for 1 studies with 11 entries total
 INFO: Processing sequence infos to deduce study/session
 INFO: Study session for StudySessionInfo(locator=&#39;Patterson/Coben&#39;, session=None, subject=&#39;001&#39;)
 INFO: Need to process 1 study sessions
-INFO: PROCESSING STARTS: {&#39;subject&#39;: &#39;001&#39;, &#39;outdir&#39;: &#39;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben&#39;, &#39;session&#39;: None}
+INFO: PROCESSING STARTS: {&#39;subject&#39;: &#39;001&#39;, &#39;outdir&#39;: &#39;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben&#39;, &#39;session&#39;: None}
 INFO: Processing 11 pre-sorted seqinfo entries
 INFO: Processing 11 seqinfo entries
 WARNING: Deduced datatype to be dwi from DICOM, but got fmap out of fmap_dir-PA
 WARNING: Detected 4 duplicated run(s) for template {bids_subject_session_dir}/anat/{bids_subject_session_prefix}_scout: [&#39;1-anat-scout&#39;, &#39;2-anat-scout&#39;, &#39;3-anat-scout&#39;, &#39;4-anat-scout&#39;]
 INFO: Doing conversion using dcm2niix
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout (3 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w (240 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
-250604-06:05:23,864 nipype.workflow INFO:
-	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixd7srzyf1/convert&quot;.
-INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixd7srzyf1/convert&quot;.
-250604-06:05:24,17 nipype.workflow INFO:
+INFO: Converting /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout (3 DICOMs) -&gt; /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
+INFO: Converting /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w (240 DICOMs) -&gt; /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
+250604-04:53:43,861 nipype.workflow INFO:
+	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixe0jqya2u/convert&quot;.
+INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixe0jqya2u/convert&quot;.
+250604-04:53:43,967 nipype.workflow INFO:
 	 [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
 INFO: [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
-250604-06:05:24,687 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:24.686921:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-INFO: stdout 2025-06-04T06:05:24.686921:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-250604-06:05:24,687 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:24.686921:Found 240 DICOM file(s)
-INFO: stdout 2025-06-04T06:05:24.686921:Found 240 DICOM file(s)
-250604-06:05:24,687 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:24.686921:Convert 240 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w_heudiconv085 (224x224x240x1)
-INFO: stdout 2025-06-04T06:05:24.686921:Convert 240 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w_heudiconv085 (224x224x240x1)
-250604-06:05:25,242 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:25.242370:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w_heudiconv085.nii&quot;
-INFO: stdout 2025-06-04T06:05:25.242370:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w_heudiconv085.nii&quot;
-250604-06:05:25,242 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:25.242370:Conversion required 0.791653 seconds (0.447185 for core code).
-INFO: stdout 2025-06-04T06:05:25.242370:Conversion required 0.791653 seconds (0.447185 for core code).
-250604-06:05:25,283 nipype.workflow INFO:
-	 [Node] Finished &quot;convert&quot;, elapsed time 0.89342s.
-INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.89342s.
-250604-06:05:49,725 nipype.workflow INFO:
-	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetau50zxgd8/embedder&quot;.
-INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetau50zxgd8/embedder&quot;.
-250604-06:05:49,747 nipype.workflow INFO:
+250604-04:53:45,832 nipype.interface INFO:
+	 stdout 2025-06-04T04:53:45.832322:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+INFO: stdout 2025-06-04T04:53:45.832322:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+250604-04:53:45,832 nipype.interface INFO:
+	 stdout 2025-06-04T04:53:45.832322:Found 240 DICOM file(s)
+INFO: stdout 2025-06-04T04:53:45.832322:Found 240 DICOM file(s)
+250604-04:53:45,832 nipype.interface INFO:
+	 stdout 2025-06-04T04:53:45.832322:Convert 240 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w_heudiconv597 (224x224x240x1)
+INFO: stdout 2025-06-04T04:53:45.832322:Convert 240 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w_heudiconv597 (224x224x240x1)
+250604-04:53:46,451 nipype.interface INFO:
+	 stdout 2025-06-04T04:53:46.451063:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w_heudiconv597.nii&quot;
+INFO: stdout 2025-06-04T04:53:46.451063:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w_heudiconv597.nii&quot;
+250604-04:53:46,451 nipype.interface INFO:
+	 stdout 2025-06-04T04:53:46.451063:Conversion required 0.892119 seconds (0.441830 for core code).
+INFO: stdout 2025-06-04T04:53:46.451063:Conversion required 0.892119 seconds (0.441830 for core code).
+250604-04:53:46,477 nipype.workflow INFO:
+	 [Node] Finished &quot;convert&quot;, elapsed time 0.95058s.
+INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.95058s.
+250604-04:54:10,535 nipype.workflow INFO:
+	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmeta2vnpngal/embedder&quot;.
+INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmeta2vnpngal/embedder&quot;.
+250604-04:54:10,552 nipype.workflow INFO:
 	 [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
 INFO: [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-250604-06:05:56,724 nipype.workflow INFO:
-	 [Node] Finished &quot;embedder&quot;, elapsed time 6.974985s.
-INFO: [Node] Finished &quot;embedder&quot;, elapsed time 6.974985s.
-INFO: Post-treating /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w.json file
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude (88 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
-250604-06:05:56,773 nipype.workflow INFO:
-	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixfwd9emfa/convert&quot;.
-INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixfwd9emfa/convert&quot;.
-250604-06:05:56,802 nipype.workflow INFO:
+250604-04:54:17,920 nipype.workflow INFO:
+	 [Node] Finished &quot;embedder&quot;, elapsed time 7.367169s.
+INFO: [Node] Finished &quot;embedder&quot;, elapsed time 7.367169s.
+INFO: Post-treating /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w.json file
+INFO: Converting /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude (88 DICOMs) -&gt; /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
+250604-04:54:17,955 nipype.workflow INFO:
+	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixsuxlzhm1/convert&quot;.
+INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixsuxlzhm1/convert&quot;.
+250604-04:54:18,7 nipype.workflow INFO:
 	 [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
 INFO: [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
-250604-06:05:56,955 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:56.955614:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-INFO: stdout 2025-06-04T06:05:56.955614:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-250604-06:05:56,956 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:56.955614:Found 88 DICOM file(s)
-INFO: stdout 2025-06-04T06:05:56.955614:Found 88 DICOM file(s)
-250604-06:05:56,956 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:56.955614:Slices not stacked: echo varies (TE 4.92, 7.38; echo 1, 2). Use &#39;merge 2D slices&#39; option to force stacking
-INFO: stdout 2025-06-04T06:05:56.955614:Slices not stacked: echo varies (TE 4.92, 7.38; echo 1, 2). Use &#39;merge 2D slices&#39; option to force stacking
-250604-06:05:56,956 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:56.955614:Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv310_e1 (64x64x44x1)
-INFO: stdout 2025-06-04T06:05:56.955614:Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv310_e1 (64x64x44x1)
-250604-06:05:57,0 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:57.000363:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv310_e1.nii&quot;
-INFO: stdout 2025-06-04T06:05:57.000363:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv310_e1.nii&quot;
-250604-06:05:57,0 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:57.000363:Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv310_e2 (64x64x44x1)
-INFO: stdout 2025-06-04T06:05:57.000363:Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv310_e2 (64x64x44x1)
-250604-06:05:57,35 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:57.035458:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv310_e2.nii&quot;
-INFO: stdout 2025-06-04T06:05:57.035458:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv310_e2.nii&quot;
-250604-06:05:57,35 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:57.035458:Conversion required 0.147047 seconds (0.075682 for core code).
-INFO: stdout 2025-06-04T06:05:57.035458:Conversion required 0.147047 seconds (0.075682 for core code).
-250604-06:05:57,83 nipype.workflow INFO:
-	 [Node] Finished &quot;convert&quot;, elapsed time 0.279796s.
-INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.279796s.
+250604-04:54:18,121 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:18.121339:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+INFO: stdout 2025-06-04T04:54:18.121339:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+250604-04:54:18,121 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:18.121339:Found 88 DICOM file(s)
+INFO: stdout 2025-06-04T04:54:18.121339:Found 88 DICOM file(s)
+250604-04:54:18,121 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:18.121339:Slices not stacked: echo varies (TE 7.38, 4.92; echo 2, 1). Use &#39;merge 2D slices&#39; option to force stacking
+INFO: stdout 2025-06-04T04:54:18.121339:Slices not stacked: echo varies (TE 7.38, 4.92; echo 2, 1). Use &#39;merge 2D slices&#39; option to force stacking
+250604-04:54:18,121 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:18.121339:Convert 44 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv873_e2 (64x64x44x1)
+INFO: stdout 2025-06-04T04:54:18.121339:Convert 44 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv873_e2 (64x64x44x1)
+250604-04:54:18,145 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:18.145303:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv873_e2.nii&quot;
+INFO: stdout 2025-06-04T04:54:18.145303:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv873_e2.nii&quot;
+250604-04:54:18,145 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:18.145303:Convert 44 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv873_e1 (64x64x44x1)
+INFO: stdout 2025-06-04T04:54:18.145303:Convert 44 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv873_e1 (64x64x44x1)
+250604-04:54:18,159 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:18.159344:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv873_e1.nii&quot;
+INFO: stdout 2025-06-04T04:54:18.159344:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv873_e1.nii&quot;
+250604-04:54:18,159 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:18.159344:Conversion required 0.104805 seconds (0.069369 for core code).
+INFO: stdout 2025-06-04T04:54:18.159344:Conversion required 0.104805 seconds (0.069369 for core code).
+250604-04:54:18,194 nipype.workflow INFO:
+	 [Node] Finished &quot;convert&quot;, elapsed time 0.185947s.
+INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.185947s.
 WARNING: For now not embedding BIDS and info generated .nii.gz itself since sequence produced multiple files
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff (44 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
-250604-06:05:57,898 nipype.workflow INFO:
-	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixogq6ea2_/convert&quot;.
-INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixogq6ea2_/convert&quot;.
-250604-06:05:57,914 nipype.workflow INFO:
+INFO: Converting /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff (44 DICOMs) -&gt; /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
+250604-04:54:18,984 nipype.workflow INFO:
+	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixhzwgarat/convert&quot;.
+INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixhzwgarat/convert&quot;.
+250604-04:54:19,9 nipype.workflow INFO:
 	 [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
 INFO: [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
-250604-06:05:58,32 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:58.032009:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-INFO: stdout 2025-06-04T06:05:58.032009:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-250604-06:05:58,32 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:58.032009:Found 44 DICOM file(s)
-INFO: stdout 2025-06-04T06:05:58.032009:Found 44 DICOM file(s)
-250604-06:05:58,32 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:58.032009:Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff_heudiconv461_e2_ph (64x64x44x1)
-INFO: stdout 2025-06-04T06:05:58.032009:Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff_heudiconv461_e2_ph (64x64x44x1)
-250604-06:05:58,64 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:58.064084:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff_heudiconv461_e2_ph.nii&quot;
-INFO: stdout 2025-06-04T06:05:58.064084:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff_heudiconv461_e2_ph.nii&quot;
-250604-06:05:58,64 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:58.064084:Conversion required 0.061142 seconds (0.030708 for core code).
-INFO: stdout 2025-06-04T06:05:58.064084:Conversion required 0.061142 seconds (0.030708 for core code).
-250604-06:05:58,106 nipype.workflow INFO:
-	 [Node] Finished &quot;convert&quot;, elapsed time 0.190232s.
-INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.190232s.
-250604-06:05:58,510 nipype.workflow INFO:
-	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmeta0n644xsd/embedder&quot;.
-INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmeta0n644xsd/embedder&quot;.
-250604-06:05:58,515 nipype.workflow INFO:
+250604-04:54:19,82 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:19.081871:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+INFO: stdout 2025-06-04T04:54:19.081871:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+250604-04:54:19,82 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:19.081871:Found 44 DICOM file(s)
+INFO: stdout 2025-06-04T04:54:19.081871:Found 44 DICOM file(s)
+250604-04:54:19,82 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:19.081871:Convert 44 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff_heudiconv959_e2_ph (64x64x44x1)
+INFO: stdout 2025-06-04T04:54:19.081871:Convert 44 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff_heudiconv959_e2_ph (64x64x44x1)
+250604-04:54:19,95 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:19.095543:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff_heudiconv959_e2_ph.nii&quot;
+INFO: stdout 2025-06-04T04:54:19.095543:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff_heudiconv959_e2_ph.nii&quot;
+250604-04:54:19,95 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:19.095543:Conversion required 0.042604 seconds (0.029517 for core code).
+INFO: stdout 2025-06-04T04:54:19.095543:Conversion required 0.042604 seconds (0.029517 for core code).
+250604-04:54:19,124 nipype.workflow INFO:
+	 [Node] Finished &quot;convert&quot;, elapsed time 0.114021s.
+INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.114021s.
+250604-04:54:19,523 nipype.workflow INFO:
+	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmeta2m8_717f/embedder&quot;.
+INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmeta2m8_717f/embedder&quot;.
+250604-04:54:19,529 nipype.workflow INFO:
 	 [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
 INFO: [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-250604-06:05:59,795 nipype.workflow INFO:
-	 [Node] Finished &quot;embedder&quot;, elapsed time 1.279248s.
-INFO: [Node] Finished &quot;embedder&quot;, elapsed time 1.279248s.
-INFO: Post-treating /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff.json file
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi (16 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
-250604-06:05:59,811 nipype.workflow INFO:
-	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niix44wtb2by/convert&quot;.
-INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niix44wtb2by/convert&quot;.
-250604-06:05:59,817 nipype.workflow INFO:
+250604-04:54:20,703 nipype.workflow INFO:
+	 [Node] Finished &quot;embedder&quot;, elapsed time 1.173789s.
+INFO: [Node] Finished &quot;embedder&quot;, elapsed time 1.173789s.
+INFO: Post-treating /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff.json file
+INFO: Converting /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi (16 DICOMs) -&gt; /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
+250604-04:54:20,718 nipype.workflow INFO:
+	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niix5uudc78e/convert&quot;.
+INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niix5uudc78e/convert&quot;.
+250604-04:54:20,727 nipype.workflow INFO:
 	 [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
 INFO: [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
-250604-06:05:59,963 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:59.963804:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-INFO: stdout 2025-06-04T06:05:59.963804:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-250604-06:05:59,964 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:59.963804:Found 16 DICOM file(s)
-INFO: stdout 2025-06-04T06:05:59.963804:Found 16 DICOM file(s)
-250604-06:05:59,964 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:59.963804:Convert 16 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi_heudiconv205 (122x122x66x16)
-INFO: stdout 2025-06-04T06:05:59.963804:Convert 16 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi_heudiconv205 (122x122x66x16)
-250604-06:06:00,408 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:00.408835:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi_heudiconv205.nii&quot;
-INFO: stdout 2025-06-04T06:06:00.408835:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi_heudiconv205.nii&quot;
-250604-06:06:00,409 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:00.408835:Conversion required 0.518114 seconds (0.150709 for core code).
-INFO: stdout 2025-06-04T06:06:00.408835:Conversion required 0.518114 seconds (0.150709 for core code).
-250604-06:06:00,456 nipype.workflow INFO:
-	 [Node] Finished &quot;convert&quot;, elapsed time 0.637327s.
-INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.637327s.
-250604-06:06:19,533 nipype.workflow INFO:
-	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmeta49zt9l7w/embedder&quot;.
-INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmeta49zt9l7w/embedder&quot;.
-250604-06:06:19,538 nipype.workflow INFO:
+250604-04:54:20,861 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:20.861007:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+INFO: stdout 2025-06-04T04:54:20.861007:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+250604-04:54:20,861 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:20.861007:Found 16 DICOM file(s)
+INFO: stdout 2025-06-04T04:54:20.861007:Found 16 DICOM file(s)
+250604-04:54:20,861 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:20.861007:Convert 16 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi_heudiconv779 (122x122x66x16)
+INFO: stdout 2025-06-04T04:54:20.861007:Convert 16 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi_heudiconv779 (122x122x66x16)
+250604-04:54:21,233 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:21.233210:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi_heudiconv779.nii&quot;
+INFO: stdout 2025-06-04T04:54:21.233210:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi_heudiconv779.nii&quot;
+250604-04:54:21,233 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:21.233210:Conversion required 0.466862 seconds (0.161808 for core code).
+INFO: stdout 2025-06-04T04:54:21.233210:Conversion required 0.466862 seconds (0.161808 for core code).
+250604-04:54:21,263 nipype.workflow INFO:
+	 [Node] Finished &quot;convert&quot;, elapsed time 0.535425s.
+INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.535425s.
+250604-04:54:40,925 nipype.workflow INFO:
+	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetazcbeirvx/embedder&quot;.
+INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetazcbeirvx/embedder&quot;.
+250604-04:54:40,929 nipype.workflow INFO:
 	 [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
 INFO: [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-250604-06:06:20,716 nipype.workflow INFO:
-	 [Node] Finished &quot;embedder&quot;, elapsed time 1.17656s.
-INFO: [Node] Finished &quot;embedder&quot;, elapsed time 1.17656s.
-INFO: Post-treating /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi.json file
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi (132 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
-250604-06:06:20,751 nipype.workflow INFO:
-	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixirxg8i4o/convert&quot;.
-INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixirxg8i4o/convert&quot;.
-250604-06:06:20,828 nipype.workflow INFO:
+250604-04:54:41,849 nipype.workflow INFO:
+	 [Node] Finished &quot;embedder&quot;, elapsed time 0.918597s.
+INFO: [Node] Finished &quot;embedder&quot;, elapsed time 0.918597s.
+INFO: Post-treating /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi.json file
+INFO: Converting /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi (132 DICOMs) -&gt; /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
+250604-04:54:41,873 nipype.workflow INFO:
+	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixg3fmx3zu/convert&quot;.
+INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixg3fmx3zu/convert&quot;.
+250604-04:54:41,932 nipype.workflow INFO:
 	 [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
 INFO: [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
-250604-06:06:20,989 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:20.989347:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-INFO: stdout 2025-06-04T06:06:20.989347:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-250604-06:06:20,989 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:20.989347:Found 132 DICOM file(s)
-INFO: stdout 2025-06-04T06:06:20.989347:Found 132 DICOM file(s)
-250604-06:06:20,989 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:20.989347:Convert 132 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi_heudiconv666 (122x122x66x2)
-INFO: stdout 2025-06-04T06:06:20.989347:Convert 132 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi_heudiconv666 (122x122x66x2)
-250604-06:06:21,179 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:21.179511:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi_heudiconv666.nii&quot;
-INFO: stdout 2025-06-04T06:06:21.179511:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi_heudiconv666.nii&quot;
-250604-06:06:21,179 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:21.179511:Conversion required 0.266643 seconds (0.083565 for core code).
-INFO: stdout 2025-06-04T06:06:21.179511:Conversion required 0.266643 seconds (0.083565 for core code).
-250604-06:06:21,219 nipype.workflow INFO:
-	 [Node] Finished &quot;convert&quot;, elapsed time 0.3897s.
-INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.3897s.
-250604-06:06:24,252 nipype.workflow INFO:
-	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetaabr_10cc/embedder&quot;.
-INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetaabr_10cc/embedder&quot;.
-250604-06:06:24,262 nipype.workflow INFO:
+250604-04:54:42,64 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:42.064575:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+INFO: stdout 2025-06-04T04:54:42.064575:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+250604-04:54:42,65 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:42.064575:Found 132 DICOM file(s)
+INFO: stdout 2025-06-04T04:54:42.064575:Found 132 DICOM file(s)
+250604-04:54:42,65 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:42.064575:Convert 132 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi_heudiconv590 (122x122x66x2)
+INFO: stdout 2025-06-04T04:54:42.064575:Convert 132 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi_heudiconv590 (122x122x66x2)
+250604-04:54:42,167 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:42.167747:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi_heudiconv590.nii&quot;
+INFO: stdout 2025-06-04T04:54:42.167747:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi_heudiconv590.nii&quot;
+250604-04:54:42,167 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:42.167747:Conversion required 0.188278 seconds (0.089655 for core code).
+INFO: stdout 2025-06-04T04:54:42.167747:Conversion required 0.188278 seconds (0.089655 for core code).
+250604-04:54:42,196 nipype.workflow INFO:
+	 [Node] Finished &quot;convert&quot;, elapsed time 0.26308s.
+INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.26308s.
+250604-04:54:44,794 nipype.workflow INFO:
+	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetadlhpi7tg/embedder&quot;.
+INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetadlhpi7tg/embedder&quot;.
+250604-04:54:44,806 nipype.workflow INFO:
 	 [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
 INFO: [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-250604-06:06:29,384 nipype.workflow INFO:
-	 [Node] Finished &quot;embedder&quot;, elapsed time 5.121295s.
-INFO: [Node] Finished &quot;embedder&quot;, elapsed time 5.121295s.
-INFO: Post-treating /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi.json file
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold (4 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/func . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
-250604-06:06:29,406 nipype.workflow INFO:
-	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixzcux2773/convert&quot;.
-INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixzcux2773/convert&quot;.
-250604-06:06:29,409 nipype.workflow INFO:
+250604-04:54:48,657 nipype.workflow INFO:
+	 [Node] Finished &quot;embedder&quot;, elapsed time 3.849705s.
+INFO: [Node] Finished &quot;embedder&quot;, elapsed time 3.849705s.
+INFO: Post-treating /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi.json file
+INFO: Converting /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold (4 DICOMs) -&gt; /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/func . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
+250604-04:54:48,677 nipype.workflow INFO:
+	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixqgww5csj/convert&quot;.
+INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixqgww5csj/convert&quot;.
+250604-04:54:48,687 nipype.workflow INFO:
 	 [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
 INFO: [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
-250604-06:06:29,490 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:29.490787:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-INFO: stdout 2025-06-04T06:06:29.490787:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-250604-06:06:29,491 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:29.490787:Found 4 DICOM file(s)
-INFO: stdout 2025-06-04T06:06:29.490787:Found 4 DICOM file(s)
-250604-06:06:29,491 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:29.490787:Convert 4 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold_heudiconv249 (64x64x44x4)
-INFO: stdout 2025-06-04T06:06:29.490787:Convert 4 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold_heudiconv249 (64x64x44x4)
-250604-06:06:29,665 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:29.665668:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold_heudiconv249.nii&quot;
-INFO: stdout 2025-06-04T06:06:29.665668:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold_heudiconv249.nii&quot;
-250604-06:06:29,666 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:29.665668:Conversion required 0.186289 seconds (0.015445 for core code).
-INFO: stdout 2025-06-04T06:06:29.665668:Conversion required 0.186289 seconds (0.015445 for core code).
-250604-06:06:29,722 nipype.workflow INFO:
-	 [Node] Finished &quot;convert&quot;, elapsed time 0.311753s.
-INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.311753s.
-250604-06:06:30,188 nipype.workflow INFO:
-	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetad2kwf3zr/embedder&quot;.
-INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetad2kwf3zr/embedder&quot;.
-250604-06:06:30,195 nipype.workflow INFO:
+250604-04:54:48,741 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:48.741404:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+INFO: stdout 2025-06-04T04:54:48.741404:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+250604-04:54:48,741 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:48.741404:Found 4 DICOM file(s)
+INFO: stdout 2025-06-04T04:54:48.741404:Found 4 DICOM file(s)
+250604-04:54:48,741 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:48.741404:Convert 4 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold_heudiconv588 (64x64x44x4)
+INFO: stdout 2025-06-04T04:54:48.741404:Convert 4 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold_heudiconv588 (64x64x44x4)
+250604-04:54:48,830 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:48.830371:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold_heudiconv588.nii&quot;
+INFO: stdout 2025-06-04T04:54:48.830371:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold_heudiconv588.nii&quot;
+250604-04:54:48,830 nipype.interface INFO:
+	 stdout 2025-06-04T04:54:48.830371:Conversion required 0.098970 seconds (0.018073 for core code).
+INFO: stdout 2025-06-04T04:54:48.830371:Conversion required 0.098970 seconds (0.018073 for core code).
+250604-04:54:48,862 nipype.workflow INFO:
+	 [Node] Finished &quot;convert&quot;, elapsed time 0.173641s.
+INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.173641s.
+250604-04:54:49,113 nipype.workflow INFO:
+	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmeta2x3x8h7r/embedder&quot;.
+INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmeta2x3x8h7r/embedder&quot;.
+250604-04:54:49,116 nipype.workflow INFO:
 	 [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
 INFO: [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-250604-06:06:30,483 nipype.workflow INFO:
-	 [Node] Finished &quot;embedder&quot;, elapsed time 0.286966s.
-INFO: [Node] Finished &quot;embedder&quot;, elapsed time 0.286966s.
-INFO: Post-treating /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold.json file
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout__dup-01 (128 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout__dup-02 (128 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout__dup-03 (5 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout__dup-04 (3 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
-INFO: Adding &quot;IntendedFor&quot; to the fieldmaps in /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001.
-INFO: Populating template files under /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben
-INFO: PROCESSING DONE: {&#39;subject&#39;: &#39;001&#39;, &#39;outdir&#39;: &#39;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben&#39;, &#39;session&#39;: None}
+250604-04:54:49,262 nipype.workflow INFO:
+	 [Node] Finished &quot;embedder&quot;, elapsed time 0.144823s.
+INFO: [Node] Finished &quot;embedder&quot;, elapsed time 0.144823s.
+INFO: Post-treating /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold.json file
+INFO: Converting /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout__dup-01 (128 DICOMs) -&gt; /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
+INFO: Converting /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout__dup-02 (128 DICOMs) -&gt; /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
+INFO: Converting /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout__dup-03 (5 DICOMs) -&gt; /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
+INFO: Converting /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout__dup-04 (3 DICOMs) -&gt; /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
+INFO: Adding &quot;IntendedFor&quot; to the fieldmaps in /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben/sub-001.
+INFO: Populating template files under /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben
+INFO: PROCESSING DONE: {&#39;subject&#39;: &#39;001&#39;, &#39;outdir&#39;: &#39;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv_reproin_bids/Patterson/Coben&#39;, &#39;session&#39;: None}
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="using-bidscoin-automated-workflow">
-<h3>2.3. Using bidscoin (automated workflow)<a class="headerlink" href="#using-bidscoin-automated-workflow" title="Permalink to this heading">#</a></h3>
+<h3>2.3. Using bidscoin (automated workflow)<a class="headerlink" href="#using-bidscoin-automated-workflow" title="Link to this heading">#</a></h3>
 <p>BIDScoin requires the source data repository to be organized according to a <code class="docutils literal notranslate"><span class="pre">subject/[session]/data</span></code> structure where <code class="docutils literal notranslate"><span class="pre">data</span></code> folder can be structured in DICOM series layout, DICOMDIR layout, flat DICOM layout. Refer to <a class="reference external" href="https://bidscoin.readthedocs.io/en/stable/preparation.html">this doc</a> for more details.</p>
 <p>To perform BIDS conversion, run:</p>
 <ul class="simple">
@@ -1819,18 +1893,8 @@ INFO: PROCESSING DONE: {&#39;subject&#39;: &#39;001&#39;, &#39;outdir&#39;: &#39
 <p><img alt="image.png" src="https://bidscoin.readthedocs.io/en/stable/_images/bidsmap_flow.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">module</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">module</span>
 <span class="k">await</span> <span class="n">module</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;bidscoin/4.3.3&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lmod Warning: The environment MODULEPATH has been changed in unexpected ways.
-Lmod is unable to use given MODULEPATH. It is using:
-
-&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM::&quot;.
-
-Please use &quot;module use ...&quot; to change MODULEPATH instead. 
 </pre></div>
 </div>
 </div>
@@ -1847,137 +1911,128 @@ bidscoiner ./heudiconv-reproin-example/REPROIN/dicom ./bidscoin_bids    # Conver
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO | 
 INFO | -------------- START BIDSmapper ------------
-INFO | &gt;&gt;&gt; bidsmapper sourcefolder=/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom bidsfolder=/storage/tmp/tmpknjqc9xj/bidscoin_bids bidsmap=bidsmap.yaml template=/home/ubuntu/.bidscoin/4.3.3+qt5/templates/bidsmap_dccn.yaml plugins=[] subprefix=00 sesprefix=Patterson_Coben store=False force=False
-INFO | No existing bidsmap file found: /storage/tmp/tmpknjqc9xj/bidscoin_bids/code/bidscoin/bidsmap.yaml
-INFO | Reading: /home/ubuntu/.bidscoin/4.3.3+qt5/templates/bidsmap_dccn.yaml
-WARNING | Matplotlib created a temporary cache directory at /tmp/matplotlib-llfzuckl because the default path (/home/ubuntu/.cache/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
-INFO | generated new fontManager
+INFO | &gt;&gt;&gt; bidsmapper sourcefolder=/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom bidsfolder=/home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids bidsmap=bidsmap.yaml template=/home/jovyan/.bidscoin/4.3.3+qt5/templates/bidsmap_dccn.yaml plugins=[] subprefix=00 sesprefix=Patterson_Coben store=False force=False
+INFO | No existing bidsmap file found: /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/code/bidscoin/bidsmap.yaml
+INFO | Reading: /home/jovyan/.bidscoin/4.3.3+qt5/templates/bidsmap_dccn.yaml
 INFO | Checking the bidsmap run-items:
 SUCCESS | All datatypes and options in the template bidsmap are valid
-INFO | Mapping: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1 (subject 1/1)
-VERBOSE | Executing plugin: dcm2niix2bids -&gt; /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1
-INFO | Discovered &#39;exclude&#39; DICOM sample: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/Localizers_4/IM-0012-0001-0001.dcm
-INFO | Discovered &#39;anat&#39; DICOM sample: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/anatT1w_acqMPRAGE_6/IM-0001-0001.dcm
-INFO | Discovered &#39;dwi&#39; DICOM sample: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/dwi_dirAP_9/IM-0004-0001.dcm
-INFO | Discovered &#39;fmap&#39; DICOM sample: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_7/IM-0002-0001-0001.dcm
-INFO | Discovered &#39;fmap&#39; DICOM sample: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_8/IM-0003-0001.dcm
-INFO | Discovered &#39;fmap&#39; DICOM sample: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_dirPA_15/IM-0010-0001.dcm
-INFO | Discovered &#39;func&#39; DICOM sample: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/func_taskrest_16/IM-0011-0001.dcm
-INFO | Checking the bidsmap run-items:
+INFO | Mapping: /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1 (subject 1/1)
+VERBOSE | Executing plugin: dcm2niix2bids -&gt; /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1
+INFO | Discovered &#39;exclude&#39; DICOM sample: /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/Localizers_4/IM-0012-0001-0001.dcm
+INFO | Discovered &#39;anat&#39; DICOM sample: /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/anatT1w_acqMPRAGE_6/IM-0001-0001.dcm
+INFO | Discovered &#39;dwi&#39; DICOM sample: /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/dwi_dirAP_9/IM-0004-0001.dcm
+INFO | Discovered &#39;fmap&#39; DICOM sample: /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_7/IM-0002-0001-0001.dcm
+INFO | Discovered &#39;fmap&#39; DICOM sample: /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_8/IM-0003-0001.dcm
+INFO | Discovered &#39;fmap&#39; DICOM sample: /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_dirPA_15/IM-0010-0001.dcm
+INFO | Discovered &#39;func&#39; DICOM sample: /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/func_taskrest_16/IM-0011-0001.dcm
+INFO | Checking the bidsmap run-items:            ]/1 [00:00&lt;00:00,  3.22subject/s]
 SUCCESS | All run-items in the bidsmap are valid
 INFO | bids-validator 1.14.6 test results (* = in .bidsignore):
 INFO | False:	exclude/sub-DICOM_task-anatscoutMPRcor_acq-anatscout_echo-1_GR.*
 SUCCESS | All generated bidsnames are BIDS-valid
-INFO | Writing bidsmap to: /storage/tmp/tmpknjqc9xj/bidscoin_bids/code/bidscoin/bidsmap.yaml
+INFO | Writing bidsmap to: /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/code/bidscoin/bidsmap.yaml
 INFO | -------------- FINISHED! -------------------
 INFO | 
-INFO | The following BIDScoin errors and warnings were reported:
-
-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-2025-06-04 06:07:11 - WARNING | Matplotlib created a temporary cache directory at /tmp/matplotlib-llfzuckl because the default path (/home/ubuntu/.cache/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-
-INFO | For the complete log see: /storage/tmp/tmpknjqc9xj/bidscoin_bids/code/bidscoin/bidsmapper.log
+SUCCESS | No BIDScoin errors or warnings were reported
+INFO | 
+INFO | For the complete log see: /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/code/bidscoin/bidsmapper.log
 NB: That folder may contain privacy sensitive information, e.g. pathnames in logfiles and provenance data samples
 INFO | 
 INFO | -------------- START BIDScoiner 4.3.3+qt5: BIDS 1.9.0 ------------
-INFO | &gt;&gt;&gt; bidscoiner sourcefolder=/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom bidsfolder=/storage/tmp/tmpknjqc9xj/bidscoin_bids participant=None force=False bidsmap=bidsmap.yaml
-INFO | Creating dataset description file: /storage/tmp/tmpknjqc9xj/bidscoin_bids/dataset_description.json
-INFO | Creating a template README file (adjust it to your needs): /storage/tmp/tmpknjqc9xj/bidscoin_bids/README
-INFO | Reading: /storage/tmp/tmpknjqc9xj/bidscoin_bids/code/bidscoin/bidsmap.yaml
-WARNING | Matplotlib created a temporary cache directory at /tmp/matplotlib-f719jxgn because the default path (/home/ubuntu/.cache/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
-INFO | generated new fontManager
+INFO | &gt;&gt;&gt; bidscoiner sourcefolder=/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom bidsfolder=/home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids participant=None force=False bidsmap=bidsmap.yaml
+INFO | Creating dataset description file: /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/dataset_description.json
+INFO | Creating a template README file (adjust it to your needs): /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/README
+INFO | Reading: /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/code/bidscoin/bidsmap.yaml
 INFO | Checking the bidsmap run-items:
 SUCCESS | All run-items in the bidsmap are valid
 INFO | ------------------- Subject 1/1 -------------------
-INFO | &gt;&gt;&gt; Coining datasources in: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1
-VERBOSE | Executing plugin: dcm2niix2bids
-INFO | --&gt; Leaving out: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/Localizers_4
-INFO | --&gt; Coining: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/anatT1w_acqMPRAGE_6
-VERBOSE | Command:
-dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-anatT1wacqMPRAGE_T1w&quot; -o &quot;/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/anat&quot; &quot;/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/anatT1w_acqMPRAGE_6&quot;
-VERBOSE | Output:
+INFO | &gt;&gt;&gt; Coining datasources in: /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1
+VERB                                      ubject/s]OSE | Executing plugin: dcm2niix2bids
+INFO | --&gt; Leaving out: /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/Localizers_4
+INFO | --&gt; Coining: /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/anatT1w_acqMPRAGE_6
+VERBOSE | Command:                        ubject/s]
+dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-anatT1wacqMPRAGE_T1w&quot; -o &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/anat&quot; &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/anatT1w_acqMPRAGE_6&quot;
+VERBOSE | Output:                         ubject/s]
 Chris Rorden&#39;s dcm2niiX version v1.0.20240202  (JP2:OpenJPEG) (JP-LS:CharLS) GCC12.2.0 x86-64 (64-bit Linux)
 Found 240 DICOM file(s)
-Convert 240 DICOM as /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/anat/sub-1_ses-1_acq-anatT1wacqMPRAGE_T1w (224x224x240x1)
-Conversion required 2.216607 seconds (2.213412 for core code).
+Convert 240 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/anat/sub-1_ses-1_acq-anatT1wacqMPRAGE_T1w (224x224x240x1)
+Conversion required 1.576807 seconds (1.574546 for core code).
 
-INFO | --&gt; Coining: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/dwi_dirAP_9
-VERBOSE | Command:
-dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-dwidirAP_dir-AP_dwi&quot; -o &quot;/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/dwi&quot; &quot;/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/dwi_dirAP_9&quot;
-VERBOSE | Output:
+INFO | --&gt; Coining: /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/dwi_dirAP_9
+VERBOSE | Command:                        ubject/s]
+dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-dwidirAP_dir-AP_dwi&quot; -o &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/dwi&quot; &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/dwi_dirAP_9&quot;
+VERBOSE | Output:                         ubject/s]
 Chris Rorden&#39;s dcm2niiX version v1.0.20240202  (JP2:OpenJPEG) (JP-LS:CharLS) GCC12.2.0 x86-64 (64-bit Linux)
 Found 16 DICOM file(s)
-Convert 16 DICOM as /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/dwi/sub-1_ses-1_acq-dwidirAP_dir-AP_dwi (122x122x66x16)
-Conversion required 2.580670 seconds (2.579519 for core code).
+Convert 16 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/dwi/sub-1_ses-1_acq-dwidirAP_dir-AP_dwi (122x122x66x16)
+Conversion required 1.527986 seconds (1.524680 for core code).
 
-INFO | --&gt; Coining: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_7
-VERBOSE | Command:
-dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-fmapacq4mm_magnitude1&quot; -o &quot;/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap&quot; &quot;/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_7&quot;
-VERBOSE | Output:
+INFO | --&gt; Coining: /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_7
+VERBOSE | Command:                        ubject/s]
+dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-fmapacq4mm_magnitude1&quot; -o &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap&quot; &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_7&quot;
+VERBOSE | Output:                         ubject/s]
 Chris Rorden&#39;s dcm2niiX version v1.0.20240202  (JP2:OpenJPEG) (JP-LS:CharLS) GCC12.2.0 x86-64 (64-bit Linux)
 Found 88 DICOM file(s)
 Slices not stacked: echo varies (TE 4.92, 7.38; echo 1, 2). Use &#39;merge 2D slices&#39; option to force stacking
-Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1_e1 (64x64x44x1)
-Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1_e2 (64x64x44x1)
-Conversion required 0.078409 seconds (0.078367 for core code).
+Convert 44 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1_e1 (64x64x44x1)
+Convert 44 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1_e2 (64x64x44x1)
+Conversion required 0.101947 seconds (0.101925 for core code).
 
 VERBOSE | Found dcm2niix [&#39;e1&#39;] postfixes, renaming
-/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1_e1.nii.gz -&gt;
-/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1.nii.gz
+/home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1_e1.nii.gz -&gt;
+/home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1.nii.gz
 VERBOSE | Found dcm2niix [&#39;e2&#39;] postfixes, renaming
-/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1_e2.nii.gz -&gt;
-/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude2.nii.gz
-INFO | --&gt; Coining: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_8
-VERBOSE | Command:
-dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-fmapacq4mm_phasediff&quot; -o &quot;/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap&quot; &quot;/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_8&quot;
-VERBOSE | Output:
+/home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1_e2.nii.gz -&gt;
+/home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude2.nii.gz
+INFO | --&gt; Coining: /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_8
+VERBOSE | Command:                        ubject/s]
+dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-fmapacq4mm_phasediff&quot; -o &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap&quot; &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_8&quot;
+VERBOSE | Output:                         ubject/s]
 Chris Rorden&#39;s dcm2niiX version v1.0.20240202  (JP2:OpenJPEG) (JP-LS:CharLS) GCC12.2.0 x86-64 (64-bit Linux)
 Found 44 DICOM file(s)
-Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff_e2_ph (64x64x44x1)
-Conversion required 0.057808 seconds (0.057802 for core code).
+Convert 44 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff_e2_ph (64x64x44x1)
+Conversion required 0.047804 seconds (0.047796 for core code).
 
 VERBOSE | Found dcm2niix [&#39;e2&#39;, &#39;ph&#39;] postfixes, renaming
-/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff_e2_ph.nii.gz -&gt;
-/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff.nii.gz
-INFO | --&gt; Coining: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_dirPA_15
-VERBOSE | Command:
-dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-fmapdirPA_fieldmap&quot; -o &quot;/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap&quot; &quot;/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_dirPA_15&quot;
-VERBOSE | Output:
+/home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff_e2_ph.nii.gz -&gt;
+/home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff.nii.gz
+INFO | --&gt; Coining: /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_dirPA_15
+VERBOSE | Command:                        ubject/s]
+dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-fmapdirPA_fieldmap&quot; -o &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap&quot; &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_dirPA_15&quot;
+VERBOSE | Output:                         ubject/s]
 Chris Rorden&#39;s dcm2niiX version v1.0.20240202  (JP2:OpenJPEG) (JP-LS:CharLS) GCC12.2.0 x86-64 (64-bit Linux)
 Found 132 DICOM file(s)
-Convert 132 DICOM as /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapdirPA_fieldmap (122x122x66x2)
-Conversion required 0.403186 seconds (0.402851 for core code).
+Convert 132 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapdirPA_fieldmap (122x122x66x2)
+Conversion required 0.297794 seconds (0.297726 for core code).
 
-INFO | --&gt; Coining: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/func_taskrest_16
-VERBOSE | Command:
-dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_task-functaskrest_dir-AP_bold&quot; -o &quot;/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/func&quot; &quot;/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/func_taskrest_16&quot;
-VERBOSE | Output:
+INFO | --&gt; Coining: /home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/func_taskrest_16
+VERBOSE | Command:                        ubject/s]
+dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_task-functaskrest_dir-AP_bold&quot; -o &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/func&quot; &quot;/home/jovyan/Git_repositories/example-notebooks/books/workflows/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/func_taskrest_16&quot;
+VERBOSE | Output:                         ubject/s]
 Chris Rorden&#39;s dcm2niiX version v1.0.20240202  (JP2:OpenJPEG) (JP-LS:CharLS) GCC12.2.0 x86-64 (64-bit Linux)
 Found 4 DICOM file(s)
-Convert 4 DICOM as /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/func/sub-1_ses-1_task-functaskrest_dir-AP_bold (64x64x44x4)
-Conversion required 0.123883 seconds (0.123869 for core code).
+Convert 4 DICOM as /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/func/sub-1_ses-1_task-functaskrest_dir-AP_bold (64x64x44x4)
+Conversion required 0.073761 seconds (0.073719 for core code).
 
-VERBOSE | Writing acquisition time data to: /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/sub-1_ses-1_scans.tsv
-VERBOSE | Writing sub-1 subject data to: /storage/tmp/tmpknjqc9xj/bidscoin_bids/participants.tsv
-VERBOSE | Writing subject meta data to: /storage/tmp/tmpknjqc9xj/bidscoin_bids/participants.json
-WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1.json (i.e. the fieldmap may not be used)
-WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude2.json (i.e. the fieldmap may not be used)
-WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff.json (i.e. the fieldmap may not be used)
-WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapdirPA_fieldmap.json (i.e. the fieldmap may not be used)
-INFO | -------------- FINISHED! ------------
+VERBOSE | Writing acquisition time data to: /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/sub-1_ses-1_scans.tsv
+VERBOSE | Writing sub-1 subject data to: /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/participants.tsv
+VERBOSE | Writing subject meta data to: /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/participants.json
+WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1.json (i.e. the fieldmap may not be used)
+WARN                                      ubject/s]ING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude2.json (i.e. the fieldmap may not be used)
+WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff.json (i.e. the fieldmap may not be used)
+WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapdirPA_fieldmap.json (i.e. the fieldmap may not be used)
+INFO | --------------                             ]:03&lt;00:00,  3.96s/subject]FINISHED! ------------
 INFO | 
 INFO | The following BIDScoin errors and warnings were reported:
 
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-2025-06-04 06:07:25 - WARNING | Matplotlib created a temporary cache directory at /tmp/matplotlib-f719jxgn because the default path (/home/ubuntu/.cache/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
-2025-06-04 06:07:33 - WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1.json (i.e. the fieldmap may not be used)
-2025-06-04 06:07:33 - WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude2.json (i.e. the fieldmap may not be used)
-2025-06-04 06:07:33 - WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff.json (i.e. the fieldmap may not be used)
-2025-06-04 06:07:33 - WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapdirPA_fieldmap.json (i.e. the fieldmap may not be used)
+2025-06-04 05:31:50 - WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1.json (i.e. the fieldmap may not be used)
+2025-06-04 05:31:50 - WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude2.json (i.e. the fieldmap may not be used)
+2025-06-04 05:31:50 - WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff.json (i.e. the fieldmap may not be used)
+2025-06-04 05:31:50 - WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapdirPA_fieldmap.json (i.e. the fieldmap may not be used)
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 
-INFO | For the complete log see: /storage/tmp/tmpknjqc9xj/bidscoin_bids/code/bidscoin/bidscoiner.log
+INFO | For the complete log see: /home/jovyan/Git_repositories/example-notebooks/books/workflows/bidscoin_bids/code/bidscoin/bidscoiner.log
 NB: That folder may contain privacy sensitive information, e.g. pathnames in logfiles and provenance data samples
 </pre></div>
 </div>
@@ -1985,24 +2040,24 @@ NB: That folder may contain privacy sensitive information, e.g. pathnames in log
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree ./bidscoin_bids/
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tree<span class="w"> </span>./bidscoin_bids/
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">./bidscoin_bids/</span>
+├── README
 ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">code</span>
 │   └── <span class=" -Color -Color-Bold -Color-Bold-Blue">bidscoin</span>
 │       ├── bidscoiner.errors
 │       ├── bidscoiner.log
 │       ├── bidscoiner.tsv
+│       ├── bidsmap.yaml
 │       ├── bidsmapper.errors
-│       ├── bidsmapper.log
-│       └── bidsmap.yaml
+│       └── bidsmapper.log
 ├── dataset_description.json
 ├── participants.json
 ├── participants.tsv
-├── README
 └── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-1</span>
     └── <span class=" -Color -Color-Bold -Color-Bold-Blue">ses-1</span>
         ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">anat</span>
@@ -2051,7 +2106,7 @@ NB: That folder may contain privacy sensitive information, e.g. pathnames in log
         },
         kernelOptions: {
             name: "python3",
-            path: "./."
+            path: "./workflows"
         },
         predefinedOutput: true
     }
@@ -2065,9 +2120,27 @@ NB: That folder may contain privacy sensitive information, e.g. pathnames in log
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="RISE_slideshow.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">RISE Slideshow of a Jupyter Notebook</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="nipype_full.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Nipype on Neurodesk</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -2076,6 +2149,7 @@ NB: That folder may contain privacy sensitive information, e.g. pathnames in log
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2120,7 +2194,7 @@ By Neurodesk Team
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -2144,8 +2218,8 @@ By Neurodesk Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
