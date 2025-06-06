@@ -413,7 +413,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-cpu-information">Output CPU information</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">BIDS conversion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">1. Data preparation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-dicoms-to-bids-formatted-nifti">2. Convert DICOMS to BIDS-formatted NIfTI</a><ul class="nav section-nav flex-column">
@@ -437,8 +437,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/workflows/bids_conversion.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="bids-conversion">
+  <section class="tex2jax_ignore mathjax_ignore" id="bids-conversion">
 <h1>BIDS conversion<a class="headerlink" href="#bids-conversion" title="Permalink to this heading">#</a></h1>
 <p>Author: Thuy Dao</p>
 <p>Citation:</p>
@@ -450,34 +449,11 @@ document.write(`
 <li><p><a class="reference external" href="https://doi.org/10.5195/jmla.2017.88">OSF</a></p></li>
 <li><p><a class="reference external" href="https://github.com/niivue/niivue">NiiVue</a></p></li>
 </ul>
-<section id="setup-neurodesk">
-<h2>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Permalink to this heading">#</a></h2>
+<section id="output-cpu-information">
+<h2>Output CPU information<a class="headerlink" href="#output-cpu-information" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
-import os
-import sys
-IN_COLAB = &#39;google.colab&#39; in sys.modules
-
-if IN_COLAB:
-  os.environ[&quot;LD_PRELOAD&quot;] = &quot;&quot;;
-  os.environ[&quot;APPTAINER_BINDPATH&quot;] = &quot;/content,/tmp,/cvmfs&quot;
-  os.environ[&quot;MPLCONFIGDIR&quot;] = &quot;/content/matplotlib-mpldir&quot;
-  os.environ[&quot;LMOD_CMD&quot;] = &quot;/usr/share/lmod/lmod/libexec/lmod&quot;
-
-  !curl -J -O https://raw.githubusercontent.com/NeuroDesk/neurocommand/main/googlecolab_setup.sh
-  !chmod +x googlecolab_setup.sh
-  !./googlecolab_setup.sh
-
-  os.environ[&quot;MODULEPATH&quot;] = &#39;:&#39;.join(map(str, list(map(lambda x: os.path.join(os.path.abspath(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;), x),os.listdir(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;)))))
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
-<span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;vendor&#39;</span> <span class="p">|</span> uniq
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;vendor&#39;</span> <span class="p">|</span> uniq
 <span class="o">!</span>cat /proc/cpuinfo <span class="p">|</span> grep <span class="s1">&#39;model name&#39;</span> <span class="p">|</span> uniq
 </pre></div>
 </div>
@@ -516,7 +492,7 @@ cd heudiconv-reproin-example/REPROIN/dicom &amp;&amp; datalad get 001
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>install(ok): /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example (dataset)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>install(ok): /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example (dataset)
 get(ok): REPROIN/dicom/001/Patterson_Coben - 1/Localizers_4/IM-0012-0001-0001.dcm (file) [from origin...]
 get(ok): REPROIN/dicom/001/Patterson_Coben - 1/Localizers_4/IM-0012-0001-0002.dcm (file) [from origin...]
 get(ok): REPROIN/dicom/001/Patterson_Coben - 1/Localizers_4/IM-0012-0001-0003.dcm (file) [from origin...]
@@ -1313,15 +1289,15 @@ action summary:
   get (ok: 792)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] Cloning dataset to Dataset(/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example) 
-[INFO] Attempting to clone from https://datasets.datalad.org/repronim/heudiconv-reproin-example to /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example 
-[INFO] Attempting to clone from https://datasets.datalad.org/repronim/heudiconv-reproin-example/.git to /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] Cloning dataset to Dataset(/storage/tmp/tmp4mfddgq7/heudiconv-reproin-example) 
+[INFO] Attempting to clone from https://datasets.datalad.org/repronim/heudiconv-reproin-example to /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example 
+[INFO] Attempting to clone from https://datasets.datalad.org/repronim/heudiconv-reproin-example/.git to /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example 
 [INFO] Start enumerating objects 
 [INFO] Start counting objects 
 [INFO] Start compressing objects 
 [INFO] Start receiving objects 
 [INFO] Start resolving deltas 
-[INFO] Completed clone attempts for Dataset(/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example) 
+[INFO] Completed clone attempts for Dataset(/storage/tmp/tmp4mfddgq7/heudiconv-reproin-example) 
 [INFO] scanning for unlocked files (this may take some time) 
 </pre></div>
 </div>
@@ -1452,7 +1428,7 @@ Convert 1 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_5_i00003 (162
 Convert 1 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_5_i00001 (162x162x1x1)
 Convert 1 DICOM as ./dcm2niix_bids/dicom_anat-scout_20190208142838_5_i00002 (162x162x1x1)
 Convert 44 DICOM as ./dcm2niix_bids/dicom_fmap_acq-4mm_20190208142838_8_e2_ph (64x64x44x1)
-Conversion required 1.189596 seconds (1.187536 for core code).
+Conversion required 1.043392 seconds (1.031077 for core code).
 </pre></div>
 </div>
 </div>
@@ -1578,230 +1554,230 @@ INFO: Generated sequence info for 1 studies with 11 entries total
 INFO: Processing sequence infos to deduce study/session
 INFO: Study session for StudySessionInfo(locator=&#39;Patterson/Coben&#39;, session=None, subject=&#39;001&#39;)
 INFO: Need to process 1 study sessions
-INFO: PROCESSING STARTS: {&#39;subject&#39;: &#39;001&#39;, &#39;outdir&#39;: &#39;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben&#39;, &#39;session&#39;: None}
+INFO: PROCESSING STARTS: {&#39;subject&#39;: &#39;001&#39;, &#39;outdir&#39;: &#39;/storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben&#39;, &#39;session&#39;: None}
 INFO: Processing 11 pre-sorted seqinfo entries
 INFO: Processing 11 seqinfo entries
 WARNING: Deduced datatype to be dwi from DICOM, but got fmap out of fmap_dir-PA
 WARNING: Detected 4 duplicated run(s) for template {bids_subject_session_dir}/anat/{bids_subject_session_prefix}_scout: [&#39;1-anat-scout&#39;, &#39;2-anat-scout&#39;, &#39;3-anat-scout&#39;, &#39;4-anat-scout&#39;]
 INFO: Doing conversion using dcm2niix
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout (3 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w (240 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
-250604-06:05:23,864 nipype.workflow INFO:
-	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixd7srzyf1/convert&quot;.
-INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixd7srzyf1/convert&quot;.
-250604-06:05:24,17 nipype.workflow INFO:
+INFO: Converting /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout (3 DICOMs) -&gt; /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
+INFO: Converting /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w (240 DICOMs) -&gt; /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
+250606-00:57:20,557 nipype.workflow INFO:
+	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixa44r9dqz/convert&quot;.
+INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixa44r9dqz/convert&quot;.
+250606-00:57:20,721 nipype.workflow INFO:
 	 [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
 INFO: [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
-250604-06:05:24,687 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:24.686921:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-INFO: stdout 2025-06-04T06:05:24.686921:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-250604-06:05:24,687 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:24.686921:Found 240 DICOM file(s)
-INFO: stdout 2025-06-04T06:05:24.686921:Found 240 DICOM file(s)
-250604-06:05:24,687 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:24.686921:Convert 240 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w_heudiconv085 (224x224x240x1)
-INFO: stdout 2025-06-04T06:05:24.686921:Convert 240 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w_heudiconv085 (224x224x240x1)
-250604-06:05:25,242 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:25.242370:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w_heudiconv085.nii&quot;
-INFO: stdout 2025-06-04T06:05:25.242370:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w_heudiconv085.nii&quot;
-250604-06:05:25,242 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:25.242370:Conversion required 0.791653 seconds (0.447185 for core code).
-INFO: stdout 2025-06-04T06:05:25.242370:Conversion required 0.791653 seconds (0.447185 for core code).
-250604-06:05:25,283 nipype.workflow INFO:
-	 [Node] Finished &quot;convert&quot;, elapsed time 0.89342s.
-INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.89342s.
-250604-06:05:49,725 nipype.workflow INFO:
-	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetau50zxgd8/embedder&quot;.
-INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetau50zxgd8/embedder&quot;.
-250604-06:05:49,747 nipype.workflow INFO:
+250606-00:57:21,106 nipype.interface INFO:
+	 stdout 2025-06-06T00:57:21.106166:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+INFO: stdout 2025-06-06T00:57:21.106166:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+250606-00:57:21,106 nipype.interface INFO:
+	 stdout 2025-06-06T00:57:21.106166:Found 240 DICOM file(s)
+INFO: stdout 2025-06-06T00:57:21.106166:Found 240 DICOM file(s)
+250606-00:57:21,106 nipype.interface INFO:
+	 stdout 2025-06-06T00:57:21.106166:Convert 240 DICOM as /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w_heudiconv617 (224x224x240x1)
+INFO: stdout 2025-06-06T00:57:21.106166:Convert 240 DICOM as /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w_heudiconv617 (224x224x240x1)
+250606-00:57:21,630 nipype.interface INFO:
+	 stdout 2025-06-06T00:57:21.630717:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w_heudiconv617.nii&quot;
+INFO: stdout 2025-06-06T00:57:21.630717:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w_heudiconv617.nii&quot;
+250606-00:57:21,631 nipype.interface INFO:
+	 stdout 2025-06-06T00:57:21.630717:Conversion required 0.662472 seconds (0.351996 for core code).
+INFO: stdout 2025-06-06T00:57:21.630717:Conversion required 0.662472 seconds (0.351996 for core code).
+250606-00:57:21,678 nipype.workflow INFO:
+	 [Node] Finished &quot;convert&quot;, elapsed time 0.762311s.
+INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.762311s.
+250606-00:57:55,704 nipype.workflow INFO:
+	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetav69mu1i3/embedder&quot;.
+INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetav69mu1i3/embedder&quot;.
+250606-00:57:55,720 nipype.workflow INFO:
 	 [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
 INFO: [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-250604-06:05:56,724 nipype.workflow INFO:
-	 [Node] Finished &quot;embedder&quot;, elapsed time 6.974985s.
-INFO: [Node] Finished &quot;embedder&quot;, elapsed time 6.974985s.
-INFO: Post-treating /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w.json file
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude (88 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
-250604-06:05:56,773 nipype.workflow INFO:
-	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixfwd9emfa/convert&quot;.
-INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixfwd9emfa/convert&quot;.
-250604-06:05:56,802 nipype.workflow INFO:
+250606-00:58:04,287 nipype.workflow INFO:
+	 [Node] Finished &quot;embedder&quot;, elapsed time 8.566076s.
+INFO: [Node] Finished &quot;embedder&quot;, elapsed time 8.566076s.
+INFO: Post-treating /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_acq-MPRAGE_T1w.json file
+INFO: Converting /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude (88 DICOMs) -&gt; /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
+250606-00:58:04,326 nipype.workflow INFO:
+	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niix45p2493h/convert&quot;.
+INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niix45p2493h/convert&quot;.
+250606-00:58:04,354 nipype.workflow INFO:
 	 [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
 INFO: [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
-250604-06:05:56,955 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:56.955614:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-INFO: stdout 2025-06-04T06:05:56.955614:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-250604-06:05:56,956 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:56.955614:Found 88 DICOM file(s)
-INFO: stdout 2025-06-04T06:05:56.955614:Found 88 DICOM file(s)
-250604-06:05:56,956 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:56.955614:Slices not stacked: echo varies (TE 4.92, 7.38; echo 1, 2). Use &#39;merge 2D slices&#39; option to force stacking
-INFO: stdout 2025-06-04T06:05:56.955614:Slices not stacked: echo varies (TE 4.92, 7.38; echo 1, 2). Use &#39;merge 2D slices&#39; option to force stacking
-250604-06:05:56,956 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:56.955614:Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv310_e1 (64x64x44x1)
-INFO: stdout 2025-06-04T06:05:56.955614:Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv310_e1 (64x64x44x1)
-250604-06:05:57,0 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:57.000363:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv310_e1.nii&quot;
-INFO: stdout 2025-06-04T06:05:57.000363:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv310_e1.nii&quot;
-250604-06:05:57,0 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:57.000363:Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv310_e2 (64x64x44x1)
-INFO: stdout 2025-06-04T06:05:57.000363:Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv310_e2 (64x64x44x1)
-250604-06:05:57,35 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:57.035458:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv310_e2.nii&quot;
-INFO: stdout 2025-06-04T06:05:57.035458:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv310_e2.nii&quot;
-250604-06:05:57,35 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:57.035458:Conversion required 0.147047 seconds (0.075682 for core code).
-INFO: stdout 2025-06-04T06:05:57.035458:Conversion required 0.147047 seconds (0.075682 for core code).
-250604-06:05:57,83 nipype.workflow INFO:
-	 [Node] Finished &quot;convert&quot;, elapsed time 0.279796s.
-INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.279796s.
+250606-00:58:04,490 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:04.490107:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+INFO: stdout 2025-06-06T00:58:04.490107:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+250606-00:58:04,490 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:04.490107:Found 88 DICOM file(s)
+INFO: stdout 2025-06-06T00:58:04.490107:Found 88 DICOM file(s)
+250606-00:58:04,490 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:04.490107:Slices not stacked: echo varies (TE 4.92, 7.38; echo 1, 2). Use &#39;merge 2D slices&#39; option to force stacking
+INFO: stdout 2025-06-06T00:58:04.490107:Slices not stacked: echo varies (TE 4.92, 7.38; echo 1, 2). Use &#39;merge 2D slices&#39; option to force stacking
+250606-00:58:04,490 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:04.490107:Convert 44 DICOM as /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv165_e1 (64x64x44x1)
+INFO: stdout 2025-06-06T00:58:04.490107:Convert 44 DICOM as /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv165_e1 (64x64x44x1)
+250606-00:58:04,530 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:04.530584:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv165_e1.nii&quot;
+INFO: stdout 2025-06-06T00:58:04.530584:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv165_e1.nii&quot;
+250606-00:58:04,530 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:04.530584:Convert 44 DICOM as /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv165_e2 (64x64x44x1)
+INFO: stdout 2025-06-06T00:58:04.530584:Convert 44 DICOM as /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv165_e2 (64x64x44x1)
+250606-00:58:04,565 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:04.565382:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv165_e2.nii&quot;
+INFO: stdout 2025-06-06T00:58:04.565382:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_magnitude_heudiconv165_e2.nii&quot;
+250606-00:58:04,565 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:04.565382:Conversion required 0.120392 seconds (0.053164 for core code).
+INFO: stdout 2025-06-06T00:58:04.565382:Conversion required 0.120392 seconds (0.053164 for core code).
+250606-00:58:04,632 nipype.workflow INFO:
+	 [Node] Finished &quot;convert&quot;, elapsed time 0.276766s.
+INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.276766s.
 WARNING: For now not embedding BIDS and info generated .nii.gz itself since sequence produced multiple files
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff (44 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
-250604-06:05:57,898 nipype.workflow INFO:
-	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixogq6ea2_/convert&quot;.
-INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixogq6ea2_/convert&quot;.
-250604-06:05:57,914 nipype.workflow INFO:
+INFO: Converting /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff (44 DICOMs) -&gt; /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
+250606-00:58:05,401 nipype.workflow INFO:
+	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niix4dlvn7m1/convert&quot;.
+INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niix4dlvn7m1/convert&quot;.
+250606-00:58:05,417 nipype.workflow INFO:
 	 [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
 INFO: [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
-250604-06:05:58,32 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:58.032009:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-INFO: stdout 2025-06-04T06:05:58.032009:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-250604-06:05:58,32 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:58.032009:Found 44 DICOM file(s)
-INFO: stdout 2025-06-04T06:05:58.032009:Found 44 DICOM file(s)
-250604-06:05:58,32 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:58.032009:Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff_heudiconv461_e2_ph (64x64x44x1)
-INFO: stdout 2025-06-04T06:05:58.032009:Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff_heudiconv461_e2_ph (64x64x44x1)
-250604-06:05:58,64 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:58.064084:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff_heudiconv461_e2_ph.nii&quot;
-INFO: stdout 2025-06-04T06:05:58.064084:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff_heudiconv461_e2_ph.nii&quot;
-250604-06:05:58,64 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:58.064084:Conversion required 0.061142 seconds (0.030708 for core code).
-INFO: stdout 2025-06-04T06:05:58.064084:Conversion required 0.061142 seconds (0.030708 for core code).
-250604-06:05:58,106 nipype.workflow INFO:
-	 [Node] Finished &quot;convert&quot;, elapsed time 0.190232s.
-INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.190232s.
-250604-06:05:58,510 nipype.workflow INFO:
-	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmeta0n644xsd/embedder&quot;.
-INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmeta0n644xsd/embedder&quot;.
-250604-06:05:58,515 nipype.workflow INFO:
+250606-00:58:05,536 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:05.536035:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+INFO: stdout 2025-06-06T00:58:05.536035:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+250606-00:58:05,536 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:05.536035:Found 44 DICOM file(s)
+INFO: stdout 2025-06-06T00:58:05.536035:Found 44 DICOM file(s)
+250606-00:58:05,536 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:05.536035:Convert 44 DICOM as /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff_heudiconv899_e2_ph (64x64x44x1)
+INFO: stdout 2025-06-06T00:58:05.536035:Convert 44 DICOM as /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff_heudiconv899_e2_ph (64x64x44x1)
+250606-00:58:05,575 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:05.575581:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff_heudiconv899_e2_ph.nii&quot;
+INFO: stdout 2025-06-06T00:58:05.575581:Compress: &quot;/usr/bin/pigz&quot; -n -f -6 &quot;/storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff_heudiconv899_e2_ph.nii&quot;
+250606-00:58:05,575 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:05.575581:Conversion required 0.072201 seconds (0.034758 for core code).
+INFO: stdout 2025-06-06T00:58:05.575581:Conversion required 0.072201 seconds (0.034758 for core code).
+250606-00:58:05,630 nipype.workflow INFO:
+	 [Node] Finished &quot;convert&quot;, elapsed time 0.212152s.
+INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.212152s.
+250606-00:58:06,44 nipype.workflow INFO:
+	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetau0qep66v/embedder&quot;.
+INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetau0qep66v/embedder&quot;.
+250606-00:58:06,50 nipype.workflow INFO:
 	 [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
 INFO: [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-250604-06:05:59,795 nipype.workflow INFO:
-	 [Node] Finished &quot;embedder&quot;, elapsed time 1.279248s.
-INFO: [Node] Finished &quot;embedder&quot;, elapsed time 1.279248s.
-INFO: Post-treating /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff.json file
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi (16 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
-250604-06:05:59,811 nipype.workflow INFO:
-	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niix44wtb2by/convert&quot;.
-INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niix44wtb2by/convert&quot;.
-250604-06:05:59,817 nipype.workflow INFO:
+250606-00:58:08,142 nipype.workflow INFO:
+	 [Node] Finished &quot;embedder&quot;, elapsed time 2.090785s.
+INFO: [Node] Finished &quot;embedder&quot;, elapsed time 2.090785s.
+INFO: Post-treating /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_acq-4mm_phasediff.json file
+INFO: Converting /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi (16 DICOMs) -&gt; /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
+250606-00:58:08,178 nipype.workflow INFO:
+	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixokzspzd3/convert&quot;.
+INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixokzspzd3/convert&quot;.
+250606-00:58:08,191 nipype.workflow INFO:
 	 [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
 INFO: [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
-250604-06:05:59,963 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:59.963804:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-INFO: stdout 2025-06-04T06:05:59.963804:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-250604-06:05:59,964 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:59.963804:Found 16 DICOM file(s)
-INFO: stdout 2025-06-04T06:05:59.963804:Found 16 DICOM file(s)
-250604-06:05:59,964 nipype.interface INFO:
-	 stdout 2025-06-04T06:05:59.963804:Convert 16 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi_heudiconv205 (122x122x66x16)
-INFO: stdout 2025-06-04T06:05:59.963804:Convert 16 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi_heudiconv205 (122x122x66x16)
-250604-06:06:00,408 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:00.408835:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi_heudiconv205.nii&quot;
-INFO: stdout 2025-06-04T06:06:00.408835:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi_heudiconv205.nii&quot;
-250604-06:06:00,409 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:00.408835:Conversion required 0.518114 seconds (0.150709 for core code).
-INFO: stdout 2025-06-04T06:06:00.408835:Conversion required 0.518114 seconds (0.150709 for core code).
-250604-06:06:00,456 nipype.workflow INFO:
-	 [Node] Finished &quot;convert&quot;, elapsed time 0.637327s.
-INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.637327s.
-250604-06:06:19,533 nipype.workflow INFO:
-	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmeta49zt9l7w/embedder&quot;.
-INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmeta49zt9l7w/embedder&quot;.
-250604-06:06:19,538 nipype.workflow INFO:
+250606-00:58:08,335 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:08.335399:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+INFO: stdout 2025-06-06T00:58:08.335399:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+250606-00:58:08,335 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:08.335399:Found 16 DICOM file(s)
+INFO: stdout 2025-06-06T00:58:08.335399:Found 16 DICOM file(s)
+250606-00:58:08,336 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:08.335399:Convert 16 DICOM as /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi_heudiconv844 (122x122x66x16)
+INFO: stdout 2025-06-06T00:58:08.335399:Convert 16 DICOM as /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi_heudiconv844 (122x122x66x16)
+250606-00:58:08,785 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:08.785517:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi_heudiconv844.nii&quot;
+INFO: stdout 2025-06-06T00:58:08.785517:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi_heudiconv844.nii&quot;
+250606-00:58:08,785 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:08.785517:Conversion required 0.514349 seconds (0.134930 for core code).
+INFO: stdout 2025-06-06T00:58:08.785517:Conversion required 0.514349 seconds (0.134930 for core code).
+250606-00:58:08,818 nipype.workflow INFO:
+	 [Node] Finished &quot;convert&quot;, elapsed time 0.625975s.
+INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.625975s.
+250606-00:58:34,647 nipype.workflow INFO:
+	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetayd2he8ja/embedder&quot;.
+INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetayd2he8ja/embedder&quot;.
+250606-00:58:34,652 nipype.workflow INFO:
 	 [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
 INFO: [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-250604-06:06:20,716 nipype.workflow INFO:
-	 [Node] Finished &quot;embedder&quot;, elapsed time 1.17656s.
-INFO: [Node] Finished &quot;embedder&quot;, elapsed time 1.17656s.
-INFO: Post-treating /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi.json file
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi (132 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
-250604-06:06:20,751 nipype.workflow INFO:
-	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixirxg8i4o/convert&quot;.
-INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixirxg8i4o/convert&quot;.
-250604-06:06:20,828 nipype.workflow INFO:
+250606-00:58:35,537 nipype.workflow INFO:
+	 [Node] Finished &quot;embedder&quot;, elapsed time 0.883516s.
+INFO: [Node] Finished &quot;embedder&quot;, elapsed time 0.883516s.
+INFO: Post-treating /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/dwi/sub-001_dir-AP_dwi.json file
+INFO: Converting /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi (132 DICOMs) -&gt; /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
+250606-00:58:35,559 nipype.workflow INFO:
+	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niix5fz28zaf/convert&quot;.
+INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niix5fz28zaf/convert&quot;.
+250606-00:58:35,603 nipype.workflow INFO:
 	 [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
 INFO: [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
-250604-06:06:20,989 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:20.989347:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-INFO: stdout 2025-06-04T06:06:20.989347:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-250604-06:06:20,989 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:20.989347:Found 132 DICOM file(s)
-INFO: stdout 2025-06-04T06:06:20.989347:Found 132 DICOM file(s)
-250604-06:06:20,989 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:20.989347:Convert 132 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi_heudiconv666 (122x122x66x2)
-INFO: stdout 2025-06-04T06:06:20.989347:Convert 132 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi_heudiconv666 (122x122x66x2)
-250604-06:06:21,179 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:21.179511:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi_heudiconv666.nii&quot;
-INFO: stdout 2025-06-04T06:06:21.179511:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi_heudiconv666.nii&quot;
-250604-06:06:21,179 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:21.179511:Conversion required 0.266643 seconds (0.083565 for core code).
-INFO: stdout 2025-06-04T06:06:21.179511:Conversion required 0.266643 seconds (0.083565 for core code).
-250604-06:06:21,219 nipype.workflow INFO:
-	 [Node] Finished &quot;convert&quot;, elapsed time 0.3897s.
-INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.3897s.
-250604-06:06:24,252 nipype.workflow INFO:
-	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetaabr_10cc/embedder&quot;.
-INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetaabr_10cc/embedder&quot;.
-250604-06:06:24,262 nipype.workflow INFO:
+250606-00:58:35,766 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:35.766718:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+INFO: stdout 2025-06-06T00:58:35.766718:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+250606-00:58:35,767 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:35.766718:Found 132 DICOM file(s)
+INFO: stdout 2025-06-06T00:58:35.766718:Found 132 DICOM file(s)
+250606-00:58:35,767 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:35.766718:Convert 132 DICOM as /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi_heudiconv447 (122x122x66x2)
+INFO: stdout 2025-06-06T00:58:35.766718:Convert 132 DICOM as /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi_heudiconv447 (122x122x66x2)
+250606-00:58:35,967 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:35.966979:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi_heudiconv447.nii&quot;
+INFO: stdout 2025-06-06T00:58:35.966979:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi_heudiconv447.nii&quot;
+250606-00:58:35,967 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:35.966979:Conversion required 0.274487 seconds (0.080592 for core code).
+INFO: stdout 2025-06-06T00:58:35.966979:Conversion required 0.274487 seconds (0.080592 for core code).
+250606-00:58:36,18 nipype.workflow INFO:
+	 [Node] Finished &quot;convert&quot;, elapsed time 0.413609s.
+INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.413609s.
+250606-00:58:40,455 nipype.workflow INFO:
+	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetavnth4c5s/embedder&quot;.
+INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetavnth4c5s/embedder&quot;.
+250606-00:58:40,469 nipype.workflow INFO:
 	 [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
 INFO: [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-250604-06:06:29,384 nipype.workflow INFO:
-	 [Node] Finished &quot;embedder&quot;, elapsed time 5.121295s.
-INFO: [Node] Finished &quot;embedder&quot;, elapsed time 5.121295s.
-INFO: Post-treating /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi.json file
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold (4 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/func . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
-250604-06:06:29,406 nipype.workflow INFO:
-	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixzcux2773/convert&quot;.
-INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixzcux2773/convert&quot;.
-250604-06:06:29,409 nipype.workflow INFO:
+250606-00:58:45,655 nipype.workflow INFO:
+	 [Node] Finished &quot;embedder&quot;, elapsed time 5.18495s.
+INFO: [Node] Finished &quot;embedder&quot;, elapsed time 5.18495s.
+INFO: Post-treating /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/fmap/sub-001_dir-PA_epi.json file
+INFO: Converting /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold (4 DICOMs) -&gt; /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/func . Converter: dcm2niix . Output types: (&#39;nii.gz&#39;, &#39;dicom&#39;)
+250606-00:58:45,678 nipype.workflow INFO:
+	 [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixe55baz1j/convert&quot;.
+INFO: [Node] Setting-up &quot;convert&quot; in &quot;/tmp/dcm2niixe55baz1j/convert&quot;.
+250606-00:58:45,680 nipype.workflow INFO:
 	 [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
 INFO: [Node] Executing &quot;convert&quot; &lt;nipype.interfaces.dcm2nii.Dcm2niix&gt;
-250604-06:06:29,490 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:29.490787:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-INFO: stdout 2025-06-04T06:06:29.490787:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
-250604-06:06:29,491 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:29.490787:Found 4 DICOM file(s)
-INFO: stdout 2025-06-04T06:06:29.490787:Found 4 DICOM file(s)
-250604-06:06:29,491 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:29.490787:Convert 4 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold_heudiconv249 (64x64x44x4)
-INFO: stdout 2025-06-04T06:06:29.490787:Convert 4 DICOM as /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold_heudiconv249 (64x64x44x4)
-250604-06:06:29,665 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:29.665668:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold_heudiconv249.nii&quot;
-INFO: stdout 2025-06-04T06:06:29.665668:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold_heudiconv249.nii&quot;
-250604-06:06:29,666 nipype.interface INFO:
-	 stdout 2025-06-04T06:06:29.665668:Conversion required 0.186289 seconds (0.015445 for core code).
-INFO: stdout 2025-06-04T06:06:29.665668:Conversion required 0.186289 seconds (0.015445 for core code).
-250604-06:06:29,722 nipype.workflow INFO:
-	 [Node] Finished &quot;convert&quot;, elapsed time 0.311753s.
-INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.311753s.
-250604-06:06:30,188 nipype.workflow INFO:
-	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetad2kwf3zr/embedder&quot;.
-INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetad2kwf3zr/embedder&quot;.
-250604-06:06:30,195 nipype.workflow INFO:
+250606-00:58:45,765 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:45.765514:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+INFO: stdout 2025-06-06T00:58:45.765514:Chris Rorden&#39;s dcm2niiX version v1.0.20220720  (JP2:OpenJPEG) (JP-LS:CharLS) GCC10.2.1 x86-64 (64-bit Linux)
+250606-00:58:45,766 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:45.765514:Found 4 DICOM file(s)
+INFO: stdout 2025-06-06T00:58:45.765514:Found 4 DICOM file(s)
+250606-00:58:45,766 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:45.765514:Convert 4 DICOM as /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold_heudiconv079 (64x64x44x4)
+INFO: stdout 2025-06-06T00:58:45.765514:Convert 4 DICOM as /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold_heudiconv079 (64x64x44x4)
+250606-00:58:45,939 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:45.939732:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold_heudiconv079.nii&quot;
+INFO: stdout 2025-06-06T00:58:45.939732:Compress: &quot;/usr/bin/pigz&quot; -b 960 -n -f -6 &quot;/storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold_heudiconv079.nii&quot;
+250606-00:58:45,940 nipype.interface INFO:
+	 stdout 2025-06-06T00:58:45.939732:Conversion required 0.186079 seconds (0.015420 for core code).
+INFO: stdout 2025-06-06T00:58:45.939732:Conversion required 0.186079 seconds (0.015420 for core code).
+250606-00:58:46,0 nipype.workflow INFO:
+	 [Node] Finished &quot;convert&quot;, elapsed time 0.318884s.
+INFO: [Node] Finished &quot;convert&quot;, elapsed time 0.318884s.
+250606-00:58:46,447 nipype.workflow INFO:
+	 [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetaxhe1yjzy/embedder&quot;.
+INFO: [Node] Setting-up &quot;embedder&quot; in &quot;/tmp/embedmetaxhe1yjzy/embedder&quot;.
+250606-00:58:46,454 nipype.workflow INFO:
 	 [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
 INFO: [Node] Executing &quot;embedder&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-250604-06:06:30,483 nipype.workflow INFO:
-	 [Node] Finished &quot;embedder&quot;, elapsed time 0.286966s.
-INFO: [Node] Finished &quot;embedder&quot;, elapsed time 0.286966s.
-INFO: Post-treating /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold.json file
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout__dup-01 (128 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout__dup-02 (128 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout__dup-03 (5 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
-INFO: Converting /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout__dup-04 (3 DICOMs) -&gt; /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
-INFO: Adding &quot;IntendedFor&quot; to the fieldmaps in /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben/sub-001.
-INFO: Populating template files under /storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben
-INFO: PROCESSING DONE: {&#39;subject&#39;: &#39;001&#39;, &#39;outdir&#39;: &#39;/storage/tmp/tmpknjqc9xj/heudiconv_reproin_bids/Patterson/Coben&#39;, &#39;session&#39;: None}
+250606-00:58:46,735 nipype.workflow INFO:
+	 [Node] Finished &quot;embedder&quot;, elapsed time 0.280188s.
+INFO: [Node] Finished &quot;embedder&quot;, elapsed time 0.280188s.
+INFO: Post-treating /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/func/sub-001_task-rest_bold.json file
+INFO: Converting /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout__dup-01 (128 DICOMs) -&gt; /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
+INFO: Converting /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout__dup-02 (128 DICOMs) -&gt; /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
+INFO: Converting /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout__dup-03 (5 DICOMs) -&gt; /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
+INFO: Converting /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat/sub-001_scout__dup-04 (3 DICOMs) -&gt; /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001/anat . Converter: dcm2niix . Output types: (&#39;dicom&#39;,)
+INFO: Adding &quot;IntendedFor&quot; to the fieldmaps in /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben/sub-001.
+INFO: Populating template files under /storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben
+INFO: PROCESSING DONE: {&#39;subject&#39;: &#39;001&#39;, &#39;outdir&#39;: &#39;/storage/tmp/tmp4mfddgq7/heudiconv_reproin_bids/Patterson/Coben&#39;, &#39;session&#39;: None}
 </pre></div>
 </div>
 </div>
@@ -1847,137 +1823,137 @@ bidscoiner ./heudiconv-reproin-example/REPROIN/dicom ./bidscoin_bids    # Conver
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO | 
 INFO | -------------- START BIDSmapper ------------
-INFO | &gt;&gt;&gt; bidsmapper sourcefolder=/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom bidsfolder=/storage/tmp/tmpknjqc9xj/bidscoin_bids bidsmap=bidsmap.yaml template=/home/ubuntu/.bidscoin/4.3.3+qt5/templates/bidsmap_dccn.yaml plugins=[] subprefix=00 sesprefix=Patterson_Coben store=False force=False
-INFO | No existing bidsmap file found: /storage/tmp/tmpknjqc9xj/bidscoin_bids/code/bidscoin/bidsmap.yaml
+INFO | &gt;&gt;&gt; bidsmapper sourcefolder=/storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom bidsfolder=/storage/tmp/tmp4mfddgq7/bidscoin_bids bidsmap=bidsmap.yaml template=/home/ubuntu/.bidscoin/4.3.3+qt5/templates/bidsmap_dccn.yaml plugins=[] subprefix=00 sesprefix=Patterson_Coben store=False force=False
+INFO | No existing bidsmap file found: /storage/tmp/tmp4mfddgq7/bidscoin_bids/code/bidscoin/bidsmap.yaml
 INFO | Reading: /home/ubuntu/.bidscoin/4.3.3+qt5/templates/bidsmap_dccn.yaml
-WARNING | Matplotlib created a temporary cache directory at /tmp/matplotlib-llfzuckl because the default path (/home/ubuntu/.cache/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+WARNING | Matplotlib created a temporary cache directory at /tmp/matplotlib-wx1gjxw1 because the default path (/home/ubuntu/.cache/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
 INFO | generated new fontManager
 INFO | Checking the bidsmap run-items:
 SUCCESS | All datatypes and options in the template bidsmap are valid
-INFO | Mapping: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1 (subject 1/1)
-VERBOSE | Executing plugin: dcm2niix2bids -&gt; /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1
-INFO | Discovered &#39;exclude&#39; DICOM sample: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/Localizers_4/IM-0012-0001-0001.dcm
-INFO | Discovered &#39;anat&#39; DICOM sample: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/anatT1w_acqMPRAGE_6/IM-0001-0001.dcm
-INFO | Discovered &#39;dwi&#39; DICOM sample: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/dwi_dirAP_9/IM-0004-0001.dcm
-INFO | Discovered &#39;fmap&#39; DICOM sample: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_7/IM-0002-0001-0001.dcm
-INFO | Discovered &#39;fmap&#39; DICOM sample: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_8/IM-0003-0001.dcm
-INFO | Discovered &#39;fmap&#39; DICOM sample: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_dirPA_15/IM-0010-0001.dcm
-INFO | Discovered &#39;func&#39; DICOM sample: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/func_taskrest_16/IM-0011-0001.dcm
+INFO | Mapping: /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1 (subject 1/1)
+VERBOSE | Executing plugin: dcm2niix2bids -&gt; /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1
+INFO | Discovered &#39;exclude&#39; DICOM sample: /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/Localizers_4/IM-0012-0001-0001.dcm
+INFO | Discovered &#39;anat&#39; DICOM sample: /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/anatT1w_acqMPRAGE_6/IM-0001-0001.dcm
+INFO | Discovered &#39;dwi&#39; DICOM sample: /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/dwi_dirAP_9/IM-0004-0001.dcm
+INFO | Discovered &#39;fmap&#39; DICOM sample: /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_7/IM-0002-0001-0001.dcm
+INFO | Discovered &#39;fmap&#39; DICOM sample: /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_8/IM-0003-0001.dcm
+INFO | Discovered &#39;fmap&#39; DICOM sample: /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_dirPA_15/IM-0010-0001.dcm
+INFO | Discovered &#39;func&#39; DICOM sample: /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/func_taskrest_16/IM-0011-0001.dcm
 INFO | Checking the bidsmap run-items:
 SUCCESS | All run-items in the bidsmap are valid
 INFO | bids-validator 1.14.6 test results (* = in .bidsignore):
 INFO | False:	exclude/sub-DICOM_task-anatscoutMPRcor_acq-anatscout_echo-1_GR.*
 SUCCESS | All generated bidsnames are BIDS-valid
-INFO | Writing bidsmap to: /storage/tmp/tmpknjqc9xj/bidscoin_bids/code/bidscoin/bidsmap.yaml
+INFO | Writing bidsmap to: /storage/tmp/tmp4mfddgq7/bidscoin_bids/code/bidscoin/bidsmap.yaml
 INFO | -------------- FINISHED! -------------------
 INFO | 
 INFO | The following BIDScoin errors and warnings were reported:
 
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-2025-06-04 06:07:11 - WARNING | Matplotlib created a temporary cache directory at /tmp/matplotlib-llfzuckl because the default path (/home/ubuntu/.cache/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+2025-06-06 00:59:12 - WARNING | Matplotlib created a temporary cache directory at /tmp/matplotlib-wx1gjxw1 because the default path (/home/ubuntu/.cache/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 
-INFO | For the complete log see: /storage/tmp/tmpknjqc9xj/bidscoin_bids/code/bidscoin/bidsmapper.log
+INFO | For the complete log see: /storage/tmp/tmp4mfddgq7/bidscoin_bids/code/bidscoin/bidsmapper.log
 NB: That folder may contain privacy sensitive information, e.g. pathnames in logfiles and provenance data samples
 INFO | 
 INFO | -------------- START BIDScoiner 4.3.3+qt5: BIDS 1.9.0 ------------
-INFO | &gt;&gt;&gt; bidscoiner sourcefolder=/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom bidsfolder=/storage/tmp/tmpknjqc9xj/bidscoin_bids participant=None force=False bidsmap=bidsmap.yaml
-INFO | Creating dataset description file: /storage/tmp/tmpknjqc9xj/bidscoin_bids/dataset_description.json
-INFO | Creating a template README file (adjust it to your needs): /storage/tmp/tmpknjqc9xj/bidscoin_bids/README
-INFO | Reading: /storage/tmp/tmpknjqc9xj/bidscoin_bids/code/bidscoin/bidsmap.yaml
-WARNING | Matplotlib created a temporary cache directory at /tmp/matplotlib-f719jxgn because the default path (/home/ubuntu/.cache/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+INFO | &gt;&gt;&gt; bidscoiner sourcefolder=/storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom bidsfolder=/storage/tmp/tmp4mfddgq7/bidscoin_bids participant=None force=False bidsmap=bidsmap.yaml
+INFO | Creating dataset description file: /storage/tmp/tmp4mfddgq7/bidscoin_bids/dataset_description.json
+INFO | Creating a template README file (adjust it to your needs): /storage/tmp/tmp4mfddgq7/bidscoin_bids/README
+INFO | Reading: /storage/tmp/tmp4mfddgq7/bidscoin_bids/code/bidscoin/bidsmap.yaml
+WARNING | Matplotlib created a temporary cache directory at /tmp/matplotlib-z3u6vtny because the default path (/home/ubuntu/.cache/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
 INFO | generated new fontManager
 INFO | Checking the bidsmap run-items:
 SUCCESS | All run-items in the bidsmap are valid
 INFO | ------------------- Subject 1/1 -------------------
-INFO | &gt;&gt;&gt; Coining datasources in: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1
+INFO | &gt;&gt;&gt; Coining datasources in: /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1
 VERBOSE | Executing plugin: dcm2niix2bids
-INFO | --&gt; Leaving out: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/Localizers_4
-INFO | --&gt; Coining: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/anatT1w_acqMPRAGE_6
+INFO | --&gt; Leaving out: /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/Localizers_4
+INFO | --&gt; Coining: /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/anatT1w_acqMPRAGE_6
 VERBOSE | Command:
-dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-anatT1wacqMPRAGE_T1w&quot; -o &quot;/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/anat&quot; &quot;/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/anatT1w_acqMPRAGE_6&quot;
+dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-anatT1wacqMPRAGE_T1w&quot; -o &quot;/storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/anat&quot; &quot;/storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/anatT1w_acqMPRAGE_6&quot;
 VERBOSE | Output:
 Chris Rorden&#39;s dcm2niiX version v1.0.20240202  (JP2:OpenJPEG) (JP-LS:CharLS) GCC12.2.0 x86-64 (64-bit Linux)
 Found 240 DICOM file(s)
-Convert 240 DICOM as /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/anat/sub-1_ses-1_acq-anatT1wacqMPRAGE_T1w (224x224x240x1)
-Conversion required 2.216607 seconds (2.213412 for core code).
+Convert 240 DICOM as /storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/anat/sub-1_ses-1_acq-anatT1wacqMPRAGE_T1w (224x224x240x1)
+Conversion required 2.580852 seconds (2.578404 for core code).
 
-INFO | --&gt; Coining: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/dwi_dirAP_9
+INFO | --&gt; Coining: /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/dwi_dirAP_9
 VERBOSE | Command:
-dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-dwidirAP_dir-AP_dwi&quot; -o &quot;/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/dwi&quot; &quot;/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/dwi_dirAP_9&quot;
+dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-dwidirAP_dir-AP_dwi&quot; -o &quot;/storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/dwi&quot; &quot;/storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/dwi_dirAP_9&quot;
 VERBOSE | Output:
 Chris Rorden&#39;s dcm2niiX version v1.0.20240202  (JP2:OpenJPEG) (JP-LS:CharLS) GCC12.2.0 x86-64 (64-bit Linux)
 Found 16 DICOM file(s)
-Convert 16 DICOM as /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/dwi/sub-1_ses-1_acq-dwidirAP_dir-AP_dwi (122x122x66x16)
-Conversion required 2.580670 seconds (2.579519 for core code).
+Convert 16 DICOM as /storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/dwi/sub-1_ses-1_acq-dwidirAP_dir-AP_dwi (122x122x66x16)
+Conversion required 3.032593 seconds (3.026346 for core code).
 
-INFO | --&gt; Coining: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_7
+INFO | --&gt; Coining: /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_7
 VERBOSE | Command:
-dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-fmapacq4mm_magnitude1&quot; -o &quot;/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap&quot; &quot;/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_7&quot;
+dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-fmapacq4mm_magnitude1&quot; -o &quot;/storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap&quot; &quot;/storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_7&quot;
 VERBOSE | Output:
 Chris Rorden&#39;s dcm2niiX version v1.0.20240202  (JP2:OpenJPEG) (JP-LS:CharLS) GCC12.2.0 x86-64 (64-bit Linux)
 Found 88 DICOM file(s)
 Slices not stacked: echo varies (TE 4.92, 7.38; echo 1, 2). Use &#39;merge 2D slices&#39; option to force stacking
-Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1_e1 (64x64x44x1)
-Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1_e2 (64x64x44x1)
-Conversion required 0.078409 seconds (0.078367 for core code).
+Convert 44 DICOM as /storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1_e1 (64x64x44x1)
+Convert 44 DICOM as /storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1_e2 (64x64x44x1)
+Conversion required 0.103425 seconds (0.103395 for core code).
 
 VERBOSE | Found dcm2niix [&#39;e1&#39;] postfixes, renaming
-/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1_e1.nii.gz -&gt;
-/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1.nii.gz
+/storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1_e1.nii.gz -&gt;
+/storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1.nii.gz
 VERBOSE | Found dcm2niix [&#39;e2&#39;] postfixes, renaming
-/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1_e2.nii.gz -&gt;
-/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude2.nii.gz
-INFO | --&gt; Coining: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_8
+/storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1_e2.nii.gz -&gt;
+/storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude2.nii.gz
+INFO | --&gt; Coining: /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_8
 VERBOSE | Command:
-dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-fmapacq4mm_phasediff&quot; -o &quot;/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap&quot; &quot;/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_8&quot;
+dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-fmapacq4mm_phasediff&quot; -o &quot;/storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap&quot; &quot;/storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_acq4mm_8&quot;
 VERBOSE | Output:
 Chris Rorden&#39;s dcm2niiX version v1.0.20240202  (JP2:OpenJPEG) (JP-LS:CharLS) GCC12.2.0 x86-64 (64-bit Linux)
 Found 44 DICOM file(s)
-Convert 44 DICOM as /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff_e2_ph (64x64x44x1)
-Conversion required 0.057808 seconds (0.057802 for core code).
+Convert 44 DICOM as /storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff_e2_ph (64x64x44x1)
+Conversion required 0.041767 seconds (0.041657 for core code).
 
 VERBOSE | Found dcm2niix [&#39;e2&#39;, &#39;ph&#39;] postfixes, renaming
-/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff_e2_ph.nii.gz -&gt;
-/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff.nii.gz
-INFO | --&gt; Coining: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_dirPA_15
+/storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff_e2_ph.nii.gz -&gt;
+/storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff.nii.gz
+INFO | --&gt; Coining: /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_dirPA_15
 VERBOSE | Command:
-dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-fmapdirPA_fieldmap&quot; -o &quot;/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap&quot; &quot;/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_dirPA_15&quot;
+dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_acq-fmapdirPA_fieldmap&quot; -o &quot;/storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap&quot; &quot;/storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/fmap_dirPA_15&quot;
 VERBOSE | Output:
 Chris Rorden&#39;s dcm2niiX version v1.0.20240202  (JP2:OpenJPEG) (JP-LS:CharLS) GCC12.2.0 x86-64 (64-bit Linux)
 Found 132 DICOM file(s)
-Convert 132 DICOM as /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapdirPA_fieldmap (122x122x66x2)
-Conversion required 0.403186 seconds (0.402851 for core code).
+Convert 132 DICOM as /storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapdirPA_fieldmap (122x122x66x2)
+Conversion required 0.440357 seconds (0.439309 for core code).
 
-INFO | --&gt; Coining: /storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/func_taskrest_16
+INFO | --&gt; Coining: /storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/func_taskrest_16
 VERBOSE | Command:
-dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_task-functaskrest_dir-AP_bold&quot; -o &quot;/storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/func&quot; &quot;/storage/tmp/tmpknjqc9xj/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/func_taskrest_16&quot;
+dcm2niix -b y -z y -i n -l n -f &quot;sub-1_ses-1_task-functaskrest_dir-AP_bold&quot; -o &quot;/storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/func&quot; &quot;/storage/tmp/tmp4mfddgq7/heudiconv-reproin-example/REPROIN/dicom/001/Patterson_Coben - 1/func_taskrest_16&quot;
 VERBOSE | Output:
 Chris Rorden&#39;s dcm2niiX version v1.0.20240202  (JP2:OpenJPEG) (JP-LS:CharLS) GCC12.2.0 x86-64 (64-bit Linux)
 Found 4 DICOM file(s)
-Convert 4 DICOM as /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/func/sub-1_ses-1_task-functaskrest_dir-AP_bold (64x64x44x4)
-Conversion required 0.123883 seconds (0.123869 for core code).
+Convert 4 DICOM as /storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/func/sub-1_ses-1_task-functaskrest_dir-AP_bold (64x64x44x4)
+Conversion required 0.125261 seconds (0.125223 for core code).
 
-VERBOSE | Writing acquisition time data to: /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/sub-1_ses-1_scans.tsv
-VERBOSE | Writing sub-1 subject data to: /storage/tmp/tmpknjqc9xj/bidscoin_bids/participants.tsv
-VERBOSE | Writing subject meta data to: /storage/tmp/tmpknjqc9xj/bidscoin_bids/participants.json
-WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1.json (i.e. the fieldmap may not be used)
-WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude2.json (i.e. the fieldmap may not be used)
-WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff.json (i.e. the fieldmap may not be used)
-WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapdirPA_fieldmap.json (i.e. the fieldmap may not be used)
+VERBOSE | Writing acquisition time data to: /storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/sub-1_ses-1_scans.tsv
+VERBOSE | Writing sub-1 subject data to: /storage/tmp/tmp4mfddgq7/bidscoin_bids/participants.tsv
+VERBOSE | Writing subject meta data to: /storage/tmp/tmp4mfddgq7/bidscoin_bids/participants.json
+WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1.json (i.e. the fieldmap may not be used)
+WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude2.json (i.e. the fieldmap may not be used)
+WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff.json (i.e. the fieldmap may not be used)
+WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapdirPA_fieldmap.json (i.e. the fieldmap may not be used)
 INFO | -------------- FINISHED! ------------
 INFO | 
 INFO | The following BIDScoin errors and warnings were reported:
 
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-2025-06-04 06:07:25 - WARNING | Matplotlib created a temporary cache directory at /tmp/matplotlib-f719jxgn because the default path (/home/ubuntu/.cache/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
-2025-06-04 06:07:33 - WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1.json (i.e. the fieldmap may not be used)
-2025-06-04 06:07:33 - WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude2.json (i.e. the fieldmap may not be used)
-2025-06-04 06:07:33 - WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff.json (i.e. the fieldmap may not be used)
-2025-06-04 06:07:33 - WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmpknjqc9xj/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapdirPA_fieldmap.json (i.e. the fieldmap may not be used)
+2025-06-06 00:59:23 - WARNING | Matplotlib created a temporary cache directory at /tmp/matplotlib-z3u6vtny because the default path (/home/ubuntu/.cache/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+2025-06-06 00:59:31 - WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude1.json (i.e. the fieldmap may not be used)
+2025-06-06 00:59:31 - WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_magnitude2.json (i.e. the fieldmap may not be used)
+2025-06-06 00:59:31 - WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapacq4mm_phasediff.json (i.e. the fieldmap may not be used)
+2025-06-06 00:59:31 - WARNING | Empty IntendedFor/B0FieldSource/B0FieldIdentifier fieldmap values in /storage/tmp/tmp4mfddgq7/bidscoin_bids/sub-1/ses-1/fmap/sub-1_ses-1_acq-fmapdirPA_fieldmap.json (i.e. the fieldmap may not be used)
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
 
-INFO | For the complete log see: /storage/tmp/tmpknjqc9xj/bidscoin_bids/code/bidscoin/bidscoiner.log
+INFO | For the complete log see: /storage/tmp/tmp4mfddgq7/bidscoin_bids/code/bidscoin/bidscoiner.log
 NB: That folder may contain privacy sensitive information, e.g. pathnames in logfiles and provenance data samples
 </pre></div>
 </div>
@@ -2083,7 +2059,7 @@ NB: That folder may contain privacy sensitive information, e.g. pathnames in log
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-cpu-information">Output CPU information</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">BIDS conversion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">1. Data preparation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-dicoms-to-bids-formatted-nifti">2. Convert DICOMS to BIDS-formatted NIfTI</a><ul class="nav section-nav flex-column">
