@@ -35,31 +35,31 @@ res = bet.run()
 ------------------
 
 ----- stdout -----
-250603-05:13:03,562 nipype.workflow INFO:
-	 [Node] Setting-up "bet_node" in "/storage/tmp/tmppohlwa8f/bet_node".
+250606-01:32:56,435 nipype.workflow INFO:
+	 [Node] Setting-up "bet_node" in "/storage/tmp/tmpdi46mpsc/bet_node".
 ----- stdout -----
-250603-05:13:03,569 nipype.workflow INFO:
+250606-01:32:56,443 nipype.workflow INFO:
 	 [Node] Executing "bet_node" <nipype.interfaces.fsl.preprocess.BET>
 ----- stdout -----
-250603-05:13:04,169 nipype.interface INFO:
-	 stdout 2025-06-03T05:13:04.169175:
+250606-01:32:57,46 nipype.interface INFO:
+	 stdout 2025-06-06T01:32:57.046746:
 ----- stdout -----
-250603-05:13:04,171 nipype.interface INFO:
-	 stdout 2025-06-03T05:13:04.169175:Error: input image sub-01_T1w not valid
+250606-01:32:57,49 nipype.interface INFO:
+	 stdout 2025-06-06T01:32:57.046746:Error: input image sub-01_T1w not valid
 ----- stdout -----
-250603-05:13:04,173 nipype.interface INFO:
-	 stdout 2025-06-03T05:13:04.169175:
+250606-01:32:57,50 nipype.interface INFO:
+	 stdout 2025-06-06T01:32:57.046746:
 ----- stdout -----
-250603-05:13:04,400 nipype.workflow INFO:
-	 [Node] Finished "bet_node", elapsed time 0.826916s.
+250606-01:32:57,332 nipype.workflow INFO:
+	 [Node] Finished "bet_node", elapsed time 0.885165s.
 ----- stdout -----
-250603-05:13:04,403 nipype.workflow WARNING:
-	 [Node] Error on "bet_node" (/storage/tmp/tmppohlwa8f/bet_node)
+250606-01:32:57,336 nipype.workflow WARNING:
+	 [Node] Error on "bet_node" (/storage/tmp/tmpdi46mpsc/bet_node)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNodeExecutionError[0m                        Traceback (most recent call last)
-Cell [0;32mIn[14], line 17[0m
+Cell [0;32mIn[13], line 17[0m
 [1;32m     14[0m bet[38;5;241m.[39minputs[38;5;241m.[39mout_file [38;5;241m=[39m output_file
 [1;32m     16[0m [38;5;66;03m# Run the node[39;00m
 [0;32m---> 17[0m res [38;5;241m=[39m [43mbet[49m[38;5;241;43m.[39;49m[43mrun[49m[43m([49m[43m)[49m
@@ -85,7 +85,7 @@ File [0;32m~/.local/lib/python3.10/site-packages/nipype/pipeline/engine/nodes.p
 [0;31mNodeExecutionError[0m: Exception raised while executing Node bet_node.
 
 Cmdline:
-	bet sub-01_T1w.nii.gz /storage/tmp/tmpokszak7i/output/T1w_nipype_bet.nii.gz -f 0.30 -m
+	bet sub-01_T1w.nii.gz /storage/tmp/tmpyf_1m658/output/T1w_nipype_bet.nii.gz -f 0.30 -m
 Stdout:
 
 	Error: input image sub-01_T1w not valid
