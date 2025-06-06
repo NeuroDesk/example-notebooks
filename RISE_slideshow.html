@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>RISE Slideshow of a Jupyter Notebook &#8212; Neurodesk</title>
+    <title>RISE Slideshow &#8212; Neurodesk</title>
   
   
   
@@ -167,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    RISE Slideshow of a Jupyter Notebook
+                    RISE Slideshow
                 </a>
             </li>
         </ul>
@@ -403,7 +403,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>RISE Slideshow of a Jupyter Notebook</h1>
+    <h1>RISE Slideshow</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -413,6 +413,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#of-a-jupyter-notebook">Of a Jupyter Notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-rise">Introduction to RISE</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-create-slideshows">1. How to create slideshows</a></li>
@@ -438,9 +439,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="rise-slideshow-of-a-jupyter-notebook">
-<h1>RISE Slideshow of a Jupyter Notebook<a class="headerlink" href="#rise-slideshow-of-a-jupyter-notebook" title="Permalink to this heading">#</a></h1>
-<p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/workflows/RISE_slideshow.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="rise-slideshow">
+<h1>RISE Slideshow<a class="headerlink" href="#rise-slideshow" title="Permalink to this heading">#</a></h1>
+<section id="of-a-jupyter-notebook">
+<h2>Of a Jupyter Notebook<a class="headerlink" href="#of-a-jupyter-notebook" title="Permalink to this heading">#</a></h2>
 <p>Author: Monika Doerig</p>
 <p>Citation:</p>
 <ul class="simple">
@@ -449,33 +451,12 @@ document.write(`
 <p>Press <code class="docutils literal notranslate"><span class="pre">Space</span></code> to proceed.</p>
 <p>Before getting to the introduction and details of creating a slideshow, let’s set up this notebook to run in Google Colab.</p>
 <p>Keep pressing <code class="docutils literal notranslate"><span class="pre">Space</span></code> to proceed.</p>
+</section>
 <section id="setup-neurodesk">
 <h2>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Permalink to this heading">#</a></h2>
 <p>In code cells you press <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> (as usual) to evaluate your code and directly move to the next cell if it is already displayed.
 Press <code class="docutils literal notranslate"><span class="pre">Ctrl-Enter</span></code> to run a command without direclty moving to the next cell.</p>
 <p>Press Shift-Enter to run the following command to set up the Neurodesk environment.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
-import os
-import sys
-IN_COLAB = &#39;google.colab&#39; in sys.modules
-
-if IN_COLAB:
-  os.environ[&quot;LD_PRELOAD&quot;] = &quot;&quot;;
-  os.environ[&quot;APPTAINER_BINDPATH&quot;] = &quot;/content,/tmp,/cvmfs&quot;
-  os.environ[&quot;MPLCONFIGDIR&quot;] = &quot;/content/matplotlib-mpldir&quot;
-  os.environ[&quot;LMOD_CMD&quot;] = &quot;/usr/share/lmod/lmod/libexec/lmod&quot;
-
-  !curl -J -O https://raw.githubusercontent.com/NeuroDesk/neurocommand/main/googlecolab_setup.sh
-  !chmod +x googlecolab_setup.sh
-  !./googlecolab_setup.sh
-
-  os.environ[&quot;MODULEPATH&quot;] = &#39;:&#39;.join(map(str, list(map(lambda x: os.path.join(os.path.abspath(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;), x),os.listdir(&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;)))))
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Press Ctrl-Enter to run the following commands to see the output (and not move directly to the next slide).</span>
@@ -661,6 +642,7 @@ model name	: AMD EPYC-Rome Processor
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#of-a-jupyter-notebook">Of a Jupyter Notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-rise">Introduction to RISE</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-create-slideshows">1. How to create slideshows</a></li>
