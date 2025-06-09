@@ -53,8 +53,8 @@ jobs:
     - name: Filter down to changed notebooks
       id: list_changed_notebooks
       run: |
-        echo ${{ steps.find_changed_notebooks.outputs.all_changed_and_modified_files }}
-        changed_notebooks=$(echo "${{ steps.find_changed_notebooks.outputs.all_changed_and_modified_files }}")
+        echo ${{ steps.find_changed_notebooks.outputs.all_changed_files }}
+        changed_notebooks=$(echo "${{ steps.find_changed_notebooks.outputs.all_changed_files }}")
         
         notebook_list='['
         for NOTEBOOK in $(echo "${changed_notebooks}"); do
