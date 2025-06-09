@@ -499,14 +499,9 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#registration-and-streamline-fitting">Registration and Streamline Fitting</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-python-modules">Import Python Modules</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-packages">Load packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-cpu-information">Output CPU information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-python-libraries">Import Python Libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-modules">Load modules</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-the-data-from-mrtrix-part-2">Downloading the data from MRtrix Part 2</a></li>
@@ -536,12 +531,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/diffusion_imaging/MRtrix_3.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="mrtrix-part-3">
+  <section class="tex2jax_ignore mathjax_ignore" id="mrtrix-part-3">
 <h1>MRtrix: Part 3<a class="headerlink" href="#mrtrix-part-3" title="Link to this heading">#</a></h1>
 <section id="registration-and-streamline-fitting">
 <h2>Registration and Streamline Fitting<a class="headerlink" href="#registration-and-streamline-fitting" title="Link to this heading">#</a></h2>
-<p>This notebook is the third in a series on Diffusion Analysis using MRtrix and builds upon the data generated in <strong>MRtrix: Part 2 - Constrained Spherical Deconvolution and Tissue estimation</strong>. The data necessary for this example will be downloaded from OSF.</p>
+<p>This notebook is the third in a series on Diffusion Analysis using MRtrix and builds upon the data generated in <strong>MRtrix: Part 2 - Constrained Spherical Deconvolution and Tissue estimation</strong>. The data necessary for this example will be downloaded from OSF. This notebook will focus on coregistration of the diffusion and anatomical images and generation of streamlines, building on the concepts introduced earlier.</p>
 <section id="id1">
 <h3><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Author: Monika Doerig</p>
@@ -569,35 +563,11 @@ document.write(`
 <li><p>https://fury.gl/latest/index.html</p></li>
 </ul>
 </section>
-</section>
-<section id="setup-neurodesk">
-<h2>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Link to this heading">#</a></h2>
+<section id="output-cpu-information">
+<h3>Output CPU information<a class="headerlink" href="#output-cpu-information" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="n">IN_COLAB</span> <span class="o">=</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span>
-
-<span class="k">if</span> <span class="n">IN_COLAB</span><span class="p">:</span>
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_PRELOAD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;APPTAINER_BINDPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content,/tmp,/cvmfs&quot;</span>
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MPLCONFIGDIR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content/matplotlib-mpldir&quot;</span>
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LMOD_CMD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/share/lmod/lmod/libexec/lmod&quot;</span>
-
-  <span class="err">!</span><span class="n">curl</span> <span class="o">-</span><span class="n">J</span> <span class="o">-</span><span class="n">O</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NeuroDesk</span><span class="o">/</span><span class="n">neurocommand</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
-  <span class="err">!</span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
-  <span class="err">!</span><span class="o">./</span><span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
-
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MODULEPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">)))))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
 <span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
 </pre></div>
 </div>
@@ -609,8 +579,9 @@ model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
 </div>
 </div>
 </div>
-<section id="import-python-modules">
-<h3>Import Python Modules<a class="headerlink" href="#import-python-modules" title="Link to this heading">#</a></h3>
+</section>
+<section id="import-python-libraries">
+<h3>Import Python Libraries<a class="headerlink" href="#import-python-libraries" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
@@ -637,12 +608,8 @@ model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
 </div>
 </div>
 </section>
-</section>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>In this third notebook of the series, we focus on coregistering the diffusion and anatomical images and generating streamlines, building on the concepts introduced earlier.</p>
-<section id="load-packages">
-<h3>Load packages<a class="headerlink" href="#load-packages" title="Link to this heading">#</a></h3>
+<section id="load-modules">
+<h3>Load modules<a class="headerlink" href="#load-modules" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">module</span>
@@ -938,10 +905,10 @@ width="600">
 <section id="how-many-streamlines">
 <h3>How Many Streamlines?<a class="headerlink" href="#how-many-streamlines" title="Link to this heading">#</a></h3>
 <p>There is a trade-off between the number of generated streamlines and the amount of time that it takes. More streamlines result in a more accurate reconstruction of the underlying white-matter tracts, but estimating a large number of them can take a prohibitively long time.</p>
-<p>The “correct” number of streamlines to use is still being debated, but at least 10 million or so should be a good starting place:</p>
+<p>The “correct” number of streamlines to use is still being debated, but at least <strong>10 million</strong> should be a good starting place. However, for computational reasons we will only compute 1 million in this tutorial:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>tckgen<span class="w"> </span>-act<span class="w"> </span>./MRtrix_fod/5tt_coreg.mif<span class="w"> </span>-backtrack<span class="w"> </span>-seed_gmwmi<span class="w"> </span>./MRtrix_fod/gmwmSeed_coreg.mif<span class="w"> </span>-nthreads<span class="w"> </span><span class="m">20</span><span class="w"> </span>-maxlength<span class="w"> </span><span class="m">250</span><span class="w"> </span>-cutoff<span class="w"> </span><span class="m">0</span>.06<span class="w"> </span>-select<span class="w"> </span><span class="m">10000000</span><span class="w"> </span>./MRtrix_fod/wmfod_norm.mif<span class="w"> </span>./MRtrix_fod/tracks_10M.tck
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>tckgen<span class="w"> </span>-act<span class="w"> </span>./MRtrix_fod/5tt_coreg.mif<span class="w"> </span>-backtrack<span class="w"> </span>-seed_gmwmi<span class="w"> </span>./MRtrix_fod/gmwmSeed_coreg.mif<span class="w"> </span>-nthreads<span class="w"> </span><span class="m">20</span><span class="w"> </span>-maxlength<span class="w"> </span><span class="m">250</span><span class="w"> </span>-cutoff<span class="w"> </span><span class="m">0</span>.06<span class="w"> </span>-select<span class="w"> </span><span class="m">1000000</span><span class="w"> </span>./MRtrix_fod/wmfod_norm.mif<span class="w"> </span>./MRtrix_fod/tracks_1M.tck
 </pre></div>
 </div>
 </div>
@@ -952,11 +919,11 @@ width="600">
 </div>
 </div>
 <p>In this command, the “-act” option specifies that we will use the anatomically-segmented image to constrain our analysis to the white matter. “-backtrack” indicates for the current streamline to go back and run the same streamline again if it terminates in a strange place (e.g., the cerebrospinal fluid); “-maxlength” sets the maximum tract length, in voxels, that will be permitted; and “-cutoff” specifies the FOD amplitude for terminating a tract (for example, a value of 0.06 would not permit a streamline to go along an FOD that is lower than that number). “-seed_gmwmi” takes as an input the grey-matter / white-matter boundary that was generated using the <code class="docutils literal notranslate"><span class="pre">5tt2gmwmi</span></code> command.
-“-nthreads” specifies the number of processing cores you wish to use, in order to speed up the analysis. And finally, “-select” indicates how many total streamlines to generate. Note that a shorthand can be used if you like; instead of, 10000000, you can rewrite it as 10000k (meaning “ten thousand thousands”, which equals “ten million”). The last two arguments specify both the input (<code class="docutils literal notranslate"><span class="pre">wmfod_norm.mif</span></code>) and a label for the output (<code class="docutils literal notranslate"><span class="pre">tracks_10M.tck</span></code>).</p>
+“-nthreads” specifies the number of processing cores you wish to use, in order to speed up the analysis. And finally, “-select” indicates how many total streamlines to generate. Note that a shorthand can be used if you like; instead of, 10000000, you can rewrite it as 10000k (meaning “ten thousand thousands”, which equals “ten million”). The last two arguments specify both the input (<code class="docutils literal notranslate"><span class="pre">wmfod_norm.mif</span></code>) and a label for the output (<code class="docutils literal notranslate"><span class="pre">tracks_1M.tck</span></code>).</p>
 <p>If you want to visualize the output, extract a subset of the output by using <code class="docutils literal notranslate"><span class="pre">tckedit</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>tckedit<span class="w"> </span>./MRtrix_fod/tracks_10M.tck<span class="w"> </span>-number<span class="w"> </span>200k<span class="w"> </span>./MRtrix_fod/smallerTracks_200k.tck
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>tckedit<span class="w"> </span>./MRtrix_fod/tracks_1M.tck<span class="w"> </span>-number<span class="w"> </span>200k<span class="w"> </span>./MRtrix_fod/smallerTracks_200k.tck
 </pre></div>
 </div>
 </div>
@@ -1031,7 +998,7 @@ width="600">
 <p>To counter-balance this overfitting, the command <code class="docutils literal notranslate"><span class="pre">tcksift2</span></code> will create a text file containing weights for each voxel in the brain:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>tcksift2<span class="w"> </span>-act<span class="w"> </span>./MRtrix_fod/5tt_coreg.mif<span class="w"> </span>-out_mu<span class="w"> </span>./MRtrix_fod/sift_mu.txt<span class="w"> </span>-out_coeffs<span class="w"> </span>./MRtrix_fod/sift_coeffs.txt<span class="w"> </span>-nthreads<span class="w"> </span><span class="m">20</span><span class="w"> </span>./MRtrix_fod/tracks_10M.tck<span class="w"> </span>./MRtrix_fod/wmfod_norm.mif<span class="w"> </span>./MRtrix_fod/sift_1M.txt
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>tcksift2<span class="w"> </span>-act<span class="w"> </span>./MRtrix_fod/5tt_coreg.mif<span class="w"> </span>-out_mu<span class="w"> </span>./MRtrix_fod/sift_mu.txt<span class="w"> </span>-out_coeffs<span class="w"> </span>./MRtrix_fod/sift_coeffs.txt<span class="w"> </span>-nthreads<span class="w"> </span><span class="m">20</span><span class="w"> </span>./MRtrix_fod/tracks_1M.tck<span class="w"> </span>./MRtrix_fod/wmfod_norm.mif<span class="w"> </span>./MRtrix_fod/sift_1M.txt
 </pre></div>
 </div>
 </div>
@@ -1119,14 +1086,9 @@ tcksift2: [done]        45        18.723%         5.076%        9998211?7h..?7l.
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#registration-and-streamline-fitting">Registration and Streamline Fitting</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-python-modules">Import Python Modules</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-packages">Load packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-cpu-information">Output CPU information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-python-libraries">Import Python Libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-modules">Load modules</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-the-data-from-mrtrix-part-2">Downloading the data from MRtrix Part 2</a></li>
