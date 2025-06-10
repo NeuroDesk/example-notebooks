@@ -25,13 +25,13 @@ create_combined_plot(edge_imgs, labels, colors, input_image, "Brain Extraction M
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mValueError[0m                                Traceback (most recent call last)
-Cell [0;32mIn[31], line 5[0m
+Cell [0;32mIn[30], line 5[0m
 [1;32m      2[0m labels [38;5;241m=[39m [[38;5;124m'[39m[38;5;124mANTS[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mFSL[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mAFNI[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mFreeSurfer[39m[38;5;124m'[39m]
 [1;32m      3[0m colors [38;5;241m=[39m [[38;5;124m'[39m[38;5;124m#FF0000[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124m#0000FF[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124m#00FF00[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124m#FFA500[39m[38;5;124m'[39m]
 [0;32m----> 5[0m [43mcreate_combined_plot[49m[43m([49m[43medge_imgs[49m[43m,[49m[43m [49m[43mlabels[49m[43m,[49m[43m [49m[43mcolors[49m[43m,[49m[43m [49m[43minput_image[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mBrain Extraction Method Comparison[39;49m[38;5;124;43m"[39;49m[43m)[49m
 
-Cell [0;32mIn[28], line 53[0m, in [0;36mcreate_combined_plot[0;34m(edge_imgs, labels, colors, bg_img, title)[0m
-[1;32m     50[0m custom_cmap [38;5;241m=[39m ListedColormap(colors)  [38;5;66;03m# Just use your edge colors directly[39;00m
+Cell [0;32mIn[27], line 53[0m, in [0;36mcreate_combined_plot[0;34m(edge_imgs, labels, colors, bg_img, title)[0m
+[1;32m     50[0m custom_cmap [38;5;241m=[39m ListedColormap(colors) 
 [1;32m     52[0m fig [38;5;241m=[39m plt[38;5;241m.[39mfigure(figsize[38;5;241m=[39m([38;5;241m14[39m, [38;5;241m8[39m))
 [0;32m---> 53[0m [43mplotting[49m[38;5;241;43m.[39;49m[43mplot_stat_map[49m[43m([49m[43mcombined_img[49m[43m,[49m[43m [49m[43mbg_img[49m[38;5;241;43m=[39;49m[43mbg_img[49m[43m,[49m
 [1;32m     54[0m [43m                      [49m[43mcmap[49m[38;5;241;43m=[39;49m[43mcustom_cmap[49m[43m,[49m
