@@ -143,7 +143,7 @@ jobs:
         rm -rf /home/ubuntu/actions_github_pages_*
 
   build-structure:
-    if: always()
+    if: ${{ needs.test-notebooks.result != 'failure' }}
     needs: [ test-notebooks ]
     runs-on: ubuntu-22.04
 
