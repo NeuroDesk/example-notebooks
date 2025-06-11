@@ -248,7 +248,7 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="first_and_second_level_spm.html">First and Second Level fMRI Analysis with SPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first_and_second_level_spm.html">Nipype-SPM fMRI Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fmriprep.html">fMRIprep</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro_to_preprocessing.html">Introduction to Preprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nipype_fsl_all_levels_flanker.html">FSL’s fMRI Data Analysis via Nipype</a></li>
@@ -500,7 +500,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-cpu-information">Output CPU information</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-fsl-and-import-python-libraries">Load FSL and Import Python Libraries</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">Data preparation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-the-anatomical-and-functional-images">Inspecting the anatomical and functional images</a></li>
@@ -539,8 +539,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a href="https://colab.research.google.com/github/NeuroDesk/example-notebooks/blob/main/books/functional_imaging/FSL_preproc_glm.ipynb" target="_parent"><img alt="Open In Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" />   </a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="fsl-preprocessing-and-glm">
+  <section class="tex2jax_ignore mathjax_ignore" id="fsl-preprocessing-and-glm">
 <h1>FSL Preprocessing and GLM<a class="headerlink" href="#fsl-preprocessing-and-glm" title="Link to this heading">#</a></h1>
 <p>This notebook showcases the FSL software package and performs preprocessing and first-level analysis on one subject from the Flanker dataset. The example is closely inspired by the FSL tutorial in Andy’s Brain Book and follows the steps outlined in <em>Chapter 4: Preprocessing</em> and <em>Chapter 5: Statistics and Modeling</em>. For detailed information about the dataset and analysis pipeline, refer to Andy’s original tutorial.</p>
 <section id="id1">
@@ -559,34 +558,11 @@ document.write(`
 <li><p>Mennes, M., Zuo, X.N., Kelly, C., Di Martino, A., Zang, Y.F., Biswal, B., Castellanos, F.X., Milham, M.P. (2011). Linking inter-individual differences in neural activation and behavior to intrinsic brain dynamics. Neuroimage, 54(4):2950-9. doi: <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2010.10.046">10.1016/j.neuroimage.2010.10.046</a></p></li>
 </ul>
 </section>
-<section id="setup-neurodesk">
-<h2>Setup Neurodesk<a class="headerlink" href="#setup-neurodesk" title="Link to this heading">#</a></h2>
+<section id="output-cpu-information">
+<h2>Output CPU information<a class="headerlink" href="#output-cpu-information" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="n">IN_COLAB</span> <span class="o">=</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span>
-
-<span class="k">if</span> <span class="n">IN_COLAB</span><span class="p">:</span>
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_PRELOAD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;APPTAINER_BINDPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content,/tmp,/cvmfs&quot;</span>
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MPLCONFIGDIR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content/matplotlib-mpldir&quot;</span>
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LMOD_CMD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/share/lmod/lmod/libexec/lmod&quot;</span>
-
-  <span class="err">!</span><span class="n">curl</span> <span class="o">-</span><span class="n">J</span> <span class="o">-</span><span class="n">O</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NeuroDesk</span><span class="o">/</span><span class="n">neurocommand</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
-  <span class="err">!</span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
-  <span class="err">!</span><span class="o">./</span><span class="n">googlecolab_setup</span><span class="o">.</span><span class="n">sh</span>
-
-  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MODULEPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/&#39;</span><span class="p">)))))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output CPU information:</span>
-<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
 <span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
 </pre></div>
 </div>
@@ -603,14 +579,22 @@ model name	: Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz
 <h2>Load FSL and Import Python Libraries<a class="headerlink" href="#load-fsl-and-import-python-libraries" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">lmod</span>
-<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;fsl/6.0.7.16&#39;</span><span class="p">)</span>
-<span class="k">await</span> <span class="n">lmod</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span> <span class="n">nibabel</span> <span class="n">nilearn</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">module</span>
+<span class="k">await</span> <span class="n">module</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;fsl/6.0.7.16&#39;</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">module</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;fsl/6.0.7.16&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mrtrix3/3.0.4&#39;, &#39;fsl/6.0.7.16&#39;]
 </pre></div>
 </div>
 </div>
@@ -664,38 +648,38 @@ Resolving:   0%|                                | 0.00/537 [00:00&lt;?, ? Deltas
 <span class=" -Color -Color-Bold">install</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): /home/jovyan/Git_repositories/example-notebooks/books/functional_imaging/ds000102 (<span class=" -Color -Color-Bold -Color-Bold-Magenta">dataset</span>)
 Total:   0%|                                   | 0.00/67.8M [00:00&lt;?, ? Bytes/s]
 Get sub-08/a .. 8_T1w.nii.gz:   0%|            | 0.00/10.6M [00:00&lt;?, ? Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:   2%|     | 190k/10.6M [00:00&lt;00:15, 654k Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:   5%|▏   | 486k/10.6M [00:00&lt;00:07, 1.41M Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  16%|▍  | 1.74M/10.6M [00:00&lt;00:02, 3.76M Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  28%|▊  | 2.96M/10.6M [00:00&lt;00:01, 5.94M Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  35%|█  | 3.72M/10.6M [00:00&lt;00:01, 6.36M Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  44%|█▎ | 4.65M/10.6M [00:00&lt;00:00, 7.18M Bytes/s]
-Get sub-08/a .. 8_T1w.nii.gz:  67%|██ | 7.11M/10.6M [00:00&lt;00:00, 12.1M Bytes/s]
-Total:  16%|████                      | 10.6M/67.8M [00:01&lt;00:09, 5.80M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:   1%|    | 85.6k/10.6M [00:00&lt;00:23, 442k Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:   3%|    | 312k/10.6M [00:00&lt;00:08, 1.21M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:   6%|▏   | 626k/10.6M [00:00&lt;00:05, 1.94M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  11%|▎  | 1.11M/10.6M [00:00&lt;00:03, 2.96M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  20%|▌  | 2.07M/10.6M [00:00&lt;00:01, 5.16M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  26%|▊  | 2.74M/10.6M [00:00&lt;00:01, 5.64M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  38%|█▏ | 3.96M/10.6M [00:00&lt;00:00, 7.73M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  63%|█▉ | 6.65M/10.6M [00:00&lt;00:00, 13.7M Bytes/s]
+Get sub-08/a .. 8_T1w.nii.gz:  80%|██▍| 8.49M/10.6M [00:00&lt;00:00, 15.1M Bytes/s]
+Total:  16%|████                      | 10.6M/67.8M [00:01&lt;00:09, 6.23M Bytes/s]
 Get sub-08/f .. _bold.nii.gz:   0%|            | 0.00/28.6M [00:00&lt;?, ? Bytes/s]
-Get sub-08/f .. _bold.nii.gz:   7%|▏  | 1.95M/28.6M [00:00&lt;00:01, 19.5M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  19%|▌  | 5.58M/28.6M [00:00&lt;00:01, 19.3M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  27%|▊  | 7.71M/28.6M [00:00&lt;00:01, 18.1M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  35%|█  | 9.89M/28.6M [00:00&lt;00:00, 19.3M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  42%|█▏ | 11.9M/28.6M [00:00&lt;00:00, 19.5M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  49%|█▍ | 13.9M/28.6M [00:00&lt;00:00, 19.7M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  56%|█▋ | 16.0M/28.6M [00:00&lt;00:00, 20.0M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  63%|█▉ | 18.0M/28.6M [00:00&lt;00:00, 20.1M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  70%|██ | 20.1M/28.6M [00:01&lt;00:00, 20.2M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  77%|██▎| 22.1M/28.6M [00:01&lt;00:00, 20.3M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  84%|██▌| 24.2M/28.6M [00:01&lt;00:00, 20.3M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  92%|██▊| 26.3M/28.6M [00:01&lt;00:00, 20.6M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  99%|██▉| 28.4M/28.6M [00:01&lt;00:00, 20.7M Bytes/s]
-Total:  58%|███████████████           | 39.2M/67.8M [00:03&lt;00:02, 10.7M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  16%|▍  | 4.49M/28.6M [00:00&lt;00:01, 22.0M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  25%|▋  | 7.13M/28.6M [00:00&lt;00:00, 23.8M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  37%|█  | 10.5M/28.6M [00:00&lt;00:00, 20.0M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  45%|█▎ | 12.9M/28.6M [00:00&lt;00:00, 21.2M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  55%|█▋ | 15.6M/28.6M [00:00&lt;00:00, 19.8M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  66%|█▉ | 18.9M/28.6M [00:00&lt;00:00, 20.6M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  81%|██▍| 23.1M/28.6M [00:01&lt;00:00, 20.7M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  91%|██▋| 26.0M/28.6M [00:01&lt;00:00, 20.2M Bytes/s]
+Total:  58%|███████████████           | 39.2M/67.8M [00:03&lt;00:02, 11.6M Bytes/s]
 Get sub-08/f .. _bold.nii.gz:   0%|            | 0.00/28.6M [00:00&lt;?, ? Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  14%|▍  | 4.04M/28.6M [00:00&lt;00:01, 20.2M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  29%|▊  | 8.19M/28.6M [00:00&lt;00:00, 20.5M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  43%|█▎ | 12.4M/28.6M [00:00&lt;00:00, 20.6M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  51%|█▌ | 14.5M/28.6M [00:00&lt;00:00, 20.6M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  58%|█▋ | 16.6M/28.6M [00:00&lt;00:00, 20.9M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  73%|██▏| 20.8M/28.6M [00:01&lt;00:00, 20.8M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  87%|██▌| 24.8M/28.6M [00:01&lt;00:00, 20.6M Bytes/s]
-Get sub-08/f .. _bold.nii.gz:  95%|██▊| 27.1M/28.6M [00:01&lt;00:00, 21.0M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:   6%|▏  | 1.80M/28.6M [00:00&lt;00:01, 16.8M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  17%|▌  | 4.81M/28.6M [00:00&lt;00:01, 15.5M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  24%|▋  | 6.93M/28.6M [00:00&lt;00:01, 17.4M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  35%|█  | 10.0M/28.6M [00:00&lt;00:01, 16.5M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  41%|█▏ | 11.8M/28.6M [00:00&lt;00:01, 16.1M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  52%|█▌ | 14.8M/28.6M [00:00&lt;00:00, 16.1M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  63%|█▉ | 17.9M/28.6M [00:01&lt;00:00, 14.8M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  68%|██ | 19.5M/28.6M [00:01&lt;00:00, 15.0M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  74%|██▏| 21.1M/28.6M [00:01&lt;00:00, 15.3M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  80%|██▍| 22.8M/28.6M [00:01&lt;00:00, 15.6M Bytes/s]
+Get sub-08/f .. _bold.nii.gz:  91%|██▋| 25.9M/28.6M [00:01&lt;00:00, 15.6M Bytes/s]
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08/anat/sub-08_T1w.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08/func/sub-08_task-flanker_run-1_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
 <span class=" -Color -Color-Bold">get</span>(<span class=" -Color -Color-Bold -Color-Bold-Green">ok</span>): sub-08/func/sub-08_task-flanker_run-2_bold.nii.gz (<span class=" -Color -Color-Bold -Color-Bold-Magenta">file</span>) [from s3-PUBLIC...]
@@ -734,7 +718,7 @@ action summary:
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">fsleyes</span><span class="w"> </span><span class="nx">ds000102</span><span class="o">/</span><span class="nx">sub</span><span class="o">-</span><span class="mf">08</span><span class="o">/</span><span class="nx">anat</span><span class="o">/</span><span class="nx">sub</span><span class="o">-</span><span class="mf">08</span><span class="nx">_T1w</span><span class="p">.</span><span class="nx">nii</span><span class="p">.</span><span class="nx">gz</span>
 </pre></div>
 </div>
-<p>We will use ipyniivue to look at the data:</p>
+<p>We will use <strong>NiiVue</strong> to look at the data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># anatomical image</span>
@@ -745,7 +729,16 @@ action summary:
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0589e2307f80466b88ab32b28cefedc7", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "66fefc1e372d43f8aebdb33183aefd10", "version_major": 2, "version_minor": 1}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_preproc_anat.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_preproc_anat.png"/></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -757,7 +750,16 @@ action summary:
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "691f73a55f6b4b27941d03f0e736a399", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "86c6446497774d3885b160c244539d45", "version_major": 2, "version_minor": 1}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_preproc_run1.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_preproc_run1.png"/></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -769,7 +771,16 @@ action summary:
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "1363048ef6b24a5c9d6afa13872d16b8", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "a9d14dd387784857b1415f2dde2fefdc", "version_major": 2, "version_minor": 1}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_preproc_run2.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_preproc_run2.png"/></div></div>
 </div>
 </section>
 </section>
@@ -842,7 +853,16 @@ Miscellaneous options:
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "2b1fab6e208b4fcea6f29034960f38b6", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "429048088da4473b9f55b4ebee28c7ec", "version_major": 2, "version_minor": 1}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_preproc_bet_05.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_preproc_bet_05.png"/></div></div>
 </div>
 </section>
 </section>
@@ -869,7 +889,16 @@ Miscellaneous options:
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0a1e50b40bc143c2a76c56ae6f7dc40f", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "614b45da523c4e14b0e6dac17ff67963", "version_major": 2, "version_minor": 1}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_preproc_bet_02.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_preproc_bet_02.png"/></div></div>
 </div>
 </section>
 <section id="motion-correction">
@@ -983,7 +1012,7 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Register the T1w image to the MNI template and concatenate the transformation matrices</span>
-<span class="o">!</span>flirt<span class="w"> </span>-in<span class="w"> </span>./FSL_preproc/sub-08_T1w_brain_f02.nii.gz<span class="w"> </span>-ref<span class="w"> </span><span class="s2">&quot;{MNI_BRAIN}&quot;</span><span class="w"> </span>-out<span class="w"> </span>./FSL_preproc/sub-08_T1w_brain_f02_flirt.nii.gz<span class="w"> </span>-omat<span class="w"> </span>./FSL_preproc/sub-08_T1w_brain_f02_flirt.mat
+<span class="o">!</span>flirt<span class="w"> </span>-in<span class="w"> </span>./FSL_preproc/sub-08_T1w_brain_f02.nii.gz<span class="w"> </span>-ref<span class="w"> </span><span class="s2">&quot;{MNI_BRAIN}&quot;</span><span class="w"> </span>-out<span class="w"> </span>./FSL_preproc/sub-08_T1w_brain_f02_flirt.nii.gz<span class="w"> </span>-omat<span class="w"> </span>./FSL_preproc/sub-08_T1w_brain_f02_flirt.mat<span class="w"> </span>-searchrx<span class="w"> </span>-180<span class="w"> </span><span class="m">180</span><span class="w"> </span>-searchry<span class="w"> </span>-180<span class="w"> </span><span class="m">180</span><span class="w"> </span>-searchrz<span class="w"> </span>-180<span class="w"> </span><span class="m">180</span><span class="w"> </span>-dof<span class="w"> </span><span class="m">12</span>
 </pre></div>
 </div>
 </div>
@@ -1031,7 +1060,7 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verify the registration by overlaying the functional image on MNI</span>
 <span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">()</span>  
 <span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([</span>
-    <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.7.4_20231005/fsl_6.0.7.4_20231005.simg/opt/fsl-6.0.7.4/data/standard/MNI152_T1_2mm_brain.nii.gz&quot;</span><span class="p">,</span>  <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/cvmfs/neurodesk.ardc.edu.au/containers/fsl_6.0.7.16_20250131/fsl_6.0.7.16_20250131.simg/opt/fsl-6.0.7.16/data/standard/MNI152_T1_2mm_brain.nii.gz&quot;</span><span class="p">,</span>  <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">},</span>
     <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./FSL_preproc/sub-08_task-flanker_run-2_bold_mcf_smooth_flirt2mni_middle_3d.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">}</span>
 <span class="p">])</span>
 <span class="n">nv</span>
@@ -1039,7 +1068,16 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "c248c119ded8447d986c3713600d095d", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "867a2dadeab04d8094853f2407c4f582", "version_major": 2, "version_minor": 1}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_preproc_alignment.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_preproc_alignment.png"/></div></div>
 </div>
 <p><strong>Motion parameters</strong></p>
 <p>The motion plots show translation and rotation over time, with each timepoint (volume) on the x-axis. For translation, values are in millimeters. Look for sudden spikes greater than half the voxel size, or gradual drifts exceeding a full voxel. For example, with 3 mm isotropic voxels, relative motion over 1.5 mm between volumes or absolute shifts over 3 mm across the run may warrant closer inspection.</p>
@@ -1084,7 +1122,7 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/921ce19886ecbee1d090c1ee11eb1525a727b40728df705e277b4161025c68f6.png" src="../_images/921ce19886ecbee1d090c1ee11eb1525a727b40728df705e277b4161025c68f6.png" />
+<img alt="../_images/c1fbf652efccbaf3afe98085a7446b683f9344d234ccb340dc8e520074158edc.png" src="../_images/c1fbf652efccbaf3afe98085a7446b683f9344d234ccb340dc8e520074158edc.png" />
 </div>
 </div>
 </section>
@@ -1104,16 +1142,16 @@ To apply smoothing using <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-05-20 03:46:42--  https://raw.githubusercontent.com/andrewjahn/FSL_Scripts/master/make_FSL_Timings.sh
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.110.133, 185.199.111.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-06-10 23:55:04--  https://raw.githubusercontent.com/andrewjahn/FSL_Scripts/master/make_FSL_Timings.sh
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.110.133, 185.199.108.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 1220 (1.2K) [text/plain]
 Saving to: ‘./ds000102/make_FSL_Timings.sh’
 
 ./ds000102/make_FSL 100%[===================&gt;]   1.19K  --.-KB/s    in 0s      
 
-2025-05-20 03:46:42 (90.5 MB/s) - ‘./ds000102/make_FSL_Timings.sh’ saved [1220/1220]
+2025-06-10 23:55:04 (106 MB/s) - ‘./ds000102/make_FSL_Timings.sh’ saved [1220/1220]
 </pre></div>
 </div>
 </div>
@@ -1903,7 +1941,7 @@ feat design_run2
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-neurodesk">Setup Neurodesk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-cpu-information">Output CPU information</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-fsl-and-import-python-libraries">Load FSL and Import Python Libraries</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">Data preparation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-the-anatomical-and-functional-images">Inspecting the anatomical and functional images</a></li>
