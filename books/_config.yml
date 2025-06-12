@@ -18,7 +18,7 @@ execute:
   execution_show_tb: True
 
 launch_buttons:
-  colab_url: "https://colab.research.google.com"
+  jupyterhub_url: "https://play-america.neurodesk.org"
   notebook_interface: "jupyterlab"
 
 # Information about where the book exists on the web
