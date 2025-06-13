@@ -1,0 +1,1719 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>FSL course - BET &#8212; Neurodesk</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-4Z9774J59Y"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-4Z9774J59Y');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-4Z9774J59Y');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'FSL_course_bet';</script>
+    <link rel="canonical" href="https://neurodesk.github.io/example-notebooks/intro.html/FSL_course_bet.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Neurodesk</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    FSL course - BET
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://play-america.neurodesk.org/hub/user-redirect/git-pull?repo=https%3A//github.com/NeuroDesk/example-notebooks&urlpath=lab/tree/example-notebooks/books/FSL_course_bet.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/NeuroDesk/example-notebooks" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/edit/main/books/FSL_course_bet.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NeuroDesk/example-notebooks/issues/new?title=Issue%20on%20page%20%2FFSL_course_bet.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/FSL_course_bet.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>FSL course - BET</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-cpu-information">Output CPU information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-course-material">Download course material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bet-basics">BET basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-with-ipyniivue">Visualization with ipyniivue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varying-the-fractional-intensity-threshold-parameter-f">Varying the fractional intensity threshold parameter (-f)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-brain-extraction">Troubleshooting Brain Extraction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cerebellum-underestimation-using-the-gradient-threshold-option-g">Cerebellum Underestimation: Using the gradient threshold option (-g)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-large-fov-images">Dealing with large FOV images</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fsl-course-bet">
+<h1>FSL course - BET<a class="headerlink" href="#fsl-course-bet" title="Link to this heading">#</a></h1>
+<p>This interactive demonstration is based on the official FSL course <strong>“Introductory FSL Practicals/ Introduction - BET”</strong>.</p>
+<p>Brain extraction is a fundamental preprocessing step in neuroimaging analysis, particularly critical for structural image segmentation where precision matters most. While BET is straightforward to use, achieving optimal results often requires understanding how to fine-tune parameters for challenging datasets.
+This interactive version covers the core BET fundamentals, including parameter adjustment techniques for difficult images, and troubleshooting approaches for problematic cases. The hands-on format allows you to experiment with different settings and immediately see their effects on brain extraction quality.</p>
+<p><strong>Author:</strong> Monika Doerig</p>
+<p><strong>Citation/ Resources:</strong></p>
+<ul class="simple">
+<li><p>Jenkinson, M., Beckmann, C. F., Behrens, T. E. J., Woolrich, M. W., &amp; Smith, S. M. (2012). FSL. NeuroImage, 62(2), 782–790. <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2011.09.015">https://doi.org/10.1016/j.neuroimage.2011.09.015</a></p></li>
+<li><p><a class="reference external" href="https://open.win.ox.ac.uk/pages/fslcourse/website/online_materials.html">FSL course online materials</a></p></li>
+<li><p><a class="reference external" href="https://open.win.ox.ac.uk/pages/fslcourse/practicals/intro2/index.html">FSL course practicals BET</a></p></li>
+<li><p><a class="reference external" href="https://fsl.fmrib.ox.ac.uk/fsl/docs/#/structural/bet?id=bet-brain-extraction-tool">FSL Wiki BET</a></p></li>
+</ul>
+<section id="output-cpu-information">
+<h2>Output CPU information<a class="headerlink" href="#output-cpu-information" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;vendor&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+<span class="o">!</span>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;model name&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vendor_id	: AuthenticAMD
+model name	: AMD EPYC 7763 64-Core Processor
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">module</span>
+<span class="k">await</span> <span class="n">module</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;fsl/6.0.7.16&#39;</span><span class="p">)</span> <span class="c1"># specific version</span>
+<span class="k">await</span> <span class="n">module</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Lmod&#39;,
+ &#39;Warning:&#39;,
+ &#39;The&#39;,
+ &#39;environment&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;has&#39;,
+ &#39;been&#39;,
+ &#39;changed&#39;,
+ &#39;in&#39;,
+ &#39;unexpected&#39;,
+ &#39;ways.&#39;,
+ &#39;Lmod&#39;,
+ &#39;is&#39;,
+ &#39;unable&#39;,
+ &#39;to&#39;,
+ &#39;use&#39;,
+ &#39;given&#39;,
+ &#39;MODULEPATH.&#39;,
+ &#39;It&#39;,
+ &#39;is&#39;,
+ &#39;using:&#39;,
+ &#39;&quot;/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/functional_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/rodent_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_registration:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/structural_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_segmentation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quantitative_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/workflows:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/hippocampus:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/image_reconstruction:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/data_organisation:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/electrophysiology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/phase_processing:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/programming:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/machine_learning:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/diffusion_imaging:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/body:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/visualization:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spectroscopy:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/quality_control:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/statistics:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/shape_analysis:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/spine:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/molecular_biology:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/bids_apps:/cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/cryo_EM::&quot;.&#39;,
+ &#39;Please&#39;,
+ &#39;use&#39;,
+ &#39;&quot;module&#39;,
+ &#39;use&#39;,
+ &#39;to&#39;,
+ &#39;change&#39;,
+ &#39;MODULEPATH&#39;,
+ &#39;instead.&#39;,
+ &#39;fsl/6.0.7.16&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="download-course-material">
+<h2>Download course material<a class="headerlink" href="#download-course-material" title="Link to this heading">#</a></h2>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget<span class="w"> </span>-c<span class="w"> </span>-nc<span class="w"> </span>https://fsl.fmrib.ox.ac.uk/fslcourse/downloads/preCourse.tar.gz
+<span class="o">!</span>tar<span class="w"> </span>-xzvf<span class="w"> </span>preCourse.tar.gz<span class="w"> </span>--skip-old-files
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-06-13 00:42:24--  https://fsl.fmrib.ox.ac.uk/fslcourse/downloads/preCourse.tar.gz
+Resolving fsl.fmrib.ox.ac.uk (fsl.fmrib.ox.ac.uk)...
+129.67.248.66
+Connecting to fsl.fmrib.ox.ac.uk (fsl.fmrib.ox.ac.uk)|129.67.248.66|:443...
+connected.
+HTTP request sent, awaiting response...
+200 OK
+Length: 239640893 (229M) [application/x-gzip]
+Saving to: ‘preCourse.tar.gz’
+
+preCourse.tar.gz      0%[                    ]       0  --.-KB/s
+preCourse.tar.gz      0%[                    ] 101.39K   491KB/s
+preCourse.tar.gz      0%[                    ] 476.39K  1.10MB/s
+preCourse.tar.gz      1%[                    ]   3.38M  5.35MB/s
+preCourse.tar.gz      4%[                    ]  10.48M  12.2MB/s
+preCourse.tar.gz      9%[&gt;                   ]  21.75M  19.3MB/s
+preCourse.tar.gz     14%[=&gt;                  ]  32.98M  23.6MB/s
+preCourse.tar.gz     19%[==&gt;                 ]  44.22M  26.5MB/s
+preCourse.tar.gz     24%[===&gt;                ]  55.50M  28.6MB/s
+preCourse.tar.gz     29%[====&gt;               ]  66.74M  30.1MB/s
+preCourse.tar.gz     34%[=====&gt;              ]  77.97M  31.4MB/s
+preCourse.tar.gz     39%[======&gt;             ]  89.19M  32.4MB/s
+preCourse.tar.gz     43%[=======&gt;            ] 100.47M  33.2MB/s    eta 4s
+preCourse.tar.gz     48%[========&gt;           ] 111.69M  33.9MB/s    eta 4s
+preCourse.tar.gz     53%[=========&gt;          ] 122.95M  34.4MB/s    eta 4s
+preCourse.tar.gz     58%[==========&gt;         ] 134.14M  36.5MB/s    eta 4s
+preCourse.tar.gz     63%[===========&gt;        ] 145.32M  40.1MB/s    eta 2s
+preCourse.tar.gz     68%[============&gt;       ] 156.55M  41.2MB/s    eta 2s
+preCourse.tar.gz     73%[=============&gt;      ] 167.78M  41.4MB/s    eta 2s
+preCourse.tar.gz     78%[==============&gt;     ] 178.77M  42.2MB/s    eta 2s
+preCourse.tar.gz     81%[===============&gt;    ] 186.50M  41.4MB/s    eta 1s
+preCourse.tar.gz     86%[================&gt;   ] 197.63M  42.2MB/s    eta 1s
+preCourse.tar.gz     89%[================&gt;   ] 205.24M  41.3MB/s    eta 1s
+preCourse.tar.gz     94%[=================&gt;  ] 215.85M  42.0MB/s    eta 1s
+preCourse.tar.gz     98%[==================&gt; ] 224.00M  41.3MB/s    eta 1s
+preCourse.tar.gz    100%[===================&gt;] 228.54M  41.5MB/s    in 6.1s    
+
+2025-06-13 00:42:32 (37.4 MB/s) - ‘preCourse.tar.gz’ saved [239640893/239640893]
+fsl_course_data/intro/
+fsl_course_data/intro/highres.nii.gz
+fsl_course_data/intro/bighead.nii.gz
+fsl_course_data/intro/filtered_func_data.nii.gz
+fsl_course_data/intro/example_func.nii.gz
+fsl_course_data/intro/structural.nii.gz
+fsl_course_data/intro/egfmri.nii.gz
+fsl_course_data/intro/example_func2highres.mat
+fsl_course_data/intro/diffdata.nii.gz
+fsl_course_data/intro/image0.nii.gz
+fsl_course_data/intro/egepi.nii.gz
+fsl_course_data/intro/standard.nii.gz
+fsl_course_data/intro/LThal_mask_func.nii.gz
+fsl_course_data/intro/LThal_mask_std.nii.gz
+fsl_course_data/intro/cst2standard_73_46_26.nii.gz
+fsl_course_data/intro/sub3m0.nii.gz
+fsl_course_data/intro/bvals
+fsl_course_data/intro/newfmri.nii.gz
+fsl_course_data/intro/thresh_zstat1.nii.gz
+fsl_course_data/intro/wrapped.nii.gz
+fsl_course_data/intro/image1.nii.gz
+fsl_course_data/intro/example_func2standard.mat
+fsl_course_data/fmri/
+fsl_course_data/fmri/ptt/
+fsl_course_data/fmri/ptt/at/
+fsl_course_data/fmri/ptt/at/at_left.feat/
+fsl_course_data/fmri/ptt/at/at_left.feat/rendered_thresh_zstat3.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_mask_zstat1.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/example_func.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev5.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev2.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev3p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat3.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev2.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev4.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev4p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev5.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev3.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat4.html
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev2p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev2.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev5.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev3p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat4.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev6.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev2p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev1p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev6p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev4p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplotc_zstat2.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev6p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplotc_zstat5.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev6.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev6.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev3.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev5p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat3p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev2p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev3.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev5.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev6p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev4.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev2.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev4.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev4.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev4.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev3.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev1p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev5.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev3.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplotc_zstat1p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev6p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev3p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev6.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev4p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev6.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zfstat1.html
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev5p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev2p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplotc_zstat5p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev6.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_index
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev3.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev5.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zfstat1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev4.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev5.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev3.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev5.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev4.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplotc_zstat4.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev2p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev5p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev6.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplotc_zfstat1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplotc_zstat3.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev6.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev4p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplotc_zstat4p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev3p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_index.html
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev4.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev3.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev4.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat5.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev4.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev3.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev6p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev3.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev5.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev1p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev3.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev2p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev5p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev5.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat5.html
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev2.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev1p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev4.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev2p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev3p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev3p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev6.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev6.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev6.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat1.html
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev6.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev5p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev6p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev6p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev1p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat2p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplotc_zstat1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev4p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev2.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev4.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev2.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev3p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev3.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev5.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev5.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev5p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplotc_zstat2p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev6.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev2p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat4.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev5.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev3.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev5.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev4.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat3.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev5.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev4.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev1p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev6p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev4.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev5.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev3.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev3.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev6.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplotc_zstat5.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev6.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev3p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplotc_zstat2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev4p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev1p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev6.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev6.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev3p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev3.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev5.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev3.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev1p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev5p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev4.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev2p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev4.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev2.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat4p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev5p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev4p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev4.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev2.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat3.html
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zfstat1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev5.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev3p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev4p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev3.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev1p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev6.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev6p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev5p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev6p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplotc_zstat3.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplotc_zfstat1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev6.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev1p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev1p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplotc_zstat4.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev2p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev4.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev2.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev2.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev5.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev4p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat5p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev3.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat3_ev3p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev5.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev5.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zfstat1_ev5p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev3.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev4p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat2.html
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat2.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev3.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev6p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev4.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev2p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat5.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev4.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev3.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev2.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev5p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev4.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplot_zstat1p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev4p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev6.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev6.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev6.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplotc_zstat3p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat2_ev4p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat5_ev1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zfstat1_ev6.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat1_ev1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev3p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev4.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev6p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev1p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat4_ev5.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat3_ev3.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev5.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev5.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev3.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat1_ev2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev4.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/tsplotc_zstat1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat5_ev2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplotc_zstat2_ev2p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev6.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/tsplot/ps_tsplot_zstat4_ev5p.png
+fsl_course_data/fmri/ptt/at/at_left.feat/rendered_thresh_zfstat1.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/report_prestats.html
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat1_std.html
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/filtered_func_data.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/thresh_zstat5.vol
+fsl_course_data/fmri/ptt/at/at_left.feat/rendered_thresh_zstat2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/design.con
+fsl_course_data/fmri/ptt/at/at_left.feat/rendered_thresh_zstat5.png
+fsl_course_data/fmri/ptt/at/at_left.feat/lmax_zfstat1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat4.html
+fsl_course_data/fmri/ptt/at/at_left.feat/thresh_zstat2.vol
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_mask_zstat3.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/thresh_zstat2.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/rendered_thresh_zstat1.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/mean_func.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/tstat4.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/zstat5.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/pe1.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/varcope5.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/neff2.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/cope2.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/pe3.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/zfstat1.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/varcope1.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/pe5.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/smoothness
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/zstat1.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/epivolume.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/cmlogfile
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/probs
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/fstat1.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/varcope3.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/neff4.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/threshac1.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/tstat2.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/zstat3.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/cope4.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/pe4.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/tstat1.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/cope5.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/corrections.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/tstat3.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/zstat2.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/pe6.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/varcope2.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/neff5.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/sigmasquareds.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/cope3.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/varcope4.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/neff3.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/logfile
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/tstat5.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/zstat4.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/dof
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/ratios
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/cope1.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/neff1.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/res4d.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/stats/pe2.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat4_std.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/lmax_zstat4.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/.ramp.gif
+fsl_course_data/fmri/ptt/at/at_left.feat/lmax_zstat2_std.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/lmax_zstat3.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/rendered_thresh_zstat4.png
+fsl_course_data/fmri/ptt/at/at_left.feat/thresh_zstat3.vol
+fsl_course_data/fmri/ptt/at/at_left.feat/absbrainthresh.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/thresh_zstat4.vol
+fsl_course_data/fmri/ptt/at/at_left.feat/rendered_thresh_zstat3.png
+fsl_course_data/fmri/ptt/at/at_left.feat/report_log.html
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat1_std.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat5_std.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_mask_zstat5.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/thresh_zstat4.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zfstat1_std.html
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/standard.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/highres2standard2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/example_func2standard.png
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/example_func2standard.mat
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/example_func2standard2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/example_func2highres1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/example_func2highres.mat
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/example_func2highres2.png
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/example_func.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/highres2standard.png
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/highres.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/example_func2standard1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/highres2standard1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/highres2standard.mat
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/highres2standard.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/example_func2standard.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/example_func2highres.png
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/highres2example_func.mat
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/standard2example_func.mat
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/standard2highres.mat
+fsl_course_data/fmri/ptt/at/at_left.feat/reg/example_func2highres.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/design.fts
+fsl_course_data/fmri/ptt/at/at_left.feat/lmax_zstat3_std.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zfstat1.html
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zfstat1_std.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/lmax_zstat2.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf_abs_mean.rms
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf_abs.rms
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.par
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf_rel_mean.rms
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/rot.png
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/trans.png
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0037
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0040
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0078
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0096
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0102
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0072
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0005
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0108
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0024
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0053
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0059
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0061
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0016
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0085
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0111
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0011
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0066
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0088
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0116
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0082
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0054
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0023
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0029
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0105
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0091
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0008
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0002
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0075
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0047
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0030
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0043
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0034
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0049
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0006
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0071
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0095
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0101
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0120
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0050
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0027
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0086
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0112
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0068
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0118
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0015
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0062
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0018
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0115
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0081
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0065
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0012
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0020
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0057
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0098
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0076
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0001
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0106
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0092
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0033
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0044
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0039
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0074
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0003
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0104
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0090
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0009
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0031
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0046
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0117
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0083
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0067
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0010
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0089
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0028
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0022
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0055
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0058
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0052
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0025
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0084
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0110
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0017
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0060
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0041
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0036
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0004
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0073
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0109
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0079
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0097
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0103
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0107
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0093
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0099
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0000
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0077
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0038
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0045
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0032
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0013
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0064
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0019
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0114
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0080
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0056
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0021
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0026
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0051
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0121
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0119
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0063
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0014
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0087
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0113
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0069
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0048
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0035
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0042
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0094
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0100
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0070
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf.mat/MAT_0007
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/disp.png
+fsl_course_data/fmri/ptt/at/at_left.feat/mc/prefiltered_func_data_mcf_rel.rms
+fsl_course_data/fmri/ptt/at/at_left.feat/thresh_zfstat1.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/lmax_zstat5.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat1.html
+fsl_course_data/fmri/ptt/at/at_left.feat/mask.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/rendered_thresh_zstat5.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/rendered_thresh_zfstat1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat5.html
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat3_std.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/lmax_zstat1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/design.frf
+fsl_course_data/fmri/ptt/at/at_left.feat/lmax_zstat1_std.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_mask_zstat4.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/design.trg
+fsl_course_data/fmri/ptt/at/at_left.feat/lmax_zstat5_std.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/design_cov.png
+fsl_course_data/fmri/ptt/at/at_left.feat/thresh_zstat5.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat4_std.html
+fsl_course_data/fmri/ptt/at/at_left.feat/thresh_zfstat1.vol
+fsl_course_data/fmri/ptt/at/at_left.feat/design.png
+fsl_course_data/fmri/ptt/at/at_left.feat/lmax_zfstat1_std.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat4.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat4_post.o684739
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat4_post.e684741
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat5_reg
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat5_stop.o684742
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat4_post
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat3_film
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat3_film.e684738
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat1
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat5_reg.e684740
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat2_pre.e684737
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat2_pre
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat5_stop.e684742
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat9
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat3_film.o684738
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat5_reg.o684740
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat2_pre.o684737
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat4_post.e684739
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat4_post.o684741
+fsl_course_data/fmri/ptt/at/at_left.feat/logs/feat0
+fsl_course_data/fmri/ptt/at/at_left.feat/report_stats.html
+fsl_course_data/fmri/ptt/at/at_left.feat/reg_standard/
+fsl_course_data/fmri/ptt/at/at_left.feat/reg_standard/mean_func.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg_standard/mask.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg_standard/reg/
+fsl_course_data/fmri/ptt/at/at_left.feat/reg_standard/reg/highres.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg_standard/stats/
+fsl_course_data/fmri/ptt/at/at_left.feat/reg_standard/stats/cope1.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg_standard/stats/cope3.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg_standard/stats/varcope2.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg_standard/stats/cope5.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg_standard/stats/varcope4.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg_standard/stats/varcope5.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg_standard/stats/cope4.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg_standard/stats/varcope1.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg_standard/stats/varcope3.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg_standard/stats/cope2.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/reg_standard/example_func.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zfstat1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat3.html
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat3.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/rendered_thresh_zstat4.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat3_std.html
+fsl_course_data/fmri/ptt/at/at_left.feat/design.ppm
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat5_std.html
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat2.html
+fsl_course_data/fmri/ptt/at/at_left.feat/design_cov.ppm
+fsl_course_data/fmri/ptt/at/at_left.feat/report_reg.html
+fsl_course_data/fmri/ptt/at/at_left.feat/thresh_zstat1.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/rendered_thresh_zstat2.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_mask_zfstat1.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/design.fsf
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat2_std.html
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat2_std.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/report_poststats.html
+fsl_course_data/fmri/ptt/at/at_left.feat/custom_timing_files/
+fsl_course_data/fmri/ptt/at/at_left.feat/custom_timing_files/ev3.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/custom_timing_files/ev2.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/custom_timing_files/ev1.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat2.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/report.html
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_zstat5.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/design.mat
+fsl_course_data/fmri/ptt/at/at_left.feat/lmax_zstat4_std.txt
+fsl_course_data/fmri/ptt/at/at_left.feat/cluster_mask_zstat2.nii.gz
+fsl_course_data/fmri/ptt/at/at_left.feat/thresh_zstat1.vol
+fsl_course_data/fmri/ptt/at/at_left.feat/rendered_thresh_zstat1.png
+fsl_course_data/fmri/ptt/at/at_left.feat/thresh_zstat3.nii.gz
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bet-basics">
+<h2>BET basics<a class="headerlink" href="#bet-basics" title="Link to this heading">#</a></h2>
+<p>BET performs brain extraction by removing non-brain tissue from structural MRI images:</p>
+<p><code class="docutils literal notranslate"><span class="pre">bet</span> <span class="pre">&lt;input&gt;</span> <span class="pre">&lt;output&gt;</span> <span class="pre">[options]</span></code></p>
+<ul class="simple">
+<li><p>Input: Structural image (e.g., structural.nii.gz)</p></li>
+<li><p>Output: Brain-extracted image</p></li>
+<li><p>Options: Additional outputs like binary mask or skull surface (optional)</p></li>
+</ul>
+<p>For detailed instructions, see the complete FSL tutorial and the help page.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>bet
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Usage:    bet &lt;input&gt; &lt;output&gt; [options]
+
+Main bet2 options:
+  -o          generate brain surface outline overlaid onto original image
+  -m          generate binary brain mask
+  -s          generate approximate skull image
+  -n          don&#39;t generate segmented brain image output
+  -f &lt;f&gt;      fractional intensity threshold (0-&gt;1); default=0.5; smaller values give larger brain outline estimates
+  -g &lt;g&gt;      vertical gradient in fractional intensity threshold (-1-&gt;1); default=0; positive values give larger brain outline at bottom, smaller at top
+  -r &lt;r&gt;      head radius (mm not voxels); initial surface sphere is set to half of this
+  -c &lt;x y z&gt;  centre-of-gravity (voxels not mm) of initial mesh surface.
+  -t          apply thresholding to segmented brain image and mask
+  -e          generates brain surface as mesh in .vtk format
+
+Variations on default bet2 functionality (mutually exclusive options):
+  (default)   just run bet2
+  -R          robust brain centre estimation (iterates BET several times)
+  -S          eye &amp; optic nerve cleanup (can be useful in SIENA - disables -o option)
+  -B          bias field &amp; neck cleanup (can be useful in SIENA)
+  -Z          improve BET if FOV is very small in Z (by temporarily padding end slices)
+  -F          apply to 4D FMRI data (uses -f 0.3 and dilates brain mask slightly)
+  -A          run bet2 and then betsurf to get additional skull and scalp surfaces (includes registrations)
+  -A2 &lt;T2&gt;    as with -A, when also feeding in non-brain-extracted T2 (includes registrations)
+
+Miscellaneous options:
+  -v          verbose (switch on diagnostic messages)
+  -h          display this help, then exits
+  -d          debug (don&#39;t delete temporary intermediate images)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>bet<span class="w"> </span>./fsl_course_data/intro/structural.nii.gz<span class="w"> </span>./output/structural_brain<span class="w"> </span>-m<span class="w"> </span>-s
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>terminate called after throwing an instance of &#39;NiftiIO::NiftiException&#39;
+  what():  Error: cant open file ./output/structural_brain.nii.gz
+/opt/fsl-6.0.7.16/bin/bet: line 399:  7444 Aborted                 (core dumped) ${FSLDIR}/bin/bet2 $IN $OUT $bet2opts
+/opt/fsl-6.0.7.16/bin/bet failed during command:./fsl_course_data/intro/structural.nii.gz ./output/structural_brain -m -s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>ls<span class="w"> </span>output<span class="w"> </span>-lrt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: cannot access &#39;output&#39;: No such file or directory
+</pre></div>
+</div>
+</div>
+</div>
+<section id="visualization-with-ipyniivue">
+<h3>Visualization with ipyniivue<a class="headerlink" href="#visualization-with-ipyniivue" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ipyniivue</span><span class="w"> </span><span class="kn">import</span> <span class="n">NiiVue</span>
+<span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">()</span>
+<span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">(</span> <span class="p">[{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./fsl_course_data/intro/structural.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./output/structural_brain.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span> <span class="p">},</span>
+                 <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./output/structural_brain_skull.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span> <span class="p">}])</span>
+<span class="n">nv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">ipyniivue</span><span class="w"> </span><span class="kn">import</span> <span class="n">NiiVue</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">(</span> <span class="p">[{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./fsl_course_data/intro/structural.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">},</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                 <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./output/structural_brain.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span> <span class="p">},</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                  <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./output/structural_brain_skull.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span> <span class="p">}])</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">nv</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/ipyniivue/widget.py:427,</span> in <span class="ni">NiiVue.load_volumes</span><span class="nt">(self, volumes)</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span> <span class="k">def</span><span class="w"> </span><span class="nf">load_volumes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">volumes</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">408</span><span class="sd">     Load a list of volume objects.</span>
+<span class="g g-Whitespace">    </span><span class="mi">409</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">425</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">426</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">427</span>     <span class="n">volumes</span> <span class="o">=</span> <span class="p">[</span><span class="n">Volume</span><span class="p">(</span><span class="o">**</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">volumes</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_volumes</span> <span class="o">=</span> <span class="n">volumes</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/ipyniivue/widget.py:427,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span> <span class="k">def</span><span class="w"> </span><span class="nf">load_volumes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">volumes</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">408</span><span class="sd">     Load a list of volume objects.</span>
+<span class="g g-Whitespace">    </span><span class="mi">409</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">425</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">426</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">427</span>     <span class="n">volumes</span> <span class="o">=</span> <span class="p">[</span><span class="n">Volume</span><span class="p">(</span><span class="o">**</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">volumes</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_volumes</span> <span class="o">=</span> <span class="n">volumes</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/ipyniivue/widget.py:199,</span> in <span class="ni">Volume.__init__</span><span class="nt">(self, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span> <span class="k">if</span> <span class="s2">&quot;colormap_invert&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span>     <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;colormap_invert&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">199</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/anywidget/widget.py:62,</span> in <span class="ni">AnyWidget.__init__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="n">anywidget_traits</span><span class="p">[</span><span class="n">_ANYWIDGET_ID_KEY</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">Unicode</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span>     <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__module__</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span> <span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_traits</span><span class="p">(</span><span class="o">**</span><span class="n">anywidget_traits</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">62</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="n">_register_anywidget_commands</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/ipywidgets/widgets/widget.py:506,</span> in <span class="ni">Widget.__init__</span><span class="nt">(self, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">503</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">505</span> <span class="n">Widget</span><span class="o">.</span><span class="n">_call_widget_constructed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">506</span> <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/ipywidgets/widgets/widget.py:525,</span> in <span class="ni">Widget.open</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">523</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Open a comm to the frontend if one isn&#39;t already open.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">524</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comm</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">525</span>     <span class="n">state</span><span class="p">,</span> <span class="n">buffer_paths</span><span class="p">,</span> <span class="n">buffers</span> <span class="o">=</span> <span class="n">_remove_buffers</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_state</span><span class="p">())</span>
+<span class="g g-Whitespace">    </span><span class="mi">527</span>     <span class="n">args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">target_name</span><span class="o">=</span><span class="s1">&#39;jupyter.widget&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">528</span>                 <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;state&#39;</span><span class="p">:</span> <span class="n">state</span><span class="p">,</span> <span class="s1">&#39;buffer_paths&#39;</span><span class="p">:</span> <span class="n">buffer_paths</span><span class="p">},</span>
+<span class="g g-Whitespace">    </span><span class="mi">529</span>                 <span class="n">buffers</span><span class="o">=</span><span class="n">buffers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">530</span>                 <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="n">__protocol_version__</span><span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/ipywidgets/widgets/widget.py:615,</span> in <span class="ni">Widget.get_state</span><span class="nt">(self, key, drop_defaults)</span>
+<span class="g g-Whitespace">    </span><span class="mi">613</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">614</span>     <span class="n">to_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trait_metadata</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;to_json&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trait_to_json</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">615</span>     <span class="n">value</span> <span class="o">=</span> <span class="n">to_json</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">616</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">drop_defaults</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compare</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">traits</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">default_value</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span>         <span class="n">state</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/ipyniivue/utils.py:49,</span> in <span class="ni">file_serializer</span><span class="nt">(instance, widget)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="c1"># Make sure we have a pathlib.Path instance</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span>     <span class="n">instance</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">49</span> <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">instance</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">instance</span><span class="o">.</span><span class="n">read_bytes</span><span class="p">()}</span>
+
+<span class="nn">File /usr/lib/python3.10/pathlib.py:1126,</span> in <span class="ni">Path.read_bytes</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1122</span> <span class="k">def</span><span class="w"> </span><span class="nf">read_bytes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1123</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1124</span><span class="sd">     Open the file in bytes mode, read it, and close the file.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1125</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1126</span>     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1127</span>         <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nn">File /usr/lib/python3.10/pathlib.py:1119,</span> in <span class="ni">Path.open</span><span class="nt">(self, mode, buffering, encoding, errors, newline)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1117</span> <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1118</span>     <span class="n">encoding</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">text_encoding</span><span class="p">(</span><span class="n">encoding</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1119</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_accessor</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1120</span>                            <span class="n">newline</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;output/structural_brain.nii.gz&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_course_bet05.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_course_bet05.png"/></div></div>
+</div>
+</section>
+<section id="varying-the-fractional-intensity-threshold-parameter-f">
+<h3>Varying the fractional intensity threshold parameter (-f)<a class="headerlink" href="#varying-the-fractional-intensity-threshold-parameter-f" title="Link to this heading">#</a></h3>
+<p>The fractional intensity threshold is BET’s key parameter for distinguishing brain tissue from non-brain tissue. This interactive demonstration shows how different <code class="docutils literal notranslate"><span class="pre">-f</span></code> values affect brain extraction results:</p>
+<ul class="simple">
+<li><p>Lower values (e.g., -f 0.2): More inclusive extraction - captures more tissue but may include non-brain areas</p></li>
+<li><p>Higher values (e.g., -f 0.8): More conservative extraction - tighter brain boundary but may exclude brain tissue</p></li>
+<li><p>Default (-f 0.5): Balanced approach suitable for most cases</p></li>
+</ul>
+<p>The folowing visualization shows three different threshold results overlaid on the original image, demonstrating how this single parameter dramatically changes the extraction outcome.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>bet<span class="w"> </span>./fsl_course_data/intro/structural.nii.gz<span class="w"> </span>./output/structural_brain_f02<span class="w"> </span>-m<span class="w"> </span>-s<span class="w"> </span>-f<span class="w"> </span><span class="m">0</span>.2
+<span class="o">!</span><span class="w"> </span>bet<span class="w"> </span>./fsl_course_data/intro/structural.nii.gz<span class="w"> </span>./output/structural_brain_f08<span class="w"> </span>-m<span class="w"> </span>-s<span class="w"> </span>-f<span class="w"> </span><span class="m">0</span>.8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">()</span>
+<span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">(</span> <span class="p">[{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./output/structural_brain_f02.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">},</span>
+                 <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./output/structural_brain.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">},</span> 
+                  <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./output/structural_brain_f08.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">}])</span>
+<span class="n">nv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "92ed447df1c84cde955ffd8713490884", "version_major": 2, "version_minor": 1}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_course_bet_f.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_course_bet_f.png"/></div></div>
+</div>
+</section>
+</section>
+<section id="troubleshooting-brain-extraction">
+<h2>Troubleshooting Brain Extraction<a class="headerlink" href="#troubleshooting-brain-extraction" title="Link to this heading">#</a></h2>
+<section id="cerebellum-underestimation-using-the-gradient-threshold-option-g">
+<h3>Cerebellum Underestimation: Using the gradient threshold option (-g)<a class="headerlink" href="#cerebellum-underestimation-using-the-gradient-threshold-option-g" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Problem:</strong> Lower brain regions (cerebellum) get cut off</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>bet<span class="w"> </span>./fsl_course_data/intro/sub3m0.nii.gz<span class="w"> </span>./output/sub3m0_brain
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">()</span>
+<span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">(</span> <span class="p">[{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./output/sub3m0_brain.nii.gz&quot;</span><span class="p">}])</span>
+<span class="n">nv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "92b1e26e64d44714986f3186c6dac5b9", "version_major": 2, "version_minor": 1}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_course_bet_sub3m0.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_course_bet_sub3m0.png"/></div></div>
+</div>
+<ul class="simple">
+<li><p><strong>Solution:</strong> Use gradient threshold (-g) to vary the intensity threshold linearly by slice (getting smaller at the bottom and bigger at the top, or vice versa)</p></li>
+<li><p><strong>Example:</strong> Try -f 0.3 -g 0.2 for balanced results</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>bet<span class="w"> </span>./fsl_course_data/intro/sub3m0.nii.gz<span class="w"> </span>./output/sub3m0_f03g02<span class="w"> </span>-f<span class="w"> </span><span class="m">0</span>.3<span class="w"> </span>-g<span class="w"> </span><span class="m">0</span>.2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">()</span>
+<span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./output/sub3m0_f03g02.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">},</span>
+                 <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./output/sub3m0_brain.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">}])</span>
+<span class="n">nv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "930422b77a4942edb079a2d085ab23d5", "version_major": 2, "version_minor": 1}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_course_bet_sub3m0_g.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_course_bet_sub3m0_g.png"/></div></div>
+</div>
+</section>
+<section id="dealing-with-large-fov-images">
+<h3>Dealing with large FOV images<a class="headerlink" href="#dealing-with-large-fov-images" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Problem:</strong> Large amount of neck/extra tissue confuses brain detection (initial brain surface is initialised too low):</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>bet<span class="w"> </span>./fsl_course_data/intro/bighead.nii.gz<span class="w"> </span>./output/bighead_brain
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">()</span>
+<span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">(</span> <span class="p">[{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./fsl_course_data/intro/bighead.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">},</span>
+                  <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./output/bighead_brain.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">}])</span>
+
+<span class="n">nv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "46010a6c5ac441c786130868a1bccbc5", "version_major": 2, "version_minor": 1}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_course_bet_bighead.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_course_bet_bighead.png"/></div></div>
+</div>
+<ul class="simple">
+<li><p><strong>Solutions:</strong></p></li>
+<li><p>Crop the image first to remove the neck: <code class="docutils literal notranslate"><span class="pre">robustfov</span> <span class="pre">-i</span> <span class="pre">input</span> <span class="pre">-r</span> <span class="pre">output_crop</span></code> (recommended)</p></li>
+<li><p>Leave large FOV, but set brain centre-of-gravity: <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">&lt;x</span> <span class="pre">y</span> <span class="pre">z&gt;</span> <span class="pre">option</span></code>  (manual coordinate specification)</p></li>
+<li><p>Robust brain centre estimation: <code class="docutils literal notranslate"><span class="pre">-R</span>&#160;&#160; <span class="pre">option</span></code> (iterates BET several times)</p></li>
+</ul>
+<p>Different images may need different approaches - having multiple strategies available is essential for handling problematic cases.</p>
+<p><strong>Recommended Practice</strong>: Combine cropping with <code class="docutils literal notranslate"><span class="pre">-R</span></code> option for most robust results across different image types:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># crop the image</span>
+<span class="o">!</span>robustfov<span class="w"> </span>-i<span class="w"> </span>./fsl_course_data/intro/bighead.nii.gz<span class="w"> </span>-r<span class="w"> </span>./output/bighead_crop
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Final FOV is: 
+0.000000 160.000000 0.000000 224.000000 61.000000 170.000000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">()</span>
+<span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">(</span> <span class="p">[{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./fsl_course_data/intro/bighead.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">},</span>
+                  <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./output/bighead_crop.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">}])</span>
+
+<span class="n">nv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "dfe9156e5fca4d01a4dcfdf801d68824", "version_major": 2, "version_minor": 1}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_course_bet_bighead_crop.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_course_bet_bighead_crop.png"/></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>bet<span class="w"> </span>./output/bighead_crop.nii.gz<span class="w"> </span>./output/bighead_crop_brain<span class="w"> </span>-R
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nv</span> <span class="o">=</span> <span class="n">NiiVue</span><span class="p">()</span>
+<span class="n">nv</span><span class="o">.</span><span class="n">load_volumes</span><span class="p">(</span> <span class="p">[{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./output/bighead_brain.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">},</span>
+                  <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;./output/bighead_crop_brain.nii.gz&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">}])</span>
+
+<span class="n">nv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "231f28043b314de898ada72ec3b3fdca", "version_major": 2, "version_minor": 1}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_course_bet_bighead_crop_brain.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://raw.githubusercontent.com/NeuroDesk/example-notebooks/refs/heads/main/books/images/fsl_course_bet_bighead_crop_brain.png"/></div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-cpu-information">Output CPU information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-course-material">Download course material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bet-basics">BET basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-with-ipyniivue">Visualization with ipyniivue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varying-the-fractional-intensity-threshold-parameter-f">Varying the fractional intensity threshold parameter (-f)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-brain-extraction">Troubleshooting Brain Extraction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cerebellum-underestimation-using-the-gradient-threshold-option-g">Cerebellum Underestimation: Using the gradient threshold option (-g)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-large-fov-images">Dealing with large FOV images</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Neurodesk Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
