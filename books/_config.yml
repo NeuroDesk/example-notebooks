@@ -31,7 +31,7 @@ repository:
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   favicon: "images/neurodesk_logo.svg"
-  baseurl: https://neurodesk.github.io/example-notebooks/intro.html
+  baseurl: https://neurodesk.github.io/example-notebooks
   repository_url: https://github.com/neurodesk/example-notebooks
   use_issues_button: true
   use_repository_button: true
