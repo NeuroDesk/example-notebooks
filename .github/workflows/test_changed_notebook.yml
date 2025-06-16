@@ -29,7 +29,7 @@ jobs:
       - name: Select runner
         id: select_runner
         run: |
-          if [ "${{ github.repository }}" = "NeuroDesk/example-notebooks" ]; then
+          if [ "${{ github.repository }}" = "neurodesk/example-notebooks" ]; then
             echo "runner=self-hosted" >> $GITHUB_OUTPUT
           else
             echo "runner=ubuntu-22.04" >> $GITHUB_OUTPUT
