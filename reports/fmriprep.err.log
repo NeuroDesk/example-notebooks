@@ -16,10 +16,16 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 %%bash
+# set up environment variables
 export SUBJECTS_DIR=$PWD/fmriprep-freesurfer-dir
+export APPTAINERENV_SUBJECTS_DIR=$SUBJECTS_DIR
 export ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=2 
 export MPLCONFIGDIR=~/matplotlib-mpldir 
 
+# create subjects directory
+mkdir -p $SUBJECTS_DIR
+
+# run fmriprep
 fmriprep ds000102/ fmriprep-output participant \
 --fs-license-file ~/.license \
 --output-spaces T1w MNI152NLin2009cAsym fsaverage fsnative \
@@ -101,7 +107,7 @@ FileExistsError: [Errno 17] File exists: '/home/ubuntu/.cache'
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mCalledProcessError[0m                        Traceback (most recent call last)
 Cell [0;32mIn[5], line 1[0m
-[0;32m----> 1[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_cell_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mbash[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mexport SUBJECTS_DIR=$PWD/fmriprep-freesurfer-dir[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mexport ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=2 [39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mexport MPLCONFIGDIR=~/matplotlib-mpldir [39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mfmriprep ds000102/ fmriprep-output participant [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m--fs-license-file ~/.license [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m--output-spaces T1w MNI152NLin2009cAsym fsaverage fsnative [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m--participant-label 08 [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m--nprocs $ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m--mem 10000 [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m--skip_bids_validation [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m--fs-subjects-dir $SUBJECTS_DIR [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m-v[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m'[39;49m[43m)[49m
+[0;32m----> 1[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_cell_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mbash[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43m# set up environment variables[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mexport SUBJECTS_DIR=$PWD/fmriprep-freesurfer-dir[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mexport APPTAINERENV_SUBJECTS_DIR=$SUBJECTS_DIR[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mexport ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=2 [39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mexport MPLCONFIGDIR=~/matplotlib-mpldir [39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m# create subjects directory[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mmkdir -p $SUBJECTS_DIR[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m# run fmriprep[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mfmriprep ds000102/ fmriprep-output participant [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m--fs-license-file ~/.license [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m--output-spaces T1w MNI152NLin2009cAsym fsaverage fsnative [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m--participant-label 08 [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m--nprocs $ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m--mem 10000 [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m--skip_bids_validation [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m--fs-subjects-dir $SUBJECTS_DIR [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m-v[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m'[39;49m[43m)[49m
 
 File [0;32m~/.local/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2517[0m, in [0;36mInteractiveShell.run_cell_magic[0;34m(self, magic_name, line, cell)[0m
 [1;32m   2515[0m [38;5;28;01mwith[39;00m [38;5;28mself[39m[38;5;241m.[39mbuiltin_trap:
@@ -125,5 +131,5 @@ File [0;32m~/.local/lib/python3.10/site-packages/IPython/core/magics/script.py:
 [1;32m    313[0m     rc [38;5;241m=[39m p[38;5;241m.[39mreturncode [38;5;129;01mor[39;00m [38;5;241m-[39m[38;5;241m9[39m
 [0;32m--> 314[0m     [38;5;28;01mraise[39;00m CalledProcessError(rc, cell)
 
-[0;31mCalledProcessError[0m: Command 'b'export SUBJECTS_DIR=$PWD/fmriprep-freesurfer-dir\nexport ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=2 \nexport MPLCONFIGDIR=~/matplotlib-mpldir \n\nfmriprep ds000102/ fmriprep-output participant \\\n--fs-license-file ~/.license \\\n--output-spaces T1w MNI152NLin2009cAsym fsaverage fsnative \\\n--participant-label 08 \\\n--nprocs $ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS \\\n--mem 10000 \\\n--skip_bids_validation \\\n--fs-subjects-dir $SUBJECTS_DIR \\\n-v\n'' returned non-zero exit status 1.
+[0;31mCalledProcessError[0m: Command 'b'# set up environment variables\nexport SUBJECTS_DIR=$PWD/fmriprep-freesurfer-dir\nexport APPTAINERENV_SUBJECTS_DIR=$SUBJECTS_DIR\nexport ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=2 \nexport MPLCONFIGDIR=~/matplotlib-mpldir \n\n# create subjects directory\nmkdir -p $SUBJECTS_DIR\n\n# run fmriprep\nfmriprep ds000102/ fmriprep-output participant \\\n--fs-license-file ~/.license \\\n--output-spaces T1w MNI152NLin2009cAsym fsaverage fsnative \\\n--participant-label 08 \\\n--nprocs $ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS \\\n--mem 10000 \\\n--skip_bids_validation \\\n--fs-subjects-dir $SUBJECTS_DIR \\\n-v\n'' returned non-zero exit status 1.
 
