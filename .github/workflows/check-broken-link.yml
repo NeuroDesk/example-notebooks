@@ -69,5 +69,5 @@ jobs:
           echo "notebook_list=${notebook_list}"
           for notebook in $(echo $notebook_list | jq -r '.[]'); do
             echo "Checking links in $notebook"
-            lychee https://www.neurodesk.org/example-notebooks/${notebook} --remap "https://neurodesk.github.io/example-notebooks/intro.html https://www.neurodesk.org/example-notebooks" --accept 200..=206,403
+            lychee https://www.neurodesk.org/example-notebooks/${notebook} --remap ["https://neurodesk.github.io/example-notebooks/intro.html https://www.neurodesk.org/example-notebooks", "^https://github.com/NeuroDesk/(.*?)/blob/main/(.*) https://api.github.com/repos/NeuroDesk/$1/contents/$2"] --accept 200..=206,403
           done
