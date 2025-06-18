@@ -80,7 +80,7 @@ jobs:
     - name: Test singularity and cvmfs before pushing to neurocommand
       run: 
         /bin/bash .github/scripts/setup-cvmfs.sh
-
+      
     - name: Install dependencies
       shell: bash
       run: |
@@ -128,7 +128,9 @@ jobs:
         else
           cp ./books/_build/**/**/html/$NOTEBOOK.html ./books/_build/**/**/html/$DIRNAME
         fi
-
+    - name: Increase git post buffer size
+      run: git config --global http.postBuffer 524288000
+      
     - name: Push to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4.0.0
       if: github.event_name != 'pull_request'
